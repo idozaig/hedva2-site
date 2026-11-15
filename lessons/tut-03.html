@@ -1,0 +1,582 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<script>(function(){try{var m=localStorage.getItem("hedva2-theme");if(m==="dark"||m==="light")document.documentElement.setAttribute("data-theme",m);}catch(e){}})();</script>
+<title>חדו״א 2 · תרגול 3</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&family=Secular+One&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: one reading column on graph paper, sticky score bar, each method in its own color */
+:root{
+  --bg:#f4f7fb; --surface:#ffffff; --ink:#1c2333; --muted:#596377; --line:#d7dfea;
+  --grid:rgba(66,104,170,.10); --accent:#d2447a; --accent-soft:#fbe3ec;
+  --lim:#a86a10; --lim-soft:#fcefd8;
+  --parts:#0d8274; --parts-soft:#daf2ed;
+  --sub:#7446c6; --sub-soft:#ece3fb;
+  --trig:#2864cc; --trig-soft:#e0eafb;
+  --ok:#1d8048; --ok-soft:#ddf2e5; --bad:#c23636; --bad-soft:#fbe1e1;
+  --f-body:"Assistant","Arial Hebrew",Arial,sans-serif;
+  --f-head:"Secular One","Assistant",Arial,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#11151d; --surface:#1a202b; --ink:#e5e9f1; --muted:#9aa4b6; --line:#2c3545;
+  --grid:rgba(140,170,230,.07); --accent:#f07aa6; --accent-soft:#3b1d2a;
+  --lim:#e3a948; --lim-soft:#33270f; --parts:#3bc0b0; --parts-soft:#0f2d2a;
+  --sub:#ab8cf2; --sub-soft:#251c3c; --trig:#6ea2f6; --trig-soft:#15243e;
+  --ok:#4fc585; --ok-soft:#12301f; --bad:#f17474; --bad-soft:#3a1818; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg:#11151d; --surface:#1a202b; --ink:#e5e9f1; --muted:#9aa4b6; --line:#2c3545;
+  --grid:rgba(140,170,230,.07); --accent:#f07aa6; --accent-soft:#3b1d2a;
+  --lim:#e3a948; --lim-soft:#33270f; --parts:#3bc0b0; --parts-soft:#0f2d2a;
+  --sub:#ab8cf2; --sub-soft:#251c3c; --trig:#6ea2f6; --trig-soft:#15243e;
+  --ok:#4fc585; --ok-soft:#12301f; --bad:#f17474; --bad-soft:#3a1818; color-scheme:dark }
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.65;direction:rtl;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:24px 24px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--surface)}
+mjx-container{direction:ltr;unicode-bidi:isolate}
+mjx-container[display="true"]{margin:.4em 0 !important}
+.wrap{max-width:860px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:8px 64px}
+
+/* score bar */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--surface);border-bottom:1px solid var(--line)}
+.bar-in{max-width:860px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:8px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.bar b{font-family:var(--f-head);font-weight:400}
+.meter{flex:1;min-width:120px;height:8px;background:var(--line);border-radius:99px;overflow:hidden}
+.meter i{display:block;height:100%;width:0;background:var(--accent);transition:width .3s}
+.score{font-variant-numeric:tabular-nums;font-weight:700}
+button{font:inherit;cursor:pointer}
+.btn{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:8px;padding:4px 12px;font-size:15px}
+.btn:hover{border-color:var(--accent)}
+.btn:focus-visible,.opt:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.btn:disabled{opacity:.4;cursor:default}
+
+header.hero{padding-block:28px 8px}
+.date{font-family:var(--f-mono);font-size:13px;color:var(--muted);direction:ltr;display:inline-block}
+h1{font-family:var(--f-head);font-weight:400;font-size:clamp(30px,6vw,44px);line-height:1.15;margin:.1em 0 .2em;text-wrap:balance}
+h1 .hl{background:linear-gradient(transparent 58%,var(--accent-soft) 58%)}
+.lede{color:var(--muted);max-width:62ch;margin:0}
+.legend{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 6px;padding:0;list-style:none}
+.chip{display:inline-flex;align-items:center;gap:6px;border-radius:99px;padding:2px 12px;font-size:15px;font-weight:600}
+.chip::before{content:"";width:10px;height:10px;border-radius:50%;background:currentColor}
+.c-lim{color:var(--lim);background:var(--lim-soft)} .c-sub{color:var(--sub);background:var(--sub-soft)}
+.c-trig{color:var(--trig);background:var(--trig-soft)} .c-parts{color:var(--parts);background:var(--parts-soft)}
+.toc{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:15px;margin-top:6px}
+.toc a{color:var(--muted)} .toc a:hover{color:var(--accent)}
+
+section.sec{margin-top:44px;scroll-margin-top:70px}
+.sec-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;border-bottom:2px solid var(--line);padding-bottom:6px;margin-bottom:14px}
+.sec-num{font-family:var(--f-mono);font-size:14px;color:var(--muted);direction:ltr}
+h2{font-family:var(--f-head);font-weight:400;font-size:28px;margin:0;line-height:1.2}
+h3{font-family:var(--f-head);font-weight:400;font-size:21px;margin:26px 0 6px}
+.src{font-size:14px;color:var(--muted)}
+p{margin:.55em 0;max-width:68ch}
+.k-lim{color:var(--lim);font-weight:700} .k-sub{color:var(--sub);font-weight:700}
+.k-trig{color:var(--trig);font-weight:700} .k-parts{color:var(--parts);font-weight:700}
+
+.box{border-radius:12px;padding:12px 16px;margin:14px 0;border:1px solid var(--line);background:var(--surface)}
+.box h4{margin:0 0 6px;font-size:16px;font-weight:700;letter-spacing:.02em}
+.box ul{margin:0;padding-inline-start:20px} .box li{margin:4px 0}
+.terms{border-style:dashed}
+.terms h4{color:var(--muted)}
+.rule{border:2px solid var(--accent);background:var(--accent-soft)}
+.rule h4{color:var(--accent)}
+.analogy{background:transparent;border-inline-start:4px solid var(--muted);border-radius:0 12px 12px 0}
+.analogy h4{color:var(--muted)}
+.mynote{border-color:var(--accent);border-style:dotted}
+.mynote h4{color:var(--accent)}
+.disp{overflow-x:auto;direction:ltr;text-align:center}
+
+.tbl-wrap{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:520px;font-size:16px}
+th,td{padding:8px 12px;border-bottom:1px solid var(--line);text-align:right;vertical-align:middle}
+th{font-weight:700;background:var(--bg);font-size:15px}
+tr:last-child td{border-bottom:none}
+
+/* stepper */
+.stepper{--c:var(--sub);--cs:var(--sub-soft);border:1px solid var(--line);border-top:4px solid var(--c);border-radius:12px;background:var(--surface);margin:18px 0;overflow:hidden}
+.stepper[data-c="lim"]{--c:var(--lim);--cs:var(--lim-soft)} .stepper[data-c="trig"]{--c:var(--trig);--cs:var(--trig-soft)}
+.stepper[data-c="parts"]{--c:var(--parts);--cs:var(--parts-soft)}
+.st-head{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;padding:10px 14px;border-bottom:1px solid var(--line)}
+.st-title{font-family:var(--f-head);font-size:18px;color:var(--c)}
+.st-count{font-size:14px;color:var(--muted);font-variant-numeric:tabular-nums}
+.st-body{display:grid;grid-template-columns:minmax(0,1fr) 200px;gap:0}
+@media (max-width:640px){.st-body{grid-template-columns:minmax(0,1fr)}}
+.st-lines{list-style:none;margin:0;padding:8px 0;direction:ltr;min-width:0}
+.st-lines li{display:grid;grid-template-columns:34px minmax(0,1fr);align-items:center;padding:2px 10px 2px 0;border-inline-start:3px solid transparent}
+.st-lines li.hide{display:none}
+.st-lines li .ln{font-family:var(--f-mono);font-size:12px;color:var(--muted);text-align:center;font-variant-numeric:tabular-nums}
+.st-lines li .mx{overflow-x:auto;padding:2px 0;min-width:0}
+.st-lines li.cur{background:var(--cs);border-inline-start-color:var(--c)}
+.st-panel{border-inline-start:1px solid var(--line);padding:10px 12px;background:var(--bg)}
+@media (max-width:640px){.st-panel{border-inline-start:none;border-top:1px solid var(--line)}}
+.st-panel h5{margin:0 0 6px;font-size:13px;color:var(--muted);font-weight:700;letter-spacing:.04em}
+.fld{display:flex;justify-content:space-between;align-items:center;gap:8px;border:1px solid var(--line);border-radius:8px;padding:4px 8px;margin:5px 0;background:var(--surface);min-height:36px}
+.fld .fk{font-family:var(--f-mono);font-size:13px;color:var(--c);direction:ltr}
+.fld .fv{overflow-x:auto;min-width:0}
+.fld .fv.empty{color:var(--muted);font-size:13px}
+.fld.chg{outline:2px solid var(--c);outline-offset:1px}
+.st-why{padding:10px 14px;border-top:1px solid var(--line);min-height:64px}
+.st-why .lbl{font-size:13px;color:var(--c);font-weight:700}
+.st-ctrl{display:flex;gap:8px;flex-wrap:wrap;padding:10px 14px;border-top:1px solid var(--line)}
+.st-ctrl .next{background:var(--c);color:var(--surface);border-color:var(--c);font-weight:700}
+
+/* quiz */
+.quiz{margin:22px 0 6px;border-radius:12px;padding:6px 16px 12px;background:var(--surface);border:1px solid var(--line)}
+.quiz>h4{font-family:var(--f-head);font-weight:400;font-size:19px;margin:10px 0 4px}
+.qq{padding:12px 0;border-top:1px solid var(--line)}
+.qq:first-of-type{border-top:none}
+.qt{font-weight:600}
+.qn{font-family:var(--f-mono);font-size:13px;color:var(--muted);margin-inline-end:6px}
+.qbox{direction:ltr;text-align:center;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 10px;margin:8px 0;overflow-x:auto}
+.opts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:8px}
+@media (max-width:560px){.opts{grid-template-columns:minmax(0,1fr)}}
+.opt{display:flex;align-items:center;gap:8px;text-align:right;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:10px;padding:8px 10px;min-height:44px;min-width:0}
+.opt .ol{font-family:var(--f-mono);font-size:12px;color:var(--muted);flex:none}
+.opt .ot{min-width:0;overflow-x:auto}
+.opt:hover{border-color:var(--muted)}
+.opt.wrong{border-color:var(--bad);background:var(--bad-soft)}
+.opt.right{border-color:var(--ok);background:var(--ok-soft)}
+.fb{margin-top:8px;padding:8px 12px;border-radius:8px;font-size:16px}
+.fb.hint{background:var(--bad-soft);border:1px solid var(--bad)}
+.fb.why{background:var(--ok-soft);border:1px solid var(--ok)}
+.fb b.t{display:block;font-size:14px}
+
+.endmsg{text-align:center;font-family:var(--f-head);font-size:22px;margin:24px 0 0;padding:16px;border:2px solid var(--accent);border-radius:12px;background:var(--accent-soft)}
+footer{margin-top:40px;color:var(--muted);font-size:14px}
+@media (prefers-reduced-motion:reduce){*{transition:none !important}}
+</style>
+
+<div class="bar" role="region" aria-label="ציון">
+  <div class="bar-in">
+    <b>תרגול 3</b>
+    <span class="score" id="score">0 / 0</span>
+    <span class="meter" aria-hidden="true"><i id="meter"></i></span>
+    <span id="prog" style="font-size:14px;color:var(--muted);font-variant-numeric:tabular-nums"></span>
+    <button class="btn" id="reset" type="button">איפוס</button>
+  </div>
+</div>
+
+<main class="wrap">
+<header class="hero">
+  <div class="credit" style="display:block;width:fit-content;margin-bottom:12px;padding:6px 12px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);font-size:15px">קרדיט לסיכומים של עדי מהדרייב 😊 ולעידו דוד צייג!</div>
+  <span class="date">12/11/25</span>
+  <h1>חדו״א 2 · <span class="hl">תרגול 3</span></h1>
+  <p class="lede">גבול עם אינטגרל, שיטת ההצבה (רגילה, טריגונומטרית, אוניברסלית) ואינטגרציה בחלקים. כל חישוב מהתרגול מופיע כאן צעד אחר צעד, עם הסבר לכל שורה. אחרי כל חלק יש בוחן קצר. הציון למעלה סופר רק תשובות נכונות בניסיון הראשון.</p>
+  <ul class="legend" aria-label="מקרא צבעים">
+    <li class="chip c-lim">גבול ולופיטל</li>
+    <li class="chip c-sub">הצבה רגילה</li>
+    <li class="chip c-trig">הצבה טריגונומטרית / אוניברסלית</li>
+    <li class="chip c-parts">אינטגרציה בחלקים</li>
+  </ul>
+  <nav class="toc">
+    <a href="#s1">1 · גבול עם אינטגרל</a><a href="#s2">2 · הצבה רגילה</a><a href="#s3">3 · הצבה טריגונומטרית</a>
+    <a href="#s4">4 · הצבה אוניברסלית</a><a href="#s5">5 · בחלקים</a><a href="#s6">6 · סיכום</a>
+  </nav>
+</header>
+
+<!-- ============ 1 ============ -->
+<section class="sec" id="s1">
+  <div class="sec-head"><span class="sec-num">1 / 6</span><h2>גבול עם אינטגרל</h2><span class="src">עמוד 1 · &quot;תרגיל (המשך) חשבו: ב.&quot;</span></div>
+
+  <p><b>הבעיה:</b> צריך לחשב גבול, אבל במונה ובמכנה יש אינטגרלים שאי אפשר לחשב בכלל (אין פונקציה קדומה ל-\(e^{t^2}\)). אז איך? לא מחשבים אותם. <span class="k-lim">גוזרים</span> אותם, בעזרת לופיטל ונוסחה (*).</p>
+
+  <div class="box terms">
+    <h4>מושגים וסימונים</h4>
+    <ul>
+      <li>\(\int_0^x f(t)\,dt\): הגבול העליון הוא \(x\). המשתנה \(t\) הוא רק &quot;משתנה עזר&quot;. אחרי החישוב \(t\) נעלם ונשאר רק \(x\). לכן זו <b>פונקציה של \(x\)</b>, ומותר לגזור אותה.</li>
+      <li>\(\left[\frac{\infty}{\infty}\right]\) בסוגריים מרובעים: סימון של <b>צורה לא מוגדרת</b>. זה לא מספר. זה סימן שמותר להפעיל לופיטל.</li>
+      <li><span class="k-lim">לופיטל</span>: אם \(\frac fg\) הוא \(\frac00\) או \(\frac\infty\infty\), אז \(\lim\frac fg=\lim\frac{f'}{g'}\). גוזרים את המונה לבד ואת המכנה לבד (לא נגזרת של מנה!).</li>
+      <li>\(f\ge g\ \Rightarrow\ \int f\ge\int g\): אם פונקציה גדולה יותר, גם האינטגרל שלה גדול יותר. כך מראים שאינטגרל שואף לאינסוף <b>בלי לחשב אותו</b>.</li>
+      <li>הכוכבית (*) בדף: הנוסחה בפינה למעלה. החץ עם (*) ליד \(=\) אומר &quot;כאן השתמשנו בה&quot;.</li>
+    </ul>
+  </div>
+
+  <h3>נוסחה (*): נגזרת של אינטגרל עם גבולות משתנים</h3>
+  <div class="box disp">\[\left[\int_{g(x)}^{h(x)} f(t)\,dt\right]'=f\big(h(x)\big)\,h'(x)-f\big(g(x)\big)\,g'(x)\]</div>
+  <p>במילים: מציבים את הגבול העליון במקום \(t\) וכופלים בנגזרת שלו, פחות אותו דבר עם הגבול התחתון. אם גבול הוא מספר קבוע, הנגזרת שלו 0, והחלק שלו נעלם.</p>
+
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>האינטגרל</th><th>\(f(t)\)</th><th>\(h(x),\ h'\)</th><th>\(g(x),\ g'\)</th><th>הנגזרת</th></tr></thead>
+    <tbody>
+      <tr><td>במונה</td><td>\(e^{t^2}\)</td><td>\(x,\ 1\)</td><td>\(0,\ 0\)</td><td>\(e^{x^2}\cdot1-e^{0}\cdot0=e^{x^2}\)</td></tr>
+      <tr><td>במכנה</td><td>\(e^{2t^2}\)</td><td>\(x,\ 1\)</td><td>\(0,\ 0\)</td><td>\(e^{2x^2}\cdot1-0=e^{2x^2}\)</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="box analogy">
+    <h4>אנלוגיה</h4>
+    <p>חשבו על מד-מרחק ברכב. \(f(t)\) היא המהירות ברגע \(t\), ו-\(\int_0^x f(t)dt\) הוא המרחק שנסענו עד הרגע \(x\). כמה מהר המרחק גדל עכשיו? בדיוק המהירות עכשיו: \(f(x)\). ואם הגבול העליון הוא \(h(x)\) ולא \(x\), זה כמו שעון שרץ במהירות \(h'\), ולכן כופלים ב-\(h'(x)\).</p>
+  </div>
+
+  <div class="stepper" data-id="lim"></div>
+
+  <div class="box rule">
+    <h4>הכלל לזכור</h4>
+    <p>אינטגרל עם \(x\) בגבול הוא פונקציה של \(x\). בגבול \(\frac\infty\infty\) גוזרים אותו עם (*): <b>מציבים את הגבול, כופלים בנגזרת שלו</b>. כדי להראות שהוא \(\to\infty\), משווים לפונקציה קטנה יותר (כאן \(1\)).</p>
+  </div>
+
+  <div class="quiz" data-sec="s1"><h4>בוחן · חלק 1</h4></div>
+</section>
+
+<!-- ============ 2 ============ -->
+<section class="sec" id="s2">
+  <div class="sec-head"><span class="sec-num">2 / 6</span><h2>שיטות אינטגרציה: הצבה</h2><span class="src">עמוד 1 · דוגמאות 1-2</span></div>
+
+  <p><b>הבעיה:</b> האינטגרנד נראה מסובך, אבל בתוכו מסתתר משהו פשוט. <span class="k-sub">הצבה</span> = נותנים שם חדש, \(t\), לחלק המסובך. אם בוחרים טוב, האינטגרל ב-\(t\) נהיה קל.</p>
+
+  <div class="box terms">
+    <h4>מושגים וסימונים</h4>
+    <ul>
+      <li>\(\frac{dt}{dx}=t'(x)\) ולכן \(dt=t'(x)\,dx\) (כתוב בצד שמאל של הדף). במילים: &quot;גוזרים את \(t\) לפי \(x\) וכופלים ב-\(dx\)&quot;. כך מחליפים את \(dx\).</li>
+      <li><b>שינוי גבולות</b> (כתוב בדף כ-\(t:0\to1\)): באינטגרל מסוים מציבים את הגבולות של \(x\) בנוסחה של \(t\). אחרי זה <b>לא חוזרים</b> ל-\(x\) בסוף.</li>
+      <li>\(\sqrt t=t^{1/2}\) ו-\(t^{3/2}=t\sqrt t\). חוק החזקה: \(\int t^n\,dt=\frac{t^{n+1}}{n+1}\) (לכל \(n\ne-1\)).</li>
+      <li>\(\arctan\) היא הפונקציה ההפוכה ל-\(\tan\). \(\int\frac{1}{1+t^2}dt=\arctan t\), ו-\(\arctan1=\frac\pi4\).</li>
+      <li>\(e^{\ln2}=2\) (\(\ln\) ו-\(e\) מבטלים זה את זה). זה חשוב לגבולות בדוגמה 2.</li>
+    </ul>
+  </div>
+
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>שלב</th><th>מה עושים</th><th>בדוגמה 1</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>בוחרים \(t\) (בדרך כלל החלק &quot;הפנימי&quot;)</td><td>\(t=1+x^3\)</td></tr>
+      <tr><td>2</td><td>מחשבים \(dt=t'(x)dx\)</td><td>\(dt=3x^2dx\)</td></tr>
+      <tr><td>3</td><td>מחליפים גבולות</td><td>\(-1\to0\) הופך ל-\(0\to1\)</td></tr>
+      <tr><td>4</td><td>מחשבים אינטגרל פשוט ב-\(t\)</td><td>\(\frac13\int_0^1\sqrt t\,dt=\frac29\)</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="box analogy">
+    <h4>אנלוגיה</h4>
+    <p>הצבה היא כמו החלפת מטבע. במקום לשלם בדולרים (\(x\)) משלמים בשקלים (\(t\)). צריך להמיר <b>את המחיר</b> (\(dx\to dt\)) וגם <b>את הטווח</b> (הגבולות). אם המרתם את הכל, התשובה יוצאת אותו דבר.</p>
+  </div>
+
+  <h3>דוגמה 1 · הנגזרת הפנימית מחכה בחוץ</h3>
+  <div class="stepper" data-id="sub1"></div>
+
+  <h3>דוגמה 2 · מציבים את כל השורש</h3>
+  <p>כאן אין \(e^x\) בחוץ שיתאים ל-\(dt\). לכן לא מציבים &quot;את מה שבפנים&quot;, אלא את <b>כל</b> השורש, ואז מבטאים את \(dx\) דרך \(t\).</p>
+  <div class="stepper" data-id="sub2"></div>
+
+  <div class="tbl-wrap"><table>
+    <thead><tr><th></th><th>דוגמה 1</th><th>דוגמה 2</th></tr></thead>
+    <tbody>
+      <tr><td>מה מציבים</td><td>\(t=1+x^3\) (מה שבתוך השורש)</td><td>\(t=\sqrt{e^x-1}\) (כל השורש)</td></tr>
+      <tr><td>למה</td><td>\(x^2\) בחוץ הוא כמעט \(t'\)</td><td>אין נגזרת פנימית בחוץ</td></tr>
+      <tr><td>מה מחליף את \(dx\)</td><td>\(x^2dx=\frac13dt\)</td><td>\(dx=\frac{2t}{1+t^2}dt\)</td></tr>
+      <tr><td>גבולות חדשים</td><td>\(0\to1\)</td><td>\(0\to1\)</td></tr>
+      <tr><td>תשובה</td><td>\(\frac29\)</td><td>\(2\left(1-\frac\pi4\right)\)</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="box rule">
+    <h4>הכלל לזכור</h4>
+    <p>בהצבה מחליפים <b>שלושה</b> דברים: את הפונקציה, את \(dx\), ואת הגבולות. אם החלפתם גבולות, לא חוזרים ל-\(x\).</p>
+  </div>
+
+  <div class="quiz" data-sec="s2"><h4>בוחן · חלק 2</h4></div>
+</section>
+
+<!-- ============ 3 ============ -->
+<section class="sec" id="s3">
+  <div class="sec-head"><span class="sec-num">3 / 6</span><h2>הצבה טריגונומטרית</h2><span class="src">עמוד 1 · דוגמה 3 ו&quot;באופן כללי&quot;</span></div>
+
+  <p><b>הבעיה:</b> שורש כמו \(\sqrt{4-x^2}\) לא נפתח בהצבה רגילה. אבל יש זהות \(1-\sin^2t=\cos^2t\). אם מציבים \(x=2\sin t\), מה שבתוך השורש נהיה <b>ריבוע</b>, והשורש נעלם. שימו לב להבדל: כאן <span class="k-trig">מציבים את \(x\)</span> כפונקציה של \(t\) (בהצבה רגילה הצבנו את \(t\) כפונקציה של \(x\)).</p>
+
+  <div class="box terms">
+    <h4>זהויות וכללים שמופיעים בדף (בורוד)</h4>
+    <ul>
+      <li>\(1-\sin^2t=\cos^2t\) (ולכן \(4-4\sin^2t=4\cos^2t\)).</li>
+      <li>\(\sin2t=2\sin t\cos t\) (סינוס של זווית כפולה).</li>
+      <li>\(\cos2\alpha=1-2\sin^2\alpha\), ולכן \(\sin^2\alpha=\frac12(1-\cos2\alpha)\). כך &quot;מורידים&quot; ריבוע.</li>
+      <li>\(\int f(ax+b)\,dx=\frac1aF(ax+b)\), כש-\(F\) קדומה של \(f\). דוגמה: \(\int\cos4t\,dt=\frac14\sin4t\).</li>
+      <li>\(\sqrt{\cos^2t}=|\cos t|\). מורידים את הערך המוחלט רק כש-\(\cos t\ge0\) (ראו הערה למטה).</li>
+    </ul>
+  </div>
+
+  <div class="stepper" data-id="trig"></div>
+
+  <div class="box mynote">
+    <h4>הערה שלי</h4>
+    <p>בדף כתוב ישר \(\sqrt{4\cos^2t}=2\cos t\). באופן כללי \(\sqrt{4\cos^2t}=2|\cos t|\). זה בסדר כאן, כי \(t\) רץ מ-0 עד \(\frac\pi2\), ושם \(\cos t\ge0\). במבחן כדאי לכתוב את המשפט הזה.</p>
+  </div>
+
+  <h3>באופן כללי: איזו הצבה לאיזה שורש</h3>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>אם מופיע</th><th>כדאי להציב</th><th>למה זה עובד</th></tr></thead>
+    <tbody>
+      <tr><td>\(\sqrt{a^2-x^2}\)</td><td>\(x=a\sin t\) או \(x=a\cos t\)</td><td>\(a^2-a^2\sin^2t=a^2\cos^2t\)</td></tr>
+      <tr><td>\(\sqrt{x^2-a^2}\)</td><td>\(x=\frac{a}{\sin t}\) או \(x=\frac{a}{\cos t}\)</td><td>\(\frac{a^2}{\sin^2t}-a^2=a^2\frac{\cos^2t}{\sin^2t}\)</td></tr>
+      <tr><td>\(\sqrt{x^2+a^2}\)</td><td>\(x=a\tan t\)</td><td>\(a^2\tan^2t+a^2=\frac{a^2}{\cos^2t}\)</td></tr>
+    </tbody>
+  </table></div>
+  <p class="src">העמודה &quot;למה זה עובד&quot; היא תוספת שלי. בדף יש רק שתי העמודות הראשונות.</p>
+
+  <div class="box analogy">
+    <h4>אנלוגיה</h4>
+    <p>\(\sqrt{a^2-x^2}\) הוא הגובה של נקודה על מעגל ברדיוס \(a\). קשה לתאר נקודה על מעגל בעזרת \(x\), אבל קל לתאר אותה בעזרת <b>זווית</b> \(t\): \(x=a\sin t\), גובה \(=a\cos t\). לכן ההצבה פותחת את השורש.</p>
+  </div>
+
+  <div class="box rule">
+    <h4>הכלל לזכור</h4>
+    <p>רואים \(\sqrt{a^2\pm x^2}\) או \(\sqrt{x^2-a^2}\)? מציבים את \(x\) לפי הטבלה, כדי שבתוך השורש יופיע ריבוע. אחר כך משתמשים ב-\(\sin2t\) וב-\(\sin^2\alpha=\frac12(1-\cos2\alpha)\).</p>
+  </div>
+
+  <div class="quiz" data-sec="s3"><h4>בוחן · חלק 3</h4></div>
+</section>
+
+<!-- ============ 4 ============ -->
+<section class="sec" id="s4">
+  <div class="sec-head"><span class="sec-num">4 / 6</span><h2>הצבה טריגונומטרית אוניברסלית</h2><span class="src">עמודים 1-2 · דוגמה 4</span></div>
+
+  <p><b>הבעיה:</b> אינטגרל כמו \(\int\frac{dx}{1+\sin x}\) הוא שבר עם \(\sin\) ו-\(\cos\). אין שורש ואין נגזרת פנימית. ההצבה <span class="k-trig">\(t=\tan\frac x2\)</span> הופכת <b>כל</b> שבר כזה לשבר של פולינומים רגילים ב-\(t\).</p>
+
+  <div class="box terms">
+    <h4>מושגים וסימונים</h4>
+    <ul>
+      <li>\(\int R(\sin x,\cos x)\,dx\): &quot;\(R\) היא פונקציה רציונלית ב-\(\sin x,\cos x\)&quot; = מנה של פולינומים שבמקום \(x\) יש בהם \(\sin\) ו-\(\cos\). למשל \(\frac{1}{1+\sin x}\) או \(\frac{\sin x}{2+\cos x}\). <b>לא</b> מתאים: \(x\sin x\) (יש \(x\) לבד).</li>
+      <li>&quot;אוניברסלית&quot; = עובדת תמיד על אינטגרל כזה. לפעמים יש דרך קצרה יותר, אבל זו תמיד עובדת.</li>
+      <li>לוקחים מהטבלה רק את מה שמופיע באינטגרל. בדוגמה 4 צריך רק \(\sin x\) ו-\(dx\).</li>
+    </ul>
+  </div>
+
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>\(t=\tan\frac x2\)</th><th>\(\sin x\)</th><th>\(\cos x\)</th><th>\(\tan x\)</th><th>\(dx\)</th></tr></thead>
+    <tbody><tr><td>שווה ל-</td><td>\(\frac{2t}{1+t^2}\)</td><td>\(\frac{1-t^2}{1+t^2}\)</td><td>\(\frac{2t}{1-t^2}\)</td><td>\(\frac{2}{1+t^2}dt\)</td></tr></tbody>
+  </table></div>
+  <p class="src">טיפ שלי לזכירה: \(dx\) בא מ-\(x=2\arctan t\). ב-\(\sin\) וב-\(\tan\) יש \(2t\) במונה. ב-\(\cos\) יש \(1-t^2\).</p>
+
+  <div class="stepper" data-id="univ"></div>
+
+  <div class="box analogy">
+    <h4>אנלוגיה</h4>
+    <p>זה כמו מפתח מאסטר: הוא פותח כל דלת מסוג \(R(\sin x,\cos x)\). הוא קצת כבד (הרבה אלגברה), אבל תמיד מגיעים לשבר של פולינומים.</p>
+  </div>
+
+  <div class="box rule">
+    <h4>הכלל לזכור</h4>
+    <p>שבר של \(\sin x,\cos x\)? מציבים \(t=\tan\frac x2\), מחליפים לפי הטבלה (כולל \(dx\)!), מחליפים גבולות (\(\tan\) של חצי הגבול), ומפשטים לשבר של פולינומים.</p>
+  </div>
+
+  <div class="quiz" data-sec="s4"><h4>בוחן · חלק 4</h4></div>
+</section>
+
+<!-- ============ 5 ============ -->
+<section class="sec" id="s5">
+  <div class="sec-head"><span class="sec-num">5 / 6</span><h2>אינטגרציה בחלקים</h2><span class="src">עמוד 2 · דוגמאות 1-2</span></div>
+
+  <p><b>הבעיה:</b> \(\int x e^x\,dx\) הוא מכפלה, ואין בו נגזרת פנימית להצבה. \(\int\arctan x\,dx\) הוא פונקציה שלא יודעים לה פונקציה קדומה, אבל יודעים לגזור אותה. <span class="k-parts">אינטגרציה בחלקים</span> מחליפה אינטגרל קשה באינטגרל קל יותר.</p>
+
+  <div class="box disp">\[\int u\,v'\,dx=u\,v-\int v\,u'\,dx\qquad\text{(}u=u(x),\ v=v(x)\text{)}\]</div>
+
+  <div class="box terms">
+    <h4>מושגים וסימונים</h4>
+    <ul>
+      <li>\(u\) = החלק שאותו <b>גוזרים</b> (מקבלים \(u'\)). \(v'\) = החלק שאותו <b>מאנטגרלים</b> (מקבלים \(v\)).</li>
+      <li>איך בוחרים (טיפ שלי): \(u\) = מה שנהיה פשוט יותר בגזירה (\(x\to1\), \(\arctan x\to\frac1{1+x^2}\)). \(v'\) = מה שקל לאנטגרל (\(e^x\), \(1\)).</li>
+      <li>באינטגרל מסוים: \(uv\big|_a^b=u(b)v(b)-u(a)v(a)\).</li>
+      <li>טריק: אם יש רק פונקציה אחת, כותבים אותה כ-\(1\cdot f(x)\) ובוחרים \(v'=1\). (בדף זה ה-\(1\) הקטן ליד \(\arctan\).)</li>
+      <li>מאיפה הנוסחה (שלי): כלל המכפלה \((uv)'=u'v+uv'\). מעבירים אגף ומאנטגרלים.</li>
+    </ul>
+  </div>
+
+  <h3>דוגמה 1 · \(\int_0^1 x e^x\,dx\)</h3>
+  <div class="stepper" data-id="parts1"></div>
+
+  <h3>דוגמה 2 · \(\int_0^1 \arctan x\,dx\)</h3>
+  <div class="stepper" data-id="parts2"></div>
+
+  <div class="tbl-wrap"><table>
+    <thead><tr><th></th><th>דוגמה 1</th><th>דוגמה 2</th></tr></thead>
+    <tbody>
+      <tr><td>\(u\ \to\ u'\)</td><td>\(x\ \to\ 1\)</td><td>\(\arctan x\ \to\ \frac{1}{1+x^2}\)</td></tr>
+      <tr><td>\(v'\ \to\ v\)</td><td>\(e^x\ \to\ e^x\)</td><td>\(1\ \to\ x\)</td></tr>
+      <tr><td>האינטגרל שנשאר</td><td>\(\int_0^1e^x\,dx\) (מיידי)</td><td>\(\int_0^1\frac{x}{1+x^2}dx\) (הצבה)</td></tr>
+      <tr><td>תשובה</td><td>\(1\)</td><td>\(\frac\pi4-\ln\sqrt2\)</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="box analogy">
+    <h4>אנלוגיה</h4>
+    <p>זה כמו טרייד-אין של טלפון: מוסרים את האינטגרל הקשה, ומקבלים &quot;\(uv\)&quot; (חלק מוכן) ועוד אינטגרל חדש. העסקה טובה רק אם האינטגרל החדש <b>קל יותר</b>. לכן הבחירה של \(u\) חשובה.</p>
+  </div>
+
+  <div class="box rule">
+    <h4>הכלל לזכור</h4>
+    <p>\(\int uv'=uv-\int vu'\). בוחרים \(u\) שנהיה פשוט בגזירה, ו-\(v'\) שקל לאנטגרל. ואם נשאר אינטגרל שצריך הצבה (כמו בדוגמה 2), עושים הצבה בתוך החלקים.</p>
+  </div>
+
+  <div class="quiz" data-sec="s5"><h4>בוחן · חלק 5</h4></div>
+</section>
+
+<!-- ============ 6 ============ -->
+<section class="sec" id="s6">
+  <div class="sec-head"><span class="sec-num">6 / 6</span><h2>סיכום: איזו שיטה מתי?</h2></div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>שיטה</th><th>מתי</th><th>הנוסחה המרכזית</th><th>מהתרגול</th></tr></thead>
+    <tbody>
+      <tr><td><span class="k-lim">נגזרת של אינטגרל</span></td><td>\(x\) בגבול של אינטגרל (בגבול עם לופיטל)</td><td>\(f(h)h'-f(g)g'\)</td><td>\(\lim\frac{(\int e^{t^2})^2}{\int e^{2t^2}}=0\)</td></tr>
+      <tr><td><span class="k-sub">הצבה רגילה</span></td><td>יש פונקציה פנימית והנגזרת שלה בחוץ, או שורש שכדאי להציב כולו</td><td>\(dt=t'(x)dx\), גבולות חדשים</td><td>\(\frac29\), \(\ 2(1-\frac\pi4)\)</td></tr>
+      <tr><td><span class="k-trig">הצבה טריגונומטרית</span></td><td>\(\sqrt{a^2-x^2}\), \(\sqrt{x^2-a^2}\), \(\sqrt{x^2+a^2}\)</td><td>\(x=a\sin t\), \(\frac{a}{\sin t}\), \(a\tan t\)</td><td>\(\pi\)</td></tr>
+      <tr><td><span class="k-trig">הצבה אוניברסלית</span></td><td>\(R(\sin x,\cos x)\)</td><td>\(t=\tan\frac x2\) + הטבלה</td><td>\(1\)</td></tr>
+      <tr><td><span class="k-parts">חלקים</span></td><td>מכפלה (\(x e^x\)), או פונקציה שיודעים רק לגזור (\(\arctan\))</td><td>\(\int uv'=uv-\int vu'\)</td><td>\(1\), \(\ \frac\pi4-\ln\sqrt2\)</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="quiz" data-sec="s6"><h4>בוחן מסכם · איזו שיטה?</h4></div>
+  <div class="endmsg" id="endmsg" hidden></div>
+</section>
+
+<footer>מבוסס על הסיכום &quot;חדו״א 2 · תרגול 3&quot; (12/11/25). דוגמאות שמסומנות &quot;שלי&quot; הן תוספות.</footer>
+</main>
+
+<script type="application/json" id="data">{"steppers": {"lim": {"title": "חישוב 1 · הגבול עם האינטגרלים", "color": "lim", "fields": ["צורה", "לופיטל"], "steps": [{"tex": "\\displaystyle \\lim_{x\\to\\infty}\\frac{\\left(\\int_0^x e^{t^2}dt\\right)^2}{\\int_0^x e^{2t^2}dt}", "why": "זה הגבול שצריך לחשב. גם במונה וגם במכנה יש אינטגרל שהגבול העליון שלו הוא \\(x\\). לכן כל אחד מהם הוא פונקציה של \\(x\\)."}, {"tex": "\\displaystyle \\int_0^x e^{t^2}dt \\;\\ge\\; \\int_0^x e^{0}\\,dt=\\int_0^x 1\\,dt = x \\xrightarrow{x\\to\\infty}\\infty", "why": "למה זה נכון? \\(t^2\\ge 0\\), ולכן \\(e^{t^2}\\ge e^0=1\\). אם \\(f\\ge g\\) אז גם \\(\\int f\\ge\\int g\\). קיבלנו שהאינטגרל גדול מ-\\(x\\), ו-\\(x\\to\\infty\\). לכן גם המונה (הריבוע שלו) שואף לאינסוף.", "set": {"צורה": "מונה \\(\\to\\infty\\)"}}, {"tex": "\\displaystyle \\int_0^x e^{2t^2}dt \\;\\ge\\; \\int_0^x 1\\,dt = x \\xrightarrow{x\\to\\infty}\\infty", "why": "אותו נימוק בדיוק למכנה (בדף כתוב רק &quot;וכנ&quot;ל עבור המכנה&quot;; כאן כתבתי את זה במפורש): \\(e^{2t^2}\\ge 1\\).", "set": {"צורה": "\\(\\left[\\tfrac{\\infty}{\\infty}\\right]\\)"}}, {"tex": "\\displaystyle =\\left[\\tfrac{\\infty}{\\infty}\\right]\\overset{L}{=}\\lim_{x\\to\\infty}\\frac{2\\left(\\int_0^x e^{t^2}dt\\right)\\cdot e^{x^2}}{e^{2x^2}\\cdot 1-0}", "why": "לופיטל: גוזרים את המונה לבד ואת המכנה לבד. <b>מונה:<\/b> נגזרת של ריבוע היא \\(2\\cdot(\\ldots)\\cdot(\\ldots)'\\), ו-\\(\\left(\\int_0^x e^{t^2}dt\\right)'=e^{x^2}\\) לפי נוסחה (*). <b>מכנה:<\/b> נוסחה (*) עם \\(f(t)=e^{2t^2},\\ h(x)=x,\\ h'=1,\\ g(x)=0,\\ g'=0\\). לכן \\(e^{2x^2}\\cdot1-f(0)\\cdot 0\\).", "set": {"לופיטל": "פעם 1"}}, {"tex": "\\displaystyle =\\lim_{x\\to\\infty}\\frac{2\\int_0^x e^{t^2}dt}{e^{x^2}}", "why": "צמצום: \\(\\frac{e^{x^2}}{e^{2x^2}}=\\frac{1}{e^{x^2}}\\). (בדף הצמצום נעשה בתוך הצעד הבא. הפרדתי אותו לשורה משלו כדי שיהיה ברור.)", "set": {"צורה": "שוב \\(\\left[\\tfrac{\\infty}{\\infty}\\right]\\)"}}, {"tex": "\\displaystyle \\overset{L}{=}\\lim_{x\\to\\infty}\\frac{2\\,e^{x^2}}{2x\\,e^{x^2}}", "why": "שוב \\(\\frac{\\infty}{\\infty}\\) (המונה שואף לאינסוף כמו קודם, ו-\\(e^{x^2}\\to\\infty\\)). לופיטל שוב. <b>מונה:<\/b> \\(2\\cdot e^{x^2}\\) לפי (*). <b>מכנה:<\/b> \\(\\left(e^{x^2}\\right)'=e^{x^2}\\cdot 2x\\) (כלל השרשרת).", "set": {"לופיטל": "פעם 2"}}, {"tex": "\\displaystyle =\\lim_{x\\to\\infty}\\frac{1}{x}=0", "why": "מצמצמים \\(2e^{x^2}\\) מלמעלה ומלמטה. נשאר \\(\\frac1x\\), וזה שואף ל-0. <b>התשובה: 0.<\/b>", "set": {"צורה": "תשובה: \\(0\\)"}}]}, "sub1": {"title": "חישוב 2 · הצבה רגילה", "color": "sub", "fields": ["t", "dt", "גבולות"], "steps": [{"tex": "\\displaystyle \\int_{-1}^{0}x^2\\sqrt{1+x^3}\\,dx", "why": "שימו לב: \\(x^2\\) הוא כמעט הנגזרת של מה שבתוך השורש, \\(1+x^3\\) (הנגזרת היא \\(3x^2\\)). זה סימן להצבה."}, {"tex": "\\displaystyle =\\tfrac13\\int_{-1}^{0}\\sqrt{1+x^3}\\cdot 3x^2\\,dx", "why": "כופלים ב-3 ומחלקים ב-3. כך מופיע בדיוק \\(3x^2\\,dx\\), שהוא ה-\\(dt\\) שלנו."}, {"tex": "t=1+x^3,\\quad dt=3x^2\\,dx,\\quad t:\\ 0\\to 1", "why": "גבולות: \\(x=-1\\Rightarrow t=1+(-1)^3=0\\). \\(x=0\\Rightarrow t=1+0^3=1\\).", "set": {"t": "\\(1+x^3\\)", "dt": "\\(3x^2\\,dx\\)", "גבולות": "\\(0\\to1\\)"}}, {"tex": "\\displaystyle =\\tfrac13\\int_0^1\\sqrt{t}\\,dt", "why": "מחליפים: \\(\\sqrt{1+x^3}\\to\\sqrt t\\) ו-\\(3x^2dx\\to dt\\). גם הגבולות התחלפו. לא חוזרים ל-\\(x\\)."}, {"tex": "\\displaystyle =\\tfrac13\\left[\\frac{t^{3/2}}{3/2}\\right]_0^1", "why": "\\(\\sqrt t=t^{1/2}\\). חוק החזקה: \\(\\int t^n\\,dt=\\frac{t^{n+1}}{n+1}\\), כאן \\(n=\\tfrac12\\) ולכן \\(n+1=\\tfrac32\\)."}, {"tex": "\\displaystyle =\\tfrac13\\left[\\tfrac23-0\\right]=\\tfrac29", "why": "\\(\\frac{1^{3/2}}{3/2}=\\frac23\\) ו-\\(0^{3/2}=0\\). <b>התשובה: \\(\\frac29\\).<\/b>"}]}, "sub2": {"title": "חישוב 3 · מציבים את כל השורש", "color": "sub", "fields": ["t", "dx", "גבולות"], "steps": [{"tex": "\\displaystyle \\int_0^{\\ln 2}\\sqrt{e^x-1}\\,dx", "why": "כאן אין נגזרת פנימית שמחכה בחוץ. הרעיון: להציב את <b>כל<\/b> השורש."}, {"tex": "t=\\sqrt{e^x-1}\\ \\Rightarrow\\ e^x=t^2+1", "why": "מעלים את שני האגפים בריבוע: \\(t^2=e^x-1\\), ומעבירים אגף.", "set": {"t": "\\(\\sqrt{e^x-1}\\)"}}, {"tex": "\\displaystyle dt=\\frac{e^x}{2\\sqrt{e^x-1}}\\,dx=\\frac{t^2+1}{2t}\\,dx\\ \\Rightarrow\\ dx=\\frac{2t}{t^2+1}\\,dt", "why": "גוזרים את \\(t\\) לפי \\(x\\): נגזרת של שורש כפול נגזרת פנימית \\(e^x\\). אחר כך מחליפים \\(e^x=t^2+1\\) ו-\\(\\sqrt{e^x-1}=t\\), ומבודדים את \\(dx\\).", "set": {"dx": "\\(\\frac{2t}{t^2+1}\\,dt\\)"}}, {"tex": "t:\\ 0\\to 1", "why": "\\(x=0\\Rightarrow t=\\sqrt{1-1}=0\\). \\(x=\\ln2\\Rightarrow t=\\sqrt{2-1}=1\\) (כי \\(e^{\\ln 2}=2\\)).", "set": {"גבולות": "\\(0\\to1\\)"}}, {"tex": "\\displaystyle =\\int_0^1 t\\cdot\\frac{2t}{1+t^2}\\,dt=2\\int_0^1\\frac{t^2}{1+t^2}\\,dt", "why": "השורש הופך ל-\\(t\\), ו-\\(dx\\) מוחלף ב-\\(\\frac{2t}{1+t^2}dt\\). מוציאים את ה-2 החוצה."}, {"tex": "\\displaystyle =2\\int_0^1\\left(1-\\frac{1}{1+t^2}\\right)dt", "why": "טריק: \\(\\frac{t^2}{1+t^2}=\\frac{(1+t^2)-1}{1+t^2}=1-\\frac{1}{1+t^2}\\). (מוסיפים ומחסירים 1 במונה.)"}, {"tex": "\\displaystyle =2\\left(t-\\arctan t\\right)\\Big|_0^1", "why": "\\(\\int 1\\,dt=t\\) ו-\\(\\int\\frac{1}{1+t^2}dt=\\arctan t\\)."}, {"tex": "\\displaystyle =2\\left[1-\\tfrac{\\pi}{4}-0\\right]=2\\left(1-\\tfrac{\\pi}{4}\\right)", "why": "\\(\\arctan1=\\frac\\pi4\\) (כי \\(\\tan\\frac\\pi4=1\\)), ו-\\(\\arctan0=0\\). <b>התשובה: \\(2(1-\\frac\\pi4)\\).<\/b>"}]}, "trig": {"title": "חישוב 4 · הצבה טריגונומטרית", "color": "trig", "fields": ["x", "dx", "גבולות"], "steps": [{"tex": "\\displaystyle \\int_0^2 x^2\\sqrt{4-x^2}\\,dx", "why": "יש \\(\\sqrt{4-x^2}=\\sqrt{a^2-x^2}\\) עם \\(a=2\\). לפי הטבלה: \\(x=2\\sin t\\)."}, {"tex": "x=2\\sin t,\\quad dx=2\\cos t\\,dt,\\quad t:\\ 0\\to\\tfrac{\\pi}{2}", "why": "גבולות: \\(x=0\\Rightarrow\\sin t=0\\Rightarrow t=0\\). \\(x=2\\Rightarrow\\sin t=1\\Rightarrow t=\\frac\\pi2\\). שימו לב: כאן מציבים את \\(x\\) (ולא את \\(t\\)).", "set": {"x": "\\(2\\sin t\\)", "dx": "\\(2\\cos t\\,dt\\)", "גבולות": "\\(0\\to\\frac\\pi2\\)"}}, {"tex": "\\displaystyle =\\int_0^{\\pi/2}4\\sin^2t\\,\\sqrt{4-4\\sin^2t}\\cdot2\\cos t\\,dt", "why": "\\(x^2=4\\sin^2t\\), בתוך השורש \\(4-x^2=4-4\\sin^2t\\), ו-\\(dx=2\\cos t\\,dt\\)."}, {"tex": "\\displaystyle =\\int_0^{\\pi/2}4\\sin^2t\\cdot2\\cos t\\cdot2\\cos t\\,dt", "why": "\\(4-4\\sin^2t=4(1-\\sin^2t)=4\\cos^2t\\). ואז \\(\\sqrt{4\\cos^2t}=2\\cos t\\), כי בתחום \\(0\\le t\\le\\frac\\pi2\\) מתקיים \\(\\cos t\\ge0\\)."}, {"tex": "\\displaystyle =\\int_0^{\\pi/2}16\\sin^2t\\cos^2t\\,dt=4\\int_0^{\\pi/2}(2\\sin t\\cos t)^2\\,dt", "why": "\\(4\\cdot2\\cdot2=16\\). כותבים \\(16=4\\cdot 4=4\\cdot2^2\\), ומכניסים את \\(2^2\\) לתוך הריבוע."}, {"tex": "\\displaystyle =4\\int_0^{\\pi/2}\\sin^2(2t)\\,dt", "why": "זהות: \\(\\sin2t=2\\sin t\\cos t\\)."}, {"tex": "\\displaystyle =4\\cdot\\tfrac12\\int_0^{\\pi/2}\\left(1-\\cos 4t\\right)dt", "why": "זהות: \\(\\sin^2\\alpha=\\frac12(1-\\cos2\\alpha)\\). כאן \\(\\alpha=2t\\), ולכן \\(2\\alpha=4t\\)."}, {"tex": "\\displaystyle =2\\left[t-\\tfrac14\\sin 4t\\right]_0^{\\pi/2}", "why": "\\(\\int\\cos(4t)\\,dt=\\frac14\\sin(4t)\\), לפי הכלל \\(\\int f(ax+b)\\,dx=\\frac1a F(ax+b)\\) עם \\(a=4\\)."}, {"tex": "\\displaystyle =2\\left[\\tfrac{\\pi}{2}-0-0+0\\right]=\\pi", "why": "\\(\\sin(4\\cdot\\frac\\pi2)=\\sin2\\pi=0\\) ו-\\(\\sin0=0\\). <b>התשובה: \\(\\pi\\).<\/b>"}]}, "univ": {"title": "חישוב 5 · הצבה אוניברסלית", "color": "trig", "fields": ["t", "sin x", "dx", "גבולות"], "steps": [{"tex": "\\displaystyle \\int_0^{\\pi/2}\\frac{1}{1+\\sin x}\\,dx", "why": "זו מנה של פולינומים ב-\\(\\sin x\\) (פונקציה רציונלית). לכן הצבה אוניברסלית."}, {"tex": "\\displaystyle t=\\tan\\tfrac{x}{2}:\\quad \\sin x=\\frac{2t}{1+t^2},\\quad dx=\\frac{2}{1+t^2}\\,dt", "why": "לוקחים מהטבלה רק את מה שצריך: כאן יש רק \\(\\sin x\\) ו-\\(dx\\).", "set": {"t": "\\(\\tan\\frac x2\\)", "sin x": "\\(\\frac{2t}{1+t^2}\\)", "dx": "\\(\\frac{2}{1+t^2}dt\\)"}}, {"tex": "t:\\ 0\\to 1", "why": "\\(x=0\\Rightarrow t=\\tan0=0\\). \\(x=\\frac\\pi2\\Rightarrow t=\\tan\\frac\\pi4=1\\).", "set": {"גבולות": "\\(0\\to1\\)"}}, {"tex": "\\displaystyle =\\int_0^1\\frac{1}{1+\\frac{2t}{1+t^2}}\\cdot\\frac{2}{1+t^2}\\,dt", "why": "מחליפים את \\(\\sin x\\) ואת \\(dx\\)."}, {"tex": "\\displaystyle =2\\int_0^1\\frac{dt}{1+t^2+2t}", "why": "מכפילים את שני המכנים: \\(\\left(1+\\frac{2t}{1+t^2}\\right)(1+t^2)=1+t^2+2t\\)."}, {"tex": "\\displaystyle =2\\int_0^1\\frac{dt}{(t+1)^2}=2\\int_0^1(t+1)^{-2}\\,dt", "why": "\\(t^2+2t+1=(t+1)^2\\) (נוסחת הכפל המקוצר)."}, {"tex": "\\displaystyle =2\\left[\\frac{(t+1)^{-1}}{-1}\\right]_0^1=\\frac{-2}{t+1}\\Big|_0^1", "why": "חוק החזקה עם \\(n=-2\\): \\(\\frac{(t+1)^{-1}}{-1}\\). כלל \\(f(ax+b)\\) עם \\(a=1\\), אז לא מחלקים בכלום."}, {"tex": "\\displaystyle =-1-(-2)=1", "why": "\\(\\frac{-2}{2}=-1\\) ו-\\(\\frac{-2}{1}=-2\\). <b>התשובה: 1.<\/b>"}]}, "parts1": {"title": "חישוב 6 · חלקים: x כפול e בחזקת x", "color": "parts", "fields": ["u", "v'", "u'", "v"], "steps": [{"tex": "\\displaystyle \\int_0^1 x\\,e^x\\,dx", "why": "מכפלה של שתי פונקציות. אין פה נגזרת פנימית להצבה. לכן חלקים."}, {"tex": "u=x,\\quad v'=e^x\\qquad u'=1,\\quad v=e^x", "why": "בוחרים \\(u=x\\) כי בגזירה הוא נהיה 1 (פשוט יותר). \\(v'=e^x\\) קל לאינטגרל.", "set": {"u": "\\(x\\)", "v'": "\\(e^x\\)", "u'": "\\(1\\)", "v": "\\(e^x\\)"}}, {"tex": "\\displaystyle =x\\,e^x\\Big|_0^1-\\int_0^1 1\\cdot e^x\\,dx", "why": "הנוסחה: \\(uv\\big|_0^1-\\int_0^1 v\\,u'\\,dx\\)."}, {"tex": "\\displaystyle =e-e^x\\Big|_0^1", "why": "\\(x e^x\\big|_0^1=1\\cdot e^1-0\\cdot e^0=e\\). והאינטגרל של \\(e^x\\) הוא \\(e^x\\)."}, {"tex": "\\displaystyle =e-(e-1)=1", "why": "\\(e^x\\big|_0^1=e^1-e^0=e-1\\). <b>התשובה: 1.<\/b>"}]}, "parts2": {"title": "חישוב 7 · חלקים: arctan", "color": "parts", "fields": ["u", "v'", "u'", "v", "הצבה"], "steps": [{"tex": "\\displaystyle \\int_0^1 1\\cdot\\arctan x\\,dx", "why": "אין מכפלה? יוצרים אחת: כופלים ב-1 (בדף זה ה-1 הקטן ליד \\(\\arctan\\)). לא יודעים אינטגרל של \\(\\arctan\\), אבל יודעים את הנגזרת שלו."}, {"tex": "u=\\arctan x,\\quad v'=1\\qquad u'=\\frac{1}{1+x^2},\\quad v=x", "why": "\\(u=\\arctan x\\) כי הנגזרת שלו פשוטה. \\(v'=1\\) ולכן \\(v=x\\).", "set": {"u": "\\(\\arctan x\\)", "v'": "\\(1\\)", "u'": "\\(\\frac{1}{1+x^2}\\)", "v": "\\(x\\)"}}, {"tex": "\\displaystyle =x\\arctan x\\Big|_0^1-\\int_0^1\\frac{x}{1+x^2}\\,dx", "why": "הנוסחה: \\(uv\\big|_0^1-\\int_0^1 v\\,u'\\,dx\\), עם \\(v\\,u'=x\\cdot\\frac{1}{1+x^2}\\)."}, {"tex": "\\displaystyle =\\tfrac{\\pi}{4}-\\tfrac12\\int_0^1\\frac{2x}{1+x^2}\\,dx", "why": "\\(1\\cdot\\arctan1-0=\\frac\\pi4\\). כופלים ומחלקים ב-2 כדי שיופיע \\(2x\\), הנגזרת של \\(1+x^2\\)."}, {"tex": "t=1+x^2,\\quad dt=2x\\,dx,\\quad t:\\ 1\\to 2", "why": "הצבה רגילה <b>בתוך<\/b> אינטגרציה בחלקים. \\(x=0\\Rightarrow t=1\\), \\(x=1\\Rightarrow t=2\\).", "set": {"הצבה": "\\(t=1+x^2,\\ 1\\to2\\)"}}, {"tex": "\\displaystyle =\\tfrac{\\pi}{4}-\\tfrac12\\int_1^2\\frac{dt}{t}=\\tfrac{\\pi}{4}-\\tfrac12\\Big[\\ln t\\Big]_1^2", "why": "\\(\\int\\frac1t\\,dt=\\ln t\\) (כאן \\(t>0\\))."}, {"tex": "\\displaystyle =\\tfrac{\\pi}{4}-\\left(\\tfrac12\\ln2-\\tfrac12\\ln1\\right)=\\tfrac{\\pi}{4}-\\ln\\sqrt2", "why": "\\(\\ln1=0\\). ו-\\(\\frac12\\ln2=\\ln2^{1/2}=\\ln\\sqrt2\\). <b>התשובה: \\(\\frac\\pi4-\\ln\\sqrt2\\).<\/b>"}]}}, "quiz": {"s1": [{"q": "מה הנגזרת של הפונקציה הזאת?", "box": "F(x)=\\int_0^{x} e^{t^2}\\,dt", "o": ["\\(e^{x^2}\\)", "\\(2x\\,e^{x^2}\\)", "\\(e^{x^2}-1\\)", "\\(e^{t^2}\\)"], "hint": "נוסחה (*) עם \\(h(x)=x\\) (אז \\(h'=1\\)) ו-\\(g(x)=0\\) (אז \\(g'=0\\)). מציבים את \\(x\\) במקום \\(t\\).", "why": "\\(f(h(x))\\cdot h'(x)-f(0)\\cdot 0=e^{x^2}\\cdot1=e^{x^2}\\). אין כאן כלל שרשרת, כי הגבול הוא \\(x\\) עצמו.", "a": 0}, {"q": "(הדוגמה שלי) מה הנגזרת של הפונקציה הזאת?", "box": "G(x)=\\int_{0}^{x^2}\\sin t\\,dt", "o": ["\\(\\sin(x^2)\\)", "\\(2x\\cos(x^2)\\)", "\\(2x\\sin(x^2)\\)", "\\(\\sin(2x)\\)"], "hint": "כאן הגבול העליון הוא \\(h(x)=x^2\\). אל תשכחו לכפול ב-\\(h'(x)\\).", "why": "\\(f(h(x))\\cdot h'(x)=\\sin(x^2)\\cdot 2x\\). הגבול התחתון קבוע, אז החלק שלו הוא 0.", "a": 2}, {"q": "למה מותר להשתמש בלופיטל בגבול הזה?", "box": "\\lim_{x\\to\\infty}\\frac{\\left(\\int_0^x e^{t^2}dt\\right)^2}{\\int_0^x e^{2t^2}dt}", "o": ["כי המונה והמכנה שואפים שניהם לאפס, צורה \\(\\frac{0}{0}\\)", "כי המכנה חיובי תמיד, ולכן מותר לגזור את המונה והמכנה", "כי המונה והמכנה שואפים שניהם לאינסוף, צורה \\(\\frac{\\infty}{\\infty}\\)", "כי האינטגרנדים רציפים, ולכן כל גבול של מנה כזאת עובד"], "hint": "לופיטל עובד רק בצורה לא מוגדרת. מה קורה ל-\\(\\int_0^x e^{t^2}dt\\) כש-\\(x\\) גדל?", "why": "שני האינטגרלים גדולים מ-\\(x\\), ולכן שואפים לאינסוף. זו צורה \\(\\frac\\infty\\infty\\), ובה מותר לופיטל.", "a": 2}, {"q": "איך הראו בתרגול שהאינטגרל הזה שואף לאינסוף?", "box": "\\int_0^x e^{t^2}\\,dt\\ \\xrightarrow{x\\to\\infty}\\ ?", "o": ["השוו ל-\\(\\int_0^x 0\\,dt=0\\), כי \\(e^{t^2}\\ge 0\\)", "חישבו אותו בדיוק: יצא \\(\\frac{e^{x^2}}{2x}\\)", "גזרו אותו פעם אחת וקיבלו \\(e^{x^2}\\to\\infty\\)", "השוו ל-\\(\\int_0^x 1\\,dt=x\\), כי \\(e^{t^2}\\ge 1\\)"], "hint": "צריך פונקציה <b>קטנה<\/b> יותר שהאינטגרל שלה עדיין שואף לאינסוף.", "why": "\\(e^{t^2}\\ge e^0=1\\), ולכן \\(\\int_0^x e^{t^2}dt\\ge\\int_0^x1\\,dt=x\\to\\infty\\). השוואה ל-0 לא עוזרת, כי היא נותנת רק \\(\\ge 0\\).", "a": 3}, {"q": "אחרי לופיטל הראשון קיבלנו את הביטוי הזה. מה עושים עכשיו?", "box": "\\lim_{x\\to\\infty}\\frac{2\\int_0^x e^{t^2}dt}{e^{x^2}}", "o": ["שוב \\(\\frac\\infty\\infty\\): לופיטל שוב, ונקבל \\(x\\to\\infty\\)", "זה כבר לא צורה לא מוגדרת, אז הגבול הוא \\(2\\)", "זו צורה \\(\\frac00\\): לופיטל שוב, ונקבל \\(1\\)", "שוב \\(\\frac\\infty\\infty\\): לופיטל שוב, ונקבל \\(\\frac1x\\to0\\)"], "hint": "גזרו: מונה \\(2e^{x^2}\\), מכנה \\(2x\\,e^{x^2}\\). מה נשאר אחרי צמצום?", "why": "\\(\\frac{2e^{x^2}}{2x\\,e^{x^2}}=\\frac1x\\to0\\).", "a": 3}], "s2": [{"q": "מציבים \\(t=1+x^3\\). מהם הגבולות החדשים?", "box": "\\int_{-1}^{0}x^2\\sqrt{1+x^3}\\,dx", "o": ["\\(t\\) מ-\\(-1\\) עד \\(0\\)", "\\(t\\) מ-\\(2\\) עד \\(1\\)", "\\(t\\) מ-\\(0\\) עד \\(1\\)", "\\(t\\) מ-\\(0\\) עד \\(-1\\)"], "hint": "מציבים כל גבול של \\(x\\) בנוסחה \\(t=1+x^3\\). זהירות: \\((-1)^3=-1\\).", "why": "\\(1+(-1)^3=0\\) ו-\\(1+0^3=1\\). לכן \\(t:0\\to1\\).", "a": 2}, {"q": "מציבים \\(t=1+x^3\\). מה נכון?", "box": "\\int_{-1}^{0}x^2\\sqrt{1+x^3}\\,dx", "o": ["\\(dt=3x^2dx\\), ולכן \\(x^2dx=3\\,dt\\)", "\\(dt=x^3dx\\), ולכן \\(x^2dx=\\tfrac1x\\,dt\\)", "\\(dt=3x^2dx\\), ולכן \\(x^2dx=\\tfrac13dt\\)", "\\(dt=3x\\,dx\\), ולכן \\(x^2dx=\\tfrac x3\\,dt\\)"], "hint": "\\(dt=t'(x)\\,dx\\). מה הנגזרת של \\(1+x^3\\)? ואז מחלקים.", "why": "\\(t'=3x^2\\), ולכן \\(dt=3x^2dx\\), כלומר \\(x^2dx=\\frac13dt\\). זה ה-\\(\\frac13\\) שמופיע מחוץ לאינטגרל.", "a": 2}, {"q": "מציבים \\(t=\\sqrt{e^x-1}\\), כלומר \\(e^x=t^2+1\\). למה שווה \\(dx\\)?", "box": "\\int_0^{\\ln2}\\sqrt{e^x-1}\\,dx", "o": ["\\(dx=\\frac{2t}{t^2+1}\\,dt\\)", "\\(dx=\\frac{t^2+1}{2t}\\,dt\\)", "\\(dx=\\frac{2t}{t^2-1}\\,dt\\)", "\\(dx=\\frac{e^x}{2t}\\,dt\\)"], "hint": "\\(dt=\\frac{e^x}{2\\sqrt{e^x-1}}dx=\\frac{t^2+1}{2t}dx\\). עכשיו בודדו את \\(dx\\) (הפכו את השבר).", "why": "מ-\\(dt=\\frac{t^2+1}{2t}dx\\) מקבלים \\(dx=\\frac{2t}{t^2+1}dt\\).", "a": 0}, {"q": "איך מחשבים את האינטגרל הזה?", "box": "2\\int_0^1\\frac{t^2}{1+t^2}\\,dt", "o": ["כותבים \\(\\frac{t^2}{1+t^2}=1-\\frac{1}{1+t^2}\\)", "כותבים \\(\\frac{t^2}{1+t^2}=1+\\frac{1}{1+t^2}\\)", "כותבים \\(\\frac{t^2}{1+t^2}=\\frac{1}{1+t^2}-1\\)", "כותבים \\(\\frac{t^2}{1+t^2}=t^2-\\frac{1}{1+t^2}\\)"], "hint": "מוסיפים ומחסירים 1 במונה: \\(t^2=(1+t^2)-1\\).", "why": "\\(\\frac{(1+t^2)-1}{1+t^2}=1-\\frac{1}{1+t^2}\\). את שני החלקים יודעים לאנטגרל: \\(t\\) ו-\\(\\arctan t\\).", "a": 0}, {"q": "למה שווה האינטגרל הזה?", "box": "\\int_0^1\\frac{dt}{1+t^2}", "o": ["\\(\\frac\\pi2\\)", "\\(\\frac12\\)", "\\(\\ln2\\)", "\\(\\frac\\pi4\\)"], "hint": "הפונקציה הקדומה היא \\(\\arctan t\\). איזו זווית נותנת \\(\\tan=1\\)?", "why": "\\(\\arctan1-\\arctan0=\\frac\\pi4-0\\).", "a": 3}], "s3": [{"q": "איזו הצבה מתאימה לאינטגרל עם השורש הזה?", "box": "\\sqrt{9-x^2}", "o": ["\\(x=3\\sin t\\)", "\\(x=3\\tan t\\)", "\\(x=\\frac{3}{\\sin t}\\)", "\\(x=9\\sin t\\)"], "hint": "צורה \\(\\sqrt{a^2-x^2}\\). מה זה \\(a\\) כאן? (\\(a^2=9\\)).", "why": "\\(a=3\\). אז \\(9-9\\sin^2t=9\\cos^2t\\), והשורש נעלם.", "a": 0}, {"q": "איזו הצבה מתאימה לאינטגרל עם השורש הזה?", "box": "\\sqrt{x^2+4}", "o": ["\\(x=2\\sin t\\)", "\\(x=\\frac{2}{\\cos t}\\)", "\\(x=4\\tan t\\)", "\\(x=2\\tan t\\)"], "hint": "צורה \\(\\sqrt{x^2+a^2}\\) עם \\(a=2\\).", "why": "\\(4\\tan^2t+4=4(1+\\tan^2t)=\\frac{4}{\\cos^2t}\\), והשורש נפתח.", "a": 3}, {"q": "מציבים \\(x=2\\sin t\\). למה שווה השורש?", "box": "\\sqrt{4-x^2}=\\sqrt{4-4\\sin^2t}=\\ ?", "o": ["\\(2\\cos t\\)", "\\(2\\sin t\\)", "\\(4\\cos^2 t\\)", "\\(2-2\\sin t\\)"], "hint": "\\(1-\\sin^2t=\\cos^2t\\). ואז שורש.", "why": "\\(\\sqrt{4(1-\\sin^2t)}=\\sqrt{4\\cos^2t}=2\\cos t\\) (בתחום שלנו \\(\\cos t\\ge0\\)).", "a": 0}, {"q": "למה מותר לכתוב \\(\\sqrt{4\\cos^2t}=2\\cos t\\) ולא \\(2|\\cos t|\\)?", "box": "x=2\\sin t,\\quad x:0\\to2", "o": ["כי \\(0\\le t\\le\\pi\\), ושם \\(\\cos t\\ge 0\\)", "כי \\(0\\le t\\le\\frac\\pi2\\), ושם \\(\\cos t\\ge 0\\)", "כי שורש של ריבוע שווה תמיד למספר עצמו", "כי \\(0\\le x\\le 2\\), ושם \\(\\cos x\\ge 0\\)"], "hint": "באיזה תחום נמצא \\(t\\) (לא \\(x\\))? ומה הסימן של \\(\\cos\\) שם?", "why": "\\(t\\) רץ מ-0 עד \\(\\frac\\pi2\\) (רבע ראשון), ושם \\(\\cos t\\ge0\\). לכן \\(|\\cos t|=\\cos t\\).", "a": 1}, {"q": "למה שווה הביטוי הזה?", "box": "16\\sin^2t\\cos^2t", "o": ["\\(4\\sin^2(2t)\\)", "\\(16\\sin^2(2t)\\)", "\\(8\\sin^2(2t)\\)", "\\(4\\sin(4t)\\)"], "hint": "\\(\\sin2t=2\\sin t\\cos t\\), ולכן \\(\\sin^2(2t)=4\\sin^2t\\cos^2t\\).", "why": "\\(16\\sin^2t\\cos^2t=4\\cdot(4\\sin^2t\\cos^2t)=4\\sin^2(2t)\\).", "a": 0}, {"q": "מה הפונקציה הקדומה?", "box": "\\int\\cos(4t)\\,dt", "o": ["\\(4\\sin(4t)\\)", "\\(-\\frac14\\sin(4t)\\)", "\\(\\frac14\\sin(4t)\\)", "\\(\\sin(4t)\\)"], "hint": "\\(\\int f(ax+b)dx=\\frac1aF(ax+b)\\), ו-\\(\\int\\cos=\\sin\\) (בלי מינוס).", "why": "\\(a=4\\), ולכן מחלקים ב-4: \\(\\frac14\\sin(4t)\\). בדיקה: הנגזרת היא \\(\\frac14\\cdot4\\cos4t=\\cos4t\\).", "a": 2}], "s4": [{"q": "מתי משתמשים בהצבה \\(t=\\tan\\frac x2\\)?", "box": "", "o": ["כשיש מכפלה של פולינום ב-\\(x\\) עם \\(e^x\\)", "כשיש מנה של פולינומים ב-\\(\\sin x\\) וב-\\(\\cos x\\)", "כשיש שורש מהצורה \\(\\sqrt{a^2-x^2}\\) באינטגרנד", "כשיש אינטגרל שהגבול העליון שלו הוא \\(x\\)"], "hint": "זה בדיוק מה ש-\\(R(\\sin x,\\cos x)\\) אומר.", "why": "\\(R(\\sin x,\\cos x)\\) היא פונקציה רציונלית (מנה של פולינומים) ב-\\(\\sin x,\\cos x\\). ההצבה הופכת אותה למנה של פולינומים ב-\\(t\\).", "a": 1}, {"q": "בהצבה \\(t=\\tan\\frac x2\\), למה שווה \\(\\sin x\\)?", "box": "", "o": ["\\(\\frac{1-t^2}{1+t^2}\\)", "\\(\\frac{2t}{1+t^2}\\)", "\\(\\frac{2t}{1-t^2}\\)", "\\(\\frac{2}{1+t^2}\\)"], "hint": "\\(\\frac{1-t^2}{1+t^2}\\) הוא \\(\\cos x\\), ו-\\(\\frac{2t}{1-t^2}\\) הוא \\(\\tan x\\).", "why": "\\(\\sin x=\\frac{2t}{1+t^2}\\). כדאי לזכור את הארבעה יחד: sin, cos, tan, dx.", "a": 1}, {"q": "בהצבה \\(t=\\tan\\frac x2\\), למה שווה \\(dx\\)?", "box": "", "o": ["\\(\\frac{2t}{1+t^2}\\,dt\\)", "\\(\\frac{1+t^2}{2}\\,dt\\)", "\\(\\frac{2}{1+t^2}\\,dt\\)", "\\(\\frac{2}{1-t^2}\\,dt\\)"], "hint": "\\(x=2\\arctan t\\). גזרו לפי \\(t\\).", "why": "\\(x=2\\arctan t\\Rightarrow dx=\\frac{2}{1+t^2}dt\\).", "a": 2}, {"q": "מציבים \\(t=\\tan\\frac x2\\). מהם הגבולות החדשים?", "box": "\\int_0^{\\pi/2}\\frac{dx}{1+\\sin x}", "o": ["\\(t\\) מ-\\(0\\) עד \\(\\frac\\pi4\\)", "\\(t\\) מ-\\(0\\) עד \\(1\\)", "\\(t\\) מ-\\(0\\) עד \\(\\infty\\)", "\\(t\\) מ-\\(1\\) עד \\(\\infty\\)"], "hint": "מציבים: \\(\\tan\\frac{0}{2}\\) ו-\\(\\tan\\frac{\\pi/2}{2}=\\tan\\frac\\pi4\\).", "why": "\\(\\tan0=0\\) ו-\\(\\tan\\frac\\pi4=1\\). (\\(\\frac\\pi4\\) הוא ה-\\(\\frac x2\\), לא ה-\\(t\\).)", "a": 1}, {"q": "למה שווה המכנה הזה?", "box": "1+t^2+2t", "o": ["\\((t-1)^2\\)", "\\((t+2)^2\\)", "\\((t+1)^2\\)", "\\((t+1)(t-1)\\)"], "hint": "\\((a+b)^2=a^2+2ab+b^2\\).", "why": "\\(t^2+2t+1=(t+1)^2\\).", "a": 2}, {"q": "מה הפונקציה הקדומה?", "box": "\\int (t+1)^{-2}\\,dt", "o": ["\\(\\frac{1}{t+1}\\)", "\\(-\\frac{2}{(t+1)^3}\\)", "\\(\\ln|t+1|\\)", "\\(-\\frac{1}{t+1}\\)"], "hint": "חוק החזקה: \\(\\frac{(t+1)^{n+1}}{n+1}\\) עם \\(n=-2\\). (\\(\\ln\\) מתאים רק ל-\\(n=-1\\).)", "why": "\\(\\frac{(t+1)^{-1}}{-1}=-\\frac{1}{t+1}\\). אפשרות עם \\((t+1)^3\\) היא <b>נגזרת<\/b>, לא אינטגרל.", "a": 3}], "s5": [{"q": "מהי נוסחת האינטגרציה בחלקים?", "box": "", "o": ["\\(\\int uv'\\,dx=uv-\\int vu'\\,dx\\)", "\\(\\int uv'\\,dx=uv+\\int vu'\\,dx\\)", "\\(\\int uv'\\,dx=u'v-\\int uv'\\,dx\\)", "\\(\\int uv'\\,dx=u'v'-\\int uv\\,dx\\)"], "hint": "היא באה מכלל המכפלה \\((uv)'=u'v+uv'\\). מעבירים אגף.", "why": "\\(uv'=(uv)'-u'v\\). מאנטגרלים: \\(\\int uv'=uv-\\int vu'\\).", "a": 0}, {"q": "מה בוחרים להיות \\(u\\) באינטגרל הזה, ולמה?", "box": "\\int_0^1 x\\,e^x\\,dx", "o": ["\\(u=e^x\\), כי בגזירה הוא נשאר בדיוק אותו דבר", "\\(u=xe^x\\), כי צריך לגזור את כל המכפלה ביחד", "\\(u=x\\), כי בגזירה הוא נהיה פשוט יותר (1)", "\\(u=1\\), כי תמיד בוחרים את הפונקציה הקבועה"], "hint": "את \\(u\\) גוזרים. מה נהיה פשוט יותר אחרי גזירה?", "why": "\\(u=x\\Rightarrow u'=1\\), ואז נשאר \\(\\int e^x\\), שהוא קל. אם \\(u=e^x\\), אז \\(v=\\frac{x^2}{2}\\) והאינטגרל נהיה קשה יותר.", "a": 2}, {"q": "באינטגרל הזה, מה הם \\(v'\\) ו-\\(v\\)?", "box": "\\int_0^1 \\arctan x\\,dx", "o": ["\\(v'=\\arctan x\\), ולכן \\(v=\\frac{1}{1+x^2}\\)", "\\(v'=1\\), ולכן \\(v=x\\)", "\\(v'=x\\), ולכן \\(v=\\frac{x^2}{2}\\)", "\\(v'=\\frac{1}{1+x^2}\\), ולכן \\(v=\\arctan x\\)"], "hint": "כותבים \\(\\arctan x=1\\cdot\\arctan x\\). את מי לא יודעים לאנטגרל?", "why": "\\(u=\\arctan x\\) (גוזרים אותו), ו-\\(v'=1\\), אז \\(v=x\\).", "a": 1}, {"q": "למה שווה הביטוי הזה?", "box": "x\\,e^x\\Big|_0^1-\\int_0^1 e^x\\,dx", "o": ["\\(e\\)", "\\(1\\)", "\\(2e-1\\)", "\\(e-1\\)"], "hint": "\\(xe^x\\big|_0^1=e\\). ו-\\(\\int_0^1e^x\\,dx=e-1\\).", "why": "\\(e-(e-1)=1\\).", "a": 1}, {"q": "למה שווה האינטגרל הזה? (רמז: הצבה \\(t=1+x^2\\))", "box": "\\int_0^1\\frac{x}{1+x^2}\\,dx", "o": ["\\(\\frac12\\ln2\\)", "\\(\\ln2\\)", "\\(2\\ln2\\)", "\\(\\frac\\pi4\\)"], "hint": "\\(dt=2x\\,dx\\), כלומר \\(x\\,dx=\\frac12dt\\). גבולות \\(1\\to2\\).", "why": "\\(\\frac12\\int_1^2\\frac{dt}{t}=\\frac12\\ln2=\\ln\\sqrt2\\).", "a": 0}], "s6": [{"q": "איזו שיטה הכי מתאימה?", "box": "\\int x\\cos x\\,dx", "o": ["הצבה רגילה, עם \\(t=\\cos x\\)", "הצבה טריגונומטרית, עם \\(x=\\sin t\\)", "הצבה אוניברסלית, עם \\(t=\\tan\\frac x2\\)", "חלקים, עם \\(u=x\\) ו-\\(v'=\\cos x\\)"], "hint": "מכפלה של \\(x\\) בפונקציה שקל לאנטגרל, בלי נגזרת פנימית.", "why": "כמו \\(\\int xe^x\\): \\(u=x\\) נהיה 1 בגזירה, ו-\\(\\int\\cos x=\\sin x\\).", "a": 3}, {"q": "איזו שיטה הכי מתאימה?", "box": "\\int\\frac{dx}{2+\\cos x}", "o": ["חלקים, עם \\(u=\\frac1{2+\\cos x}\\)", "הצבה אוניברסלית, עם \\(t=\\tan\\frac x2\\)", "הצבה טריגונומטרית, עם \\(x=2\\sin t\\)", "הצבה רגילה, עם \\(t=2+\\cos x\\)"], "hint": "מנה של פולינומים ב-\\(\\cos x\\)?", "why": "זו \\(R(\\sin x,\\cos x)\\). עם \\(t=\\tan\\frac x2\\) מקבלים מנה של פולינומים ב-\\(t\\). (\\(t=2+\\cos x\\) לא עובד, כי \\(dt=-\\sin x\\,dx\\) ואין \\(\\sin x\\) בחוץ.)", "a": 1}, {"q": "איזו שיטה הכי מתאימה?", "box": "\\int x\\,e^{x^2}\\,dx", "o": ["חלקים, עם \\(u=x\\) ו-\\(v'=e^{x^2}\\)", "הצבה רגילה, עם \\(t=x^2\\)", "הצבה טריגונומטרית, עם \\(x=\\tan t\\)", "הצבה אוניברסלית, עם \\(t=\\tan\\frac x2\\)"], "hint": "האם יש נגזרת פנימית שמחכה בחוץ?", "why": "\\(dt=2x\\,dx\\), ו-\\(x\\) כבר בחוץ: \\(\\frac12\\int e^t\\,dt\\). חלקים לא עובד כאן, כי אין לנו אינטגרל של \\(e^{x^2}\\).", "a": 1}, {"q": "איזו שיטה הכי מתאימה?", "box": "\\int\\sqrt{1-x^2}\\,dx", "o": ["הצבה טריגונומטרית, עם \\(x=\\tan t\\)", "הצבה רגילה, עם \\(t=1-x^2\\)", "הצבה אוניברסלית, עם \\(t=\\tan\\frac x2\\)", "הצבה טריגונומטרית, עם \\(x=\\sin t\\)"], "hint": "צורה \\(\\sqrt{a^2-x^2}\\) עם \\(a=1\\).", "why": "\\(\\sqrt{1-\\sin^2t}=\\cos t\\). (\\(t=1-x^2\\) לא עובד: \\(dt=-2x\\,dx\\), ואין \\(x\\) בחוץ.)", "a": 3}, {"q": "מה הנגזרת? (נוסחה (*))", "box": "\\frac{d}{dx}\\int_1^{3x}\\ln t\\,dt", "o": ["\\(\\ln(3x)\\)", "\\(\\frac{3}{3x}\\)", "\\(3\\ln x\\)", "\\(3\\ln(3x)\\)"], "hint": "\\(h(x)=3x\\), אז \\(h'=3\\). מציבים \\(3x\\) במקום \\(t\\).", "why": "\\(\\ln(3x)\\cdot3-\\ln(1)\\cdot0=3\\ln(3x)\\).", "a": 3}]}}</script>
+<script>
+(function(){
+  var D = JSON.parse(document.getElementById('data').textContent);
+  var KEY = 'hedva2-t3-v1';
+  var store = {};
+  try { store = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch(e) { store = {}; }
+  function save(){ try { localStorage.setItem(KEY, JSON.stringify(store)); } catch(e){} }
+  function el(tag, cls, html){ var e=document.createElement(tag); if(cls) e.className=cls; if(html!=null) e.innerHTML=html; return e; }
+
+  /* ---------- steppers ---------- */
+  document.querySelectorAll('.stepper').forEach(function(root){
+    var S = D.steppers[root.dataset.id]; if(!S) return;
+    root.dataset.c = S.color;
+    var head = el('div','st-head');
+    head.appendChild(el('span','st-title', S.title));
+    var cnt = el('span','st-count'); head.appendChild(cnt);
+    root.appendChild(head);
+    var body = el('div','st-body');
+    var ol = el('ol','st-lines');
+    S.steps.forEach(function(st, i){
+      var li = el('li'); var ln = el('span','ln', String(i+1)); var mx = el('span','mx');
+      mx.textContent = '\\(' + st.tex + '\\)';
+      li.appendChild(ln); li.appendChild(mx); ol.appendChild(li);
+    });
+    body.appendChild(ol);
+    var panel = el('div','st-panel'); panel.appendChild(el('h5',null,'מצב'));
+    var fields = {};
+    S.fields.forEach(function(f){
+      var row = el('div','fld'); var k = el('span','fk'); k.textContent = f;
+      var v = el('span','fv empty','—');
+      var full = el('span','fv'); full.hidden = true;
+      row.appendChild(k); row.appendChild(v); row.appendChild(full); panel.appendChild(row);
+      fields[f] = {row:row, empty:v, full:full, vals:[]};
+    });
+    /* precompute value per step for each field, pre-render each distinct value once */
+    S.fields.forEach(function(f){
+      var cur = null, holders = [];
+      S.steps.forEach(function(st, i){
+        if(st.set && st.set[f] != null){
+          cur = el('span',null, st.set[f]);
+          cur.hidden = true; fields[f].full.appendChild(cur);
+          holders.push({i:i, node:cur});
+        }
+      });
+      fields[f].holders = holders;
+    });
+    body.appendChild(panel);
+    root.appendChild(body);
+    var why = el('div','st-why'); root.appendChild(why);
+    var whys = S.steps.map(function(st, i){
+      var d = el('div', null, '<span class="lbl">שורה ' + (i+1) + ': </span>' + st.why); d.hidden = true; why.appendChild(d); return d;
+    });
+    var ctrl = el('div','st-ctrl');
+    var bPrev = el('button','btn','→ הקודם'); bPrev.type='button';
+    var bNext = el('button','btn next','הבא ←'); bNext.type='button';
+    var bRe = el('button','btn','התחל מחדש'); bRe.type='button';
+    var bAll = el('button','btn','הצג הכל'); bAll.type='button';
+    [bNext,bPrev,bRe,bAll].forEach(function(b){ ctrl.appendChild(b); });
+    root.appendChild(ctrl);
+    var n = S.steps.length, k = 0;
+    function render(){
+      ol.querySelectorAll('li').forEach(function(li, i){ li.classList.toggle('hide', i > k); li.classList.toggle('cur', i === k); });
+      whys.forEach(function(d, i){ d.hidden = i !== k; });
+      S.fields.forEach(function(f){
+        var F = fields[f], act = null;
+        F.holders.forEach(function(h){ if(h.i <= k) act = h; });
+        F.holders.forEach(function(h){ h.node.hidden = (h !== act); });
+        F.empty.hidden = !!act; F.full.hidden = !act;
+        F.row.classList.toggle('chg', !!act && act.i === k);
+      });
+      cnt.textContent = 'צעד ' + (k+1) + ' מתוך ' + n;
+      bPrev.disabled = k === 0; bNext.disabled = k === n-1;
+    }
+    bNext.onclick = function(){ if(k<n-1){k++;render();} };
+    bPrev.onclick = function(){ if(k>0){k--;render();} };
+    bRe.onclick = function(){ k=0; render(); };
+    bAll.onclick = function(){ k=n-1; render(); };
+    render();
+  });
+
+  /* ---------- quizzes ---------- */
+  var LET = ['א','ב','ג','ד'];
+  var total = 0, qnodes = [];
+  Object.keys(D.quiz).forEach(function(sec){
+    var host = document.querySelector('.quiz[data-sec="'+sec+'"]'); if(!host) return;
+    D.quiz[sec].forEach(function(Q, qi){
+      total++;
+      var id = sec + '-' + qi;
+      var w = el('div','qq');
+      var t = el('div','qt'); var num = el('span','qn', (qi+1) + '.'); t.appendChild(num);
+      var tt = el('span', null, Q.q); t.appendChild(tt); w.appendChild(t);
+      if(Q.box){ var bx = el('div','qbox'); bx.textContent = '\\[' + Q.box + '\\]'; w.appendChild(bx); }
+      var grid = el('div','opts'); var btns = [];
+      Q.o.forEach(function(o, oi){
+        var b = el('button','opt'); b.type='button';
+        var l = el('span','ol', LET[oi]); var s = el('span','ot'); s.textContent = o;
+        b.appendChild(l); b.appendChild(s); grid.appendChild(b); btns.push(b);
+        b.onclick = function(){ pick(oi); };
+      });
+      w.appendChild(grid);
+      var hint = el('div','fb hint','<b class="t">לא בדיוק. רמז:</b>' + Q.hint); hint.hidden = true;
+      var why = el('div','fb why','<b class="t">נכון!</b>' + Q.why); why.hidden = true;
+      w.appendChild(hint); w.appendChild(why);
+      host.appendChild(w);
+      function apply(){
+        var st = store[id] || {tried:[]};
+        btns.forEach(function(b, i){
+          b.classList.toggle('wrong', st.tried.indexOf(i) >= 0 && i !== Q.a);
+          b.classList.toggle('right', !!st.done && i === Q.a);
+        });
+        why.hidden = !st.done;
+        hint.hidden = st.done || !st.tried.length;
+      }
+      function pick(i){
+        var st = store[id] || {tried:[]};
+        if(st.done) return;
+        if(st.tried.indexOf(i) < 0) st.tried.push(i);
+        if(i === Q.a){ st.done = true; st.first = st.tried.length === 1; }
+        store[id] = st; save(); apply(); score();
+      }
+      qnodes.push(apply);
+      apply();
+    });
+  });
+  function score(){
+    var first = 0, done = 0;
+    Object.keys(store).forEach(function(k){ if(store[k].done){ done++; if(store[k].first) first++; } });
+    document.getElementById('score').textContent = first + ' / ' + total;
+    document.getElementById('meter').style.width = (100*done/total) + '%';
+    document.getElementById('prog').textContent = 'נענו ' + done + ' מתוך ' + total;
+    var em = document.getElementById('endmsg');
+    if(done === total){
+      var pct = Math.round(100*first/total);
+      em.textContent = 'סיימת את כל הבוחנים! ' + first + ' מתוך ' + total + ' נכונות בניסיון הראשון (' + pct + '%). ' + (pct >= 85 ? 'מוכן לתרגיל הבית.' : 'כדאי לחזור על החישובים שבהם טעית.');
+      em.hidden = false;
+    } else em.hidden = true;
+  }
+  document.getElementById('reset').onclick = function(){ store = {}; save(); qnodes.forEach(function(f){ f(); }); score(); };
+  score();
+})();
+</script>
+<script>
+window.MathJax = { tex:{ inlineMath:[['\\(','\\)']], displayMath:[['\\[','\\]']] }, svg:{ fontCache:'global' } };
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.js"></script>
+
+</body></html>

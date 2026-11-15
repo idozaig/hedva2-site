@@ -1,0 +1,778 @@
+<!doctype html><html><head><script>(function(){try{var m=localStorage.getItem("hedva2-theme");if(m==="dark"||m==="light")document.documentElement.setAttribute("data-theme",m);}catch(e){}})();</script><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>חדו״א 2 — הרצאה 12</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Assistant:wght@400;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>/* Layout: a calm math notebook — one reading column (max 860px), sticky score bar, section cards on a faint grid. */
+:root{
+  --bg:#f6f8fb; --card:#ffffff; --ink:#1d2533; --muted:#5b6678; --line:#dfe5ee; --soft:#eef2f8; --grid:rgba(40,80,140,.05);
+  --accent:#6d4bd8; --accent-soft:#efeafd; --ok:#1f8a52; --ok-soft:#ddf4e7; --bad:#c53030; --bad-soft:#fde7e7; --note:#fff7dc; --note-line:#e9c46a; --mine:#e8f3ff; --mine-line:#7fb2ea;
+  --amb:#b7791f; --tea:#1386a6; --pur:#7a3fd1; --blu:#2563eb; --pnk:#c2417a; --grn:#2f855a; --org:#c05621; --red:#c53030; --olv:#6b7f1a;
+  --ind:#4c51bf; --brn:#8b5a2b; --mag:#b83280; --sea:#2c7a7b; --plm:#7b3fb0; --rub:#c0265b; --cyn:#0891b2; --sky:#0369a1; --lim:#4d7c0f; --nav:#1e3a8a; --eme:#047857; --bur:#9f1239; --jad:#0f766e; --rus:#a8441a;
+  --f-head:"Secular One","Assistant",system-ui,sans-serif; --f-body:"Assistant",system-ui,-apple-system,"Segoe UI",sans-serif; --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#11161f; --card:#18202c; --ink:#e6ebf3; --muted:#9aa7ba; --line:#2a3546; --soft:#1f2937; --grid:rgba(160,190,255,.04);
+  --accent:#a48bff; --accent-soft:#2a2346; --ok:#6fd49b; --ok-soft:#163626; --bad:#ff8a80; --bad-soft:#3d1c1c; --note:#2f2a14; --note-line:#a58a2c; --mine:#15283d; --mine-line:#3f6f9f;
+  --amb:#f0b75a; --tea:#4cc3e0; --pur:#b48cff; --blu:#7aa7ff; --pnk:#f58bbb; --grn:#6fd49b; --org:#f6a26b; --red:#ff8a80; --olv:#b5c95a;
+  --ind:#a3a8ff; --brn:#d6a77a; --mag:#f08ad0; --sea:#6fd1cf; --plm:#c99af0; --rub:#ff7aa3; --cyn:#5fd8f0; --sky:#7cc4f5; --lim:#a3d65c; --nav:#93b4ff; --eme:#34d399; --bur:#fb7185; --jad:#5eead4; --rus:#f0936a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#11161f; --card:#18202c; --ink:#e6ebf3; --muted:#9aa7ba; --line:#2a3546; --soft:#1f2937; --grid:rgba(160,190,255,.04);
+  --accent:#a48bff; --accent-soft:#2a2346; --ok:#6fd49b; --ok-soft:#163626; --bad:#ff8a80; --bad-soft:#3d1c1c; --note:#2f2a14; --note-line:#a58a2c; --mine:#15283d; --mine-line:#3f6f9f;
+  --amb:#f0b75a; --tea:#4cc3e0; --pur:#b48cff; --blu:#7aa7ff; --pnk:#f58bbb; --grn:#6fd49b; --org:#f6a26b; --red:#ff8a80; --olv:#b5c95a;
+  --ind:#a3a8ff; --brn:#d6a77a; --mag:#f08ad0; --sea:#6fd1cf; --plm:#c99af0; --rub:#ff7aa3; --cyn:#5fd8f0; --sky:#7cc4f5; --lim:#a3d65c; --nav:#93b4ff; --eme:#34d399; --bur:#fb7185; --jad:#5eead4; --rus:#f0936a; color-scheme:dark}
+html{direction:rtl}
+body{background-color:var(--bg);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:22px 22px;color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.65}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--card)}
+.wrap{max-width:860px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:8px 64px}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:6;background:var(--card);border-bottom:1px solid var(--line);margin-inline:calc(-1*max(16px,env(safe-area-inset-left,0px)));padding:8px max(16px,env(safe-area-inset-left,0px));display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.bar .sc{font-weight:700;font-size:15px}
+.bar .sc bdi{font-family:var(--f-mono)}
+.bar .meter{flex:1 1 120px;height:8px;background:var(--soft);border-radius:99px;overflow:hidden;min-width:80px}
+.bar .meter i{display:block;height:100%;width:0;background:var(--accent);transition:width .3s}
+.bar button{font:inherit;font-size:14px;font-weight:600;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:99px;padding:4px 12px;cursor:pointer}
+header.hero{padding-block:22px 6px}
+.credit{font-size:15px;background:var(--accent-soft);color:var(--ink);border-radius:10px;padding:6px 12px;display:inline-block;margin:0 0 12px}
+.eyebrow{font-size:13px;color:var(--muted);letter-spacing:.04em}
+h1{font-family:var(--f-head);font-weight:400;font-size:clamp(30px,6vw,42px);line-height:1.15;margin:4px 0 6px;text-wrap:balance}
+.sub{color:var(--muted);margin:0 0 12px}
+.legend{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.legend span{font-size:14px;border:1px solid var(--line);border-radius:99px;padding:2px 10px;background:var(--card)}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;background:currentColor;margin-inline-end:6px;vertical-align:middle}
+nav.toc{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin:12px 0 4px}
+nav.toc a{display:block;text-decoration:none;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:10px;padding:7px 11px;font-size:15px;font-weight:600}
+nav.toc a:hover{border-color:var(--accent)}
+nav.toc a b{color:var(--accent);font-family:var(--f-mono);margin-inline-end:4px}
+section.sec{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 18px 8px;margin-top:18px;scroll-margin-top:64px}
+@media (max-width:520px){section.sec{padding:14px 12px 6px;border-radius:12px}}
+.secno{font-family:var(--f-mono);font-size:13px;color:var(--muted);direction:ltr;unicode-bidi:isolate}
+h2{font-family:var(--f-head);font-weight:400;font-size:26px;margin:2px 0 10px;line-height:1.25;text-wrap:balance}
+h3{font-size:19px;margin:18px 0 6px}
+p{margin:8px 0}
+.box{border-radius:12px;padding:10px 14px;margin:12px 0;border:1px solid var(--line);background:var(--soft)}
+.box > b:first-child{display:block;margin-bottom:4px}
+.box.rule{background:var(--accent-soft);border-color:var(--accent)}
+.box.mine{background:var(--mine);border-color:var(--mine-line)}
+.box.fix{background:var(--note);border-color:var(--note-line)}
+.box.terms{background:var(--soft)}
+.box ol,.box ul{margin:4px 0;padding-inline-start:22px}
+.tw{overflow-x:auto;margin:10px 0}
+table{border-collapse:collapse;width:100%;font-size:15.5px}
+th,td{border:1px solid var(--line);padding:6px 9px;text-align:start;vertical-align:top}
+th{background:var(--soft)}
+.disp{overflow-x:auto;overflow-y:hidden;text-align:center;margin:10px 0;padding:4px 0}
+mjx-container{direction:ltr;unicode-bidi:isolate}
+mjx-container[display="true"]{margin:.4em 0!important}
+.disp mjx-container{display:inline-block!important}
+.ans{border-bottom:3px solid var(--cyn);padding-bottom:2px}
+.amb{color:var(--amb)}.tea{color:var(--tea)}.pur{color:var(--pur)}.blu{color:var(--blu)}.pnk{color:var(--pnk)}.grn{color:var(--grn)}.org{color:var(--org)}.red{color:var(--red)}.olv{color:var(--olv)}.ind{color:var(--ind)}.brn{color:var(--brn)}.mag{color:var(--mag)}.sea{color:var(--sea)}.plm{color:var(--plm)}.rub{color:var(--rub)}.cyn{color:var(--cyn)}.sky{color:var(--sky)}.lim{color:var(--lim)}.nav{color:var(--nav)}.eme{color:var(--eme)}.bur{color:var(--bur)}.jad{color:var(--jad)}.rus{color:var(--rus)}
+.k{font-weight:700}
+bdi,.m{unicode-bidi:isolate}
+.m{direction:ltr;display:inline-block;max-width:100%}
+code,pre{font-family:var(--f-mono);direction:ltr;unicode-bidi:isolate}
+/* simulation */
+.sim{border:2px solid var(--accent);border-radius:14px;padding:12px;margin:14px 0;background:var(--card)}
+.sim .st-title{font-weight:700;margin-bottom:6px}
+.sim .map{display:flex;flex-wrap:wrap;gap:5px;margin:0 0 8px;padding:0;list-style:none}
+.sim .map li{font-size:13.5px;border:1px solid var(--line);border-radius:99px;padding:2px 10px;color:var(--muted)}
+.sim .map li.on{background:var(--accent);border-color:var(--accent);color:var(--card);font-weight:700}
+.sim .map li.done{color:var(--ink);background:var(--soft)}
+.sim .lines{border:1px solid var(--line);border-radius:10px;padding:6px 8px;background:var(--soft);overflow-x:auto}
+.sim .ln{display:flex;gap:8px;align-items:center;padding:2px 4px;border-radius:6px;direction:ltr;min-height:30px}
+.sim .ln .no{font-family:var(--f-mono);font-size:12px;color:var(--muted);min-width:18px}
+.sim .ln.cur{background:var(--accent-soft);outline:2px solid var(--accent)}
+.sim .ln.fut{display:none}
+.sim .ln .f{min-width:0}
+.sim .x{margin:8px 0;padding:8px 12px;border-inline-start:4px solid var(--accent);background:var(--accent-soft);border-radius:8px}
+.sim .stp{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+.sim .stp > span{border:1px solid var(--line);border-radius:8px;padding:3px 9px;font-size:14.5px;background:var(--card)}
+.sim .stp > span > i{font-style:normal;color:var(--muted);margin-inline-end:6px;font-size:13px}
+.sim .stp .new{outline:2px solid var(--accent)}
+.sim .ctl{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-top:8px}
+.sim .ctl button{font:inherit;font-weight:700;font-size:15px;border:1px solid var(--accent);background:var(--card);color:var(--accent);border-radius:8px;padding:5px 14px;cursor:pointer}
+.sim .ctl button.pri{background:var(--accent);color:var(--card)}
+.sim .ctl button:disabled{opacity:.4;cursor:default}
+.sim .ctl .cnt{font-family:var(--f-mono);font-size:13px;color:var(--muted);direction:ltr;unicode-bidi:isolate}
+.sim .steps{display:none}
+/* quiz */
+.quiz{margin:16px 0 10px;border-top:1px dashed var(--line);padding-top:10px}
+.quiz > .qt{font-family:var(--f-head);font-size:19px;margin:0 0 6px}
+.qq{margin:10px 0 16px}
+.qq .q{font-weight:700;margin:4px 0}
+.qq ol{list-style:none;padding:0;margin:6px 0;display:grid;gap:6px}
+.qq li button{width:100%;text-align:start;font:inherit;font-size:16px;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:10px;padding:8px 12px;cursor:pointer;line-height:1.5}
+.qq li button:hover{border-color:var(--accent)}
+.qq li button.bad{border-color:var(--bad);background:var(--bad-soft)}
+.qq li button.good{border-color:var(--ok);background:var(--ok-soft)}
+.qq li button .lt{font-weight:700;color:var(--muted);margin-inline-end:8px}
+.qq .h,.qq .e{border-radius:8px;padding:6px 10px;font-size:15.5px}
+.qq .h{background:var(--bad-soft)}
+.qq .e{background:var(--ok-soft)}
+/* tools */
+.tool{border:1px solid var(--line);border-radius:12px;padding:12px;margin:12px 0;background:var(--soft)}
+.tool label{font-weight:600;font-size:15px}
+.tool input[type=range]{width:100%}
+.tool .out{font-family:var(--f-mono);direction:ltr;unicode-bidi:isolate;font-size:15px}
+.tool svg{width:100%;height:auto;display:block;background:var(--card);border-radius:8px;border:1px solid var(--line)}
+.tool .row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.tool select,.tool button{font:inherit;font-size:15px;border:1px solid var(--line);border-radius:8px;padding:4px 10px;background:var(--card);color:var(--ink)}
+.end{margin-top:18px;text-align:center;font-weight:700;font-size:18px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+mjx-container:not([display="true"]){display:inline-block;max-width:100%;overflow-x:auto;overflow-y:hidden;vertical-align:middle;padding-block:2px}
+mjx-container > svg{vertical-align:middle!important}
+mjx-assistive-mml{max-width:100%!important;left:0!important}
+[hidden]{display:none!important}
+.disp,.sim .lines{direction:ltr}
+input[type=range]{direction:ltr}
+@media (max-width:520px){.sim .lines mjx-container{font-size:88%}}
+.tool svg{direction:ltr}
+.tw.tight table{font-size:14px}.tw.tight th,.tw.tight td{padding:4px 5px}
+</style>
+<style>
+.tool .vin{display:grid;grid-template-columns:auto repeat(3,minmax(0,1fr));gap:6px;align-items:center;direction:ltr;max-width:420px}
+.tool .vin input{font:inherit;font-size:15px;width:100%;box-sizing:border-box;border:1px solid var(--line);border-radius:8px;padding:4px 6px;background:var(--card);color:var(--ink);text-align:center}
+.tool .vin span{font-weight:700;font-family:var(--f-mono)}
+.tool .sl{display:grid;grid-template-columns:auto 1fr auto;gap:4px 8px;align-items:center;direction:ltr}
+.tool .sl output{font-family:var(--f-mono);font-size:14px;min-width:2.5em;text-align:end}
+.tool .sl label{font-family:var(--f-mono);font-size:14px}
+.tool .res{direction:ltr;unicode-bidi:isolate;font-family:var(--f-mono);font-size:14.5px;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:8px 10px;margin-top:8px;white-space:pre-wrap;line-height:1.55}
+.det{display:inline-grid;grid-template-columns:repeat(3,auto);gap:2px 14px;border-inline:2px solid var(--ink);padding:2px 10px;direction:ltr;font-family:var(--f-mono)}
+</style>
+<style>
+.fig{display:block;width:100%;max-width:520px;height:auto;margin:10px auto;background:var(--card);border:1px solid var(--line);border-radius:10px;direction:ltr}
+.fig text{font-family:var(--f-body);font-size:14px;font-weight:700}
+.tool .nin{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;direction:ltr;max-width:460px;margin:4px 0}
+.tool .nin label{display:grid;gap:2px;font-family:var(--f-mono);font-size:13px;text-align:center}
+.tool .nin input{font:inherit;font-size:15px;width:100%;box-sizing:border-box;border:1px solid var(--line);border-radius:8px;padding:4px 6px;background:var(--card);color:var(--ink);text-align:center}
+.tool .res{unicode-bidi:plaintext;text-align:start}
+.tag{display:inline-block;border-radius:99px;padding:1px 10px;font-weight:700;font-size:14.5px;border:1.5px solid currentColor}
+</style>
+<div class="wrap" data-key="calc2-lec12-v1">
+<div class="bar"><span class="sc" id="score">ניקוד: 0</span><span class="meter" aria-hidden="true"><i id="meter"></i></span><button type="button" id="resetBtn">⟲ איפוס</button><button type="button" id="themeBtn">🌙 לילה</button></div>
+<header class="hero">
+<p class="credit">קרדיט לסיכומים של עדי מהדרייב 😊 ולעידו דוד צייג!</p>
+<div class="eyebrow">חדו״א 2 • הרצאה 12 • לנדסמן • 03/12/25 • ארבעה עמודים בכתב יד</div>
+<h1>הרצאה 12: מישורים, ותחילת הטופולוגיה</h1>
+<p class="sub">בהרצאה 11 למדנו ישר. היום עולים מימד: מישור. כותבים אותו בשלוש דרכים, מחשבים מרחק של נקודה ממישור, ומוצאים ישר שבו שני מישורים נחתכים. בסוף מתחיל נושא חדש: טופולוגיה — כדורים, נקודות פנימיות ונקודות שפה, קבוצות פתוחות, סגורות וקומפקטיות.</p>
+<div class="legend">
+<span class="brn">נקודה $A$ על המישור</span>
+<span class="tea">וקטור כיוון $\bar l$</span>
+<span class="org">וקטור כיוון שני $\bar s$</span>
+<span class="amb">הפרמטרים $u,v$</span>
+<span class="plm">מכפלה וקטורית</span>
+<span class="mag">הנורמל $\bar n$</span>
+<span class="olv">המישור (חדש)</span>
+<span class="rus">מרחק $D$</span>
+<span class="sky">כדור / סביבה $\delta$ (חדש)</span>
+<span class="eme">נקודה פנימית (חדש)</span>
+<span class="pur">נקודת שפה (חדש)</span>
+<span class="cyn">תשובה סופית (קו מתחת)</span>
+</div>
+<nav class="toc" aria-label="תוכן עניינים"></nav>
+</header>
+
+<!-- ============ 1 ============ -->
+<section class="sec" id="s1" data-short="מישור ב-ℝⁿ">
+<h2>מישור במרחב $\mathbb R^n$</h2>
+<p>ישר נקבע על ידי נקודה אחת וכיוון אחד. מישור נקבע על ידי נקודה אחת ו<b>שני</b> כיוונים.</p>
+<div class="box mine"><b>מה זה מישור? (מההתחלה, דוגמה שלי עם מספרים)</b>
+<ol>
+<li>שלב 1 – מה יש לנו: נקודה $\class{brn}{A=(1,1,1)}$, וקטור $\class{tea}{\bar l=(1,0,-1)}$ ווקטור $\class{org}{\bar s=(0,1,-1)}$.</li>
+<li>שלב 2 – בוחרים שני מספרים: $\class{amb}{u=2}$ ו-$\class{amb}{v=3}$.</li>
+<li>שלב 3 – הולכים מ-$A$: פעמיים בכיוון $\bar l$, ושלוש פעמים בכיוון $\bar s$:
+<div class="disp">$\vec r_M=(1,1,1)+\class{amb}{2}\cdot(1,0,-1)+\class{amb}{3}\cdot(0,1,-1)=(1+2+0,\ 1+0+3,\ 1-2-3)=(3,4,-4)$</div></li>
+<li>שלב 4 – זו נקודה אחת על המישור. כל זוג אחר של $u,v$ נותן נקודה אחרת: $u=0,v=0$ נותן את $A$ עצמה, $u=1,v=0$ נותן $(2,1,0)$.</li>
+<li>שלב 5 – <b>המישור = כל הנקודות שמקבלים מכל הזוגות $u,v$</b>.</li>
+</ol></div>
+<div class="box terms"><b>מילים וסימנים</b>
+<ul>
+<li><b>בת״ל</b> = "בלתי תלויים לינארית". לשני וקטורים זה אומר: הם לא מקבילים, אף אחד מהם הוא לא מספר כפול השני. למשל $(1,0,-1)$ ו-$(2,0,-2)$ <b>כן</b> תלויים (השני פי $2$ מהראשון).</li>
+<li>$u,v\in\mathbb R$ = שני מספרים ממשיים חופשיים. בישר היה פרמטר אחד ($t$), במישור יש שניים.</li>
+<li>$\vec r_M$ = וקטור המקום של $M$, כלומר פשוט הקואורדינטות שלה (כמו בהרצאה 11).</li>
+</ul></div>
+<p><b>ההגדרה מההרצאה:</b> המישור ב-$\mathbb R^n$ שנקבע על ידי נקודה $A(a_1,\dots,a_n)$ ושני וקטורים בת״ל $\bar l=(l_1,\dots,l_n)$, $\bar s=(s_1,\dots,s_n)$ הוא קבוצת כל הנקודות $M(x_1,\dots,x_n)$ שמקיימות:</p>
+<div class="disp">$\vec r_M=\class{brn}{\vec r_A}+\class{amb}{u}\,\class{tea}{\bar l}+\class{amb}{v}\,\class{org}{\bar s},\qquad u,v\in\mathbb R$</div>
+<p>זו <b>ההצגה הווקטורית</b>. אם כותבים כל רכיב בנפרד, מקבלים את <b>ההצגה הפרמטרית</b>:</p>
+<div class="disp">$x_1=a_1+u\,l_1+v\,s_1,\quad x_2=a_2+u\,l_2+v\,s_2,\quad\dots,\quad x_n=a_n+u\,l_n+v\,s_n$</div>
+<div class="tw"><table><tr><th></th><th>ישר (הרצאה 11)</th><th>מישור (היום)</th></tr>
+<tr><td>נקודה</td><td>$A$ אחת</td><td>$A$ אחת</td></tr>
+<tr><td>כיוונים</td><td>וקטור אחד $\bar l$</td><td>שני וקטורים בת״ל $\bar l,\bar s$</td></tr>
+<tr><td>פרמטרים</td><td>אחד: $t$</td><td>שניים: $u,v$</td></tr>
+<tr><td>הצגה וקטורית</td><td>$\vec r_A+t\bar l$</td><td>$\vec r_A+u\bar l+v\bar s$</td></tr>
+</table></div>
+<p><b>אנלוגיה:</b> עיר עם רחובות בשתי כיוונים. $A$ = הבית. $\bar l$ = צעד אחד ברחוב מזרח-מערב, $\bar s$ = צעד אחד ברחוב צפון-דרום. $u$ ו-$v$ אומרים כמה צעדים בכל כיוון. עם שני הכיוונים מגיעים לכל מקום במפה השטוחה. עם כיוון אחד בלבד — רק לאורך רחוב אחד (ישר).</p>
+<div class="box fix"><b>הערה שלי: למה חייבים בת״ל?</b>אם $\bar s=2\bar l$, אז $u\bar l+v\bar s=(u+2v)\bar l$. יוצא רק כיוון אחד, כלומר ישר ולא מישור. במחברת כתוב "בת״ל" בדיוק בגלל זה. ✔</div>
+<div class="tool"><b>המחשה: הולכים על המישור עם $u$ ו-$v$</b> (הדוגמה שלי: $A=(1,1,1)$, $\bar l=(1,0,-1)$, $\bar s=(0,1,-1)$)
+<div class="sl"><label for="p1u">u</label><input type="range" id="p1u" min="-2" max="2" step="0.5" value="1"><output id="o_p1u"></output>
+<label for="p1v">v</label><input type="range" id="p1v" min="-2" max="2" step="0.5" value="1"><output id="o_p1v"></output></div>
+<svg id="p1svg" viewBox="0 0 400 300" role="img" aria-label="מישור בשלושה מימדים ונקודה עליו"></svg>
+<div class="res" id="p1out"></div></div>
+<div class="sim"><div class="st-title">סימולציה: מהצגה וקטורית להצגה פרמטרית (הדוגמה שלי)</div>
+<ol class="map"><li>1. הנתונים</li><li>2. הכפלה בפרמטרים</li><li>3. חיבור רכיב-רכיב</li><li>4. בדיקה</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$\vec r_M=(1,1,1)+u\,(1,0,-1)+v\,(0,1,-1)$</div><div class="x">מציבים בהגדרה את $A$, $\bar l$ ו-$\bar s$ שלנו. בודקים שהם בת״ל: אין מספר שמכפיל את $(1,0,-1)$ ונותן $(0,1,-1)$ (הרכיב הראשון $1\to0$ דורש לכפול ב-$0$, אבל אז הכול $0$).</div><div class="st"><span><i>A</i>$(1,1,1)$</span><span><i>l</i>$(1,0,-1)$</span><span><i>s</i>$(0,1,-1)$</span></div></div>
+<div class="step" data-m="1"><div class="f">$\vec r_M=(1,1,1)+(u,0,-u)+(0,v,-v)$</div><div class="x">כפל בסקלר: כל רכיב של $\bar l$ כפול $u$, כל רכיב של $\bar s$ כפול $v$.</div><div class="st"><span><i>u·l</i>$(u,0,-u)$</span><span><i>v·s</i>$(0,v,-v)$</span></div></div>
+<div class="step" data-m="2"><div class="f">$x=1+u,\quad y=1+v,\quad z=1-u-v$</div><div class="x">מחברים את הרכיבים הראשונים ל-$x$, השניים ל-$y$, השלישיים ל-$z$. זו ההצגה הפרמטרית.</div><div class="st"><span><i>x</i>$1+u$</span><span><i>y</i>$1+v$</span><span><i>z</i>$1-u-v$</span></div></div>
+<div class="step" data-m="3"><div class="f"><span class="ans">$u=2,\ v=3:\quad M=(3,4,-4)$</span></div><div class="x">אותה נקודה כמו בתיבה למעלה. ✔ שימו לב: תמיד $x+y+z=(1+u)+(1+v)+(1-u-v)=3$. בסעיף הבא נראה שזו בדיוק משוואת המישור.</div><div class="st"><span><i>M</i>$(3,4,-4)$</span><span><i>x+y+z</i>$3$</span></div></div>
+</div></div>
+<div class="box rule"><b>הכלל לזכור</b>מישור = נקודה + שני כיוונים בת״ל: $\vec r_M=\vec r_A+u\bar l+v\bar s$. כל זוג מספרים $(u,v)$ נותן נקודה אחת על המישור.</div>
+<div class="quiz"><div class="qt">שאלות על סעיף 1</div>
+<div class="qq" data-a="2"><p class="q">נתון $A=(0,0,0)$, $\bar l=(1,0,0)$, $\bar s=(0,1,0)$. איזו נקודה מקבלים עבור $u=3$, $v=-2$?</p><ol><li>$(-2,3,0)$, כי $u$ הולך לרכיב השני</li><li>$(3,2,0)$, כי לוקחים ערך מוחלט</li><li>$(3,-2,0)$, כי $3\bar l$ ועוד $-2\bar s$</li><li>$(1,1,0)$, כי מחברים $\bar l+\bar s$</li></ol><p class="h">רמז: $3\cdot(1,0,0)+(-2)\cdot(0,1,0)$.</p><p class="e">נכון. $(3,0,0)+(0,-2,0)=(3,-2,0)$.</p></div>
+<div class="qq" data-a="0"><p class="q">מה יוצא מ-$\vec r_A+u\bar l+v\bar s$ אם $\bar s=2\bar l$?</p><ol><li>ישר, כי יש בעצם רק כיוון אחד</li><li>מישור, כי עדיין יש שני פרמטרים</li><li>נקודה אחת, כי הווקטורים מבטלים זה את זה</li><li>כל המרחב, כי $u$ ו-$v$ חופשיים</li></ol><p class="h">רמז: $u\bar l+v\cdot2\bar l=(u+2v)\bar l$.</p><p class="e">נכון. לכן ההגדרה דורשת שהם יהיו בת״ל.</p></div>
+<div class="qq" data-a="3"><p class="q">כמה פרמטרים יש בהצגה הפרמטרית של מישור בתוך $\mathbb R^5$?</p><ol><li>חמישה, כי יש חמש קואורדינטות</li><li>אחד, כמו בישר במרחב</li><li>שלושה, כמו במרחב התלת-ממדי</li><li>שניים, כי יש שני כיווני תנועה</li></ol><p class="h">רמז: כמה וקטורי כיוון יש למישור?</p><p class="e">נכון. מספר הפרמטרים = מספר הכיוונים = $2$, בכל $\mathbb R^n$. יש $5$ משוואות, אבל רק $u,v$.</p></div>
+<div class="qq" data-a="1"><p class="q">במישור $x=1+u,\ y=1+v,\ z=1-u-v$, איזו נקודה נמצאת עליו?</p><ol><li>$(2,2,2)$, כי $u=v=1$</li><li>$(0,0,3)$, כי $u=v=-1$</li><li>$(1,1,0)$, כי $u=v=0$</li><li>$(3,3,0)$, כי $u=v=2$</li></ol><p class="h">רמז: הציבו את ה-$u,v$ שבתשובה ובדקו את שלוש המשוואות.</p><p class="e">נכון. $x=0$, $y=0$, $z=1+1+1=3$.</p></div>
+</div>
+</section>
+
+<!-- ============ 2 ============ -->
+<section class="sec" id="s2" data-short="משוואת המישור ב-ℝ³">
+<h2>מישור ב-$\mathbb R^3$: הנורמל ומשוואת המישור</h2>
+<p>ב-$\mathbb R^3$ קוראים לקואורדינטות $x,y,z$, וההצגה הפרמטרית היא $x=a_1+ul_1+vs_1$, $y=a_2+ul_2+vs_2$, $z=a_3+ul_3+vs_3$. אבל ב-$\mathbb R^3$ יש דרך קצרה יותר: <b>משוואה אחת</b>.</p>
+<div class="box mine"><b>מאיפה מגיעה משוואה אחת? (דוגמה שלי, הכי פשוטה)</b>
+<ol>
+<li>שלב 1 – המישור "רצפה" בגובה $3$: $A=(1,2,3)$, $\bar l=(1,0,0)$, $\bar s=(0,1,0)$. הולכים רק לצדדים, הגובה תמיד $3$.</li>
+<li>שלב 2 – וקטור שעומד ישר למעלה: $\bar n=(0,0,1)$. הוא מאונך לשני הכיוונים: $\bar n\cdot\bar l=0$, $\bar n\cdot\bar s=0$.</li>
+<li>שלב 3 – נקודה $M=(5,7,3)$ על המישור: $\overrightarrow{AM}=(4,5,0)$, ו-$\bar n\cdot\overrightarrow{AM}=0$. ✔</li>
+<li>שלב 4 – נקודה $M=(5,7,4)$ לא על המישור: $\overrightarrow{AM}=(4,5,1)$, ו-$\bar n\cdot\overrightarrow{AM}=1\neq0$. ✘</li>
+<li>שלב 5 – הכלל: $M$ על המישור בדיוק כש-$\bar n\cdot\overrightarrow{AM}=0$. כאן זה $0(x-1)+0(y-2)+1(z-3)=0$, כלומר $z-3=0$. משוואה אחת!</li>
+</ol></div>
+<p><b>מאיפה מגיע $\bar n$ באופן כללי?</b> רוצים וקטור שמאונך גם ל-$\bar l$ וגם ל-$\bar s$. מהרצאה 10 ו-11: המכפלה הווקטורית בדיוק עושה את זה. לכן מסמנים</p>
+<div class="disp">$\class{mag}{\bar n}=\class{plm}{\bar l\times\bar s}$</div>
+<p>הווקטור הזה מאונך למישור, וקוראים לו <b>וקטור הנורמל</b> של המישור.</p>
+<svg class="fig" viewBox="0 0 400 210" role="img" aria-label="מישור, נקודה A, נקודה M והנורמל">
+<path d="M70 170 L300 170 L350 90 L120 90 Z" style="fill:var(--olv);fill-opacity:.15;stroke:var(--olv)" stroke-width="1.5"/>
+<line x1="170" y1="135" x2="170" y2="35" style="stroke:var(--mag)" stroke-width="3"/><path d="M170 28 L164 42 L176 42Z" style="fill:var(--mag)"/>
+<text x="180" y="40" style="fill:var(--mag)">n</text>
+<line x1="170" y1="135" x2="262" y2="122" style="stroke:var(--ind)" stroke-width="2.5"/><path d="M270 121 L256 115 L258 128Z" style="fill:var(--ind)"/>
+<circle cx="170" cy="135" r="4.5" style="fill:var(--brn)"/><text x="140" y="155" style="fill:var(--brn)">A</text>
+<circle cx="270" cy="121" r="4.5" style="fill:var(--ink)"/><text x="276" y="140" style="fill:var(--ink)">M(x,y,z)</text>
+<text x="205" y="118" style="fill:var(--ind)">AM</text>
+<path d="M170 123 L182 121 L182 133" fill="none" style="stroke:var(--muted)"/>
+</svg>
+<p><b>ההסקה מההרצאה, שורה אחרי שורה:</b></p>
+<div class="tw"><table><tr><th>שורה</th><th>למה זה נכון</th></tr>
+<tr><td>$M$ על המישור $\iff\bar n\cdot\overrightarrow{AM}=0$</td><td>אם $M$ על המישור, $\overrightarrow{AM}=u\bar l+v\bar s$, ולכן $\bar n\cdot\overrightarrow{AM}=u(\bar n\cdot\bar l)+v(\bar n\cdot\bar s)=0+0$. וגם להפך: ב-$\mathbb R^3$ כל וקטור שמאונך ל-$\bar n$ הוא צירוף של $\bar l,\bar s$.</td></tr>
+<tr><td>$\bar n\cdot(\vec r_M-\vec r_A)=0$</td><td>$\overrightarrow{AM}=\vec r_M-\vec r_A$ (סוף פחות התחלה).</td></tr>
+<tr><td>$\bar n\cdot(x-a_1,\ y-a_2,\ z-a_3)=0$</td><td>פשוט כותבים את הרכיבים.</td></tr>
+<tr><td>$ax+by+cz+d=0$</td><td>מסמנים $\bar n=(a,b,c)$ ופותחים: $a(x-a_1)+b(y-a_2)+c(z-a_3)=0$. כל המספרים הקבועים נאספים ל-$d=-\bar n\cdot\vec r_A$.</td></tr>
+</table></div>
+<p>המשוואה $\class{olv}{ax+by+cz+d=0}$ נקראת <b>משוואת המישור</b>. המקדמים של $x,y,z$ הם בדיוק הנורמל: $\bar n=(a,b,c)$.</p>
+<div class="box terms"><b>מילים וסימנים</b>
+<ul>
+<li><b>נורמל</b> = וקטור שמאונך (ניצב) למישור. כמו בהרצאה 11 בישר במישור, רק עכשיו במרחב.</li>
+<li>האות $d$ כאן היא <b>מספר קבוע</b> במשוואה, לא מרחק. (בסעיף הבא תהיה גם אות למרחק, לכן נקרא לו $D$.)</li>
+<li>$\iff$ = "אם ורק אם": שני הכיוונים נכונים.</li>
+</ul></div>
+<div class="sim"><div class="st-title">סימולציה: משוואת המישור של הדוגמה שלי מסעיף 1</div>
+<ol class="map"><li>1. נורמל</li><li>2. הקבוע d</li><li>3. משוואה</li><li>4. בדיקה</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$\class{mag}{\bar n}=\class{tea}{(1,0,-1)}\times\class{org}{(0,1,-1)}=\begin{vmatrix}\bar i&\bar j&\bar k\\1&0&-1\\0&1&-1\end{vmatrix}$</div><div class="x">$\bar l=(1,0,-1)$, $\bar s=(0,1,-1)$. הנוסחה מהרצאה 10: $(l_ys_z-l_zs_y,\ l_zs_x-l_xs_z,\ l_xs_y-l_ys_x)$.</div><div class="st"><span><i>l</i>$(1,0,-1)$</span><span><i>s</i>$(0,1,-1)$</span></div></div>
+<div class="step" data-m="0"><div class="f">$\class{mag}{\bar n}=\big(0\cdot(-1)-(-1)\cdot1,\ \ (-1)\cdot0-1\cdot(-1),\ \ 1\cdot1-0\cdot0\big)=\class{mag}{(1,1,1)}$</div><div class="x">$0+1=1$, $0+1=1$, $1-0=1$. בדיקה: $(1,1,1)\cdot(1,0,-1)=0$ ✔, $(1,1,1)\cdot(0,1,-1)=0$ ✔.</div><div class="st"><span><i>n</i>$(1,1,1)$</span></div></div>
+<div class="step" data-m="1"><div class="f">$d=-\bar n\cdot\vec r_A=-(1,1,1)\cdot(1,1,1)=-(1+1+1)=-3$</div><div class="x">$A=(1,1,1)$. שימו לב למינוס לפני המכפלה.</div><div class="st"><span><i>n</i>$(1,1,1)$</span><span><i>d</i>$-3$</span></div></div>
+<div class="step" data-m="2"><div class="f"><span class="ans">$\class{olv}{x+y+z-3=0}$</span></div><div class="x">$a,b,c$ = רכיבי $\bar n$, ו-$d=-3$.</div><div class="st"><span><i>מישור</i>$x+y+z-3=0$</span></div></div>
+<div class="step" data-m="3"><div class="f">$M=(3,4,-4):\quad 3+4-4-3=0\ ✔$</div><div class="x">הנקודה שמצאנו בסעיף 1 עם $u=2,v=3$ מקיימת את המשוואה. בדיוק כמו ש"$x+y+z$ תמיד $3$".</div><div class="st"><span><i>M</i>$(3,4,-4)$</span><span><i>בדיקה</i>$0$ ✔</span></div></div>
+</div></div>
+<p><b>אנלוגיה:</b> שולחן ועיפרון שעומד עליו ישר. העיפרון הוא $\bar n$. כל קו שמציירים על השולחן, מכל נקודה לכל נקודה, ניצב לעיפרון. נקודה באוויר מעל השולחן — הקו אליה כבר לא ניצב.</p>
+<div class="box rule"><b>הכלל לזכור</b>$\bar n=\bar l\times\bar s$, ואז $ax+by+cz+d=0$ עם $(a,b,c)=\bar n$ ו-$d=-\bar n\cdot\vec r_A$. ולהפך: מהמשוואה קוראים את הנורמל ישר מהמקדמים.</div>
+<div class="quiz"><div class="qt">שאלות על סעיף 2</div>
+<div class="qq" data-a="1"><p class="q">מה וקטור הנורמל של המישור $2x-y+5z=7$?</p><ol><li>$(2,-1,-7)$, כי לוקחים גם את הקבוע</li><li>$(2,-1,5)$, כי אלה המקדמים של $x,y,z$</li><li>$(2,1,5)$, כי בנורמל אין סימני מינוס</li><li>$(-2,1,-5)$, כי מעבירים את הכול אגף</li></ol><p class="h">רמז: $\bar n=(a,b,c)$ = המקדמים.</p><p class="e">נכון. (גם $(-2,1,-5)$ הוא נורמל — הפוך בכיוון — אבל המקדמים כפי שהם נותנים $(2,-1,5)$.)</p></div>
+<div class="qq" data-a="3"><p class="q">מישור עם נורמל $\bar n=(1,2,2)$ עובר דרך $A=(1,0,1)$. מה $d$?</p><ol><li>$d=3$, כי $\bar n\cdot\vec r_A=3$</li><li>$d=-5$, כי מחברים את כל הרכיבים</li><li>$d=0$, כי המישור עובר בראשית</li><li>$d=-3$, כי $d=-\bar n\cdot\vec r_A$</li></ol><p class="h">רמז: $\bar n\cdot\vec r_A=1+0+2$, ויש מינוס.</p><p class="e">נכון. המישור: $x+2y+2z-3=0$, ו-$A$ באמת עליו: $1+0+2-3=0$.</p></div>
+<div class="qq" data-a="0"><p class="q">למה $\bar n=\bar l\times\bar s$ מתאים להיות נורמל?</p><ol><li>כי המכפלה מאונכת לשני הווקטורים</li><li>כי המכפלה הווקטורית שווה לסכום $\bar l+\bar s$</li><li>כי האורך שלה תמיד שווה ל-$1$ בדיוק, כמו כל נורמל</li><li>כי היא מקבילה לשני הכיוונים של המישור</li></ol><p class="h">רמז: מה למדנו בהרצאה 10 על הכיוון של $\bar a\times\bar b$?</p><p class="e">נכון. מאונך ל-$\bar l$ ול-$\bar s$, ולכן לכל המישור.</p></div>
+<div class="qq" data-a="2"><p class="q">האם $M=(1,1,1)$ על המישור $x+2y+2z-3=0$?</p><ol><li>כן, כי כל הרכיבים שלה שווים</li><li>כן, כי $1+2+2=5$ גדול מ-$3$</li><li>לא, כי $1+2+2-3=2\neq0$</li><li>לא, כי הנורמל לא מאונך ל-$\vec r_M$</li></ol><p class="h">רמז: מציבים במשוואה ובודקים אם יוצא $0$.</p><p class="e">נכון. יוצא $2$, לא $0$.</p></div>
+</div>
+</section>
+
+<!-- ============ 3 ============ -->
+<section class="sec" id="s3" data-short="מרחק נקודה ממישור">
+<h2>משפט: מרחק של נקודה ממישור</h2>
+<div class="box mine"><b>מה זה המרחק? (דוגמה שלי עם מספרים)</b>
+<ol>
+<li>שלב 1 – המישור $z=0$ (הרצפה) והנקודה $M=(5,7,4)$. ברור שהמרחק הוא $4$: הגובה מעל הרצפה.</li>
+<li>שלב 2 – המרחק הוא תמיד לאורך הקו <b>הניצב</b> למישור, כלומר בכיוון של $\bar n$. כל דרך אלכסונית ארוכה יותר.</li>
+<li>שלב 3 – לוקחים נקודה כלשהי על המישור, למשל $A=(0,0,0)$. $\overrightarrow{AM}=(5,7,4)$. החלק שלו בכיוון $\bar n=(0,0,1)$ הוא בדיוק $4$ — זה ההיטל מהרצאה 10: $\frac{\overrightarrow{AM}\cdot\bar n}{|\bar n|}=\frac{4}{1}$.</li>
+<li>שלב 4 – לא משנה איזו $A$ בוחרים: עם $A=(9,-3,0)$ מקבלים $\overrightarrow{AM}=(-4,10,4)$ — ושוב ההיטל $4$.</li>
+</ol></div>
+<p><b>המשפט:</b> המרחק בין נקודה $M(x_0,y_0,z_0)$ למישור $ax+by+cz+d=0$ שווה</p>
+<div class="disp">$\class{rus}{D}=\dfrac{|ax_0+by_0+cz_0+d|}{\sqrt{a^2+b^2+c^2}}$</div>
+<p>זו בדיוק הנוסחה של מרחק נקודה מישר מהרצאה 11, $\frac{|ax_0+by_0+c|}{\sqrt{a^2+b^2}}$, עם עוד קואורדינטה.</p>
+<svg class="fig" viewBox="0 0 400 220" role="img" aria-label="ציור ההוכחה: נקודה מעל המישור, הנורמל והמרחק">
+<path d="M60 185 L290 185 L345 110 L115 110 Z" style="fill:var(--olv);fill-opacity:.15;stroke:var(--olv)" stroke-width="1.5"/>
+<line x1="150" y1="160" x2="150" y2="50" style="stroke:var(--mag)" stroke-width="3"/><path d="M150 42 L144 56 L156 56Z" style="fill:var(--mag)"/><text x="132" y="50" style="fill:var(--mag)">n</text>
+<line x1="150" y1="160" x2="246" y2="62" style="stroke:var(--ind)" stroke-width="2.5"/>
+<circle cx="150" cy="160" r="4.5" style="fill:var(--brn)"/><text x="88" y="178" style="fill:var(--brn)">A(x₁,y₁,z₁)</text>
+<circle cx="250" cy="58" r="4.5" style="fill:var(--ink)"/><text x="258" y="56" style="fill:var(--ink)">M(x₀,y₀,z₀)</text>
+<line x1="250" y1="58" x2="250" y2="160" style="stroke:var(--rus)" stroke-width="3" stroke-dasharray="6 4"/><circle cx="250" cy="160" r="3.5" style="fill:var(--rus)"/>
+<text x="258" y="115" style="fill:var(--rus)">D</text><text x="185" y="100" style="fill:var(--ind)">AM</text>
+<text x="230" y="205" style="fill:var(--olv)">ax+by+cz+d=0</text>
+</svg>
+<div class="sim"><div class="st-title">סימולציה: ההוכחה, שורה אחרי שורה</div>
+<ol class="map"><li>1. נקודה על המישור</li><li>2. היטל</li><li>3. פתיחה</li><li>4. החלפה ב-d</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$A(x_1,y_1,z_1)$ על המישור $\Rightarrow\ ax_1+by_1+cz_1+d=0$</div><div class="x">בוחרים נקודה כלשהי $A$ על המישור. כי היא על המישור, היא מקיימת את המשוואה. מזה: $d=-ax_1-by_1-cz_1$. נשתמש בזה בסוף.</div><div class="st"><span><i>יודעים</i>$d=-ax_1-by_1-cz_1$</span></div></div>
+<div class="step" data-m="1"><div class="f">$\class{rus}{D}=\dfrac{|\overrightarrow{AM}\cdot\bar n|}{|\bar n|}$</div><div class="x">המרחק הוא האורך של החלק של $\overrightarrow{AM}$ בכיוון הנורמל — ההיטל מהרצאה 10, $\Pr_{\bar n}\overrightarrow{AM}=\frac{\overrightarrow{AM}\cdot\bar n}{|\bar n|}$. ערך מוחלט כי מרחק לא שלילי (אם $M$ בצד השני, ההיטל שלילי).</div><div class="st"><span><i>D</i>|היטל|</span></div></div>
+<div class="step" data-m="2"><div class="f">$=\dfrac{|(a,b,c)\cdot(x_0-x_1,\ y_0-y_1,\ z_0-z_1)|}{\sqrt{a^2+b^2+c^2}}$</div><div class="x">$\bar n=(a,b,c)$, $\overrightarrow{AM}=\vec r_M-\vec r_A$, ו-$|\bar n|=\sqrt{a^2+b^2+c^2}$.</div><div class="st"><span><i>n</i>$(a,b,c)$</span><span><i>AM</i>$M-A$</span></div></div>
+<div class="step" data-m="2"><div class="f">$=\dfrac{|ax_0+by_0+cz_0-ax_1-by_1-cz_1|}{\sqrt{a^2+b^2+c^2}}$</div><div class="x">פותחים את המכפלה הסקלרית: $a(x_0-x_1)+b(y_0-y_1)+c(z_0-z_1)$.</div><div class="st"><span><i>מונה</i>$ax_0+\dots-ax_1-\dots$</span></div></div>
+<div class="step" data-m="3"><div class="f"><span class="ans">$=\dfrac{|ax_0+by_0+cz_0+d|}{\sqrt{a^2+b^2+c^2}}$</span></div><div class="x">החלק $-ax_1-by_1-cz_1$ הוא בדיוק $d$ (משורה 1). הנקודה $A$ נעלמה — לכן לא משנה איזו $A$ בחרנו. מש״ל.</div><div class="st"><span><i>D</i>הנוסחה ✔</span></div></div>
+</div></div>
+<div class="box fix"><b>הערות קטנות שלי על המחברת</b>
+<ul>
+<li>במשפט המרחק נקרא $D$, ובהוכחה הוא נכתב $d$ — אבל $d$ הוא גם הקבוע במשוואת המישור. בדף הזה: $D$ = מרחק, $d$ = הקבוע.</li>
+<li>בציור הנקודה מסומנת $A(x_1,x_2,x_3)$. לפי ההוכחה צריך $A(x_1,y_1,z_1)$.</li>
+<li>מתחת לציור כתוב $ax+by+cz+d$ — חסר "$=0$".</li>
+</ul></div>
+<div class="tool"><b>מחשבון מרחק נקודה ממישור</b>
+<div class="nin"><label>a<input id="dA" type="number" value="1" step="any"></label><label>b<input id="dB" type="number" value="1" step="any"></label><label>c<input id="dC" type="number" value="1" step="any"></label><label>d<input id="dD" type="number" value="-3" step="any"></label></div>
+<div class="nin"><label>x₀<input id="dX" type="number" value="2" step="any"></label><label>y₀<input id="dY" type="number" value="2" step="any"></label><label>z₀<input id="dZ" type="number" value="2" step="any"></label></div>
+<div class="res" id="dout"></div></div>
+<div class="box rule"><b>הכלל לזכור</b>מציבים את הנקודה בצד שמאל של משוואת המישור, לוקחים ערך מוחלט, ומחלקים באורך הנורמל. אם יוצא $0$ — הנקודה על המישור.</div>
+<div class="quiz"><div class="qt">שאלות על סעיף 3</div>
+<div class="qq" data-a="2"><p class="q">מה המרחק של $M=(1,2,3)$ מהמישור $2x+y-2z+4=0$?</p><ol><li>$2$, כי זה הערך אחרי ההצבה</li><li>$\frac{2}{9}$, כי מחלקים בסכום הריבועים</li><li>$\frac23$, כי $\frac{|2|}{\sqrt9}$</li><li>$\frac{2}{5}$, כי מחלקים בסכום המקדמים</li></ol><p class="h">רמז: $2+2-6+4=2$, ו-$\sqrt{4+1+4}=3$.</p><p class="e">נכון. $D=\frac23$.</p></div>
+<div class="qq" data-a="0"><p class="q">למה יש ערך מוחלט במונה?</p><ol><li>כי בצד השני של המישור יוצא ערך שלילי</li><li>כי השורש במכנה תמיד יוצא מספר שלילי</li><li>כי הנורמל תמיד מצביע כלפי מטה בציור ההוכחה</li><li>כי הקבוע $d$ שלילי בכל משוואה של מישור</li></ol><p class="h">רמז: מה קורה ל-$ax_0+by_0+cz_0+d$ כשעוברים לצד השני?</p><p class="e">נכון. הסימן אומר באיזה צד, והמרחק עצמו חיובי.</p></div>
+<div class="qq" data-a="3"><p class="q">בהוכחה, למה מותר לבחור כל נקודה $A$ על המישור?</p><ol><li>כי תמיד בוחרים את $A$ להיות הראשית</li><li>כי $A$ חייבת להיות הנקודה הכי קרובה ל-$M$</li><li>כי $\overrightarrow{AM}$ לא תלוי בבחירה של $A$</li><li>כי בסוף $A$ נעלמת ומוחלפת ב-$d$</li></ol><p class="h">רמז: מה קרה ל-$-ax_1-by_1-cz_1$ בשורה האחרונה?</p><p class="e">נכון. $\overrightarrow{AM}$ כן משתנה, אבל ההיטל שלו על $\bar n$ לא.</p></div>
+<div class="qq" data-a="1"><p class="q">מה המרחק של הראשית $(0,0,0)$ מהמישור $x+y+z-3=0$?</p><ol><li>$3$, כי זה הקבוע $d$ בערך מוחלט</li><li>$\sqrt3$, כי $\frac{3}{\sqrt3}$</li><li>$1$, כי $\frac{3}{3}$</li><li>$0$, כי הראשית על המישור</li></ol><p class="h">רמז: $\frac{|0+0+0-3|}{\sqrt{1+1+1}}$.</p><p class="e">נכון. $\frac{3}{\sqrt3}=\sqrt3$.</p></div>
+</div>
+</section>
+
+<!-- ============ 4 ============ -->
+<section class="sec" id="s4" data-short="דוגמה 1: מישור דרך 3 נקודות">
+<h2>דוגמה 1: מישור דרך שלוש נקודות, ומרחק ממנו</h2>
+<p>מוצאים את המרחק $D$ של $M(3,2,-1)$ מהמישור שעובר דרך $A(1,-1,2)$, $B(2,-3,3)$, $C(4,1,-1)$.</p>
+<div class="box mine"><b>מאיפה מגיעים שני הכיוונים? (רעיון לפני החישוב)</b>
+<ol>
+<li>שלב 1 – שלוש נקודות על מישור נותנות שני "צעדים" על המישור: מ-$A$ ל-$B$ ומ-$A$ ל-$C$.</li>
+<li>שלב 2 – הצעדים האלה הם $\bar l=\overrightarrow{AB}$ ו-$\bar s=\overrightarrow{AC}$. עכשיו יש נקודה ושני כיוונים, כמו בסעיף 1.</li>
+<li>שלב 3 – הנורמל: $\bar n=\overrightarrow{AB}\times\overrightarrow{AC}$. ומשם — בדיוק כמו בסעיף 2.</li>
+<li>שלב 4 – בדוגמה קלה: $A=(0,0,0)$, $B=(1,0,0)$, $C=(0,1,0)$ נותנות $\overrightarrow{AB}\times\overrightarrow{AC}=(0,0,1)$, כלומר המישור $z=0$.</li>
+</ol></div>
+<div class="tw"><table><tr><th>שלב</th><th>מה עושים</th></tr>
+<tr><td>1</td><td>שני וקטורים: $\overrightarrow{AB}$, $\overrightarrow{AC}$</td></tr>
+<tr><td>2</td><td>נורמל: מכפלה וקטורית</td></tr>
+<tr><td>3</td><td>הקבוע $d=-\bar n\cdot\vec r_A$, משוואה, צמצום</td></tr>
+<tr><td>4</td><td>הנוסחה של $D$ עם $M$</td></tr>
+</table></div>
+<div class="sim"><div class="st-title">סימולציה: דוגמה 1 מההרצאה</div>
+<ol class="map"><li>1. וקטורים</li><li>2. נורמל</li><li>3. משוואה</li><li>4. מרחק</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$\class{tea}{\overrightarrow{AB}}=\vec r_B-\vec r_A=(2,-3,3)-(1,-1,2)=\class{tea}{(1,-2,1)}$</div><div class="x">סוף פחות התחלה: $2-1=1$, $-3-(-1)=-2$, $3-2=1$.</div><div class="st"><span><i>AB</i>$(1,-2,1)$</span></div></div>
+<div class="step" data-m="0"><div class="f">$\class{org}{\overrightarrow{AC}}=\vec r_C-\vec r_A=(4,1,-1)-(1,-1,2)=\class{org}{(3,2,-3)}$</div><div class="x">$4-1=3$, $1-(-1)=2$, $-1-2=-3$.</div><div class="st"><span><i>AB</i>$(1,-2,1)$</span><span><i>AC</i>$(3,2,-3)$</span></div></div>
+<div class="step" data-m="1"><div class="f">$\class{mag}{\bar n}=\begin{vmatrix}\bar i&\bar j&\bar k\\1&-2&1\\3&2&-3\end{vmatrix}=\big((-2)(-3)-1\cdot2,\ \ 1\cdot3-1\cdot(-3),\ \ 1\cdot2-(-2)\cdot3\big)$</div><div class="x">הנוסחה: $(l_ys_z-l_zs_y,\ l_zs_x-l_xs_z,\ l_xs_y-l_ys_x)$.</div><div class="st"><span><i>AB</i>$(1,-2,1)$</span><span><i>AC</i>$(3,2,-3)$</span></div></div>
+<div class="step" data-m="1"><div class="f">$\class{mag}{\bar n}=(6-2,\ 3+3,\ 2+6)=\class{mag}{(4,6,8)}$</div><div class="x">בדיקה: $(4,6,8)\cdot(1,-2,1)=4-12+8=0$ ✔, $(4,6,8)\cdot(3,2,-3)=12+12-24=0$ ✔.</div><div class="st"><span><i>n</i>$(4,6,8)$</span></div></div>
+<div class="step" data-m="2"><div class="f">$d=-\bar n\cdot\vec r_A=-\big(4\cdot1+6\cdot(-1)+8\cdot2\big)=-(4-6+16)=-14$</div><div class="x">$A=(1,-1,2)$. קודם המכפלה ($14$), אחר כך המינוס.</div><div class="st"><span><i>n</i>$(4,6,8)$</span><span><i>d</i>$-14$</span></div></div>
+<div class="step" data-m="2"><div class="f">$4x+6y+8z-14=0\ \ \xrightarrow{:2}\ \ \class{olv}{2x+3y+4z-7=0}$</div><div class="x">מחלקים ב-$2$. מותר: אותן נקודות מקיימות את שתי המשוואות. בדיקה עם $B$: $4-9+12-7=0$ ✔. עם $C$: $8+3-4-7=0$ ✔.</div><div class="st"><span><i>מישור</i>$2x+3y+4z-7=0$</span></div></div>
+<div class="step" data-m="3"><div class="f">$\class{rus}{D}=\dfrac{|2\cdot3+3\cdot2+4\cdot(-1)-7|}{\sqrt{2^2+3^2+4^2}}=\dfrac{|6+6-4-7|}{\sqrt{4+9+16}}$</div><div class="x">מציבים $M=(3,2,-1)$: $x_0=3$, $y_0=2$, $z_0=-1$.</div><div class="st"><span><i>מונה</i>$|1|$</span><span><i>מכנה</i>$\sqrt{29}$</span></div></div>
+<div class="step" data-m="3"><div class="f"><span class="ans">$\class{rus}{D}=\dfrac{1}{\sqrt{29}}\approx0.186$</span></div><div class="x">$6+6-4-7=1$ ו-$4+9+16=29$. הנקודה קרובה מאוד למישור.</div><div class="st"><span><i>D</i>$\frac1{\sqrt{29}}$</span></div></div>
+</div></div>
+<div class="box fix"><b>הערות קטנות שלי על המחברת</b>
+<ul>
+<li>במונה של $D$ כתוב $16+6-4-7$. צריך $6+6-4-7$, כי $2\cdot3=6$. התוצאה $1$ במחברת נכונה — רק המספר הראשון הועתק לא נכון.</li>
+<li>בשורה של $d$ כתוב $d=-\bar n\cdot\vec r_A=(4,6,8)\cdot(1,-1,2)=-4+6-16$. המינוס "נבלע" בתוך האיברים. יותר ברור לכתוב $-(4-6+16)=-14$.</li>
+</ul></div>
+<div class="box rule"><b>הכלל לזכור</b>שלוש נקודות ← שני וקטורים מ-$A$ ← מכפלה וקטורית = נורמל ← $d=-\bar n\cdot\vec r_A$. תמיד לבדוק שהנקודות האחרות מקיימות את המשוואה.</div>
+<div class="quiz"><div class="qt">שאלות על סעיף 4</div>
+<div class="qq" data-a="1"><p class="q">בדוגמה, למה מותר לחלק את $4x+6y+8z-14=0$ ב-$2$?</p><ol><li>כי הנורמל חייב להיות באורך $1$</li><li>כי אותן נקודות מקיימות את שתיהן</li><li>כי הקבוע $d$ חייב להיות מספר אי-זוגי</li><li>כי ככה המרחק $D$ קטן פי $2$</li></ol><p class="h">רמז: אם $4x+6y+8z-14=0$, מה עם חצי ממנו?</p><p class="e">נכון. וגם $D$ לא משתנה: המונה והמכנה מתחלקים שניהם ב-$2$.</p></div>
+<div class="qq" data-a="3"><p class="q">אם משתמשים במשוואה $4x+6y+8z-14=0$ (בלי לחלק), מה $D$ עבור $M=(3,2,-1)$?</p><ol><li>$\frac{2}{\sqrt{29}}$, כי המונה גדל פי $2$</li><li>$\frac{1}{2\sqrt{29}}$, כי המכנה גדל פי $2$</li><li>$\frac{2}{\sqrt{116}}$, ולכן זה מרחק אחר</li><li>$\frac{1}{\sqrt{29}}$, כי $\frac{2}{\sqrt{116}}=\frac{2}{2\sqrt{29}}$</li></ol><p class="h">רמז: $12+12-8-14=2$, ו-$\sqrt{16+36+64}=\sqrt{116}$.</p><p class="e">נכון. $\sqrt{116}=2\sqrt{29}$. המרחק לא תלוי בכפל המשוואה במספר.</p></div>
+<div class="qq" data-a="0"><p class="q">שלוש נקודות $A,B,C$ על ישר אחד. מה יוצא ב-$\overrightarrow{AB}\times\overrightarrow{AC}$?</p><ol><li>$\bar 0$, כי הווקטורים מקבילים</li><li>וקטור באורך $1$, כי זה וקטור יחידה</li><li>הנורמל הרגיל, כמו בכל שלוש נקודות</li><li>וקטור שמקביל ל-$\overrightarrow{AB}$ עצמו</li></ol><p class="h">רמז: שטח המקבילית של שני וקטורים מקבילים.</p><p class="e">נכון. דרך ישר עוברים אינסוף מישורים, אז אי אפשר לקבוע מישור אחד.</p></div>
+</div>
+</section>
+
+<!-- ============ 5 ============ -->
+<section class="sec" id="s5" data-short="דוגמה 2: ישר החיתוך">
+<h2>דוגמה 2: הישר שבו שני מישורים נחתכים</h2>
+<p>מוצאים הצגה קנונית והצגה פרמטרית של הישר שהוא החיתוך של המישורים $3x+4y-z+1=0$ ו-$x-2y+4z+3=0$.</p>
+<svg class="fig" viewBox="0 0 400 220" role="img" aria-label="שני מישורים נחתכים בישר">
+<path d="M40 150 L230 190 L330 110 L140 70 Z" style="fill:var(--olv);fill-opacity:.16;stroke:var(--olv)" stroke-width="1.5"/>
+<path d="M150 30 L250 20 L230 200 L130 210 Z" style="fill:var(--ind);fill-opacity:.14;stroke:var(--ind)" stroke-width="1.5"/>
+<line x1="186" y1="5" x2="172" y2="215" style="stroke:var(--tea)" stroke-width="3" stroke-dasharray="7 4"/>
+<text x="300" y="150" style="fill:var(--olv)">מישור 1</text><text x="255" y="40" style="fill:var(--ind)">מישור 2</text><text x="192" y="18" style="fill:var(--tea)">l</text>
+</svg>
+<div class="box mine"><b>למה הכיוון של הישר הוא $\bar n_1\times\bar n_2$? (דוגמה שלי)</b>
+<ol>
+<li>שלב 1 – הרצפה $z=0$ (נורמל $\bar n_1=(0,0,1)$) וקיר $x=0$ (נורמל $\bar n_2=(1,0,0)$). הם נחתכים בציר $y$.</li>
+<li>שלב 2 – הישר נמצא על הרצפה, אז הוא ניצב לנורמל של הרצפה. הוא גם על הקיר, אז ניצב לנורמל של הקיר.</li>
+<li>שלב 3 – וקטור שניצב לשני וקטורים = המכפלה הווקטורית שלהם: $(0,0,1)\times(1,0,0)=(0\cdot0-1\cdot0,\ 1\cdot1-0\cdot0,\ 0\cdot0-0\cdot1)=(0,1,0)$.</li>
+<li>שלב 4 – $(0,1,0)$ = הכיוון של ציר $y$. ✔</li>
+</ol></div>
+<p><b>מפת השלבים:</b> (1) נורמלים מהמקדמים ← (2) כיוון $\bar l=\bar n_1\times\bar n_2$ ← (3) נקודה אחת על שני המישורים (מציבים $z=0$ ופותרים) ← (4) הצגה קנונית ופרמטרית כמו בהרצאה 11.</p>
+<div class="sim"><div class="st-title">סימולציה: דוגמה 2 מההרצאה</div>
+<ol class="map"><li>1. נורמלים</li><li>2. כיוון</li><li>3. נקודה</li><li>4. הצגות</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$\class{mag}{\bar n_1=(3,4,-1)},\qquad \class{mag}{\bar n_2=(1,-2,4)}$</div><div class="x">קוראים את המקדמים של $x,y,z$ בכל משוואה (סעיף 2).</div><div class="st"><span><i>n₁</i>$(3,4,-1)$</span><span><i>n₂</i>$(1,-2,4)$</span></div></div>
+<div class="step" data-m="1"><div class="f">$\class{tea}{\bar l}=\bar n_1\times\bar n_2=\begin{vmatrix}\bar i&\bar j&\bar k\\3&4&-1\\1&-2&4\end{vmatrix}=\big(4\cdot4-(-1)(-2),\ \ (-1)\cdot1-3\cdot4,\ \ 3\cdot(-2)-4\cdot1\big)$</div><div class="x">הישר נמצא על שני המישורים, ולכן מאונך לשני הנורמלים. המכפלה הווקטורית נותנת בדיוק כיוון כזה.</div><div class="st"><span><i>n₁</i>$(3,4,-1)$</span><span><i>n₂</i>$(1,-2,4)$</span></div></div>
+<div class="step" data-m="1"><div class="f">$\class{tea}{\bar l=(14,-13,-10)}$</div><div class="x">$16-2=14$, $-1-12=-13$, $-6-4=-10$. בדיקה: $\bar l\cdot\bar n_1=42-52+10=0$ ✔, $\bar l\cdot\bar n_2=14+26-40=0$ ✔.</div><div class="st"><span><i>l</i>$(14,-13,-10)$</span></div></div>
+<div class="step" data-m="2"><div class="f">$z=0:\quad 3x+4y+1=0,\qquad x-2y+3=0$</div><div class="x">צריך נקודה אחת שנמצאת על שני המישורים. בוחרים $z=0$ כדי שיישארו שתי משוואות עם שני נעלמים. (מתי זה לא עובד — בטבלה מתחת.)</div><div class="st"><span><i>l</i>$(14,-13,-10)$</span><span><i>z</i>$0$</span></div></div>
+<div class="step" data-m="2"><div class="f">$3x+4y+1=0\ \ -\ \ (3x-6y+9=0)\ \Rightarrow\ 10y-8=0\ \Rightarrow\ y=\tfrac45$</div><div class="x">כופלים את המשוואה השנייה ב-$3$ ($3x-6y+9=0$) ומחסרים, כדי ש-$x$ ייעלם: $4y-(-6y)=10y$, $1-9=-8$.</div><div class="st"><span><i>y</i>$\frac45$</span></div></div>
+<div class="step" data-m="2"><div class="f">$x=2y-3=\tfrac85-3=-\tfrac75\qquad A=\big(-\tfrac75,\ \tfrac45,\ 0\big)$</div><div class="x">מהמשוואה השנייה: $x=2y-3$. בדיקה במשוואה הראשונה: $3\cdot(-\frac75)+4\cdot\frac45+1=\frac{-21+16+5}{5}=0$ ✔.</div><div class="st"><span><i>A</i>$(-\frac75,\frac45,0)$</span><span><i>l</i>$(14,-13,-10)$</span></div></div>
+<div class="step" data-m="3"><div class="f"><span class="ans">$\dfrac{x+\frac75}{14}=\dfrac{y-\frac45}{-13}=\dfrac{z}{-10}$</span></div><div class="x">הצגה קנונית (הרצאה 11): $\frac{x-a_1}{l_1}=\frac{y-a_2}{l_2}=\frac{z-a_3}{l_3}$. מינוס של $-\frac75$ נותן $+\frac75$.</div><div class="st"><span><i>קנונית</i>✔</span></div></div>
+<div class="step" data-m="3"><div class="f"><span class="ans">$x=-\tfrac75+14t,\quad y=\tfrac45-13t,\quad z=-10t,\qquad t\in\mathbb R$</span></div><div class="x">הצגה פרמטרית: $\vec r_A+t\bar l$, רכיב-רכיב.</div><div class="st"><span><i>פרמטרית</i>✔</span></div></div>
+</div></div>
+<p><b>כל הדרכים שבהן החישוב יכול להיגמר:</b></p>
+<div class="tw"><table><tr><th>מה קורה</th><th>מה זה אומר</th><th>מה עושים</th></tr>
+<tr><td>$\bar n_1\times\bar n_2\neq\bar 0$, ועם $z=0$ יש פתרון</td><td>המקרה הרגיל (כמו בדוגמה)</td><td>ממשיכים להצגות</td></tr>
+<tr><td>$\bar n_1\times\bar n_2\neq\bar 0$, אבל $l_3=0$</td><td>הישר "שוכב", מקביל למישור $z=0$, ואולי לא פוגש אותו</td><td>מציבים $x=0$ (אם $l_1\neq0$) או $y=0$ (אם $l_2\neq0$)</td></tr>
+<tr><td>$\bar n_1\times\bar n_2=\bar 0$, משוואות לא סותרות</td><td>זה אותו מישור פעמיים</td><td>אין ישר אחד — החיתוך הוא כל המישור</td></tr>
+<tr><td>$\bar n_1\times\bar n_2=\bar 0$, משוואות סותרות</td><td>מישורים מקבילים שונים</td><td>אין חיתוך בכלל</td></tr>
+</table></div>
+<div class="box fix"><b>הערה קטנה שלי</b>במחברת המשוואות מחוסרות מיד ויוצא $10y-8=0$. בלי צעד ביניים זה לא ברור: קודם כופלים את $x-2y+3=0$ ב-$3$, ורק אז מחסרים. כל השאר נכון. ✔</div>
+<div class="box rule"><b>הכלל לזכור</b>כיוון ישר החיתוך = $\bar n_1\times\bar n_2$. נקודה עליו = פותרים את שתי המשוואות עם משתנה אחד שבוחרים (בדרך כלל $z=0$).</div>
+<div class="quiz"><div class="qt">שאלות על סעיף 5</div>
+<div class="qq" data-a="2"><p class="q">למה הכיוון של ישר החיתוך מאונך ל-$\bar n_1$?</p><ol><li>כי $\bar n_1$ הוא וקטור יחידה</li><li>כי $\bar n_1$ מקביל ל-$\bar n_2$ תמיד</li><li>כי הישר שוכב בתוך מישור 1</li><li>כי הישר עובר דרך הראשית</li></ol><p class="h">רמז: הנורמל מאונך לכל וקטור שנמצא על המישור.</p><p class="e">נכון. ואותו דבר עם מישור 2.</p></div>
+<div class="qq" data-a="1"><p class="q">אילו הכיוון היה יוצא $\bar l=(2,5,0)$, מה עדיף להציב כדי למצוא נקודה?</p><ol><li>$z=0$, כי זה תמיד הכי פשוט לפתור</li><li>$x=0$, כי $l_1=2\neq0$</li><li>$z=1$, כי אסור להציב אפס</li><li>שום דבר, כי אז אין ישר חיתוך</li></ol><p class="h">רמז: כש-$l_3=0$ הישר מקביל למישור $z=0$, ואולי לא פוגש אותו.</p><p class="e">נכון. גם $y=0$ אפשרי, כי $l_2\neq0$.</p></div>
+<div class="qq" data-a="3"><p class="q">האם $\big(-\frac75,\frac45,0\big)+1\cdot(14,-13,-10)$ נמצאת על מישור 1, $3x+4y-z+1=0$?</p><ol><li>לא, כי עם $t=1$ כבר יוצאים מהישר</li><li>לא, כי רק $A$ עצמה על שני המישורים</li><li>כן, אבל רק כי $z$ יוצא $0$</li><li>כן, כי כל הישר על שני המישורים</li></ol><p class="h">רמז: $\bar l\cdot\bar n_1=0$, אז ההוספה של $t\bar l$ לא משנה את הצד השמאלי.</p><p class="e">נכון. בחישוב: $x=\frac{63}5$, $y=-\frac{61}5$, $z=-10$, ו-$\frac{189-244}{5}+10+1=-11+11=0$ ✔.</p></div>
+<div class="qq" data-a="0"><p class="q">מה המשמעות של $\bar n_1\times\bar n_2=\bar 0$?</p><ol><li>המישורים מקבילים או זהים</li><li>המישורים מאונכים זה לזה בזווית ישרה</li><li>הישר עובר דרך הראשית של הצירים</li><li>החיתוך של המישורים הוא נקודה אחת בלבד</li></ol><p class="h">רמז: מתי מכפלה וקטורית יוצאת אפס?</p><p class="e">נכון. ואז אין ישר חיתוך אחד.</p></div>
+</div>
+</section>
+
+<!-- ============ 6 ============ -->
+<section class="sec" id="s6" data-short="טופולוגיה: כדור וסביבה">
+<h2>טופולוגיה ב-$\mathbb R^n$: כדור פתוח, סביבה וכדור סגור</h2>
+<p>נושא חדש. טופולוגיה עוסקת בשאלות כמו: האם נקודה "באמצע" קבוצה או "על הקצה" שלה? הכלי הבסיסי הוא <b>כדור</b>: כל הנקודות שקרובות לנקודה מסוימת.</p>
+<div class="box mine"><b>מה זה כדור פתוח? (דוגמה שלי עם מספרים)</b>
+<ol>
+<li>שלב 1 – מרכז $M_0=(0,0)$ ורדיוס $\class{sky}{\delta=1}$ במישור.</li>
+<li>שלב 2 – הנקודה $(0.3,0.4)$: המרחק $\sqrt{0.09+0.16}=\sqrt{0.25}=0.5\lt1$. היא <b>בתוך</b> הכדור הפתוח.</li>
+<li>שלב 3 – הנקודה $(0.6,0.8)$: המרחק $\sqrt{0.36+0.64}=1$. זה לא <b>קטן</b> מ-$1$, אז היא <b>לא</b> בכדור הפתוח. אבל היא כן בכדור הסגור (שם מותר $\le1$).</li>
+<li>שלב 4 – הנקודה $(1,1)$: המרחק $\sqrt2\approx1.41\gt1$. לא באף אחד מהם.</li>
+<li>שלב 5 – "פתוח" = בלי השפה (העיגול עצמו). "סגור" = כולל השפה.</li>
+</ol></div>
+<p><b>ההגדרה מההרצאה:</b> תהי $M_0(x_1^0,\dots,x_n^0)\in\mathbb R^n$. <b>כדור פתוח</b> $n$-ממדי ברדיוס $\delta$ שמרכזו ב-$M_0$ הוא הקבוצה</p>
+<div class="disp">$\class{sky}{B^\circ_\delta(M_0)}=\{M\in\mathbb R^n\ |\ d(M,M_0)\lt\delta\}$</div>
+<p>לפעמים קוראים לו גם <b>$\delta$-סביבה</b> של $M_0$ ומסמנים $\class{sky}{U_\delta(M_0)}=B^\circ_\delta(M_0)$. <b>כדור סגור</b>:</p>
+<div class="disp">$B_\delta(M_0)=\{M\in\mathbb R^n\ |\ d(M,M_0)\le\delta\}$</div>
+<div class="box terms"><b>מילים וסימנים</b>
+<ul>
+<li>$d(M,M_0)$ = המרחק בין שתי הנקודות (הרצאה 10): $\sqrt{(x_1-x_1^0)^2+\dots+(x_n-x_n^0)^2}$. כאן $d$ הוא <b>פונקציית מרחק</b>, לא הקבוע של המישור.</li>
+<li>$x_1^0$ = הקואורדינטה הראשונה של $M_0$. ה-$0$ למעלה הוא רק שם ("של הנקודה $M_0$"), לא חזקה.</li>
+<li>העיגול הקטן ב-$B^\circ$ אומר "פתוח". בלי עיגול — סגור.</li>
+<li>$\{M\ |\ \dots\}$ = "כל הנקודות $M$ ש...". הקו האנכי קוראים "כך ש".</li>
+</ul></div>
+<p><b>איך זה נראה בכל מימד:</b></p>
+<svg class="fig" viewBox="0 0 420 170" role="img" aria-label="כדור פתוח במימד 1, 2 ו-3">
+<text x="60" y="20" style="fill:var(--muted)" text-anchor="middle">n = 1</text>
+<line x1="10" y1="90" x2="110" y2="90" style="stroke:var(--muted)" stroke-width="1"/>
+<line x1="25" y1="90" x2="95" y2="90" style="stroke:var(--sky)" stroke-width="5"/>
+<circle cx="25" cy="90" r="5" style="fill:var(--card);stroke:var(--sky)" stroke-width="2"/><circle cx="95" cy="90" r="5" style="fill:var(--card);stroke:var(--sky)" stroke-width="2"/>
+<circle cx="60" cy="90" r="3.5" style="fill:var(--ink)"/>
+<text x="60" y="112" style="fill:var(--ink)" text-anchor="middle">x₀</text><text x="25" y="75" style="fill:var(--sky)" text-anchor="middle" font-size="12">x₀−δ</text><text x="95" y="75" style="fill:var(--sky)" text-anchor="middle" font-size="12">x₀+δ</text>
+<text x="200" y="20" style="fill:var(--muted)" text-anchor="middle">n = 2</text>
+<circle cx="200" cy="95" r="55" style="fill:var(--sky);fill-opacity:.15;stroke:var(--sky)" stroke-width="2" stroke-dasharray="6 4"/>
+<circle cx="200" cy="95" r="3.5" style="fill:var(--ink)"/><line x1="200" y1="95" x2="239" y2="56" style="stroke:var(--sky)" stroke-width="2"/><text x="226" y="70" style="fill:var(--sky)">δ</text>
+<text x="200" y="118" style="fill:var(--ink)" text-anchor="middle" font-size="12">(x₀,y₀)</text>
+<text x="345" y="20" style="fill:var(--muted)" text-anchor="middle">n = 3</text>
+<circle cx="345" cy="95" r="55" style="fill:var(--sky);fill-opacity:.15;stroke:var(--sky)" stroke-width="2" stroke-dasharray="6 4"/>
+<ellipse cx="345" cy="95" rx="55" ry="16" fill="none" style="stroke:var(--sky)" stroke-width="1.3" stroke-dasharray="4 4"/>
+<circle cx="345" cy="95" r="3.5" style="fill:var(--ink)"/><line x1="345" y1="95" x2="384" y2="56" style="stroke:var(--sky)" stroke-width="2"/><text x="371" y="70" style="fill:var(--sky)">δ</text>
+<text x="345" y="125" style="fill:var(--ink)" text-anchor="middle" font-size="12">(x₀,y₀,z₀)</text>
+</svg>
+<div class="tw"><table><tr><th>מימד</th><th>הכדור הפתוח הוא</th><th>התנאי</th></tr>
+<tr><td>$n=1$</td><td>קטע פתוח $(x_0-\delta,\ x_0+\delta)$</td><td>$|x-x_0|\lt\delta$</td></tr>
+<tr><td>$n=2$</td><td>עיגול פתוח (דו-ממדי)</td><td>$\sqrt{(x-x_0)^2+(y-y_0)^2}\lt\delta$</td></tr>
+<tr><td>$n=3$</td><td>כדור פתוח תלת-ממדי</td><td>$\sqrt{(x-x_0)^2+(y-y_0)^2+(z-z_0)^2}\lt\delta$</td></tr>
+</table></div>
+<p><b>ריענון מהמחברת:</b> $(a,b)$ קטע פתוח, $[a,b]$ קטע סגור, $(a,\infty)$ קרן פתוחה, $[a,\infty)$ קרן סגורה. סוגריים עגולים = בלי הקצה, מרובעים = עם הקצה.</p>
+<p><b>אנלוגיה:</b> טווח של רשת Wi-Fi. הנתב הוא $M_0$, והטווח הוא $\delta$. כל מכשיר שקרוב פחות מ-$\delta$ מחובר. בכדור פתוח מכשיר שנמצא בדיוק על גבול הטווח עוד לא מחובר; בכדור סגור הוא כן.</p>
+<div class="tool"><b>המחשה: האם הנקודה בכדור?</b> (מרכז $M_0=(0,0)$)
+<div class="sl"><label for="b6d">δ</label><input type="range" id="b6d" min="0.5" max="3" step="0.25" value="1"><output id="o_b6d"></output>
+<label for="b6x">x</label><input type="range" id="b6x" min="-3" max="3" step="0.1" value="0.6"><output id="o_b6x"></output>
+<label for="b6y">y</label><input type="range" id="b6y" min="-3" max="3" step="0.1" value="0.8"><output id="o_b6y"></output></div>
+<svg id="b6svg" viewBox="0 0 400 300" role="img" aria-label="עיגול ונקודה"></svg>
+<div class="res" id="b6out"></div></div>
+<div class="box rule"><b>הכלל לזכור</b>כדור פתוח: מרחק $\lt\delta$ (בלי השפה). כדור סגור: מרחק $\le\delta$ (עם השפה). $\delta$-סביבה = כדור פתוח.</div>
+<div class="quiz"><div class="qt">שאלות על סעיף 6</div>
+<div class="qq" data-a="3"><p class="q">מה הכדור הפתוח $B^\circ_{2}(5)$ ב-$\mathbb R$ (כלומר $n=1$)?</p><ol><li>הקטע הסגור $[3,7]$, כי כולל הקצוות</li><li>הקטע הפתוח $(5,7)$, כי הולכים רק ימינה</li><li>הקטע הפתוח $(-2,2)$, כי סביב האפס</li><li>הקטע הפתוח $(3,7)$, כי $|x-5|\lt2$</li></ol><p class="h">רמז: $5-2$ עד $5+2$, בלי הקצוות.</p><p class="e">נכון.</p></div>
+<div class="qq" data-a="0"><p class="q">האם $(3,4)$ שייכת לכדור הפתוח ברדיוס $5$ סביב $(0,0)$?</p><ol><li>לא, כי המרחק בדיוק $5$</li><li>כן, כי המרחק בדיוק $5$ וזה מספיק</li><li>כן, כי $3\lt5$ וגם $4\lt5$ בנפרד</li><li>לא, כי $3+4=7$ גדול מ-$5$</li></ol><p class="h">רמז: $\sqrt{9+16}$, והתנאי בכדור פתוח הוא $\lt$.</p><p class="e">נכון. היא על השפה: בכדור הסגור כן, בפתוח לא.</p></div>
+<div class="qq" data-a="2"><p class="q">מה ההבדל בין $U_\delta(M_0)$ לבין $B^\circ_\delta(M_0)$?</p><ol><li>$U_\delta$ כולל את השפה, והכדור לא כולל</li><li>$U_\delta$ הוא רק במישור, והכדור בכל מימד</li><li>אין הבדל: אלה שני שמות לאותה קבוצה</li><li>$U_\delta$ הוא הכדור בלי המרכז $M_0$ עצמו</li></ol><p class="h">רמז: בהרצאה: "ונסמן $U_\delta(M_0)=B^\circ_\delta(M_0)$".</p><p class="e">נכון. $\delta$-סביבה = כדור פתוח.</p></div>
+<div class="qq" data-a="1"><p class="q">ב-$\mathbb R^3$, איזו נקודה שייכת ל-$B_1(0,0,0)$ (סגור) אבל לא ל-$B^\circ_1(0,0,0)$?</p><ol><li>$(0.5,0.5,0)$, כי היא קרובה למרכז</li><li>$(0,0,1)$, כי המרחק שלה בדיוק $1$</li><li>$(1,1,1)$, כי כל הרכיבים שווים $1$</li><li>$(0,0,0)$, כי המרכז שייך רק לסגור</li></ol><p class="h">רמז: צריך מרחק שווה בדיוק לרדיוס.</p><p class="e">נכון. מרחק $1$: $\le1$ כן, $\lt1$ לא.</p></div>
+</div>
+</section>
+
+<!-- ============ 7 ============ -->
+<section class="sec" id="s7" data-short="פנימית, שפה, פתוחה, סגורה">
+<h2>נקודה פנימית, נקודת שפה, קבוצה פתוחה, סגורה, והסגור</h2>
+<p>תהי $\Omega\subseteq\mathbb R^n$ קבוצה כלשהי ($\Omega$ = האות היוונית "אומגה", סתם שם לקבוצה).</p>
+<div class="box mine"><b>הכול על דוגמה אחת קטנה: $\Omega=(0,1]$ בתוך $\mathbb R$ (דוגמה שלי)</b>
+<ol>
+<li>שלב 1 – הנקודה $0.5$: לוקחים $\delta=0.2$. הסביבה $(0.3,\ 0.7)$ כולה בתוך $\Omega$. לכן $0.5$ <b class="eme">נקודה פנימית</b>.</li>
+<li>שלב 2 – הנקודה $0.99$: גם פנימית! צריך רק $\delta$ קטן יותר, למשל $0.005$: $(0.985,\ 0.995)\subseteq\Omega$.</li>
+<li>שלב 3 – הנקודה $1$ (שייכת ל-$\Omega$): כל סביבה $(1-\delta,\ 1+\delta)$ מכילה את $1+\frac\delta2$, שלא ב-$\Omega$. לכן $1$ <b>לא</b> פנימית. בכל סביבה יש גם נקודות של $\Omega$ (למשל $1$ עצמה) וגם נקודות שלא. לכן $1$ <b class="pur">נקודת שפה</b>.</li>
+<li>שלב 4 – הנקודה $0$ (לא שייכת ל-$\Omega$): כל סביבה $(-\delta,\ \delta)$ מכילה את $\frac\delta2\in\Omega$ ואת $-\frac\delta2\notin\Omega$. לכן גם $0$ <b class="pur">נקודת שפה</b> — למרות שהיא לא ב-$\Omega$!</li>
+<li>שלב 5 – הנקודה $5$: הסביבה $(4,6)$ לא פוגשת את $\Omega$ בכלל. לא פנימית ולא שפה ("חיצונית").</li>
+<li>שלב 6 – סיכום: הפנים $\Omega^\circ=(0,1)$. השפה $\partial\Omega=\{0,1\}$. הסגור $\overline\Omega=[0,1]$. הקבוצה לא פתוחה (כי $1\in\Omega$ לא פנימית) ולא סגורה (כי $0\in\partial\Omega$ לא ב-$\Omega$).</li>
+</ol></div>
+<p><b>חמש ההגדרות מההרצאה:</b></p>
+<div class="tw"><table><tr><th>#</th><th>מושג</th><th>ההגדרה</th><th>סימון</th></tr>
+<tr><td>1</td><td class="eme k">נקודה פנימית</td><td>$M\in\Omega$ שיש לה <b>קיימת</b> סביבה $U_\delta(M)\subseteq\Omega$</td><td>כל הפנימיות: $\Omega^\circ$</td></tr>
+<tr><td>2</td><td class="k">קבוצה פתוחה</td><td>כל נקודה של $\Omega$ היא פנימית</td><td>$\Omega^\circ=\Omega$</td></tr>
+<tr><td>3</td><td class="pur k">נקודת שפה (גבולית)</td><td>$M\in\mathbb R^n$ שב<b>כל</b> סביבה שלה יש נקודות מ-$\Omega$ ונקודות לא מ-$\Omega$: $U_\delta(M)\cap\Omega\neq\emptyset$ וגם $U_\delta(M)\not\subseteq\Omega$</td><td>כל נקודות השפה: $\partial\Omega$</td></tr>
+<tr><td>4</td><td class="k">קבוצה סגורה</td><td>כל נקודות השפה שייכות ל-$\Omega$</td><td>$\partial\Omega\subseteq\Omega$</td></tr>
+<tr><td>5</td><td class="k">הסגור של $\Omega$</td><td>$\Omega$ יחד עם כל נקודות השפה שלה</td><td>$\overline\Omega=\Omega\cup\partial\Omega$</td></tr>
+</table></div>
+<p>ועוד טענה מהמחברת: <b>$\Omega$ סגורה $\iff\overline\Omega=\Omega$</b>. למה? $\overline\Omega=\Omega\cup\partial\Omega$. הוספת $\partial\Omega$ לא משנה את $\Omega$ בדיוק כש-$\partial\Omega$ כבר בפנים, כלומר $\partial\Omega\subseteq\Omega$.</p>
+<div class="box terms"><b>מילים וסימנים</b>
+<ul>
+<li>$\subseteq$ = "מוכלת ב" (כל איבר של השמאלית נמצא גם בימנית). $\not\subseteq$ = "לא מוכלת": יש לפחות איבר אחד בחוץ.</li>
+<li>$\cap$ = חיתוך (מה שמשותף), $\cup$ = איחוד (מה שבאחת מהן לפחות), $\emptyset$ = הקבוצה הריקה. $U\cap\Omega\neq\emptyset$ = "יש לפחות נקודה אחת של $\Omega$ בסביבה".</li>
+<li>$\partial\Omega$ ("דֶל אומגה") = השפה. $\Omega^\circ$ = הפנים. $\overline\Omega$ (קו מעל) = הסגור.</li>
+<li><b>שימו לב לכמתים:</b> בנקודה פנימית "<b>קיימת</b> סביבה" (מספיקה אחת). בנקודת שפה "<b>לכל</b> סביבה" (כל אחת, גם הקטנה ביותר).</li>
+<li>נקודת שפה יכולה להיות שייכת ל-$\Omega$ (כמו $1$) או לא (כמו $0$). נקודה פנימית תמיד שייכת.</li>
+</ul></div>
+<div class="box fix"><b>הערה שלי: "לא פתוחה" ≠ "סגורה"</b>זה לא כמו דלת. $(0,1]$ היא לא פתוחה ולא סגורה. ויש קבוצות שהן גם פתוחות וגם סגורות: כל המרחב $\mathbb R^n$ (אין לו נקודות שפה בכלל) והקבוצה הריקה.</div>
+<p><b>אנלוגיה:</b> מדינה ומפה. עיר באמצע המדינה = נקודה פנימית: יש סביבה קטנה שכולה בתוך המדינה. עיר על הגבול = נקודת שפה: כל צעד קטן ממנה יכול להוביל לחו״ל. מדינה "סגורה" = הגבול עצמו שייך לה.</p>
+<div class="box rule"><b>הכלל לזכור</b>פנימית: <b>קיימת</b> סביבה שכולה בפנים. שפה: <b>כל</b> סביבה נוגעת גם בפנים וגם בחוץ. פתוחה = כולה פנימיות. סגורה = מכילה את כל השפה. סגור = מוסיפים את השפה.</div>
+<div class="quiz"><div class="qt">שאלות על סעיף 7</div>
+<div class="qq" data-a="1"><p class="q">עבור $\Omega=[2,5)$ ב-$\mathbb R$, מה $\partial\Omega$?</p><ol><li>$\{2\}$, כי רק $2$ שייך לקבוצה</li><li>$\{2,5\}$, כי אלה שני הקצוות</li><li>$\{5\}$, כי רק $5$ לא שייך לקבוצה</li><li>$(2,5)$, כי אלה הנקודות שבאמצע הקטע</li></ol><p class="h">רמז: שני הקצוות, לא משנה אם הם שייכים.</p><p class="e">נכון. $2\in\Omega$ ו-$5\notin\Omega$, ושניהם שפה.</p></div>
+<div class="qq" data-a="3"><p class="q">האם $\Omega=[2,5)$ פתוחה? סגורה?</p><ol><li>פתוחה וסגורה, כי יש לה קצה פתוח וקצה סגור</li><li>פתוחה, כי $5$ לא שייך אליה</li><li>סגורה, כי $2$ שייך אליה</li><li>אף אחת, כי $2$ לא פנימית ו-$5$ לא שייך</li></ol><p class="h">רמז: פתוחה דורשת שכל נקודה פנימית. סגורה דורשת שכל השפה בפנים.</p><p class="e">נכון. בדיוק כמו $(0,1]$ בדוגמה.</p></div>
+<div class="qq" data-a="0"><p class="q">מה ההבדל בכמתים בין נקודה פנימית לנקודת שפה?</p><ol><li>פנימית: קיימת סביבה. שפה: לכל סביבה</li><li>פנימית: לכל סביבה. שפה: קיימת סביבה</li><li>בשתיהן: קיימת סביבה אחת מתאימה</li><li>בשתיהן: התנאי הוא על כל הסביבות</li></ol><p class="h">רמז: לנקודה $0.99$ ב-$(0,1]$ הספיקה סביבה אחת קטנה.</p><p class="e">נכון.</p></div>
+<div class="qq" data-a="2"><p class="q">עבור $\Omega=(0,1]$, מה הסגור $\overline\Omega$?</p><ol><li>$(0,1)$, כי מורידים את נקודות השפה</li><li>$(0,1]$, כי היא כבר סגורה</li><li>$[0,1]$, כי מוסיפים את השפה $\{0,1\}$</li><li>$\{0,1\}$, כי זה רק הקצוות</li></ol><p class="h">רמז: $\overline\Omega=\Omega\cup\partial\Omega$.</p><p class="e">נכון. ו-$(0,1)$ זה הפנים $\Omega^\circ$, לא הסגור.</p></div>
+</div>
+</section>
+
+<!-- ============ 8 ============ -->
+<section class="sec" id="s8" data-short="המלבן, חסומה, קומפקטית">
+<h2>הדוגמה מההרצאה: מלבן חצי-פתוח, ועוד שתי הגדרות</h2>
+<p>$\Omega=\{(x,y)\in\mathbb R^2\ |\ a\le x\le b,\ \ c\lt y\lt d\}$. כלומר מלבן שבו הצלעות האנכיות ($x=a$, $x=b$) <b class="cyn">שייכות</b>, והצלעות האופקיות ($y=c$, $y=d$) <b class="pnk">לא שייכות</b>.</p>
+<div class="box mine"><b>עם מספרים (דוגמה שלי): $a=1$, $b=4$, $c=1$, $d=3$</b>
+<ol>
+<li>שלב 1 – $(2,2)$: $1\le2\le4$ ו-$1\lt2\lt3$. בתוך $\Omega$. סביבה ברדיוס $0.5$ עדיין כולה בפנים. <b class="eme">פנימית</b>.</li>
+<li>שלב 2 – $(1,2)$ (על הצלע השמאלית): $1\le1$ ✔, אז היא <b>שייכת</b>. אבל $(0.9,2)$ קרובה כמה שרוצים ולא שייכת. <b class="pur">שפה</b>, ושייכת.</li>
+<li>שלב 3 – $(2,3)$ (על הצלע העליונה): $3\lt3$ ✘, לא שייכת. אבל $(2,2.99)$ שייכת. <b class="pur">שפה</b>, ולא שייכת.</li>
+<li>שלב 4 – $(1,1)$ (הפינה $(a,c)$): $1\lt1$ ✘ ב-$y$, אז לא שייכת. ובכל סביבה יש נקודות כמו $(1.01,1.01)\in\Omega$. <b class="pur">שפה</b>, לא שייכת.</li>
+</ol></div>
+<div class="tool"><b>המחשה: זזים במלבן ובודקים סביבות</b> ($a=1,b=4,c=1,d=3$)
+<div class="sl"><label for="r8x">x</label><input type="range" id="r8x" min="0" max="5" step="0.05" value="1"><output id="o_r8x"></output>
+<label for="r8y">y</label><input type="range" id="r8y" min="0" max="4" step="0.05" value="2"><output id="o_r8y"></output>
+<label for="r8d">δ</label><input type="range" id="r8d" min="0.05" max="1.5" step="0.05" value="0.5"><output id="o_r8d"></output></div>
+<div class="row" style="margin-top:6px"><button type="button" data-p="2.5,2">נקודה פנימית</button><button type="button" data-p="1,2">צלע שמאל</button><button type="button" data-p="2.5,3">צלע עליונה</button><button type="button" data-p="1,1">פינה (a,c)</button><button type="button" data-p="4.5,2">בחוץ</button></div>
+<svg id="r8svg" viewBox="0 0 400 300" role="img" aria-label="המלבן, הנקודה והסביבה שלה"></svg>
+<div class="res" id="r8out"></div>
+<p style="font-size:14.5px;margin:6px 0 0">קו <span class="cyn k">ציאן מלא</span> = צלע ששייכת. קו <span class="pnk k">ורוד מקווקו</span> = צלע שלא שייכת. נסו להקטין את $\delta$ בנקודה על הצלע: היא נשארת שפה בכל $\delta$.</p></div>
+<p><b>מה כתוב במחברת, שורה אחרי שורה:</b></p>
+<div class="tw"><table><tr><th>טענה</th><th>למה</th></tr>
+<tr><td>$\Omega^\circ=\{a\lt x\lt b,\ c\lt y\lt d\}$</td><td>מורידים את הצלעות: נקודה על צלע לא יכולה להיות פנימית.</td></tr>
+<tr><td>$\partial\Omega$ = ארבע הצלעות</td><td>$\{(a,y)\,|\,c\le y\le d\}\cup\{(b,y)\,|\,c\le y\le d\}\cup\{(x,c)\,|\,a\le x\le b\}\cup\{(x,d)\,|\,a\le x\le b\}$ — כולל הפינות.</td></tr>
+<tr><td>$\Omega$ <b>לא סגורה</b></td><td>$\partial\Omega\not\subseteq\Omega$: הפינה $(a,c)\in\partial\Omega$ אבל $(a,c)\notin\Omega$ (כי $c\lt c$ לא נכון).</td></tr>
+<tr><td>$\Omega$ <b>לא פתוחה</b></td><td>$\Omega^\circ\neq\Omega$: הנקודה $\big(a,\frac{c+d}{2}\big)$ (אמצע הצלע השמאלית) שייכת ל-$\Omega$ אבל לא פנימית.</td></tr>
+<tr><td>$\overline\Omega=\{a\le x\le b,\ c\le y\le d\}$</td><td>מוסיפים את כל הצלעות: מלבן סגור.</td></tr>
+</table></div>
+<div class="box fix"><b>הערה קטנה שלי</b>בציור במחברת שתי הנקודות על ציר $x$ מסומנות $a$. השמאלית היא $a$ והימנית צריכה להיות $b$. שאר הדוגמה נכונה. ✔</div>
+<h3>עוד שתי הגדרות</h3>
+<p><b>קבוצה חסומה:</b> $\Omega\subseteq\mathbb R^n$ חסומה אם קיים כדור (ברדיוס סופי) שמכיל אותה. למשל המלבן שלנו: כדור סביב $(2.5,2)$ ברדיוס $3$ מכיל אותו (הפינה הכי רחוקה $(4,3)$ במרחק $\sqrt{1.5^2+1^2}\approx1.8\lt3$). לעומת זאת $[0,\infty)$ לא חסומה: שום קטע סופי לא מכיל אותה.</p>
+<p><b>קבוצה קומפקטית:</b> קבוצה <b>סגורה וחסומה</b>. דוגמה מההרצאה: הכדור הסגור $B_\delta(M)$. דוגמאות נוספות: $[0,1]$ כן; $(0,1)$ לא (לא סגורה); $[0,\infty)$ לא (לא חסומה); המלבן $\Omega$ שלנו לא (לא סגור), אבל $\overline\Omega$ כן.</p>
+<div class="tw"><table><tr><th>קבוצה</th><th>סגורה?</th><th>חסומה?</th><th>קומפקטית?</th></tr>
+<tr><td>$[0,1]$</td><td>כן</td><td>כן</td><td class="eme k">כן</td></tr>
+<tr><td>$(0,1]$</td><td>לא</td><td>כן</td><td>לא</td></tr>
+<tr><td>$[0,\infty)$</td><td>כן</td><td>לא</td><td>לא</td></tr>
+<tr><td>המלבן $\Omega$</td><td>לא</td><td>כן</td><td>לא</td></tr>
+<tr><td>$B_\delta(M)$ (כדור סגור)</td><td>כן</td><td>כן</td><td class="eme k">כן</td></tr>
+</table></div>
+<div class="box rule"><b>הכלל לזכור</b>קומפקטית = סגורה + חסומה. בודקים כל תנאי בנפרד. כדי להראות "לא סגורה" מספיקה נקודת שפה אחת שלא שייכת; כדי להראות "לא פתוחה" מספיקה נקודה אחת ששייכת ולא פנימית.</div>
+<div class="quiz"><div class="qt">שאלות על סעיף 8</div>
+<div class="qq" data-a="0"><p class="q">במלבן $\Omega$ עם $a=1,b=4,c=1,d=3$, מה הנקודה $(4,2)$?</p><ol><li>נקודת שפה ששייכת ל-$\Omega$</li><li>נקודת שפה שלא שייכת ל-$\Omega$</li><li>נקודה פנימית של $\Omega$</li><li>נקודה חיצונית ל-$\Omega$</li></ol><p class="h">רמז: $x=4=b$, והצלעות האנכיות שייכות.</p><p class="e">נכון. היא על הצלע הימנית, ששייכת.</p></div>
+<div class="qq" data-a="2"><p class="q">למה במחברת בוחרים דווקא את $\big(a,\frac{c+d}2\big)$ כדי להראות ש-$\Omega$ לא פתוחה?</p><ol><li>כי זו נקודה פנימית שלא שייכת</li><li>כי זו הפינה של המלבן</li><li>כי היא שייכת ל-$\Omega$ אבל לא פנימית</li><li>כי היא לא שייכת ל-$\Omega$ ולא לשפה</li></ol><p class="h">רמז: "לא פתוחה" = יש נקודה של $\Omega$ שאינה פנימית.</p><p class="e">נכון. היא על צלע ששייכת. (כל נקודה על הצלע הייתה עובדת; האמצע נוח כי ברור ש-$c\lt y\lt d$.)</p></div>
+<div class="qq" data-a="1"><p class="q">האם $(0,1)\times(0,1)$ (ריבוע פתוח במישור) קומפקטית?</p><ol><li>כן, כי היא חסומה</li><li>לא, כי היא לא סגורה</li><li>לא, כי היא לא חסומה</li><li>כן, כי היא פתוחה</li></ol><p class="h">רמז: קומפקטית = סגורה וגם חסומה.</p><p class="e">נכון. היא חסומה, אבל השפה (הצלעות) לא שייכת.</p></div>
+<div class="qq" data-a="3"><p class="q">איזו קבוצה ב-$\mathbb R^2$ היא קומפקטית?</p><ol><li>כל המישור $\mathbb R^2$, כי הוא סגור</li><li>הכדור הפתוח $B^\circ_1(0,0)$, כי הוא חסום</li><li>הישר $y=0$, כי הוא סגור</li><li>הכדור הסגור $B_1(0,0)$</li></ol><p class="h">רמז: צריך את שני התנאים יחד.</p><p class="e">נכון. המישור והישר סגורים אבל לא חסומים.</p></div>
+</div>
+</section>
+
+<!-- ============ 9 ============ -->
+<section class="sec" id="s9" data-short="סיכום">
+<h2>סיכום ההרצאה</h2>
+<div class="tw"><table><tr><th>נושא</th><th>מה לזכור</th></tr>
+<tr><td>מישור ב-$\mathbb R^n$</td><td>$\vec r_M=\vec r_A+u\bar l+v\bar s$, עם $\bar l,\bar s$ בת״ל. פרמטרית: רכיב-רכיב.</td></tr>
+<tr><td>משוואת מישור ב-$\mathbb R^3$</td><td>$\bar n=\bar l\times\bar s=(a,b,c)$, $d=-\bar n\cdot\vec r_A$, ואז $ax+by+cz+d=0$.</td></tr>
+<tr><td>מרחק נקודה ממישור</td><td>$D=\frac{|ax_0+by_0+cz_0+d|}{\sqrt{a^2+b^2+c^2}}$ (ההיטל של $\overrightarrow{AM}$ על $\bar n$).</td></tr>
+<tr><td>מישור דרך 3 נקודות</td><td>$\bar n=\overrightarrow{AB}\times\overrightarrow{AC}$.</td></tr>
+<tr><td>ישר חיתוך של 2 מישורים</td><td>כיוון $\bar n_1\times\bar n_2$; נקודה: מציבים $z=0$ (או $x=0$/$y=0$) ופותרים.</td></tr>
+<tr><td>כדור / סביבה</td><td>$B^\circ_\delta$: מרחק $\lt\delta$. $B_\delta$: מרחק $\le\delta$. $U_\delta=B^\circ_\delta$.</td></tr>
+<tr><td>פנימית / שפה</td><td>פנימית: קיימת סביבה בתוך $\Omega$. שפה: כל סביבה פוגשת את $\Omega$ ואת המשלים.</td></tr>
+<tr><td>פתוחה / סגורה / סגור</td><td>$\Omega^\circ=\Omega$ / $\partial\Omega\subseteq\Omega$ / $\overline\Omega=\Omega\cup\partial\Omega$. סגורה $\iff\overline\Omega=\Omega$.</td></tr>
+<tr><td>חסומה / קומפקטית</td><td>בתוך כדור סופי / סגורה וחסומה.</td></tr>
+</table></div>
+<div class="tool"><b>מחשבון: מישור דרך שלוש נקודות</b>
+<div class="nin"><label>A<input id="cA" value="1,-1,2"></label><label>B<input id="cB" value="2,-3,3"></label><label>C<input id="cC" value="4,1,-1"></label><label>M<input id="cM" value="3,2,-1"></label></div>
+<div class="res" id="cout"></div></div>
+<div class="quiz"><div class="qt">שאלות סיכום</div>
+<div class="qq" data-a="2"><p class="q">מה משוואת המישור דרך $A=(0,0,1)$ עם נורמל $\bar n=(0,0,2)$?</p><ol><li>$2z+2=0$, כי $d=\bar n\cdot\vec r_A$</li><li>$2x+2y=0$, כי משתמשים ברכיבים הראשונים</li><li>$2z-2=0$, כלומר המישור $z=1$</li><li>$z-2=0$, כלומר המישור $z=2$</li></ol><p class="h">רמז: $d=-\bar n\cdot\vec r_A=-2$.</p><p class="e">נכון. $0x+0y+2z-2=0$.</p></div>
+<div class="qq" data-a="0"><p class="q">מה המרחק בין $(0,0,5)$ למישור $z=1$?</p><ol><li>$4$, כי $\frac{|5-1|}{1}$</li><li>$5$, כי זה הגובה של הנקודה</li><li>$6$, כי $\frac{|5+1|}{1}$</li><li>$\frac45$, כי מחלקים בגובה</li></ol><p class="h">רמז: המישור הוא $z-1=0$.</p><p class="e">נכון.</p></div>
+<div class="qq" data-a="3"><p class="q">ב-$\mathbb R^2$, הקבוצה $\{(x,y)\,|\,x^2+y^2\lt4\}$ היא:</p><ol><li>סגורה וחסומה, ולכן קומפקטית</li><li>פתוחה ולא חסומה</li><li>סגורה ולא חסומה</li><li>פתוחה וחסומה, ולא קומפקטית</li></ol><p class="h">רמז: זה הכדור הפתוח $B^\circ_2(0,0)$.</p><p class="e">נכון. העיגול $x^2+y^2=4$ הוא השפה, והוא לא שייך.</p></div>
+<div class="qq" data-a="1"><p class="q">שני מישורים עם נורמלים $(1,2,3)$ ו-$(2,4,6)$. מה נכון?</p><ol><li>הם נחתכים בישר בכיוון $(1,2,3)$</li><li>הם מקבילים או זהים</li><li>הם מאונכים, כי המכפלה הסקלרית חיובית</li><li>הם נחתכים רק בנקודה אחת, בראשית</li></ol><p class="h">רמז: $(2,4,6)=2\cdot(1,2,3)$, אז המכפלה הווקטורית $\bar 0$.</p><p class="e">נכון.</p></div>
+</div>
+<p class="end" id="endMsg"></p>
+<p>מה עזר לך הכי הרבה בדף הזה, ביג בוס? כתוב לי בצ'אט.</p>
+</section>
+</div>
+
+<script>
+window.LESSON_INIT=function(){
+ function css(v){return getComputedStyle(document.documentElement).getPropertyValue(v).trim()}
+ function $(id){return document.getElementById(id)}
+ function r3(v){var s=Math.round(v*1000)/1000;return (Object.is(s,-0)?0:s).toString()}
+ var drawers=[];
+ function bind(ids,fn){ids.forEach(function(id){$(id).addEventListener('input',fn)});fn();drawers.push(fn)}
+ function outs(ids){ids.forEach(function(id){var o=$('o_'+id);if(o)o.textContent=$(id).value})}
+ function line(x1,y1,x2,y2,c,w,dash){return '<line x1="'+x1.toFixed(1)+'" y1="'+y1.toFixed(1)+'" x2="'+x2.toFixed(1)+'" y2="'+y2.toFixed(1)+'" stroke="'+c+'" stroke-width="'+(w||1.5)+'"'+(dash?' stroke-dasharray="'+dash+'"':'')+'/>'}
+ function arrow(x1,y1,x2,y2,c,w,lab){var L=Math.hypot(x2-x1,y2-y1);if(L<1)return '';var ux=(x2-x1)/L,uy=(y2-y1)/L,bx=x2-ux*10,by=y2-uy*10;
+  return line(x1,y1,bx,by,c,w||3)+'<path d="M'+x2.toFixed(1)+' '+y2.toFixed(1)+' L'+(bx-uy*5).toFixed(1)+' '+(by+ux*5).toFixed(1)+' L'+(bx+uy*5).toFixed(1)+' '+(by-ux*5).toFixed(1)+'Z" fill="'+c+'"/>'+(lab?'<text x="'+((x1+x2)/2+6).toFixed(1)+'" y="'+((y1+y2)/2-6).toFixed(1)+'" fill="'+c+'" font-size="14" font-weight="700">'+lab+'</text>':'')}
+ function txt(x,y,s,c,anchor){return '<text x="'+x.toFixed(1)+'" y="'+y.toFixed(1)+'" fill="'+c+'" font-size="14" font-weight="700" text-anchor="'+(anchor||'start')+'">'+s+'</text>'}
+ // ---- s1: plane in 3D (isometric) ----
+ bind(['p1u','p1v'],function(){outs(['p1u','p1v']);var u=+$('p1u').value,v=+$('p1v').value;
+  var A=[1,1,1],l=[1,0,-1],s=[0,1,-1];
+  function Q(p){return [0.9*p[0]-0.6*p[1],0.35*p[0]+0.5*p[1]-0.85*p[2]]}
+  function pt(a,b){return [A[0]+a*l[0]+b*s[0],A[1]+a*l[1]+b*s[1],A[2]+a*l[2]+b*s[2]]}
+  var bb=[pt(-2,-2),pt(2,-2),pt(2,2),pt(-2,2),[0,0,0],[3,0,0],[0,3,0],[0,0,3]].map(Q),mnx=Math.min.apply(0,bb.map(function(q){return q[0]})),mxx=Math.max.apply(0,bb.map(function(q){return q[0]})),mny=Math.min.apply(0,bb.map(function(q){return q[1]})),mxy=Math.max.apply(0,bb.map(function(q){return q[1]}));
+  var k=Math.min(360/(mxx-mnx),260/(mxy-mny));
+  function P(p){var q=Q(p);return [20+(q[0]-mnx)*k+(360-(mxx-mnx)*k)/2,20+(q[1]-mny)*k+(260-(mxy-mny)*k)/2]}
+  var g='',mut=css('--muted'),gl=css('--olv');
+  var O=P([0,0,0]);[[3,0,0,'x'],[0,3,0,'y'],[0,0,3,'z']].forEach(function(a){var q=P(a);g+=line(O[0],O[1],q[0],q[1],mut,1.2)+txt(q[0]+4,q[1]+4,a[3],mut)});
+  var c=[pt(-2,-2),pt(2,-2),pt(2,2),pt(-2,2)].map(P);
+  g+='<path d="M'+c.map(function(q){return q[0].toFixed(1)+' '+q[1].toFixed(1)}).join(' L')+'Z" fill="'+css('--olv')+'" fill-opacity=".15" stroke="'+css('--olv')+'"/>';
+  for(var i=-2;i<=2;i++){var a=P(pt(i,-2)),b=P(pt(i,2));g+=line(a[0],a[1],b[0],b[1],gl,1);a=P(pt(-2,i));b=P(pt(2,i));g+=line(a[0],a[1],b[0],b[1],gl,1)}
+  var pA=P(A),pU=P(pt(u,0)),pM=P(pt(u,v));
+  g+=arrow(pA[0],pA[1],pU[0],pU[1],css('--tea'),3,u?'u·l':'');g+=arrow(pU[0],pU[1],pM[0],pM[1],css('--org'),3,v?'v·s':'');
+  g+='<circle cx="'+pA[0]+'" cy="'+pA[1]+'" r="5" fill="'+css('--brn')+'"/>'+txt(pA[0]-14,pA[1]+18,'A',css('--brn'));
+  g+='<circle cx="'+pM[0]+'" cy="'+pM[1]+'" r="5" fill="'+css('--ink')+'"/>'+txt(pM[0]+8,pM[1]-8,'M',css('--ink'));
+  $('p1svg').innerHTML=g;var M=pt(u,v);
+  $('p1out').textContent='M = (1,1,1) + '+u+'·(1,0,−1) + '+v+'·(0,1,−1) = ('+r3(M[0])+', '+r3(M[1])+', '+r3(M[2])+')\nx + y + z = '+r3(M[0]+M[1]+M[2])+'   (תמיד 3)'});
+ // ---- s3: distance calculator ----
+ bind(['dA','dB','dC','dD','dX','dY','dZ'],function(){var g=function(id){var v=+$(id).value;return isFinite(v)?v:0};
+  var a=g('dA'),b=g('dB'),c=g('dC'),d=g('dD'),x=g('dX'),y=g('dY'),z=g('dZ'),nn=a*a+b*b+c*c;
+  if(!nn){$('dout').textContent='a = b = c = 0: זה לא מישור.';return}
+  var v=a*x+b*y+c*z+d;
+  $('dout').textContent='plane: '+a+'x + '+b+'y + '+c+'z + '+d+' = 0\nnumerator: |'+a+'·'+x+' + '+b+'·'+y+' + '+c+'·'+z+' + '+d+'| = |'+r3(v)+'|'+(Math.abs(v)<1e-12?'   (הנקודה על המישור)':(v>0?'   (צד חיובי)':'   (צד שלילי)'))+'\ndenominator: √('+nn+') = '+Math.sqrt(nn).toFixed(4)+'\nD = '+(Math.abs(v)/Math.sqrt(nn)).toFixed(4)});
+ // ---- 2D helper ----
+ function grid(R,ox,oy,s){var g='',ln=css('--line'),mut=css('--muted');function X(x){return ox+x*s}function Y(y){return oy-y*s}
+  for(var i=Math.ceil(R[0]);i<=R[1];i++)g+=line(X(i),Y(R[2]),X(i),Y(R[3]),i===0?mut:ln,i===0?1.3:1);
+  for(var j=Math.ceil(R[2]);j<=R[3];j++)g+=line(X(R[0]),Y(j),X(R[1]),Y(j),j===0?mut:ln,j===0?1.3:1);return {g:g,X:X,Y:Y}}
+ // ---- s6: ball ----
+ bind(['b6d','b6x','b6y'],function(){outs(['b6d','b6x','b6y']);var dl=+$('b6d').value,x=+$('b6x').value,y=+$('b6y').value;
+  var G=grid([-3.5,3.5,-3,3],200,150,40),g=G.g,X=G.X,Y=G.Y,sky=css('--sky');
+  g+='<circle cx="'+X(0)+'" cy="'+Y(0)+'" r="'+(dl*40)+'" fill="'+sky+'" fill-opacity=".15" stroke="'+sky+'" stroke-width="2" stroke-dasharray="6 4"/>';
+  g+='<circle cx="'+X(0)+'" cy="'+Y(0)+'" r="3.5" fill="'+css('--ink')+'"/>';
+  var r=Math.hypot(x,y),e=1e-9,inO=r<dl-e,inC=r<=dl+e,col=inO?css('--eme'):(inC?css('--amb'):css('--bur'));
+  g+=line(X(0),Y(0),X(x),Y(y),css('--rus'),2,'4 3');
+  g+='<circle cx="'+X(x)+'" cy="'+Y(y)+'" r="6" fill="'+col+'"/>';
+  $('b6svg').innerHTML=g;
+  $('b6out').textContent='d(M, M0) = √('+x+'² + '+y+'²) = '+r.toFixed(4)+'\nδ = '+dl+'\nבכדור הפתוח: '+(inO?'כן':'לא')+'\nבכדור הסגור: '+(inC?'כן':'לא')+(inC&&!inO?'\nהנקודה בדיוק על השפה!':'')});
+ // ---- s8: rectangle ----
+ var RA=1,RB=4,RC=1,RD=3,eps=1e-9;
+ Array.prototype.forEach.call(document.querySelectorAll('[data-p]'),function(b){b.addEventListener('click',function(){var p=b.getAttribute('data-p').split(',');$('r8x').value=p[0];$('r8y').value=p[1];drawers.forEach(function(f){f()})})});
+ bind(['r8x','r8y','r8d'],function(){outs(['r8x','r8y','r8d']);var x=+$('r8x').value,y=+$('r8y').value,dl=+$('r8d').value;
+  var G=grid([-0.5,5.5,-0.5,4.2],40,265,60),g=G.g,X=G.X,Y=G.Y,cy=css('--cyn'),pk=css('--pnk');
+  g+='<rect x="'+X(RA)+'" y="'+Y(RD)+'" width="'+((RB-RA)*60)+'" height="'+((RD-RC)*60)+'" fill="'+css('--eme')+'" fill-opacity=".12"/>';
+  g+=line(X(RA),Y(RC),X(RB),Y(RC),pk,3,'7 5')+line(X(RA),Y(RD),X(RB),Y(RD),pk,3,'7 5');
+  g+=line(X(RA),Y(RC),X(RA),Y(RD),cy,3.5)+line(X(RB),Y(RC),X(RB),Y(RD),cy,3.5);
+  g+=txt(X(RA),Y(-0.35),'a',css('--muted'),'middle')+txt(X(RB),Y(-0.35),'b',css('--muted'),'middle')+txt(X(-0.3),Y(RC)+5,'c',css('--muted'),'middle')+txt(X(-0.3),Y(RD)+5,'d',css('--muted'),'middle');
+  var inO=(x>=RA-eps&&x<=RB+eps&&y>RC+eps&&y<RD-eps);
+  var interior=(x>RA+eps&&x<RB-eps&&y>RC+eps&&y<RD-eps);
+  var cx=Math.min(Math.max(x,RA),RB),cyy=Math.min(Math.max(y,RC),RD),dist=Math.hypot(x-cx,y-cyy);
+  var inClosure=dist<eps,boundary=inClosure&&!interior;
+  var nbIn=(x-dl>=RA-eps&&x+dl<=RB+eps&&y-dl>=RC-eps&&y+dl<=RD+eps);
+  var meets=dist<dl-eps;
+  var col=interior?css('--eme'):(boundary?css('--pur'):css('--muted'));
+  g+='<circle cx="'+X(x)+'" cy="'+Y(y)+'" r="'+(dl*60)+'" fill="'+css('--sky')+'" fill-opacity=".14" stroke="'+css('--sky')+'" stroke-width="2" stroke-dasharray="5 4"/>';
+  g+='<circle cx="'+X(x)+'" cy="'+Y(y)+'" r="5.5" fill="'+col+'"/>';
+  $('r8svg').innerHTML=g;
+  var L=[];L.push('M = ('+x+', '+y+')   δ = '+dl);
+  L.push('הנקודה שייכת לקבוצה: '+(inO?'כן':'לא'));
+  L.push('הסביבה הזו כולה בתוך הקבוצה: '+(nbIn?'כן':'לא'));L.push('הסביבה הזו פוגשת את הקבוצה: '+(meets?'כן':'לא'));
+  L.push('סוג הנקודה:  '+(interior?'פנימית (יש סביבה קטנה שכולה בפנים)':(boundary?'נקודת שפה (בכל סביבה יש גם בפנים וגם בחוץ)':'חיצונית (סביבה קטנה לא פוגשת את הקבוצה)')));
+  if(interior&&!nbIn)L.push('הסביבה הזו יוצאת מהקבוצה, אבל סביבה קטנה יותר כן נכנסת כולה.');
+  $('r8out').textContent=L.join('\n')});
+ // ---- s9: plane through 3 points ----
+ bind(['cA','cB','cC','cM'],function(){function p(id){var a=$(id).value.split(',').map(function(t){return +t});return a.length===3&&a.every(isFinite)?a:null}
+  var A=p('cA'),B=p('cB'),C=p('cC'),M=p('cM');if(!A||!B||!C||!M){$('cout').textContent='כתבו כל נקודה כשלושה מספרים עם פסיקים, למשל 1,-1,2';return}
+  var l=[B[0]-A[0],B[1]-A[1],B[2]-A[2]],s=[C[0]-A[0],C[1]-A[1],C[2]-A[2]];
+  var n=[l[1]*s[2]-l[2]*s[1],l[2]*s[0]-l[0]*s[2],l[0]*s[1]-l[1]*s[0]];
+  if(!n[0]&&!n[1]&&!n[2]){$('cout').textContent='AB × AC = 0: שלוש הנקודות על ישר אחד, אין מישור יחיד.';return}
+  var d=-(n[0]*A[0]+n[1]*A[1]+n[2]*A[2]),v=n[0]*M[0]+n[1]*M[1]+n[2]*M[2]+d,nn=n[0]*n[0]+n[1]*n[1]+n[2]*n[2];
+  $('cout').textContent='AB = ('+l+')   AC = ('+s+')\nn = AB × AC = ('+n+')\nd = −n·A = '+d+'\nplane: '+n[0]+'x + '+n[1]+'y + '+n[2]+'z + '+d+' = 0\nD(M) = |'+v+'| / √'+nn+' = '+(Math.abs(v)/Math.sqrt(nn)).toFixed(4)});
+ var mo=new MutationObserver(function(){drawers.forEach(function(d){d()})});mo.observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+};
+</script>
+<script>(function(){
+document.documentElement.dir='rtl';document.documentElement.lang='he';
+var KEY=((document.querySelector('.wrap')||document.body).getAttribute('data-key')||'lesson')+'-quiz';
+var THEMEKEY='calc2-theme';
+function $(s,r){return (r||document).querySelector(s)}
+function $$(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))}
+function el(t,c,h){var n=document.createElement(t);if(c)n.className=c;if(h!=null)n.innerHTML=h;return n}
+function lsGet(k){try{return localStorage.getItem(k)}catch(e){return null}}
+function lsSet(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+// theme
+var tb=$('#themeBtn');
+function curDark(){var t=document.documentElement.getAttribute('data-theme');if(t)return t==='dark';return window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches}
+function paintBtn(){if(tb)tb.textContent=curDark()?'☀️ יום':'🌙 לילה'}
+var saved=lsGet(THEMEKEY);if(saved==='dark'||saved==='light')document.documentElement.setAttribute('data-theme',saved);
+paintBtn();
+if(tb)tb.addEventListener('click',function(){var d=!curDark();document.documentElement.setAttribute('data-theme',d?'dark':'light');lsSet(THEMEKEY,d?'dark':'light');paintBtn()});
+// sections + toc
+var secs=$$('section.sec'),toc=$('nav.toc');
+secs.forEach(function(s,i){var h=$('h2',s);var no=el('div','secno',(i+1)+' / '+secs.length);s.insertBefore(no,h);
+ if(toc){var a=el('a');a.href='#'+s.id;a.innerHTML='<b>'+(i+1)+'</b> '+(s.getAttribute('data-short')||h.textContent);toc.appendChild(a)}});
+// sims
+var sims=[];
+$$('.sim').forEach(function(sim){
+ var steps=$$('.steps > .step',sim);var mapItems=$$('.map > li',sim);
+ var lines=el('div','lines'),xp=el('div','x'),sp=el('div','stp-wrap');
+ var ctl=el('div','ctl');var bP=el('button','','→ הקודם'),bN=el('button','pri','הבא ←'),bR=el('button','','⟲ מההתחלה'),cnt=el('span','cnt');
+ bP.type=bN.type=bR.type='button';ctl.appendChild(bR);ctl.appendChild(bP);ctl.appendChild(bN);ctl.appendChild(cnt);
+ var stepLine=[],lineEls=[],xs=[],sts=[];
+ steps.forEach(function(st,i){var f=$('.f',st);
+  if(f){var ln=el('div','ln');ln.appendChild(el('span','no',String(lineEls.length+1)));ln.appendChild(f);lines.appendChild(ln);lineEls.push(ln)}
+  stepLine.push(lineEls.length-1);
+  var x=$('.x',st)||el('div','','');var xd=el('div','');while(x.firstChild)xd.appendChild(x.firstChild);xp.appendChild(xd);xs.push(xd);
+  var s=$('.st',st);var sd=el('div','stp');if(s){while(s.firstChild)sd.appendChild(s.firstChild)}sp.appendChild(sd);sts.push(sd)});
+ var stepsBox=$('.steps',sim);sim.insertBefore(lines,stepsBox);sim.insertBefore(xp,stepsBox);sim.insertBefore(sp,stepsBox);sim.insertBefore(ctl,stepsBox);stepsBox.remove();
+ var cur=0;
+ function render(){var L=stepLine[cur];
+  lineEls.forEach(function(ln,j){ln.classList.toggle('cur',j===L);ln.classList.toggle('fut',j>L)});
+  xs.forEach(function(x,j){x.hidden=j!==cur});
+  sts.forEach(function(s,j){s.hidden=j!==cur;
+   if(j===cur&&j>0){var prev={};$$('span',sts[j-1]).forEach(function(p){var k=$('i',p);if(k)prev[k.textContent]=p.textContent});
+    $$(':scope > span',s).forEach(function(p){var k=$('i',p);p.classList.toggle('new',!!k&&prev[k.textContent]!==p.textContent)})}});
+  var m=+(steps[cur].getAttribute('data-m')||-1);
+  mapItems.forEach(function(li,j){li.classList.toggle('on',j===m);li.classList.toggle('done',m>=0&&j<m)});
+  bP.disabled=cur===0;bN.disabled=cur===steps.length-1;cnt.textContent=(cur+1)+' / '+steps.length}
+ bP.onclick=function(){if(cur>0){cur--;render()}};bN.onclick=function(){if(cur<steps.length-1){cur++;render()}};bR.onclick=function(){cur=0;render()};
+ sims.push(render)});
+// quiz
+var st={};try{st=JSON.parse(lsGet(KEY)||'{}')||{}}catch(e){st={}}
+var qs=$$('.qq'),LET=['א','ב','ג','ד','ה'];
+function score(){var c=0,d=0;qs.forEach(function(q,i){var s=st[i];if(s&&s.done){d++;if(s.first)c++}});
+ var sc=$('#score');if(sc)sc.innerHTML='ניקוד: <bdi dir="ltr">'+c+' / '+qs.length+'</bdi>';var m=$('#meter');if(m)m.style.width=(qs.length?100*d/qs.length:0)+'%';
+ var end=$('#endMsg');if(end)end.textContent=d===qs.length?('סיימת את כל '+qs.length+' השאלות! ענית נכון בניסיון הראשון על '+c+'. '+(c>=qs.length*0.8?'מצוין, ביג בוס 💪':'כדאי לחזור על הסעיפים שבהם טעית.')):'ענית על '+d+' מתוך '+qs.length+' שאלות.'}
+var qhide=[];
+qs.forEach(function(q,i){var a=+q.getAttribute('data-a');var h=$('.h',q),e=$('.e',q);
+ $$('ol > li',q).forEach(function(li,j){var b=el('button','');b.type='button';b.appendChild(el('span','lt',LET[j]+'.'));while(li.firstChild)b.appendChild(li.firstChild);li.appendChild(b);
+  b.addEventListener('click',function(){var s=st[i]||{tried:[]};if(s.done)return;s.tried.push(j);
+   if(j===a){s.done=true;s.first=s.tried.length===1}st[i]=s;lsSet(KEY,JSON.stringify(st));paintQ();score()})});
+ function paintQ(){var s=st[i]||{tried:[]};var bs=$$('ol > li > button',q);
+  bs.forEach(function(b,j){b.classList.toggle('good',!!s.done&&j===a);b.classList.toggle('bad',s.tried.indexOf(j)>=0&&j!==a)});
+  var lastBad=s.tried.length&&s.tried[s.tried.length-1]!==a;if(h)h.hidden=!(lastBad&&!s.done);if(e)e.hidden=!s.done}
+ q._paint=paintQ;qhide.push(paintQ)});
+var rb=$('#resetBtn');if(rb)rb.addEventListener('click',function(){st={};lsSet(KEY,'{}');qhide.forEach(function(f){f()});score()});
+// bidi fix
+var HEB=/[֐-׿]/,RUN=/[A-Za-z0-9∞√π][A-Za-z0-9∞√π²³⁻¹\s+\-−*\/=^().,'·:≤≥<>|_]*/g;
+var SKIP={'MJX-CONTAINER':1,'CODE':1,'PRE':1,'SVG':1,'BDI':1,'SCRIPT':1,'STYLE':1,'TEXTAREA':1,'INPUT':1};
+function bidi(root){var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode:function(n){for(var p=n.parentNode;p&&p!==root.parentNode;p=p.parentNode){if(SKIP[p.nodeName.toUpperCase()]||(p.classList&&(p.classList.contains('m')||p.classList.contains('ltr'))))return NodeFilter.FILTER_REJECT}return NodeFilter.FILTER_ACCEPT}});
+ var nodes=[],n;while(n=w.nextNode())nodes.push(n);
+ nodes.forEach(function(t){var s=t.nodeValue;if(HEB.test(s)&&s.indexOf('→')>=0)s=t.nodeValue=s.replace(/→/g,'←');
+  if(!/[A-Za-z0-9∞√π]/.test(s)||!HEB.test(s+((t.parentNode&&t.parentNode.textContent)||'')))return;
+  var frag=document.createDocumentFragment(),last=0,m;RUN.lastIndex=0;
+  while(m=RUN.exec(s)){var r=m[0].replace(/[\s.,:]+$/,'');var open=(r.match(/\(/g)||[]).length,close=(r.match(/\)/g)||[]).length;
+   while(close>open&&r.slice(-1)===')'){r=r.slice(0,-1);close--}
+   if(open>close&&r.slice(-1)==='('){r=r.slice(0,-1).replace(/\s+$/,'')}
+   if(!r)continue;frag.appendChild(document.createTextNode(s.slice(last,m.index)));var b=document.createElement('bdi');b.dir='ltr';b.textContent=r;frag.appendChild(b);last=m.index+r.length;RUN.lastIndex=last}
+  frag.appendChild(document.createTextNode(s.slice(last)));t.parentNode.replaceChild(frag,t)})}
+var finished=false;
+function finish(){if(finished)return;finished=true;bidi($('.wrap'));sims.forEach(function(r){r()});qhide.forEach(function(f){f()});score();
+ if(window.LESSON_INIT)try{window.LESSON_INIT()}catch(e){console.error(e)}}
+window.__lessonFinish=finish;
+window.typesetLater=function(node){if(window.MathJax&&MathJax.typesetPromise){return MathJax.typesetPromise([node]).then(function(){bidi(node)}).catch(function(){})}bidi(node);return Promise.resolve()};
+setTimeout(finish,9000);
+})();
+</script>
+<script>window.MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']],packages:{'[+]':['html']}},loader:{load:['[tex]/html']},svg:{fontCache:'global'},options:{ignoreHtmlClass:'nomj'},startup:{ready:function(){MathJax.startup.defaultReady();MathJax.startup.promise.then(function(){window.__lessonFinish&&window.__lessonFinish()})}}};</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.min.js"></script>
+
+</body></html>

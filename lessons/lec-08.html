@@ -1,0 +1,684 @@
+<!doctype html><html><head><script>(function(){try{var m=localStorage.getItem("hedva2-theme");if(m==="dark"||m==="light")document.documentElement.setAttribute("data-theme",m);}catch(e){}})();</script><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>חדו״א 2 — הרצאה 8</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Assistant:wght@400;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>/* Layout (lecture 8): a calm math notebook — one reading column (max 860px), sticky score bar, section cards on a faint grid. */
+:root{
+  --bg:#f6f8fb; --card:#ffffff; --ink:#1d2533; --muted:#5b6678; --line:#dfe5ee; --soft:#eef2f8; --grid:rgba(40,80,140,.05);
+  --accent:#6d4bd8; --accent-soft:#efeafd; --ok:#1f8a52; --ok-soft:#ddf4e7; --bad:#c53030; --bad-soft:#fde7e7; --note:#fff7dc; --note-line:#e9c46a; --mine:#e8f3ff; --mine-line:#7fb2ea;
+  --amb:#b7791f; --tea:#1386a6; --pur:#7a3fd1; --blu:#2563eb; --pnk:#c2417a; --grn:#2f855a; --org:#c05621; --red:#c53030; --olv:#6b7f1a;
+  --ind:#4c51bf; --brn:#8b5a2b; --mag:#b83280; --sea:#2c7a7b; --plm:#7b3fb0; --rub:#c0265b; --cyn:#0891b2; --sky:#0369a1; --lim:#4d7c0f; --jade:#0f766e; --steel:#475569; --cnv:#047857; --dvg:#9f1239;
+  --f-head:"Secular One","Assistant",system-ui,sans-serif; --f-body:"Assistant",system-ui,-apple-system,"Segoe UI",sans-serif; --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#11161f; --card:#18202c; --ink:#e6ebf3; --muted:#9aa7ba; --line:#2a3546; --soft:#1f2937; --grid:rgba(160,190,255,.04);
+  --accent:#a48bff; --accent-soft:#2a2346; --ok:#6fd49b; --ok-soft:#163626; --bad:#ff8a80; --bad-soft:#3d1c1c; --note:#2f2a14; --note-line:#a58a2c; --mine:#15283d; --mine-line:#3f6f9f;
+  --amb:#f0b75a; --tea:#4cc3e0; --pur:#b48cff; --blu:#7aa7ff; --pnk:#f58bbb; --grn:#6fd49b; --org:#f6a26b; --red:#ff8a80; --olv:#b5c95a;
+  --ind:#a3a8ff; --brn:#d6a77a; --mag:#f08ad0; --sea:#6fd1cf; --plm:#c99af0; --rub:#ff7aa3; --cyn:#5fd8f0; --sky:#7cc4f5; --lim:#a3d65c; --jade:#5eead4; --steel:#cbd5e1; --cnv:#34d399; --dvg:#fb7185; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#11161f; --card:#18202c; --ink:#e6ebf3; --muted:#9aa7ba; --line:#2a3546; --soft:#1f2937; --grid:rgba(160,190,255,.04);
+  --accent:#a48bff; --accent-soft:#2a2346; --ok:#6fd49b; --ok-soft:#163626; --bad:#ff8a80; --bad-soft:#3d1c1c; --note:#2f2a14; --note-line:#a58a2c; --mine:#15283d; --mine-line:#3f6f9f;
+  --amb:#f0b75a; --tea:#4cc3e0; --pur:#b48cff; --blu:#7aa7ff; --pnk:#f58bbb; --grn:#6fd49b; --org:#f6a26b; --red:#ff8a80; --olv:#b5c95a;
+  --ind:#a3a8ff; --brn:#d6a77a; --mag:#f08ad0; --sea:#6fd1cf; --plm:#c99af0; --rub:#ff7aa3; --cyn:#5fd8f0; --sky:#7cc4f5; --lim:#a3d65c; --jade:#5eead4; --steel:#cbd5e1; --cnv:#34d399; --dvg:#fb7185; color-scheme:dark}
+html{direction:rtl}
+body{background-color:var(--bg);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:22px 22px;color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.65}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--card)}
+.wrap{max-width:860px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:8px 64px}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:6;background:var(--card);border-bottom:1px solid var(--line);margin-inline:calc(-1*max(16px,env(safe-area-inset-left,0px)));padding:8px max(16px,env(safe-area-inset-left,0px));display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.bar .sc{font-weight:700;font-size:15px}
+.bar .sc bdi{font-family:var(--f-mono)}
+.bar .meter{flex:1 1 120px;height:8px;background:var(--soft);border-radius:99px;overflow:hidden;min-width:80px}
+.bar .meter i{display:block;height:100%;width:0;background:var(--accent);transition:width .3s}
+.bar button{font:inherit;font-size:14px;font-weight:600;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:99px;padding:4px 12px;cursor:pointer}
+header.hero{padding-block:22px 6px}
+.credit{font-size:15px;background:var(--accent-soft);color:var(--ink);border-radius:10px;padding:6px 12px;display:inline-block;margin:0 0 12px}
+.eyebrow{font-size:13px;color:var(--muted);letter-spacing:.04em}
+h1{font-family:var(--f-head);font-weight:400;font-size:clamp(30px,6vw,42px);line-height:1.15;margin:4px 0 6px;text-wrap:balance}
+.sub{color:var(--muted);margin:0 0 12px}
+.legend{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.legend span{font-size:14px;border:1px solid var(--line);border-radius:99px;padding:2px 10px;background:var(--card)}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;background:currentColor;margin-inline-end:6px;vertical-align:middle}
+nav.toc{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin:12px 0 4px}
+nav.toc a{display:block;text-decoration:none;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:10px;padding:7px 11px;font-size:15px;font-weight:600}
+nav.toc a:hover{border-color:var(--accent)}
+nav.toc a b{color:var(--accent);font-family:var(--f-mono);margin-inline-end:4px}
+section.sec{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 18px 8px;margin-top:18px;scroll-margin-top:64px}
+@media (max-width:520px){section.sec{padding:14px 12px 6px;border-radius:12px}}
+.secno{font-family:var(--f-mono);font-size:13px;color:var(--muted);direction:ltr;unicode-bidi:isolate}
+h2{font-family:var(--f-head);font-weight:400;font-size:26px;margin:2px 0 10px;line-height:1.25;text-wrap:balance}
+h3{font-size:19px;margin:18px 0 6px}
+p{margin:8px 0}
+.box{border-radius:12px;padding:10px 14px;margin:12px 0;border:1px solid var(--line);background:var(--soft)}
+.box > b:first-child{display:block;margin-bottom:4px}
+.box.rule{background:var(--accent-soft);border-color:var(--accent)}
+.box.mine{background:var(--mine);border-color:var(--mine-line)}
+.box.fix{background:var(--note);border-color:var(--note-line)}
+.box.terms{background:var(--soft)}
+.box ol,.box ul{margin:4px 0;padding-inline-start:22px}
+.tw{overflow-x:auto;margin:10px 0}
+table{border-collapse:collapse;width:100%;font-size:15.5px}
+th,td{border:1px solid var(--line);padding:6px 9px;text-align:start;vertical-align:top}
+th{background:var(--soft)}
+.disp{overflow-x:auto;overflow-y:hidden;text-align:center;margin:10px 0;padding:4px 0}
+mjx-container{direction:ltr;unicode-bidi:isolate}
+mjx-container[display="true"]{margin:.4em 0!important}
+.disp mjx-container{display:inline-block!important}
+.ans{border-bottom:3px solid var(--cyn);padding-bottom:2px}
+.amb{color:var(--amb)}.tea{color:var(--tea)}.pur{color:var(--pur)}.blu{color:var(--blu)}.pnk{color:var(--pnk)}.grn{color:var(--grn)}.org{color:var(--org)}.red{color:var(--red)}.olv{color:var(--olv)}.ind{color:var(--ind)}.brn{color:var(--brn)}.mag{color:var(--mag)}.sea{color:var(--sea)}.plm{color:var(--plm)}.rub{color:var(--rub)}.cyn{color:var(--cyn)}.sky{color:var(--sky)}.lim{color:var(--lim)}.jade{color:var(--jade)}.steel{color:var(--steel)}.cnv{color:var(--cnv)}.dvg{color:var(--dvg)}
+.tag{display:inline-block;font-weight:700;border-radius:99px;padding:0 9px;font-size:15px}.tag.cnv{background:color-mix(in srgb,var(--cnv) 14%,transparent)}.tag.dvg{background:color-mix(in srgb,var(--dvg) 14%,transparent)}
+.k{font-weight:700}
+bdi,.m{unicode-bidi:isolate}
+.m{direction:ltr;display:inline-block;max-width:100%}
+code,pre{font-family:var(--f-mono);direction:ltr;unicode-bidi:isolate}
+/* simulation */
+.sim{border:2px solid var(--accent);border-radius:14px;padding:12px;margin:14px 0;background:var(--card)}
+.sim .st-title{font-weight:700;margin-bottom:6px}
+.sim .map{display:flex;flex-wrap:wrap;gap:5px;margin:0 0 8px;padding:0;list-style:none}
+.sim .map li{font-size:13.5px;border:1px solid var(--line);border-radius:99px;padding:2px 10px;color:var(--muted)}
+.sim .map li.on{background:var(--accent);border-color:var(--accent);color:var(--card);font-weight:700}
+.sim .map li.done{color:var(--ink);background:var(--soft)}
+.sim .lines{border:1px solid var(--line);border-radius:10px;padding:6px 8px;background:var(--soft);overflow-x:auto}
+.sim .ln{display:flex;gap:8px;align-items:center;padding:2px 4px;border-radius:6px;direction:ltr;min-height:30px}
+.sim .ln .no{font-family:var(--f-mono);font-size:12px;color:var(--muted);min-width:18px}
+.sim .ln.cur{background:var(--accent-soft);outline:2px solid var(--accent)}
+.sim .ln.fut{display:none}
+.sim .ln .f{min-width:0}
+.sim .x{margin:8px 0;padding:8px 12px;border-inline-start:4px solid var(--accent);background:var(--accent-soft);border-radius:8px}
+.sim .stp{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+.sim .stp > span{border:1px solid var(--line);border-radius:8px;padding:3px 9px;font-size:14.5px;background:var(--card)}
+.sim .stp > span > i{font-style:normal;color:var(--muted);margin-inline-end:6px;font-size:13px}
+.sim .stp .new{outline:2px solid var(--accent)}
+.sim .ctl{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-top:8px}
+.sim .ctl button{font:inherit;font-weight:700;font-size:15px;border:1px solid var(--accent);background:var(--card);color:var(--accent);border-radius:8px;padding:5px 14px;cursor:pointer}
+.sim .ctl button.pri{background:var(--accent);color:var(--card)}
+.sim .ctl button:disabled{opacity:.4;cursor:default}
+.sim .ctl .cnt{font-family:var(--f-mono);font-size:13px;color:var(--muted);direction:ltr;unicode-bidi:isolate}
+.sim .steps{display:none}
+/* quiz */
+.quiz{margin:16px 0 10px;border-top:1px dashed var(--line);padding-top:10px}
+.quiz > .qt{font-family:var(--f-head);font-size:19px;margin:0 0 6px}
+.qq{margin:10px 0 16px}
+.qq .q{font-weight:700;margin:4px 0}
+.qq ol{list-style:none;padding:0;margin:6px 0;display:grid;gap:6px}
+.qq li button{width:100%;text-align:start;font:inherit;font-size:16px;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:10px;padding:8px 12px;cursor:pointer;line-height:1.5}
+.qq li button:hover{border-color:var(--accent)}
+.qq li button.bad{border-color:var(--bad);background:var(--bad-soft)}
+.qq li button.good{border-color:var(--ok);background:var(--ok-soft)}
+.qq li button .lt{font-weight:700;color:var(--muted);margin-inline-end:8px}
+.qq .h,.qq .e{border-radius:8px;padding:6px 10px;font-size:15.5px}
+.qq .h{background:var(--bad-soft)}
+.qq .e{background:var(--ok-soft)}
+/* tools */
+.tool{border:1px solid var(--line);border-radius:12px;padding:12px;margin:12px 0;background:var(--soft)}
+.tool label{font-weight:600;font-size:15px}
+.tool input[type=range]{width:100%}
+.tool .out{font-family:var(--f-mono);direction:ltr;unicode-bidi:isolate;font-size:15px}
+.tool svg{width:100%;height:auto;display:block;background:var(--card);border-radius:8px;border:1px solid var(--line)}
+.tool .row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.tool select,.tool button{font:inherit;font-size:15px;border:1px solid var(--line);border-radius:8px;padding:4px 10px;background:var(--card);color:var(--ink)}
+.end{margin-top:18px;text-align:center;font-weight:700;font-size:18px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+mjx-container:not([display="true"]){display:inline-block;max-width:100%;overflow-x:auto;overflow-y:hidden;vertical-align:middle;padding-block:2px}
+mjx-container > svg{vertical-align:middle!important}
+mjx-assistive-mml{max-width:100%!important;left:0!important}
+[hidden]{display:none!important}
+.disp,.sim .lines{direction:ltr}
+input[type=range]{direction:ltr}
+@media (max-width:520px){.sim .ln mjx-container{font-size:86%}}
+</style>
+
+<div class="wrap" data-key="calc2-lec08-v1">
+<div class="bar"><span class="sc" id="score">ניקוד: 0</span><span class="meter" aria-hidden="true"><i id="meter"></i></span><button type="button" id="resetBtn">⟲ איפוס</button><button type="button" id="themeBtn">🌙 לילה</button></div>
+<header class="hero">
+<p class="credit">קרדיט לסיכומים של עדי מהדרייב 😊 ולעידו דוד צייג!</p>
+<div class="eyebrow">חדו״א 2 · הרצאה 8 · לנדסמן · 19/11/25 · שלושה עמודים בכתב יד</div>
+<h1>הרצאה 8: אינטגרלים לא אמיתיים</h1>
+<p class="sub">מה עושים כשהקטע הולך עד אינסוף? מגדירים עם גבול, בודקים אם מתכנס או מתבדר, ולומדים את מבחן ההשוואה.</p>
+<div class="legend">
+<span class="amb">גבול <bdi>t→∞</bdi></span>
+<span class="cnv">מתכנס (חדש)</span>
+<span class="dvg">מתבדר (חדש)</span>
+<span class="mag">הפרמטר <bdi>p</bdi> (חדש)</span>
+<span class="olv">פונקציה גדולה <bdi>f</bdi></span>
+<span class="red">פונקציה קטנה <bdi>g</bdi></span>
+<span class="grn">ln</span>
+<span class="pur">arctan / הצבה <bdi>u</bdi></span>
+<span class="cyn">תשובה סופית (קו מתחת)</span>
+</div>
+<nav class="toc" aria-label="תוכן עניינים"></nav>
+</header>
+
+<!-- 1 -->
+<section class="sec" id="s1" data-short="מה זה לא אמיתי?">
+<h2>מה זה אינטגרל לא אמיתי?</h2>
+<p><b>הבעיה:</b> עד עכשיו אינטגרל היה תמיד על קטע סופי $[a,b]$. בסוף הרצאה 7 ראינו שתי דרישות: קטע סופי ו-$f$ חסומה. היום שוברים את הדרישה הראשונה: הקטע הולך עד אינסוף, למשל $[1,\infty)$.</p>
+<p>אי אפשר לחלק קטע אינסופי לחתיכות כמו בסכום רימן. אז מה עושים? <b>עוצרים ב-$\class{amb}{t}$, מחשבים רגיל, ואז נותנים ל-$\class{amb}{t}$ לברוח לאינסוף.</b></p>
+<div class="box mine"><b>אינטגרל לא אמיתי — הדוגמה שלי עם מספרים</b>
+<ol>
+<li>שלב 1 – מה יש לנו: $f(x)=\frac1{x^2}$ על $[1,\infty)$. רוצים את כל השטח מתחת לגרף, עד הסוף.</li>
+<li>שלב 2 – עוצרים ב-$\class{amb}{t}$: זה אינטגרל רגיל. $\int_1^{t}\frac{dx}{x^2}=\big[-\tfrac1x\big]_1^{t}=1-\frac1t$.</li>
+<li>שלב 3 – מציבים מספרים: ב-$t=10$ יוצא $0.9$. ב-$t=100$ יוצא $0.99$. ב-$t=1000$ יוצא $0.999$.</li>
+<li>שלב 4 – רואים לאן זה הולך: $\lim_{t\to\infty}(1-\frac1t)=1$. השטח האינסופי הוא <span class="ans">$1$</span>. אומרים שהאינטגרל <span class="tag cnv">מתכנס</span>.</li>
+<li>שלב 5 – השוואה: עם $\frac1x$ יוצא $\int_1^t\frac{dx}x=\class{grn}{\ln t}$. ב-$t=10$: $2.30$, ב-$t=1000$: $6.91$. זה ממשיך לגדול בלי סוף. אומרים שהאינטגרל <span class="tag dvg">מתבדר</span>.</li>
+</ol></div>
+<p><b>מה כתוב במחברת (הגדרה):</b> נניח שקיים האינטגרל $I(\class{amb}{t})=\int_a^{\class{amb}{t}}f(x)\,dx$ לכל $t\ge a$. אם קיים הגבול</p>
+<div class="disp">$$I=\lim_{\class{amb}{t\to\infty}}I(t)$$</div>
+<p>אז מסמנים:</p>
+<div class="disp">$$I=\int_a^{\infty}f(x)\,dx=\lim_{\class{amb}{t\to\infty}}\int_a^{\class{amb}{t}}f(x)\,dx$$</div>
+<p>ואז $I$ נקרא <b>האינטגרל הלא אמיתי מהסוג הראשון</b>, ואומרים שהאינטגרל <span class="tag cnv">קיים / מתכנס</span>. אחרת (אין גבול, או שהגבול $\pm\infty$) אומרים שהוא <span class="tag dvg">לא קיים / מתבדר</span>.</p>
+<p>באופן דומה לצד השני:</p>
+<div class="disp">$$\int_{-\infty}^{a}f(x)\,dx=\lim_{\class{amb}{t\to-\infty}}\int_{\class{amb}{t}}^{a}f(x)\,dx$$</div>
+<div class="box terms"><b>מילים וסימנים</b>
+<ul>
+<li>"לא אמיתי" (באנגלית improper) — לא אינטגרל רגיל של רימן, אלא גבול של אינטגרלים רגילים.</li>
+<li>"סוג ראשון" = הקטע אינסופי. (סוג שני, כש-$f$ לא חסומה, יגיע בהמשך.)</li>
+<li>$\class{amb}{t}$ = סתם שם לקצה הזמני. הוא משתנה, ובסוף שולחים אותו לאינסוף.</li>
+<li>הסימן $\int_a^\infty$ הוא <b>קיצור</b> לגבול. אף אחד לא "מציב אינסוף" בקדומה.</li>
+<li>"מתבדר" כולל גם גבול $\infty$ וגם מצב שאין גבול בכלל (למשל $\int_0^t\cos x\,dx=\sin t$ מתנדנד).</li>
+</ul></div>
+<div class="box rule"><b>הכלל לזכור</b>$\int_a^\infty f=\lim_{t\to\infty}\int_a^tf$. מחשבים קדומה, מציבים $t$, ורק בסוף לוקחים גבול. גבול סופי = מתכנס. אחרת = מתבדר.</div>
+<p><b>אנלוגיה:</b> כמו למלא כוס בטיפות שהולכות וקטנות. אם הטיפות קטנות מספיק מהר ($\frac1{x^2}$), הכוס לא עולה על גדותיה גם אחרי אינסוף טיפות. אם הן קטנות לאט ($\frac1x$), בסוף שופכים בלי סוף.</p>
+<div class="tool"><b>המחשה: השטח עד $t$ — מתכנס או מתבדר?</b>
+<div class="row"><label for="itF">פונקציה:</label><select id="itF"><option value="0">1/x² על [1,∞)</option><option value="1">1/x על [1,∞)</option><option value="2">e^(−x) על [0,∞)</option><option value="3">cos x על [0,∞)</option></select></div>
+<label for="itT">הקצה הזמני t = <span class="out" id="itTv"></span></label>
+<input type="range" id="itT" min="0" max="100" value="30">
+<svg id="itSvg" viewBox="0 0 400 200" role="img" aria-label="גרף הפונקציה והשטח עד t"></svg>
+<p class="out" id="itOut"></p>
+<p style="font-size:15px">הזיזו את <bdi>t</bdi> ימינה. אם המספר מתייצב — מתכנס. אם הוא ממשיך לגדול או מתנדנד — מתבדר.</p></div>
+<div class="quiz"><div class="qt">שאלות על סעיף 1</div>
+<div class="qq" data-a="2"><p class="q">מה ההגדרה של $\int_2^\infty f(x)\,dx$?</p><ol><li>$\int_2^{\infty}f$ = הקדומה בנקודה $\infty$ פחות בנקודה $2$</li><li>$\lim_{n\to\infty}$ של סכומי רימן של $f$ על $[2,n]$ בלבד</li><li>$\lim_{t\to\infty}\int_2^tf(x)\,dx$, אם הגבול קיים וסופי</li><li>$\int_2^{t}f(x)\,dx$ עבור $t$ גדול מאוד, למשל $1000$</li></ol><p class="h">רמז: זה מוגדר בעזרת גבול של אינטגרלים רגילים.</p><p class="e">נכון. עוצרים ב-$t$, מחשבים רגיל, ואז $t\to\infty$.</p></div>
+<div class="qq" data-a="0"><p class="q">כמה זה $\int_1^\infty\frac{dx}{x^2}$?</p><ol><li>$1$, כי $1-\frac1t\to1$</li><li>$0$, כי $\frac1{x^2}\to0$</li><li>$\infty$, כי הקטע אינסופי</li><li>$\frac12$, כי $\frac{x^{-1}}{2}$</li></ol><p class="h">רמז: הקדומה של $x^{-2}$ היא $-\frac1x$.</p><p class="e">נכון. $\big[-\frac1x\big]_1^t=1-\frac1t\to1$.</p></div>
+<div class="qq" data-a="3"><p class="q">ידוע ש-$\int_0^t\cos x\,dx=\sin t$. מה אפשר להגיד על $\int_0^\infty\cos x\,dx$?</p><ol><li>מתכנס ל-$0$, כי $\cos$ חיובי ושלילי לסירוגין</li><li>מתכנס ל-$1$, כי $\sin t\le1$ תמיד</li><li>מתבדר ל-$\infty$, כי הקטע אינסופי</li><li>מתבדר, כי ל-$\sin t$ אין גבול כש-$t\to\infty$</li></ol><p class="h">רמז: מתכנס = יש גבול סופי. ל-$\sin t$ יש גבול?</p><p class="e">נכון. $\sin t$ מתנדנד בין $-1$ ל-$1$, אין גבול ⇒ מתבדר (גם בלי ללכת לאינסוף).</p></div>
+<div class="qq" data-a="1"><p class="q">ל-$\frac1x$ ול-$\frac1{x^2}$ יש גבול $0$ באינסוף. מה ההבדל בין האינטגרלים שלהן על $[1,\infty)$?</p><ol><li>שניהם מתכנסים, כי שתי הפונקציות שואפות לאפס</li><li>של $\frac1{x^2}$ מתכנס ושל $\frac1x$ מתבדר</li><li>של $\frac1x$ מתכנס ושל $\frac1{x^2}$ מתבדר</li><li>שניהם מתבדרים, כי הקטע של שניהם אינסופי</li></ol><p class="h">רמז: $\ln t$ מול $1-\frac1t$.</p><p class="e">נכון. לשאוף לאפס לא מספיק. צריך לשאוף "מהר מספיק".</p></div>
+</div>
+</section>
+
+<!-- 2 -->
+<section class="sec" id="s2" data-short="שני קצוות אינסופיים">
+<h2>שני הקצוות אינסופיים: $\int_{-\infty}^{\infty}$</h2>
+<p><b>מה כתוב במחברת (הערה):</b></p>
+<div class="box rule"><b>ההערה במחברת</b>$\int_{-\infty}^{\infty}f$ מתכנס <b>אם ורק אם</b> שני האינטגרלים $\int_{-\infty}^{a}f$ ו-$\int_{a}^{\infty}f$ מתכנסים.</div>
+<p>ובמקרה של התכנסות:</p>
+<div class="disp">$$\int_{-\infty}^{\infty}f(x)\,dx=\int_{-\infty}^{a}f(x)\,dx+\int_{a}^{\infty}f(x)\,dx$$</div>
+<div class="box mine"><b>למה מפצלים? — הדוגמה שלי עם מספרים</b>
+<ol>
+<li>שלב 1 – יש שני קצוות אינסופיים. לכל קצה יש <b>גבול משלו</b>, ואין סיבה שהם ירוצו באותה מהירות.</li>
+<li>שלב 2 – בוחרים נקודה $a$ באמצע (בדרך כלל $a=0$). עכשיו יש שני אינטגרלים עם קצה אינסופי אחד בכל אחד.</li>
+<li>שלב 3 – דוגמה: $f(x)=\frac1{1+x^2}$. החצי הימני $\int_0^\infty=\frac\pi2$, החצי השמאלי $\int_{-\infty}^0=\frac\pi2$. שניהם סופיים ⇒ סה״כ $\pi$.</li>
+<li>שלב 4 – אם אפילו חצי אחד מתבדר, כל האינטגרל מתבדר. לא משנה מה קורה בחצי השני.</li>
+<li>שלב 5 – זה לא משנה איזה $a$ בוחרים: מעבר מ-$a=0$ ל-$a=5$ מוסיף לחצי אחד $\int_0^5f$ (מספר סופי) ומוריד אותו מהשני.</li>
+</ol></div>
+<div class="box fix"><b>הערה שלי: למה לא פשוט $\lim_{a\to\infty}\int_{-a}^{a}$?</b>כי אז שני הקצוות זזים <b>ביחד</b>, וחלקים אינסופיים יכולים "לבטל" זה את זה. בדוגמה 1 (בסעיף הבא) זה בדיוק מה שקורה עם $x^3$: הגבול הסימטרי יוצא $0$, אבל האינטגרל מתבדר. גם המחברת מזהירה: הגבול הזה לא בהכרח שווה לאינטגרל.</div>
+<div class="box rule"><b>הכלל לזכור</b>$\int_{-\infty}^\infty$ = מפצלים בנקודה $a$ ובודקים כל חצי <b>לבד</b>. מתכנס רק אם <b>שני</b> החצאים מתכנסים.</div>
+<p><b>אנלוגיה:</b> גשר עם שני צדדים. הגשר עומד רק אם <b>כל</b> צד עומד בפני עצמו. צד אחד שקורס — הגשר נופל, גם אם הצד השני מושלם.</p>
+<div class="quiz"><div class="qt">שאלות על סעיף 2</div>
+<div class="qq" data-a="1"><p class="q">ידוע ש-$\int_0^\infty f$ מתכנס ו-$\int_{-\infty}^0f$ מתבדר. מה עם $\int_{-\infty}^\infty f$?</p><ol><li>מתכנס, כי לפחות חצי אחד מתכנס וזה מספיק</li><li>מתבדר, כי שני החצאים חייבים להתכנס</li><li>תלוי באיזו נקודה $a$ מפצלים את הקטע</li><li>מתכנס לערך של החצי הימני בלבד</li></ol><p class="h">רמז: "אם ורק אם שני האינטגרלים מתכנסים".</p><p class="e">נכון. חצי אחד מתבדר ⇒ הכל מתבדר.</p></div>
+<div class="qq" data-a="3"><p class="q">האם התשובה תלויה בנקודת הפיצול $a$?</p><ol><li>כן, צריך תמיד לבחור $a=0$ כדי שיהיה נכון</li><li>כן, עם $a$ אחר אפשר לקבל ערך אחר</li><li>כן, $a$ חייב להיות נקודה שבה $f(a)=0$</li><li>לא, כל $a$ נותן אותה התכנסות ואותו סכום</li></ol><p class="h">רמז: מעבר בין שתי נקודות מזיז קטע סופי מצד לצד.</p><p class="e">נכון. ההפרש הוא $\int_{a_1}^{a_2}f$, מספר סופי שעובר מחצי לחצי.</p></div>
+<div class="qq" data-a="0"><p class="q">למה ההגדרה לא משתמשת ב-$\lim_{a\to\infty}\int_{-a}^af$?</p><ol><li>כי קצוות שזזים יחד יכולים לבטל אינסופים</li><li>כי הגבול הזה תמיד יוצא אינסוף ולכן לא שימושי</li><li>כי אי אפשר לחשב קדומה בקטע סימטרי $[-a,a]$</li><li>כי הגבול הזה קיים רק לפונקציות זוגיות בלבד</li></ol><p class="h">רמז: חשבו על $x^3$ בקטע $[-a,a]$.</p><p class="e">נכון. $\int_{-a}^ax^3=0$ לכל $a$, אבל $\int_0^\infty x^3=\infty$.</p></div>
+</div>
+</section>
+
+<!-- 3 -->
+<section class="sec" id="s3" data-short="דוגמה 1: x³">
+<h2>דוגמה 1: האם $\int_{-\infty}^{\infty}x^3\,dx$ מתכנס?</h2>
+<p><b>המלכודת:</b> $x^3$ אי-זוגית, אז לכל $a$: $\int_{-a}^{a}x^3\,dx=0$, ולכן גם $\lim_{a\to\infty}\int_{-a}^ax^3dx=0$. אבל זה <b>לא</b> האינטגרל! צריך לבדוק כל חצי לבד.</p>
+<div class="box mine"><b>מפת השלבים</b>
+<ol><li>מפצלים ב-$0$ לשני חצאים.</li><li>חצי ימני: גבול כש-$t\to\infty$.</li><li>אם יצא אינסוף — עוצרים: הכל מתבדר.</li><li>(לא הכרחי) חצי שמאלי, רק לבדיקה.</li></ol></div>
+<div class="sim"><div class="st-title">סימולציה: דוגמה 1 — $x^3$</div>
+<ol class="map"><li>1. פיצול</li><li>2. חצי ימני</li><li>3. מסקנה</li><li>4. חצי שמאלי (בונוס)</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$\int_{-\infty}^\infty x^3dx\ \to\ \int_{-\infty}^0x^3dx\ \ ,\ \ \int_0^\infty x^3dx$</div><div class="x">לפי ההערה מסעיף 2: מפצלים ב-$a=0$, ובודקים כל חצי לבד.</div><div class="st"><span><i>חצי ימני</i>?</span><span><i>חצי שמאלי</i>?</span></div></div>
+<div class="step" data-m="1"><div class="f">$\int_0^\infty x^3dx=\lim_{\class{amb}{t\to\infty}}\int_0^{t}x^3dx=\lim_{t\to\infty}\frac{x^4}4\Big|_0^{t}$</div><div class="x">לפי ההגדרה: עוצרים ב-$t$. הקדומה של $x^3$ היא $\frac{x^4}4$ (מעלים חזקה ב-1 ומחלקים).</div><div class="st"><span><i>חצי ימני</i>בחישוב</span><span><i>חצי שמאלי</i>?</span></div></div>
+<div class="step" data-m="1"><div class="f">$=\lim_{\class{amb}{t\to\infty}}\frac{t^4}4=\infty$</div><div class="x">מציבים: $\frac{t^4}4-\frac{0^4}4=\frac{t^4}4$. למשל ב-$t=10$ זה כבר $2500$. זה גדל בלי סוף.</div><div class="st"><span><i>חצי ימני</i><span class="dvg">∞ — מתבדר</span></span><span><i>חצי שמאלי</i>?</span></div></div>
+<div class="step" data-m="2"><div class="f"><span class="ans">$\int_{-\infty}^\infty x^3dx$ מתבדר</span></div><div class="x">חצי אחד מתבדר ⇒ כל האינטגרל מתבדר. לא צריך לבדוק את החצי השני. (המחברת מוסיפה כוכבית: "לא הכרחי כי ראינו שמתבדר".)</div><div class="st"><span><i>חצי ימני</i><span class="dvg">מתבדר</span></span><span><i>מסקנה</i><span class="dvg">מתבדר</span></span></div></div>
+<div class="step" data-m="3"><div class="f">$\int_{-\infty}^0x^3dx=\lim_{\class{amb}{t\to-\infty}}\frac{x^4}4\Big|_{t}^{0}=\lim_{t\to-\infty}\Big(-\frac{t^4}4\Big)=-\infty$</div><div class="x">רק לבדיקה: גם החצי השמאלי מתבדר (ל-$-\infty$). שימו לב: $\infty+(-\infty)$ זה <b>לא</b> $0$. זה ביטוי לא מוגדר.</div><div class="st"><span><i>חצי ימני</i><span class="dvg">+∞</span></span><span><i>חצי שמאלי</i><span class="dvg">−∞</span></span></div></div>
+</div></div>
+<div class="tool"><b>המחשה: למה הגבול הסימטרי מטעה?</b>
+<p style="font-size:15px">מחשבים $\int_{-a}^{k\cdot a}x^3dx$. כש-$k=1$ הקצוות זזים יחד. כש-$k\ne1$ הקצה הימני רץ במהירות אחרת.</p>
+<label for="sySk">מהירות הקצה הימני k = <span class="out" id="sySkv"></span></label>
+<input type="range" id="sySk" min="50" max="200" value="100" step="5">
+<label for="syA">a = <span class="out" id="syAv"></span></label>
+<input type="range" id="syA" min="1" max="40" value="5">
+<p class="out" id="syOut"></p>
+<p style="font-size:15px">עם <bdi>k = 1</bdi> תמיד יוצא <bdi>0</bdi>. עם <bdi>k = 2</bdi> יוצא <bdi>15a⁴/4</bdi> שבורח לאינסוף. אינטגרל אמיתי לא היה תלוי במהירות — לכן כאן הוא מתבדר.</p></div>
+<div class="quiz"><div class="qt">שאלות על סעיף 3</div>
+<div class="qq" data-a="2"><p class="q">כמה זה $\lim_{a\to\infty}\int_{-a}^ax^3dx$?</p><ol><li>$\infty$, כי $\frac{a^4}4$ גדל בלי סוף</li><li>$-\infty$, כי החצי השמאלי שלילי</li><li>$0$, כי לכל $a$ האינטגרל הסימטרי הוא $0$</li><li>לא קיים, כי $x^3$ לא חסומה</li></ol><p class="h">רמז: $\frac{a^4}4-\frac{(-a)^4}4$.</p><p class="e">נכון. יוצא $0$ — אבל זה לא $\int_{-\infty}^\infty x^3$.</p></div>
+<div class="qq" data-a="1"><p class="q">אז מה התשובה ל-$\int_{-\infty}^\infty x^3dx$?</p><ol><li>מתכנס ל-$0$, כי $x^3$ פונקציה אי-זוגית</li><li>מתבדר, כי $\int_0^\infty x^3dx=\infty$</li><li>מתכנס ל-$0$, כי $\infty-\infty=0$</li><li>מתבדר, כי $x^3$ שלילית לחלק מה-$x$</li></ol><p class="h">רמז: בודקים כל חצי לבד.</p><p class="e">נכון. החצי הימני $\frac{t^4}4\to\infty$ ⇒ מתבדר.</p></div>
+<div class="qq" data-a="3"><p class="q">אחרי שמצאנו שהחצי הימני מתבדר, האם חייבים לחשב את החצי השמאלי?</p><ol><li>כן, כי אולי השמאלי יבטל את הימני ויתן $0$</li><li>כן, כי צריך את שני החצאים לפי ההגדרה</li><li>לא, כי החצי השמאלי תמיד שווה לימני</li><li>לא, כי חצי אחד מתבדר מספיק כדי שהכל יתבדר</li></ol><p class="h">רמז: "מתכנס אם ורק אם שניהם מתכנסים".</p><p class="e">נכון. לכן במחברת כתוב "לא הכרחי כי ראינו שמתבדר".</p></div>
+</div>
+</section>
+
+<!-- 4 -->
+<section class="sec" id="s4" data-short="דוגמה 2: 1/(1+x²)">
+<h2>דוגמה 2: האם $\int_{-\infty}^{\infty}\frac{dx}{1+x^2}$ מתכנס?</h2>
+<p>הפעם הפונקציה זוגית, חיובית, ויורדת מהר לאפס בשני הצדדים. נראה שהשטח כולו יוצא בדיוק $\pi$.</p>
+<div class="box terms"><b>תזכורת: מה זה arctan באינסוף?</b>
+<ul>
+<li>$\class{pur}{\arctan}$ היא הזווית (ברדיאנים) שה-tan שלה הוא המספר. היא תמיד בין $-\frac\pi2$ ל-$\frac\pi2$.</li>
+<li>$\arctan 1=\frac\pi4\approx0.785$, $\arctan 10\approx1.471$, $\arctan 100\approx1.561$. מתקרב ל-$\frac\pi2\approx1.571$.</li>
+<li>לכן $\lim_{t\to\infty}\arctan t=\frac\pi2$ ו-$\lim_{t\to-\infty}\arctan t=-\frac\pi2$.</li>
+<li>הקדומה: $\int\frac{dx}{1+x^2}=\class{pur}{\arctan x}+C$ (ראינו בהרצאה 4).</li>
+</ul></div>
+<div class="box mine"><b>מפת השלבים</b>
+<ol><li>מפצלים ב-$0$.</li><li>כל חצי = גבול משלו.</li><li>קדומה $\arctan$.</li><li>מציבים וגבולות.</li><li>מחברים.</li></ol></div>
+<div class="sim"><div class="st-title">סימולציה: דוגמה 2 — $\frac1{1+x^2}$</div>
+<ol class="map"><li>1. פיצול</li><li>2. גבולות</li><li>3. קדומה</li><li>4. הצבה</li><li>5. חיבור</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$\int_{-\infty}^{\infty}\frac{dx}{1+x^2}=\int_{-\infty}^{0}\frac{dx}{1+x^2}+\int_{0}^{\infty}\frac{dx}{1+x^2}$</div><div class="x">מפצלים ב-$a=0$, לפי ההערה. (מותר לכתוב את השוויון אם בסוף שני החצאים מתכנסים — ונראה שכן.)</div><div class="st"><span><i>שמאל</i>?</span><span><i>ימין</i>?</span></div></div>
+<div class="step" data-m="1"><div class="f">$=\lim_{\class{amb}{t\to-\infty}}\int_{t}^{0}\frac{dx}{1+x^2}+\lim_{\class{amb}{t\to\infty}}\int_{0}^{t}\frac{dx}{1+x^2}$</div><div class="x">כל חצי לפי ההגדרה שלו: בשמאלי $t\to-\infty$ והוא הקצה התחתון; בימני $t\to\infty$ והוא הקצה העליון.</div><div class="st"><span><i>שמאל</i>גבול</span><span><i>ימין</i>גבול</span></div></div>
+<div class="step" data-m="2"><div class="f">$=\lim_{t\to-\infty}\class{pur}{\arctan x}\Big|_{t}^{0}+\lim_{t\to\infty}\class{pur}{\arctan x}\Big|_{0}^{t}$</div><div class="x">הקדומה של $\frac1{1+x^2}$ היא $\arctan x$.</div><div class="st"><span><i>שמאל</i>arctan</span><span><i>ימין</i>arctan</span></div></div>
+<div class="step" data-m="3"><div class="f">$=\lim_{\class{amb}{t\to-\infty}}\big(-\class{pur}{\arctan t}\big)+\lim_{\class{amb}{t\to\infty}}\class{pur}{\arctan t}=-\Big(-\frac\pi2\Big)+\frac\pi2$</div><div class="x">מציבים: $\arctan0=0$. בשמאלי נשאר $0-\arctan t$, ו-$\arctan t\to-\frac\pi2$. בימני $\arctan t\to\frac\pi2$.</div><div class="st"><span><i>שמאל</i><span class="cnv">π/2 — מתכנס</span></span><span><i>ימין</i><span class="cnv">π/2 — מתכנס</span></span></div></div>
+<div class="step" data-m="4"><div class="f"><span class="ans">$=\pi$</span></div><div class="x">שני החצאים מתכנסים ⇒ האינטגרל מתכנס, וערכו $\frac\pi2+\frac\pi2=\pi$. <b>קיבלנו שהשטח שנמצא מתחת לגרף של $\frac1{1+x^2}$ הוא $\pi$</b> (כמו שכתוב במחברת ליד הציור).</div><div class="st"><span><i>שמאל</i><span class="cnv">π/2</span></span><span><i>ימין</i><span class="cnv">π/2</span></span><span><i>סה״כ</i><span class="cnv">π ≈ 3.1416</span></span></div></div>
+</div></div>
+<div class="tool"><b>המחשה: השטח בין $-t$ ל-$t$ מתקרב ל-$\pi$</b>
+<label for="atT">t = <span class="out" id="atTv"></span></label>
+<input type="range" id="atT" min="0" max="100" value="25">
+<svg id="atSvg" viewBox="0 0 400 180" role="img" aria-label="הגרף של 1 חלקי 1 ועוד x בריבוע והשטח מתחתיו"></svg>
+<p class="out" id="atOut"></p>
+<p style="font-size:15px">כאן מותר לזוז סימטרית, כי כבר הוכחנו שכל חצי מתכנס לבד.</p></div>
+<div class="box terms"><b>על הציור במחברת</b>ליד הגרף כתוב $f'(x)=-\frac{2x}{(1+x^2)^2}$. זה מראה למה יש מקסימום ב-$x=0$ (הנגזרת מתאפסת שם, חיובית משמאל ושלילית מימין), והגובה שם $f(0)=1$.</div>
+<div class="quiz"><div class="qt">שאלות על סעיף 4</div>
+<div class="qq" data-a="0"><p class="q">כמה זה $\lim_{t\to\infty}\arctan t$?</p><ol><li>$\frac\pi2$</li><li>$\pi$</li><li>$\infty$</li><li>$\frac\pi4$</li></ol><p class="h">רמז: הזווית שה-tan שלה ענק מתקרבת ל-$90°$.</p><p class="e">נכון. $\frac\pi2$ (כלומר $90°$).</p></div>
+<div class="qq" data-a="2"><p class="q">כמה זה $\int_0^\infty\frac{dx}{1+x^2}$?</p><ol><li>$\pi$, כי זה כל השטח שמתחת לגרף כולו</li><li>$1$, כי $f(0)=1$ והגרף יורד אחר כך לאפס</li><li>$\frac\pi2$, כי $\arctan t-\arctan0\to\frac\pi2$</li><li>$\infty$, כי הקטע $[0,\infty)$ אינסופי באורכו</li></ol><p class="h">רמז: רק חצי מהשטח.</p><p class="e">נכון. $\frac\pi2-0=\frac\pi2$.</p></div>
+<div class="qq" data-a="3"><p class="q">כמה זה $\int_1^\infty\frac{dx}{1+x^2}$?</p><ol><li>$\frac\pi2$, כמו מ-$0$ עד אינסוף</li><li>$1$, כי הקדומה היא $\frac1x$</li><li>$\frac{3\pi}4$, כי $\frac\pi2+\frac\pi4$</li><li>$\frac\pi4$, כי $\frac\pi2-\arctan1$</li></ol><p class="h">רמז: $\arctan1=\frac\pi4$.</p><p class="e">נכון. $\frac\pi2-\frac\pi4=\frac\pi4$.</p></div>
+<div class="qq" data-a="1"><p class="q">בחצי השמאלי, למה נשאר $-\arctan t$?</p><ol><li>כי $\arctan$ אי-זוגית ולכן משנה סימן תמיד</li><li>כי מציבים $\arctan0-\arctan t=0-\arctan t$</li><li>כי $t$ שלילי ולכן מוסיפים מינוס לפני הכל</li><li>כי הקדומה של $\frac1{1+x^2}$ היא $-\arctan x$</li></ol><p class="h">רמז: עליון פחות תחתון. העליון הוא $0$.</p><p class="e">נכון. $F(0)-F(t)=0-\arctan t$.</p></div>
+</div>
+</section>
+
+<!-- 5 -->
+<section class="sec" id="s5" data-short="זוגית ואי-זוגית">
+<h2>פונקציות זוגיות ואי-זוגיות</h2>
+<div class="box terms"><b>תזכורת: זוגית ואי-זוגית</b>
+<ul>
+<li><b>זוגית:</b> $f(-x)=f(x)$. הגרף סימטרי סביב ציר $y$. דוגמאות: $x^2$, $\cos x$, $\frac1{1+x^2}$. למשל $f(-2)=f(2)$.</li>
+<li><b>אי-זוגית:</b> $f(-x)=-f(x)$. הגרף סימטרי סביב הראשית. דוגמאות: $x^3$, $\sin x$, $x e^{-x^2}$. למשל $(-2)^3=-8=-(2^3)$.</li>
+</ul></div>
+<p><b>מה כתוב במחברת (הערות):</b></p>
+<ol>
+<li>אם $f$ <b>אי-זוגית</b>: אם $\int_0^\infty f$ <span class="tag cnv">מתכנס</span>, אז $\int_{-\infty}^\infty f$ מתכנס ושווה ל-$0$.</li>
+<li>אם $f$ <b>זוגית</b>: אם $\int_0^\infty f$ <span class="tag cnv">מתכנס</span>, אז $\int_{-\infty}^\infty f$ מתכנס ושווה ל-$2\int_0^\infty f$.</li>
+</ol>
+<div class="box mine"><b>זוגית / אי-זוגית — הדוגמה שלי עם מספרים</b>
+<ol>
+<li>שלב 1 – זוגית: $\frac1{1+x^2}$. ראינו $\int_0^\infty=\frac\pi2$. לפי הערה 2: $\int_{-\infty}^\infty=2\cdot\frac\pi2=\pi$. בדיוק כמו בדוגמה 2!</li>
+<li>שלב 2 – אי-זוגית: $f(x)=xe^{-x^2}$. בהצבה $u=x^2$: $\int_0^t xe^{-x^2}dx=\frac{1-e^{-t^2}}2$. ב-$t=2$ זה $0.491$, ב-$t=3$ זה $0.49994$. מתכנס ל-$\frac12$.</li>
+<li>שלב 3 – לפי הערה 1: $\int_{-\infty}^\infty xe^{-x^2}dx=0$. החצי השמאלי הוא $-\frac12$ והימני $+\frac12$.</li>
+<li>שלב 4 – זהירות: $x^3$ אי-זוגית, אבל $\int_0^\infty x^3$ <b>לא</b> מתכנס. אז הערה 1 לא חלה, ואי אפשר להגיד "$0$". זו בדיוק דוגמה 1.</li>
+</ol></div>
+<div class="box rule"><b>הכלל לזכור</b>קודם בודקים ש-$\int_0^\infty f$ מתכנס. רק אחרי זה: אי-זוגית ⇒ $0$, זוגית ⇒ פעמיים החצי.</div>
+<h3>הוכחה של הערה 1 (אי-זוגית), שורה אחרי שורה</h3>
+<div class="sim"><div class="st-title">סימולציה: הוכחת הערה 1</div>
+<ol class="map"><li>1. הגדרה</li><li>2. היפוך t</li><li>3. הצבה u = −x</li><li>4. אי-זוגיות</li><li>5. היפוך גבולות</li><li>6. מסקנה</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$\int_{-\infty}^0f(x)\,dx=\lim_{\class{amb}{t\to-\infty}}\int_{t}^{0}f(x)\,dx$</div><div class="x">ההגדרה של אינטגרל עם קצה $-\infty$.</div><div class="st"><span><i>מטרה</i>להראות שהחצי השמאלי = מינוס הימני</span></div></div>
+<div class="step" data-m="1"><div class="f">$=\lim_{\class{amb}{t\to\infty}}\int_{-t}^{0}f(x)\,dx$</div><div class="x">רק שינוי שם: במקום $t$ שהולך ל-$-\infty$, כותבים $-t$ כש-$t\to+\infty$. למשל $t=100$ נותן את הקצה $-100$.</div><div class="st"><span><i>קצה תחתון</i>−t</span></div></div>
+<div class="step" data-m="2"><div class="f">$\left[\begin{array}{c}\class{pur}{u=-x}\\ \class{pur}{du=-dx}\end{array}\right]=\lim_{t\to\infty}\Big(-\int_{t}^{0}f(\class{pur}{-u})\,d\class{pur}{u}\Big)$</div><div class="x">הצבה $u=-x$. הגבולות: כש-$x=-t$ אז $u=t$; כש-$x=0$ אז $u=0$. וגם $dx=-du$, זה המינוס בחוץ.</div><div class="st"><span><i>הצבה</i>u = −x</span><span><i>גבולות</i>x: −t → 0 ⇒ u: t → 0</span></div></div>
+<div class="step" data-m="3"><div class="f">$=\lim_{t\to\infty}\Big(\int_{t}^{0}f(u)\,du\Big)$</div><div class="x">$f$ אי-זוגית, אז $f(-u)=-f(u)$. המינוס הזה מבטל את המינוס שבחוץ.</div><div class="st"><span><i>שימוש</i>f(−u) = −f(u)</span></div></div>
+<div class="step" data-m="4"><div class="f">$=\lim_{t\to\infty}\Big(-\int_{0}^{t}f(u)\,du\Big)=-\int_0^\infty f(u)\,du=-\int_0^\infty f(x)\,dx$</div><div class="x">היפוך גבולות מוסיף מינוס. אחר כך: הגבול קיים כי הנחנו ש-$\int_0^\infty f$ מתכנס. בסוף רק משנים את שם המשתנה מ-$u$ ל-$x$.</div><div class="st"><span><i>חצי שמאלי</i>= − חצי ימני</span></div></div>
+<div class="step" data-m="5"><div class="f"><span class="ans">$\int_{-\infty}^\infty f(x)\,dx=-\int_0^\infty f+\int_0^\infty f=0$</span></div><div class="x">שני החצאים מתכנסים (השמאלי כי הוא מינוס הימני), אז לפי ההערה מסעיף 2 מחברים ומקבלים $0$. מש״ל 1.</div><div class="st"><span><i>תוצאה</i><span class="cnv">0</span></span></div></div>
+</div></div>
+<h3>הוכחה של הערה 2 (זוגית)</h3>
+<div class="sim"><div class="st-title">סימולציה: הוכחת הערה 2</div>
+<ol class="map"><li>1. הגדרה + היפוך t</li><li>2. הצבה u = −x</li><li>3. זוגיות</li><li>4. מסקנה</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$\int_{-\infty}^0f(x)\,dx=\lim_{t\to-\infty}\int_t^0f(x)\,dx=\lim_{\class{amb}{t\to\infty}}\int_{-t}^{0}f(x)\,dx$</div><div class="x">בדיוק כמו בהוכחה הקודמת.</div><div class="st"><span><i>קצה תחתון</i>−t</span></div></div>
+<div class="step" data-m="1"><div class="f">$=\lim_{t\to\infty}\Big(-\int_{t}^{0}f(\class{pur}{-u})\,du\Big)$</div><div class="x">אותה הצבה $u=-x$, $du=-dx$, והגבולות $t\to0$.</div><div class="st"><span><i>הצבה</i>u = −x</span></div></div>
+<div class="step" data-m="2"><div class="f">$=\lim_{t\to\infty}\Big(-\int_{t}^{0}f(u)\,du\Big)=\lim_{t\to\infty}\int_0^tf(u)\,du=\int_0^\infty f(x)\,dx$</div><div class="x">עכשיו $f$ זוגית: $f(-u)=f(u)$ (אין מינוס חדש). המינוס שבחוץ הופך את הגבולות מ-$\int_t^0$ ל-$\int_0^t$.</div><div class="st"><span><i>שימוש</i>f(−u) = f(u)</span><span><i>חצי שמאלי</i>= חצי ימני</span></div></div>
+<div class="step" data-m="3"><div class="f"><span class="ans">$\int_{-\infty}^{\infty}f(x)\,dx=2\int_0^\infty f(x)\,dx$</span></div><div class="x">שני חצאים שווים ומתכנסים ⇒ מחברים. מש״ל 2.</div><div class="st"><span><i>תוצאה</i><span class="cnv">2 · חצי ימני</span></span></div></div>
+</div></div>
+<div class="quiz"><div class="qt">שאלות על סעיף 5</div>
+<div class="qq" data-a="1"><p class="q">ידוע ש-$\int_0^\infty e^{-x^2}dx=\frac{\sqrt\pi}2$, ו-$e^{-x^2}$ זוגית. כמה זה $\int_{-\infty}^\infty e^{-x^2}dx$?</p><ol><li>$0$, כי מחברים שני חצאים סימטריים</li><li>$\sqrt\pi$, כי פעמיים $\frac{\sqrt\pi}2$</li><li>$\frac{\sqrt\pi}2$, כי החצי השמאלי הוא אפס</li><li>$\frac{\sqrt\pi}4$, כי מחלקים בין שני הצדדים</li></ol><p class="h">רמז: זוגית ⇒ פעמיים החצי.</p><p class="e">נכון. $2\cdot\frac{\sqrt\pi}2=\sqrt\pi$.</p></div>
+<div class="qq" data-a="3"><p class="q">$\sin x$ אי-זוגית. האם אפשר להסיק ש-$\int_{-\infty}^\infty\sin x\,dx=0$?</p><ol><li>כן, כי כל פונקציה אי-זוגית נותנת אפס</li><li>כן, כי $\int_{-a}^a\sin x\,dx=0$ לכל $a$</li><li>לא, כי $\sin x$ היא בעצם פונקציה זוגית</li><li>לא, כי $\int_0^\infty\sin x\,dx$ מתבדר</li></ol><p class="h">רמז: הערה 1 דורשת קודם ש-$\int_0^\infty$ מתכנס.</p><p class="e">נכון. $\int_0^t\sin x=1-\cos t$ מתנדנד ⇒ מתבדר, ואז גם הכל מתבדר.</p></div>
+<div class="qq" data-a="0"><p class="q">בהוכחה, ההצבה $u=-x$ על הקטע $[-t,0]$ נותנת אילו גבולות ל-$u$?</p><ol><li>מ-$t$ עד $0$</li><li>מ-$-t$ עד $0$</li><li>מ-$0$ עד $-t$</li><li>מ-$0$ עד $t$</li></ol><p class="h">רמז: מציבים את הקצוות של $x$ ב-$u=-x$, לפי הסדר.</p><p class="e">נכון. $x=-t\Rightarrow u=t$, ו-$x=0\Rightarrow u=0$.</p></div>
+<div class="qq" data-a="2"><p class="q">מאיפה מגיע המינוס שבחוץ, $-\int_t^0f(-u)\,du$?</p><ol><li>מכך ש-$f$ אי-זוגית ולכן $f(-u)=-f(u)$</li><li>מהיפוך הגבולות של האינטגרל מ-$0$ ל-$t$</li><li>מכך ש-$du=-dx$, כלומר $dx=-du$</li><li>מכך ש-$t\to-\infty$ ולכן הקצה שלילי</li></ol><p class="h">רמז: הוא מופיע עוד לפני שמשתמשים בזוגיות או באי-זוגיות.</p><p class="e">נכון. זה ה-$dx=-du$ של ההצבה.</p></div>
+</div>
+</section>
+
+<!-- 6 -->
+<section class="sec" id="s6" data-short="דוגמה: 1/x^p">
+<h2>דוגמה חשובה: $\int_1^\infty\frac{dx}{x^{\class{mag}{p}}}$</h2>
+<p><b>השאלה במחברת:</b> לאילו ערכים של $\class{mag}{p}\in\mathbb R$ (קבוע) האינטגרל מתכנס?</p>
+<div class="box mine"><b>הפרמטר p — הדוגמה שלי עם מספרים</b>
+<ol>
+<li>שלב 1 – מה זה $\class{mag}{p}$: מספר קבוע שבוחרים מראש. כל $p$ נותן פונקציה אחרת: $p=2$ זה $\frac1{x^2}$, $p=1$ זה $\frac1x$, $p=\frac12$ זה $\frac1{\sqrt x}$.</li>
+<li>שלב 2 – $p=2$: ראינו בסעיף 1 שיוצא $1$. <span class="tag cnv">מתכנס</span>.</li>
+<li>שלב 3 – $p=1$: יוצא $\class{grn}{\ln t}\to\infty$. <span class="tag dvg">מתבדר</span>.</li>
+<li>שלב 4 – $p=\frac12$: $\int_1^tx^{-1/2}dx=2\sqrt t-2$. ב-$t=100$ זה $18$. <span class="tag dvg">מתבדר</span>.</li>
+<li>שלב 5 – $p=3$: $\int_1^tx^{-3}dx=\frac12-\frac1{2t^2}\to\frac12$. <span class="tag cnv">מתכנס</span>. ושימו לב: $\frac1{p-1}=\frac1{3-1}=\frac12$.</li>
+</ol></div>
+<div class="box mine"><b>מפת השלבים (למה מפצלים ל-p = 1?)</b>הקדומה של $x^{-p}$ היא $\frac{x^{-p+1}}{-p+1}$ — אבל כש-$p=1$ מחלקים באפס! לכן $p=1$ הוא מקרה נפרד (קדומה $\ln$). אחר כך, כש-$p\ne1$, יש שתי דרכים שהגבול יכול להיגמר: החזקה $1-p$ חיובית (אינסוף) או שלילית (אפס).</div>
+<div class="sim"><div class="st-title">סימולציה: $\int_1^\infty\frac{dx}{x^p}$ לכל $p$</div>
+<ol class="map"><li>1. מקרה p = 1</li><li>2. מקרה p ≠ 1: קדומה</li><li>3. הצבה</li><li>4. מתי מתכנס?</li><li>5. מסקנה</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$\class{mag}{p=1}:\ \int_1^\infty\frac{dx}x=\lim_{\class{amb}{t\to\infty}}\class{grn}{\ln x}\Big|_1^{t}=\lim_{t\to\infty}\class{grn}{\ln t}=\infty$</div><div class="x">הקדומה של $\frac1x$ היא $\ln x$, ו-$\ln1=0$. $\ln t$ גדל בלי סוף (לאט, אבל בלי סוף). <span class="tag dvg">מתבדר</span>.</div><div class="st"><span><i>p = 1</i><span class="dvg">מתבדר</span></span><span><i>p ≠ 1</i>?</span></div></div>
+<div class="step" data-m="1"><div class="f">$\class{mag}{p\ne1}:\ \int_1^\infty\frac{dx}{x^{p}}=\lim_{t\to\infty}\frac{x^{-\class{mag}{p}+1}}{-\class{mag}{p}+1}\Big|_1^{t}$</div><div class="x">$\frac1{x^p}=x^{-p}$. מעלים חזקה ב-1 ומחלקים בחזקה החדשה. מותר כי $-p+1\ne0$.</div><div class="st"><span><i>p = 1</i><span class="dvg">מתבדר</span></span><span><i>p ≠ 1</i>בחישוב</span></div></div>
+<div class="step" data-m="2"><div class="f">$=\lim_{\class{amb}{t\to\infty}}\Big(\frac{t^{1-\class{mag}{p}}}{1-\class{mag}{p}}-\frac{1}{1-\class{mag}{p}}\Big)$</div><div class="x">מציבים $t$ ו-$1$. המספר $1$ בכל חזקה נשאר $1$. החלק השני הוא מספר קבוע — כל השאלה היא מה קורה ל-$t^{1-p}$.</div><div class="st"><span><i>שאלה</i>לאן הולך t^(1−p)?</span></div></div>
+<div class="step" data-m="3"><div class="f">$t^{1-p}\to\begin{cases}\infty, & \class{mag}{p<1}\ (1-p>0)\\[2pt] 0, & \class{mag}{p>1}\ (1-p<0)\end{cases}$</div><div class="x">אם $p<1$, החזקה חיובית, למשל $t^{0.5}=\sqrt t\to\infty$. אם $p>1$, החזקה שלילית, למשל $t^{-1}=\frac1t\to0$.</div><div class="st"><span><i>p &lt; 1</i><span class="dvg">∞ — מתבדר</span></span><span><i>p &gt; 1</i><span class="cnv">−1/(1−p) = 1/(p−1)</span></span></div></div>
+<div class="step" data-m="4"><div class="f"><span class="ans">$\int_1^\infty\frac{dx}{x^p}=\frac1{p-1}$ אם $p>1$, ומתבדר אם $p\le1$</span></div><div class="x">כש-$p>1$ נשאר רק $0-\frac1{1-p}=\frac1{p-1}$. ביחד עם מקרה $p=1$: מתכנס בדיוק כש-$p>1$. למשל $p=2$ נותן $\frac1{2-1}=1$, כמו בציור במחברת.</div><div class="st"><span><i>p ≤ 1</i><span class="dvg">מתבדר</span></span><span><i>p &gt; 1</i><span class="cnv">1/(p−1)</span></span></div></div>
+</div></div>
+<div class="tw"><table><tr><th>הערך של $p$</th><th>הפונקציה</th><th>$\int_1^t$</th><th>תוצאה</th></tr>
+<tr><td>$\frac12$</td><td>$\frac1{\sqrt x}$</td><td>$2\sqrt t-2$</td><td class="dvg">מתבדר</td></tr>
+<tr><td>$1$</td><td>$\frac1x$</td><td>$\ln t$</td><td class="dvg">מתבדר</td></tr>
+<tr><td>$\frac32$</td><td>$\frac1{x\sqrt x}$</td><td>$2-\frac2{\sqrt t}$</td><td class="cnv">מתכנס ל-$2$</td></tr>
+<tr><td>$2$</td><td>$\frac1{x^2}$</td><td>$1-\frac1t$</td><td class="cnv">מתכנס ל-$1$</td></tr>
+<tr><td>$3$</td><td>$\frac1{x^3}$</td><td>$\frac12-\frac1{2t^2}$</td><td class="cnv">מתכנס ל-$\frac12$</td></tr></table></div>
+<div class="tool"><b>המחשה: הזיזו את $p$ ואת $t$</b>
+<label for="ppP">p = <span class="out" id="ppPv"></span></label>
+<input type="range" id="ppP" min="20" max="400" value="200" step="5">
+<label for="ppT">t = <span class="out" id="ppTv"></span></label>
+<input type="range" id="ppT" min="0" max="100" value="40">
+<svg id="ppSvg" viewBox="0 0 400 180" role="img" aria-label="הגרף של 1 חלקי x בחזקת p והשטח עד t"></svg>
+<p class="out" id="ppOut"></p></div>
+<div class="box rule"><b>הכלל לזכור (נשתמש בו המון במבחן ההשוואה)</b>$\int_1^\infty\frac{dx}{x^p}$ מתכנס $\iff p>1$, ואז ערכו $\frac1{p-1}$. הגבול הוא בדיוק $p=1$, ו-$p=1$ עצמו מתבדר.</div>
+<div class="quiz"><div class="qt">שאלות על סעיף 6</div>
+<div class="qq" data-a="3"><p class="q">כמה זה $\int_1^\infty\frac{dx}{x^4}$?</p><ol><li>$\frac14$, כי מחלקים בחזקה $4$</li><li>$\frac15$, כי החזקה עולה ב-$1$</li><li>$\frac1{-3}$, כי $\frac1{1-p}$ עם $p=4$</li><li>$\frac13$, כי $\frac1{p-1}$ עם $p=4$</li></ol><p class="h">רמז: $\frac1{p-1}$.</p><p class="e">נכון. $\frac1{4-1}=\frac13$.</p></div>
+<div class="qq" data-a="0"><p class="q">האם $\int_1^\infty\frac{dx}{\sqrt[3]{x}}$ מתכנס?</p><ol><li>לא, כי $p=\frac13\le1$</li><li>כן, כי $p=3>1$</li><li>כן, כי $\frac1{\sqrt[3]x}\to0$</li><li>לא, כי $p=-\frac13$ שלילי</li></ol><p class="h">רמז: $\sqrt[3]x=x^{1/3}$.</p><p class="e">נכון. $p=\frac13$, וזה קטן מ-$1$ ⇒ מתבדר.</p></div>
+<div class="qq" data-a="2"><p class="q">למה במחברת מטפלים ב-$p=1$ בנפרד?</p><ol><li>כי ב-$p=1$ הפונקציה לא מוגדרת ב-$x=1$</li><li>כי ב-$p=1$ האינטגרל מתכנס ל-$1$ בדיוק</li><li>כי בקדומה $\frac{x^{1-p}}{1-p}$ יש $0$</li><li>כי $p=1$ הוא המקרה היחיד שבו $p$ שלם</li></ol><p class="h">רמז: הציבו $p=1$ במכנה של הקדומה.</p><p class="e">נכון. ואז הקדומה היא $\ln x$.</p></div>
+<div class="qq" data-a="1"><p class="q">כש-$p>1$, לאן הולך $t^{1-p}$ כש-$t\to\infty$?</p><ol><li>ל-$\infty$, כי $t$ גדל בלי סוף</li><li>ל-$0$, כי החזקה $1-p$ שלילית</li><li>ל-$1$, כי כל חזקה של $1$ היא $1$</li><li>ל-$-\infty$, כי $1-p$ שלילי</li></ol><p class="h">רמז: $t^{-2}=\frac1{t^2}$.</p><p class="e">נכון. חזקה שלילית = אחד חלקי חזקה חיובית ⇒ $0$.</p></div>
+</div>
+</section>
+
+<!-- 7 -->
+<section class="sec" id="s7" data-short="מבחן ההשוואה">
+<h2>משפט: מבחן ההשוואה</h2>
+<p><b>הבעיה:</b> הרבה פעמים אי אפשר למצוא קדומה (למשל $e^{-x^2}$ אין לה קדומה "יפה"). אבל אולי בכלל לא צריך את הערך — רק לדעת אם מתכנס. הרעיון: משווים לפונקציה שאנחנו כבר מכירים.</p>
+<div class="box mine"><b>מבחן ההשוואה — הדוגמה שלי עם מספרים</b>
+<ol>
+<li>שלב 1 – מה יש לנו: $\class{red}{g(x)=\frac1{x^2+1}}$ על $[1,\infty)$. נניח שלא זוכרים את הקדומה.</li>
+<li>שלב 2 – משווים: $x^2+1>x^2$, אז $\class{red}{\frac1{x^2+1}}\le\class{olv}{\frac1{x^2}}$. למשל ב-$x=2$: $0.2\le0.25$.</li>
+<li>שלב 3 – את הגדולה אנחנו מכירים: $\int_1^\infty\class{olv}{\frac1{x^2}}=1$ <span class="tag cnv">מתכנס</span>.</li>
+<li>שלב 4 – השטח של הקטנה הוא חלק מהשטח של הגדולה. לכן $\int_1^t\class{red}{g}\le1$ לכל $t$, וגם הוא גדל עם $t$. מספר שגדל אבל לא עובר את $1$ — חייב להתייצב. <span class="tag cnv">מתכנס</span>.</li>
+<li>שלב 5 – בדיקה: באמת $\int_1^\infty\frac{dx}{1+x^2}=\frac\pi4\approx0.785\le1$ (ראינו בשאלות של סעיף 4).</li>
+</ol></div>
+<p><b>מה כתוב במחברת:</b> נניח ש-$\class{olv}{f}$ ו-$\class{red}{g}$ מוגדרות ב-$[a,\infty)$ ואינטגרביליות ב-$[a,t]$ לכל $t\ge a$. נניח שקיים $b\ge a$ כך ש:</p>
+<div class="disp">$$\class{olv}{f(x)}\ \ge\ \class{red}{g(x)}\ \ge\ 0\qquad\forall x\ge b$$</div>
+<ol>
+<li>אם $\int_a^\infty\class{olv}{f}$ <span class="tag cnv">מתכנס</span> אז $\int_a^\infty\class{red}{g}$ <span class="tag cnv">מתכנס</span>. (הגדולה מתכנסת ⇒ הקטנה מתכנסת.)</li>
+<li>אם $\int_a^\infty\class{red}{g}$ <span class="tag dvg">מתבדר</span> אז $\int_a^\infty\class{olv}{f}$ <span class="tag dvg">מתבדר</span>. (הקטנה מתבדרת ⇒ הגדולה מתבדרת.)</li>
+</ol>
+<div class="box terms"><b>מילים וסימנים</b>
+<ul>
+<li>$b$ = "מנקודה מסוימת והלאה". האי-שוויון לא חייב להתקיים מההתחלה. מה שקורה בקטע סופי $[a,b]$ לא משפיע על התכנסות.</li>
+<li>"חסומה מלמעלה" = יש מספר שהיא אף פעם לא עוברת.</li>
+<li>"מונוטונית עולה" = רק גדלה (או נשארת), אף פעם לא יורדת.</li>
+</ul></div>
+<div class="box fix"><b>זהירות: הכיוון חשוב!</b>אם הגדולה <b>מתבדרת</b>, זה לא אומר כלום על הקטנה. דוגמה: $\frac1{x^2}\le\frac1x$, הגדולה מתבדרת והקטנה מתכנסת. וגם: אם הקטנה <b>מתכנסת</b> — זה לא אומר כלום על הגדולה.</div>
+<div class="tw"><table><tr><th>מה ידוע</th><th>מה אפשר להסיק</th></tr>
+<tr><td>הגדולה $\class{olv}{f}$ <span class="cnv">מתכנסת</span></td><td>הקטנה $\class{red}{g}$ <span class="cnv">מתכנסת</span> ✓</td></tr>
+<tr><td>הקטנה $\class{red}{g}$ <span class="dvg">מתבדרת</span></td><td>הגדולה $\class{olv}{f}$ <span class="dvg">מתבדרת</span> ✓</td></tr>
+<tr><td>הגדולה $\class{olv}{f}$ <span class="dvg">מתבדרת</span></td><td>כלום ✗</td></tr>
+<tr><td>הקטנה $\class{red}{g}$ <span class="cnv">מתכנסת</span></td><td>כלום ✗</td></tr></table></div>
+<p><b>אנלוגיה:</b> שני מיכלים, אחד בתוך השני. אם המיכל הגדול לא נשפך (סופי), גם הקטן שבתוכו לא. אם הקטן כבר נשפך (אינסופי), ודאי שהגדול נשפך.</p>
+<h3>ההוכחה, שורה אחרי שורה</h3>
+<div class="sim"><div class="st-title">סימולציה: הוכחת חלק 1</div>
+<ol class="map"><li>1. הקטנה עולה</li><li>2. חסומה</li><li>3. מונוטונית + חסומה</li><li>4. הקטע הסופי</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$\class{red}{g(x)}\ge0\ \Rightarrow\ \int_b^{t}\class{red}{g(x)}\,dx\ \nearrow\ (t\uparrow)$</div><div class="x">כשמגדילים את $t$ מוסיפים עוד שטח, והשטח הזה לא שלילי (כי $g\ge0$). למשל: $\int_b^{t+1}g=\int_b^tg+\int_t^{t+1}g\ge\int_b^tg$.</div><div class="st"><span><i>∫ g עד t</i>עולה</span><span><i>חסום?</i>?</span></div></div>
+<div class="step" data-m="1"><div class="f">$0\le\int_b^{t}\class{red}{g}\,dx\le\int_b^{t}\class{olv}{f}\,dx\le\int_b^{\infty}\class{olv}{f}\,dx$</div><div class="x">שני אי-שוויונות: (1) מונוטוניות של האינטגרל — $g\le f$ אז $\int g\le\int f$ (הרצאה 2). (2) $\int_b^tf\le\int_b^\infty f$ כי $f\ge0$, אז השטח עד $t$ קטן מכל השטח. ו-$\int_b^\infty f$ הוא <b>מספר</b> כי $f$ מתכנס.</div><div class="st"><span><i>∫ g עד t</i>עולה</span><span><i>חסום?</i>כן, ב-∫ f</span></div></div>
+<div class="step" data-m="2"><div class="f">$\Rightarrow\ \int_b^{\infty}\class{red}{g}\,dx=\lim_{t\to\infty}\int_b^t\class{red}{g}\ <\infty$</div><div class="x">פונקציה מונוטונית עולה וחסומה מלמעלה — יש לה גבול סופי (כמו סדרה עולה וחסומה בחדו״א 1). <span class="tag cnv">מתכנס</span>.</div><div class="st"><span><i>∫ g מ-b</i><span class="cnv">מתכנס</span></span></div></div>
+<div class="step" data-m="3"><div class="f"><span class="ans">$\int_a^\infty\class{red}{g}=\int_a^b\class{red}{g}+\int_b^\infty\class{red}{g}$ מתכנס</span></div><div class="x">$\int_a^bg$ הוא אינטגרל רגיל על קטע סופי (g אינטגרבילית שם) — מספר. מספר + מתכנס = מתכנס. מש״ל 1.</div><div class="st"><span><i>∫ g מ-a</i><span class="cnv">מתכנס</span></span></div></div>
+</div></div>
+<div class="box fix"><b>הערה שלי: על השורה הראשונה במחברת</b>במחברת כתוב "$g(x)\ge0$ אז $I(t)=\int_a^tg$ מונוטונית עולה". אבל לפי ההנחה $g\ge0$ רק החל מ-$b$. לכן נכון יותר לומר שהיא עולה <b>עבור $t\ge b$</b>, וזה בדיוק מה שהמחברת עושה בשורה הבאה (מסתכלת על $\int_b^t$). זה מספיק לגבול.</div>
+<div class="box mine"><b>תוספת שלי: הוכחה של חלק 2 (לא כתובה במחברת)</b>
+<ol>
+<li>נניח ש-$\int_a^\infty\class{red}{g}$ מתבדר, ונניח בשלילה ש-$\int_a^\infty\class{olv}{f}$ מתכנס.</li>
+<li>לפי חלק 1 (הגדולה מתכנסת ⇒ הקטנה מתכנסת), $\int_a^\infty\class{red}{g}$ מתכנס.</li>
+<li>סתירה להנחה. לכן $\int_a^\infty\class{olv}{f}$ מתבדר.</li>
+</ol>חלק 2 הוא פשוט "חלק 1 הפוך" (קונטרה-פוזיטיב).</div>
+<div class="box mine"><b>מפת שלבים: איך משתמשים במבחן ההשוואה</b>
+<ol>
+<li>מנחשים: מתכנס או מתבדר? (מסתכלים איך הפונקציה מתנהגת כש-$x$ גדול.)</li>
+<li>בוחרים פונקציה מוכרת להשוואה, בדרך כלל $\frac1{x^p}$ או $e^{-x}$.</li>
+<li>אם ניחשנו מתכנס: מחפשים מוכרת <b>גדולה</b> שמתכנסת. אם ניחשנו מתבדר: מחפשים מוכרת <b>קטנה</b> שמתבדרת.</li>
+<li>מוכיחים את האי-שוויון (ושהכל $\ge0$) מנקודה $b$ והלאה.</li>
+<li>אם האי-שוויון יוצא בכיוון הלא נכון — הניחוש כנראה שגוי, או שצריך פונקציה אחרת להשוואה.</li>
+</ol></div>
+<div class="quiz"><div class="qt">שאלות על סעיף 7</div>
+<div class="qq" data-a="2"><p class="q">ידוע $0\le g\le f$, ו-$\int_1^\infty g$ מתכנס. מה אפשר להגיד על $\int_1^\infty f$?</p><ol><li>מתכנס, כי $f$ ו-$g$ מושוות זו לזו</li><li>מתבדר, כי $f$ גדולה מ-$g$ בכל נקודה</li><li>כלום, מבחן ההשוואה לא נותן כאן מסקנה</li><li>מתכנס לאותו ערך כמו $\int_1^\infty g$</li></ol><p class="h">רמז: הקטנה מתכנסת — זה אחד המקרים "כלום".</p><p class="e">נכון. דוגמה: $\frac1{x^2}\le\frac1x$ (הגדולה מתבדרת), אבל גם $\frac1{x^2}\le\frac2{x^2}$ (הגדולה מתכנסת).</p></div>
+<div class="qq" data-a="1"><p class="q">למה $\int_b^tg$ עולה כש-$t$ גדל?</p><ol><li>כי $g$ פונקציה עולה מהנקודה $b$ והלאה</li><li>כי $g\ge0$, אז כל תוספת שטח אינה שלילית</li><li>כי $f\ge g$ ולכן גם $\int f$ גדל</li><li>כי כל אינטגרל לא אמיתי הוא פונקציה עולה</li></ol><p class="h">רמז: $\int_b^{t+1}g=\int_b^tg+\int_t^{t+1}g$.</p><p class="e">נכון. התוספת $\int_t^{t+1}g\ge0$. (לא צריך ש-$g$ עצמה תעלה!)</p></div>
+<div class="qq" data-a="0"><p class="q">מה מבטיח ש-$\int_b^tg$ (עולה וחסום) מתכנס כש-$t\to\infty$?</p><ol><li>מונוטונית עולה וחסומה מלמעלה ⇒ יש גבול</li><li>משפט ערך הביניים: יש $c$ שבו $g(c)=0$</li><li>המשפט היסודי: הנגזרת של $\int_b^tg$ היא $g(t)$</li><li>משפט ויירשטראס: רציפה בקטע סגור מקבלת מקסימום</li></ol><p class="h">רמז: כמו סדרה עולה וחסומה בחדו״א 1.</p><p class="e">נכון. מונוטונית + חסומה ⇒ מתכנסת.</p></div>
+<div class="qq" data-a="3"><p class="q">אם $0\le g\le f$ רק החל מ-$x=100$, האם עדיין אפשר להשתמש במבחן?</p><ol><li>לא, כי האי-שוויון חייב להתקיים מ-$x=a$</li><li>לא, כי בקטע $[a,100]$ אולי $f$ לא חסומה</li><li>כן, אבל רק אם $a=100$ בדיוק</li><li>כן, כי $\int_a^{100}$ הוא סתם מספר סופי</li></ol><p class="h">רמז: זה התפקיד של $b$ במשפט.</p><p class="e">נכון. בוחרים $b=100$. הקטע הסופי רק מוסיף מספר.</p></div>
+</div>
+</section>
+
+<!-- 8 -->
+<section class="sec" id="s8" data-short="דוגמאות השוואה">
+<h2>דוגמאות למבחן ההשוואה</h2>
+<div class="box terms"><b>תזכורת: האקספוננט</b>$e^x$ עולה כל הזמן (מונוטונית עולה). לכן אם $A\le B$ אז $e^A\le e^B$. למשל $-4\le-2$ ולכן $e^{-4}\approx0.018\le e^{-2}\approx0.135$. (במחברת יש ציור קטן של $e^x$ בשביל זה.)</div>
+<h3>דוגמה 1: הוכיחו ש-$\int_0^\infty e^{-x^2}dx$ מתכנס</h3>
+<p>ל-$e^{-x^2}$ אין קדומה שאפשר לכתוב בנוסחה. אבל היא יורדת לאפס מהר מאוד — אז נחפש פונקציה <b>גדולה</b> ממנה שמתכנסת.</p>
+<div class="sim"><div class="st-title">סימולציה: $e^{-x^2}$ מול $e^{-x}$</div>
+<ol class="map"><li>1. אי-שוויון בחזקות</li><li>2. אי-שוויון בפונקציות</li><li>3. הגדולה מתכנסת</li><li>4. מסקנה</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$x\in[1,\infty)\ \Rightarrow\ x^2\ge x\ \Rightarrow\ -x^2\le-x$</div><div class="x">כש-$x\ge1$, כפל ב-$x$ רק מגדיל: $x\cdot x\ge x\cdot1$. למשל $3^2=9\ge3$. כפל במינוס הופך את הכיוון.</div><div class="st"><span><i>b</i>1</span><span><i>חזקות</i>−x² ≤ −x</span></div></div>
+<div class="step" data-m="1"><div class="f">$0<\class{red}{e^{-x^2}}\le\class{olv}{e^{-x}}\qquad\forall x\ge1$</div><div class="x">מפעילים את $e^{(\cdot)}$, שהיא עולה, אז הכיוון נשמר. ו-$e$ בכל חזקה הוא חיובי. בדיקה ב-$x=2$: $e^{-4}\approx0.018\le e^{-2}\approx0.135$.</div><div class="st"><span><i>קטנה g</i><span class="red">e^(−x²)</span></span><span><i>גדולה f</i><span class="olv">e^(−x)</span></span></div></div>
+<div class="step" data-m="2"><div class="f">$\int_0^\infty\class{olv}{e^{-x}}dx=\lim_{\class{amb}{t\to\infty}}-e^{-x}\Big|_0^{t}=\lim_{t\to\infty}\big(1-e^{-t}\big)=1$</div><div class="x">הקדומה של $e^{-x}$ היא $-e^{-x}$ (גוזרים ובודקים: $(-e^{-x})'=e^{-x}$). ו-$e^{-t}\to0$. <span class="tag cnv">מתכנס</span>.</div><div class="st"><span><i>∫ גדולה</i><span class="cnv">1 — מתכנס</span></span></div></div>
+<div class="step" data-m="3"><div class="f"><span class="ans">$\int_0^\infty e^{-x^2}dx$ מתכנס</span></div><div class="x">לפי מבחן ההשוואה, חלק 1, עם $a=0$ ו-$b=1$: הגדולה מתכנסת ⇒ הקטנה מתכנסת. שימו לב: לא קיבלנו את הערך, רק שהוא קיים.</div><div class="st"><span><i>∫ קטנה</i><span class="cnv">מתכנס</span></span></div></div>
+</div></div>
+<div class="box fix"><b>הערה שלי: שני דברים קטנים במחברת</b>
+<ol>
+<li>כתוב $0&lt;e^{-x^2}&lt;e^{-x}$ עם "קטן ממש". ב-$x=1$ שתיהן שוות $e^{-1}$, אז צריך $\le$. למבחן ההשוואה $\le$ מספיק.</li>
+<li>האי-שוויון נכון רק מ-$x=1$ (ב-$x=0.5$: $e^{-0.25}\approx0.78>e^{-0.5}\approx0.61$). זה בסדר — זה בדיוק ה-$b=1$ של המשפט, והקטע $[0,1]$ הוא אינטגרל רגיל.</li>
+<li>לידיעה (לא מההרצאה): הערך המדויק הוא $\int_0^\infty e^{-x^2}dx=\frac{\sqrt\pi}2\approx0.886$.</li>
+</ol></div>
+<div class="tool"><b>המחשה: הקטנה מתחת לגדולה</b>
+<label for="cmT">t = <span class="out" id="cmTv"></span></label>
+<input type="range" id="cmT" min="10" max="100" value="40">
+<svg id="cmSvg" viewBox="0 0 400 180" role="img" aria-label="e בחזקת מינוס x בריבוע מתחת ל-e בחזקת מינוס x"></svg>
+<p class="out" id="cmOut"></p>
+<p style="font-size:15px">ירוק-זית = <bdi>e^(−x)</bdi> (הגדולה). אדום = <bdi>e^(−x²)</bdi> (הקטנה). הקו המקווקו ב-<bdi>x = 1</bdi> = הנקודה <bdi>b</bdi>.</p></div>
+<h3>דוגמה 2: $\int_1^\infty\frac{1+e^{-x}}{x}\,dx$</h3>
+<p>הפעם מנחשים <b>מתבדר</b>: כש-$x$ גדול, $e^{-x}$ זניח ונשאר בערך $\frac1x$. אז מחפשים פונקציה <b>קטנה</b> שמתבדרת.</p>
+<div class="sim"><div class="st-title">סימולציה: $\frac{1+e^{-x}}x$ מול $\frac1x$</div>
+<ol class="map"><li>1. אי-שוויון</li><li>2. הקטנה מתבדרת</li><li>3. מסקנה</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$\class{olv}{\frac{1+e^{-x}}{x}}\ \ge\ \class{red}{\frac1x}\ >0\qquad\forall x\ge1$</div><div class="x">$e^{-x}>0$, אז $1+e^{-x}>1$. מחלקים ב-$x>0$ (הכיוון נשמר). ב-$x=1$: $1.37\ge1$.</div><div class="st"><span><i>גדולה f</i><span class="olv">(1+e^(−x))/x</span></span><span><i>קטנה g</i><span class="red">1/x</span></span></div></div>
+<div class="step" data-m="1"><div class="f">$\int_1^\infty\class{red}{\frac{dx}x}$ מתבדר</div><div class="x">ראינו בסעיף 6: זה המקרה $p=1$, $\ln t\to\infty$.</div><div class="st"><span><i>∫ קטנה</i><span class="dvg">מתבדר</span></span></div></div>
+<div class="step" data-m="2"><div class="f"><span class="ans">$\int_1^\infty\frac{1+e^{-x}}x\,dx$ מתבדר</span></div><div class="x">מבחן ההשוואה, חלק 2: הקטנה מתבדרת ⇒ הגדולה מתבדרת.</div><div class="st"><span><i>∫ גדולה</i><span class="dvg">מתבדר</span></span></div></div>
+</div></div>
+<div class="quiz"><div class="qt">שאלות על סעיף 8</div>
+<div class="qq" data-a="3"><p class="q">כדי להוכיח ש-$\int_1^\infty\frac{dx}{x^3+5}$ מתכנס, עם איזו פונקציה כדאי להשוות?</p><ol><li>$\frac1x$, כי היא גדולה יותר והאינטגרל שלה מתבדר</li><li>$\frac1{x^4}$, כי היא קטנה יותר והאינטגרל שלה מתכנס</li><li>$\frac1{5}$, כי זה הערך של המכנה ב-$x=0$</li><li>$\frac1{x^3}$, כי היא גדולה יותר והאינטגרל שלה מתכנס</li></ol><p class="h">רמז: כדי להוכיח התכנסות צריך גדולה שמתכנסת.</p><p class="e">נכון. $x^3+5>x^3$ ⇒ $\frac1{x^3+5}<\frac1{x^3}$, ו-$p=3>1$.</p></div>
+<div class="qq" data-a="1"><p class="q">למה מ-$-x^2\le-x$ נובע $e^{-x^2}\le e^{-x}$?</p><ol><li>כי $e^x$ חיובית ולכן כל אי-שוויון נשמר</li><li>כי $e^x$ מונוטונית עולה, אז הכיוון נשמר</li><li>כי $e^x$ קמורה ולכן מעל המשיק שלה</li><li>כי $e^x$ הפיכה ולכן מותר להפעיל אותה</li></ol><p class="h">רמז: מה צריך כדי ש-$A\le B\Rightarrow h(A)\le h(B)$?</p><p class="e">נכון. פונקציה עולה שומרת על סדר.</p></div>
+<div class="qq" data-a="0"><p class="q">ל-$\frac{2+\sin x}{x}$ על $[1,\infty)$ (ידוע $\sin x\ge-1$): מתכנס או מתבדר?</p><ol><li>מתבדר, כי היא $\ge\frac1x$ ו-$\int\frac1x$ מתבדר</li><li>מתכנס, כי היא $\le\frac3x$ וזה מספיק</li><li>מתכנס, כי $\sin x$ מתנדנד ומקזז את עצמו</li><li>מתבדר, כי היא $\le\frac3x$ ו-$\int\frac3x$ מתבדר</li></ol><p class="h">רמז: $2+\sin x\ge1$. מתבדרת קטנה ⇒ ?</p><p class="e">נכון. $\frac{2+\sin x}x\ge\frac1x>0$, והקטנה מתבדרת.</p></div>
+<div class="qq" data-a="2"><p class="q">מבחן ההשוואה הראה ש-$\int_0^\infty e^{-x^2}$ מתכנס. מה עוד הוא נותן לנו?</p><ol><li>את הערך המדויק, שהוא בדיוק $1$ (כמו של $e^{-x}$)</li><li>את הערך המדויק, שהוא $e^{-1}$ (הערך ב-$b=1$)</li><li>רק חסם: הערך קטן מ-$\int_0^1e^{-x^2}+1$</li><li>שום דבר נוסף, אפילו לא חסם כלשהו על הערך</li></ol><p class="h">רמז: $\int_1^\infty e^{-x^2}\le\int_1^\infty e^{-x}\le1$.</p><p class="e">נכון. המבחן נותן התכנסות וחסם, לא ערך מדויק.</p></div>
+</div>
+</section>
+
+<!-- 9 -->
+<section class="sec" id="s9" data-short="התכנסות בהחלט">
+<h2>התכנסות בהחלט</h2>
+<p><b>הבעיה:</b> מבחן ההשוואה עובד רק לפונקציות <b>אי-שליליות</b> ($g\ge0$). מה עושים עם פונקציה שמחליפה סימן, כמו $\frac{\sin x}{x^2}$? מסתכלים על הערך המוחלט שלה — שהוא תמיד $\ge0$.</p>
+<p><b>מה כתוב במחברת (הגדרה):</b> נאמר ש-$f$ <b>אינטגרבילית בהחלט</b> בקטע $[a,\infty)$ אם האינטגרל הלא אמיתי $\int_a^\infty|f(x)|\,dx$ מתכנס. במקרה כזה נאמר ש-$\int_a^\infty f$ <b>מתכנס בהחלט</b>.</p>
+<p><b>משפט:</b> אם האינטגרל מתכנס בהחלט, אז האינטגרל מתכנס.</p>
+<div class="box mine"><b>התכנסות בהחלט — הדוגמה שלי עם מספרים</b>
+<ol>
+<li>שלב 1 – $f(x)=\frac{\sin x}{x^2}$ על $[1,\infty)$. היא חיובית ושלילית לסירוגין (למשל ב-$x=2$: $0.227$, ב-$x=4$: $-0.047$). לכן אי אפשר להשוות אותה ישירות.</li>
+<li>שלב 2 – לוקחים ערך מוחלט: $|f(x)|=\frac{|\sin x|}{x^2}$. עכשיו הכל $\ge0$.</li>
+<li>שלב 3 – כי $|\sin x|\le1$: $\frac{|\sin x|}{x^2}\le\frac1{x^2}$, ו-$\int_1^\infty\frac{dx}{x^2}=1$ מתכנס.</li>
+<li>שלב 4 – לפי מבחן ההשוואה: $\int_1^\infty|f|$ מתכנס. כלומר $f$ מתכנס <b>בהחלט</b>.</li>
+<li>שלב 5 – לפי המשפט: $\int_1^\infty\frac{\sin x}{x^2}dx$ מתכנס.</li>
+</ol></div>
+<div class="box mine"><b>תוספת שלי: למה המשפט נכון? (רעיון, לא כתוב במחברת)</b>
+<ol>
+<li>תמיד $0\le f(x)+|f(x)|\le2|f(x)|$. (אם $f\ge0$ זה $2f$; אם $f<0$ זה $0$.)</li>
+<li>$\int2|f|$ מתכנס, אז לפי מבחן ההשוואה גם $\int(f+|f|)$ מתכנס.</li>
+<li>$f=(f+|f|)-|f|$, הפרש של שני אינטגרלים מתכנסים ⇒ מתכנס.</li>
+</ol></div>
+<div class="box fix"><b>זהירות: הכיוון ההפוך לא נכון</b>יש אינטגרלים שמתכנסים אבל <b>לא</b> בהחלט. הדוגמה המפורסמת: $\int_1^\infty\frac{\sin x}{x}dx$ מתכנס, אבל $\int_1^\infty\frac{|\sin x|}{x}dx$ מתבדר. (זה לא מההרצאה — רק כדי שתדעו שהמשפט הולך בכיוון אחד.)</div>
+<div class="box rule"><b>הכלל לזכור</b>פונקציה שמחליפה סימן ⇒ בודקים את $|f|$ במבחן ההשוואה. אם $\int|f|$ מתכנס ⇒ גם $\int f$ מתכנס.</div>
+<p><b>אנלוגיה:</b> חשבון בנק עם הפקדות ומשיכות. אם <b>סך כל התנועות</b> (בלי סימן) סופי, אז גם היתרה בסוף סופית. אבל יתרה סופית לא אומרת שסך התנועות היה סופי.</p>
+<div class="quiz"><div class="qt">שאלות על סעיף 9</div>
+<div class="qq" data-a="2"><p class="q">מה פירוש "$\int_a^\infty f$ מתכנס בהחלט"?</p><ol><li>$\int_a^\infty f$ מתכנס למספר חיובי</li><li>$f\ge0$ בכל הקטע $[a,\infty)$</li><li>$\int_a^\infty|f(x)|\,dx$ מתכנס</li><li>$|\int_a^\infty f|$ קטן מ-$1$</li></ol><p class="h">רמז: הערך המוחלט נמצא בתוך האינטגרל.</p><p class="e">נכון. זו ההגדרה מהמחברת.</p></div>
+<div class="qq" data-a="0"><p class="q">ידוע ש-$\int_1^\infty|f|$ מתכנס. מה אפשר להגיד על $\int_1^\infty f$?</p><ol><li>מתכנס, לפי המשפט</li><li>מתבדר, כי בלי ערך מוחלט יש ביטולים</li><li>כלום, צריך לבדוק בנפרד</li><li>שווה ל-$\int_1^\infty|f|$ בדיוק</li></ol><p class="h">רמז: "אם מתכנס בהחלט אז מתכנס".</p><p class="e">נכון. מתכנס בהחלט ⇒ מתכנס.</p></div>
+<div class="qq" data-a="3"><p class="q">ידוע ש-$\int_1^\infty f$ מתכנס. האם בהכרח $\int_1^\infty|f|$ מתכנס?</p><ol><li>כן, כי $|f|$ ו-$f$ שוות בגודל</li><li>כן, לפי המשפט על התכנסות בהחלט</li><li>לא, כי $|f|\ge f$ ולכן תמיד מתבדר</li><li>לא, יש דוגמה נגדית: $\frac{\sin x}x$</li></ol><p class="h">רמז: המשפט הולך רק בכיוון אחד.</p><p class="e">נכון. $\frac{\sin x}x$ מתכנס אבל לא בהחלט.</p></div>
+<div class="qq" data-a="1"><p class="q">איך מוכיחים ש-$\int_1^\infty\frac{\cos x}{x^3}dx$ מתכנס?</p><ol><li>$\frac{\cos x}{x^3}\ge\frac1{x^3}$, והשוואה ישירה</li><li>$\frac{|\cos x|}{x^3}\le\frac1{x^3}$, ואז בהחלט ⇒ מתכנס</li><li>$\frac{\cos x}{x^3}\to0$, וזה כבר מספיק</li><li>$\cos x$ זוגית, ולכן פעמיים החצי</li></ol><p class="h">רמז: $|\cos x|\le1$, ו-$p=3>1$.</p><p class="e">נכון. בדיוק כמו הדוגמה שלי עם $\sin$.</p></div>
+</div>
+</section>
+
+<!-- 10 -->
+<section class="sec" id="s10" data-short="סיכום">
+<h2>סיכום ההרצאה</h2>
+<div class="tw"><table><tr><th>נושא</th><th>מה לזכור</th><th>דוגמה מההרצאה</th></tr>
+<tr><td>הגדרה</td><td>$\int_a^\infty f=\lim_{t\to\infty}\int_a^tf$</td><td>—</td></tr>
+<tr><td>שני קצוות</td><td>מפצלים ב-$a$; מתכנס רק אם שני החצאים מתכנסים</td><td>$x^3$ מתבדר (למרות שהסימטרי $=0$); $\frac1{1+x^2}$ נותן $\pi$</td></tr>
+<tr><td>זוגית / אי-זוגית</td><td>אם $\int_0^\infty f$ מתכנס: אי-זוגית ⇒ $0$, זוגית ⇒ $2\int_0^\infty f$</td><td>הוכחה עם $u=-x$</td></tr>
+<tr><td>$\int_1^\infty\frac{dx}{x^p}$</td><td>מתכנס $\iff p>1$, ערכו $\frac1{p-1}$</td><td>$\int_1^\infty\frac{dx}{x^2}=1$</td></tr>
+<tr><td>מבחן ההשוואה</td><td>$0\le g\le f$: גדולה מתכנסת ⇒ קטנה מתכנסת; קטנה מתבדרת ⇒ גדולה מתבדרת</td><td>$e^{-x^2}\le e^{-x}$ מתכנס; $\frac{1+e^{-x}}x\ge\frac1x$ מתבדר</td></tr>
+<tr><td>בהחלט</td><td>$\int|f|$ מתכנס ⇒ $\int f$ מתכנס</td><td>—</td></tr></table></div>
+<div class="box rule"><b>הרעיון המשותף</b>אינטגרל על קטע אינסופי = גבול של אינטגרלים רגילים. כשאין קדומה — לא מחשבים, אלא משווים לפונקציה מוכרת ($\frac1{x^p}$ או $e^{-x}$).</div>
+<div class="quiz"><div class="qt">מבחן מסכם</div>
+<div class="qq" data-a="1"><p class="q">כמה זה $\int_0^\infty e^{-2x}dx$?</p><ol><li>$2$, כי מחלקים ב-$-2$ פעמיים</li><li>$\frac12$, כי $\big[-\frac12e^{-2x}\big]_0^t\to\frac12$</li><li>$1$, כמו $\int_0^\infty e^{-x}$</li><li>$\infty$, כי הקטע אינסופי</li></ol><p class="h">רמז: הקדומה של $e^{-2x}$ היא $-\frac12e^{-2x}$.</p><p class="e">נכון. $0-(-\frac12)=\frac12$.</p></div>
+<div class="qq" data-a="3"><p class="q">האם $\int_1^\infty\frac{dx}{x^{0.99}}$ מתכנס?</p><ol><li>כן, כי $0.99$ קרוב מאוד ל-$1$</li><li>כן, וערכו $\frac1{0.99-1}=-100$</li><li>לא, כי $x^{0.99}\to\infty$ ולכן מתבדר</li><li>לא, כי $p=0.99\le1$</li></ol><p class="h">רמז: הגבול בדיוק $p>1$.</p><p class="e">נכון. $p<1$ ⇒ מתבדר. (וערך שלילי לאינטגרל של פונקציה חיובית לא הגיוני.)</p></div>
+<div class="qq" data-a="0"><p class="q">ל-$\int_1^\infty\frac{x}{x^3+1}dx$, איזו השוואה מוכיחה התכנסות?</p><ol><li>$\frac{x}{x^3+1}\le\frac{x}{x^3}=\frac1{x^2}$, ו-$p=2>1$</li><li>$\frac{x}{x^3+1}\ge\frac{1}{x^3}$, ו-$p=3>1$</li><li>$\frac{x}{x^3+1}\le\frac{1}{x}$, ו-$p=1$</li><li>$\frac{x}{x^3+1}\ge\frac{1}{2x^2}$, ו-$p=2>1$</li></ol><p class="h">רמז: כדי להוכיח התכנסות צריך גדולה שמתכנסת.</p><p class="e">נכון. מקטינים מכנה ⇒ מגדילים שבר. $\frac1{x^2}$ מתכנסת.</p></div>
+<div class="qq" data-a="2"><p class="q">כמה זה $\int_{-\infty}^\infty\frac{x}{1+x^2}dx$?</p><ol><li>$0$, כי הפונקציה אי-זוגית</li><li>$\pi$, כמו בדוגמה 2 מההרצאה</li><li>מתבדר, כי $\int_0^t=\frac12\ln(1+t^2)\to\infty$</li><li>$\ln2$, כי $\frac12\ln(1+1)$ פעמיים</li></ol><p class="h">רמז: הערה 1 עובדת רק אם החצי הימני מתכנס. בדקו אותו.</p><p class="e">נכון. בהצבה $u=1+x^2$: $\frac12\ln(1+t^2)\to\infty$. כמו $x^3$ — אי-זוגית אבל מתבדר.</p></div>
+</div>
+<p class="end" id="endMsg"></p>
+</section>
+</div>
+
+<script>
+window.LESSON_INIT=function(){
+ function css(v){return getComputedStyle(document.documentElement).getPropertyValue(v).trim()}
+ function $(id){return document.getElementById(id)}
+ function fmt(v){if(!isFinite(v))return '∞';var a=Math.abs(v);return a>=1e6?v.toExponential(2):a>=100?v.toFixed(1):v.toFixed(4)}
+ // generic plot: o={W,H,x0,x1,y0,y1,curves:[{f,c,dash}],shade:[{f,a,b,c,lo}],vl:[{x,c}]}
+ function plot(svg,o){var W=o.W||400,H=o.H||180,pl=24,pr=10,pt=8,pb=20;
+  function X(x){return pl+(x-o.x0)/(o.x1-o.x0)*(W-pl-pr)}function Y(y){return H-pb-(Math.max(o.y0,Math.min(o.y1,y))-o.y0)/(o.y1-o.y0)*(H-pt-pb)}
+  var s='';(o.shade||[]).forEach(function(sh){var N=200,p='M'+X(sh.a)+' '+Y(0);for(var i=0;i<=N;i++){var x=sh.a+(sh.b-sh.a)*i/N;p+='L'+X(x).toFixed(1)+' '+Y(sh.f(x)).toFixed(1)}p+='L'+X(sh.b)+' '+Y(0)+'Z';s+='<path d="'+p+'" fill="'+css(sh.c)+'" fill-opacity=".25"/>'});
+  s+='<line x1="'+pl+'" y1="'+Y(0)+'" x2="'+(W-pr)+'" y2="'+Y(0)+'" stroke="'+css('--muted')+'"/>';
+  if(o.x0<0&&o.x1>0)s+='<line x1="'+X(0)+'" y1="'+pt+'" x2="'+X(0)+'" y2="'+(H-pb)+'" stroke="'+css('--muted')+'"/>';
+  (o.vl||[]).forEach(function(v){s+='<line x1="'+X(v.x)+'" y1="'+pt+'" x2="'+X(v.x)+'" y2="'+(H-pb)+'" stroke="'+css(v.c||'--amb')+'" stroke-dasharray="4 3" stroke-width="1.5"/>'+(v.t?'<text x="'+(X(v.x)+3)+'" y="'+(pt+12)+'" fill="'+css(v.c||'--amb')+'" font-size="12">'+v.t+'</text>':'')});
+  (o.curves||[]).forEach(function(cv){var p='',N=300;for(var i=0;i<=N;i++){var x=o.x0+(o.x1-o.x0)*i/N,y=cv.f(x);if(!isFinite(y))continue;p+=(p?'L':'M')+X(x).toFixed(1)+' '+Y(y).toFixed(1)}s+='<path d="'+p+'" fill="none" stroke="'+css(cv.c)+'" stroke-width="2.2"'+(cv.dash?' stroke-dasharray="6 3"':'')+'/>'});
+  (o.labels||[]).forEach(function(l){s+='<text x="'+X(l.x)+'" y="'+(Y(0)+16)+'" fill="'+css('--muted')+'" font-size="11" text-anchor="middle">'+l.t+'</text>'});
+  svg.innerHTML=s}
+ function tval(v){return Math.round(Math.pow(10,v/25)*100)/100} // slider 0..100 -> 1..10000
+ // tool 1
+ var F=[{f:function(x){return 1/(x*x)},a:1,I:function(t){return 1-1/t},name:'1/x²',lim:'1'},
+        {f:function(x){return 1/x},a:1,I:function(t){return Math.log(t)},name:'1/x',lim:'∞'},
+        {f:function(x){return Math.exp(-x)},a:0,I:function(t){return 1-Math.exp(-t)},name:'e^(−x)',lim:'1'},
+        {f:Math.cos,a:0,I:function(t){return Math.sin(t)},name:'cos x',lim:'—'}];
+ function drawI(){var o=F[+$('itF').value],v=+$('itT').value,t=o===F[3]?v/100*30:o.a+Math.pow(10,v/25)-1;
+  $('itTv').textContent=t.toFixed(2);
+  var xm=Math.max(6,Math.min(t*1.15,60));if(o===F[3])xm=Math.max(8,t*1.1);
+  var y0=o===F[3]?-1.1:0,y1=o===F[0]||o===F[1]?1.05:1.1;
+  plot($('itSvg'),{x0:0,x1:xm,y0:y0,y1:y1,curves:[{f:function(x){return x<o.a-1e-9?NaN:o.f(x)},c:'--ink'}],shade:[{f:o.f,a:o.a,b:Math.min(t,xm),c:o===F[1]||o===F[3]?'--dvg':'--cnv'}],vl:[{x:Math.min(t,xm),c:'--amb',t:'t'}]});
+  var val=o.I(t),msg=o===F[3]?'  ← מתנדנד בין −1 ל-1, אין גבול: מתבדר':(o===F[1]?'  ← ממשיך לגדול: מתבדר':'  ← מתקרב ל-'+o.lim+': מתכנס');
+  $('itOut').textContent='∫ '+o.name+' dx  (from '+o.a+' to t) = '+val.toFixed(4)+msg}
+ $('itF').addEventListener('change',drawI);$('itT').addEventListener('input',drawI);drawI();
+ // tool sym
+ function drawS(){var k=+$('sySk').value/100,a=+$('syA').value;$('sySkv').textContent=k.toFixed(2);$('syAv').textContent=a;
+  var b=k*a,v=(Math.pow(b,4)-Math.pow(a,4))/4;$('syOut').textContent='∫ x³ dx from −'+a+' to '+b.toFixed(2)+'  =  ('+b.toFixed(2)+'⁴ − '+a+'⁴)/4  =  '+fmt(v)}
+ $('sySk').addEventListener('input',drawS);$('syA').addEventListener('input',drawS);drawS();
+ // tool arctan
+ function drawT(){var v=+$('atT').value,t=Math.round((Math.pow(10,v/25)-1)*100)/100;$('atTv').textContent=t.toFixed(2);
+  var xm=Math.max(5,Math.min(t*1.2,40));
+  plot($('atSvg'),{x0:-xm,x1:xm,y0:0,y1:1.1,curves:[{f:function(x){return 1/(1+x*x)},c:'--pur'}],shade:[{f:function(x){return 1/(1+x*x)},a:-Math.min(t,xm),b:Math.min(t,xm),c:'--cnv'}],vl:[{x:-Math.min(t,xm),c:'--amb',t:'−t'},{x:Math.min(t,xm),c:'--amb',t:'t'}]});
+  var val=2*Math.atan(t);$('atOut').textContent='2·arctan('+t.toFixed(2)+') = '+val.toFixed(5)+'   |   π = '+Math.PI.toFixed(5)+'   |   diff = '+(Math.PI-val).toFixed(5)}
+ $('atT').addEventListener('input',drawT);drawT();
+ // tool p
+ function drawP(){var p=+$('ppP').value/100,v=+$('ppT').value,t=Math.round(Math.pow(10,v/25)*100)/100;$('ppPv').textContent=p.toFixed(2);$('ppTv').textContent=t.toFixed(2);
+  var f=function(x){return Math.pow(x,-p)},I=Math.abs(p-1)<1e-9?Math.log(t):(Math.pow(t,1-p)-1)/(1-p);
+  var xm=Math.max(6,Math.min(t*1.15,60)),cnv=p>1;
+  plot($('ppSvg'),{x0:0,x1:xm,y0:0,y1:1.05,curves:[{f:function(x){return x<1?NaN:f(x)},c:'--mag'}],shade:[{f:f,a:1,b:Math.min(t,xm),c:cnv?'--cnv':'--dvg'}],vl:[{x:Math.min(t,xm),c:'--amb',t:'t'}]});
+  $('ppOut').textContent='∫₁ᵗ dx/x^'+p.toFixed(2)+' = '+fmt(I)+'   |   '+(cnv?('p > 1 → converges to 1/(p−1) = '+(1/(p-1)).toFixed(4)):'p ≤ 1 → diverges (∞)')}
+ $('ppP').addEventListener('input',drawP);$('ppT').addEventListener('input',drawP);drawP();
+ // tool compare
+ function drawM(){var t=+$('cmT').value/10;$('cmTv').textContent=t.toFixed(1);
+  var g=function(x){return Math.exp(-x*x)},f=function(x){return Math.exp(-x)};
+  plot($('cmSvg'),{x0:0,x1:Math.max(4,t*1.1),y0:0,y1:1.05,curves:[{f:f,c:'--olv'},{f:g,c:'--red'}],shade:[{f:f,a:0,b:t,c:'--olv'},{f:g,a:0,b:t,c:'--red'}],vl:[{x:1,c:'--muted',t:'b=1'},{x:t,c:'--amb',t:'t'}]});
+  var N=2000,sg=0,h=t/N;for(var i=0;i<N;i++){var x=(i+0.5)*h;sg+=g(x)*h}
+  $('cmOut').textContent='∫₀ᵗ e^(−x²) ≈ '+sg.toFixed(4)+'   ≤   ∫₀ᵗ e^(−x) = '+(1-Math.exp(-t)).toFixed(4)+'   (limit 1)'}
+ $('cmT').addEventListener('input',drawM);drawM();
+ new MutationObserver(function(){drawI();drawT();drawP();drawM()}).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+};
+</script>
+<script>(function(){
+document.documentElement.dir='rtl';document.documentElement.lang='he';
+var KEY=((document.querySelector('.wrap')||document.body).getAttribute('data-key')||'lesson')+'-quiz';
+var THEMEKEY='calc2-theme';
+function $(s,r){return (r||document).querySelector(s)}
+function $$(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))}
+function el(t,c,h){var n=document.createElement(t);if(c)n.className=c;if(h!=null)n.innerHTML=h;return n}
+function lsGet(k){try{return localStorage.getItem(k)}catch(e){return null}}
+function lsSet(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+// theme
+var tb=$('#themeBtn');
+function curDark(){var t=document.documentElement.getAttribute('data-theme');if(t)return t==='dark';return window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches}
+function paintBtn(){if(tb)tb.textContent=curDark()?'☀️ יום':'🌙 לילה'}
+var saved=lsGet(THEMEKEY);if(saved==='dark'||saved==='light')document.documentElement.setAttribute('data-theme',saved);
+paintBtn();
+if(tb)tb.addEventListener('click',function(){var d=!curDark();document.documentElement.setAttribute('data-theme',d?'dark':'light');lsSet(THEMEKEY,d?'dark':'light');paintBtn()});
+// sections + toc
+var secs=$$('section.sec'),toc=$('nav.toc');
+secs.forEach(function(s,i){var h=$('h2',s);var no=el('div','secno',(i+1)+' / '+secs.length);s.insertBefore(no,h);
+ if(toc){var a=el('a');a.href='#'+s.id;a.innerHTML='<b>'+(i+1)+'</b> '+(s.getAttribute('data-short')||h.textContent);toc.appendChild(a)}});
+// sims
+var sims=[];
+$$('.sim').forEach(function(sim){
+ var steps=$$('.steps > .step',sim);var mapItems=$$('.map > li',sim);
+ var lines=el('div','lines'),xp=el('div','x'),sp=el('div','stp-wrap');
+ var ctl=el('div','ctl');var bP=el('button','','→ הקודם'),bN=el('button','pri','הבא ←'),bR=el('button','','⟲ מההתחלה'),cnt=el('span','cnt');
+ bP.type=bN.type=bR.type='button';ctl.appendChild(bR);ctl.appendChild(bP);ctl.appendChild(bN);ctl.appendChild(cnt);
+ var stepLine=[],lineEls=[],xs=[],sts=[];
+ steps.forEach(function(st,i){var f=$('.f',st);
+  if(f){var ln=el('div','ln');ln.appendChild(el('span','no',String(lineEls.length+1)));ln.appendChild(f);lines.appendChild(ln);lineEls.push(ln)}
+  stepLine.push(lineEls.length-1);
+  var x=$('.x',st)||el('div','','');var xd=el('div','');while(x.firstChild)xd.appendChild(x.firstChild);xp.appendChild(xd);xs.push(xd);
+  var s=$('.st',st);var sd=el('div','stp');if(s){while(s.firstChild)sd.appendChild(s.firstChild)}sp.appendChild(sd);sts.push(sd)});
+ var stepsBox=$('.steps',sim);sim.insertBefore(lines,stepsBox);sim.insertBefore(xp,stepsBox);sim.insertBefore(sp,stepsBox);sim.insertBefore(ctl,stepsBox);stepsBox.remove();
+ var cur=0;
+ function render(){var L=stepLine[cur];
+  lineEls.forEach(function(ln,j){ln.classList.toggle('cur',j===L);ln.classList.toggle('fut',j>L)});
+  xs.forEach(function(x,j){x.hidden=j!==cur});
+  sts.forEach(function(s,j){s.hidden=j!==cur;
+   if(j===cur&&j>0){var prev={};$$('span',sts[j-1]).forEach(function(p){var k=$('i',p);if(k)prev[k.textContent]=p.textContent});
+    $$(':scope > span',s).forEach(function(p){var k=$('i',p);p.classList.toggle('new',!!k&&prev[k.textContent]!==p.textContent)})}});
+  var m=+(steps[cur].getAttribute('data-m')||-1);
+  mapItems.forEach(function(li,j){li.classList.toggle('on',j===m);li.classList.toggle('done',m>=0&&j<m)});
+  bP.disabled=cur===0;bN.disabled=cur===steps.length-1;cnt.textContent=(cur+1)+' / '+steps.length}
+ bP.onclick=function(){if(cur>0){cur--;render()}};bN.onclick=function(){if(cur<steps.length-1){cur++;render()}};bR.onclick=function(){cur=0;render()};
+ sims.push(render)});
+// quiz
+var st={};try{st=JSON.parse(lsGet(KEY)||'{}')||{}}catch(e){st={}}
+var qs=$$('.qq'),LET=['א','ב','ג','ד','ה'];
+function score(){var c=0,d=0;qs.forEach(function(q,i){var s=st[i];if(s&&s.done){d++;if(s.first)c++}});
+ var sc=$('#score');if(sc)sc.innerHTML='ניקוד: <bdi dir="ltr">'+c+' / '+qs.length+'</bdi>';var m=$('#meter');if(m)m.style.width=(qs.length?100*d/qs.length:0)+'%';
+ var end=$('#endMsg');if(end)end.textContent=d===qs.length?('סיימת את כל '+qs.length+' השאלות! ענית נכון בניסיון הראשון על '+c+'. '+(c>=qs.length*0.8?'מצוין, ביג בוס 💪':'כדאי לחזור על הסעיפים שבהם טעית.')):'ענית על '+d+' מתוך '+qs.length+' שאלות.'}
+var qhide=[];
+qs.forEach(function(q,i){var a=+q.getAttribute('data-a');var h=$('.h',q),e=$('.e',q);
+ $$('ol > li',q).forEach(function(li,j){var b=el('button','');b.type='button';b.appendChild(el('span','lt',LET[j]+'.'));while(li.firstChild)b.appendChild(li.firstChild);li.appendChild(b);
+  b.addEventListener('click',function(){var s=st[i]||{tried:[]};if(s.done)return;s.tried.push(j);
+   if(j===a){s.done=true;s.first=s.tried.length===1}st[i]=s;lsSet(KEY,JSON.stringify(st));paintQ();score()})});
+ function paintQ(){var s=st[i]||{tried:[]};var bs=$$('ol > li > button',q);
+  bs.forEach(function(b,j){b.classList.toggle('good',!!s.done&&j===a);b.classList.toggle('bad',s.tried.indexOf(j)>=0&&j!==a)});
+  var lastBad=s.tried.length&&s.tried[s.tried.length-1]!==a;if(h)h.hidden=!(lastBad&&!s.done);if(e)e.hidden=!s.done}
+ q._paint=paintQ;qhide.push(paintQ)});
+var rb=$('#resetBtn');if(rb)rb.addEventListener('click',function(){st={};lsSet(KEY,'{}');qhide.forEach(function(f){f()});score()});
+// bidi fix
+var HEB=/[֐-׿]/,RUN=/[A-Za-z0-9∞√π][A-Za-z0-9∞√π²³⁻¹\s+\-−*\/=^().,'·:≤≥<>|_]*/g;
+var SKIP={'MJX-CONTAINER':1,'CODE':1,'PRE':1,'SVG':1,'BDI':1,'SCRIPT':1,'STYLE':1,'TEXTAREA':1,'INPUT':1};
+function bidi(root){var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode:function(n){for(var p=n.parentNode;p&&p!==root.parentNode;p=p.parentNode){if(SKIP[p.nodeName.toUpperCase()]||(p.classList&&(p.classList.contains('m')||p.classList.contains('ltr'))))return NodeFilter.FILTER_REJECT}return NodeFilter.FILTER_ACCEPT}});
+ var nodes=[],n;while(n=w.nextNode())nodes.push(n);
+ nodes.forEach(function(t){var s=t.nodeValue;if(HEB.test(s)&&s.indexOf('→')>=0)s=t.nodeValue=s.replace(/→/g,'←');
+  if(!/[A-Za-z0-9∞√π]/.test(s)||!HEB.test(s+((t.parentNode&&t.parentNode.textContent)||'')))return;
+  var frag=document.createDocumentFragment(),last=0,m;RUN.lastIndex=0;
+  while(m=RUN.exec(s)){var r=m[0].replace(/[\s.,:]+$/,'');var open=(r.match(/\(/g)||[]).length,close=(r.match(/\)/g)||[]).length;
+   while(close>open&&r.slice(-1)===')'){r=r.slice(0,-1);close--}
+   if(open>close&&r.slice(-1)==='('){r=r.slice(0,-1)}
+   if(!r)continue;frag.appendChild(document.createTextNode(s.slice(last,m.index)));var b=document.createElement('bdi');b.dir='ltr';b.textContent=r;frag.appendChild(b);last=m.index+r.length;RUN.lastIndex=last}
+  frag.appendChild(document.createTextNode(s.slice(last)));t.parentNode.replaceChild(frag,t)})}
+var finished=false;
+function finish(){if(finished)return;finished=true;bidi($('.wrap'));sims.forEach(function(r){r()});qhide.forEach(function(f){f()});score();
+ if(window.LESSON_INIT)try{window.LESSON_INIT()}catch(e){console.error(e)}}
+window.__lessonFinish=finish;
+window.typesetLater=function(node){if(window.MathJax&&MathJax.typesetPromise){return MathJax.typesetPromise([node]).then(function(){bidi(node)}).catch(function(){})}bidi(node);return Promise.resolve()};
+setTimeout(finish,9000);
+})();
+</script>
+<script>window.MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']],packages:{'[+]':['html']}},loader:{load:['[tex]/html']},svg:{fontCache:'global'},options:{ignoreHtmlClass:'nomj'},startup:{ready:function(){MathJax.startup.defaultReady();MathJax.startup.promise.then(function(){window.__lessonFinish&&window.__lessonFinish()})}}};</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.min.js"></script>
+
+</body></html>

@@ -1,0 +1,758 @@
+<!doctype html><html><head><script>(function(){try{var m=localStorage.getItem("hedva2-theme");if(m==="dark"||m==="light")document.documentElement.setAttribute("data-theme",m);}catch(e){}})();</script><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>חדו״א 2 — הרצאה 1</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&family=Secular+One&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: one reading column on graph-paper ground, like the lecturer's notebook; sticky score bar on top */
+:root{
+  --bg:#f4f7fb; --surface:#ffffff; --ink:#172131; --muted:#566275; --line:#d6dee9; --grid:rgba(70,120,190,.10);
+  --accent:#1d5fa8; --accent-ink:#ffffff; --hl:#bfeaf6;
+  --lo:#c43a3a; --up:#4f7a0c; --rs:#4a4fd0; --part:#8a5a2b;
+  --ok:#1d874a; --okbg:#e3f5ea; --bad:#c03636; --badbg:#fbe7e7; --notebg:#eef4fc; --warnbg:#fff4e2;
+  --f-body:"Assistant",system-ui,"Segoe UI",Arial,sans-serif;
+  --f-head:"Secular One","Assistant",system-ui,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f141c; --surface:#161d28; --ink:#e5eaf2; --muted:#9ba7b9; --line:#2a3445; --grid:rgba(120,170,240,.07);
+  --accent:#7db1ee; --accent-ink:#0f141c; --hl:#1c4757;
+  --lo:#ff8a80; --up:#b2d860; --rs:#a5a8ff; --part:#e0b07a;
+  --ok:#5fd38d; --okbg:#143222; --bad:#ff8080; --badbg:#3a1a1c; --notebg:#18253a; --warnbg:#33270f;
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f141c; --surface:#161d28; --ink:#e5eaf2; --muted:#9ba7b9; --line:#2a3445; --grid:rgba(120,170,240,.07);
+  --accent:#7db1ee; --accent-ink:#0f141c; --hl:#1c4757;
+  --lo:#ff8a80; --up:#b2d860; --rs:#a5a8ff; --part:#e0b07a;
+  --ok:#5fd38d; --okbg:#143222; --bad:#ff8080; --badbg:#3a1a1c; --notebg:#18253a; --warnbg:#33270f;
+  color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.7;direction:rtl;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:22px 22px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--surface)}
+.wrap{max-width:820px;margin:0 auto;padding-block:8px 60px}
+h1,h2,h3{font-family:var(--f-head);font-weight:400;text-wrap:balance;line-height:1.25;margin:0}
+h1{font-size:clamp(30px,6vw,44px)}
+h2{font-size:clamp(23px,4.4vw,30px)}
+h3{font-size:20px;margin-top:22px}
+p{margin:10px 0}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--surface);border:1px solid var(--line);border-radius:0 0 12px 12px;
+  display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;padding:10px 14px;margin-bottom:18px;box-shadow:0 4px 14px rgba(0,0,0,.06)}
+.bar .lbl{font-weight:700}
+.bar .score{font-variant-numeric:tabular-nums}
+.meter{flex:1 1 140px;height:9px;background:var(--line);border-radius:6px;overflow:hidden;min-width:100px}
+.meter>i{display:block;height:100%;width:0;background:var(--accent);transition:width .3s}
+button{font-family:var(--f-body);font-size:15px;cursor:pointer}
+.btn{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:8px;padding:6px 12px;min-height:36px}
+.btn:hover{border-color:var(--accent)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn:disabled{opacity:.45;cursor:default}
+button:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.hero{padding-block:22px 10px}
+.credit{display:inline-block;margin-bottom:12px;padding:6px 12px;border:1px solid var(--line);border-radius:10px;background:var(--surface);font-size:15px}
+.meta{display:flex;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:15px;margin-bottom:8px}
+.chip{border:1px solid var(--line);background:var(--surface);border-radius:20px;padding:1px 10px;font-size:14px;color:var(--muted)}
+.legend{display:flex;flex-wrap:wrap;gap:8px 14px;margin-top:14px;font-size:15px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.dot{width:12px;height:12px;border-radius:3px;display:inline-block}
+.toc{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:6px 10px;margin:16px 0 0;padding:0;list-style:none;font-size:15px}
+.toc a{display:block;color:var(--accent);text-decoration:none;background:var(--surface);border:1px solid var(--line);border-radius:9px;padding:5px 10px}
+.toc a:hover{border-color:var(--accent)}
+section.sec{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px max(14px,3vw);margin-top:26px}
+.eyebrow{display:flex;flex-wrap:wrap;align-items:center;gap:8px;color:var(--muted);font-size:14px;margin-bottom:6px;letter-spacing:.02em}
+.eyebrow b{direction:ltr;unicode-bidi:isolate;color:var(--accent);font-family:var(--f-mono);font-weight:600}
+.m{direction:ltr;overflow-x:auto;overflow-y:hidden;padding:4px 0;max-width:100%}
+mjx-container{direction:ltr}
+mjx-container:not([display="true"]){display:inline-block;max-width:100%;overflow-x:auto;overflow-y:hidden;vertical-align:middle}
+mjx-assistive-mml{max-width:100%}
+mjx-container[display="true"]{margin:.4em 0!important}
+.final{background:linear-gradient(transparent 62%,var(--hl) 62%);padding:0 4px;border-radius:2px;display:inline-block}
+.c-lo{fill:var(--lo);stroke:var(--lo)}.c-up{fill:var(--up);stroke:var(--up)}.c-rs{fill:var(--rs);stroke:var(--rs)}.c-part{fill:var(--part);stroke:var(--part)}
+.t-lo{color:var(--lo);font-weight:700}.t-up{color:var(--up);font-weight:700}.t-rs{color:var(--rs);font-weight:700}.t-part{color:var(--part);font-weight:700}
+.box{border-radius:10px;padding:12px 14px;margin:14px 0;border:1px solid var(--line)}
+.box h4{margin:0 0 4px;font-size:16px}
+.terms{background:var(--notebg)}
+.terms dl{margin:4px 0 0;display:grid;gap:6px}
+.terms dt{font-weight:700}
+.terms dd{margin:0 0 4px 0}
+.terms dl>*{min-width:0}
+.rule{background:var(--surface);border:2px solid var(--accent)}
+.rule h4{color:var(--accent)}
+.analogy{background:var(--surface);border-style:dashed}
+.mynote{background:var(--warnbg)}
+.tw{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:15.5px}
+th,td{border:1px solid var(--line);padding:6px 9px;text-align:right;vertical-align:middle}
+th{background:var(--notebg);font-weight:700}
+td.num{font-variant-numeric:tabular-nums;direction:ltr;text-align:center}
+.sim{border:1px solid var(--line);border-radius:12px;margin:16px 0;overflow:hidden}
+.sim header{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;padding:8px 12px;background:var(--notebg);border-bottom:1px solid var(--line)}
+.sim header b{font-size:15px}
+.sim .ctr{font-family:var(--f-mono);font-size:13px;color:var(--muted)}
+.sim .ctrls{display:flex;gap:6px}
+.board{padding:6px 12px}
+.ln{display:grid;grid-template-columns:30px minmax(0,1fr);gap:8px;align-items:center;border:2px solid transparent;border-radius:8px;padding:2px 6px;margin:3px 0}
+.ln .no{font-family:var(--f-mono);font-size:12px;color:var(--muted);text-align:center}
+.ln.cur{border-color:var(--accent);background:var(--notebg)}
+.expl{border-top:1px solid var(--line);padding:10px 12px;background:var(--surface);min-height:70px}
+.expl b{color:var(--accent)}
+.lab{border:1px solid var(--line);border-radius:12px;margin:16px 0;overflow:hidden}
+.lab header{padding:8px 12px;background:var(--notebg);border-bottom:1px solid var(--line);font-weight:700;font-size:15px}
+.lab .body{padding:10px 12px;display:grid;gap:10px}
+.lab .row{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.lab .row>span.lb{font-size:14px;color:var(--muted);margin-inline-end:4px}
+.lab svg{direction:ltr;width:100%;height:auto;display:block;background:var(--surface);border:1px solid var(--line);border-radius:8px}
+.lab svg text{fill:var(--muted);font-family:var(--f-mono);font-size:12px}
+.lab svg .axis{stroke:var(--muted);stroke-width:1.2;fill:none}
+.lab svg .gridl{stroke:var(--line);stroke-width:1;fill:none}
+.lab svg .curve{stroke:var(--ink);stroke-width:2.4;fill:none}
+.lab svg .rlo{fill:var(--lo);fill-opacity:.25;stroke:var(--lo);stroke-width:1.3}
+.lab svg .rup{fill:var(--up);fill-opacity:.16;stroke:var(--up);stroke-width:1.3;stroke-dasharray:4 3}
+.lab svg .rrs{fill:var(--rs);fill-opacity:.22;stroke:var(--rs);stroke-width:1.3}
+.lab svg .ptrs{fill:var(--rs)}
+.lab svg .apos{fill:var(--up);fill-opacity:.3}
+.lab svg .aneg{fill:var(--lo);fill-opacity:.3}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(112px,1fr));gap:6px}
+.stat{border:1px solid var(--line);border-radius:8px;padding:6px 10px;font-size:14px}
+.stat b{display:block;font-family:var(--f-mono);font-size:18px;font-variant-numeric:tabular-nums;direction:ltr;text-align:right}
+input[type=range]{direction:ltr;width:100%;accent-color:var(--accent)}
+.out{border:1px solid var(--line);border-radius:10px;padding:8px 12px;min-height:60px}
+.quiz{margin-top:20px;border-top:2px dashed var(--line);padding-top:12px}
+.quiz>h3{margin:0 0 8px;font-size:18px;color:var(--accent)}
+.q{margin:14px 0 18px}
+.q .qt{font-weight:600}
+.q .qm{direction:ltr;background:var(--notebg);border-radius:8px;padding:4px 10px;margin:6px 0;overflow-x:auto}
+.opts{display:grid;gap:6px;margin-top:6px}
+.opt{display:flex;gap:10px;align-items:center;text-align:right;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);border-radius:9px;padding:6px 10px;min-height:44px}
+.opt .k{font-family:var(--f-mono);font-size:13px;color:var(--muted);flex:none;width:18px}
+.opt .ot{min-width:0;overflow-x:auto}
+.opt:hover{border-color:var(--accent)}
+.opt.wrong{border-color:var(--bad);background:var(--badbg)}
+.opt.right{border-color:var(--ok);background:var(--okbg)}
+.fb{border-radius:8px;padding:8px 12px;margin-top:6px;font-size:15.5px}
+.fb.hint{background:var(--badbg);border:1px solid var(--bad)}
+.fb.why{background:var(--okbg);border:1px solid var(--ok)}
+.endmsg{margin-top:18px;text-align:center;font-size:19px;font-weight:700}
+@media (prefers-reduced-motion:reduce){.meter>i{transition:none}}
+@media (max-width:520px){body{font-size:16px}.bar{gap:8px}}
+</style>
+
+<div class="wrap">
+  <div class="bar" role="status">
+    <span class="lbl">ציון:</span>
+    <span class="score" id="score">0 / 0</span>
+    <div class="meter" aria-hidden="true"><i id="meter"></i></div>
+    <span class="score" id="prog">נענו 0</span>
+    <button class="btn" id="reset" type="button">איפוס</button>
+  </div>
+
+  <header class="hero">
+    <div class="credit">קרדיט לסיכומים של עדי מהדרייב 😊 ולעידו דוד צייג!</div>
+    <div class="meta"><span class="chip">חדו״א 2</span><span class="chip">הרצאה 1 · 27/10/25</span><span class="chip">3 עמודי מחברת</span></div>
+    <h1>האינטגרל המסוים</h1>
+    <p>היי ביג בוס 👋 בהרצאה הראשונה בונים מאפס את האינטגרל המסוים: מה הוא מודד, אילו תכונות יש לו, ואיך מחשבים אותו בעזרת מלבנים (סכומי דרבו ורימן). בסוף כל חלק יש שאלות. תשובה לא נכונה נותנת רמז, ואפשר לנסות שוב.</p>
+    <div class="legend" aria-label="מקרא צבעים">
+      <span><i class="dot" style="background:var(--lo)"></i>\(m\), inf, סכום תחתון, שטח מתחת לציר</span>
+      <span><i class="dot" style="background:var(--up)"></i>\(M\), sup, סכום עליון, שטח מעל הציר</span>
+      <span><i class="dot" style="background:var(--rs)"></i>\(t_i\), סכום רימן</span>
+      <span><i class="dot" style="background:var(--part)"></i>חלוקה \(\Delta\), אורכי קטעים</span>
+      <span><span class="final" style="font-size:14px">תשובה סופית</span></span>
+    </div>
+    <ul class="toc">
+      <li><a href="#s1">1 · שלוש בעיות דומות</a></li>
+      <li><a href="#s2">2 · שתי התכונות</a></li>
+      <li><a href="#s3">3 · דוגמה: אבן בבאר</a></li>
+      <li><a href="#s4">4 · ערכים שליליים ו-<bdi dir="ltr">b&lt;a</bdi></a></li>
+      <li><a href="#s5">5 · המשפט והסימון ∫</a></li>
+      <li><a href="#s6">6 · סכומי דרבו ורימן</a></li>
+      <li><a href="#s7">7 · הגדרת אינטגרביליות</a></li>
+      <li><a href="#sum">סיכום ומבחן מסכם</a></li>
+    </ul>
+  </header>
+
+  <!-- 1 -->
+  <section class="sec" id="s1">
+    <div class="eyebrow"><b>1 / 7</b><span>עמוד 1 במחברת</span></div>
+    <h2>שלוש בעיות דומות</h2>
+    <p><b>הבעיה:</b> כשמשהו משתנה כל הזמן (מהירות, צפיפות, גובה של גרף), איך מחשבים את ה"סך הכל"? אם המהירות קבועה, מרחק = מהירות × זמן. אבל אם המהירות משתנה כל רגע, הנוסחה הזאת לא מספיקה.</p>
+    <p>המרצה מתחיל משלוש בעיות שנראות שונות, אבל מתנהגות אותו דבר:</p>
+    <div class="tw"><table>
+      <tr><th>#</th><th>הבעיה</th><th>מה זה \(f\)</th><th>מה מחפשים</th></tr>
+      <tr><td>1</td><td>מכונית נוסעת בכביש ישר</td><td>המהירות ברגע \(t\)</td><td>\(D(f,[a,b])\) = המרחק מזמן \(a\) עד זמן \(b\)</td></tr>
+      <tr><td>2</td><td>מוט דק על הקטע \([a,b]\)</td><td>הצפיפות בנקודה \(x\)</td><td>\(R(f,[a,b])\) = המסה הכוללת של המוט</td></tr>
+      <tr><td>3</td><td>גרף של פונקציה</td><td>הגובה של הגרף ב-\(x\)</td><td>\(A(f,[a,b])\) = השטח מתחת לגרף</td></tr>
+    </table></div>
+    <div class="box terms"><h4>מונחים וסימנים</h4><dl>
+      <dt>\(f:[a,b]\to\mathbb R_+\)</dt><dd>\(f\) היא פונקציה שמוגדרת על הקטע \([a,b]\) (כל המספרים מ-\(a\) עד \(b\), כולל הקצוות), והיא מחזירה מספרים לא שליליים (\(\mathbb R_+\)). כרגע מהירות, צפיפות וגובה הם לא שליליים. בחלק 4 נאפשר גם ערכים שליליים.</dd>
+      <dt>\(D,\ R,\ A\)</dt><dd>סתם שמות: D = Distance (מרחק), R = המסה של המוט (Rod), A = Area (שטח). כל אחד מקבל פונקציה וקטע ומחזיר מספר.</dd>
+      <dt>\(c\in[a,b]\)</dt><dd>"\(c\) שייך לקטע": \(c\) הוא מספר כלשהו בין \(a\) ל-\(b\).</dd>
+    </dl></div>
+    <div class="box analogy"><h4>אנלוגיה</h4>חשוב על מונה של מונית. המהירות משתנה כל הזמן, אבל המונה פשוט "צובר" מרחק. האינטגרל הוא המונה הזה: הוא צובר את \(f\) לאורך הקטע.</div>
+    <div class="box rule"><h4>הכלל לזכור</h4>מרחק, מסה ושטח הם שלוש פנים של אותו רעיון: לצבור פונקציה משתנה לאורך קטע.</div>
+    <div class="quiz" data-quiz="s1"></div>
+  </section>
+
+  <!-- 2 -->
+  <section class="sec" id="s2">
+    <div class="eyebrow"><b>2 / 7</b><span>עמוד 1 במחברת</span></div>
+    <h2>שתי התכונות: אדיטיביות וחסמים</h2>
+    <h3>דוגמה שלי עם מספרים, לפני הכלל</h3>
+    <p>מכונית נוסעת 3 שעות. בשעתיים הראשונות עברה 150 ק״מ, ובשעה השלישית עוד 70 ק״מ. כמה עברה בסך הכל? ברור: \(150+70=220\) ק״מ. זו <b>אדיטיביות</b>.</p>
+    <p>ועוד דבר: אם כל הזמן המהירות הייתה בין 60 ל-90 קמ״ש, אז בשלוש שעות המרחק בין \(60\cdot3=180\) ל-\(90\cdot3=270\). זה <b>החסמים</b>.</p>
+    <h3>הכלל הכללי (מהמחברת)</h3>
+    <div class="tw"><table>
+      <tr><th>תכונה</th><th>מה כתוב</th><th>במילים</th></tr>
+      <tr><td><b>I. אדיטיביות</b></td><td><div class="m">\(D(f,[a,b])=D(f,[a,\pt{c}])+D(f,[\pt{c},b])\)</div>לכל \(c\in[a,b]\)</td><td>חותכים את הקטע בנקודה \(c\) ומחברים את שני החלקים.</td></tr>
+      <tr><td><b>II. חסמים</b></td><td><div class="m">\(\lo{m}(b-a)\le D(f,[a,b])\le \up{M}(b-a)\)</div></td><td>אם \(\lo m\le f(x)\le \up M\) לכל \(x\in[a,b]\), אז "הכי לאט × זמן" ≤ מרחק ≤ "הכי מהר × זמן".</td></tr>
+    </table></div>
+    <div class="box terms"><h4>מונחים</h4><dl>
+      <dt>\(f\) חסומה</dt><dd>יש מספרים \(m,M\) כך ש-\(f\) אף פעם לא יורדת מתחת ל-\(m\) ולא עולה מעל \(M\). (במחברת: "מאחר ו-\(f\) חסומה, קיימים \(m,M\in\mathbb R\)...")</dd>
+      <dt>\(b-a\)</dt><dd>האורך של הקטע. במכונית: משך הנסיעה.</dd>
+      <dt>אדיטיביות</dt><dd>מהמילה add = לחבר.</dd>
+    </dl></div>
+    <p>אותן שתי תכונות נכונות גם למסה \(R\) וגם לשטח \(A\): חותכים מוט לשני חלקים ומחברים מסות; שטח של שני חלקים צמודים מתחבר.</p>
+    <div class="box rule"><h4>הכלל לזכור</h4>אדיטיביות = חותכים ומחברים. חסמים = \(\lo m\cdot\)אורך ≤ הגודל ≤ \(\up M\cdot\)אורך.</div>
+    <div class="quiz" data-quiz="s2"></div>
+  </section>
+
+  <!-- 3 -->
+  <section class="sec" id="s3">
+    <div class="eyebrow"><b>3 / 7</b><span>עמוד 1 במחברת · דוגמה</span></div>
+    <h2>דוגמה: אבן נופלת לבאר</h2>
+    <p>משליכים אבן לתוך באר. המהירות ברגע \(t\) היא \(g\cdot t\approx 10t\) (מטר לשנייה). האבן נופלת 4 שניות. רוצים להעריך את \(D=D(f,[0,4])\), כלומר את עומק הבאר.</p>
+    <p>אין לנו עדיין נוסחה. יש לנו רק את שתי התכונות. הרעיון: <b>לחתוך את הזמן לקטעים</b> (אדיטיביות), ובכל קטע להשתמש <b>בחסמים</b>.</p>
+    <h3>מפת השלבים</h3>
+    <div class="tw"><table>
+      <tr><th>שלב</th><th>מה עושים</th><th>מאיזו תכונה</th></tr>
+      <tr><td>1</td><td>מחלקים את \([0,4]\) לקטעים</td><td>אדיטיביות: \(D\) = סכום ה-\(D\) של הקטעים</td></tr>
+      <tr><td>2</td><td>בכל קטע מוצאים מהירות <span class="t-lo">הכי קטנה</span> ו<span class="t-up">הכי גדולה</span></td><td>החסמים \(\lo m,\up M\)</td></tr>
+      <tr><td>3</td><td>חסם תחתון: <span class="t-lo">קטנה × אורך</span>, מסכמים</td><td>\(\lo m(b-a)\le D\)</td></tr>
+      <tr><td>4</td><td>חסם עליון: <span class="t-up">גדולה × אורך</span>, מסכמים</td><td>\(D\le\up M(b-a)\)</td></tr>
+    </table></div>
+    <div class="sim" data-sim="well"></div>
+    <p>המהירות \(10t\) עולה, ולכן בכל קטע המהירות הכי קטנה היא בהתחלה שלו, והכי גדולה בסוף שלו.</p>
+    <div class="lab" id="wellLab">
+      <header>המחשה: עוד קטעים = חסמים יותר מדויקים</header>
+      <div class="body">
+        <div class="row" id="wellN"><span class="lb">מספר קטעים:</span></div>
+        <div class="row" id="wellMode"><span class="lb">להראות:</span></div>
+        <svg id="wellSvg" viewBox="0 0 520 300" role="img" aria-label="גרף מהירות עם מלבנים"></svg>
+        <div class="stats" id="wellStats"></div>
+      </div>
+    </div>
+    <h3>התהליך חוזר על עצמו. איך הוא נגמר?</h3>
+    <p>כל פעם מחלקים לעוד קטעים. כדאי לדעת מראש מה יכול לקרות:</p>
+    <div class="tw"><table>
+      <tr><th>אפשרות</th><th>מה קורה</th></tr>
+      <tr><td>עוצרים כשמספיק מדויק</td><td>הפער בין החסמים הוא \(\frac{160}{n}\). רוצים דיוק של מטר אחד? צריך \(\frac{160}{n}<1\), כלומר \(n=161\) קטעים.</td></tr>
+      <tr><td>ממשיכים "עד הסוף"</td><td>בשום שלב סופי לא מקבלים את הערך בדיוק, אבל שני החסמים נלחצים אל אותו מספר: <span class="final">\(D=80\)</span> מטר. המספר הזה הוא בדיוק האינטגרל.</td></tr>
+      <tr><td>אם הפער לא היה קטן</td><td>אז לא היה מספר אחד "באמצע", והשיטה הייתה נכשלת. זה בדיוק מה שבודקת הגדרת האינטגרביליות (חלק 7).</td></tr>
+    </table></div>
+    <div class="box mynote"><h4>הערה שלי</h4>איך אני יודע שהתשובה 80? מחדו״א 1: הפונקציה \(5t^2\) נגזרת ל-\(10t\), אז המרחק הוא \(5\cdot4^2-5\cdot0^2=80\). המרצה עוד לא הגיע לזה, זה רק כדי לבדוק. ובאמת \(40\le80\le120\) וגם \(60\le80\le100\).</div>
+    <div class="box rule"><h4>הכלל לזכור</h4>חותכים לקטעים, ובכל קטע: <span class="t-lo">קטן × אורך</span> ≤ חלק המרחק ≤ <span class="t-up">גדול × אורך</span>. ככל שהחלוקה עדינה יותר, החסם מדויק יותר.</div>
+    <div class="quiz" data-quiz="s3"></div>
+  </section>
+
+  <!-- 4 -->
+  <section class="sec" id="s4">
+    <div class="eyebrow"><b>4 / 7</b><span>עמוד 2 במחברת · הכללות</span></div>
+    <h2>ערכים שליליים, ו-\(b&lt;a\)</h2>
+    <p>עד עכשיו \(f\ge0\). רוצים לאפשר גם פונקציות עם ערכים <b>שליליים</b>. מה זה אומר בכל אחת מהבעיות?</p>
+    <div class="tw"><table>
+      <tr><th>בעיה</th><th>ערך שלילי של \(f\)</th><th>מה קורה לגודל</th></tr>
+      <tr><td>מכונית</td><td>מהירות שלילית = נוסעת אחורה</td><td>המכונית חוזרת, ולכן <span class="t-lo">המרחק (מהנקודה ההתחלתית) קטן</span></td></tr>
+      <tr><td>מוט</td><td>המוט שקוע במים, והצפיפות נמדדת ביחס למים</td><td>חלקים "קלים מהמים" (צפיפות שלילית) מנסים להרים את המוט למעלה</td></tr>
+      <tr><td>שטח</td><td>הגרף מתחת לציר \(x\)</td><td><span class="t-up">חלק מעל הציר נספר בפלוס</span>, <span class="t-lo">חלק מתחת לציר בפלוס מינוס</span></td></tr>
+    </table></div>
+    <div class="lab" id="signLab">
+      <header>המחשה (דוגמה שלי): שטח עם סימן של \(f(x)=x-1\) בקטע \([0,b]\)</header>
+      <div class="body">
+        <label for="signB" class="row"><span class="lb">הזז את \(b\):</span> <b id="signBv" style="font-family:var(--f-mono)"></b></label>
+        <input id="signB" type="range" min="0" max="3" step="0.1" value="2.5">
+        <svg id="signSvg" viewBox="0 0 520 260" role="img" aria-label="שטח מעל ומתחת לציר"></svg>
+        <div class="stats" id="signStats"></div>
+      </div>
+    </div>
+    <h3>מה אם \(b&lt;a\)?</h3>
+    <p>רוצים לאפשר גם קטע "הפוך", למשל מ-4 ל-1. כדי שהאדיטיביות תמשיך לעבוד, קובעים <b>מוסכמה</b>:</p>
+    <div class="m">\[A(f,[b,a])=-A(f,[a,b])\]</div>
+    <div class="tw"><table>
+      <tr><th>#</th><th>שורה</th><th>למה?</th></tr>
+      <tr><td>1</td><td><div class="m">\(A(f,[a,a])=0\)</div></td><td>קטע באורך 0: לפי החסמים \(m\cdot0\le A\le M\cdot0\)</td></tr>
+      <tr><td>2</td><td><div class="m">\(A(f,[a,b])+A(f,[b,a])=A(f,[a,a])\)</div></td><td>אדיטיביות: הולכים מ-\(a\) ל-\(b\) וחוזרים ל-\(a\)</td></tr>
+      <tr><td>3</td><td><div class="m">\(A(f,[b,a])=-A(f,[a,b])\)</div></td><td>מעבירים אגף, כי הסכום הוא 0</td></tr>
+    </table></div>
+    <p>דוגמה במספרים: אם השטח מ-1 עד 4 הוא 6, אז "מ-4 עד 1" זה \(-6\). כמו נסיעה הלוך ושוב: חזרת לאותה נקודה, סך התזוזה 0.</p>
+    <p><b>אינטואיציה (מהמחברת):</b> כל הגדלים האלו \(A,R,D\) שווים זה לזה (כשמשתמשים באותה \(f\) ובאותו קטע).</p>
+    <div class="box rule"><h4>הכלל לזכור</h4>מעל הציר נספר <span class="t-up">בפלוס</span>, מתחת לציר <span class="t-lo">במינוס</span>. והפיכת הגבולות הופכת את הסימן.</div>
+    <div class="quiz" data-quiz="s4"></div>
+  </section>
+
+  <!-- 5 -->
+  <section class="sec" id="s5">
+    <div class="eyebrow"><b>5 / 7</b><span>עמוד 2 במחברת · משפט והערות</span></div>
+    <h2>המשפט והסימון \(\int\)</h2>
+    <div class="box rule"><h4>משפט</h4>
+      <p style="margin-top:0"><b>(יחידות)</b> כל גודל \(I(f,[a,b])\) שמקיים, לכל \(f\) רציפה ולכל \(a\le b\), את שתי התכונות:</p>
+      <ol style="margin:0">
+        <li>אדיטיביות: \(I(f,[a,b])=I(f,[a,c])+I(f,[c,b])\) לכל \(a\le c\le b\)</li>
+        <li>חסמים: אם \(\lo m\le f(x)\le\up M\) לכל \(x\in[a,b]\), אז \(\lo m(b-a)\le I(f,[a,b])\le\up M(b-a)\)</li>
+      </ol>
+      <p>ייתן <b>בדיוק אותו הערך</b>.</p>
+      <p style="margin-bottom:0"><b>(קיום)</b> מעבר לכך, ביטוי כזה באמת קיים. קוראים לו <b>האינטגרל המסוים</b>.</p>
+    </div>
+    <p><b>במילים פשוטות:</b> שתי התכונות "נועלות" את התשובה. ראינו את זה בבאר: רק עם שתי התכונות לחצנו את \(D\) בין חסמים שהתקרבו ל-80. לא היה מקום לשום מספר אחר.</p>
+    <h3>הסימון</h3>
+    <p>לחץ על חלק של הסימון כדי לראות את השם שלו:</p>
+    <div class="lab" id="notLab">
+      <header>החלקים של \(\int_a^b f(x)\,dx\)</header>
+      <div class="body">
+        <div class="m" style="font-size:1.6em;text-align:center">\[I(f,[a,b])=\int_a^b f(x)\,dx\]</div>
+        <div class="row" id="notBtns"></div>
+        <div class="out" id="notOut"></div>
+      </div>
+    </div>
+    <h3>הערות מהמחברת</h3>
+    <ol>
+      <li>לכל \(f\) רציפה: \(A(f,[a,b])=R(f,[a,b])=I(f,[a,b])=\int_a^b f(x)\,dx\). כלומר שטח, מסה ומרחק הם כולם אותו אינטגרל.</li>
+      <li>במקום פונקציות רציפות, אפשר לדבר גם על פונקציות <b>חסומות</b> שהן רציפות פרט למספר סופי (או אפילו בן מניה) של נקודות אי-רציפות.</li>
+    </ol>
+    <div class="box terms"><h4>מונחים</h4><dl>
+      <dt>בן מניה</dt><dd>אינסופי, אבל אפשר "למספר" את האיברים: ראשון, שני, שלישי... למשל כל הנקודות \(1,\frac12,\frac13,\frac14,\dots\)</dd>
+      <dt>למה "חסומה" חשוב?</dt><dd>בלי חסם אין \(M\), ואז תכונת החסמים לא עובדת. למשל \(\frac1x\) ב-\((0,1]\) עולה לאינסוף ליד 0.</dd>
+    </dl></div>
+    <div class="box mynote"><h4>הערה שלי (על המילים)</h4>
+      <p style="margin-top:0">במחברת כתוב שפונקציות כאלו נקראות "רציפות למקוטעין". בדרך כלל השם הזה שמור למקרה של <b>מספר סופי</b> של נקודות אי-רציפות (חתיכות רציפות שמחוברות). עם אינסוף בן מניה של נקודות, הפונקציה עדיין אינטגרבילית (אם היא חסומה), אבל לא תמיד קוראים לה "רציפה למקוטעין". לבחינה: תזכור שחסומה + "מעט" נקודות אי-רציפות = אינטגרבילית.</p>
+      <p style="margin-bottom:0">ועוד: את \(dx\) המחברת קוראת "גורם האינטגרציה". שמות נפוצים נוספים: "הדיפרנציאל", והוא אומר מי <b>משתנה האינטגרציה</b> (כאן \(x\)).</p>
+    </div>
+    <div class="box rule"><h4>הכלל לזכור</h4>יש בדיוק דבר אחד שמקיים אדיטיביות + חסמים, וזה \(\int_a^b f(x)\,dx\).</div>
+    <div class="quiz" data-quiz="s5"></div>
+  </section>
+
+  <!-- 6 -->
+  <section class="sec" id="s6">
+    <div class="eyebrow"><b>6 / 7</b><span>עמוד 3 במחברת</span></div>
+    <h2>סכומי דרבו וסכום רימן</h2>
+    <p>מה שעשינו בבאר, עכשיו בצורה כללית לכל פונקציה. קודם דוגמה עם מספרים, אחר כך הסימנים.</p>
+    <h3>דוגמה שלי: \(f(x)=x^2\) בקטע \([0,2]\)</h3>
+    <p>חלוקה (לא חייבת להיות שווה): \(0&lt;0.5&lt;1&lt;2\). שלושה תת-קטעים. \(x^2\) עולה ב-\([0,2]\), אז הכי קטן בהתחלה והכי גדול בסוף.</p>
+    <div class="tw"><table>
+      <tr><th>\(i\)</th><th>תת-קטע</th><th class="t-part">אורך \(\Delta x_i\)</th><th class="t-lo">\(m_i\) (הכי קטן)</th><th class="t-up">\(M_i\) (הכי גדול)</th><th class="t-rs">\(t_i\) (אמצע), \(f(t_i)\)</th></tr>
+      <tr><td>1</td><td class="num">[0, 0.5]</td><td class="num">0.5</td><td class="num">0</td><td class="num">0.25</td><td class="num">0.25 → 0.0625</td></tr>
+      <tr><td>2</td><td class="num">[0.5, 1]</td><td class="num">0.5</td><td class="num">0.25</td><td class="num">1</td><td class="num">0.75 → 0.5625</td></tr>
+      <tr><td>3</td><td class="num">[1, 2]</td><td class="num">1</td><td class="num">1</td><td class="num">4</td><td class="num">1.5 → 2.25</td></tr>
+      <tr><th colspan="2">סכום (ערך × אורך)</th><td class="num">\(\lambda=1\)</td><td class="num t-lo">1.125</td><td class="num t-up">4.625</td><td class="num t-rs">2.5625</td></tr>
+    </table></div>
+    <p>בדיקה: \(1.125\le 2.5625\le 4.625\), והאינטגרל האמיתי \(\int_0^2x^2dx=\frac83\approx2.667\) גם הוא באמצע.</p>
+    <h3>עכשיו הסימנים של המרצה</h3>
+    <div class="tw"><table>
+      <tr><th>סימן</th><th>מה זה</th><th>בדוגמה</th></tr>
+      <tr><td><div class="m">\(\Delta:\ a=x_0&lt;x_1&lt;\dots&lt;x_n=b\)</div></td><td><span class="t-part">חלוקה</span> של \([a,b]\) ל-\(n\) תת-קטעים</td><td>\(x_0=0,x_1=0.5,x_2=1,x_3=2\)</td></tr>
+      <tr><td><div class="m">\(\Delta x_i=x_i-x_{i-1}\)</div></td><td>האורך של תת-קטע \(i\)</td><td>0.5, 0.5, 1</td></tr>
+      <tr><td><div class="m">\(\up{M_i}=\sup\{f(x)\mid x\in[x_{i-1},x_i]\}\)</div></td><td>הערך הכי גדול (חסם עליון) בתת-קטע</td><td>0.25, 1, 4</td></tr>
+      <tr><td><div class="m">\(\lo{m_i}=\inf\{f(x)\mid x\in[x_{i-1},x_i]\}\)</div></td><td>הערך הכי קטן (חסם תחתון) בתת-קטע</td><td>0, 0.25, 1</td></tr>
+      <tr><td><div class="m">\(\rs{y_i}=f(\rs{t_i}),\ t_i\in[x_{i-1},x_i]\)</div></td><td>ערך בנקודה \(t_i\) <b>שבוחרים</b> בתוך התת-קטע</td><td>\(t_i\) = אמצע</td></tr>
+      <tr><td><div class="m">\(\lambda(\Delta)=\max_i\{\Delta x_i\}\)</div></td><td>הפרמטר של החלוקה = האורך של התת-קטע <b>הגדול ביותר</b></td><td>1</td></tr>
+    </table></div>
+    <div class="m">\[\text{upper Darboux: }\ \up{\overline S(f,\Delta)}=\sum_{i=1}^n \up{M_i}\,\Delta x_i\qquad \text{lower Darboux: }\ \lo{\underline S(f,\Delta)}=\sum_{i=1}^n \lo{m_i}\,\Delta x_i\]</div>
+    <div class="m">\[\text{Riemann: }\ \rs{I_{app}(f,\Delta,t_i)}=\sum_{i=1}^n \rs{y_i}\,\Delta x_i=\sum_{i=1}^n f(\rs{t_i})\,\Delta x_i\]</div>
+    <div class="box terms"><h4>מונחים וסימנים</h4><dl>
+      <dt>\(\sum_{i=1}^n\) (סיגמא)</dt><dd>"סכם את כל האיברים מ-\(i=1\) עד \(i=n\)". למשל \(\sum_{i=1}^3 M_i\Delta x_i=M_1\Delta x_1+M_2\Delta x_2+M_3\Delta x_3\).</dd>
+      <dt>sup ו-inf</dt><dd>sup = החסם העליון הכי קטן, inf = החסם התחתון הכי גדול. לפונקציה רציפה בקטע סגור הם פשוט המקסימום והמינימום. משתמשים ב-sup/inf כי בפונקציה לא רציפה ייתכן שאין מקסימום ממש.</dd>
+      <dt>\(\overline S\) ו-\(\underline S\)</dt><dd>קו למעלה = עליון, קו למטה = תחתון. קל לזכור.</dd>
+      <dt>\(I_{app}\)</dt><dd>app = approximation (קירוב). סכום רימן הוא קירוב לאינטגרל.</dd>
+      <dt>\(\lambda(\Delta)\) (למדא)</dt><dd>מודד כמה החלוקה "עדינה". \(\lambda\) קטן = כל התת-קטעים קצרים.</dd>
+    </dl></div>
+    <div class="lab" id="dbLab">
+      <header>המחשה: סכומי דרבו ורימן בפעולה</header>
+      <div class="body">
+        <div class="row" id="dbF"><span class="lb">פונקציה:</span></div>
+        <label for="dbN" class="row"><span class="lb">מספר תת-קטעים \(n\):</span> <b id="dbNv" style="font-family:var(--f-mono)"></b></label>
+        <input id="dbN" type="range" min="1" max="40" step="1" value="4">
+        <div class="row" id="dbT"><span class="lb">איפה \(t_i\):</span></div>
+        <div class="row" id="dbShow"><span class="lb">להראות:</span></div>
+        <svg id="dbSvg" viewBox="0 0 520 300" role="img" aria-label="מלבני דרבו ורימן"></svg>
+        <div class="stats" id="dbStats"></div>
+      </div>
+    </div>
+    <div class="box rule"><h4>מה מתקיים (מהמחברת)</h4>
+      <div class="m">\[\lo{\underline S(f,\Delta)}\le\rs{I_{app}(f,\Delta,t_i)}\le\up{\overline S(f,\Delta)}\qquad\text{and}\qquad\lo{\underline S(f,\Delta)}\le\int_a^bf(x)\,dx\le\up{\overline S(f,\Delta)}\]</div>
+      למה? בכל תת-קטע \(\lo{m_i}\le f(\rs{t_i})\le\up{M_i}\). כופלים ב-\(\Delta x_i\) (חיובי) ומסכמים. והשני: זו תכונת החסמים בכל תת-קטע + אדיטיביות.</div>
+    <div class="box analogy"><h4>אנלוגיה</h4>כמו לרצף חדר עם קיר עקום: המלבנים <span class="t-lo">התחתונים</span> הם אריחים שלא יוצאים מהקיר אף פעם, ה<span class="t-up">עליונים</span> תמיד מכסים הכל. רימן הוא אריחים שהגובה שלהם נבחר בנקודה כלשהי.</div>
+    <div class="quiz" data-quiz="s6"></div>
+  </section>
+
+  <!-- 7 -->
+  <section class="sec" id="s7">
+    <div class="eyebrow"><b>7 / 7</b><span>עמוד 3 במחברת · הגדרה</span></div>
+    <h2>הגדרת אינטגרביליות</h2>
+    <div class="box rule"><h4>הגדרה</h4>תהי \(f\) פונקציה חסומה ב-\([a,b]\). נאמר ש-\(f\) <b>אינטגרבילית</b> בקטע \([a,b]\) אם לכל \(\varepsilon&gt;0\) קיים \(\delta&gt;0\), כך שלכל חלוקה \(\Delta\) של \([a,b]\): אם \(\lambda(\Delta)&lt;\delta\) אז \(\up{\overline S(f,\Delta)}-\lo{\underline S(f,\Delta)}&lt;\varepsilon\). במקרה זה נאמר ש-\(\int_a^bf(x)\,dx\) קיים.</div>
+    <h3>פירוק ההגדרה, חלק אחרי חלק</h3>
+    <div class="tw"><table>
+      <tr><th>חלק</th><th>במילים פשוטות</th></tr>
+      <tr><td>\(\varepsilon&gt;0\)</td><td>הדיוק שמישהו "דורש" ממך. יכול להיות קטן כמה שרוצים: 1, 0.01, 0.000001.</td></tr>
+      <tr><td>קיים \(\delta&gt;0\)</td><td>אתה עונה: "תחלק לתת-קטעים קצרים מ-\(\delta\)".</td></tr>
+      <tr><td>\(\lambda(\Delta)&lt;\delta\)</td><td>כל התת-קטעים בחלוקה קצרים מ-\(\delta\) (גם הכי ארוך שבהם).</td></tr>
+      <tr><td>\(\overline S-\underline S&lt;\varepsilon\)</td><td>הפער בין המלבנים <span class="t-up">העליונים</span> ל<span class="t-lo">תחתונים</span> קטן מהדיוק שנדרש.</td></tr>
+    </table></div>
+    <p>אם תמיד אפשר לענות כך, אז החסמים נלחצים לנקודה אחת, וזה האינטגרל. בדיוק מה שראינו בבאר.</p>
+    <h3>מפת שלבים, ואז הבאר שוב (דוגמה שלי)</h3>
+    <p>\(f(t)=10t\) בקטע \([0,4]\). ננסה להוכיח שהיא אינטגרבילית: 1) מחשבים את הפער לחלוקה כלשהי → 2) חוסמים אותו בעזרת \(\lambda\) → 3) בוחרים \(\delta\) לפי \(\varepsilon\).</p>
+    <div class="sim" data-sim="eps"></div>
+    <div class="lab" id="epsLab">
+      <header>נסה בעצמך: בחר \(\varepsilon\) וראה מה \(\delta\) עונה</header>
+      <div class="body">
+        <div class="row" id="epsBtns"><span class="lb">\(\varepsilon\) =</span></div>
+        <div class="out" id="epsOut"></div>
+      </div>
+    </div>
+    <div class="box analogy"><h4>אנלוגיה</h4>משחק בין שניים: אחד אומר "אני רוצה פער קטן מ-\(\varepsilon\)!", השני עונה "בסדר, תחתוך לקטעים קצרים מ-\(\delta\)". אם השני מנצח <b>תמיד</b>, לכל \(\varepsilon\), הפונקציה אינטגרבילית.</div>
+    <div class="quiz" data-quiz="s7"></div>
+  </section>
+
+  <!-- summary -->
+  <section class="sec" id="sum">
+    <div class="eyebrow"><b>סיכום</b><span>כל ההרצאה</span></div>
+    <h2>מה לקחת מההרצאה</h2>
+    <div class="tw"><table>
+      <tr><th>נושא</th><th>העיקר</th></tr>
+      <tr><td>שלוש בעיות</td><td>מרחק \(D\), מסה \(R\), שטח \(A\): כולם "צוברים" פונקציה לאורך קטע.</td></tr>
+      <tr><td>שתי תכונות</td><td>אדיטיביות (חותכים ומחברים) + חסמים (\(\lo m(b-a)\le\cdot\le\up M(b-a)\)).</td></tr>
+      <tr><td>ערכים שליליים</td><td>מתחת לציר נספר במינוס. \(\int_b^a=-\int_a^b\).</td></tr>
+      <tr><td>משפט</td><td>יש בדיוק גודל אחד עם שתי התכונות: \(\int_a^bf(x)\,dx\). קיים לרציפות, וגם לחסומות עם מעט נקודות אי-רציפות.</td></tr>
+      <tr><td>דרבו ורימן</td><td>\(\lo{\underline S}=\sum m_i\Delta x_i\le \rs{\sum f(t_i)\Delta x_i}\le\sum M_i\Delta x_i=\up{\overline S}\), והאינטגרל ביניהם.</td></tr>
+      <tr><td>אינטגרבילית</td><td>לכל \(\varepsilon\) יש \(\delta\): חלוקה עם \(\lambda&lt;\delta\) נותנת \(\overline S-\underline S&lt;\varepsilon\).</td></tr>
+    </table></div>
+    <h3>מבחן מסכם</h3>
+    <div class="quiz" data-quiz="fin"></div>
+    <div class="endmsg" id="endmsg" hidden></div>
+  </section>
+</div>
+
+<script>
+const R = String.raw;
+const LS = {get(k){try{return JSON.parse(localStorage.getItem(k)||'null')}catch(e){return null}}, set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+const NS='http://www.w3.org/2000/svg';
+function sv(tag,attrs,parent){const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);if(parent)parent.appendChild(e);return e;}
+function typeset(el){ if(window.MathJax&&MathJax.typesetPromise){ MathJax.typesetPromise(el?[el]:undefined).catch(()=>{}); } }
+const fmt=(x,d=3)=>{const s=(+x).toFixed(d);return s.replace(/\.?0+$/,'')||'0';};
+
+/* ---------- step-through simulations ---------- */
+const SIMS = {
+ well:{title:"סימולציה 1: הדוגמה של המרצה, צעד אחרי צעד", steps:[
+  {m:R`f(t)=10t,\quad t\in[0,4],\quad D=D(f,[0,4])=\,?`, e:R`נתון: מהירות \(10t\). מחפשים את המרחק בין שנייה 0 לשנייה 4.`},
+  {m:R`\pt{[0,2]},\ \pt{[2,4]}\quad\Rightarrow\quad D=D(f,[0,2])+D(f,[2,4])`, e:R`<b>שלב 1 (אדיטיביות):</b> חותכים לשני קטעים באורך 2.`},
+  {m:R`[0,2]:\ \lo{m=f(0)=0},\ \up{M=f(2)=20}\qquad [2,4]:\ \lo{m=f(2)=20},\ \up{M=f(4)=40}`, e:R`<b>שלב 2:</b> הפונקציה עולה, אז הכי קטן בהתחלה של כל קטע, הכי גדול בסוף.`},
+  {m:R`\lo{0\cdot2+20\cdot2}\le D\le\up{20\cdot2+40\cdot2}\quad\Rightarrow\quad 40\le D\le120`, e:R`<b>שלבים 3-4:</b> קטנה × אורך, גדולה × אורך, ומסכמים את שני הקטעים.`},
+  {m:R`\pt{[0,1],[1,2],[2,3],[3,4]}`, e:R`עכשיו חלוקה עדינה יותר: ארבעה קטעים באורך 1.`},
+  {m:R`\lo{0\cdot1+10\cdot1+20\cdot1+30\cdot1}\le D\le\up{10\cdot1+20\cdot1+30\cdot1+40\cdot1}`, e:R`אותם שלבים. הקטנות: 0, 10, 20, 30. הגדולות: 10, 20, 30, 40.`},
+  {m:R`60\le D\le 100`, e:R`הפער ירד מ-80 ל-40. <b>ככל שהחלוקה עדינה יותר, החסם יותר מדויק</b> (הכוכבית האחרונה במחברת).`, final:true}
+ ]},
+ eps:{title:"סימולציה 2: למה 10t אינטגרבילית", steps:[
+  {m:R`\Delta:\ 0=x_0<x_1<\dots<x_n=4`, e:R`<b>שלב 1:</b> לוקחים חלוקה כלשהי (לא חייבת שווה).`},
+  {m:R`\up{M_i}=10x_i,\qquad \lo{m_i}=10x_{i-1}`, e:R`\(10t\) עולה: הכי גדול בקצה הימני, הכי קטן בקצה השמאלי.`},
+  {m:R`\up{\overline S}-\lo{\underline S}=\sum_{i=1}^n(10x_i-10x_{i-1})\Delta x_i=10\sum_{i=1}^n\Delta x_i\cdot\Delta x_i`, e:R`מחסרים איבר-איבר. \(x_i-x_{i-1}\) זה בדיוק \(\Delta x_i\).`},
+  {m:R`\le 10\sum_{i=1}^n\lambda\cdot\Delta x_i=10\lambda\sum_{i=1}^n\Delta x_i=10\lambda\cdot4=40\lambda`, e:R`<b>שלב 2:</b> כל \(\Delta x_i\le\lambda\) (כי \(\lambda\) הוא הכי ארוך). וסכום כל האורכים = אורך הקטע = 4.`},
+  {m:R`\delta=\frac{\varepsilon}{40}:\quad \lambda<\delta\ \Rightarrow\ \overline S-\underline S\le40\lambda<40\cdot\frac{\varepsilon}{40}=\varepsilon`, e:R`<b>שלב 3:</b> בוחרים \(\delta=\frac{\varepsilon}{40}\). זה עובד לכל \(\varepsilon\), אז \(f\) אינטגרבילית.`, final:true}
+ ]}
+};
+function buildSim(el){
+  const s=SIMS[el.dataset.sim]; let cur=0;
+  el.innerHTML=`<header><b>${s.title}</b><span class="ctr"></span><div class="ctrls">
+    <button class="btn" data-a="prev" type="button">הקודם</button>
+    <button class="btn primary" data-a="next" type="button">הבא</button>
+    <button class="btn" data-a="restart" type="button">מההתחלה</button></div></header>
+    <div class="board"></div><div class="expl"></div>`;
+  const board=el.querySelector('.board'),expl=el.querySelector('.expl'),ctr=el.querySelector('.ctr');
+  const lines=s.steps.map((st,i)=>{const d=document.createElement('div');d.className='ln';
+    d.innerHTML=`<span class="no">${i+1}</span><div class="m">${st.final?'<span class="final">':''}\\(\\displaystyle ${st.m}\\)${st.final?'</span>':''}</div>`;board.appendChild(d);return d;});
+  const exps=s.steps.map(st=>{const d=document.createElement('div');d.innerHTML=st.e;expl.appendChild(d);return d;});
+  function show(){lines.forEach((l,i)=>{l.hidden=i>cur;l.classList.toggle('cur',i===cur)});
+    exps.forEach((x,i)=>x.hidden=i!==cur);ctr.textContent=`צעד ${cur+1} מתוך ${s.steps.length}`;
+    el.querySelector('[data-a=prev]').disabled=cur===0;el.querySelector('[data-a=next]').disabled=cur===s.steps.length-1;}
+  el.addEventListener('click',e=>{const a=e.target.closest('button')?.dataset.a;if(!a)return;
+    if(a==='prev'&&cur>0)cur--; if(a==='next'&&cur<s.steps.length-1)cur++; if(a==='restart')cur=0; show();});
+  show();
+}
+document.querySelectorAll('.sim').forEach(buildSim);
+
+/* ---------- generic plot helper ---------- */
+function plotFrame(svg,{x0,x1,y0,y1,xt,yt,W=520,H=300,padL=44,padB=28,padT=12,padR=14}){
+  svg.innerHTML='';
+  const X=x=>padL+(x-x0)/(x1-x0)*(W-padL-padR), Y=y=>H-padB-(y-y0)/(y1-y0)*(H-padB-padT);
+  yt.forEach(v=>{sv('line',{x1:padL,x2:W-padR,y1:Y(v),y2:Y(v),class:'gridl'},svg);const t=sv('text',{x:padL-6,y:Y(v)+4,'text-anchor':'end'},svg);t.textContent=fmt(v,2);});
+  xt.forEach(v=>{const t=sv('text',{x:X(v),y:H-padB+16,'text-anchor':'middle'},svg);t.textContent=fmt(v,2);});
+  const g=sv('g',{},svg);
+  sv('line',{x1:padL,x2:W-padR,y1:Y(Math.max(y0,Math.min(0,y1))),y2:Y(Math.max(y0,Math.min(0,y1))),class:'axis'},svg);
+  sv('line',{x1:X(Math.max(x0,0)),x2:X(Math.max(x0,0)),y1:padT,y2:H-padB,class:'axis'},svg);
+  return {X,Y,g};
+}
+function curve(svg,f,a,b,X,Y){let d='';for(let k=0;k<=200;k++){const x=a+(b-a)*k/200;d+=(k?'L':'M')+X(x).toFixed(1)+' '+Y(f(x)).toFixed(1);}sv('path',{d,class:'curve'},svg);}
+function stat(label,val,cls){return `<div class="stat"><span class="${cls||''}">${label}</span><b class="${cls||''}">${val}</b></div>`;}
+function btnRow(row,items,init,onPick){
+  const bs=items.map((it,i)=>{const b=document.createElement('button');b.type='button';b.className='btn';b.innerHTML=it.label;b.setAttribute('aria-pressed',i===init);
+    b.addEventListener('click',()=>{bs.forEach((x,j)=>x.setAttribute('aria-pressed',j===i));onPick(it,i);});row.appendChild(b);return b;});
+  return bs;
+}
+
+/* ---------- well lab ---------- */
+(function(){
+  let n=2, mode='both';
+  const svg=document.getElementById('wellSvg'), st=document.getElementById('wellStats');
+  btnRow(document.getElementById('wellN'),[1,2,4,8,16,32].map(v=>({label:String(v),v})),1,it=>{n=it.v;draw();});
+  btnRow(document.getElementById('wellMode'),[{label:'תחתון',v:'lo'},{label:'עליון',v:'up'},{label:'שניהם',v:'both'}],2,it=>{mode=it.v;draw();});
+  function draw(){
+    const {X,Y}=plotFrame(svg,{x0:0,x1:4,y0:0,y1:42,xt:[0,1,2,3,4],yt:[0,10,20,30,40]});
+    const h=4/n; let lo=0,up=0;
+    for(let i=0;i<n;i++){const a=i*h,b=a+h,ml=10*a,Mu=10*b;lo+=ml*h;up+=Mu*h;
+      if(mode!=='lo') sv('rect',{x:X(a),y:Y(Mu),width:X(b)-X(a),height:Y(0)-Y(Mu),class:'rup'},svg);
+      if(mode!=='up') sv('rect',{x:X(a),y:Y(ml),width:X(b)-X(a),height:Y(0)-Y(ml),class:'rlo'},svg);}
+    curve(svg,t=>10*t,0,4,X,Y);
+    st.innerHTML=stat('חסם תחתון',fmt(lo),'t-lo')+stat('חסם עליון',fmt(up),'t-up')+stat('פער = <bdi dir="ltr">160/n</bdi>',fmt(up-lo))+stat('הערך האמיתי','80');
+  }
+  draw();
+})();
+
+/* ---------- signed area lab ---------- */
+(function(){
+  const inp=document.getElementById('signB'), svg=document.getElementById('signSvg'), st=document.getElementById('signStats'), bv=document.getElementById('signBv');
+  function draw(){
+    const b=+inp.value; bv.textContent='b = '+fmt(b,1);
+    const {X,Y}=plotFrame(svg,{x0:0,x1:3,y0:-1.2,y1:2.2,xt:[0,1,2,3],yt:[-1,0,1,2],H:260});
+    const mneg=Math.min(b,1);
+    if(mneg>0) sv('path',{d:`M${X(0)} ${Y(0)} L${X(0)} ${Y(-1)} L${X(mneg)} ${Y(mneg-1)} L${X(mneg)} ${Y(0)} Z`,class:'aneg'},svg);
+    if(b>1) sv('path',{d:`M${X(1)} ${Y(0)} L${X(b)} ${Y(b-1)} L${X(b)} ${Y(0)} Z`,class:'apos'},svg);
+    curve(svg,x=>x-1,0,3,X,Y);
+    sv('line',{x1:X(b),x2:X(b),y1:Y(-1.2),y2:Y(2.2),class:'gridl','stroke-dasharray':'4 3'},svg);
+    const neg=mneg-mneg*mneg/2, pos=b>1?(b-1)*(b-1)/2:0;
+    st.innerHTML=stat('שטח מעל הציר (+)',fmt(pos),'t-up')+stat('שטח מתחת לציר (−)',fmt(neg),'t-lo')+stat('השטח עם סימן',fmt(pos-neg));
+  }
+  inp.addEventListener('input',draw); draw();
+})();
+
+/* ---------- notation lab ---------- */
+(function(){
+  const P=[
+    {label:R`∫`,t:R`<b>סימן האינטגרל.</b> S מוארכת, מהמילה Sum (סכום). הוא מזכיר שהאינטגרל הוא "סכום" של הרבה חתיכות קטנות.`},
+    {label:R`<bdi dir="ltr">a</bdi> ו-<bdi dir="ltr">b</bdi>`,t:R`<b>גבולות האינטגרציה.</b> \(a\) = גבול תחתון (למטה), \(b\) = גבול עליון (למעלה). זה הקטע \([a,b]\).`},
+    {label:R`<bdi dir="ltr">f(x)</bdi>`,t:R`<b>האינטגרנד.</b> הפונקציה שצוברים: המהירות, הצפיפות, הגובה.`},
+    {label:R`<bdi dir="ltr">dx</bdi>`,t:R`<b>גורם האינטגרציה</b> (נקרא גם הדיפרנציאל). הוא אומר שהמשתנה הוא \(x\), ומזכיר את \(\Delta x_i\): "אורך של חתיכה קטנה".`}
+  ];
+  const out=document.getElementById('notOut');
+  btnRow(document.getElementById('notBtns'),P,0,it=>{out.innerHTML=it.t;typeset(out);});
+  out.innerHTML=P[0].t;
+})();
+
+/* ---------- Darboux / Riemann lab ---------- */
+(function(){
+  const FS=[
+    {label:R`<bdi dir="ltr">x² , [0,2]</bdi>`,f:x=>x*x,a:0,b:2,I:8/3,y0:0,y1:4.2,yt:[0,1,2,3,4]},
+    {label:R`<bdi dir="ltr">10t , [0,4]</bdi>`,f:x=>10*x,a:0,b:4,I:80,y0:0,y1:42,yt:[0,10,20,30,40]},
+    {label:R`<bdi dir="ltr">2+sin 2x , [0,3]</bdi>`,f:x=>2+Math.sin(2*x),a:0,b:3,I:6+(1-Math.cos(6))/2,y0:0,y1:3.2,yt:[0,1,2,3]}
+  ];
+  let F=FS[0], tmode='mid', show='all', seed=1;
+  const nIn=document.getElementById('dbN'), nv=document.getElementById('dbNv'), svg=document.getElementById('dbSvg'), st=document.getElementById('dbStats');
+  btnRow(document.getElementById('dbF'),FS,0,it=>{F=it;draw();});
+  btnRow(document.getElementById('dbT'),[{label:'שמאל',v:'l'},{label:'אמצע',v:'mid'},{label:'ימין',v:'r'},{label:'אקראי',v:'rnd'}],1,it=>{tmode=it.v;if(it.v==='rnd')seed++;draw();});
+  btnRow(document.getElementById('dbShow'),[{label:'דרבו',v:'db'},{label:'רימן',v:'rs'},{label:'הכל',v:'all'}],2,it=>{show=it.v;draw();});
+  function rnd(i){const x=Math.sin(seed*9301+i*49297)*233280;return x-Math.floor(x);}
+  function draw(){
+    const n=+nIn.value; nv.textContent=String(n);
+    const xt=[];for(let k=0;k<=F.b;k++)xt.push(k);
+    const {X,Y}=plotFrame(svg,{x0:F.a,x1:F.b,y0:F.y0,y1:F.y1,xt,yt:F.yt});
+    const h=(F.b-F.a)/n; let lo=0,up=0,rs=0;
+    for(let i=0;i<n;i++){
+      const a=F.a+i*h,b=a+h; let mn=Infinity,mx=-Infinity;
+      for(let k=0;k<=60;k++){const v=F.f(a+h*k/60);if(v<mn)mn=v;if(v>mx)mx=v;}
+      const t=tmode==='l'?a:tmode==='r'?b:tmode==='mid'?(a+b)/2:a+h*rnd(i);
+      const y=F.f(t); lo+=mn*h; up+=mx*h; rs+=y*h;
+      if(show!=='rs'){sv('rect',{x:X(a),y:Y(mx),width:X(b)-X(a),height:Y(0)-Y(mx),class:'rup'},svg);
+        sv('rect',{x:X(a),y:Y(mn),width:X(b)-X(a),height:Y(0)-Y(mn),class:'rlo'},svg);}
+      if(show!=='db'){sv('rect',{x:X(a),y:Y(y),width:X(b)-X(a),height:Y(0)-Y(y),class:'rrs'},svg);
+        if(n<=24) sv('circle',{cx:X(t),cy:Y(y),r:3.2,class:'ptrs'},svg);}
+    }
+    curve(svg,F.f,F.a,F.b,X,Y);
+    st.innerHTML=stat('סכום תחתון',fmt(lo),'t-lo')+stat('סכום רימן',fmt(rs),'t-rs')+stat('סכום עליון',fmt(up),'t-up')+stat('האינטגרל',fmt(F.I))+stat('<bdi dir="ltr">λ(Δ)</bdi>',fmt(h))+stat('פער עליון−תחתון',fmt(up-lo));
+  }
+  nIn.addEventListener('input',draw); draw();
+})();
+
+/* ---------- epsilon lab ---------- */
+(function(){
+  const out=document.getElementById('epsOut');
+  const E=[40,10,1,0.1,0.01];
+  btnRow(document.getElementById('epsBtns'),E.map(e=>({label:String(e),e})),2,it=>show(it.e));
+  function show(e){
+    const d=e/40, n=Math.floor(4/d)+1, gap=160/n;
+    out.innerHTML=`<p style="margin:0">\\(\\delta=\\frac{\\varepsilon}{40}=${fmt(d,5)}\\). כדי שכל תת-קטע יהיה קצר מ-\\(\\delta\\) עם חלוקה שווה, צריך \\(\\frac4n<${fmt(d,5)}\\), כלומר לפחות \\(n=${n}\\) קטעים.</p>
+      <p style="margin:6px 0 0">בדיקה: הפער בחלוקה שווה הוא \\(\\frac{160}{n}=\\frac{160}{${n}}\\approx${fmt(gap,4)}\\), וזה באמת קטן מ-\\(\\varepsilon=${e}\\) ✓</p>`;
+    typeset(out);
+  }
+  show(1);
+})();
+
+/* ---------- quizzes ---------- */
+/* Each question is written with the right answer first (a:0); POS moves it to a balanced position. */
+const QUIZ = {
+ s1:[
+  {q:R`במכונית, מה מסמן \(D(f,[a,b])\)?`, o:[R`המרחק שעברה מזמן \(a\) עד זמן \(b\)`,R`המהירות של המכונית ברגע \(b\) בדיוק`,R`המהירות הממוצעת בין זמן \(a\) לזמן \(b\)`,R`הזמן שלקח למכונית לעבור את הדרך`],
+   h:R`D מהמילה Distance. מה "צוברים" כשהמהירות משתנה?`, w:R`\(D\) הוא המרחק הכולל. \(f\) היא המהירות, ו-\(D\) צובר אותה לאורך הזמן.`},
+  {q:R`מה המשמעות של \(f:[a,b]\to\mathbb R_+\)?`, o:[R`\(f\) מוגדרת על \([a,b]\), והערכים שלה לא שליליים`,R`\(f\) מוגדרת רק בשתי הנקודות \(a\) ו-\(b\)`,R`\(f\) מקבלת רק מספרים חיוביים ומחזירה כל מספר`,R`\(f\) עולה ממש לאורך כל הקטע \([a,b]\)`],
+   h:R`מה כתוב משמאל לחץ ומה מימין לו?`, w:R`משמאל לחץ: איפה \(f\) מוגדרת (הקטע). מימין: איזה ערכים היא מחזירה (\(\mathbb R_+\)).`},
+  {q:R`בבעיית המוט, מה הפונקציה \(f\) מתארת?`, o:[R`את הצפיפות בכל נקודה במוט`,R`את המסה הכוללת של כל המוט`,R`את האורך הכולל של המוט כולו`,R`את המשקל של הקצה הימני בלבד`],
+   h:R`מה משתנה מנקודה לנקודה, ומה ה"סך הכל"?`, w:R`\(f\) = צפיפות בנקודה, ו-\(R(f,[a,b])\) = המסה הכוללת (הסך הכל).`},
+  {q:R`מה משותף לשלוש הבעיות \(D,R,A\)?`, o:[R`לכולן אותן תכונות: אדיטיביות וחסמים`,R`בכולן \(f\) חייבת להיות פונקציה לינארית`,R`בכולן התשובה יוצאת תמיד מספר שלם`,R`בכולן הגודל תלוי רק בערכי \(f\) בקצוות`],
+   h:R`מה המרצה כתב עם כוכבית מתחת לבעיה הראשונה?`, w:R`שלושתן מקיימות אדיטיביות וחסמים, ובגלל זה (לפי המשפט) הן אותו גודל.`}
+ ],
+ s2:[
+  {q:R`נתון \(D(f,[0,3])=12\) ו-\(D(f,[3,5])=7\). כמה זה \(D(f,[0,5])\)?`, o:[R`\(19\)`,R`\(5\)`,R`\(84\)`,R`\(12\)`],
+   h:R`אדיטיביות עם \(c=3\).`, w:R`\(D(f,[0,5])=D(f,[0,3])+D(f,[3,5])=12+7=19\).`},
+  {q:R`בין שעה 2 לשעה 6 המהירות תמיד בין 50 ל-80 קמ״ש. מה ידוע על המרחק \(D\)?`, o:[R`\(200\le D\le 320\)`,R`\(50\le D\le 80\)`,R`\(100\le D\le 160\)`,R`\(300\le D\le 480\)`],
+   h:R`\(m(b-a)\le D\le M(b-a)\). מה \(b-a\)?`, w:R`\(b-a=6-2=4\), אז \(50\cdot4=200\le D\le 80\cdot4=320\).`},
+  {q:R`בתכונת החסמים במכונית, מה מייצג \(b-a\)?`, o:[R`משך הזמן של הנסיעה`,R`המרחק הכולל שהמכונית עברה`,R`ההפרש בין המהירות הגבוהה לנמוכה`,R`המהירות הממוצעת בכל הנסיעה`],
+   h:R`\(a\) ו-\(b\) הם זמנים.`, w:R`\(a\) ו-\(b\) הם רגעים בזמן, אז \(b-a\) הוא משך הנסיעה. מהירות × זמן = מרחק.`},
+  {q:R`למה התכונה הראשונה נקראת "אדיטיביות"?`, o:[R`כי מחברים ערכים של קטעים צמודים`,R`כי המהירות תמיד גדלה ככל שעובר הזמן`,R`כי מוסיפים את \(m\) ואת \(M\) ביחד`,R`כי מכפילים את \(f\) במספר קבוע`],
+   h:R`add = לחבר. מה מחברים בנוסחה?`, w:R`\(D(f,[a,b])=D(f,[a,c])+D(f,[c,b])\): הגודל של הקטע כולו = סכום שני החלקים.`}
+ ],
+ s3:[
+  {q:R`בחלוקה ל-\([0,2],[2,4]\), למה החסם התחתון הוא \(0\cdot2+20\cdot2\)?`, o:[R`כי בכל קטע לוקחים את המהירות הכי קטנה`,R`כי בכל קטע לוקחים את המהירות הכי גדולה`,R`כי 0 ו-20 הם האורכים של שני הקטעים`,R`כי לוקחים את המהירות באמצע כל קטע`],
+   h:R`מה המהירות ב-\(t=0\) וב-\(t=2\)? ואיפה היא קטנה בכל קטע?`, w:R`המהירות עולה, אז הכי קטנה בהתחלה: \(f(0)=0\), \(f(2)=20\). כפול אורך 2.`},
+  {q:R`מחלקים את \([0,4]\) ל-8 קטעים באורך \(\frac12\). מה החסם העליון?`, o:[R`\(90\)`,R`\(70\)`,R`\(85\)`,R`\(100\)`],
+   h:R`הגדולות: \(10\cdot0.5, 10\cdot1,\dots,10\cdot4\). כל אחת כפול \(\frac12\).`, w:R`\(\frac12(5+10+\dots+40)=\frac12\cdot180=90\). (70 זה החסם התחתון.)`},
+  {q:R`מה העומק האמיתי של הבאר, המספר ששני החסמים מתקרבים אליו?`, o:[R`\(80\)`,R`\(60\)`,R`\(100\)`,R`\(120\)`],
+   h:R`הוא חייב להיות בין 60 ל-100, וגם בין 70 ל-90.`, w:R`\(80\): כל החסמים (40-120, 60-100, 70-90) נלחצים אליו.`},
+  {q:R`מה הפער בין החסם העליון לתחתון כשמחלקים ל-\(n\) קטעים שווים?`, o:[R`\(\frac{160}{n}\)`,R`\(\frac{80}{n}\)`,R`\(\frac{40}{n}\)`,R`\(160n\)`],
+   h:R`בדוק: ל-\(n=2\) הפער 80, ל-\(n=4\) הפער 40.`, w:R`\(n=2\): 80, \(n=4\): 40, \(n=8\): 20. כלומר \(\frac{160}{n}\).`},
+  {q:R`התהליך "עוד ועוד קטעים" חוזר על עצמו. איך הוא נגמר?`, o:[R`לא בשלב סופי, אבל הפער קטן כרצוננו`,R`אחרי 4 קטעים מקבלים את הערך המדויק`,R`כשהחסם העליון יורד ומגיע בדיוק ל-100`,R`אף פעם, כי הפער נשאר תמיד 40`],
+   h:R`הפער הוא \(\frac{160}{n}\). האם הוא אי פעם 0? האם הוא נשאר גדול?`, w:R`הפער \(\frac{160}{n}\) אף פעם לא 0, אבל קטן כמה שרוצים. עוצרים כשמספיק מדויק, או לוקחים גבול ומקבלים 80.`}
+ ],
+ s4:[
+  {q:R`המכונית נוסעת אחורה (מהירות שלילית) בחלק מהזמן. מה החלק הזה עושה ל-\(D\)?`, o:[R`מקטין את \(D\), כי המכונית חוזרת`,R`מגדיל את \(D\), כי זו עוד דרך`,R`לא משנה, כי סופרים רק חיובי`,R`מאפס את \(D\) בכל מקרה כזה`],
+   h:R`D הוא המרחק מנקודת ההתחלה, לא כמה ק״מ הראה המונה.`, w:R`מהירות שלילית = נסיעה אחורה, ולכן המרחק מנקודת ההתחלה קטן.`},
+  {q:R`חלק מהגרף מעל ציר \(x\) עם שטח 5, וחלק מתחת לציר עם שטח 2. מה \(A(f,[a,b])\)?`, o:[R`\(3\)`,R`\(7\)`,R`\(-3\)`,R`\(10\)`],
+   h:R`מעל הציר בפלוס, מתחת בפלוס מינוס.`, w:R`\(5-2=3\).`},
+  {q:R`אם \(A(f,[1,4])=6\), כמה זה \(A(f,[4,1])\) לפי המוסכמה?`, o:[R`\(-6\)`,R`\(6\)`,R`\(\frac16\)`,R`\(0\)`],
+   h:R`הפיכת הגבולות עושה משהו לסימן.`, w:R`\(A(f,[b,a])=-A(f,[a,b])=-6\).`},
+  {q:R`למה המוסכמה \(A(f,[b,a])=-A(f,[a,b])\) הגיונית?`, o:[R`כדי שאדיטיביות תעבוד גם בכיוון הפוך`,R`כי שטח חייב להיות תמיד מספר שלילי בקטע`,R`כי ככה הפונקציה \(f\) נהיית חיובית`,R`כי \(a\) ו-\(b\) הם תמיד מספרים שווים`],
+   h:R`הלוך מ-\(a\) ל-\(b\) וחזור ל-\(a\). מה סך הכל?`, w:R`\(A[a,b]+A[b,a]=A[a,a]=0\), ולכן \(A[b,a]=-A[a,b]\).`},
+  {q:R`עבור \(f(x)=x-1\) בקטע \([0,2]\), מה השטח עם הסימן? (אפשר לבדוק בהמחשה)`, o:[R`\(0\)`,R`\(1\)`,R`\(-1\)`,R`\(2\)`],
+   h:R`משולש מתחת לציר מ-0 עד 1, ומשולש מעל מ-1 עד 2. מה השטח של כל אחד?`, w:R`שני משולשים בשטח \(\frac12\): \(\frac12-\frac12=0\).`}
+ ],
+ s5:[
+  {q:R`מה אומר החלק הראשון של המשפט (יחידות)?`, o:[R`כל גודל עם שתי התכונות יוצא זהה`,R`לכל פונקציה רציפה בקטע יש נגזרת רציפה`,R`כל פונקציה חסומה היא גם רציפה`,R`השטח תמיד גדול מהמרחק של המכונית`],
+   h:R`"ייתן בדיוק אותו הערך".`, w:R`אם \(I\) מקיים אדיטיביות וחסמים, אין לו ברירה: הוא יוצא אותו מספר כמו כל גודל אחר כזה.`},
+  {q:R`בביטוי למטה, מה האינטגרנד?`, m:R`\int_1^5 x^2\,dx`, o:[R`\(x^2\)`,R`\(1\) ו-\(5\)`,R`\(dx\)`,R`\(\int\)`],
+   h:R`האינטגרנד = הפונקציה שצוברים.`, w:R`\(x^2\) היא האינטגרנד. 1 ו-5 הם גבולות האינטגרציה, ו-\(dx\) גורם האינטגרציה.`},
+  {q:R`בביטוי למטה, מה משתנה האינטגרציה?`, m:R`\int_a^b f(t)\,dt`, o:[R`\(t\)`,R`\(a\)`,R`\(b\)`,R`\(f\)`],
+   h:R`תסתכל על ה-d בסוף.`, w:R`\(dt\) אומר שהמשתנה הוא \(t\). השם לא משנה: \(\int_a^bf(t)dt=\int_a^bf(x)dx\).`},
+  {q:R`לפי הערה 2, איזו פונקציה עדיין אינטגרבילית?`, o:[R`חסומה, עם 3 נקודות אי-רציפות`,R`\(\frac1x\) בקטע \((0,1]\), שרציפה בכל הקטע`,R`\(\tan x\) בקטע \([0,\pi)\), רציפה כמעט בכל מקום`,R`לא חסומה, עם קפיצה אחת בלבד בקטע`],
+   h:R`ההערה דורשת שני דברים: חסומה, ומעט נקודות אי-רציפות.`, w:R`חסומה + מספר סופי של נקודות אי-רציפות. \(\frac1x\) ו-\(\tan x\) לא חסומות בקטעים האלה.`},
+  {q:R`לפי הערה 1, אם \(f\) רציפה, מה הקשר בין \(A\), \(R\) ו-\(I\)?`, o:[R`שלושתם שווים ל-\(\int_a^bf(x)dx\)`,R`\(A\) גדול מ-\(R\), ו-\(R\) גדול מ-\(I\)`,R`רק \(A\) ו-\(I\) שווים, ו-\(R\) שונה`,R`אין קשר, כי כל אחד מודד משהו אחר`],
+   h:R`הערה 1 היא שרשרת של שוויונות.`, w:R`\(A=R=I=\int_a^bf(x)dx\). זה מה שהמשפט נותן.`}
+ ],
+ s6:[
+  {q:R`עבור החלוקה \(0<0.5<1<2\), מה \(\lambda(\Delta)\)?`, o:[R`\(1\)`,R`\(0.5\)`,R`\(2\)`,R`\(3\)`],
+   h:R`\(\lambda\) = האורך של התת-קטע הכי ארוך.`, w:R`האורכים: 0.5, 0.5, 1. הגדול הוא 1.`},
+  {q:R`עבור \(f(x)=x^2\) בתת-קטע \([1,2]\), מה \(M_i\) ו-\(m_i\)?`, o:[R`\(M_i=4,\ m_i=1\)`,R`\(M_i=2,\ m_i=1\)`,R`\(M_i=4,\ m_i=0\)`,R`\(M_i=1,\ m_i=4\)`],
+   h:R`הצב את הקצוות ב-\(x^2\). איפה הכי גדול?`, w:R`\(x^2\) עולה ב-\([1,2]\): \(m_i=1^2=1\), \(M_i=2^2=4\).`},
+  {q:R`מה ההבדל בין סכום רימן לסכומי דרבו?`, o:[R`ברימן לוקחים ערך בנקודה \(t_i\) שבוחרים`,R`ברימן לוקחים תמיד את המקסימום בקטע`,R`ברימן התת-קטעים חייבים להיות שווים`,R`ברימן לא כופלים באורך התת-קטע`],
+   h:R`תסתכל על \(y_i=f(t_i)\) בנוסחה.`, w:R`בדרבו: sup או inf. ברימן: \(f(t_i)\) בנקודה כלשהי \(t_i\) שבוחרים בתת-קטע.`},
+  {q:R`למה תמיד \(\underline S\le I_{app}\le\overline S\)?`, o:[R`כי \(m_i\le f(t_i)\le M_i\) בכל תת-קטע`,R`כי \(t_i\) הוא תמיד הקצה השמאלי`,R`כי רימן הוא ממוצע של שני הסכומים`,R`כי ברימן יש יותר תת-קטעים`],
+   h:R`מה הקשר בין \(f(t_i)\) לבין \(m_i\) ו-\(M_i\) באותו תת-קטע?`, w:R`\(t_i\) בתוך התת-קטע, אז \(f(t_i)\) בין ה-inf ל-sup שם. כופלים ב-\(\Delta x_i\) ומסכמים.`},
+  {q:R`\(f(x)=x^2\), חלוקה \(0<0.5<1<2\). מה הסכום העליון?`, o:[R`\(4.625\)`,R`\(1.125\)`,R`\(2.5625\)`,R`\(5.25\)`],
+   h:R`\(\sum M_i\Delta x_i\) עם \(M_i=0.25,1,4\).`, w:R`\(0.25\cdot0.5+1\cdot0.5+4\cdot1=0.125+0.5+4=4.625\).`}
+ ],
+ s7:[
+  {q:R`לפי ההגדרה, מתי \(f\) אינטגרבילית?`, o:[R`לכל \(\varepsilon\) יש \(\delta\): אם \(\lambda<\delta\) אז \(\overline S-\underline S<\varepsilon\)`,R`יש חלוקה אחת שבה \(\overline S=\underline S\) בדיוק`,R`לכל חלוקה הסכום העליון קטן מ-\(\varepsilon\)`,R`לכל \(\delta\) יש \(\varepsilon\): אם \(\lambda<\varepsilon\) אז \(\overline S+\underline S<\delta\)`],
+   h:R`מה מבקשים שיהיה קטן: סכום אחד, או הפער בין שניים?`, w:R`הפער \(\overline S-\underline S\) צריך להיות קטן מכל \(\varepsilon\), ברגע שהחלוקה עדינה מספיק (\(\lambda<\delta\)).`},
+  {q:R`מה \(\lambda(\Delta)<\delta\) אומר במילים?`, o:[R`כל התת-קטעים בחלוקה קצרים מ-\(\delta\)`,R`בחלוקה יש פחות מ-\(\delta\) תת-קטעים`,R`הפער בין הסכומים קטן מ-\(\delta\)`,R`הקטע \([a,b]\) כולו קצר מ-\(\delta\)`],
+   h:R`\(\lambda\) = האורך של התת-קטע הכי ארוך.`, w:R`אם הכי ארוך קצר מ-\(\delta\), אז כולם קצרים מ-\(\delta\).`},
+  {q:R`עבור \(10t\) על \([0,4]\) עם \(n\) קטעים שווים, הפער הוא \(\frac{160}{n}\). כמה קטעים צריך כדי שהפער יהיה קטן מ-1?`, o:[R`\(161\)`,R`\(160\)`,R`\(16\)`,R`\(40\)`],
+   h:R`צריך \(\frac{160}{n}<1\), קטן ממש.`, w:R`\(n>160\), אז הכי קטן הוא 161. ב-160 הפער בדיוק 1, וזה לא קטן ממש.`},
+  {q:R`למה ההגדרה אומרת "לכל \(\varepsilon>0\)" ולא \(\varepsilon\) אחד קבוע?`, o:[R`כדי שהפער יהיה קטן כרצוננו`,R`כי \(\varepsilon\) חייב להיות שווה לאורך הקטע`,R`כדי שהסכום העליון יהיה שלילי`,R`כי \(\delta\) ו-\(\varepsilon\) תמיד אותו מספר בדיוק`],
+   h:R`מה היה קורה אם רק \(\varepsilon=1\) היה עובד?`, w:R`פער קטן מ-1 עדיין משאיר מקום להרבה מספרים. רק אם הפער קטן מכל \(\varepsilon\), החסמים נלחצים למספר אחד.`},
+  {q:R`בסימולציה 2 קיבלנו \(\overline S-\underline S\le 40\lambda\). איזה \(\delta\) מתאים ל-\(\varepsilon=2\)?`, o:[R`\(\delta=\frac1{20}\)`,R`\(\delta=80\)`,R`\(\delta=\frac1{40}\)`,R`\(\delta=20\)`],
+   h:R`\(\delta=\frac{\varepsilon}{40}\).`, w:R`\(\frac{2}{40}=\frac1{20}\). אז \(40\lambda<40\cdot\frac1{20}=2\).`}
+ ],
+ fin:[
+  {q:R`\(\int_2^5f=10\) ו-\(\int_5^7f=4\). מה \(\int_2^7f\)?`, o:[R`\(14\)`,R`\(6\)`,R`\(40\)`,R`\(10\)`],
+   h:R`אדיטיביות.`, w:R`\(10+4=14\).`},
+  {q:R`אם \(1\le f(x)\le3\) לכל \(x\in[0,5]\), מה ידוע על \(\int_0^5f\)?`, o:[R`בין \(5\) ל-\(15\)`,R`בין \(1\) ל-\(3\)`,R`בין \(0\) ל-\(5\)`,R`בין \(3\) ל-\(5\)`],
+   h:R`\(m(b-a)\le\int\le M(b-a)\).`, w:R`\(1\cdot5=5\) ו-\(3\cdot5=15\).`},
+  {q:R`\(\int_3^1 f=-4\). מה \(\int_1^3 f\)?`, o:[R`\(4\)`,R`\(-4\)`,R`\(\frac14\)`,R`\(0\)`],
+   h:R`הפיכת גבולות = הפיכת סימן.`, w:R`\(\int_1^3f=-\int_3^1f=4\).`},
+  {q:R`בסכום דרבו התחתון, איזה ערך לוקחים בכל תת-קטע?`, o:[R`את ה-inf של \(f\) בתת-קטע`,R`את ה-sup של \(f\) בתת-קטע`,R`את \(f\) בקצה הימני שלו`,R`את \(f\) באמצע התת-קטע`],
+   h:R`תחתון = הכי נמוך.`, w:R`\(\underline S=\sum m_i\Delta x_i\), ו-\(m_i=\inf\).`},
+  {q:R`\(f\) רציפה, ומעדנים את החלוקה (\(\lambda\to0\)). מה קורה לסכומים?`, o:[R`שניהם מתקרבים לאינטגרל`,R`שני הסכומים גדלים בלי סוף`,R`הסכום העליון שואף תמיד ל-0`,R`הסכומים מתרחקים זה מזה`],
+   h:R`תזכור את הבאר: 40-120, 60-100, 70-90...`, w:R`הפער שואף ל-0 ושניהם נלחצים אל \(\int_a^bf\), כמו בבאר (80).`}
+ ]
+};
+const POS=[1,3,0,3,2,1,2,0,1,3,0,2,3,0,2,1,3,2,0,1,3,0,2,1,0,3,1,2,0,3,1,2,3,0,2,1,0,3,1,2];
+(function(){let k=0;for(const id in QUIZ)QUIZ[id].forEach(q=>{const p=POS[k++%POS.length];const o=q.o.slice();const r=o.shift();o.splice(p,0,r);q.o=o;q.a=p;});})();
+
+const KEY='calc2-lec1-v1';
+let state=LS.get(KEY)||{};
+const save=()=>LS.set(KEY,state);
+const LET=['א','ב','ג','ד'];
+let total=0;
+document.querySelectorAll('.quiz').forEach(box=>{
+  const id=box.dataset.quiz, qs=QUIZ[id];
+  box.insertAdjacentHTML('beforeend','<h3>בדיקה עצמית</h3>');
+  qs.forEach((qq,qi)=>{
+    total++;
+    const key=id+'-'+qi;
+    const d=document.createElement('div');d.className='q';d.dataset.key=key;
+    d.innerHTML=`<div class="qt">${qi+1}. ${qq.q}</div>`+(qq.m?`<div class="qm">\\[${qq.m}\\]</div>`:'')+
+      `<div class="opts">${qq.o.map((t,i)=>`<button type="button" class="opt" data-i="${i}"><span class="k">${LET[i]}</span><span class="ot">${t}</span></button>`).join('')}</div>
+       <div class="fb hint" hidden><b>רמז:</b> ${qq.h}</div><div class="fb why" hidden><b>נכון!</b> ${qq.w}</div>`;
+    box.appendChild(d);
+    d.addEventListener('click',e=>{
+      const b=e.target.closest('.opt');if(!b)return;
+      const st=state[key]||(state[key]={tried:[],solved:false});
+      if(st.solved)return;
+      const i=+b.dataset.i;
+      if(!st.tried.includes(i))st.tried.push(i);
+      if(i===qq.a){st.solved=true;st.first=st.tried.length===1;}
+      save();paint(d,qq,st);updateScore();
+    });
+    if(state[key])paint(d,qq,state[key]);
+  });
+});
+function paint(d,qq,st){
+  d.querySelectorAll('.opt').forEach(b=>{const i=+b.dataset.i;
+    b.classList.toggle('wrong',st.tried.includes(i)&&i!==qq.a);
+    b.classList.toggle('right',st.solved&&i===qq.a);});
+  d.querySelector('.hint').hidden=st.solved||!st.tried.some(i=>i!==qq.a);
+  d.querySelector('.why').hidden=!st.solved;
+}
+function updateScore(){
+  let first=0,solved=0;
+  Object.values(state).forEach(s=>{if(s.solved){solved++;if(s.first)first++;}});
+  document.getElementById('score').textContent=`${first} / ${total} בניסיון ראשון`;
+  document.getElementById('prog').textContent=`נענו ${solved} מתוך ${total}`;
+  document.getElementById('meter').style.width=(100*solved/total)+'%';
+  const end=document.getElementById('endmsg');
+  if(solved===total){end.hidden=false;const pct=Math.round(100*first/total);
+    end.textContent=`סיימת את כל השאלות, ביג בוס! ${first} מתוך ${total} נכונות בניסיון הראשון (${pct}%). `+(pct>=80?'מעולה, אתה מוכן להמשך.':'כדאי לעבור שוב על ההמחשות של החלקים שבהם טעית.');}
+  else end.hidden=true;
+}
+document.getElementById('reset').addEventListener('click',()=>{
+  state={};save();
+  document.querySelectorAll('.q').forEach(d=>{const [sid,qi]=d.dataset.key.split('-');paint(d,QUIZ[sid][+qi],{tried:[],solved:false});});
+  updateScore();
+});
+updateScore();
+</script>
+<script>
+window.MathJax={
+  loader:{load:['[tex]/html']},
+  tex:{packages:{'[+]':['html']},inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']],
+    macros:{lo:['\\class{c-lo}{#1}',1],up:['\\class{c-up}{#1}',1],rs:['\\class{c-rs}{#1}',1],pt:['\\class{c-part}{#1}',1]}},
+  svg:{fontCache:'global'}
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.js"></script>
+
+</body></html>

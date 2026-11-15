@@ -1,0 +1,559 @@
+<!doctype html><html><head><script>(function(){try{var m=localStorage.getItem("hedva2-theme");if(m==="dark"||m==="light")document.documentElement.setAttribute("data-theme",m);}catch(e){}})();</script><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>חדו״א 2 — תרגול 2</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Assistant:wght@400;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>/* Layout: a calm math notebook — one reading column (max 860px), sticky score bar, section cards on a faint grid. */
+:root{
+  --bg:#f6f8fb; --card:#ffffff; --ink:#1d2533; --muted:#5b6678; --line:#dfe5ee; --soft:#eef2f8; --grid:rgba(40,80,140,.05);
+  --accent:#6d4bd8; --accent-soft:#efeafd; --ok:#1f8a52; --ok-soft:#ddf4e7; --bad:#c53030; --bad-soft:#fde7e7; --note:#fff7dc; --note-line:#e9c46a; --mine:#e8f3ff; --mine-line:#7fb2ea;
+  --amb:#b7791f; --tea:#1386a6; --pur:#7a3fd1; --blu:#2563eb; --pnk:#c2417a; --grn:#2f855a; --org:#c05621; --red:#c53030; --olv:#6b7f1a;
+  --ind:#4c51bf; --brn:#8b5a2b; --mag:#b83280; --sea:#2c7a7b; --plm:#7b3fb0; --rub:#c0265b; --cyn:#0891b2; --sky:#0369a1; --lim:#4d7c0f;
+  --f-head:"Secular One","Assistant",system-ui,sans-serif; --f-body:"Assistant",system-ui,-apple-system,"Segoe UI",sans-serif; --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#11161f; --card:#18202c; --ink:#e6ebf3; --muted:#9aa7ba; --line:#2a3546; --soft:#1f2937; --grid:rgba(160,190,255,.04);
+  --accent:#a48bff; --accent-soft:#2a2346; --ok:#6fd49b; --ok-soft:#163626; --bad:#ff8a80; --bad-soft:#3d1c1c; --note:#2f2a14; --note-line:#a58a2c; --mine:#15283d; --mine-line:#3f6f9f;
+  --amb:#f0b75a; --tea:#4cc3e0; --pur:#b48cff; --blu:#7aa7ff; --pnk:#f58bbb; --grn:#6fd49b; --org:#f6a26b; --red:#ff8a80; --olv:#b5c95a;
+  --ind:#a3a8ff; --brn:#d6a77a; --mag:#f08ad0; --sea:#6fd1cf; --plm:#c99af0; --rub:#ff7aa3; --cyn:#5fd8f0; --sky:#7cc4f5; --lim:#a3d65c; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#11161f; --card:#18202c; --ink:#e6ebf3; --muted:#9aa7ba; --line:#2a3546; --soft:#1f2937; --grid:rgba(160,190,255,.04);
+  --accent:#a48bff; --accent-soft:#2a2346; --ok:#6fd49b; --ok-soft:#163626; --bad:#ff8a80; --bad-soft:#3d1c1c; --note:#2f2a14; --note-line:#a58a2c; --mine:#15283d; --mine-line:#3f6f9f;
+  --amb:#f0b75a; --tea:#4cc3e0; --pur:#b48cff; --blu:#7aa7ff; --pnk:#f58bbb; --grn:#6fd49b; --org:#f6a26b; --red:#ff8a80; --olv:#b5c95a;
+  --ind:#a3a8ff; --brn:#d6a77a; --mag:#f08ad0; --sea:#6fd1cf; --plm:#c99af0; --rub:#ff7aa3; --cyn:#5fd8f0; --sky:#7cc4f5; --lim:#a3d65c; color-scheme:dark}
+html{direction:rtl}
+body{background-color:var(--bg);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:22px 22px;color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.65}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--card)}
+.wrap{max-width:860px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:8px 64px}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:6;background:var(--card);border-bottom:1px solid var(--line);margin-inline:calc(-1*max(16px,env(safe-area-inset-left,0px)));padding:8px max(16px,env(safe-area-inset-left,0px));display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.bar .sc{font-weight:700;font-size:15px}
+.bar .sc bdi{font-family:var(--f-mono)}
+.bar .meter{flex:1 1 120px;height:8px;background:var(--soft);border-radius:99px;overflow:hidden;min-width:80px}
+.bar .meter i{display:block;height:100%;width:0;background:var(--accent);transition:width .3s}
+.bar button{font:inherit;font-size:14px;font-weight:600;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:99px;padding:4px 12px;cursor:pointer}
+header.hero{padding-block:22px 6px}
+.credit{font-size:15px;background:var(--accent-soft);color:var(--ink);border-radius:10px;padding:6px 12px;display:inline-block;margin:0 0 12px}
+.eyebrow{font-size:13px;color:var(--muted);letter-spacing:.04em}
+h1{font-family:var(--f-head);font-weight:400;font-size:clamp(30px,6vw,42px);line-height:1.15;margin:4px 0 6px;text-wrap:balance}
+.sub{color:var(--muted);margin:0 0 12px}
+.legend{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.legend span{font-size:14px;border:1px solid var(--line);border-radius:99px;padding:2px 10px;background:var(--card)}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;background:currentColor;margin-inline-end:6px;vertical-align:middle}
+nav.toc{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin:12px 0 4px}
+nav.toc a{display:block;text-decoration:none;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:10px;padding:7px 11px;font-size:15px;font-weight:600}
+nav.toc a:hover{border-color:var(--accent)}
+nav.toc a b{color:var(--accent);font-family:var(--f-mono);margin-inline-end:4px}
+section.sec{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 18px 8px;margin-top:18px;scroll-margin-top:64px}
+@media (max-width:520px){section.sec{padding:14px 12px 6px;border-radius:12px}}
+.secno{font-family:var(--f-mono);font-size:13px;color:var(--muted);direction:ltr;unicode-bidi:isolate}
+h2{font-family:var(--f-head);font-weight:400;font-size:26px;margin:2px 0 10px;line-height:1.25;text-wrap:balance}
+h3{font-size:19px;margin:18px 0 6px}
+p{margin:8px 0}
+.box{border-radius:12px;padding:10px 14px;margin:12px 0;border:1px solid var(--line);background:var(--soft)}
+.box > b:first-child{display:block;margin-bottom:4px}
+.box.rule{background:var(--accent-soft);border-color:var(--accent)}
+.box.mine{background:var(--mine);border-color:var(--mine-line)}
+.box.fix{background:var(--note);border-color:var(--note-line)}
+.box.terms{background:var(--soft)}
+.box ol,.box ul{margin:4px 0;padding-inline-start:22px}
+.tw{overflow-x:auto;margin:10px 0}
+table{border-collapse:collapse;width:100%;font-size:15.5px}
+th,td{border:1px solid var(--line);padding:6px 9px;text-align:start;vertical-align:top}
+th{background:var(--soft)}
+.disp{overflow-x:auto;overflow-y:hidden;text-align:center;margin:10px 0;padding:4px 0}
+mjx-container{direction:ltr;unicode-bidi:isolate}
+mjx-container[display="true"]{margin:.4em 0!important}
+.disp mjx-container{display:inline-block!important}
+.ans{border-bottom:3px solid var(--cyn);padding-bottom:2px}
+.amb{color:var(--amb)}.tea{color:var(--tea)}.pur{color:var(--pur)}.blu{color:var(--blu)}.pnk{color:var(--pnk)}.grn{color:var(--grn)}.org{color:var(--org)}.red{color:var(--red)}.olv{color:var(--olv)}.ind{color:var(--ind)}.brn{color:var(--brn)}.mag{color:var(--mag)}.sea{color:var(--sea)}.plm{color:var(--plm)}.rub{color:var(--rub)}.cyn{color:var(--cyn)}.sky{color:var(--sky)}.lim{color:var(--lim)}
+.k{font-weight:700}
+bdi,.m{unicode-bidi:isolate}
+.m{direction:ltr;display:inline-block;max-width:100%}
+code,pre{font-family:var(--f-mono);direction:ltr;unicode-bidi:isolate}
+/* simulation */
+.sim{border:2px solid var(--accent);border-radius:14px;padding:12px;margin:14px 0;background:var(--card)}
+.sim .st-title{font-weight:700;margin-bottom:6px}
+.sim .map{display:flex;flex-wrap:wrap;gap:5px;margin:0 0 8px;padding:0;list-style:none}
+.sim .map li{font-size:13.5px;border:1px solid var(--line);border-radius:99px;padding:2px 10px;color:var(--muted)}
+.sim .map li.on{background:var(--accent);border-color:var(--accent);color:var(--card);font-weight:700}
+.sim .map li.done{color:var(--ink);background:var(--soft)}
+.sim .lines{border:1px solid var(--line);border-radius:10px;padding:6px 8px;background:var(--soft);overflow-x:auto}
+.sim .ln{display:flex;gap:8px;align-items:center;padding:2px 4px;border-radius:6px;direction:ltr;min-height:30px}
+.sim .ln .no{font-family:var(--f-mono);font-size:12px;color:var(--muted);min-width:18px}
+.sim .ln.cur{background:var(--accent-soft);outline:2px solid var(--accent)}
+.sim .ln.fut{display:none}
+.sim .ln .f{min-width:0}
+.sim .x{margin:8px 0;padding:8px 12px;border-inline-start:4px solid var(--accent);background:var(--accent-soft);border-radius:8px}
+.sim .stp{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+.sim .stp > span{border:1px solid var(--line);border-radius:8px;padding:3px 9px;font-size:14.5px;background:var(--card)}
+.sim .stp > span > i{font-style:normal;color:var(--muted);margin-inline-end:6px;font-size:13px}
+.sim .stp .new{outline:2px solid var(--accent)}
+.sim .ctl{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-top:8px}
+.sim .ctl button{font:inherit;font-weight:700;font-size:15px;border:1px solid var(--accent);background:var(--card);color:var(--accent);border-radius:8px;padding:5px 14px;cursor:pointer}
+.sim .ctl button.pri{background:var(--accent);color:var(--card)}
+.sim .ctl button:disabled{opacity:.4;cursor:default}
+.sim .ctl .cnt{font-family:var(--f-mono);font-size:13px;color:var(--muted);direction:ltr;unicode-bidi:isolate}
+.sim .steps{display:none}
+/* quiz */
+.quiz{margin:16px 0 10px;border-top:1px dashed var(--line);padding-top:10px}
+.quiz > .qt{font-family:var(--f-head);font-size:19px;margin:0 0 6px}
+.qq{margin:10px 0 16px}
+.qq .q{font-weight:700;margin:4px 0}
+.qq ol{list-style:none;padding:0;margin:6px 0;display:grid;gap:6px}
+.qq li button{width:100%;text-align:start;font:inherit;font-size:16px;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:10px;padding:8px 12px;cursor:pointer;line-height:1.5}
+.qq li button:hover{border-color:var(--accent)}
+.qq li button.bad{border-color:var(--bad);background:var(--bad-soft)}
+.qq li button.good{border-color:var(--ok);background:var(--ok-soft)}
+.qq li button .lt{font-weight:700;color:var(--muted);margin-inline-end:8px}
+.qq .h,.qq .e{border-radius:8px;padding:6px 10px;font-size:15.5px}
+.qq .h{background:var(--bad-soft)}
+.qq .e{background:var(--ok-soft)}
+/* tools */
+.tool{border:1px solid var(--line);border-radius:12px;padding:12px;margin:12px 0;background:var(--soft)}
+.tool label{font-weight:600;font-size:15px}
+.tool input[type=range]{width:100%}
+.tool .out{font-family:var(--f-mono);direction:ltr;unicode-bidi:isolate;font-size:15px}
+.tool svg{width:100%;height:auto;display:block;background:var(--card);border-radius:8px;border:1px solid var(--line)}
+.tool .row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.tool select,.tool button{font:inherit;font-size:15px;border:1px solid var(--line);border-radius:8px;padding:4px 10px;background:var(--card);color:var(--ink)}
+.end{margin-top:18px;text-align:center;font-weight:700;font-size:18px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+mjx-container:not([display="true"]){display:inline-block;max-width:100%;overflow-x:auto;overflow-y:hidden;vertical-align:middle;padding-block:2px}
+mjx-container > svg{vertical-align:middle!important}
+mjx-assistive-mml{max-width:100%!important;left:0!important}
+[hidden]{display:none!important}
+.disp,.sim .lines{direction:ltr}
+input[type=range]{direction:ltr}
+</style>
+
+<div class="wrap" data-key="calc2-tut02-v1">
+<div class="bar"><span class="sc" id="score">ניקוד: 0</span><span class="meter" aria-hidden="true"><i id="meter"></i></span><button type="button" id="resetBtn">⟲ איפוס</button><button type="button" id="themeBtn">🌙 לילה</button></div>
+<header class="hero">
+<p class="credit">קרדיט לסיכומים של עדי מהדרייב 😊 ולעידו דוד צייג!</p>
+<div class="eyebrow">חדו״א 2 · תרגול 2 · לוזון · 04/11/25 · שני עמודים בכתב יד</div>
+<h1>תרגול 2: גבול של סכום = אינטגרל, והמשפט היסודי</h1>
+<p class="sub">איך מזהים סכום רימן בתוך גבול, איך גוזרים אינטגרל עם גבולות משתנים, ואיך זה עוזר לחשב גבול עם לופיטל.</p>
+<div class="legend">
+<span class="ind">סכום רימן / נקודות <bdi>c<sub>k</sub></bdi></span>
+<span class="brn">חלוקה / <bdi>Δx</bdi></span>
+<span class="amb">גבול / לופיטל</span>
+<span class="plm">פונקציה צוברת / קדומה <bdi>F</bdi></span>
+<span class="grn">ln</span>
+<span class="tea">אינטגרציה בחלקים</span>
+<span class="pur">הצבה <bdi>t</bdi></span>
+<span class="sky">גבול עליון <bdi>h(x)</bdi> (חדש)</span>
+<span class="lim">גבול תחתון <bdi>g(x)</bdi> (חדש)</span>
+<span class="cyn">תשובה סופית (קו מתחת)</span>
+</div>
+<nav class="toc" aria-label="תוכן עניינים"></nav>
+</header>
+
+<!-- ============ 1 ============ -->
+<section class="sec" id="s1" data-short="תזכורת: סכום רימן">
+<h2>תזכורת: סכום רימן</h2>
+<p>התרגול פותח בתזכורת. סכום רימן הוא דרך לקרב שטח בעזרת מלבנים.</p>
+<div class="box mine"><b>מה זה סכום רימן? (מההתחלה, עם מספרים) — הדוגמה שלי</b>
+<ol>
+<li>שלב 1 – מה יש לנו: הפונקציה $f(x)=\ln(1+x)$ בקטע $[0,1]$.</li>
+<li>שלב 2 – חלוקה: חותכים את הקטע ל-$n=4$ חתיכות שוות. נקודות החלוקה: $P=\{0,\ 0.25,\ 0.5,\ 0.75,\ 1\}$.</li>
+<li>שלב 3 – רוחב כל חתיכה: $\class{brn}{\Delta x}=\frac{1-0}{4}=0.25$.</li>
+<li>שלב 4 – בוחרים נקודה בכל חתיכה. כאן לוקחים את הקצה הימני: $\class{ind}{c_k}=\frac{k}{4}$, כלומר $0.25,\ 0.5,\ 0.75,\ 1$.</li>
+<li>שלב 5 – גובה כל מלבן הוא $f(\class{ind}{c_k})$: בערך $0.223,\ 0.405,\ 0.560,\ 0.693$.</li>
+<li>שלב 6 – מחברים גובה × רוחב:<div class="disp">$(0.223+0.405+0.560+0.693)\cdot 0.25\approx 0.470$</div></li>
+</ol>
+זה סכום רימן. השטח האמיתי הוא בערך $0.386$. ככל ש-$n$ גדל, הסכום מתקרב אליו.</div>
+<p>באופן כללי (כמו במחברת):</p>
+<div class="disp">$$S(f,P)=\sum_{k=1}^{n} f(\class{ind}{c_k})\,\class{brn}{\Delta x_k}\ \xrightarrow[\ |P|\to 0\ ]{\class{amb}{n\to\infty}}\ \int_a^b f(x)\,dx$$</div>
+<div class="box terms"><b>מילים וסימנים</b>
+<ul>
+<li>$P$ = החלוקה, רשימת הנקודות שחותכות את הקטע.</li>
+<li>$|P|$ = פרמטר החלוקה, אורך החתיכה הכי ארוכה. בחלוקה אחידה זה פשוט $\frac{b-a}{n}$.</li>
+<li>$\class{ind}{c_k}$ = הנקודה שבחרנו בתוך החתיכה ה-$k$. ממנה לוקחים את הגובה.</li>
+<li>$\class{brn}{\Delta x_k}$ = הרוחב של החתיכה ה-$k$.</li>
+</ul></div>
+<div class="box rule"><b>הכלל לזכור</b>אם $f$ אינטגרבילית (למשל רציפה), אז כל סכום רימן שואף לאינטגרל כש-$|P|\to 0$, בלי קשר לאיזו נקודה $c_k$ בחרנו.</div>
+<p><b>אנלוגיה:</b> כמו לבנות גבעה מקוביות לגו. קוביות רחבות נותנות צורה גסה. קוביות דקות מאוד נותנות כמעט את הגבעה עצמה.</p>
+<div class="tool" id="riemannTool">
+<b>המחשה: סכום רימן מול האינטגרל</b>
+<div class="row"><label for="rmF">פונקציה:</label>
+<select id="rmF"><option value="0">תרגיל א: ln(1+x) על [0,1]</option><option value="1">תרגיל ב: x/(1+x²) על [0,2]</option><option value="2">תרגיל ג: f'/f עם f=3+x על [0,1]</option></select></div>
+<label for="rmN">מספר מלבנים n: <span class="out" id="rmNv">4</span></label>
+<input type="range" id="rmN" min="1" max="60" value="4">
+<svg id="rmSvg" viewBox="0 0 400 220" role="img" aria-label="גרף עם מלבני רימן"></svg>
+<p class="out" id="rmOut"></p>
+</div>
+<div class="quiz"><div class="qt">שאלות על סעיף 1</div>
+<div class="qq" data-a="2"><p class="q">בקטע $[0,2]$ עם $n=4$ חתיכות שוות, מה הרוחב $\Delta x$?</p><ol><li>$\Delta x=\frac14$, כי מחלקים תמיד את 1 ב-$n$</li><li>$\Delta x=2$, כי זה אורך הקטע כולו</li><li>$\Delta x=\frac12$, כי מחלקים את 2 ב-4</li><li>$\Delta x=4$, כי זה מספר החתיכות</li></ol><p class="h">רמז: הרוחב הוא אורך הקטע חלקי מספר החתיכות.</p><p class="e">נכון: $\frac{b-a}{n}=\frac{2}{4}=\frac12$.</p></div>
+<div class="qq" data-a="0"><p class="q">בחלוקה האחידה של $[0,1]$ ל-$n$ חתיכות, עם קצה ימני, מה $c_k$?</p><ol><li>$c_k=\frac{k}{n}$, הקצה הימני של החתיכה</li><li>$c_k=\frac{1}{n}$, אותו ערך בכל חתיכה</li><li>$c_k=k$, מספר החתיכה עצמו</li><li>$c_k=\frac{k-1}{n}$, הקצה הימני של החתיכה</li></ol><p class="h">רמז: החתיכה ה-$k$ היא $[\frac{k-1}{n},\frac{k}{n}]$. איזה קצה ימני?</p><p class="e">נכון. $\frac{k-1}{n}$ הוא הקצה השמאלי, ו-$\frac kn$ הוא הימני.</p></div>
+<div class="qq" data-a="3"><p class="q">בדוגמה שלי עם $\ln(1+x)$ ו-$n=4$ יצא $0.470$, יותר מהשטח האמיתי $0.386$. למה?</p><ol><li>כי $\ln$ פונקציה יורדת, והקצה הימני נמוך</li><li>כי $n=4$ זוגי, ואז סכום רימן תמיד גדול מהשטח</li><li>כי חסר בסכום הכפל ברוחב $\Delta x$</li><li>כי הפונקציה עולה, והקצה הימני הוא הגבוה</li></ol><p class="h">רמז: הסתכל בהמחשה. האם הגרף עולה או יורד?</p><p class="e">נכון. בפונקציה עולה, הגובה בקצה הימני הוא הגדול בחתיכה, ולכן כל מלבן בולט מעל הגרף.</p></div>
+<div class="qq" data-a="1"><p class="q">מה קורה לסכום רימן של פונקציה רציפה כש-$n\to\infty$ (חלוקה אחידה)?</p><ol><li>הוא שואף לאפס, כי כל מלבן נהיה דק</li><li>הוא שואף לאינטגרל, כי $|P|\to 0$</li><li>הוא שואף לאינסוף, כי יש אינסוף מלבנים</li><li>הוא תלוי באיזו נקודה $c_k$ בוחרים</li></ol><p class="h">רמז: מלבנים דקים, אבל יש יותר מהם. מה קורה לסכום?</p><p class="e">נכון. רציפה ⇒ אינטגרבילית, ואז כל סכום רימן שואף לאינטגרל, בכל בחירה של $c_k$.</p></div>
+</div>
+</section>
+
+<!-- ============ 2 ============ -->
+<section class="sec" id="s2" data-short="תרגיל א: ln(1+k/n)">
+<h2>תרגיל "שיפה" א: גבול של סכום עם ln</h2>
+<p>הרעיון של כל התרגיל: <b>לקרוא את סכום רימן הפוך</b>. נותנים לנו גבול של סכום, ואנחנו צריכים לזהות שזה סכום רימן של פונקציה כלשהי, ואז הגבול הוא אינטגרל.</p>
+<div class="disp">$$\class{amb}{\lim_{n\to\infty}}\ \frac1n\sum_{k=1}^{n}\ln\!\left(1+\frac kn\right)$$</div>
+<div class="box mine"><b>למה מותר להחליף גבול של סכום באינטגרל? (הדוגמה שלי עם מספרים)</b>
+<ol>
+<li>שלב 1 – נציב $n=4$ בסכום:<div class="disp">$\frac14\left[\ln(1+\frac14)+\ln(1+\frac24)+\ln(1+\frac34)+\ln(1+\frac44)\right]$</div></li>
+<li>שלב 2 – זה בדיוק החישוב מסעיף 1: גובה $\ln(1+c_k)$ כפול רוחב $\frac14$. יצא $0.470$.</li>
+<li>שלב 3 – עם $n=60$ יוצא בערך $0.392$. עם $n=1000$ בערך $0.387$.</li>
+<li>שלב 4 – המספרים מתקרבים לשטח מתחת ל-$\ln(1+x)$ בין 0 ל-1. זה הגבול.</li>
+</ol></div>
+<h3>מפת השלבים (לכל תרגיל מהסוג הזה)</h3>
+<div class="tw"><table><tr><th>שלב</th><th>מה עושים</th><th>בתרגיל א</th></tr>
+<tr><td>1</td><td>מוצאים את הרוחב $\class{brn}{\Delta x}$: הגורם שלא תלוי ב-$k$</td><td>$\frac1n$</td></tr>
+<tr><td>2</td><td>מוצאים את $\class{ind}{c_k}$: מה ש"זז" עם $k$</td><td>$\frac kn$</td></tr>
+<tr><td>3</td><td>מזהים את $f$ ואת הקטע $[a,b]$</td><td>$f(x)=\ln(1+x)$ על $[0,1]$</td></tr>
+<tr><td>4</td><td>$f$ רציפה ⇒ אינטגרבילית ⇒ הגבול = האינטגרל</td><td>$\int_0^1\ln(1+x)\,dx$</td></tr>
+<tr><td>5</td><td>מחשבים את האינטגרל</td><td>$2\ln2-1$</td></tr>
+</table></div>
+<div class="box terms"><b>איך מוצאים את הקטע?</b>הנקודה הראשונה היא $c_1$ והאחרונה $c_n$. כאן $c_k=\frac kn$, אז $c_k$ רץ מ-$\frac1n$ (קרוב ל-0) עד $\frac nn=1$. לכן הקטע הוא $[0,1]$. בדיקה: אורך הקטע חלקי $n$ צריך לצאת $\Delta x$, ואכן $\frac{1-0}{n}=\frac1n$.</div>
+<div class="sim"><div class="st-title">סימולציה: פתרון תרגיל א, שורה אחרי שורה</div>
+<ol class="map"><li>1. רוחב</li><li>2. נקודות</li><li>3. פונקציה וקטע</li><li>4. גבול = אינטגרל</li><li>5. חישוב</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$\lim\limits_{n\to\infty}\frac1n\sum\limits_{k=1}^n\ln\left(1+\frac kn\right)$</div><div class="x">זה הגבול שצריך לחשב. מתחילים מהגורם $\frac1n$: הוא לא תלוי ב-$k$, לכן הוא מועמד להיות הרוחב.</div><div class="st"><span><i>רוחב</i>?</span><span><i>נקודות</i>?</span><span><i>פונקציה</i>?</span></div></div>
+<div class="step" data-m="0"><div class="f">$P=\{0,\frac1n,\frac2n,\dots,\frac nn=1\},\quad |P|=\class{brn}{\frac1n}$</div><div class="x">כמו במחברת: לוקחים חלוקה אחידה של $[0,1]$. כל חתיכה ברוחב $\frac1n$, ולכן $|P|=\frac1n\to 0$.</div><div class="st"><span><i>רוחב</i>$\Delta x=\frac1n$</span><span><i>נקודות</i>?</span><span><i>פונקציה</i>?</span></div></div>
+<div class="step" data-m="1"><div class="f">$\class{ind}{c_k=\frac kn},\ k=1,\dots,n$</div><div class="x">מה שבתוך ה-$\ln$ ו"זז" עם $k$ הוא $\frac kn$. זו הנקודה בכל חתיכה (הקצה הימני).</div><div class="st"><span><i>רוחב</i>$\Delta x=\frac1n$</span><span><i>נקודות</i>$c_k=\frac kn$</span><span><i>פונקציה</i>?</span></div></div>
+<div class="step" data-m="2"><div class="f">$S(f,P)=\sum\limits_{k=1}^n \ln\left(1+\class{ind}{\frac kn}\right)\cdot\class{brn}{\frac1n},\quad f(x)=\ln(1+x)$</div><div class="x">אם נשים $x=c_k$ בתוך $\ln(1+x)$ נקבל בדיוק את האיבר בסכום. לכן $f(x)=\ln(1+x)$ על $[0,1]$, והסכום הוא סכום רימן שלה.</div><div class="st"><span><i>רוחב</i>$\Delta x=\frac1n$</span><span><i>נקודות</i>$c_k=\frac kn$</span><span><i>פונקציה</i>$\ln(1+x)$ על $[0,1]$</span></div></div>
+<div class="step" data-m="3"><div class="f">$\lim\limits_{n\to\infty}\frac1n\sum\limits_{k=1}^n\ln\left(1+\frac kn\right)=\lim\limits_{n\to\infty}S(f,P)=\int_0^1\ln(1+x)\,dx$</div><div class="x">$\ln(1+x)$ רציפה בקטע, ולכן אינטגרבילית (לפי המשפט). אז כל סכום רימן שואף לאינטגרל. כאן נגמר מה שכתוב במחברת (עם "...").</div><div class="st"><span><i>רוחב</i>$\Delta x=\frac1n$</span><span><i>נקודות</i>$c_k=\frac kn$</span><span><i>פונקציה</i>$\ln(1+x)$ על $[0,1]$</span><span><i>מצב</i>נשאר לחשב אינטגרל</span></div></div>
+<div class="step" data-m="4"><div class="f">$=\class{tea}{x\ln(1+x)\Big|_0^1-\int_0^1\frac{x}{1+x}\,dx}$</div><div class="x">ההשלמה שלי: אינטגרציה בחלקים עם $u=\ln(1+x)$ ו-$dv=dx$. אז $du=\frac{dx}{1+x}$ ו-$v=x$.</div><div class="st"><span><i>מצב</i>בחלקים</span><span><i>u</i>$\ln(1+x)$</span><span><i>v</i>$x$</span></div></div>
+<div class="step" data-m="4"><div class="f">$=\ln 2-\int_0^1\left(\class{pnk}{1-\frac{1}{1+x}}\right)dx$</div><div class="x">מציבים: $1\cdot\ln2-0=\ln2$. בתוך האינטגרל מחלקים: $\frac{x}{1+x}=\frac{(1+x)-1}{1+x}=1-\frac1{1+x}$.</div><div class="st"><span><i>מצב</i>חילוק</span><span><i>חלק ראשון</i>$\ln 2$</span></div></div>
+<div class="step" data-m="4"><div class="f">$=\ln2-\left[x-\class{grn}{\ln(1+x)}\right]_0^1=\ln2-(1-\ln2)$</div><div class="x">קדומה של $1$ היא $x$, וקדומה של $\frac1{1+x}$ היא $\ln(1+x)$. מציבים 1 ו-0.</div><div class="st"><span><i>מצב</i>הצבת גבולות</span><span><i>ב-1</i>$1-\ln2$</span><span><i>ב-0</i>$0$</span></div></div>
+<div class="step" data-m="4"><div class="f"><span class="ans">$=2\ln2-1\approx 0.386$</span></div><div class="x">זו התשובה. היא מתאימה למספרים שקיבלנו: $0.470$, $0.392$, $0.387$ מתקרבים ל-$0.386$.</div><div class="st"><span><i>תשובה</i>$2\ln 2-1$</span></div></div>
+</div></div>
+<div class="box fix"><b>הערה שלי על המחברת</b>במחברת הפתרון נעצר ב-$\int_0^1\ln(1+x)\,dx=\dots$ בלי לחשב. השלמתי את החישוב (באינטגרציה בחלקים) כדי שיהיה מספר סופי: $2\ln2-1$.</div>
+<div class="quiz"><div class="qt">שאלות על סעיף 2</div>
+<div class="qq" data-a="1"><p class="q">בגבול $\lim\frac1n\sum_{k=1}^n\ln(1+\frac kn)$, איזה חלק הוא הרוחב $\Delta x$?</p><ol><li>$\frac kn$, כי הוא בתוך הפונקציה</li><li>$\frac1n$, כי הוא לא תלוי ב-$k$</li><li>$\ln(1+\frac kn)$, כי הוא הגובה</li><li>$n$, כי זה מספר החתיכות</li></ol><p class="h">רמז: הרוחב זהה בכל המלבנים, אז הוא לא תלוי ב-$k$.</p><p class="e">נכון. $\frac1n$ הוא הרוחב, ו-$\frac kn$ הוא הנקודה $c_k$.</p></div>
+<div class="qq" data-a="3"><p class="q">למה מותר לכתוב שהגבול שווה ל-$\int_0^1\ln(1+x)dx$?</p><ol><li>כי $\ln$ עולה, ולכן הסכום מונוטוני</li><li>כי $n$ שואף לאינסוף ולכן הכול מתבטל</li><li>כי $\frac kn$ קטן מ-1 לכל $k$</li><li>כי $\ln(1+x)$ רציפה ולכן אינטגרבילית</li></ol><p class="h">רמז: איזה משפט אומר שכל סכום רימן שואף לאינטגרל?</p><p class="e">נכון. רציפה ⇒ אינטגרבילית, ואז כל סכום רימן (עם $|P|\to0$) שואף לאינטגרל.</p></div>
+<div class="qq" data-a="0"><p class="q">אם היה כתוב $\lim\frac1n\sum_{k=1}^n\sqrt{\frac kn}$, מה היה הגבול?</p><ol><li>$\int_0^1\sqrt x\,dx=\frac23$</li><li>$\int_0^n\sqrt x\,dx$, כי $k$ מגיע עד $n$</li><li>$\int_0^1 x\,dx=\frac12$</li><li>$\int_1^2\sqrt x\,dx$, כי מתחילים ב-$k=1$</li></ol><p class="h">רמז: אותם רוחב ונקודות כמו בתרגיל א. רק הפונקציה השתנתה.</p><p class="e">נכון. $\Delta x=\frac1n$, $c_k=\frac kn$, $f=\sqrt x$ על $[0,1]$. וזה בדיוק $\frac23$, כמו בתרגול 1.</p></div>
+<div class="qq" data-a="2"><p class="q">בחישוב $\int_0^1\ln(1+x)dx$ בחלקים, מה $v$ אם $dv=dx$?</p><ol><li>$v=1$</li><li>$v=\frac1{1+x}$</li><li>$v=x$</li><li>$v=\ln x$</li></ol><p class="h">רמז: $v$ היא פונקציה שהנגזרת שלה היא 1.</p><p class="e">נכון. $(x)'=1$, ולכן $v=x$.</p></div>
+</div>
+</section>
+
+<!-- ============ 3 ============ -->
+<section class="sec" id="s3" data-short="תרגיל ב: x/(1+x²)">
+<h2>תרגיל "שיפה" ב: קטע שאינו [0,1]</h2>
+<div class="disp">$$\class{amb}{\lim_{n\to\infty}}\sum_{k=1}^{n}\frac2n\cdot\frac{\frac{2k}{n}}{1+\left(\frac{2k}{n}\right)^2}$$</div>
+<p>כאן הרוחב הוא $\frac2n$ ולא $\frac1n$. זה סימן שהקטע ארוך יותר.</p>
+<div class="box mine"><b>איך מגלים שהקטע הוא [0,2]? (עם מספרים)</b>
+<ol>
+<li>שלב 1 – הרוחב: $\Delta x=\frac2n$. אם הקטע הוא $[0,b]$ אז $\frac bn=\frac2n$, כלומר $b=2$.</li>
+<li>שלב 2 – בדיקה עם $n=4$: הנקודות $c_k=\frac{2k}{4}$ הן $0.5,\ 1,\ 1.5,\ 2$. האחרונה היא 2.</li>
+<li>שלב 3 – הנקודות "צועדות" בצעדים של $0.5=\frac24$, מ-0 עד 2. בדיוק החלוקה האחידה של $[0,2]$.</li>
+<li>שלב 4 – הפונקציה: מה שקורה ל-$c_k$ הוא $\frac{c_k}{1+c_k^2}$. לכן $f(x)=\frac{x}{1+x^2}$.</li>
+</ol></div>
+<p>במחברת יש ציור קטן של הקטע: $0,\ \frac2n,\ \frac4n,\ \dots,\ \frac{2k}{n},\ \dots,\ \frac{2n}{n}=2$.</p>
+<div class="sim"><div class="st-title">סימולציה: פתרון תרגיל ב</div>
+<ol class="map"><li>1. רוחב</li><li>2. נקודות</li><li>3. פונקציה וקטע</li><li>4. גבול = אינטגרל</li><li>5. חישוב (הצבה)</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$P=\{0,\frac2n,\frac4n,\dots,\frac{2n}n=2\},\quad |P|=\class{brn}{\frac2n}$</div><div class="x">הגורם $\frac2n$ לא תלוי ב-$k$. זה הרוחב. חלוקה אחידה של $[0,2]$ נותנת בדיוק רוחב $\frac2n$.</div><div class="st"><span><i>רוחב</i>$\frac2n$</span><span><i>נקודות</i>?</span><span><i>פונקציה</i>?</span></div></div>
+<div class="step" data-m="1"><div class="f">$\class{ind}{c_k=\frac{2k}n}$</div><div class="x">מה ש"זז" עם $k$ הוא $\frac{2k}n$. זה הקצה הימני של החתיכה ה-$k$.</div><div class="st"><span><i>רוחב</i>$\frac2n$</span><span><i>נקודות</i>$c_k=\frac{2k}n$</span><span><i>פונקציה</i>?</span></div></div>
+<div class="step" data-m="2"><div class="f">$S(f,P)=\sum\limits_{k=1}^n\frac{\class{ind}{\frac{2k}n}}{1+\left(\class{ind}{\frac{2k}n}\right)^2}\cdot\class{brn}{\frac2n},\quad f(x)=\frac{x}{1+x^2}$</div><div class="x">שמים $x=c_k$ ב-$\frac{x}{1+x^2}$ ומקבלים את האיבר בסכום. אז זה סכום רימן של $f$ על $[0,2]$.</div><div class="st"><span><i>רוחב</i>$\frac2n$</span><span><i>נקודות</i>$c_k=\frac{2k}n$</span><span><i>פונקציה</i>$\frac{x}{1+x^2}$ על $[0,2]$</span></div></div>
+<div class="step" data-m="3"><div class="f">$\lim\limits_{n\to\infty}S(f,P)=\int_0^2\frac{x\,dx}{1+x^2}$</div><div class="x">$f$ רציפה (המכנה לא מתאפס אף פעם) ולכן אינטגרבילית. במחברת הפתרון נעצר כאן.</div><div class="st"><span><i>פונקציה</i>$\frac{x}{1+x^2}$ על $[0,2]$</span><span><i>מצב</i>נשאר לחשב</span></div></div>
+<div class="step" data-m="4"><div class="f">$\class{pur}{t=1+x^2},\ \ \class{pur}{dt=2x\,dx},\ \ x:0\to2\ \Rightarrow\ t:1\to5$</div><div class="x">ההשלמה שלי: במונה יש $x\,dx$, וזה כמעט הנגזרת של המכנה. לכן מציבים $t=1+x^2$. הגבולות: $1+0^2=1$, $1+2^2=5$.</div><div class="st"><span><i>הצבה</i>$t=1+x^2$</span><span><i>גבולות חדשים</i>$1\to5$</span></div></div>
+<div class="step" data-m="4"><div class="f">$=\frac12\int_1^5\frac{dt}{t}=\frac12\class{grn}{\ln t}\Big|_1^5=\frac12(\ln5-\ln1)$</div><div class="x">$x\,dx=\frac12dt$. קדומה של $\frac1t$ היא $\ln t$. ו-$\ln 1=0$.</div><div class="st"><span><i>הצבה</i>$t=1+x^2$</span><span><i>קדומה</i>$\ln t$</span></div></div>
+<div class="step" data-m="4"><div class="f"><span class="ans">$=\frac12\ln5\approx0.805$</span></div><div class="x">זו התשובה. בהמחשה בסעיף 1 (תרגיל ב) אפשר לראות שהסכום מתקרב ל-$0.805$.</div><div class="st"><span><i>תשובה</i>$\frac12\ln 5$</span></div></div>
+</div></div>
+<div class="box rule"><b>הכלל לזכור</b>אם הרוחב הוא $\frac{b-a}{n}$ והנקודות הן $c_k=a+k\cdot\frac{b-a}{n}$, הגבול הוא $\int_a^b f(x)\,dx$. את $a$ ו-$b$ קוראים מהנקודה הראשונה והאחרונה.</div>
+<div class="quiz"><div class="qt">שאלות על סעיף 3</div>
+<div class="qq" data-a="3"><p class="q">בתרגיל ב, למה הקטע הוא $[0,2]$ ולא $[0,1]$?</p><ol><li>כי במונה יש $2k$, ולכן מכפילים את התשובה ב-2</li><li>כי הפונקציה מוגדרת רק עד 2</li><li>כי מתחילים מ-$k=1$, ולכן הקטע זז ב-1</li><li>כי הרוחב $\frac2n$, והנקודה האחרונה $\frac{2n}{n}=2$</li></ol><p class="h">רמז: מה הערך של $c_n$?</p><p class="e">נכון. $c_n=\frac{2n}n=2$, והרוחב $\frac{2-0}{n}$.</p></div>
+<div class="qq" data-a="0"><p class="q">עם $n=2$, מה סכום רימן של תרגיל ב?</p><ol><li>$0.9$: גבהים $0.5$ ו-$0.4$, רוחב 1</li><li>$0.45$: גבהים $0.5$ ו-$0.4$, רוחב $0.5$</li><li>$1.8$: גבהים $0.5$ ו-$0.4$, רוחב 2</li><li>$0.5$: רק הגובה $f(1)$, רוחב 1</li></ol><p class="h">רמז: $\Delta x=\frac22=1$, והנקודות $c_1=1$, $c_2=2$.</p><p class="e">נכון. $f(1)=\frac12$, $f(2)=\frac25$. הסכום $(0.5+0.4)\cdot1=0.9$.</p></div>
+<div class="qq" data-a="2"><p class="q">בהצבה $t=1+x^2$ לאינטגרל $\int_0^2\frac{x}{1+x^2}dx$, מה הגבולות החדשים?</p><ol><li>מ-0 עד 2, כי הגבולות לא משתנים</li><li>מ-0 עד 4, כי מציבים רק בתוך $x^2$</li><li>מ-1 עד 5, כי מציבים בתוך $t$</li><li>מ-1 עד 3, כי מוסיפים 1 לכל גבול</li></ol><p class="h">רמז: הצב $x=0$ ו-$x=2$ בתוך $1+x^2$.</p><p class="e">נכון. $1+0=1$ ו-$1+4=5$.</p></div>
+<div class="qq" data-a="1"><p class="q">איזה גבול שווה ל-$\int_0^3 x^2\,dx$?</p><ol><li>$\lim\frac1n\sum_{k=1}^n\left(\frac{3k}n\right)^2$</li><li>$\lim\frac3n\sum_{k=1}^n\left(\frac{3k}n\right)^2$</li><li>$\lim\frac3n\sum_{k=1}^n\left(\frac{k}n\right)^2$</li><li>$\lim\frac1n\sum_{k=1}^n\left(\frac{k}n\right)^2$</li></ol><p class="h">רמז: צריך גם רוחב $\frac3n$ וגם נקודות $c_k=\frac{3k}n$.</p><p class="e">נכון. רוחב $\frac{3-0}{n}$ ונקודות $\frac{3k}n$ שמגיעות עד 3.</p></div>
+</div>
+</section>
+
+<!-- ============ 4 ============ -->
+<section class="sec" id="s4" data-short="תרגיל ג: f'/f">
+<h2>תרגיל "שיפה" ג: סדרה עם f'/f</h2>
+<p><b>הנתון:</b> $f:[0,1]\to(1,\infty)$ גזירה ברציפות (כלומר $f'$ קיימת ורציפה), $f(0)=3$, $f(1)=4$. צריך להוכיח שהסדרה מתכנסת ולחשב את הגבול:</p>
+<div class="disp">$$a_n=\frac1n\sum_{k=1}^{n}\frac{f'\!\left(\frac kn\right)}{f\!\left(\frac kn\right)}$$</div>
+<div class="box mine"><b>מה הסדרה הזו בכלל? (הדוגמה שלי עם מספרים)</b>
+<ol>
+<li>שלב 1 – נבחר פונקציה שמתאימה לנתונים: $f(x)=3+x$. אז $f(0)=3$, $f(1)=4$, והערכים בין 3 ל-4 (גדולים מ-1).</li>
+<li>שלב 2 – $f'(x)=1$, ולכן $\frac{f'}{f}=\frac{1}{3+x}$.</li>
+<li>שלב 3 – $n=2$: $a_2=\frac12\left[\frac1{3.5}+\frac1{4}\right]\approx\frac12(0.286+0.25)=0.268$.</li>
+<li>שלב 4 – עם $n$ גדול מקבלים בערך $0.2877$. וזה בדיוק $\ln\frac43$.</li>
+</ol>
+החלק המפתיע: התשובה $\ln\frac43$ יוצאת לכל $f$ שמקיימת את הנתונים, לא רק ל-$3+x$.</div>
+<div class="box terms"><b>למה צריך את הנתונים?</b>
+<ul>
+<li>"$f$ גזירה ברציפות" ⇒ $f'$ רציפה. "$f$ מקבלת ערכים ב-$(1,\infty)$" ⇒ לא מחלקים באפס. ביחד: $g=\frac{f'}{f}$ רציפה, ולכן אינטגרבילית.</li>
+<li>$f>0$ מאפשר לכתוב $\ln f(x)$ בלי ערך מוחלט.</li>
+<li>$f(0)$ ו-$f(1)$ נכנסים רק בסוף, בהצבת הגבולות.</li>
+</ul></div>
+<div class="sim"><div class="st-title">סימולציה: פתרון תרגיל ג</div>
+<ol class="map"><li>1. מגדירים g</li><li>2. g רציפה</li><li>3. סכום רימן</li><li>4. חישוב האינטגרל</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$g(x)=\frac{f'(x)}{f(x)}$</div><div class="x">נותנים שם לביטוי שבתוך הסכום. אז $a_n=\frac1n\sum g(\frac kn)$.</div><div class="st"><span><i>g</i>$\frac{f'}{f}$</span><span><i>רציפה?</i>עוד לא בדקנו</span></div></div>
+<div class="step" data-m="1"><div class="f">$f'\ \text{continuous},\ f>1\ \Rightarrow\ g\ \text{continuous on }[0,1]$</div><div class="x">$f$ גזירה ברציפות ⇒ $f'$ רציפה. $f$ גזירה ⇒ רציפה. מנה של רציפות, כשהמכנה לא מתאפס, היא רציפה.</div><div class="st"><span><i>g</i>$\frac{f'}{f}$</span><span><i>רציפה?</i>כן ⇒ אינטגרבילית</span></div></div>
+<div class="step" data-m="2"><div class="f">$S(g,P)=\sum\limits_{k=1}^n\frac{f'(\class{ind}{\frac kn})}{f(\class{ind}{\frac kn})}\cdot\class{brn}{\frac1n}\ \xrightarrow{n\to\infty}\ \int_0^1g(x)\,dx$</div><div class="x">חלוקה אחידה של $[0,1]$, נקודות בקצה הימני. זה בדיוק $a_n$. כי $g$ אינטגרבילית, $a_n$ מתכנסת לאינטגרל. זה מוכיח שהסדרה מתכנסת.</div><div class="st"><span><i>רוחב</i>$\frac1n$</span><span><i>נקודות</i>$\frac kn$</span><span><i>מתכנסת?</i>כן</span></div></div>
+<div class="step" data-m="3"><div class="f">$\int_0^1\frac{f'(x)}{f(x)}dx=\class{grn}{\ln(f(x))}\Big|_0^1$</div><div class="x">למה? לפי כלל השרשרת $(\ln f(x))'=\frac{1}{f(x)}\cdot f'(x)$. אז $\ln f$ היא קדומה של $\frac{f'}{f}$. (אפשר גם הצבה $t=f(x)$.)</div><div class="st"><span><i>קדומה</i>$\ln f(x)$</span></div></div>
+<div class="step" data-m="3"><div class="f">$=\ln f(1)-\ln f(0)=\ln4-\ln3$</div><div class="x">ניוטון-לייבניץ: קדומה בקצה העליון פחות קדומה בקצה התחתון. מציבים את הנתונים.</div><div class="st"><span><i>f(1)</i>4</span><span><i>f(0)</i>3</span></div></div>
+<div class="step" data-m="3"><div class="f"><span class="ans">$=\ln\frac43\approx0.288$</span></div><div class="x">חוק לוגריתמים: $\ln a-\ln b=\ln\frac ab$. זו התשובה.</div><div class="st"><span><i>תשובה</i>$\ln\frac43$</span></div></div>
+</div></div>
+<div class="quiz"><div class="qt">שאלות על סעיף 4</div>
+<div class="qq" data-a="2"><p class="q">למה בתרגיל ג נתון ש-$f$ מקבלת ערכים ב-$(1,\infty)$?</p><ol><li>כדי ש-$f'$ תהיה חיובית בכל הקטע</li><li>כדי שהסדרה $a_n$ תהיה עולה וחסומה</li><li>כדי שלא נחלק באפס ו-$\ln f$ יהיה מוגדר</li><li>כדי ש-$f(0)$ יהיה קטן מ-$f(1)$ בכל מקרה</li></ol><p class="h">רמז: איפה $f$ מופיעה? במכנה ובתוך $\ln$.</p><p class="e">נכון. $f>0$ מבטיח מכנה שונה מאפס ו-$\ln f$ מוגדר.</p></div>
+<div class="qq" data-a="0"><p class="q">מה הקדומה של $\frac{f'(x)}{f(x)}$ כש-$f>0$?</p><ol><li>$\ln f(x)$, לפי השרשרת</li><li>$\frac{f(x)^2}{2}$, לפי חזקה</li><li>$\ln f'(x)$, לפי כלל השרשרת</li><li>$f(x)\ln f(x)$, לפי מכפלה</li></ol><p class="h">רמז: גזור כל אפשרות ובדוק מה יוצא.</p><p class="e">נכון. $(\ln f)'=\frac{f'}{f}$.</p></div>
+<div class="qq" data-a="3"><p class="q">אם היה נתון $f(0)=2$ ו-$f(1)=6$, מה היה הגבול?</p><ol><li>$\ln 4$, כי ההפרש $6-2$</li><li>$\ln\frac13$, כי היחס הפוך $\frac26$</li><li>$3$, כי היחס $\frac62$ בלי $\ln$</li><li>$\ln 3$, כי $\ln6-\ln2$</li></ol><p class="h">רמז: $\ln f(1)-\ln f(0)$.</p><p class="e">נכון. $\ln6-\ln2=\ln\frac62=\ln3$.</p></div>
+<div class="qq" data-a="1"><p class="q">איזה חלק בפתרון מוכיח שהסדרה <b>מתכנסת</b>?</p><ol><li>החישוב $\ln f(1)-\ln f(0)$, כי יצא מספר</li><li>הזיהוי של $a_n$ כסכום רימן של $g$ האינטגרבילית</li><li>הנתון $f(0)=3$, כי הוא מספר סופי</li><li>הבדיקה ש-$a_2\approx0.268$, כי זה קרוב לתשובה</li></ol><p class="h">רמז: מה מבטיח שגבול סכום רימן קיים?</p><p class="e">נכון. $g$ רציפה ⇒ אינטגרבילית ⇒ סכומי רימן שלה מתכנסים לאינטגרל.</p></div>
+</div>
+</section>
+
+<!-- ============ 5 ============ -->
+<section class="sec" id="s5" data-short="המשפט היסודי">
+<h2>המשפט היסודי של החדו״א</h2>
+<p><b>ההגדרה:</b> $f$ אינטגרבילית בקטע $[a,b]$. מגדירים את <span class="plm k">הפונקציה הצוברת</span> (צוברת שטח):</p>
+<div class="disp">$$\class{plm}{F(x)}=\int_a^x f(t)\,dt,\qquad x\in[a,b]$$</div>
+<div class="box mine"><b>מה זו פונקציה צוברת? (הדוגמה שלי עם מספרים)</b>
+<ol>
+<li>שלב 1 – ניקח $f(t)=2t$ ו-$a=0$. אז $F(x)$ = השטח מתחת ל-$2t$ בין 0 ל-$x$.</li>
+<li>שלב 2 – $F(1)$: משולש עם בסיס 1 וגובה 2. שטח $=1$.</li>
+<li>שלב 3 – $F(3)$: משולש עם בסיס 3 וגובה 6. שטח $=9$.</li>
+<li>שלב 4 – באופן כללי: בסיס $x$, גובה $2x$, שטח $x^2$. כלומר $F(x)=x^2$.</li>
+<li>שלב 5 – הנגזרת: $F'(x)=2x=f(x)$. בדיוק מה שהמשפט אומר.</li>
+</ol>
+למה <bdi>t</bdi> ולא <bdi>x</bdi> בתוך האינטגרל? כי <bdi>x</bdi> כבר תפוס: הוא הגבול העליון. <bdi>t</bdi> הוא רק "משתנה עזר" שרץ מ-<bdi>a</bdi> עד <bdi>x</bdi>.</div>
+<p><b>המשפט</b> (כמו במחברת):</p>
+<ol>
+<li>$\class{plm}{F}$ רציפה.</li>
+<li>בכל נקודה $x_0$ שבה $f$ רציפה, $\class{plm}{F}$ גזירה ו-$\class{plm}{F'(x_0)}=f(x_0)$.</li>
+<li>אם $f$ רציפה בכל הקטע, אז יש לה פונקציה קדומה בקטע, והפונקציה $\class{plm}{F(x)}=\int_a^xf(t)dt$ היא קדומה: $F'=f$ בכל הקטע.</li>
+</ol>
+<p><b>תזכורת מהמחברת:</b> כל הפונקציות הקדומות של $f$ הן $\int_a^xf(t)\,dt+C$, לכל קבוע $C\in\mathbb R$.</p>
+<h3>נוסחת ניוטון-לייבניץ</h3>
+<p>אם $f$ אינטגרבילית ויש לה קדומה $\class{plm}{F}$ בקטע $[a,b]$:</p>
+<div class="disp">$$\int_a^b f(x)\,dx=\class{plm}{F(b)}-\class{plm}{F(a)}$$</div>
+<p>בדוגמה שלי: $\int_1^3 2x\,dx=3^2-1^2=8$.</p>
+<div class="box rule"><b>הכלל לזכור</b>"הנגזרת של השטח היא הגובה": $\left(\int_a^x f(t)dt\right)'=f(x)$. ובכיוון השני: אינטגרל = הפרש של קדומה.</div>
+<div class="tool" id="ftcTool"><b>המחשה: שטח צובר ושיפוע</b>
+<p>הזז את <bdi>x</bdi>. למעלה: השטח מתחת ל-<bdi>f(t)=2t</bdi>. בטקסט: השטח <bdi>F(x)</bdi>, ומה קורה לשטח כשמוסיפים עוד קצת.</p>
+<label for="ftX">x = <span class="out" id="ftXv">1.5</span></label><input type="range" id="ftX" min="0" max="3" step="0.05" value="1.5">
+<svg id="ftSvg" viewBox="0 0 400 200" role="img" aria-label="שטח מתחת לישר"></svg>
+<p class="out" id="ftOut"></p></div>
+<div class="quiz"><div class="qt">שאלות על סעיף 5</div>
+<div class="qq" data-a="1"><p class="q">אם $F(x)=\int_0^x 2t\,dt$, כמה זה $F(2)$?</p><ol><li>$2$, כי זה הגובה של הישר בנקודה 2</li><li>$4$, שטח משולש עם בסיס 2 וגובה 4</li><li>$8$, כי בסיס כפול גובה</li><li>$2t$, כי זו הפונקציה שבתוך האינטגרל</li></ol><p class="h">רמז: שטח משולש = חצי בסיס כפול גובה.</p><p class="e">נכון. $\frac12\cdot2\cdot4=4$, וגם $F(x)=x^2$.</p></div>
+<div class="qq" data-a="3"><p class="q">לפי המשפט, מה $\left(\int_1^x \sin(t^3)\,dt\right)'$?</p><ol><li>$\cos(x^3)\cdot 3x^2$, לפי כלל השרשרת</li><li>$\sin(x^3)-\sin(1)$, לפי ניוטון-לייבניץ</li><li>$\sin(t^3)$, הפונקציה שבפנים כמו שהיא</li><li>$\sin(x^3)$, מציבים את $x$ במקום $t$</li></ol><p class="h">רמז: חלק 2 של המשפט: $F'(x)=f(x)$.</p><p class="e">נכון. $f(t)=\sin(t^3)$ רציפה, ולכן הנגזרת היא $f(x)=\sin(x^3)$.</p></div>
+<div class="qq" data-a="0"><p class="q">למה בתוך $\int_a^x f(t)\,dt$ כותבים $t$ ולא $x$?</p><ol><li>כי $x$ הוא הגבול העליון, ו-$t$ רק רץ בתוך הקטע</li><li>כי $t$ מסמן זמן, והאינטגרל הוא תמיד מרחק</li><li>כי אסור לכתוב $x$ באינטגרל לא מסוים</li><li>כי $t$ הוא הצבה, כמו $t=g(x)$</li></ol><p class="h">רמז: מה היה קורה אם $x$ היה גם הגבול וגם המשתנה?</p><p class="e">נכון. $t$ הוא משתנה עזר. $x$ קבוע בזמן החישוב של האינטגרל.</p></div>
+<div class="qq" data-a="2"><p class="q">מה $\int_2^4 3x^2\,dx$ לפי ניוטון-לייבניץ?</p><ol><li>$64$, הצבה של 4 בלבד</li><li>$36$, כי $3\cdot(4^2-2^2)$</li><li>$56$, כי $4^3-2^3$</li><li>$8$, כי מציבים רק את הגבול התחתון 2</li></ol><p class="h">רמז: קדומה של $3x^2$ היא $x^3$.</p><p class="e">נכון. $F(4)-F(2)=64-8=56$.</p></div>
+</div>
+</section>
+
+<!-- ============ 6 ============ -->
+<section class="sec" id="s6" data-short="גבולות משתנים">
+<h2>נגזרת של אינטגרל עם גבולות משתנים</h2>
+<p>במחברת: "באופן כללי". מה קורה כששני הגבולות הם פונקציות של $x$?</p>
+<div class="box mine"><b>מאיפה הנוסחה? (הדוגמה שלי עם מספרים)</b>
+<ol>
+<li>שלב 1 – ניקח $\int_{x}^{x^2} t\,dt$. כאן $f(t)=t$, הגבול העליון $\class{sky}{h(x)=x^2}$, התחתון $\class{lim}{g(x)=x}$.</li>
+<li>שלב 2 – קדומה של $t$ היא $F(t)=\frac{t^2}2$. לפי ניוטון-לייבניץ: $\frac{(x^2)^2}2-\frac{x^2}2=\frac{x^4}2-\frac{x^2}2$.</li>
+<li>שלב 3 – גוזרים ישירות: $2x^3-x$. ב-$x=2$ יוצא $16-2=14$.</li>
+<li>שלב 4 – עכשיו בנוסחה: $f(\class{sky}{x^2})\cdot\class{sky}{2x}-f(\class{lim}{x})\cdot\class{lim}{1}=x^2\cdot2x-x=2x^3-x$. אותו דבר!</li>
+</ol>
+מאיפה מגיע הכפל ב-$2x$? מכלל השרשרת: גוזרים $F(x^2)$, ולכן כופלים בנגזרת של הפנים.</div>
+<p><b>במחברת:</b> $f$ רציפה, $g,h$ גזירות בתחום ההגדרה. אם $F$ קדומה של $f$:</p>
+<div class="disp">$$\int_{\class{lim}{g(x)}}^{\class{sky}{h(x)}}f(t)\,dt=\class{plm}{F}(\class{sky}{h(x)})-\class{plm}{F}(\class{lim}{g(x)})$$</div>
+<div class="sim"><div class="st-title">סימולציה: גזירת הנוסחה, שורה אחרי שורה</div>
+<ol class="map"><li>1. ניוטון-לייבניץ</li><li>2. גזירה בשרשרת</li><li>3. F'=f</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$\left[\int_{\class{lim}{g(x)}}^{\class{sky}{h(x)}}f(t)\,dt\right]'=\Big[\class{plm}{F}(\class{sky}{h(x)})-\class{plm}{F}(\class{lim}{g(x)})\Big]'$</div><div class="x">קודם כותבים את האינטגרל כהפרש של קדומה (ניוטון-לייבניץ). עכשיו צריך לגזור הפרש של שתי פונקציות מורכבות.</div><div class="st"><span><i>מצב</i>הפרש של שתי הרכבות</span></div></div>
+<div class="step" data-m="1"><div class="f">$=\class{plm}{F'}(\class{sky}{h(x)})\cdot\class{sky}{h'(x)}-\class{plm}{F'}(\class{lim}{g(x)})\cdot\class{lim}{g'(x)}$</div><div class="x">כלל השרשרת לכל אחד מהשניים: נגזרת החיצונית בנקודה הפנימית, כפול נגזרת הפנימית.</div><div class="st"><span><i>מצב</i>אחרי שרשרת</span></div></div>
+<div class="step" data-m="2"><div class="f"><span class="ans">$=f(\class{sky}{h(x)})\cdot\class{sky}{h'(x)}-f(\class{lim}{g(x)})\cdot\class{lim}{g'(x)}$</span></div><div class="x">$F$ קדומה של $f$, ולכן $F'=f$. זו הנוסחה. שים לב: לא צריך לדעת מה $F$ בכלל!</div><div class="st"><span><i>תוצאה</i>הנוסחה הכללית</span></div></div>
+</div></div>
+<div class="box fix"><b>הערה קטנה שלי על המחברת</b>בשורה "אם $F$ קדומה של $f$ אז..." כתוב $\int_{g(x)}^{h(x)}f(x)\,dt$. צריך להיות $f(t)\,dt$: המשתנה בתוך האינטגרל הוא $t$. בשורה שאחריה זה כבר כתוב נכון.</div>
+<div class="tw"><table><tr><th>מקרה</th><th>מה יוצא</th></tr>
+<tr><td>גבול תחתון קבוע $a$, עליון $x$</td><td>$f(x)$ (זה חלק 2 של המשפט)</td></tr>
+<tr><td>גבול תחתון קבוע, עליון $h(x)$</td><td>$f(h(x))\cdot h'(x)$</td></tr>
+<tr><td>גבול תחתון $g(x)$, עליון קבוע</td><td>$-f(g(x))\cdot g'(x)$</td></tr>
+<tr><td>שניהם משתנים</td><td>$f(h)h'-f(g)g'$</td></tr></table></div>
+<div class="quiz"><div class="qt">שאלות על סעיף 6</div>
+<div class="qq" data-a="2"><p class="q">מה $\left(\int_0^{x^3}\cos t\,dt\right)'$?</p><ol><li>$\cos(x^3)$, בלי כפל בנגזרת</li><li>$3x^2\cos x$, הנגזרת בחוץ</li><li>$\cos(x^3)\cdot3x^2$</li><li>$\sin(x^3)$, כי זו הקדומה של $\cos$</li></ol><p class="h">רמז: $f(h(x))\cdot h'(x)$ עם $h=x^3$.</p><p class="e">נכון. $f(x^3)\cdot(x^3)'=\cos(x^3)\cdot3x^2$.</p></div>
+<div class="qq" data-a="0"><p class="q">מה $\left(\int_x^{5}e^{t^2}dt\right)'$?</p><ol><li>$-e^{x^2}$, כי הגבול התחתון משתנה</li><li>$e^{x^2}$, כמו בחלק 2 של המשפט</li><li>$e^{25}-e^{x^2}$, הצבת הגבולות</li><li>$2x\,e^{x^2}$, לפי כלל השרשרת</li></ol><p class="h">רמז: הגבול התחתון הוא $g(x)=x$, ובנוסחה הוא מגיע עם מינוס.</p><p class="e">נכון. $0-f(x)\cdot1=-e^{x^2}$.</p></div>
+<div class="qq" data-a="1"><p class="q">בדוגמה שלי $\int_x^{x^2}t\,dt$, מה הנגזרת ב-$x=1$?</p><ol><li>$0$, כי שני הגבולות שווים ב-1</li><li>$1$, כי $2\cdot1^3-1$</li><li>$2$, כי $2\cdot1^3$ בלבד</li><li>$3$, כי $2\cdot1^3+1$ עם פלוס</li></ol><p class="h">רמז: הנגזרת היא $2x^3-x$. גם כשהאינטגרל עצמו 0, הנגזרת לא חייבת להיות 0.</p><p class="e">נכון. $2-1=1$.</p></div>
+<div class="qq" data-a="3"><p class="q">מאיפה מגיע הכפל ב-$h'(x)$ בנוסחה?</p><ol><li>מניוטון-לייבניץ, כשמציבים את הגבולות</li><li>מהמשפט היסודי, חלק 1 (רציפות)</li><li>מאינטגרציה בחלקים של $f$</li><li>מכלל השרשרת, כשגוזרים את $F(h(x))$</li></ol><p class="h">רמז: מה עושים כשגוזרים פונקציה של פונקציה?</p><p class="e">נכון. $(F(h(x)))'=F'(h(x))\cdot h'(x)$.</p></div>
+</div>
+</section>
+
+<!-- ============ 7 ============ -->
+<section class="sec" id="s7" data-short="תרגיל: גבול עם לופיטל">
+<h2>תרגיל: גבול של אינטגרל חלקי x</h2>
+<div class="disp">$$\class{amb}{\lim_{x\to0}}\ \frac{\int_0^x\cos(t^2)\,dt}{x}$$</div>
+<p>את $\int\cos(t^2)dt$ אי אפשר לחשב בנוסחה רגילה. אבל לא צריך! המשפט מסעיף 5 נותן את הנגזרת שלו, וזה מה שלופיטל צריך.</p>
+<div class="box mine"><b>תחושה עם מספרים (הדוגמה שלי)</b>
+<ol>
+<li>שלב 1 – ליד 0, $t^2$ קטן מאוד, ולכן $\cos(t^2)\approx\cos0=1$.</li>
+<li>שלב 2 – אז $\int_0^x\cos(t^2)dt\approx\int_0^x1\,dt=x$.</li>
+<li>שלב 3 – ולכן המנה $\approx\frac{x}{x}=1$. בהמחשה למטה רואים: ב-$x=0.5$ המנה בערך $0.994$.</li>
+</ol></div>
+<h3>מפת השלבים</h3>
+<div class="tw"><table><tr><th>שלב</th><th>מה עושים</th></tr><tr><td>1</td><td>בודקים שהמונה שואף ל-0 (צורה $\frac00$)</td></tr><tr><td>2</td><td>לופיטל: גוזרים מונה ומכנה</td></tr><tr><td>3</td><td>את המונה גוזרים בנוסחה מסעיף 6</td></tr><tr><td>4</td><td>מציבים $x\to0$</td></tr></table></div>
+<div class="sim"><div class="st-title">סימולציה: פתרון התרגיל</div>
+<ol class="map"><li>1. בדיקת 0/0</li><li>2. לופיטל</li><li>3. גזירת המונה</li><li>4. הצבה</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$0\le\left|\int_0^x\cos(t^2)\,dt\right|\le\left|\int_0^x1\,dt\right|$</div><div class="x">למה? $|\cos(t^2)|\le1$, ואינטגרל שומר על אי-שוויון: אם $f\le g$ אז $\int f\le\int g$ (כתוב במחברת בחץ).</div><div class="st"><span><i>מונה</i>?</span><span><i>מכנה</i>$x\to0$</span></div></div>
+<div class="step" data-m="0"><div class="f">$=\big|\,t\,\big|_0^x\big|=|x-0|\xrightarrow{x\to0}0$</div><div class="x">הקדומה של 1 היא $t$. לפי סנדוויץ', המונה שואף ל-0.</div><div class="st"><span><i>מונה</i>$\to0$</span><span><i>מכנה</i>$\to0$</span><span><i>צורה</i>$\frac00$</span></div></div>
+<div class="step" data-m="1"><div class="f">$\class{amb}{\lim\limits_{x\to0}}\frac{\int_0^x\cos(t^2)dt}{x}\ \overset{\text{L'H}}{=}\ \class{amb}{\lim\limits_{x\to0}}\frac{\left(\int_0^x\cos(t^2)dt\right)'}{(x)'}$</div><div class="x">צורה $\frac00$ ושני החלקים גזירים, אז מותר לופיטל: גוזרים מונה לחוד ומכנה לחוד.</div><div class="st"><span><i>צורה</i>$\frac00$</span><span><i>שיטה</i>לופיטל</span></div></div>
+<div class="step" data-m="2"><div class="f">$=\class{amb}{\lim\limits_{x\to0}}\frac{\cos(\class{sky}{x}^2)\cdot\class{sky}{1}-\cos(\class{lim}{0}^2)\cdot\class{lim}{0}}{1}$</div><div class="x">הנוסחה: $f(h)h'-f(g)g'$ עם $h(x)=x$ ($h'=1$) ו-$g(x)=0$ ($g'=0$). המכנה: $(x)'=1$.</div><div class="st"><span><i>h</i>$x$, $h'=1$</span><span><i>g</i>$0$, $g'=0$</span></div></div>
+<div class="step" data-m="3"><div class="f">$=\class{amb}{\lim\limits_{x\to0}}\cos(x^2)=\cos0=$ <span class="ans">$1$</span></div><div class="x">$\cos$ רציפה, אז מציבים $x=0$. התשובה: 1. מתאים לתחושה מהמספרים.</div><div class="st"><span><i>תשובה</i>1</span></div></div>
+</div></div>
+<div class="box fix"><b>הערה קטנה שלי על המחברת</b>במחברת כתוב $\left|\int_0^x1\,dt\right|=x-0=x$. זה נכון ל-$x>0$. אם $x<0$ יוצא $|x|$. בכל מקרה זה שואף ל-0, אז המסקנה לא משתנה. עדיף לכתוב $|x|$.</div>
+<div class="tool" id="limTool"><b>המחשה: המנה כש-x מתקרב ל-0</b>
+<label for="lmX">x = <span class="out" id="lmXv">1</span></label><input type="range" id="lmX" min="0" max="100" value="0">
+<p class="out" id="lmOut"></p></div>
+<div class="quiz"><div class="qt">שאלות על סעיף 7</div>
+<div class="qq" data-a="1"><p class="q">למה מותר להשתמש בלופיטל בתרגיל?</p><ol><li>כי המכנה הוא $x$, ותמיד מותר כשיש $x$</li><li>כי המונה והמכנה שואפים ל-0 (צורה $\frac00$)</li><li>כי $\cos$ חסומה בין $-1$ ל-1</li><li>כי $\cos(t^2)$ אי אפשר לחשב בנוסחה</li></ol><p class="h">רמז: לופיטל דורש צורה מסוימת.</p><p class="e">נכון. בדקנו קודם ששני החלקים שואפים ל-0.</p></div>
+<div class="qq" data-a="3"><p class="q">מה הנגזרת של המונה $\int_0^x\cos(t^2)dt$?</p><ol><li>$-\sin(x^2)\cdot2x$, כמו גזירת $\cos$</li><li>$\sin(x^2)$, כי זו קדומה של $\cos$</li><li>$\cos(x^2)\cdot2x$, לפי כלל השרשרת</li><li>$\cos(x^2)$, לפי המשפט</li></ol><p class="h">רמז: הגבול העליון הוא $x$ עצמו, ו-$h'(x)=1$.</p><p class="e">נכון. $f(x)\cdot1=\cos(x^2)$. ה-$2x$ היה מופיע רק אם הגבול העליון היה $x^2$.</p></div>
+<div class="qq" data-a="0"><p class="q">מה $\lim_{x\to0}\frac{\int_0^x e^{t^2}dt}{x}$?</p><ol><li>$1$, כי אחרי לופיטל יוצא $e^{0}$</li><li>$0$, כי המונה שואף ל-0 מהר</li><li>$e$, כי מציבים $t=1$ במונה</li><li>$2$, כי יש $t^2$ בחזקה של $e$</li></ol><p class="h">רמז: אותה דרך בדיוק. גוזרים מונה: $e^{x^2}$.</p><p class="e">נכון. $\lim e^{x^2}=e^0=1$.</p></div>
+<div class="qq" data-a="2"><p class="q">ב-$0\le|\int_0^x\cos(t^2)dt|\le|\int_0^x1\,dt|$, באיזו תכונה משתמשים?</p><ol><li>אדיטיביות: מחלקים את הקטע לשניים</li><li>לינאריות: מוציאים קבוע מהאינטגרל</li><li>מונוטוניות: $f\le g$ ⇒ $\int f\le\int g$</li><li>ערך ממוצע: יש $c$ עם $f(c)$ ממוצע</li></ol><p class="h">רמז: משווים את $\cos(t^2)$ ל-1.</p><p class="e">נכון. $|\cos(t^2)|\le1$, ולפי מונוטוניות האינטגרל שומר על הסדר.</p></div>
+</div>
+</section>
+
+<!-- ============ 8 ============ -->
+<section class="sec" id="s8" data-short="סיכום">
+<h2>סיכום התרגול</h2>
+<div class="tw"><table><tr><th>נושא</th><th>מה לזכור</th></tr>
+<tr><td>גבול של סכום</td><td>מוצאים רוחב $\Delta x$, נקודות $c_k$, פונקציה וקטע. רציפה ⇒ הגבול = $\int_a^bf$.</td></tr>
+<tr><td>תרגיל א</td><td>$\lim\frac1n\sum\ln(1+\frac kn)=\int_0^1\ln(1+x)dx=2\ln2-1$</td></tr>
+<tr><td>תרגיל ב</td><td>רוחב $\frac2n$ ⇒ קטע $[0,2]$. התשובה $\frac12\ln5$.</td></tr>
+<tr><td>תרגיל ג</td><td>$a_n\to\int_0^1\frac{f'}{f}=\ln f(1)-\ln f(0)=\ln\frac43$</td></tr>
+<tr><td>המשפט היסודי</td><td>$F(x)=\int_a^xf$ רציפה, ו-$F'=f$ איפה ש-$f$ רציפה.</td></tr>
+<tr><td>ניוטון-לייבניץ</td><td>$\int_a^bf=F(b)-F(a)$</td></tr>
+<tr><td>גבולות משתנים</td><td>$\left(\int_{g}^{h}f\right)'=f(h)h'-f(g)g'$</td></tr>
+<tr><td>גבול עם אינטגרל</td><td>בודקים $\frac00$, לופיטל, גוזרים את האינטגרל בנוסחה.</td></tr></table></div>
+<div class="quiz"><div class="qt">מבחן מסכם</div>
+<div class="qq" data-a="2"><p class="q">מה $\lim\frac1n\sum_{k=1}^n e^{k/n}$?</p><ol><li>$e$, כי $k/n$ מגיע עד 1</li><li>$1$, כי $\frac1n\cdot n=1$ בסכום</li><li>$e-1$, כי זה $\int_0^1e^x\,dx$</li><li>$e+1$, כי זה $\int_0^1e^x\,dx$ פלוס 1</li></ol><p class="h">רמז: $\Delta x=\frac1n$, $c_k=\frac kn$, $f=e^x$ על $[0,1]$.</p><p class="e">נכון. $e^1-e^0=e-1$. זו גם הדוגמה מהרצאה 2.</p></div>
+<div class="qq" data-a="1"><p class="q">מה $\left(\int_{x}^{2x}\frac{dt}{t}\right)'$ עבור $x>0$?</p><ol><li>$\frac1{2x}-\frac1x$, בלי הכפל בנגזרות</li><li>$0$, כי $\frac{2}{2x}-\frac1x=0$</li><li>$\frac1x$, כמו בחלק 2 של המשפט</li><li>$\ln 2$, כי זה ערך האינטגרל</li></ol><p class="h">רמז: $f(2x)\cdot2-f(x)\cdot1$.</p><p class="e">נכון. והגיוני: האינטגרל עצמו הוא $\ln2x-\ln x=\ln2$, קבוע, ולכן הנגזרת 0.</p></div>
+<div class="qq" data-a="3"><p class="q">איזה גבול שווה ל-$\int_1^2\frac{dx}{x}$?</p><ol><li>$\lim\frac1n\sum_{k=1}^n\frac{1}{k/n}$</li><li>$\lim\frac2n\sum_{k=1}^n\frac{1}{1+k/n}$</li><li>$\lim\frac1n\sum_{k=1}^n\frac{1}{2+k/n}$</li><li>$\lim\frac1n\sum_{k=1}^n\frac{1}{1+k/n}$</li></ol><p class="h">רמז: הקטע $[1,2]$: רוחב $\frac1n$ ונקודות $1+\frac kn$.</p><p class="e">נכון. $c_k=1+\frac kn$ רץ מ-1 עד 2, ו-$f(x)=\frac1x$.</p></div>
+<div class="qq" data-a="0"><p class="q">מה $\lim_{x\to0}\frac{\int_0^{x}\sin(t)\,dt}{x^2}$?</p><ol><li>$\frac12$, כי אחרי לופיטל $\frac{\sin x}{2x}\to\frac12$</li><li>$1$, כי אחרי לופיטל $\frac{\sin x}{x}\to1$</li><li>$0$, כי המונה שואף ל-0 מהר</li><li>$2$, כי אחרי לופיטל $\frac{2x}{\sin x}\to2$</li></ol><p class="h">רמז: לופיטל: מונה $\sin x$, מכנה $2x$.</p><p class="e">נכון. $\frac{\sin x}{2x}\to\frac12$.</p></div>
+</div>
+<p class="end" id="endMsg"></p>
+</section>
+</div>
+
+<script>
+window.LESSON_INIT=function(){
+ function css(v){return getComputedStyle(document.documentElement).getPropertyValue(v).trim()}
+ var F=[{f:function(x){return Math.log(1+x)},a:0,b:1,I:2*Math.log(2)-1,nm:'ln(1+x)'},{f:function(x){return x/(1+x*x)},a:0,b:2,I:0.5*Math.log(5),nm:'x/(1+x²)'},{f:function(x){return 1/(3+x)},a:0,b:1,I:Math.log(4/3),nm:'1/(3+x)'}];
+ var sel=document.getElementById('rmF'),rn=document.getElementById('rmN'),svg=document.getElementById('rmSvg');
+ function drawR(){var o=F[+sel.value],n=+rn.value;document.getElementById('rmNv').textContent=n;
+  var W=400,H=220,pl=30,pr=10,pt=10,pb=24,ymax=0;for(var i=0;i<=200;i++){ymax=Math.max(ymax,o.f(o.a+(o.b-o.a)*i/200))}ymax*=1.15;
+  function X(x){return pl+(x-o.a)/(o.b-o.a)*(W-pl-pr)}function Y(y){return H-pb-y/ymax*(H-pt-pb)}
+  var s='',dx=(o.b-o.a)/n,sum=0;
+  for(var k=1;k<=n;k++){var c=o.a+k*dx,y=o.f(c);sum+=y*dx;s+='<rect x="'+X(c-dx)+'" y="'+Y(y)+'" width="'+(X(c)-X(c-dx))+'" height="'+(Y(0)-Y(y))+'" fill="'+css('--ind')+'" fill-opacity=".22" stroke="'+css('--ind')+'" stroke-width="1"/>';
+   if(n<=12)s+='<circle cx="'+X(c)+'" cy="'+Y(y)+'" r="3" fill="'+css('--ind')+'"/>'}
+  var p='';for(var i=0;i<=200;i++){var x=o.a+(o.b-o.a)*i/200;p+=(i?'L':'M')+X(x).toFixed(1)+' '+Y(o.f(x)).toFixed(1)}
+  s+='<path d="'+p+'" fill="none" stroke="'+css('--ink')+'" stroke-width="2"/>';
+  s+='<line x1="'+pl+'" y1="'+Y(0)+'" x2="'+(W-pr)+'" y2="'+Y(0)+'" stroke="'+css('--muted')+'"/>';
+  s+='<text x="'+X(o.a)+'" y="'+(H-6)+'" fill="'+css('--muted')+'" font-size="12" text-anchor="middle">'+o.a+'</text><text x="'+X(o.b)+'" y="'+(H-6)+'" fill="'+css('--muted')+'" font-size="12" text-anchor="middle">'+o.b+'</text>';
+  svg.innerHTML=s;
+  document.getElementById('rmOut').textContent='f = '+o.nm+' ,  n = '+n+' ,  Δx = '+dx.toFixed(4)+' ,  S = '+sum.toFixed(4)+' ,  ∫ = '+o.I.toFixed(4)+' ,  diff = '+(sum-o.I).toFixed(4)}
+ sel.addEventListener('change',drawR);rn.addEventListener('input',drawR);drawR();
+ var fx=document.getElementById('ftX'),fs=document.getElementById('ftSvg');
+ function drawF(){var x=+fx.value;document.getElementById('ftXv').textContent=x.toFixed(2);var W=400,H=200,pl=24,pb=22;
+  function X(t){return pl+t/3*(W-pl-12)}function Y(y){return H-pb-y/6.4*(H-pb-10)}
+  var s='<polygon points="'+X(0)+','+Y(0)+' '+X(x)+','+Y(0)+' '+X(x)+','+Y(2*x)+'" fill="'+css('--plm')+'" fill-opacity=".3"/>';
+  s+='<line x1="'+X(0)+'" y1="'+Y(0)+'" x2="'+X(3)+'" y2="'+Y(6)+'" stroke="'+css('--ink')+'" stroke-width="2"/>';
+  s+='<line x1="'+pl+'" y1="'+Y(0)+'" x2="'+(W-8)+'" y2="'+Y(0)+'" stroke="'+css('--muted')+'"/>';
+  s+='<line x1="'+X(x)+'" y1="'+Y(0)+'" x2="'+X(x)+'" y2="'+Y(2*x)+'" stroke="'+css('--plm')+'" stroke-width="2"/>';
+  s+='<text x="'+X(x)+'" y="'+(H-6)+'" fill="'+css('--muted')+'" font-size="12" text-anchor="middle">x</text>';fs.innerHTML=s;
+  var h=0.01,dF=((x+h)*(x+h)-x*x)/h;
+  document.getElementById('ftOut').textContent='F(x) = x² = '+(x*x).toFixed(3)+'   |   (F(x+0.01) − F(x)) / 0.01 = '+dF.toFixed(3)+'   ≈   f(x) = 2x = '+(2*x).toFixed(3)}
+ fx.addEventListener('input',drawF);drawF();
+ var lx=document.getElementById('lmX');
+ function simpson(g,a,b){var n=200,h=(b-a)/n,s=g(a)+g(b);for(var i=1;i<n;i++)s+=g(a+i*h)*(i%2?4:2);return s*h/3}
+ function drawL(){var v=+lx.value,x=Math.pow(10,-v/50);document.getElementById('lmXv').textContent=x.toPrecision(3);
+  var I=simpson(function(t){return Math.cos(t*t)},0,x);document.getElementById('lmOut').textContent='∫₀ˣ cos(t²) dt = '+I.toPrecision(6)+'   →   ratio = '+(I/x).toPrecision(6)}
+ lx.addEventListener('input',drawL);drawL();
+ var mo=new MutationObserver(function(){drawR();drawF()});mo.observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+};
+</script>
+<script>(function(){
+document.documentElement.dir='rtl';document.documentElement.lang='he';
+var KEY=((document.querySelector('.wrap')||document.body).getAttribute('data-key')||'lesson')+'-quiz';
+var THEMEKEY='calc2-theme';
+function $(s,r){return (r||document).querySelector(s)}
+function $$(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))}
+function el(t,c,h){var n=document.createElement(t);if(c)n.className=c;if(h!=null)n.innerHTML=h;return n}
+function lsGet(k){try{return localStorage.getItem(k)}catch(e){return null}}
+function lsSet(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+// theme
+var tb=$('#themeBtn');
+function curDark(){var t=document.documentElement.getAttribute('data-theme');if(t)return t==='dark';return window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches}
+function paintBtn(){if(tb)tb.textContent=curDark()?'☀️ יום':'🌙 לילה'}
+var saved=lsGet(THEMEKEY);if(saved==='dark'||saved==='light')document.documentElement.setAttribute('data-theme',saved);
+paintBtn();
+if(tb)tb.addEventListener('click',function(){var d=!curDark();document.documentElement.setAttribute('data-theme',d?'dark':'light');lsSet(THEMEKEY,d?'dark':'light');paintBtn()});
+// sections + toc
+var secs=$$('section.sec'),toc=$('nav.toc');
+secs.forEach(function(s,i){var h=$('h2',s);var no=el('div','secno',(i+1)+' / '+secs.length);s.insertBefore(no,h);
+ if(toc){var a=el('a');a.href='#'+s.id;a.innerHTML='<b>'+(i+1)+'</b> '+(s.getAttribute('data-short')||h.textContent);toc.appendChild(a)}});
+// sims
+var sims=[];
+$$('.sim').forEach(function(sim){
+ var steps=$$('.steps > .step',sim);var mapItems=$$('.map > li',sim);
+ var lines=el('div','lines'),xp=el('div','x'),sp=el('div','stp-wrap');
+ var ctl=el('div','ctl');var bP=el('button','','→ הקודם'),bN=el('button','pri','הבא ←'),bR=el('button','','⟲ מההתחלה'),cnt=el('span','cnt');
+ bP.type=bN.type=bR.type='button';ctl.appendChild(bR);ctl.appendChild(bP);ctl.appendChild(bN);ctl.appendChild(cnt);
+ var stepLine=[],lineEls=[],xs=[],sts=[];
+ steps.forEach(function(st,i){var f=$('.f',st);
+  if(f){var ln=el('div','ln');ln.appendChild(el('span','no',String(lineEls.length+1)));ln.appendChild(f);lines.appendChild(ln);lineEls.push(ln)}
+  stepLine.push(lineEls.length-1);
+  var x=$('.x',st)||el('div','','');var xd=el('div','');while(x.firstChild)xd.appendChild(x.firstChild);xp.appendChild(xd);xs.push(xd);
+  var s=$('.st',st);var sd=el('div','stp');if(s){while(s.firstChild)sd.appendChild(s.firstChild)}sp.appendChild(sd);sts.push(sd)});
+ var stepsBox=$('.steps',sim);sim.insertBefore(lines,stepsBox);sim.insertBefore(xp,stepsBox);sim.insertBefore(sp,stepsBox);sim.insertBefore(ctl,stepsBox);stepsBox.remove();
+ var cur=0;
+ function render(){var L=stepLine[cur];
+  lineEls.forEach(function(ln,j){ln.classList.toggle('cur',j===L);ln.classList.toggle('fut',j>L)});
+  xs.forEach(function(x,j){x.hidden=j!==cur});
+  sts.forEach(function(s,j){s.hidden=j!==cur;
+   if(j===cur&&j>0){var prev={};$$('span',sts[j-1]).forEach(function(p){var k=$('i',p);if(k)prev[k.textContent]=p.textContent});
+    $$(':scope > span',s).forEach(function(p){var k=$('i',p);p.classList.toggle('new',!!k&&prev[k.textContent]!==p.textContent)})}});
+  var m=+(steps[cur].getAttribute('data-m')||-1);
+  mapItems.forEach(function(li,j){li.classList.toggle('on',j===m);li.classList.toggle('done',m>=0&&j<m)});
+  bP.disabled=cur===0;bN.disabled=cur===steps.length-1;cnt.textContent=(cur+1)+' / '+steps.length}
+ bP.onclick=function(){if(cur>0){cur--;render()}};bN.onclick=function(){if(cur<steps.length-1){cur++;render()}};bR.onclick=function(){cur=0;render()};
+ sims.push(render)});
+// quiz
+var st={};try{st=JSON.parse(lsGet(KEY)||'{}')||{}}catch(e){st={}}
+var qs=$$('.qq'),LET=['א','ב','ג','ד','ה'];
+function score(){var c=0,d=0;qs.forEach(function(q,i){var s=st[i];if(s&&s.done){d++;if(s.first)c++}});
+ var sc=$('#score');if(sc)sc.innerHTML='ניקוד: <bdi dir="ltr">'+c+' / '+qs.length+'</bdi>';var m=$('#meter');if(m)m.style.width=(qs.length?100*d/qs.length:0)+'%';
+ var end=$('#endMsg');if(end)end.textContent=d===qs.length?('סיימת את כל '+qs.length+' השאלות! ענית נכון בניסיון הראשון על '+c+'. '+(c>=qs.length*0.8?'מצוין, ביג בוס 💪':'כדאי לחזור על הסעיפים שבהם טעית.')):'ענית על '+d+' מתוך '+qs.length+' שאלות.'}
+var qhide=[];
+qs.forEach(function(q,i){var a=+q.getAttribute('data-a');var h=$('.h',q),e=$('.e',q);
+ $$('ol > li',q).forEach(function(li,j){var b=el('button','');b.type='button';b.appendChild(el('span','lt',LET[j]+'.'));while(li.firstChild)b.appendChild(li.firstChild);li.appendChild(b);
+  b.addEventListener('click',function(){var s=st[i]||{tried:[]};if(s.done)return;s.tried.push(j);
+   if(j===a){s.done=true;s.first=s.tried.length===1}st[i]=s;lsSet(KEY,JSON.stringify(st));paintQ();score()})});
+ function paintQ(){var s=st[i]||{tried:[]};var bs=$$('ol > li > button',q);
+  bs.forEach(function(b,j){b.classList.toggle('good',!!s.done&&j===a);b.classList.toggle('bad',s.tried.indexOf(j)>=0&&j!==a)});
+  var lastBad=s.tried.length&&s.tried[s.tried.length-1]!==a;if(h)h.hidden=!(lastBad&&!s.done);if(e)e.hidden=!s.done}
+ q._paint=paintQ;qhide.push(paintQ)});
+var rb=$('#resetBtn');if(rb)rb.addEventListener('click',function(){st={};lsSet(KEY,'{}');qhide.forEach(function(f){f()});score()});
+// bidi fix
+var HEB=/[֐-׿]/,RUN=/[A-Za-z0-9∞√π][A-Za-z0-9∞√π²³⁻¹\s+\-−*\/=^().,'·:≤≥<>|_]*/g;
+var SKIP={'MJX-CONTAINER':1,'CODE':1,'PRE':1,'SVG':1,'BDI':1,'SCRIPT':1,'STYLE':1,'TEXTAREA':1,'INPUT':1};
+function bidi(root){var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode:function(n){for(var p=n.parentNode;p&&p!==root.parentNode;p=p.parentNode){if(SKIP[p.nodeName.toUpperCase()]||(p.classList&&(p.classList.contains('m')||p.classList.contains('ltr'))))return NodeFilter.FILTER_REJECT}return NodeFilter.FILTER_ACCEPT}});
+ var nodes=[],n;while(n=w.nextNode())nodes.push(n);
+ nodes.forEach(function(t){var s=t.nodeValue;if(HEB.test(s)&&s.indexOf('→')>=0)s=t.nodeValue=s.replace(/→/g,'←');
+  if(!/[A-Za-z0-9∞√π]/.test(s)||!HEB.test(s+((t.parentNode&&t.parentNode.textContent)||'')))return;
+  var frag=document.createDocumentFragment(),last=0,m;RUN.lastIndex=0;
+  while(m=RUN.exec(s)){var r=m[0].replace(/[\s.,:]+$/,'');var open=(r.match(/\(/g)||[]).length,close=(r.match(/\)/g)||[]).length;
+   while(close>open&&r.slice(-1)===')'){r=r.slice(0,-1);close--}
+   if(open>close&&r.slice(-1)==='('){r=r.slice(0,-1)}
+   if(!r)continue;frag.appendChild(document.createTextNode(s.slice(last,m.index)));var b=document.createElement('bdi');b.dir='ltr';b.textContent=r;frag.appendChild(b);last=m.index+r.length;RUN.lastIndex=last}
+  frag.appendChild(document.createTextNode(s.slice(last)));t.parentNode.replaceChild(frag,t)})}
+var finished=false;
+function finish(){if(finished)return;finished=true;bidi($('.wrap'));sims.forEach(function(r){r()});qhide.forEach(function(f){f()});score();
+ if(window.LESSON_INIT)try{window.LESSON_INIT()}catch(e){console.error(e)}}
+window.__lessonFinish=finish;
+window.typesetLater=function(node){if(window.MathJax&&MathJax.typesetPromise){return MathJax.typesetPromise([node]).then(function(){bidi(node)}).catch(function(){})}bidi(node);return Promise.resolve()};
+setTimeout(finish,9000);
+})();
+</script>
+<script>window.MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']],packages:{'[+]':['html']}},loader:{load:['[tex]/html']},svg:{fontCache:'global'},options:{ignoreHtmlClass:'nomj'},startup:{ready:function(){MathJax.startup.defaultReady();MathJax.startup.promise.then(function(){window.__lessonFinish&&window.__lessonFinish()})}}};</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.min.js"></script>
+</body></html>

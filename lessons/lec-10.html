@@ -1,0 +1,776 @@
+<!doctype html><html><head><script>(function(){try{var m=localStorage.getItem("hedva2-theme");if(m==="dark"||m==="light")document.documentElement.setAttribute("data-theme",m);}catch(e){}})();</script><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>חדו״א 2 — הרצאה 10</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Assistant:wght@400;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>/* Layout: a calm math notebook — one reading column (max 860px), sticky score bar, section cards on a faint grid. */
+:root{
+  --bg:#f6f8fb; --card:#ffffff; --ink:#1d2533; --muted:#5b6678; --line:#dfe5ee; --soft:#eef2f8; --grid:rgba(40,80,140,.05);
+  --accent:#6d4bd8; --accent-soft:#efeafd; --ok:#1f8a52; --ok-soft:#ddf4e7; --bad:#c53030; --bad-soft:#fde7e7; --note:#fff7dc; --note-line:#e9c46a; --mine:#e8f3ff; --mine-line:#7fb2ea;
+  --amb:#b7791f; --tea:#1386a6; --pur:#7a3fd1; --blu:#2563eb; --pnk:#c2417a; --grn:#2f855a; --org:#c05621; --red:#c53030; --olv:#6b7f1a;
+  --ind:#4c51bf; --brn:#8b5a2b; --mag:#b83280; --sea:#2c7a7b; --plm:#7b3fb0; --rub:#c0265b; --cyn:#0891b2; --sky:#0369a1; --lim:#4d7c0f; --nav:#1e3a8a; --eme:#047857; --bur:#9f1239; --jad:#0f766e; --rus:#a8441a;
+  --f-head:"Secular One","Assistant",system-ui,sans-serif; --f-body:"Assistant",system-ui,-apple-system,"Segoe UI",sans-serif; --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#11161f; --card:#18202c; --ink:#e6ebf3; --muted:#9aa7ba; --line:#2a3546; --soft:#1f2937; --grid:rgba(160,190,255,.04);
+  --accent:#a48bff; --accent-soft:#2a2346; --ok:#6fd49b; --ok-soft:#163626; --bad:#ff8a80; --bad-soft:#3d1c1c; --note:#2f2a14; --note-line:#a58a2c; --mine:#15283d; --mine-line:#3f6f9f;
+  --amb:#f0b75a; --tea:#4cc3e0; --pur:#b48cff; --blu:#7aa7ff; --pnk:#f58bbb; --grn:#6fd49b; --org:#f6a26b; --red:#ff8a80; --olv:#b5c95a;
+  --ind:#a3a8ff; --brn:#d6a77a; --mag:#f08ad0; --sea:#6fd1cf; --plm:#c99af0; --rub:#ff7aa3; --cyn:#5fd8f0; --sky:#7cc4f5; --lim:#a3d65c; --nav:#93b4ff; --eme:#34d399; --bur:#fb7185; --jad:#5eead4; --rus:#f0936a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#11161f; --card:#18202c; --ink:#e6ebf3; --muted:#9aa7ba; --line:#2a3546; --soft:#1f2937; --grid:rgba(160,190,255,.04);
+  --accent:#a48bff; --accent-soft:#2a2346; --ok:#6fd49b; --ok-soft:#163626; --bad:#ff8a80; --bad-soft:#3d1c1c; --note:#2f2a14; --note-line:#a58a2c; --mine:#15283d; --mine-line:#3f6f9f;
+  --amb:#f0b75a; --tea:#4cc3e0; --pur:#b48cff; --blu:#7aa7ff; --pnk:#f58bbb; --grn:#6fd49b; --org:#f6a26b; --red:#ff8a80; --olv:#b5c95a;
+  --ind:#a3a8ff; --brn:#d6a77a; --mag:#f08ad0; --sea:#6fd1cf; --plm:#c99af0; --rub:#ff7aa3; --cyn:#5fd8f0; --sky:#7cc4f5; --lim:#a3d65c; --nav:#93b4ff; --eme:#34d399; --bur:#fb7185; --jad:#5eead4; --rus:#f0936a; color-scheme:dark}
+html{direction:rtl}
+body{background-color:var(--bg);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:22px 22px;color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.65}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--card)}
+.wrap{max-width:860px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:8px 64px}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:6;background:var(--card);border-bottom:1px solid var(--line);margin-inline:calc(-1*max(16px,env(safe-area-inset-left,0px)));padding:8px max(16px,env(safe-area-inset-left,0px));display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.bar .sc{font-weight:700;font-size:15px}
+.bar .sc bdi{font-family:var(--f-mono)}
+.bar .meter{flex:1 1 120px;height:8px;background:var(--soft);border-radius:99px;overflow:hidden;min-width:80px}
+.bar .meter i{display:block;height:100%;width:0;background:var(--accent);transition:width .3s}
+.bar button{font:inherit;font-size:14px;font-weight:600;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:99px;padding:4px 12px;cursor:pointer}
+header.hero{padding-block:22px 6px}
+.credit{font-size:15px;background:var(--accent-soft);color:var(--ink);border-radius:10px;padding:6px 12px;display:inline-block;margin:0 0 12px}
+.eyebrow{font-size:13px;color:var(--muted);letter-spacing:.04em}
+h1{font-family:var(--f-head);font-weight:400;font-size:clamp(30px,6vw,42px);line-height:1.15;margin:4px 0 6px;text-wrap:balance}
+.sub{color:var(--muted);margin:0 0 12px}
+.legend{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.legend span{font-size:14px;border:1px solid var(--line);border-radius:99px;padding:2px 10px;background:var(--card)}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;background:currentColor;margin-inline-end:6px;vertical-align:middle}
+nav.toc{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin:12px 0 4px}
+nav.toc a{display:block;text-decoration:none;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:10px;padding:7px 11px;font-size:15px;font-weight:600}
+nav.toc a:hover{border-color:var(--accent)}
+nav.toc a b{color:var(--accent);font-family:var(--f-mono);margin-inline-end:4px}
+section.sec{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 18px 8px;margin-top:18px;scroll-margin-top:64px}
+@media (max-width:520px){section.sec{padding:14px 12px 6px;border-radius:12px}}
+.secno{font-family:var(--f-mono);font-size:13px;color:var(--muted);direction:ltr;unicode-bidi:isolate}
+h2{font-family:var(--f-head);font-weight:400;font-size:26px;margin:2px 0 10px;line-height:1.25;text-wrap:balance}
+h3{font-size:19px;margin:18px 0 6px}
+p{margin:8px 0}
+.box{border-radius:12px;padding:10px 14px;margin:12px 0;border:1px solid var(--line);background:var(--soft)}
+.box > b:first-child{display:block;margin-bottom:4px}
+.box.rule{background:var(--accent-soft);border-color:var(--accent)}
+.box.mine{background:var(--mine);border-color:var(--mine-line)}
+.box.fix{background:var(--note);border-color:var(--note-line)}
+.box.terms{background:var(--soft)}
+.box ol,.box ul{margin:4px 0;padding-inline-start:22px}
+.tw{overflow-x:auto;margin:10px 0}
+table{border-collapse:collapse;width:100%;font-size:15.5px}
+th,td{border:1px solid var(--line);padding:6px 9px;text-align:start;vertical-align:top}
+th{background:var(--soft)}
+.disp{overflow-x:auto;overflow-y:hidden;text-align:center;margin:10px 0;padding:4px 0}
+mjx-container{direction:ltr;unicode-bidi:isolate}
+mjx-container[display="true"]{margin:.4em 0!important}
+.disp mjx-container{display:inline-block!important}
+.ans{border-bottom:3px solid var(--cyn);padding-bottom:2px}
+.amb{color:var(--amb)}.tea{color:var(--tea)}.pur{color:var(--pur)}.blu{color:var(--blu)}.pnk{color:var(--pnk)}.grn{color:var(--grn)}.org{color:var(--org)}.red{color:var(--red)}.olv{color:var(--olv)}.ind{color:var(--ind)}.brn{color:var(--brn)}.mag{color:var(--mag)}.sea{color:var(--sea)}.plm{color:var(--plm)}.rub{color:var(--rub)}.cyn{color:var(--cyn)}.sky{color:var(--sky)}.lim{color:var(--lim)}.nav{color:var(--nav)}.eme{color:var(--eme)}.bur{color:var(--bur)}.jad{color:var(--jad)}.rus{color:var(--rus)}
+.k{font-weight:700}
+bdi,.m{unicode-bidi:isolate}
+.m{direction:ltr;display:inline-block;max-width:100%}
+code,pre{font-family:var(--f-mono);direction:ltr;unicode-bidi:isolate}
+/* simulation */
+.sim{border:2px solid var(--accent);border-radius:14px;padding:12px;margin:14px 0;background:var(--card)}
+.sim .st-title{font-weight:700;margin-bottom:6px}
+.sim .map{display:flex;flex-wrap:wrap;gap:5px;margin:0 0 8px;padding:0;list-style:none}
+.sim .map li{font-size:13.5px;border:1px solid var(--line);border-radius:99px;padding:2px 10px;color:var(--muted)}
+.sim .map li.on{background:var(--accent);border-color:var(--accent);color:var(--card);font-weight:700}
+.sim .map li.done{color:var(--ink);background:var(--soft)}
+.sim .lines{border:1px solid var(--line);border-radius:10px;padding:6px 8px;background:var(--soft);overflow-x:auto}
+.sim .ln{display:flex;gap:8px;align-items:center;padding:2px 4px;border-radius:6px;direction:ltr;min-height:30px}
+.sim .ln .no{font-family:var(--f-mono);font-size:12px;color:var(--muted);min-width:18px}
+.sim .ln.cur{background:var(--accent-soft);outline:2px solid var(--accent)}
+.sim .ln.fut{display:none}
+.sim .ln .f{min-width:0}
+.sim .x{margin:8px 0;padding:8px 12px;border-inline-start:4px solid var(--accent);background:var(--accent-soft);border-radius:8px}
+.sim .stp{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+.sim .stp > span{border:1px solid var(--line);border-radius:8px;padding:3px 9px;font-size:14.5px;background:var(--card)}
+.sim .stp > span > i{font-style:normal;color:var(--muted);margin-inline-end:6px;font-size:13px}
+.sim .stp .new{outline:2px solid var(--accent)}
+.sim .ctl{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-top:8px}
+.sim .ctl button{font:inherit;font-weight:700;font-size:15px;border:1px solid var(--accent);background:var(--card);color:var(--accent);border-radius:8px;padding:5px 14px;cursor:pointer}
+.sim .ctl button.pri{background:var(--accent);color:var(--card)}
+.sim .ctl button:disabled{opacity:.4;cursor:default}
+.sim .ctl .cnt{font-family:var(--f-mono);font-size:13px;color:var(--muted);direction:ltr;unicode-bidi:isolate}
+.sim .steps{display:none}
+/* quiz */
+.quiz{margin:16px 0 10px;border-top:1px dashed var(--line);padding-top:10px}
+.quiz > .qt{font-family:var(--f-head);font-size:19px;margin:0 0 6px}
+.qq{margin:10px 0 16px}
+.qq .q{font-weight:700;margin:4px 0}
+.qq ol{list-style:none;padding:0;margin:6px 0;display:grid;gap:6px}
+.qq li button{width:100%;text-align:start;font:inherit;font-size:16px;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:10px;padding:8px 12px;cursor:pointer;line-height:1.5}
+.qq li button:hover{border-color:var(--accent)}
+.qq li button.bad{border-color:var(--bad);background:var(--bad-soft)}
+.qq li button.good{border-color:var(--ok);background:var(--ok-soft)}
+.qq li button .lt{font-weight:700;color:var(--muted);margin-inline-end:8px}
+.qq .h,.qq .e{border-radius:8px;padding:6px 10px;font-size:15.5px}
+.qq .h{background:var(--bad-soft)}
+.qq .e{background:var(--ok-soft)}
+/* tools */
+.tool{border:1px solid var(--line);border-radius:12px;padding:12px;margin:12px 0;background:var(--soft)}
+.tool label{font-weight:600;font-size:15px}
+.tool input[type=range]{width:100%}
+.tool .out{font-family:var(--f-mono);direction:ltr;unicode-bidi:isolate;font-size:15px}
+.tool svg{width:100%;height:auto;display:block;background:var(--card);border-radius:8px;border:1px solid var(--line)}
+.tool .row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.tool select,.tool button{font:inherit;font-size:15px;border:1px solid var(--line);border-radius:8px;padding:4px 10px;background:var(--card);color:var(--ink)}
+.end{margin-top:18px;text-align:center;font-weight:700;font-size:18px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+mjx-container:not([display="true"]){display:inline-block;max-width:100%;overflow-x:auto;overflow-y:hidden;vertical-align:middle;padding-block:2px}
+mjx-container > svg{vertical-align:middle!important}
+mjx-assistive-mml{max-width:100%!important;left:0!important}
+[hidden]{display:none!important}
+.disp,.sim .lines{direction:ltr}
+input[type=range]{direction:ltr}
+@media (max-width:520px){.sim .lines mjx-container{font-size:88%}}
+.tool svg{direction:ltr}
+.tw.tight table{font-size:14px}.tw.tight th,.tw.tight td{padding:4px 5px}
+</style>
+<style>
+.tool .vin{display:grid;grid-template-columns:auto repeat(3,minmax(0,1fr));gap:6px;align-items:center;direction:ltr;max-width:420px}
+.tool .vin input{font:inherit;font-size:15px;width:100%;box-sizing:border-box;border:1px solid var(--line);border-radius:8px;padding:4px 6px;background:var(--card);color:var(--ink);text-align:center}
+.tool .vin span{font-weight:700;font-family:var(--f-mono)}
+.tool .sl{display:grid;grid-template-columns:auto 1fr auto;gap:4px 8px;align-items:center;direction:ltr}
+.tool .sl output{font-family:var(--f-mono);font-size:14px;min-width:2.5em;text-align:end}
+.tool .sl label{font-family:var(--f-mono);font-size:14px}
+.tool .res{direction:ltr;unicode-bidi:isolate;font-family:var(--f-mono);font-size:14.5px;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:8px 10px;margin-top:8px;white-space:pre-wrap;line-height:1.55}
+.det{display:inline-grid;grid-template-columns:repeat(3,auto);gap:2px 14px;border-inline:2px solid var(--ink);padding:2px 10px;direction:ltr;font-family:var(--f-mono)}
+</style>
+<div class="wrap" data-key="calc2-lec10-v1">
+<div class="bar"><span class="sc" id="score">ניקוד: 0</span><span class="meter" aria-hidden="true"><i id="meter"></i></span><button type="button" id="resetBtn">⟲ איפוס</button><button type="button" id="themeBtn">🌙 לילה</button></div>
+<header class="hero">
+<p class="credit">קרדיט לסיכומים של עדי מהדרייב 😊 ולעידו דוד צייג!</p>
+<div class="eyebrow">חדו״א 2 • הרצאה 10 • לנדסמן • 26/11/25 • ארבעה עמודים בכתב יד</div>
+<h1>הרצאה 10: וקטורים, מכפלה סקלרית ומכפלה וקטורית</h1>
+<p class="sub">נושא חדש לגמרי: אחרי האינטגרלים עוברים לגאומטריה של וקטורים. זה הבסיס לפונקציות של כמה משתנים בהמשך הקורס.</p>
+<div class="legend">
+<span class="ind">וקטור ראשון $\bar x$ או $\bar a$</span>
+<span class="org">וקטור שני $\bar y$ או $\bar b$</span>
+<span class="sea">מכפלה סקלרית וזווית $\varphi$</span>
+<span class="jad">אורך $|\bar x|$</span>
+<span class="sky">היטל</span>
+<span class="nav">וקטור יחידה $\bar e$</span>
+<span class="red">ציר $x$ ו-$\bar i$</span>
+<span class="grn">ציר $y$ ו-$\bar j$</span>
+<span class="blu">ציר $z$ ו-$\bar k$</span>
+<span class="plm">מכפלה וקטורית ושטח</span>
+<span class="cyn">תשובה סופית (קו מתחת)</span>
+</div>
+<nav class="toc" aria-label="תוכן עניינים"></nav>
+</header>
+
+<!-- ============ 1 ============ -->
+<section class="sec" id="s1" data-short="המרחב ℝⁿ">
+<h2>המרחב $\mathbb R^n$: נקודות ווקטורים</h2>
+<p>עד עכשיו עבדנו על ציר אחד, עם מספר אחד $x$. עכשיו כל "מקום" מתואר בכמה מספרים יחד. במישור צריך שניים, ובחדר צריך שלושה.</p>
+<div class="box mine"><b>מה זה $\mathbb R^n$? (מההתחלה, עם מספרים) — הדוגמה שלי</b>
+<ol>
+<li>שלב 1 – מה יש לנו: חדר. כדי לומר איפה נמצאת מנורה, צריך שלושה מספרים: 2 מטר ימינה, 3 מטר קדימה, 1 מטר למעלה. כותבים $(2,3,1)$.</li>
+<li>שלב 2 – זו נקודה ב-$\mathbb R^3$: רשימה מסודרת של 3 מספרים ממשיים. הסדר חשוב: $(2,3,1)$ ו-$(3,2,1)$ הן נקודות שונות.</li>
+<li>שלב 3 – במישור יש רק שני מספרים, למשל $(4,1)$. זה $\mathbb R^2$.</li>
+<li>שלב 4 – ב-$\mathbb R^5$ יש חמישה מספרים, למשל $(1,0,7,2,5)$. אי אפשר לצייר את זה, אבל כל החשבונות עובדים אותו דבר.</li>
+<li>שלב 5 – המסקנה: $n$ הוא פשוט "כמה מספרים יש ברשימה".</li>
+</ol></div>
+<div class="box rule"><b>ההגדרה מהמחברת</b>$\mathbb R^n$ הוא קבוצת כל ה-$n$-יות הממשיות:
+<div class="disp">$\mathbb R^n=\{\bar x=(x_1,\dots,x_n)\ \mid\ x_1,\dots,x_n\in\mathbb R\}$</div>
+לכל $\class{ind}{\bar x},\class{org}{\bar y}\in\mathbb R^n$ ולכל $\lambda\in\mathbb R$ מגדירים:
+<div class="disp">$\class{ind}{\bar x}+\class{org}{\bar y}=(x_1+y_1,\ x_2+y_2,\ \dots,\ x_n+y_n)\qquad \lambda\class{ind}{\bar x}=(\lambda x_1,\ \lambda x_2,\ \dots,\ \lambda x_n)$</div></div>
+<div class="box terms"><b>מילים וסימנים</b>
+<ul>
+<li>$n$-יה: רשימה של $n$ מספרים בסדר קבוע. זוג הוא 2-יה, שלשה היא 3-יה.</li>
+<li>$x_1,\dots,x_n$ נקראים <b>הקואורדינטות</b> (או הרכיבים) של $\bar x$. למשל ב-$(2,3,1)$ הרכיב השני הוא $x_2=3$.</li>
+<li>$\lambda$ (למדא) הוא סתם מספר ממשי. כופלים בו את הווקטור. מספר כזה נקרא <b>סקלר</b>.</li>
+<li>הפס מעל האות ($\bar x$) או החץ ($\vec x$) אומר "זה וקטור, לא מספר".</li>
+</ul></div>
+<h3>חיבור וכפל בסקלר עם מספרים — הדוגמה שלי</h3>
+<div class="tw"><table><tr><th>פעולה</th><th>חישוב</th><th>תוצאה</th></tr>
+<tr><td>חיבור</td><td>$\class{ind}{(1,2,3)}+\class{org}{(4,0,-1)}=(1+4,\ 2+0,\ 3-1)$</td><td>$(5,2,2)$</td></tr>
+<tr><td>כפל בסקלר $\lambda=3$</td><td>$3\cdot\class{ind}{(1,2,3)}=(3,6,9)$</td><td>$(3,6,9)$</td></tr>
+<tr><td>כפל ב-$\lambda=-1$</td><td>$-1\cdot\class{org}{(4,0,-1)}$</td><td>$(-4,0,1)$</td></tr>
+</table></div>
+<p>שתי הפעולות נעשות <b>רכיב רכיב</b>: הראשון עם הראשון, השני עם השני, וכן הלאה.</p>
+<h3>נקודה או וקטור?</h3>
+<p>במחברת כתוב: בעתיד נתייחס לווקטור $\bar x$ גם כנקודה $A$ בעלת אותן קואורדינטות. הווקטור מ-ראשית הצירים אל $A$ נקרא <b>וקטור המקום</b> של $A$, ומסמנים $\bar x=\vec r_A$.</p>
+<div class="box mine"><b>מאיפה בא $\overrightarrow{AB}=\vec r_B-\vec r_A$? (עם מספרים) — הדוגמה שלי</b>
+<ol>
+<li>שלב 1 – מה יש לנו: $A=(1,2)$ ו-$B=(4,6)$ במישור.</li>
+<li>שלב 2 – השאלה: איזה "צעד" לוקח אותנו מ-$A$ אל $B$?</li>
+<li>שלב 3 – בציר $x$: מ-$1$ ל-$4$ זה $4-1=3$ צעדים ימינה. בציר $y$: מ-$2$ ל-$6$ זה $6-2=4$ צעדים למעלה.</li>
+<li>שלב 4 – לכן $\overrightarrow{AB}=(3,4)$. בדיקה: $A+(3,4)=(1+3,\ 2+4)=(4,6)=B$. ✔</li>
+<li>שלב 5 – הכלל: <b>סוף פחות התחלה</b>. $\overrightarrow{AB}=(b_1-a_1,\dots,b_n-a_n)=\vec r_B-\vec r_A$.</li>
+</ol></div>
+<div class="box rule"><b>הכלל לזכור</b>$\overrightarrow{AB}$ = הנקודה שבסוף פחות הנקודה שבהתחלה. הסדר חשוב: $\overrightarrow{BA}=-\overrightarrow{AB}$.</div>
+<div class="tool"><b>המחשה: חיבור וקטורים וכפל בסקלר במישור</b>
+<div class="sl">
+<label for="t1a1">x₁</label><input type="range" id="t1a1" min="-4" max="4" step="1" value="3"><output id="o_t1a1"></output>
+<label for="t1a2">x₂</label><input type="range" id="t1a2" min="-4" max="4" step="1" value="1"><output id="o_t1a2"></output>
+<label for="t1b1">y₁</label><input type="range" id="t1b1" min="-4" max="4" step="1" value="1"><output id="o_t1b1"></output>
+<label for="t1b2">y₂</label><input type="range" id="t1b2" min="-4" max="4" step="1" value="2"><output id="o_t1b2"></output>
+<label for="t1l">λ</label><input type="range" id="t1l" min="-2" max="2" step="0.5" value="1.5"><output id="o_t1l"></output>
+</div>
+<svg id="t1svg" viewBox="0 0 400 300" role="img" aria-label="שני וקטורים, הסכום שלהם וכפל בסקלר"></svg>
+<p class="res" id="t1out"></p>
+<p style="font-size:15px">החץ <span class="ind k">הכחול-סגול</span> הוא $\bar x$, החץ <span class="org k">הכתום</span> הוא $\bar y$, החץ השחור הוא הסכום, והחץ המקווקו הוא $\lambda\bar x$. שימו לב: הסכום הוא האלכסון של המקבילית.</p></div>
+<p><b>אנלוגיה:</b> וקטור הוא "הוראת הליכה": כמה צעדים בכל כיוון. חיבור וקטורים = לבצע הוראה אחת ואז את השנייה.</p>
+<div class="quiz"><div class="qt">שאלות על סעיף 1</div>
+<div class="qq" data-a="2"><p class="q">כמה זה $(2,-1,4)+(1,3,-4)$?</p><ol><li>$(2,-3,-16)$, כי כופלים רכיב ברכיב</li><li>$(3,2,8)$, כי מחברים רכיב ברכיב</li><li>$(3,2,0)$, כי מחברים רכיב ברכיב</li><li>$(1,-4,8)$, כי מחסירים רכיב מרכיב</li></ol><p class="h">רמז: הראשון עם הראשון, השני עם השני, השלישי עם השלישי.</p><p class="e">נכון. $2+1=3$, $-1+3=2$, $4-4=0$.</p></div>
+<div class="qq" data-a="0"><p class="q">נתון $A=(2,5)$ ו-$B=(7,1)$. מהו $\overrightarrow{AB}$?</p><ol><li>$(5,-4)$, כי מחסירים את $A$ מתוך $B$</li><li>$(-5,4)$, כי מחסירים את $B$ מתוך $A$</li><li>$(9,6)$, כי מחברים את $A$ ואת $B$</li><li>$(5,4)$, כי לוקחים את ההפרש בערך מוחלט</li></ol><p class="h">רמז: סוף פחות התחלה. הסוף הוא $B$.</p><p class="e">נכון. $(7-2,\ 1-5)=(5,-4)$.</p></div>
+<div class="qq" data-a="3"><p class="q">מה התוצאה של $-2\cdot(3,0,-1)$?</p><ol><li>$(-6,0,-2)$, כי כופלים רק את הרכיבים החיוביים</li><li>$(-6,-2,-1)$, כי מוסיפים $-2$ לרכיב שהוא אפס</li><li>$(1,-2,-3)$, כי מחברים $-2$ לכל אחד מהרכיבים</li><li>$(-6,0,2)$, כי כופלים כל רכיב במספר $-2$</li></ol><p class="h">רמז: כפל בסקלר הוא כפל של כל רכיב באותו מספר.</p><p class="e">נכון. $-2\cdot(-1)=2$ ו-$-2\cdot 0=0$.</p></div>
+<div class="qq" data-a="1"><p class="q">מה הקשר בין $\overrightarrow{AB}$ לבין $\overrightarrow{BA}$?</p><ol><li>הם שווים, כי זה אותו קטע בין שתי הנקודות</li><li>הם נגדיים, כלומר $\overrightarrow{BA}=-\overrightarrow{AB}$</li><li>הם מאונכים, כי כל אחד יוצא מנקודה אחרת</li><li>האורך של $\overrightarrow{BA}$ כפול מהאורך של $\overrightarrow{AB}$</li></ol><p class="h">רמז: מה קורה ל"סוף פחות התחלה" כשמחליפים בין הסוף להתחלה?</p><p class="e">נכון. אותו אורך, כיוון הפוך.</p></div>
+</div>
+</section>
+
+<!-- ============ 2 ============ -->
+<section class="sec" id="s2" data-short="הבסיס הסטנדרטי">
+<h2>הבסיס הסטנדרטי $\bar e_1,\dots,\bar e_n$</h2>
+<div class="box mine"><b>מה זה הבסיס הסטנדרטי? (מההתחלה, עם מספרים) — הדוגמה שלי</b>
+<ol>
+<li>שלב 1 – ב-$\mathbb R^3$ לוקחים שלושה וקטורים מיוחדים: $\class{red}{\bar i}=(1,0,0)$, $\class{grn}{\bar j}=(0,1,0)$, $\class{blu}{\bar k}=(0,0,1)$. כל אחד הוא צעד אחד בדיוק לאורך ציר אחד.</li>
+<li>שלב 2 – ניקח את $(3,-2,1)$.</li>
+<li>שלב 3 – נפרק לפי רכיבים: $(3,-2,1)=(3,0,0)+(0,-2,0)+(0,0,1)$.</li>
+<li>שלב 4 – כל חלק הוא כפולה של וקטור בסיס: $(3,0,0)=3\class{red}{\bar i}$, $(0,-2,0)=-2\class{grn}{\bar j}$, $(0,0,1)=1\class{blu}{\bar k}$.</li>
+<li>שלב 5 – לכן $(3,-2,1)=3\class{red}{\bar i}-2\class{grn}{\bar j}+\class{blu}{\bar k}$. המקדמים הם בדיוק הקואורדינטות.</li>
+</ol></div>
+<div class="box rule"><b>ההגדרה מהמחברת</b>הווקטורים $\bar e_1=(1,0,\dots,0),\ \bar e_2=(0,1,0,\dots,0),\ \dots,\ \bar e_n=(0,\dots,0,1)$ הם <b>הבסיס הסטנדרטי</b> של $\mathbb R^n$.<br>
+במקרה $n=2$: $\class{red}{\bar i}=(1,0)$, $\class{grn}{\bar j}=(0,1)$. במקרה $n=3$: $\class{red}{\bar i}=(1,0,0)$, $\class{grn}{\bar j}=(0,1,0)$, $\class{blu}{\bar k}=(0,0,1)$.</div>
+<div class="box terms"><b>מילים וסימנים</b>
+<ul>
+<li>ב-$\bar e_m$ יש $1$ במקום ה-$m$ ואפסים בכל שאר המקומות.</li>
+<li>"בסיס" = קבוצה שממנה בונים כל וקטור, בצירוף של כפולות. כל וקטור $\bar x=x_1\bar e_1+x_2\bar e_2+\dots+x_n\bar e_n$.</li>
+<li>האותיות $\bar i,\bar j,\bar k$ הן רק שמות מקובלים בפיזיקה ובהנדסה. הן לא קשורות ל-$i$ של מספרים מרוכבים.</li>
+</ul></div>
+<p><b>אנלוגיה:</b> כסף. כל סכום בונים מ"מטבעות בסיס": $3\cdot$₪10 $+2\cdot$₪1. אצלנו המטבעות הם $\bar i,\bar j,\bar k$.</p>
+<div class="quiz"><div class="qt">שאלות על סעיף 2</div>
+<div class="qq" data-a="1"><p class="q">איך כותבים את $(0,5,-2)$ בעזרת $\bar i,\bar j,\bar k$?</p><ol><li>$5\bar i-2\bar j$, כי מדלגים על הרכיב שהוא אפס</li><li>$5\bar j-2\bar k$, כי הרכיב הראשון הוא אפס</li><li>$5\bar j+2\bar k$, כי לוקחים ערך מוחלט של כל רכיב</li><li>$-2\bar i+5\bar j$, כי קוראים את הרכיבים מהסוף</li></ol><p class="h">רמז: הרכיב הראשון שייך ל-$\bar i$, השני ל-$\bar j$, השלישי ל-$\bar k$.</p><p class="e">נכון. $0\bar i+5\bar j-2\bar k$.</p></div>
+<div class="qq" data-a="3"><p class="q">מהו $\bar e_2$ ב-$\mathbb R^4$?</p><ol><li>$(1,1,0,0)$, כי יש אחדות בשני המקומות הראשונים</li><li>$(2,0,0,0)$, כי המספר $2$ עומד במקום הראשון</li><li>$(0,0,1,0)$, כי סופרים את המקומות מאפס</li><li>$(0,1,0,0)$, כי האחד עומד במקום השני</li></ol><p class="h">רמז: ב-$\bar e_m$ יש $1$ במקום ה-$m$.</p><p class="e">נכון. ארבעה רכיבים, והאחד במקום השני.</p></div>
+<div class="qq" data-a="0"><p class="q">כמה זה $2\bar i-\bar j+4\bar k$ כרשימת מספרים?</p><ol><li>$(2,-1,4)$, כי המקדמים הם הקואורדינטות</li><li>$(2,1,4)$, כי הסימנים לא נכנסים לקואורדינטות</li><li>$(5)$, כי מחברים את כל המקדמים יחד</li><li>$(4,-1,2)$, כי $\bar k$ הוא הרכיב הראשון</li></ol><p class="h">רמז: חברו $(2,0,0)+(0,-1,0)+(0,0,4)$.</p><p class="e">נכון.</p></div>
+</div>
+</section>
+
+<!-- ============ 3 ============ -->
+<section class="sec" id="s3" data-short="מכפלה סקלרית ואורך">
+<h2>מכפלה סקלרית (מכפלה פנימית) ואורך</h2>
+<div class="box mine"><b>מה זו מכפלה סקלרית? (מההתחלה, עם מספרים) — הדוגמה שלי</b>
+<ol>
+<li>שלב 1 – מה יש לנו: $\class{ind}{\bar x=(1,2,2)}$ ו-$\class{org}{\bar y=(3,0,4)}$.</li>
+<li>שלב 2 – כופלים רכיב ברכיב: $1\cdot3=3$, $2\cdot0=0$, $2\cdot4=8$.</li>
+<li>שלב 3 – <b>מחברים</b> את שלוש המכפלות: $3+0+8=11$.</li>
+<li>שלב 4 – התוצאה היא <b>מספר אחד</b>, $\class{sea}{\bar x\cdot\bar y=11}$, ולא וקטור. לכן השם "סקלרית": התוצאה היא סקלר.</li>
+<li>שלב 5 – מה המספר הזה מספר? בהמשך נראה שהוא קשור לזווית. אם הוא $0$, הווקטורים מאונכים.</li>
+</ol></div>
+<div class="box rule"><b>ההגדרה (מתוקנת, ראו הערה)</b>המכפלה הפנימית הסטנדרטית ב-$\mathbb R^n$ מתאימה לכל שני וקטורים $\class{ind}{\bar x=(x_1,\dots,x_n)}$ ו-$\class{org}{\bar y=(y_1,\dots,y_n)}$ את <b>המספר</b>
+<div class="disp">$\class{sea}{\bar x\cdot\bar y}=x_1y_1+x_2y_2+\dots+x_ny_n$</div></div>
+<div class="box fix"><b>הערה שלי על המחברת</b>במחברת כתוב $\bar x\cdot\bar y=(x_1\cdot y_1,\dots,x_n\cdot y_n)$, עם פסיקים וסוגריים. כך זה נראה כמו וקטור. אבל במילים כתוב נכון: "את המספר". צריך לחבר: $x_1y_1+\dots+x_ny_n$. אותו סימון מופיע גם בדוגמה של קוסינוסי הכיוון (סעיף 6), ושם המחברת אכן מחברת את המכפלות ומקבלת מספר.</div>
+<div class="box rule"><b>אורך ומרחק (מהמחברת)</b>
+האורך של $\bar x$: $\class{jad}{|\bar x|}=\sqrt{x_1^2+x_2^2+\dots+x_n^2}$.<br>
+המרחק בין $A=(a_1,\dots,a_n)$ ל-$B=(b_1,\dots,b_n)$: $|\overrightarrow{AB}|=\sqrt{(b_1-a_1)^2+\dots+(b_n-a_n)^2}$.</div>
+<div class="box mine"><b>מאיפה נוסחת האורך? — הדוגמה שלי</b>במישור, $\bar x=(3,4)$ הוא היתר של משולש ישר-זווית עם ניצבים $3$ ו-$4$. לפי פיתגורס $|\bar x|=\sqrt{9+16}=5$. ב-$\mathbb R^3$ עושים פיתגורס פעמיים, וב-$\mathbb R^n$ פשוט ממשיכים לחבר ריבועים. שימו לב גם: $|\bar x|^2=\bar x\cdot\bar x$, כי $\bar x\cdot\bar x=x_1^2+\dots+x_n^2$.</div>
+<div class="sim"><div class="st-title">סימולציה: מכפלה סקלרית ואורכים של $\bar x=(1,2,2)$ ו-$\bar y=(3,0,4)$</div>
+<ol class="map"><li>1. מכפלה</li><li>2. אורך x</li><li>3. אורך y</li><li>4. מרחק</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$\class{sea}{\bar x\cdot\bar y}=1\cdot3+2\cdot0+2\cdot4$</div><div class="x">כופלים את הראשון בראשון, השני בשני, השלישי בשלישי.</div><div class="st"><span><i>x</i>$(1,2,2)$</span><span><i>y</i>$(3,0,4)$</span></div></div>
+<div class="step" data-m="0"><div class="f">$=3+0+8=\class{sea}{11}$</div><div class="x">מחברים. מקבלים מספר.</div><div class="st"><span><i>x·y</i>$11$</span></div></div>
+<div class="step" data-m="1"><div class="f">$\class{jad}{|\bar x|}=\sqrt{1^2+2^2+2^2}=\sqrt{9}=\class{jad}{3}$</div><div class="x">סכום ריבועי הרכיבים, ואז שורש.</div><div class="st"><span><i>x·y</i>$11$</span><span><i>|x|</i>$3$</span></div></div>
+<div class="step" data-m="2"><div class="f">$\class{jad}{|\bar y|}=\sqrt{3^2+0^2+4^2}=\sqrt{25}=\class{jad}{5}$</div><div class="x">אותו דבר עבור $\bar y$.</div><div class="st"><span><i>x·y</i>$11$</span><span><i>|x|</i>$3$</span><span><i>|y|</i>$5$</span></div></div>
+<div class="step" data-m="3"><div class="f">$\bar y-\bar x=(3-1,\ 0-2,\ 4-2)=(2,-2,2)$</div><div class="x">אם חושבים על $\bar x,\bar y$ כנקודות $A,B$, אז $\overrightarrow{AB}=\bar y-\bar x$.</div><div class="st"><span><i>|x|</i>$3$</span><span><i>|y|</i>$5$</span><span><i>AB</i>$(2,-2,2)$</span></div></div>
+<div class="step" data-m="3"><div class="f"><span class="ans">$|\overrightarrow{AB}|=\sqrt{4+4+4}=\sqrt{12}=2\sqrt3\approx3.46$</span></div><div class="x">המרחק בין שתי הנקודות הוא האורך של הווקטור ביניהן.</div><div class="st"><span><i>x·y</i>$11$</span><span><i>|x|</i>$3$</span><span><i>|y|</i>$5$</span><span><i>מרחק</i>$2\sqrt3$</span></div></div>
+</div></div>
+<div class="box rule"><b>הכלל לזכור</b>מכפלה סקלרית: כופלים רכיב ברכיב ו<b>מחברים</b>. התוצאה מספר. אורך: $|\bar x|=\sqrt{\bar x\cdot\bar x}$.</div>
+<div class="quiz"><div class="qt">שאלות על סעיף 3</div>
+<div class="qq" data-a="3"><p class="q">כמה זה $(2,-1,3)\cdot(4,5,1)$?</p><ol><li>$(8,-5,3)$, כי כופלים רכיב ברכיב ועוצרים שם</li><li>$16$, כי מחברים את כל הרכיבים ואז כופלים</li><li>$-6$, כי מחסירים את המכפלה השנייה מהשאר</li><li>$6$, כי $8-5+3$ הוא סכום המכפלות</li></ol><p class="h">רמז: כופלים רכיב ברכיב, ואז מחברים את שלוש התוצאות.</p><p class="e">נכון. $8+(-5)+3=6$.</p></div>
+<div class="qq" data-a="1"><p class="q">מהו האורך של $(2,-3,6)$?</p><ol><li>$5$, כי מחברים את הרכיבים: $2-3+6$</li><li>$7$, כי $\sqrt{4+9+36}=\sqrt{49}$</li><li>$\sqrt{11}$, כי $\sqrt{2^2-3^2+6^2}$ נותן את זה</li><li>$49$, כי זה סכום הריבועים של הרכיבים</li></ol><p class="h">רמז: הריבוע של $-3$ הוא $9$, ולא $-9$. ואל תשכחו את השורש.</p><p class="e">נכון. $\sqrt{49}=7$.</p></div>
+<div class="qq" data-a="0"><p class="q">מה הסוג של התוצאה $\bar x\cdot\bar y$ עבור $\bar x,\bar y\in\mathbb R^5$?</p><ol><li>מספר ממשי אחד, כי מחברים את כל המכפלות</li><li>וקטור ב-$\mathbb R^5$, כי יש חמש מכפלות</li><li>וקטור ב-$\mathbb R^{10}$, כי יש שני וקטורים</li><li>וקטור ב-$\mathbb R^1$, כי מורידים מימד אחד</li></ol><p class="h">רמז: למה קוראים לה "סקלרית"?</p><p class="e">נכון. התוצאה היא סקלר.</p></div>
+<div class="qq" data-a="2"><p class="q">מה המרחק בין $A=(1,1,1)$ ל-$B=(3,1,0)$?</p><ol><li>$\sqrt{17}$, כי מחברים ריבועים של רכיבי $B$ בלבד</li><li>$3$, כי מחברים את ההפרשים $2+0+1$ בלי ריבועים</li><li>$\sqrt5$, כי $\overrightarrow{AB}=(2,0,-1)$ ו-$4+0+1=5$</li><li>$5$, כי סכום ריבועי ההפרשים הוא $5$</li></ol><p class="h">רמז: קודם $\overrightarrow{AB}$, אחר כך האורך שלו עם שורש.</p><p class="e">נכון. $\sqrt{2^2+0^2+(-1)^2}=\sqrt5$.</p></div>
+</div>
+</section>
+
+<!-- ============ 4 ============ -->
+<section class="sec" id="s4" data-short="קושי-שוורץ וזווית">
+<h2>אי-שוויון קושי-שוורץ והזווית בין וקטורים</h2>
+<div class="box rule"><b>המשפט מהמחברת</b>לכל זוג וקטורים $\class{ind}{\bar x},\class{org}{\bar y}\in\mathbb R^n$ מתקיים:
+<ol>
+<li>$\class{jad}{|\bar x|}=0$ אם ורק אם $\bar x=\bar 0$.</li>
+<li>אי-שוויון קושי-שוורץ: $|\class{sea}{\bar x\cdot\bar y}|\le\class{jad}{|\bar x|}\cdot\class{jad}{|\bar y|}$. לכן (כששניהם לא $\bar 0$) $\ -1\le\dfrac{\bar x\cdot\bar y}{|\bar x|\cdot|\bar y|}\le1$.</li>
+</ol></div>
+<div class="box terms"><b>מילים וסימנים</b>
+<ul>
+<li>$\bar 0=(0,0,\dots,0)$ הוא וקטור האפס. זה הווקטור היחיד שאורכו $0$: אם סכום ריבועים הוא $0$, כל ריבוע הוא $0$.</li>
+<li>שימו לב לשני סוגי קווים: ב-$|\bar x|$ זה <b>אורך</b> של וקטור. ב-$|\bar x\cdot\bar y|$ זה <b>ערך מוחלט</b> של מספר. הסימן זהה, המשמעות תלויה במה שבפנים.</li>
+<li>"אם ורק אם" = שני הכיוונים: אורך $0$ גורר וקטור אפס, ווקטור אפס גורר אורך $0$.</li>
+</ul></div>
+<div class="box mine"><b>קושי-שוורץ עם מספרים — הדוגמה שלי</b>
+<ol>
+<li>שלב 1 – מסעיף 3: $\bar x=(1,2,2)$, $\bar y=(3,0,4)$, $\bar x\cdot\bar y=11$, $|\bar x|=3$, $|\bar y|=5$.</li>
+<li>שלב 2 – בודקים: $|11|\le3\cdot5=15$. ✔</li>
+<li>שלב 3 – לכן המנה $\frac{11}{15}\approx0.733$ נמצאת בין $-1$ ל-$1$.</li>
+<li>שלב 4 – כל מספר בין $-1$ ל-$1$ הוא קוסינוס של זווית אחת בדיוק ב-$[0,\pi]$. כאן $\cos\varphi=0.733$, כלומר $\varphi\approx42.8^\circ$.</li>
+<li>שלב 5 – זו בדיוק הסיבה שמותר להגדיר "זווית" גם ב-$\mathbb R^5$, שבו אי אפשר לצייר.</li>
+</ol></div>
+<div class="box rule"><b>הגדרת הזווית (מהמחברת)</b>נניח ש-$\bar x,\bar y\in\mathbb R^n$ שונים מווקטור האפס. המספר $\class{sea}{\varphi}\in[0,\pi]$ שמקיים
+<div class="disp">$\cos\class{sea}{\varphi}=\dfrac{\class{sea}{\bar x\cdot\bar y}}{\class{jad}{|\bar x|}\cdot\class{jad}{|\bar y|}}$</div>
+נקרא <b>הזווית בין $\bar x$ ל-$\bar y$</b>.</div>
+<div class="box mine"><b>למה דווקא הנוסחה הזו? (לא כתוב במחברת)</b>במישור יש משפט הקוסינוסים: במשולש עם צלעות $|\bar x|,|\bar y|$ והצלע השלישית $|\bar x-\bar y|$:
+<div class="disp">$|\bar x-\bar y|^2=|\bar x|^2+|\bar y|^2-2|\bar x||\bar y|\cos\varphi$</div>
+מצד שני, פותחים סוגריים עם המכפלה הסקלרית:<div class="disp">$|\bar x-\bar y|^2=(\bar x-\bar y)\cdot(\bar x-\bar y)=|\bar x|^2+|\bar y|^2-2\,\bar x\cdot\bar y$</div>
+משווים את שתי השורות, ומקבלים $\bar x\cdot\bar y=|\bar x||\bar y|\cos\varphi$.<br>ב-$\mathbb R^n$ לוקחים את זה כהגדרה.</div>
+<div class="tw"><table><tr><th>הסימן של $\bar x\cdot\bar y$</th><th>$\cos\varphi$</th><th>הזווית</th></tr>
+<tr><td>חיובי</td><td>בין $0$ ל-$1$</td><td>חדה, $\varphi\lt\frac\pi2$</td></tr>
+<tr><td>אפס</td><td>$0$</td><td>ישרה, $\varphi=\frac\pi2$ (מאונכים)</td></tr>
+<tr><td>שלילי</td><td>בין $-1$ ל-$0$</td><td>קהה, $\varphi\gt\frac\pi2$</td></tr>
+</table></div>
+<div class="tool"><b>המחשה: הזווית לפי המכפלה הסקלרית</b>
+<div class="sl">
+<label for="t4a1">x₁</label><input type="range" id="t4a1" min="-4" max="4" step="1" value="4"><output id="o_t4a1"></output>
+<label for="t4a2">x₂</label><input type="range" id="t4a2" min="-4" max="4" step="1" value="1"><output id="o_t4a2"></output>
+<label for="t4b1">y₁</label><input type="range" id="t4b1" min="-4" max="4" step="1" value="1"><output id="o_t4b1"></output>
+<label for="t4b2">y₂</label><input type="range" id="t4b2" min="-4" max="4" step="1" value="3"><output id="o_t4b2"></output>
+</div>
+<svg id="t4svg" viewBox="0 0 400 300" role="img" aria-label="שני וקטורים והזווית ביניהם"></svg>
+<p class="res" id="t4out"></p>
+<p style="font-size:15px">נסו למצוא שני וקטורים מאונכים, למשל $(2,1)$ ו-$(-1,2)$. המכפלה תצא $0$.</p></div>
+<h3>הדוגמה מההרצאה: הזווית בקודקוד $B$ של המשולש</h3>
+<p>נתון משולש $ABC$ עם $A(-1,-2,4)$, $B(-4,-2,0)$, $C(3,-2,1)$. מוצאים את הזווית $\varphi$ בקודקוד $B$.</p>
+<div class="tw"><table><tr><th>שלב</th><th>מה עושים</th></tr>
+<tr><td>1</td><td>בוחרים שני וקטורים <b>שיוצאים מ-$B$</b>: $\overrightarrow{BA}$ ו-$\overrightarrow{BC}$</td></tr>
+<tr><td>2</td><td>מחשבים אותם: סוף פחות התחלה</td></tr>
+<tr><td>3</td><td>מכפלה סקלרית ואורכים</td></tr>
+<tr><td>4</td><td>מציבים בנוסחה ומוצאים את $\varphi$</td></tr>
+</table></div>
+<div class="sim"><div class="st-title">סימולציה: הזווית בקודקוד B</div>
+<ol class="map"><li>1. בחירה</li><li>2. וקטורים</li><li>3. מכפלה ואורכים</li><li>4. זווית</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$\varphi=\angle(\overrightarrow{BA},\overrightarrow{BC})$</div><div class="x">הזווית בקודקוד $B$ היא בין שתי הצלעות שיוצאות מ-$B$. לכן שני הווקטורים מתחילים ב-$B$.</div><div class="st"><span><i>B</i>$(-4,-2,0)$</span></div></div>
+<div class="step" data-m="1"><div class="f">$\class{ind}{\overrightarrow{BA}}=\vec r_A-\vec r_B=(-1,-2,4)-(-4,-2,0)=\class{ind}{(3,0,4)}$</div><div class="x">סוף ($A$) פחות התחלה ($B$): $-1-(-4)=3$, $-2-(-2)=0$, $4-0=4$.</div><div class="st"><span><i>BA</i>$(3,0,4)$</span></div></div>
+<div class="step" data-m="1"><div class="f">$\class{org}{\overrightarrow{BC}}=\vec r_C-\vec r_B=(3,-2,1)-(-4,-2,0)=\class{org}{(7,0,1)}$</div><div class="x">אותו דבר עם $C$: $3-(-4)=7$, $-2-(-2)=0$, $1-0=1$.</div><div class="st"><span><i>BA</i>$(3,0,4)$</span><span><i>BC</i>$(7,0,1)$</span></div></div>
+<div class="step" data-m="2"><div class="f">$\class{sea}{\overrightarrow{BA}\cdot\overrightarrow{BC}}=3\cdot7+0\cdot0+4\cdot1=\class{sea}{25}$</div><div class="x">כופלים רכיב ברכיב ומחברים: $21+0+4$.</div><div class="st"><span><i>BA</i>$(3,0,4)$</span><span><i>BC</i>$(7,0,1)$</span><span><i>מכפלה</i>$25$</span></div></div>
+<div class="step" data-m="2"><div class="f">$\class{jad}{|\overrightarrow{BA}|}=\sqrt{9+0+16}=\sqrt{25}=5,\quad \class{jad}{|\overrightarrow{BC}|}=\sqrt{49+0+1}=\sqrt{50}=5\sqrt2$</div><div class="x">$\sqrt{50}=\sqrt{25\cdot2}=5\sqrt2$. לכן המכפלה של האורכים היא $5\cdot5\sqrt2=25\sqrt2$.</div><div class="st"><span><i>מכפלה</i>$25$</span><span><i>אורכים</i>$5$ ו-$5\sqrt2$</span></div></div>
+<div class="step" data-m="3"><div class="f">$\cos\varphi=\dfrac{25}{\sqrt{25}\cdot\sqrt{50}}=\dfrac{25}{25\sqrt2}=\dfrac1{\sqrt2}$</div><div class="x">מציבים בהגדרה ומצמצמים את $25$.</div><div class="st"><span><i>cos φ</i>$\frac1{\sqrt2}\approx0.707$</span></div></div>
+<div class="step" data-m="3"><div class="f"><span class="ans">$\varphi=\dfrac\pi4=45^\circ$</span></div><div class="x">הזווית ב-$[0,\pi]$ שהקוסינוס שלה $\frac1{\sqrt2}$ היא $\frac\pi4$. במחברת יש גם בדיקה עם $\overrightarrow{AB}\cdot\overrightarrow{CB}$: שני הווקטורים הפוכים, שני מינוסים מתבטלים, ויוצא שוב $\frac{25}{25\sqrt2}$.</div><div class="st"><span><i>תשובה</i>$\varphi=\frac\pi4$</span></div></div>
+</div></div>
+<div class="box fix"><b>זהירות (הערה שלי)</b>אם לוקחים וקטור אחד <b>יוצא</b> מ-$B$ ואחד <b>נכנס</b> ל-$B$ (למשל $\overrightarrow{AB}$ ו-$\overrightarrow{BC}$), המכפלה מחליפה סימן ומקבלים $\cos=-\frac1{\sqrt2}$, כלומר $\frac{3\pi}4$. זו הזווית החיצונית, לא הזווית של המשולש. לכן בשורה עם הכוכבית במחברת שני הווקטורים נכנסים ל-$B$, וזה בסדר.</div>
+<div class="box rule"><b>הכלל לזכור</b>$\cos\varphi=\frac{\bar x\cdot\bar y}{|\bar x||\bar y|}$. מכפלה $0$ = מאונכים. בזווית של משולש, שני הווקטורים יוצאים מאותו קודקוד.</div>
+<div class="quiz"><div class="qt">שאלות על סעיף 4</div>
+<div class="qq" data-a="2"><p class="q">מה הזווית בין $(1,0)$ ל-$(1,1)$?</p><ol><li>$\frac\pi2$, כי המכפלה הסקלרית שלהם היא אפס</li><li>$\frac\pi3$, כי $\cos\varphi=\frac12$ במקרה הזה</li><li>$\frac\pi4$, כי $\cos\varphi=\frac1{\sqrt2}$ במקרה הזה</li><li>$\frac\pi6$, כי $\cos\varphi=\frac{\sqrt3}2$ במקרה הזה</li></ol><p class="h">רמז: המכפלה היא $1$, והאורכים $1$ ו-$\sqrt2$.</p><p class="e">נכון. $\frac{1}{1\cdot\sqrt2}$.</p></div>
+<div class="qq" data-a="0"><p class="q">ידוע ש-$\bar x\cdot\bar y=-4$ (שניהם לא אפס). מה אפשר להגיד על הזווית?</p><ol><li>היא קהה, כי הקוסינוס שלה שלילי</li><li>היא חדה, כי הקוסינוס שלה שלילי</li><li>היא ישרה, כי המכפלה היא מספר שלם</li><li>אי אפשר לדעת בלי לחשב את $\varphi$ במדויק</li></ol><p class="h">רמז: המכנה $|\bar x||\bar y|$ תמיד חיובי. אז מה קובע את הסימן?</p><p class="e">נכון. מכפלה שלילית ⇐ $\cos\varphi\lt0$ ⇐ זווית קהה.</p></div>
+<div class="qq" data-a="3"><p class="q">למה בטוח שיש זווית $\varphi$ עם $\cos\varphi=\frac{\bar x\cdot\bar y}{|\bar x||\bar y|}$?</p><ol><li>כי המכפלה הסקלרית תמיד חיובית, ולכן המנה בין $0$ ל-$1$</li><li>כי המנה תמיד שווה בדיוק ל-$1$ לפי משפט פיתגורס</li><li>כי $|\bar x|=0$ אם ורק אם $\bar x$ הוא וקטור האפס</li><li>כי לפי קושי-שוורץ המנה תמיד בין $-1$ ל-$1$</li></ol><p class="h">רמז: איזה ערכים יכול לקבל קוסינוס?</p><p class="e">נכון. ולכל מספר כזה יש זווית אחת ב-$[0,\pi]$.</p></div>
+<div class="qq" data-a="1"><p class="q">במשולש עם $B=(0,0,0)$, $A=(1,0,0)$, $C=(0,2,0)$, מה הזווית בקודקוד $B$?</p><ol><li>$\frac\pi4$, כי שני הווקטורים באותו אורך</li><li>$\frac\pi2$, כי $\overrightarrow{BA}\cdot\overrightarrow{BC}=0$</li><li>$\frac\pi3$, כי $\overrightarrow{BA}\cdot\overrightarrow{BC}=1$</li><li>$\pi$, כי הווקטורים מצביעים לכיוונים הפוכים</li></ol><p class="h">רמז: $\overrightarrow{BA}=(1,0,0)$ ו-$\overrightarrow{BC}=(0,2,0)$.</p><p class="e">נכון. $1\cdot0+0\cdot2+0\cdot0=0$.</p></div>
+</div>
+</section>
+
+<!-- ============ 5 ============ -->
+<section class="sec" id="s5" data-short="היטל וקטור יחידה">
+<h2>היטל, היטל וקטורי ווקטור יחידה</h2>
+<div class="box mine"><b>מה זה היטל? (מההתחלה, עם מספרים) — הדוגמה שלי</b>
+<ol>
+<li>שלב 1 – מה יש לנו: $\class{ind}{\bar x=(4,0)}$ על ציר $x$, ו-$\class{org}{\bar y=(3,2)}$.</li>
+<li>שלב 2 – מדליקים פנס מלמעלה, בניצב ל-$\bar x$. הצל של $\bar y$ נופל על הקו של $\bar x$.</li>
+<li>שלב 3 – הצל מתחיל ב-$0$ ונגמר ב-$3$. האורך שלו הוא $3$. זה <span class="sky k">ההיטל</span> של $\bar y$ על $\bar x$.</li>
+<li>שלב 4 – בדיקה עם הנוסחה: $\frac{\bar x\cdot\bar y}{|\bar x|}=\frac{4\cdot3+0\cdot2}{4}=\frac{12}4=3$. ✔</li>
+<li>שלב 5 – <span class="sky k">ההיטל הווקטורי</span> הוא הצל עצמו, כחץ: $(3,0)$. מקבלים אותו כשכופלים את האורך $3$ בכיוון של $\bar x$, שהוא $(1,0)$.</li>
+</ol></div>
+<div class="box rule"><b>ההגדרה (מתוקנת, ראו הערה)</b>יהיו $\bar x,\bar y\in\mathbb R^n$ ו-$\bar x\ne\bar 0$.
+ההיטל (מספר):<div class="disp">$\class{sky}{Pr_{\bar x}\,\bar y}=\dfrac{\class{sea}{\bar x\cdot\bar y}}{\class{jad}{|\bar x|}}$</div>ההיטל הווקטורי (וקטור):<div class="disp">$\class{sky}{\overline{Pr}_{\bar x}\,\bar y}=Pr_{\bar x}\,\bar y\cdot\class{nav}{\dfrac{\bar x}{|\bar x|}}$</div>
+שימו לב: $\class{nav}{\bar e_{\bar x}=\frac{\bar x}{|\bar x|}}$ הוא <b>וקטור יחידה</b> (אורכו $1$), והוא נקרא <b>וקטור הכיוון</b> של $\bar x$.</div>
+<div class="box fix"><b>הערה שלי על המחברת</b>במחברת כתוב $Pr_{\bar x}\bar y=\frac{|\bar x|\cdot|\bar y|}{|\bar x|}$. זה יוצא תמיד $|\bar y|$, כלומר הצל באורך של כל הווקטור, וזה לא נכון. צריך <b>מכפלה סקלרית</b> במונה: $\frac{\bar x\cdot\bar y}{|\bar x|}$. הציור שבמחברת אומר את זה נכון: האורך של ההיטל הוא $\cos(\varphi)\cdot|\bar y|$. ואכן $\frac{\bar x\cdot\bar y}{|\bar x|}=\frac{|\bar x||\bar y|\cos\varphi}{|\bar x|}=|\bar y|\cos\varphi$. גם הדוגמה בסעיף 6 משתמשת בנוסחה הנכונה.</div>
+<div class="box terms"><b>מילים וסימנים</b>
+<ul>
+<li>$Pr$ = קיצור של projection, היטל באנגלית. הכתוב למטה ($\bar x$) הוא <b>על מי</b> מטילים.</li>
+<li>היטל (בלי "וקטורי") הוא <b>מספר</b>, והוא יכול להיות שלילי: כשהזווית קהה, הצל נופל לכיוון ההפוך של $\bar x$.</li>
+<li>היטל וקטורי הוא <b>וקטור</b> שמונח על הקו של $\bar x$.</li>
+<li>וקטור יחידה = וקטור שאורכו $1$. מחלקים וקטור באורך שלו כדי "לנרמל" אותו: משאירים כיוון, מוחקים גודל.</li>
+</ul></div>
+<div class="sim"><div class="st-title">סימולציה (הדוגמה שלי): היטל של $\bar y=(5,0)$ על $\bar x=(3,4)$</div>
+<ol class="map"><li>1. מכפלה</li><li>2. היטל</li><li>3. וקטור יחידה</li><li>4. היטל וקטורי</li><li>5. בדיקה</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$\class{sea}{\bar x\cdot\bar y}=3\cdot5+4\cdot0=\class{sea}{15},\qquad \class{jad}{|\bar x|}=\sqrt{9+16}=\class{jad}{5}$</div><div class="x">שני המספרים שצריך לנוסחה. שימו לב: מטילים <b>על</b> $\bar x$, לכן מחלקים באורך של $\bar x$.</div><div class="st"><span><i>x·y</i>$15$</span><span><i>|x|</i>$5$</span></div></div>
+<div class="step" data-m="1"><div class="f">$\class{sky}{Pr_{\bar x}\bar y}=\dfrac{15}{5}=\class{sky}{3}$</div><div class="x">הצל של $\bar y$ על הקו של $\bar x$ באורך $3$. חיובי, כי הזווית חדה.</div><div class="st"><span><i>היטל</i>$3$</span></div></div>
+<div class="step" data-m="2"><div class="f">$\class{nav}{\bar e_{\bar x}}=\dfrac{(3,4)}{5}=\class{nav}{(0.6,\ 0.8)}$</div><div class="x">בדיקה שהאורך $1$: $\sqrt{0.36+0.64}=\sqrt1=1$. ✔</div><div class="st"><span><i>היטל</i>$3$</span><span><i>e</i>$(0.6,0.8)$</span></div></div>
+<div class="step" data-m="3"><div class="f">$\class{sky}{\overline{Pr}_{\bar x}\bar y}=3\cdot(0.6,\ 0.8)=\class{sky}{(1.8,\ 2.4)}$</div><div class="x">אורך ההיטל כפול הכיוון. התוצאה היא חץ באורך $3$ על הקו של $\bar x$.</div><div class="st"><span><i>היטל</i>$3$</span><span><i>וקטורי</i>$(1.8,2.4)$</span></div></div>
+<div class="step" data-m="4"><div class="f"><span class="ans">$\bar y-\overline{Pr}_{\bar x}\bar y=(3.2,\ -2.4),\quad (3.2,-2.4)\cdot(3,4)=9.6-9.6=0$</span></div><div class="x">מה שנשאר מ-$\bar y$ אחרי שמורידים את הצל מאונך ל-$\bar x$. זה בדיוק "הקו המקווקו" בציור של המחברת.</div><div class="st"><span><i>שארית</i>$(3.2,-2.4)$</span><span><i>מאונכת</i>✔</span></div></div>
+</div></div>
+<div class="tool"><b>המחשה: הצל של $\bar y$ על $\bar x$</b>
+<div class="sl">
+<label for="t5a1">x₁</label><input type="range" id="t5a1" min="-4" max="4" step="1" value="3"><output id="o_t5a1"></output>
+<label for="t5a2">x₂</label><input type="range" id="t5a2" min="-4" max="4" step="1" value="4"><output id="o_t5a2"></output>
+<label for="t5b1">y₁</label><input type="range" id="t5b1" min="-4" max="4" step="1" value="4"><output id="o_t5b1"></output>
+<label for="t5b2">y₂</label><input type="range" id="t5b2" min="-4" max="4" step="1" value="0"><output id="o_t5b2"></output>
+</div>
+<svg id="t5svg" viewBox="0 0 400 300" role="img" aria-label="היטל של וקטור על וקטור"></svg>
+<p class="res" id="t5out"></p>
+<p style="font-size:15px">נסו להפוך את $\bar y$ כך שהזווית תהיה קהה: ההיטל יהיה שלילי, והצל ייפול "מאחורי" $\bar x$.</p></div>
+<div class="box rule"><b>הכלל לזכור</b>היטל = $\frac{\bar x\cdot\bar y}{|\bar x|}=|\bar y|\cos\varphi$ (מספר, יכול להיות שלילי). היטל וקטורי = היטל כפול $\frac{\bar x}{|\bar x|}$.</div>
+<p><b>אנלוגיה:</b> הצל של מוט על הרצפה בשעת צהריים. אם המוט נוטה, הצל קצר מהמוט. אם המוט שוכב על הרצפה, הצל באורך המוט.</p>
+<div class="quiz"><div class="qt">שאלות על סעיף 5</div>
+<div class="qq" data-a="1"><p class="q">מהו $Pr_{\bar x}\bar y$ עבור $\bar x=(0,2)$ ו-$\bar y=(5,3)$?</p><ol><li>$6$, כי זו המכפלה הסקלרית בלי חלוקה</li><li>$3$, כי $\frac{0\cdot5+2\cdot3}{2}$</li><li>$\sqrt{34}$, כי זה האורך של $\bar y$</li><li>$\frac{6}{\sqrt{34}}$, כי מחלקים באורך של $\bar y$</li></ol><p class="h">רמז: מחלקים באורך של הווקטור שעליו מטילים.</p><p class="e">נכון. המכפלה $6$ ו-$|\bar x|=2$.</p></div>
+<div class="qq" data-a="3"><p class="q">מהו וקטור הכיוון של $\bar x=(6,0,8)$?</p><ol><li>$(1,0,1)$, כי מחליפים כל רכיב שונה מאפס ב-$1$</li><li>$(6,0,8)$, כי וקטור הכיוון הוא הווקטור עצמו</li><li>$(\frac{6}{14},0,\frac{8}{14})$, כי מחלקים בסכום הרכיבים</li><li>$(0.6,\ 0,\ 0.8)$, כי מחלקים באורך $10$</li></ol><p class="h">רמז: $|\bar x|=\sqrt{36+64}$.</p><p class="e">נכון. $\frac{\bar x}{|\bar x|}$ עם $|\bar x|=10$.</p></div>
+<div class="qq" data-a="0"><p class="q">מתי ההיטל $Pr_{\bar x}\bar y$ שלילי?</p><ol><li>כשהזווית בין $\bar x$ ל-$\bar y$ קהה</li><li>כשהאורך של $\bar y$ גדול מהאורך של $\bar x$</li><li>כשאחד הרכיבים של $\bar x$ הוא שלילי</li><li>אף פעם, כי היטל הוא אורך של צל</li></ol><p class="h">רמז: $Pr_{\bar x}\bar y=|\bar y|\cos\varphi$.</p><p class="e">נכון. קוסינוס של זווית קהה שלילי.</p></div>
+<div class="qq" data-a="2"><p class="q">מה תמיד נכון לגבי $\bar y-\overline{Pr}_{\bar x}\bar y$?</p><ol><li>הוא מקביל ל-$\bar x$, כי ההיטל מונח על $\bar x$</li><li>הוא וקטור יחידה, כי מחלקים באורך של $\bar x$</li><li>הוא מאונך ל-$\bar x$, כי המכפלה שלו עם $\bar x$ היא $0$</li><li>הוא שווה ל-$\bar 0$, כי ההיטל שווה ל-$\bar y$ עצמו</li></ol><p class="h">רמז: הסתכלו על השלב האחרון בסימולציה.</p><p class="e">נכון. זה הקו המקווקו בציור.</p></div>
+</div>
+</section>
+
+<!-- ============ 6 ============ -->
+<section class="sec" id="s6" data-short="קוסינוסי הכיוון">
+<h2>קוסינוסי הכיוון ב-$\mathbb R^3$</h2>
+<div class="box mine"><b>מה הם קוסינוסי הכיוון? (מההתחלה, עם מספרים) — הדוגמה שלי</b>
+<ol>
+<li>שלב 1 – מה יש לנו: $\bar x=(1,2,2)$, ואורכו $3$ (מסעיף 3).</li>
+<li>שלב 2 – הזווית עם ציר $x$ היא הזווית עם $\class{red}{\bar i}=(1,0,0)$. המכפלה: $\bar x\cdot\bar i=1\cdot1+2\cdot0+2\cdot0=1$. פשוט הרכיב הראשון!</li>
+<li>שלב 3 – $|\bar i|=1$, לכן $\cos\class{red}{\alpha}=\frac{1}{3\cdot1}=\frac13$.</li>
+<li>שלב 4 – באותה דרך: $\cos\class{grn}{\beta}=\frac23$ (עם $\bar j$) ו-$\cos\class{blu}{\gamma}=\frac23$ (עם $\bar k$).</li>
+<li>שלב 5 – בדיקה: $\frac19+\frac49+\frac49=1$. ✔ וגם $(\frac13,\frac23,\frac23)$ הוא בדיוק $\frac{\bar x}{|\bar x|}$, וקטור הכיוון.</li>
+</ol></div>
+<div class="box rule"><b>ההגדרה מהמחברת</b>יהי $\bar x=(x,y,z)\ne\bar 0$. מסמנים ב-$\class{red}{\alpha},\class{grn}{\beta},\class{blu}{\gamma}$ את הזוויות בין $\bar x$ לבין ציר $x$, ציר $y$ וציר $z$:
+<div class="disp">$\cos\class{red}{\alpha}=\dfrac{\bar x\cdot\class{red}{\bar i}}{|\bar x||\bar i|}=\dfrac{x}{|\bar x|},\quad \cos\class{grn}{\beta}=\dfrac{\bar x\cdot\class{grn}{\bar j}}{|\bar x||\bar j|}=\dfrac{y}{|\bar x|},\quad \cos\class{blu}{\gamma}=\dfrac{\bar x\cdot\class{blu}{\bar k}}{|\bar x||\bar k|}=\dfrac{z}{|\bar x|}$</div>
+המספרים האלה נקראים <b>קוסינוסי הכיוון</b> של $\bar x$, ומתקיים:
+<div class="disp">$\bar x=|\bar x|\cdot(\cos\alpha,\cos\beta,\cos\gamma),\qquad \class{nav}{\bar e_{\bar x}}=(\cos\alpha,\cos\beta,\cos\gamma),\qquad \cos^2\alpha+\cos^2\beta+\cos^2\gamma=1$</div></div>
+<div class="box mine"><b>למה הסכום תמיד $1$? (לא כתוב במחברת)</b>$\cos^2\alpha+\cos^2\beta+\cos^2\gamma=\frac{x^2+y^2+z^2}{|\bar x|^2}=\frac{|\bar x|^2}{|\bar x|^2}=1$. במילים: זה האורך בריבוע של וקטור הכיוון, וזה וקטור יחידה.</div>
+<h3>הדוגמה מההרצאה</h3>
+<p>נתונות הנקודות $A=(3,-2,1)$ ו-$B=(-1,1,3)$. מוצאים את ההיטל של $\overrightarrow{AB}$ על וקטור $\bar u$ שיוצר זווית $\alpha=60^\circ$ עם ציר $x$, זווית $\gamma=120^\circ$ עם ציר $z$, וזווית <b>קהה</b> $\beta$ עם ציר $y$.</p>
+<div class="tw"><table><tr><th>שלב</th><th>מה עושים</th></tr>
+<tr><td>1</td><td>מחשבים את $\overrightarrow{AB}$</td></tr>
+<tr><td>2</td><td>כותבים את $\bar u$ בעזרת קוסינוסי הכיוון</td></tr>
+<tr><td>3</td><td>מוצאים את $\cos\beta$ מהזהות, ובוחרים סימן</td></tr>
+<tr><td>4</td><td>מחשבים את ההיטל: $|\bar u|$ מצטמצם</td></tr>
+</table></div>
+<div class="sim"><div class="st-title">סימולציה: ההיטל של AB על u</div>
+<ol class="map"><li>1. AB</li><li>2. u</li><li>3. β</li><li>4. היטל</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$\class{org}{\overrightarrow{AB}}=\vec r_B-\vec r_A=(-1,1,3)-(3,-2,1)=\class{org}{(-4,3,2)}$</div><div class="x">סוף פחות התחלה: $-1-3=-4$, $1-(-2)=3$, $3-1=2$.</div><div class="st"><span><i>AB</i>$(-4,3,2)$</span></div></div>
+<div class="step" data-m="1"><div class="f">$\class{ind}{\bar u}=|\bar u|\cdot\left(\cos\tfrac\pi3,\ \cos\beta,\ \cos\tfrac{2\pi}3\right)=|\bar u|\cdot\left(\tfrac12,\ \cos\beta,\ -\tfrac12\right)$</div><div class="x">$60^\circ=\frac\pi3$ ו-$120^\circ=\frac{2\pi}3$. $\cos60^\circ=\frac12$, ו-$\cos120^\circ=-\frac12$. האורך $|\bar u|$ לא ידוע, וזה בסדר: הוא יצטמצם בהמשך.</div><div class="st"><span><i>AB</i>$(-4,3,2)$</span><span><i>u</i>$|\bar u|(\frac12,?,-\frac12)$</span></div></div>
+<div class="step" data-m="2"><div class="f">$\class{red}{\tfrac14}+\cos^2\class{grn}{\beta}+\class{blu}{\tfrac14}=1$</div><div class="x">הזהות $\cos^2\alpha+\cos^2\beta+\cos^2\gamma=1$. מציבים את שני הקוסינוסים הידועים בריבוע: $(\frac12)^2=\frac14$ ו-$(-\frac12)^2=\frac14$.</div><div class="st"><span><i>u</i>$|\bar u|(\frac12,?,-\frac12)$</span></div></div>
+<div class="step" data-m="2"><div class="f">$\cos^2\beta=\tfrac12\ \Rightarrow\ \cos\beta=\pm\tfrac1{\sqrt2}\ \Rightarrow\ \cos\beta=-\tfrac1{\sqrt2},\ \beta=\tfrac{3\pi}4$</div><div class="x">יש שתי אפשרויות סימן. הזווית <b>קהה</b>, לכן הקוסינוס שלילי. הזווית ב-$[0,\pi]$ עם קוסינוס $-\frac1{\sqrt2}$ היא $135^\circ$.</div><div class="st"><span><i>u</i>$|\bar u|(\frac12,-\frac1{\sqrt2},-\frac12)$</span></div></div>
+<div class="step" data-m="3"><div class="f">$Pr_{\bar u}\overrightarrow{AB}=\dfrac{\overrightarrow{AB}\cdot\bar u}{|\bar u|}=\dfrac{|\bar u|\left(\tfrac12\cdot(-4)+\left(-\tfrac1{\sqrt2}\right)\cdot3+\left(-\tfrac12\right)\cdot2\right)}{|\bar u|}$</div><div class="x">נוסחת ההיטל מסעיף 5, מטילים <b>על</b> $\bar u$. המספר $|\bar u|$ יוצא מהמכפלה ומצטמצם עם המכנה.</div><div class="st"><span><i>AB</i>$(-4,3,2)$</span><span><i>e_u</i>$(\frac12,-\frac1{\sqrt2},-\frac12)$</span></div></div>
+<div class="step" data-m="3"><div class="f"><span class="ans">$=-2-\tfrac{3}{\sqrt2}-1=-3-\tfrac3{\sqrt2}\approx-5.12$</span></div><div class="x">ההיטל שלילי, כלומר הזווית בין $\overrightarrow{AB}$ ל-$\bar u$ קהה. בדיקת היגיון: $|\overrightarrow{AB}|=\sqrt{29}\approx5.39$, וההיטל קטן ממנו בערך מוחלט. ✔</div><div class="st"><span><i>היטל</i>$-3-\frac3{\sqrt2}$</span></div></div>
+</div></div>
+<div class="box fix"><b>הערה שלי על המחברת</b>בשורה הראשונה כתוב $\bar u=|\bar u|=(\cos\frac\pi3,\dots)$. השוויון האמצעי לא נכון: וקטור לא שווה למספר. הכוונה $\bar u=|\bar u|\cdot(\cos\frac\pi3,\dots)$, כמו שכתוב בהמשך אותה שורה. בנוסף, במונה של ההיטל כתוב $(\frac12\cdot(-4),\ \dots)$ עם פסיקים. זו מכפלה סקלרית, ולכן מחברים את שלושת החלקים (וזה מה שהמחברת עושה בתוצאה).</div>
+<div class="box rule"><b>הכלל לזכור</b>קוסינוסי הכיוון = רכיבי וקטור הכיוון. סכום הריבועים שלהם $1$. כשמטילים על $\bar u$, אפשר להשתמש ישר ב-$\frac{\bar u}{|\bar u|}$ ולא צריך את $|\bar u|$.</div>
+<div class="quiz"><div class="qt">שאלות על סעיף 6</div>
+<div class="qq" data-a="2"><p class="q">מהם קוסינוסי הכיוון של $\bar x=(2,-1,2)$?</p><ol><li>$(2,-1,2)$, כי הם הרכיבים של הווקטור עצמו</li><li>$(\frac23,\frac13,\frac23)$, כי מחלקים בערך מוחלט ב-$3$</li><li>$(\frac23,-\frac13,\frac23)$, כי מחלקים כל רכיב באורך $3$</li><li>$(\frac25,-\frac15,\frac25)$, כי מחלקים בסכום הריבועים $5$</li></ol><p class="h">רמז: $|\bar x|=\sqrt{4+1+4}$.</p><p class="e">נכון. האורך $3$, והסימן נשאר.</p></div>
+<div class="qq" data-a="1"><p class="q">וקטור יוצר $\alpha=\beta=60^\circ$ עם צירי $x$ ו-$y$. מה יכול להיות $\cos\gamma$?</p><ol><li>$\pm\frac12$, כי $1-\frac14-\frac14=\frac12$ והשורש של זה</li><li>$\pm\frac1{\sqrt2}$, כי $\cos^2\gamma=1-\frac14-\frac14=\frac12$</li><li>$0$, כי שתי הזוויות האחרות כבר שוות זו לזו</li><li>$\frac12$, כי כל שלוש הזוויות שוות $60^\circ$</li></ol><p class="h">רמז: כמו בדוגמה מההרצאה, עם $\cos60^\circ=\frac12$.</p><p class="e">נכון. ואז $\gamma=45^\circ$ או $135^\circ$.</p></div>
+<div class="qq" data-a="0"><p class="q">בדוגמה מההרצאה, למה לא היה צריך לדעת את $|\bar u|$?</p><ol><li>כי הוא מופיע גם במונה וגם במכנה ומצטמצם</li><li>כי ההגדרה קובעת שהאורך של $\bar u$ הוא תמיד $1$</li><li>כי ההיטל של וקטור לא תלוי בשום וקטור אחר</li><li>כי $|\bar u|=\sqrt{29}$, כמו האורך של $\overrightarrow{AB}$</li></ol><p class="h">רמז: הסתכלו על השלב של ההיטל בסימולציה.</p><p class="e">נכון. ההיטל תלוי רק בכיוון של $\bar u$.</p></div>
+<div class="qq" data-a="3"><p class="q">למה בדוגמה בחרו $\cos\beta=-\frac1{\sqrt2}$ ולא $+\frac1{\sqrt2}$?</p><ol><li>כי $\gamma=120^\circ$, והסימנים חייבים להיות שווים</li><li>כי שורש של מספר חיובי תמיד יוצא שלילי</li><li>כי $\overrightarrow{AB}$ מצביע לכיוון השלילי של ציר $y$</li><li>כי נתון ש-$\beta$ קהה, ולכן הקוסינוס שלילי</li></ol><p class="h">רמז: קראו שוב את נתוני השאלה.</p><p class="e">נכון. זווית קהה ⇐ קוסינוס שלילי.</p></div>
+</div>
+</section>
+
+<!-- ============ 7 ============ -->
+<section class="sec" id="s7" data-short="מכפלה וקטורית">
+<h2>מכפלה וקטורית ב-$\mathbb R^3$</h2>
+<p>במכפלה הסקלרית יוצא מספר. במכפלה הווקטורית יוצא <b>וקטור</b>. היא מוגדרת רק ב-$\mathbb R^3$.</p>
+<div class="box rule"><b>ההגדרה מהמחברת</b>יהיו $\class{ind}{\bar a=(a_x,a_y,a_z)}$ ו-$\class{org}{\bar b=(b_x,b_y,b_z)}$ ב-$\mathbb R^3$. הווקטור
+<div class="disp">$\class{plm}{\bar a\times\bar b}=\begin{vmatrix}\class{red}{\bar i}&\class{grn}{\bar j}&\class{blu}{\bar k}\\ \class{ind}{a_x}&\class{ind}{a_y}&\class{ind}{a_z}\\ \class{org}{b_x}&\class{org}{b_y}&\class{org}{b_z}\end{vmatrix}$</div>
+נקרא <b>המכפלה הווקטורית</b> של $\bar a$ ו-$\bar b$. הקווים משני הצדדים מסמנים <b>דטרמיננטה</b>.</div>
+<div class="box terms"><b>איך פותחים את הדטרמיננטה? (המחברת לא מסבירה)</b>
+<ul>
+<li>דטרמיננטה $2\times2$: אלכסון יורד פחות אלכסון עולה.<div class="disp">$\begin{vmatrix}p&q\\r&s\end{vmatrix}=ps-qr\qquad\begin{vmatrix}2&3\\5&6\end{vmatrix}=12-15=-3$</div></li>
+<li>דטרמיננטה $3\times3$ לפי השורה הראשונה: לכל איבר בשורה הראשונה מוחקים את השורה והעמודה שלו, ונשארת $2\times2$. הסימנים מתחלפים: $+\ -\ +$.</li>
+<li>לכן:<div class="disp">$\bar a\times\bar b=\class{red}{\bar i}\begin{vmatrix}a_y&a_z\\b_y&b_z\end{vmatrix}-\class{grn}{\bar j}\begin{vmatrix}a_x&a_z\\b_x&b_z\end{vmatrix}+\class{blu}{\bar k}\begin{vmatrix}a_x&a_y\\b_x&b_y\end{vmatrix}$</div></li>
+<li>בצורת רשימה (זו בדיוק השורה שמופיעה בעמוד 4 במחברת):</li>
+</ul>
+<div class="disp">$\class{plm}{\bar a\times\bar b}=\big(\,\class{red}{a_yb_z-a_zb_y},\ \ \class{grn}{a_zb_x-a_xb_z},\ \ \class{blu}{a_xb_y-a_yb_x}\,\big)$</div>
+<ul><li>שימו לב לרכיב האמצעי: בגלל המינוס של $\bar j$ הסדר מתהפך ($a_zb_x-a_xb_z$). זו הטעות הכי נפוצה.</li></ul></div>
+<div class="sim"><div class="st-title">סימולציה (הדוגמה שלי): המכפלה הווקטורית של $\bar a=(1,2,3)$ ו-$\bar b=(4,5,6)$</div>
+<ol class="map"><li>1. טבלה</li><li>2. רכיב i</li><li>3. רכיב j</li><li>4. רכיב k</li><li>5. בדיקה</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$\begin{vmatrix}\bar i&\bar j&\bar k\\ 1&2&3\\ 4&5&6\end{vmatrix}$</div><div class="x">שורה ראשונה: וקטורי הבסיס. שורה שנייה: $\bar a$. שורה שלישית: $\bar b$. הסדר של השורות חשוב.</div><div class="st"><span><i>a</i>$(1,2,3)$</span><span><i>b</i>$(4,5,6)$</span></div></div>
+<div class="step" data-m="1"><div class="f">$\class{red}{\bar i}:\ \begin{vmatrix}2&3\\5&6\end{vmatrix}=2\cdot6-3\cdot5=\class{red}{-3}$</div><div class="x">מוחקים את העמודה של $\bar i$ (הראשונה). נשארים $\begin{smallmatrix}2&3\\5&6\end{smallmatrix}$. סימן $+$.</div><div class="st"><span><i>a×b</i>$(-3,\ ?,\ ?)$</span></div></div>
+<div class="step" data-m="2"><div class="f">$\class{grn}{\bar j}:\ -\begin{vmatrix}1&3\\4&6\end{vmatrix}=-(1\cdot6-3\cdot4)=-(-6)=\class{grn}{6}$</div><div class="x">מוחקים את העמודה האמצעית. סימן <b>מינוס</b>. אותו דבר כמו $a_zb_x-a_xb_z=3\cdot4-1\cdot6=6$.</div><div class="st"><span><i>a×b</i>$(-3,\ 6,\ ?)$</span></div></div>
+<div class="step" data-m="3"><div class="f">$\class{blu}{\bar k}:\ \begin{vmatrix}1&2\\4&5\end{vmatrix}=1\cdot5-2\cdot4=\class{blu}{-3}$</div><div class="x">מוחקים את העמודה האחרונה. סימן $+$.</div><div class="st"><span><i>a×b</i>$(-3,\ 6,\ -3)$</span></div></div>
+<div class="step" data-m="4"><div class="f"><span class="ans">$\bar a\times\bar b=(-3,6,-3)$</span>$\qquad \bar a\cdot(-3,6,-3)=-3+12-9=0$</div><div class="x">בדיקה: התוצאה מאונכת ל-$\bar a$. וגם $\bar b\cdot(-3,6,-3)=-12+30-18=0$. זה לא מקרה, וזה החלק השני של המשפט בסעיף 8.</div><div class="st"><span><i>a×b</i>$(-3,6,-3)$</span><span><i>⊥a</i>✔</span><span><i>⊥b</i>✔</span></div></div>
+</div></div>
+<div class="box rule"><b>המשפט מהמחברת (תכונות)</b>לכל $\bar x,\bar y,\bar z\in\mathbb R^3$ ולכל $\lambda\in\mathbb R$:
+<ol>
+<li>$\bar x\times\bar y=-(\bar y\times\bar x)$ — החלפת סדר הופכת סימן.</li>
+<li>$(\bar x+\bar y)\times\bar z=\bar x\times\bar z+\bar y\times\bar z$ — פילוג.</li>
+<li>$(\lambda\bar x)\times\bar y=\bar x\times(\lambda\bar y)=\lambda(\bar x\times\bar y)$ — מספר יוצא החוצה.</li>
+</ol></div>
+<div class="box mine"><b>התכונות עם מספרים — הדוגמה שלי</b>
+<ol>
+<li>תכונה 1: $\bar b\times\bar a=(5\cdot3-6\cdot2,\ 6\cdot1-4\cdot3,\ 4\cdot2-5\cdot1)=(3,-6,3)$. זה בדיוק $-(-3,6,-3)$. ✔</li>
+<li>מסקנה מתכונה 1: $\bar a\times\bar a=-(\bar a\times\bar a)$, ולכן $\bar a\times\bar a=\bar 0$. למשל $(1,2,3)\times(1,2,3)=(6-6,\ 3-3,\ 2-2)=(0,0,0)$.</li>
+<li>תכונה 3: $(2\bar a)\times\bar b=(2,4,6)\times(4,5,6)=(24-30,\ 24-12,\ 10-16)=(-6,12,-6)=2\cdot(-3,6,-3)$. ✔</li>
+<li>שימו לב: במכפלה וקטורית <b>הסדר חשוב</b>, בניגוד למכפלה רגילה של מספרים ולמכפלה סקלרית.</li>
+</ol></div>
+<div class="tw"><table><tr><th></th><th>מכפלה סקלרית $\bar a\cdot\bar b$</th><th>מכפלה וקטורית $\bar a\times\bar b$</th></tr>
+<tr><td>התוצאה</td><td>מספר</td><td>וקטור</td></tr>
+<tr><td>איפה מוגדרת</td><td>בכל $\mathbb R^n$</td><td>רק ב-$\mathbb R^3$</td></tr>
+<tr><td>החלפת סדר</td><td>לא משנה כלום</td><td>הופכת סימן</td></tr>
+<tr><td>מתי יוצא אפס</td><td>כשהם מאונכים</td><td>כשהם מקבילים (או אחד מהם $\bar 0$)</td></tr>
+</table></div>
+<div class="box rule"><b>הכלל לזכור</b>$\bar a\times\bar b=(a_yb_z-a_zb_y,\ a_zb_x-a_xb_z,\ a_xb_y-a_yb_x)$. ברכיב האמצעי יש מינוס שהופך את הסדר.</div>
+<div class="quiz"><div class="qt">שאלות על סעיף 7</div>
+<div class="qq" data-a="0"><p class="q">כמה זה $(1,0,2)\times(0,3,1)$?</p><ol><li>$(-6,-1,3)$, כי $0\cdot1-2\cdot3$, $2\cdot0-1\cdot1$, $1\cdot3-0\cdot0$</li><li>$(-6,1,3)$, כי $0\cdot1-2\cdot3$, $1\cdot1-2\cdot0$, $1\cdot3-0\cdot0$</li><li>$(6,-1,-3)$, כי $2\cdot3-0\cdot1$, $2\cdot0-1\cdot1$, $0\cdot0-1\cdot3$</li><li>$(0,0,2)$, כי כופלים רכיב ברכיב: $1\cdot0$, $0\cdot3$, $2\cdot1$</li></ol><p class="h">רמז: הרכיב האמצעי הוא $a_zb_x-a_xb_z$.</p><p class="e">נכון. בדיקה: $(1,0,2)\cdot(-6,-1,3)=-6+0+6=0$.</p></div>
+<div class="qq" data-a="3"><p class="q">ידוע ש-$\bar a\times\bar b=(2,-1,5)$. מהו $\bar b\times\bar a$?</p><ol><li>$(2,-1,5)$, כי במכפלה הסדר לא משנה</li><li>$(5,-1,2)$, כי הרכיבים מתהפכים בסדר</li><li>$(\frac12,-1,\frac15)$, כי לוקחים את ההפכי של כל רכיב</li><li>$(-2,1,-5)$, כי החלפת סדר הופכת סימן</li></ol><p class="h">רמז: תכונה 1 במשפט.</p><p class="e">נכון. $\bar b\times\bar a=-(\bar a\times\bar b)$.</p></div>
+<div class="qq" data-a="1"><p class="q">כמה זה $(3,-1,4)\times(3,-1,4)$?</p><ol><li>$(9,1,16)$, כי כל רכיב מוכפל בעצמו</li><li>$(0,0,0)$, כי וקטור כפול עצמו מתבטל</li><li>$26$, כי זה האורך בריבוע של הווקטור</li><li>$(3,-1,4)$, כי וקטור כפול עצמו נשאר אותו דבר</li></ol><p class="h">רמז: מה נובע מתכונה 1 כש-$\bar x=\bar y$?</p><p class="e">נכון. $\bar a\times\bar a=-(\bar a\times\bar a)$, ולכן $\bar 0$.</p></div>
+<div class="qq" data-a="2"><p class="q">בפתיחת הדטרמיננטה לפי השורה הראשונה, מה הסימנים של $\bar i,\bar j,\bar k$?</p><ol><li>$+\ +\ +$, כי כל שלושת הרכיבים נכנסים כמו שהם</li><li>$-\ +\ -$, כי מתחילים ממינוס ומחליפים לסירוגין</li><li>$+\ -\ +$, כי הסימנים מתחלפים ומתחילים בפלוס</li><li>$+\ +\ -$, כי רק הרכיב האחרון מקבל מינוס</li></ol><p class="h">רמז: איזה רכיב קיבל מינוס בסימולציה?</p><p class="e">נכון. המינוס על $\bar j$.</p></div>
+</div>
+</section>
+
+<!-- ============ 8 ============ -->
+<section class="sec" id="s8" data-short="אורך, שטח וניצבות">
+<h2>המשפט: האורך הוא שטח, והכיוון ניצב</h2>
+<div class="box rule"><b>המשפט מהמחברת</b>המכפלה הווקטורית $\bar a\times\bar b$ היא וקטור $\bar c$ שמקיים:
+<ol>
+<li>$|\class{plm}{\bar c}|=|\bar a|\cdot|\bar b|\cdot\sin\varphi$, כאשר $\varphi$ הזווית בין $\bar a$ ל-$\bar b$. במילים אחרות: האורך של $\bar a\times\bar b$ שווה ל<b>שטח המקבילית</b> שבנויה על $\bar a,\bar b$: $\ \class{plm}{S=|\bar a\times\bar b|}$.</li>
+<li>$\bar c=\bar a\times\bar b$ <b>מאונך</b> למישור של $\bar a,\bar b$, והכיוון שלו נקבע לפי <b>כלל הבורג</b>: אם מסובבים מ-$\bar a$ אל $\bar b$, $\bar c$ מצביע לכיוון שבו בורג רגיל מתקדם.</li>
+</ol></div>
+<div class="box mine"><b>מה המשמעות? (מההתחלה, עם מספרים) — הדוגמה שלי</b>
+<ol>
+<li>שלב 1 – מה יש לנו: $\bar a=(3,0,0)$ ו-$\bar b=(1,2,0)$. שניהם על הרצפה (רכיב $z$ אפס).</li>
+<li>שלב 2 – המקבילית: בסיס באורך $3$, וגובה $2$ (כמה $\bar b$ עולה מעל ציר $x$). שטח $=3\cdot2=6$.</li>
+<li>שלב 3 – מחשבים: $\bar a\times\bar b=(0\cdot0-0\cdot2,\ 0\cdot1-3\cdot0,\ 3\cdot2-0\cdot1)=(0,0,6)$.</li>
+<li>שלב 4 – האורך שלו $6$, בדיוק השטח. ✔ והוא מצביע ישר למעלה (ציר $z$), כלומר ניצב לרצפה שבה נמצאים $\bar a$ ו-$\bar b$. ✔</li>
+<li>שלב 5 – למה "גובה = $|\bar b|\sin\varphi$"? כי במשולש ישר-זווית, הניצב שמול הזווית הוא היתר כפול סינוס. כאן $|\bar b|=\sqrt5$ ו-$\sin\varphi=\frac2{\sqrt5}$, ואכן $\sqrt5\cdot\frac2{\sqrt5}=2$.</li>
+</ol></div>
+<div class="box terms"><b>מילים וסימנים</b>
+<ul>
+<li>מקבילית = מרובע ששתי צלעותיו הן $\bar a$ ו-$\bar b$, והצלעות שמולן מקבילות להן. שטח = בסיס × גובה.</li>
+<li>כלל הבורג (או כלל יד ימין): אצבעות יד ימין מסתובבות מ-$\bar a$ אל $\bar b$, והאגודל מראה את הכיוון של $\bar a\times\bar b$. לכן $\bar i\times\bar j=\bar k$, ואילו $\bar j\times\bar i=-\bar k$.</li>
+<li>$\sin\varphi\ge0$ תמיד, כי $\varphi\in[0,\pi]$. לכן האורך לא יוצא שלילי.</li>
+</ul></div>
+<div class="tool"><b>המחשה: שטח המקבילית וכיוון $\bar a\times\bar b$ (שני וקטורים על הרצפה)</b>
+<div class="sl">
+<label for="t8a1">a_x</label><input type="range" id="t8a1" min="-4" max="4" step="1" value="3"><output id="o_t8a1"></output>
+<label for="t8a2">a_y</label><input type="range" id="t8a2" min="-4" max="4" step="1" value="0"><output id="o_t8a2"></output>
+<label for="t8b1">b_x</label><input type="range" id="t8b1" min="-4" max="4" step="1" value="1"><output id="o_t8b1"></output>
+<label for="t8b2">b_y</label><input type="range" id="t8b2" min="-4" max="4" step="1" value="2"><output id="o_t8b2"></output>
+</div>
+<svg id="t8svg" viewBox="0 0 400 300" role="img" aria-label="מקבילית בנויה על שני וקטורים"></svg>
+<p class="res" id="t8out"></p>
+<p style="font-size:15px">כשה-$z$ של התוצאה חיובי, $\bar a\times\bar b$ יוצא מהמסך אליכם (סימן ⊙). כששלילי, הוא נכנס למסך (סימן ⊗). נסו להחליף בין $\bar a$ ל-$\bar b$ ותראו שהכיוון מתהפך.</p></div>
+<h3>הסבר לחלק 1: למה $|\bar a\times\bar b|=|\bar a||\bar b|\sin\varphi$</h3>
+<p>המחברת מעלה את שני האגפים בריבוע ומראה שיוצא אותו דבר. קודם עם מספרים, אחר כך באופן כללי.</p>
+<div class="tw"><table><tr><th>שלב</th><th>מה עושים</th></tr>
+<tr><td>1</td><td>אגף שמאל בריבוע: סכום ריבועי הרכיבים של $\bar a\times\bar b$</td></tr>
+<tr><td>2</td><td>אגף ימין בריבוע: מחליפים $\sin^2=1-\cos^2$</td></tr>
+<tr><td>3</td><td>משתמשים ב-$|\bar a||\bar b|\cos\varphi=\bar a\cdot\bar b$</td></tr>
+<tr><td>4</td><td>פותחים סוגריים ומשווים</td></tr>
+</table></div>
+<div class="sim"><div class="st-title">סימולציה: ההוכחה של חלק 1, קודם עם המספרים $\bar a=(1,2,3)$ ו-$\bar b=(4,5,6)$</div>
+<ol class="map"><li>1. שמאל</li><li>2. ימין</li><li>3. מכפלה סקלרית</li><li>4. השוואה</li><li>5. שורש</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$|\bar a\times\bar b|^2=(-3)^2+6^2+(-3)^2=54$</div><div class="x">מסעיף 7: $\bar a\times\bar b=(-3,6,-3)$. סכום ריבועים.</div><div class="st"><span><i>שמאל</i>$54$</span></div></div>
+<div class="step" data-m="0"><div class="f">$|\bar a\times\bar b|^2=(a_yb_z-a_zb_y)^2+(a_zb_x-a_xb_z)^2+(a_xb_y-a_yb_x)^2$</div><div class="x">אותו דבר באותיות: האורך בריבוע הוא סכום ריבועי שלושת הרכיבים. (במחברת הרכיב האמצעי כתוב הפוך, אבל בריבוע זה לא משנה.)</div><div class="st"><span><i>שמאל</i>סכום 3 ריבועים</span></div></div>
+<div class="step" data-m="1"><div class="f">$(|\bar a||\bar b|\sin\varphi)^2=|\bar a|^2|\bar b|^2\sin^2\varphi=|\bar a|^2|\bar b|^2-|\bar a|^2|\bar b|^2\cos^2\varphi$</div><div class="x">מעלים בריבוע, ואז $\sin^2\varphi=1-\cos^2\varphi$ ופותחים סוגריים.</div><div class="st"><span><i>שמאל</i>סכום 3 ריבועים</span><span><i>ימין</i>עם $\cos^2$</span></div></div>
+<div class="step" data-m="2"><div class="f">$=|\bar a|^2|\bar b|^2-(\class{sea}{\bar a\cdot\bar b})^2$</div><div class="x">מההגדרה של הזווית: $|\bar a||\bar b|\cos\varphi=\bar a\cdot\bar b$. מעלים בריבוע ומציבים. עכשיו אין יותר זווית, רק רכיבים.</div><div class="st"><span><i>שמאל</i>סכום 3 ריבועים</span><span><i>ימין</i>$|\bar a|^2|\bar b|^2-(\bar a\cdot\bar b)^2$</span></div></div>
+<div class="step" data-m="2"><div class="f">$=14\cdot77-32^2=1078-1024=54$</div><div class="x">עם המספרים: $|\bar a|^2=1+4+9=14$, $|\bar b|^2=16+25+36=77$, $\bar a\cdot\bar b=4+10+18=32$. יצא $54$, כמו באגף שמאל! ✔</div><div class="st"><span><i>שמאל</i>$54$</span><span><i>ימין</i>$54$</span></div></div>
+<div class="step" data-m="3"><div class="f">$=(a_x^2+a_y^2+a_z^2)(b_x^2+b_y^2+b_z^2)-(a_xb_x+a_yb_y+a_zb_z)^2$</div><div class="x">באופן כללי: מציבים את האורכים ואת המכפלה הסקלרית ברכיבים. פותחים סוגריים בשני האגפים: האיברים כמו $a_x^2b_x^2$ מתבטלים, ומה שנשאר זהה לסכום שלושת הריבועים באגף שמאל.</div><div class="st"><span><i>שמאל</i>=</span><span><i>ימין</i>=</span></div></div>
+<div class="step" data-m="4"><div class="f"><span class="ans">$|\bar a\times\bar b|=|\bar a||\bar b|\sin\varphi$</span></div><div class="x">הריבועים שווים, ושני האגפים לא שליליים ($\sin\varphi\ge0$). לכן מותר להוציא שורש. בדוגמה: $\sqrt{54}=3\sqrt6\approx7.35$ זה שטח המקבילית.</div><div class="st"><span><i>שטח</i>$\sqrt{54}$</span></div></div>
+</div></div>
+<div class="box fix"><b>הערה שלי על המחברת</b>בשורה "ומצד שני" יש שתי טעויות הקלדה: (1) כתוב $|\bar a|^2\cdot|\bar b|^2\cdot|\bar c|^2\cdot\sin^2\varphi$. ה-$|\bar c|^2$ מיותר, צריך $|\bar a|^2|\bar b|^2\sin^2\varphi$. (2) בשורה הבאה כתוב $|\bar a|^2|\bar b|^2-|\bar a\times\bar b|^2$. צריך $(\bar a\cdot\bar b)^2$, מכפלה <b>סקלרית</b>. אחרת מקבלים מעגל: מוכיחים את $|\bar a\times\bar b|$ בעזרת עצמו. הביטוי שאחרי השוויון, $(a_xb_x+a_yb_y+a_zb_z)^2$, הוא באמת $(\bar a\cdot\bar b)^2$, כך שהכוונה ברורה.</div>
+<h3>הסבר לחלק 2: למה $\bar a\times\bar b$ מאונך ל-$\bar a$</h3>
+<div class="sim"><div class="st-title">סימולציה: למה $\bar a\cdot(\bar a\times\bar b)=0$</div>
+<ol class="map"><li>1. הצבה</li><li>2. פתיחה</li><li>3. ביטול</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$\bar a\cdot(\bar a\times\bar b)=(a_x,a_y,a_z)\cdot(a_yb_z-a_zb_y,\ a_zb_x-a_xb_z,\ a_xb_y-a_yb_x)$</div><div class="x">מאונך = מכפלה סקלרית אפס (סעיף 4). לכן מחשבים את המכפלה.</div><div class="st"><span><i>מטרה</i>להראות $=0$</span></div></div>
+<div class="step" data-m="1"><div class="f">$=\class{tea}{a_xa_yb_z}-\class{pnk}{a_xa_zb_y}+\class{amb}{a_ya_zb_x}-\class{tea}{a_xa_yb_z}+\class{pnk}{a_xa_zb_y}-\class{amb}{a_ya_zb_x}$</div><div class="x">כופלים $a_x$ ברכיב הראשון, $a_y$ בשני, $a_z$ בשלישי. מכל אחד יוצאים שני איברים, סך הכול שישה. צבעתי כל זוג באותו צבע, כמו הקווים הצבעוניים במחברת.</div><div class="st"><span><i>איברים</i>6</span></div></div>
+<div class="step" data-m="2"><div class="f"><span class="ans">$=0$</span></div><div class="x">כל איבר מופיע פעם עם פלוס ופעם עם מינוס. הכול מתבטל. באותה דרך $\bar b\cdot(\bar a\times\bar b)=0$. לכן $\bar a\times\bar b$ מאונך לשניהם, כלומר למישור שלהם.</div><div class="st"><span><i>איברים</i>0</span><span><i>מאונך</i>✔</span></div></div>
+</div></div>
+<div class="box rule"><b>הכלל לזכור</b>$|\bar a\times\bar b|$ = שטח המקבילית = $|\bar a||\bar b|\sin\varphi$. הכיוון: ניצב לשניהם, לפי כלל יד ימין. שטח <b>משולש</b> על אותם וקטורים = חצי מזה.</div>
+<div class="quiz"><div class="qt">שאלות על סעיף 8</div>
+<div class="qq" data-a="2"><p class="q">מה שטח המקבילית שבנויה על $\bar a=(2,0,0)$ ו-$\bar b=(0,0,3)$?</p><ol><li>$5$, כי מחברים את שני האורכים $2$ ו-$3$ יחד</li><li>$0$, כי המכפלה הסקלרית שלהם היא אפס בדיוק</li><li>$6$, כי $\bar a\times\bar b=(0,-6,0)$ ואורכו $6$</li><li>$-6$, כי הרכיב של התוצאה הוא שלילי</li></ol><p class="h">רמז: חשבו את $\bar a\times\bar b$ ואז את האורך שלו. אורך אף פעם לא שלילי.</p><p class="e">נכון. הם מאונכים, אז זה מלבן $2\times3$.</p></div>
+<div class="qq" data-a="0"><p class="q">מהו $\bar j\times\bar i$?</p><ol><li>$-\bar k$, כי החלפת סדר הופכת את הכיוון</li><li>$\bar k$, כי במכפלה הסדר לא משנה</li><li>$\bar 0$, כי $\bar i$ ו-$\bar j$ מאונכים</li><li>$1$, כי שניהם וקטורי יחידה</li></ol><p class="h">רמז: $\bar i\times\bar j=\bar k$, ותכונה 1.</p><p class="e">נכון. בדיקה: $(0,1,0)\times(1,0,0)=(0,0,0-1)=(0,0,-1)$.</p></div>
+<div class="qq" data-a="3"><p class="q">ל-$\bar a$ ו-$\bar b$ שאינם אפס יש $\bar a\times\bar b=\bar 0$. מה אפשר להסיק?</p><ol><li>הם מאונכים, כי אז $\sin\varphi=1$</li><li>הם וקטורי יחידה, כי אז האורכים מתבטלים</li><li>המכפלה הסקלרית שלהם היא גם $0$</li><li>הם מקבילים, כי אז $\sin\varphi=0$</li></ol><p class="h">רמז: $|\bar a\times\bar b|=|\bar a||\bar b|\sin\varphi$. מה חייב להתאפס?</p><p class="e">נכון. $\varphi=0$ או $\varphi=\pi$.</p></div>
+<div class="qq" data-a="1"><p class="q">מה שטח המשולש $ABC$ אם $\overrightarrow{AB}\times\overrightarrow{AC}=(2,-6,3)$?</p><ol><li>$7$, כי זה האורך של המכפלה הווקטורית</li><li>$3.5$, כי משולש הוא חצי מקבילית באורך $7$</li><li>$-0.5$, כי זה חצי מסכום הרכיבים</li><li>$49$, כי זה סכום הריבועים של הרכיבים</li></ol><p class="h">רמז: $\sqrt{4+36+9}=7$. ומשולש הוא חצי מקבילית.</p><p class="e">נכון. $\frac72=3.5$.</p></div>
+</div>
+</section>
+
+<!-- ============ 9 ============ -->
+<section class="sec" id="s9" data-short="סיכום ומחשבון">
+<h2>סיכום: כל הנוסחאות של ההרצאה</h2>
+<div class="tw"><table><tr><th>מה</th><th>נוסחה</th><th>תוצאה</th></tr>
+<tr><td>וקטור בין נקודות</td><td>$\overrightarrow{AB}=\vec r_B-\vec r_A$</td><td>וקטור</td></tr>
+<tr><td>מכפלה סקלרית</td><td>$\bar x\cdot\bar y=x_1y_1+\dots+x_ny_n$</td><td>מספר</td></tr>
+<tr><td>אורך</td><td>$|\bar x|=\sqrt{x_1^2+\dots+x_n^2}=\sqrt{\bar x\cdot\bar x}$</td><td>מספר $\ge0$</td></tr>
+<tr><td>קושי-שוורץ</td><td>$|\bar x\cdot\bar y|\le|\bar x||\bar y|$</td><td>אי-שוויון</td></tr>
+<tr><td>זווית</td><td>$\cos\varphi=\frac{\bar x\cdot\bar y}{|\bar x||\bar y|},\ \varphi\in[0,\pi]$</td><td>זווית</td></tr>
+<tr><td>היטל</td><td>$Pr_{\bar x}\bar y=\frac{\bar x\cdot\bar y}{|\bar x|}$</td><td>מספר (גם שלילי)</td></tr>
+<tr><td>היטל וקטורי</td><td>$Pr_{\bar x}\bar y\cdot\frac{\bar x}{|\bar x|}$</td><td>וקטור</td></tr>
+<tr><td>קוסינוסי כיוון</td><td>$(\cos\alpha,\cos\beta,\cos\gamma)=\frac{\bar x}{|\bar x|}$, סכום ריבועים $1$</td><td>וקטור יחידה</td></tr>
+<tr><td>מכפלה וקטורית</td><td>$(a_yb_z-a_zb_y,\ a_zb_x-a_xb_z,\ a_xb_y-a_yb_x)$</td><td>וקטור ב-$\mathbb R^3$</td></tr>
+<tr><td>שטח מקבילית</td><td>$|\bar a\times\bar b|=|\bar a||\bar b|\sin\varphi$</td><td>מספר $\ge0$</td></tr>
+</table></div>
+<div class="tool"><b>מחשבון: הכניסו שני וקטורים ב-$\mathbb R^3$ וקבלו הכול</b>
+<div class="vin"><span>a =</span><input id="ca1" type="number" value="1" aria-label="a x"><input id="ca2" type="number" value="2" aria-label="a y"><input id="ca3" type="number" value="3" aria-label="a z">
+<span>b =</span><input id="cb1" type="number" value="4" aria-label="b x"><input id="cb2" type="number" value="5" aria-label="b y"><input id="cb3" type="number" value="6" aria-label="b z"></div>
+<p class="res" id="calcout"></p>
+<p style="font-size:15px">טיפ: פתרתם תרגיל לבד? הכניסו את המספרים כאן ובדקו את עצמכם.</p></div>
+<div class="tw"><table><tr><th>אם שואלים...</th><th>מה בודקים</th></tr>
+<tr><td>האם מאונכים?</td><td>$\bar x\cdot\bar y=0$</td></tr>
+<tr><td>האם מקבילים? (ב-$\mathbb R^3$)</td><td>$\bar a\times\bar b=\bar 0$</td></tr>
+<tr><td>זווית בקודקוד של משולש</td><td>שני וקטורים שיוצאים מאותו קודקוד</td></tr>
+<tr><td>שטח משולש</td><td>$\frac12|\overrightarrow{AB}\times\overrightarrow{AC}|$</td></tr>
+<tr><td>וקטור מאונך לשני וקטורים</td><td>$\bar a\times\bar b$</td></tr>
+</table></div>
+<div class="quiz"><div class="qt">שאלות מסכמות</div>
+<div class="qq" data-a="1"><p class="q">עבור $\bar a=(1,1,0)$ ו-$\bar b=(1,-1,0)$, מה נכון?</p><ol><li>הם מקבילים, כי $\bar a\times\bar b=\bar 0$</li><li>הם מאונכים, כי $\bar a\cdot\bar b=0$</li><li>הם מאונכים, כי $\bar a\times\bar b=\bar 0$</li><li>הם מקבילים, כי $\bar a\cdot\bar b=0$</li></ol><p class="h">רמז: חשבו $1\cdot1+1\cdot(-1)+0$.</p><p class="e">נכון. ו-$\bar a\times\bar b=(0,0,-2)\ne\bar 0$.</p></div>
+<div class="qq" data-a="3"><p class="q">מה שטח המשולש עם הקודקודים $A=(0,0,0)$, $B=(1,0,0)$, $C=(0,1,0)$?</p><ol><li>$1$, כי $|\overrightarrow{AB}\times\overrightarrow{AC}|=1$</li><li>$\sqrt2$, כי זה האורך של הצלע $BC$</li><li>$0$, כי $\overrightarrow{AB}\cdot\overrightarrow{AC}=0$</li><li>$\frac12$, כי חצי מ-$|\overrightarrow{AB}\times\overrightarrow{AC}|=1$</li></ol><p class="h">רמז: משולש = חצי מקבילית.</p><p class="e">נכון. $\bar i\times\bar j=\bar k$, אורך $1$, חצי ממנו.</p></div>
+<div class="qq" data-a="0"><p class="q">איזה וקטור מאונך גם ל-$(1,0,0)$ וגם ל-$(0,1,1)$?</p><ol><li>$(0,-1,1)$, כי זו המכפלה הווקטורית שלהם</li><li>$(1,1,1)$, כי זה הסכום של שני הווקטורים</li><li>$(0,1,1)$, כי הוא כבר מאונך ל-$(1,0,0)$</li><li>$(1,0,0)$, כי הוא מאונך לכל וקטור אחר</li></ol><p class="h">רמז: חשבו $(1,0,0)\times(0,1,1)$, או בדקו מכפלה סקלרית עם שניהם.</p><p class="e">נכון. $(0\cdot1-0\cdot1,\ 0\cdot0-1\cdot1,\ 1\cdot1-0\cdot0)=(0,-1,1)$.</p></div>
+<div class="qq" data-a="2"><p class="q">מהו ההיטל של $\bar y=(2,3,6)$ על $\bar x=(0,0,5)$?</p><ol><li>$30$, כי זו המכפלה הסקלרית בלי חלוקה</li><li>$7$, כי זה האורך של הווקטור $\bar y$</li><li>$6$, כי מחלקים את $30$ באורך $|\bar x|=5$</li><li>$\frac{30}{7}$, כי מחלקים באורך של $\bar y$</li></ol><p class="h">רמז: מחלקים באורך של הווקטור שעליו מטילים, $|\bar x|=5$.</p><p class="e">נכון. הצל על ציר $z$ הוא פשוט רכיב ה-$z$.</p></div>
+</div>
+<p class="end" id="endMsg"></p>
+<p>מה עזר לך הכי הרבה בדף הזה, ביג בוס? כתוב לי בצ'אט.</p>
+</section>
+</div>
+
+<script>
+window.LESSON_INIT=function(){
+ function css(v){return getComputedStyle(document.documentElement).getPropertyValue(v).trim()}
+ function $(id){return document.getElementById(id)}
+ function r2(v){return Math.round(v*100)/100}
+ function f2(v){var s=r2(v);return (Object.is(s,-0)?0:s).toString()}
+ var drawers=[];
+ function bind(ids,fn){ids.forEach(function(id){var e=$(id);e.addEventListener('input',fn)});fn();drawers.push(fn)}
+ function outs(ids){ids.forEach(function(id){var o=$('o_'+id);if(o)o.textContent=$(id).value})}
+ // plane with vectors: o={R, arrows:[{x0,y0,x,y,color,dash,label,w}], polys:[{pts,color}], segs:[{x0,y0,x1,y1,color,dash}], arcs:[{a1,a2,r,color}]}
+ function plane(svg,o){var W=400,H=300,R=o.R||5,c=W/2,m=H/2,s=(H-20)/(2*R);
+  function X(x){return c+x*s}function Y(y){return m-y*s}
+  var g='',mut=css('--muted'),line=css('--line');
+  for(var i=-R;i<=R;i++){g+='<line x1="'+X(i)+'" x2="'+X(i)+'" y1="'+Y(-R)+'" y2="'+Y(R)+'" stroke="'+line+'" stroke-width="'+(i===0?0:1)+'"/>';
+   g+='<line y1="'+Y(i)+'" y2="'+Y(i)+'" x1="'+X(-R*1.35)+'" x2="'+X(R*1.35)+'" stroke="'+line+'" stroke-width="'+(i===0?0:1)+'"/>'}
+  g+='<line x1="'+X(-R*1.35)+'" x2="'+X(R*1.35)+'" y1="'+Y(0)+'" y2="'+Y(0)+'" stroke="'+mut+'" stroke-width="1.3"/><line x1="'+X(0)+'" x2="'+X(0)+'" y1="'+Y(-R)+'" y2="'+Y(R)+'" stroke="'+mut+'" stroke-width="1.3"/>';
+  g+='<text x="'+(X(R*1.35)-4)+'" y="'+(Y(0)-6)+'" fill="'+mut+'" font-size="12" text-anchor="end">x</text><text x="'+(X(0)+6)+'" y="'+(Y(R)+12)+'" fill="'+mut+'" font-size="12">y</text>';
+  (o.polys||[]).forEach(function(p){g+='<path d="'+p.pts.map(function(q,i){return (i?'L':'M')+X(q[0]).toFixed(1)+' '+Y(q[1]).toFixed(1)}).join('')+'Z" fill="'+p.color+'" fill-opacity="'+(p.op||.22)+'" stroke="'+p.color+'" stroke-opacity=".5"/>'});
+  (o.arcs||[]).forEach(function(a){var r=a.r*s,x1=X(0)+r*Math.cos(a.a1),y1=Y(0)-r*Math.sin(a.a1),x2=X(0)+r*Math.cos(a.a2),y2=Y(0)-r*Math.sin(a.a2);var d=a.a2-a.a1;while(d<0)d+=2*Math.PI;var large=d>Math.PI?1:0;
+   g+='<path d="M'+x1.toFixed(1)+' '+y1.toFixed(1)+' A'+r+' '+r+' 0 '+large+' 0 '+x2.toFixed(1)+' '+y2.toFixed(1)+'" fill="none" stroke="'+a.color+'" stroke-width="2.2"/>'});
+  (o.segs||[]).forEach(function(l){g+='<line x1="'+X(l.x0)+'" y1="'+Y(l.y0)+'" x2="'+X(l.x1)+'" y2="'+Y(l.y1)+'" stroke="'+l.color+'" stroke-width="1.6" stroke-dasharray="'+(l.dash||'5 4')+'"/>'});
+  (o.arrows||[]).forEach(function(a){var x0=a.x0||0,y0=a.y0||0,L=Math.hypot(a.x-x0,a.y-y0);if(L<1e-9){g+='<circle cx="'+X(x0)+'" cy="'+Y(y0)+'" r="3.5" fill="'+a.color+'"/>';return}
+   var ux=(a.x-x0)/L,uy=(a.y-y0)/L,hx=X(a.x),hy=Y(a.y),h=10,w=5,bx=hx-ux*h,by=hy+uy*h;
+   g+='<line x1="'+X(x0)+'" y1="'+Y(y0)+'" x2="'+bx.toFixed(1)+'" y2="'+by.toFixed(1)+'" stroke="'+a.color+'" stroke-width="'+(a.w||3)+'"'+(a.dash?' stroke-dasharray="'+a.dash+'"':'')+'/>';
+   g+='<path d="M'+hx.toFixed(1)+' '+hy.toFixed(1)+' L'+(bx-uy*w).toFixed(1)+' '+(by-ux*w).toFixed(1)+' L'+(bx+uy*w).toFixed(1)+' '+(by+ux*w).toFixed(1)+'Z" fill="'+a.color+'"/>';
+   if(a.label)g+='<text x="'+(hx+8)+'" y="'+(hy-6)+'" fill="'+a.color+'" font-size="14" font-weight="700">'+a.label+'</text>'});
+  (o.texts||[]).forEach(function(t){g+='<text x="'+X(t.x)+'" y="'+Y(t.y)+'" fill="'+t.color+'" font-size="'+(t.size||14)+'" font-weight="700" text-anchor="middle" dominant-baseline="middle">'+t.s+'</text>'});
+  svg.innerHTML=g}
+ function dot(a,b){var s=0;for(var i=0;i<a.length;i++)s+=a[i]*b[i];return s}
+ function len(a){return Math.sqrt(dot(a,a))}
+ function vec(ids){return ids.map(function(id){return +$(id).value})}
+ function deg(r){return r*180/Math.PI}
+ // t1
+ bind(['t1a1','t1a2','t1b1','t1b2','t1l'],function(){outs(['t1a1','t1a2','t1b1','t1b2','t1l']);var x=vec(['t1a1','t1a2']),y=vec(['t1b1','t1b2']),l=+$('t1l').value,s=[x[0]+y[0],x[1]+y[1]],lx=[l*x[0],l*x[1]];
+  var R=Math.max(5,Math.ceil(Math.max(Math.abs(s[0]),Math.abs(s[1]),Math.abs(lx[0]),Math.abs(lx[1]))+0.5));
+  plane($('t1svg'),{R:R,polys:[{pts:[[0,0],x,s,y],color:css('--muted'),op:.12}],segs:[{x0:x[0],y0:x[1],x1:s[0],y1:s[1],color:css('--org')},{x0:y[0],y0:y[1],x1:s[0],y1:s[1],color:css('--ind')}],
+   arrows:[{x:lx[0],y:lx[1],color:css('--ind'),dash:'3 4',w:2,label:'λx'},{x:s[0],y:s[1],color:css('--ink'),label:'x+y'},{x:x[0],y:x[1],color:css('--ind'),label:'x'},{x:y[0],y:y[1],color:css('--org'),label:'y'}]});
+  $('t1out').textContent='x = ('+x+')   y = ('+y+')\nx + y = ('+f2(s[0])+', '+f2(s[1])+')\nλ = '+l+'   λx = ('+f2(lx[0])+', '+f2(lx[1])+')'});
+ // t4
+ bind(['t4a1','t4a2','t4b1','t4b2'],function(){outs(['t4a1','t4a2','t4b1','t4b2']);var x=vec(['t4a1','t4a2']),y=vec(['t4b1','t4b2']),d=dot(x,y),lx=len(x),ly=len(y),o={R:5,arrows:[{x:x[0],y:x[1],color:css('--ind'),label:'x'},{x:y[0],y:y[1],color:css('--org'),label:'y'}]};
+  if(lx===0||ly===0){plane($('t4svg'),o);$('t4out').textContent='x · y = '+d+'\nאחד הווקטורים הוא וקטור האפס, ולכן אין זווית.';return}
+  var c=d/(lx*ly),phi=Math.acos(Math.max(-1,Math.min(1,c))),a1=Math.atan2(x[1],x[0]),a2=Math.atan2(y[1],y[0]),dd=a2-a1;while(dd>Math.PI)dd-=2*Math.PI;while(dd<-Math.PI)dd+=2*Math.PI;
+  o.arcs=[dd>=0?{a1:a1,a2:a2,r:1,color:css('--sea')}:{a1:a2,a2:a1,r:1,color:css('--sea')}];plane($('t4svg'),o);
+  var kind=Math.abs(d)<1e-9?'ישרה (מאונכים)':(d>0?'חדה':'קהה');
+  $('t4out').textContent='x · y = '+x[0]+'·'+y[0]+' + '+x[1]+'·'+y[1]+' = '+d+'\n|x| = '+lx.toFixed(3)+'   |y| = '+ly.toFixed(3)+'\ncos φ = '+d+' / '+(lx*ly).toFixed(3)+' = '+c.toFixed(3)+'\nφ = '+deg(phi).toFixed(1)+'°   זווית: '+kind});
+ // t5
+ bind(['t5a1','t5a2','t5b1','t5b2'],function(){outs(['t5a1','t5a2','t5b1','t5b2']);var x=vec(['t5a1','t5a2']),y=vec(['t5b1','t5b2']),lx=len(x);
+  if(lx===0){plane($('t5svg'),{R:5,arrows:[{x:y[0],y:y[1],color:css('--org'),label:'y'}]});$('t5out').textContent='x הוא וקטור האפס: אי אפשר להטיל עליו.';return}
+  var d=dot(x,y),pr=d/lx,e=[x[0]/lx,x[1]/lx],pv=[pr*e[0],pr*e[1]],T=7;
+  plane($('t5svg'),{R:5,segs:[{x0:-T*e[0],y0:-T*e[1],x1:T*e[0],y1:T*e[1],color:css('--muted'),dash:'1 5'},{x0:y[0],y0:y[1],x1:pv[0],y1:pv[1],color:css('--muted')}],
+   arrows:[{x:x[0],y:x[1],color:css('--ind'),label:'x'},{x:y[0],y:y[1],color:css('--org'),label:'y'},{x:pv[0],y:pv[1],color:css('--sky'),w:5,label:'Pr'}]});
+  $('t5out').textContent='x · y = '+d+'   |x| = '+lx.toFixed(3)+'\nPr = x·y / |x| = '+pr.toFixed(3)+(pr<-1e-9?'   (שלילי: זווית קהה)':'')+'\nvector Pr = '+pr.toFixed(3)+' · ('+e[0].toFixed(3)+', '+e[1].toFixed(3)+') = ('+pv[0].toFixed(3)+', '+pv[1].toFixed(3)+')'});
+ // t8
+ bind(['t8a1','t8a2','t8b1','t8b2'],function(){outs(['t8a1','t8a2','t8b1','t8b2']);var a=vec(['t8a1','t8a2']),b=vec(['t8b1','t8b2']),z=a[0]*b[1]-a[1]*b[0],s=[a[0]+b[0],a[1]+b[1]];
+  var R=Math.max(5,Math.ceil(Math.max(Math.abs(s[0]),Math.abs(s[1]))+0.5));
+  var t=Math.abs(z)<1e-9?[]:[{x:s[0]/2,y:s[1]/2,s:z>0?'⊙':'⊗',color:css('--plm'),size:26}];
+  plane($('t8svg'),{R:R,polys:[{pts:[[0,0],a,s,b],color:css('--plm'),op:.25}],texts:t,arrows:[{x:a[0],y:a[1],color:css('--ind'),label:'a'},{x:b[0],y:b[1],color:css('--org'),label:'b'}]});
+  var la=len(a),lb=len(b),sin=(la&&lb)?Math.abs(z)/(la*lb):0;
+  $('t8out').textContent='a × b = (0, 0, '+a[0]+'·'+b[1]+' − '+a[1]+'·'+b[0]+') = (0, 0, '+z+')\nשטח = |a × b| = '+Math.abs(z)+'\n|a|·|b|·sin φ = '+la.toFixed(3)+' · '+lb.toFixed(3)+' · '+sin.toFixed(3)+' = '+(la*lb*sin).toFixed(3)+'\nכיוון: '+(Math.abs(z)<1e-9?'אין (הווקטורים מקבילים או אחד מהם אפס)':(z>0?'⊙ החוצה מהמסך':'⊗ לתוך המסך'))});
+ // calc
+ bind(['ca1','ca2','ca3','cb1','cb2','cb3'],function(){var a=vec(['ca1','ca2','ca3']).map(function(v){return isFinite(v)?v:0}),b=vec(['cb1','cb2','cb3']).map(function(v){return isFinite(v)?v:0});
+  var d=dot(a,b),la=len(a),lb=len(b),c=[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]],lc=len(c),L=[];
+  L.push('a · b = '+f2(d));L.push('|a| = √'+f2(dot(a,a))+' = '+la.toFixed(4)+'    |b| = √'+f2(dot(b,b))+' = '+lb.toFixed(4));
+  if(la>0&&lb>0){var co=d/(la*lb);L.push('cos φ = '+co.toFixed(4)+'    φ = '+deg(Math.acos(Math.max(-1,Math.min(1,co)))).toFixed(2)+'°');}
+  else L.push('אחד הווקטורים הוא אפס: אין זווית');
+  if(la>0){L.push('Pr_a b = a·b / |a| = '+(d/la).toFixed(4));L.push('direction cosines of a = ('+a.map(function(v){return (v/la).toFixed(4)}).join(', ')+')')}
+  L.push('a × b = ('+c.map(f2).join(', ')+')');L.push('|a × b| = parallelogram area = '+lc.toFixed(4)+'    triangle = '+(lc/2).toFixed(4));
+  L.push('check: a·(a×b) = '+f2(dot(a,c))+'    b·(a×b) = '+f2(dot(b,c)));
+  $('calcout').textContent=L.join('\n')});
+ var mo=new MutationObserver(function(){drawers.forEach(function(d){d()})});mo.observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+};
+</script>
+<script>(function(){
+document.documentElement.dir='rtl';document.documentElement.lang='he';
+var KEY=((document.querySelector('.wrap')||document.body).getAttribute('data-key')||'lesson')+'-quiz';
+var THEMEKEY='calc2-theme';
+function $(s,r){return (r||document).querySelector(s)}
+function $$(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))}
+function el(t,c,h){var n=document.createElement(t);if(c)n.className=c;if(h!=null)n.innerHTML=h;return n}
+function lsGet(k){try{return localStorage.getItem(k)}catch(e){return null}}
+function lsSet(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+// theme
+var tb=$('#themeBtn');
+function curDark(){var t=document.documentElement.getAttribute('data-theme');if(t)return t==='dark';return window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches}
+function paintBtn(){if(tb)tb.textContent=curDark()?'☀️ יום':'🌙 לילה'}
+var saved=lsGet(THEMEKEY);if(saved==='dark'||saved==='light')document.documentElement.setAttribute('data-theme',saved);
+paintBtn();
+if(tb)tb.addEventListener('click',function(){var d=!curDark();document.documentElement.setAttribute('data-theme',d?'dark':'light');lsSet(THEMEKEY,d?'dark':'light');paintBtn()});
+// sections + toc
+var secs=$$('section.sec'),toc=$('nav.toc');
+secs.forEach(function(s,i){var h=$('h2',s);var no=el('div','secno',(i+1)+' / '+secs.length);s.insertBefore(no,h);
+ if(toc){var a=el('a');a.href='#'+s.id;a.innerHTML='<b>'+(i+1)+'</b> '+(s.getAttribute('data-short')||h.textContent);toc.appendChild(a)}});
+// sims
+var sims=[];
+$$('.sim').forEach(function(sim){
+ var steps=$$('.steps > .step',sim);var mapItems=$$('.map > li',sim);
+ var lines=el('div','lines'),xp=el('div','x'),sp=el('div','stp-wrap');
+ var ctl=el('div','ctl');var bP=el('button','','→ הקודם'),bN=el('button','pri','הבא ←'),bR=el('button','','⟲ מההתחלה'),cnt=el('span','cnt');
+ bP.type=bN.type=bR.type='button';ctl.appendChild(bR);ctl.appendChild(bP);ctl.appendChild(bN);ctl.appendChild(cnt);
+ var stepLine=[],lineEls=[],xs=[],sts=[];
+ steps.forEach(function(st,i){var f=$('.f',st);
+  if(f){var ln=el('div','ln');ln.appendChild(el('span','no',String(lineEls.length+1)));ln.appendChild(f);lines.appendChild(ln);lineEls.push(ln)}
+  stepLine.push(lineEls.length-1);
+  var x=$('.x',st)||el('div','','');var xd=el('div','');while(x.firstChild)xd.appendChild(x.firstChild);xp.appendChild(xd);xs.push(xd);
+  var s=$('.st',st);var sd=el('div','stp');if(s){while(s.firstChild)sd.appendChild(s.firstChild)}sp.appendChild(sd);sts.push(sd)});
+ var stepsBox=$('.steps',sim);sim.insertBefore(lines,stepsBox);sim.insertBefore(xp,stepsBox);sim.insertBefore(sp,stepsBox);sim.insertBefore(ctl,stepsBox);stepsBox.remove();
+ var cur=0;
+ function render(){var L=stepLine[cur];
+  lineEls.forEach(function(ln,j){ln.classList.toggle('cur',j===L);ln.classList.toggle('fut',j>L)});
+  xs.forEach(function(x,j){x.hidden=j!==cur});
+  sts.forEach(function(s,j){s.hidden=j!==cur;
+   if(j===cur&&j>0){var prev={};$$('span',sts[j-1]).forEach(function(p){var k=$('i',p);if(k)prev[k.textContent]=p.textContent});
+    $$(':scope > span',s).forEach(function(p){var k=$('i',p);p.classList.toggle('new',!!k&&prev[k.textContent]!==p.textContent)})}});
+  var m=+(steps[cur].getAttribute('data-m')||-1);
+  mapItems.forEach(function(li,j){li.classList.toggle('on',j===m);li.classList.toggle('done',m>=0&&j<m)});
+  bP.disabled=cur===0;bN.disabled=cur===steps.length-1;cnt.textContent=(cur+1)+' / '+steps.length}
+ bP.onclick=function(){if(cur>0){cur--;render()}};bN.onclick=function(){if(cur<steps.length-1){cur++;render()}};bR.onclick=function(){cur=0;render()};
+ sims.push(render)});
+// quiz
+var st={};try{st=JSON.parse(lsGet(KEY)||'{}')||{}}catch(e){st={}}
+var qs=$$('.qq'),LET=['א','ב','ג','ד','ה'];
+function score(){var c=0,d=0;qs.forEach(function(q,i){var s=st[i];if(s&&s.done){d++;if(s.first)c++}});
+ var sc=$('#score');if(sc)sc.innerHTML='ניקוד: <bdi dir="ltr">'+c+' / '+qs.length+'</bdi>';var m=$('#meter');if(m)m.style.width=(qs.length?100*d/qs.length:0)+'%';
+ var end=$('#endMsg');if(end)end.textContent=d===qs.length?('סיימת את כל '+qs.length+' השאלות! ענית נכון בניסיון הראשון על '+c+'. '+(c>=qs.length*0.8?'מצוין, ביג בוס 💪':'כדאי לחזור על הסעיפים שבהם טעית.')):'ענית על '+d+' מתוך '+qs.length+' שאלות.'}
+var qhide=[];
+qs.forEach(function(q,i){var a=+q.getAttribute('data-a');var h=$('.h',q),e=$('.e',q);
+ $$('ol > li',q).forEach(function(li,j){var b=el('button','');b.type='button';b.appendChild(el('span','lt',LET[j]+'.'));while(li.firstChild)b.appendChild(li.firstChild);li.appendChild(b);
+  b.addEventListener('click',function(){var s=st[i]||{tried:[]};if(s.done)return;s.tried.push(j);
+   if(j===a){s.done=true;s.first=s.tried.length===1}st[i]=s;lsSet(KEY,JSON.stringify(st));paintQ();score()})});
+ function paintQ(){var s=st[i]||{tried:[]};var bs=$$('ol > li > button',q);
+  bs.forEach(function(b,j){b.classList.toggle('good',!!s.done&&j===a);b.classList.toggle('bad',s.tried.indexOf(j)>=0&&j!==a)});
+  var lastBad=s.tried.length&&s.tried[s.tried.length-1]!==a;if(h)h.hidden=!(lastBad&&!s.done);if(e)e.hidden=!s.done}
+ q._paint=paintQ;qhide.push(paintQ)});
+var rb=$('#resetBtn');if(rb)rb.addEventListener('click',function(){st={};lsSet(KEY,'{}');qhide.forEach(function(f){f()});score()});
+// bidi fix
+var HEB=/[֐-׿]/,RUN=/[A-Za-z0-9∞√π][A-Za-z0-9∞√π²³⁻¹\s+\-−*\/=^().,'·:≤≥<>|_]*/g;
+var SKIP={'MJX-CONTAINER':1,'CODE':1,'PRE':1,'SVG':1,'BDI':1,'SCRIPT':1,'STYLE':1,'TEXTAREA':1,'INPUT':1};
+function bidi(root){var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode:function(n){for(var p=n.parentNode;p&&p!==root.parentNode;p=p.parentNode){if(SKIP[p.nodeName.toUpperCase()]||(p.classList&&(p.classList.contains('m')||p.classList.contains('ltr'))))return NodeFilter.FILTER_REJECT}return NodeFilter.FILTER_ACCEPT}});
+ var nodes=[],n;while(n=w.nextNode())nodes.push(n);
+ nodes.forEach(function(t){var s=t.nodeValue;if(HEB.test(s)&&s.indexOf('→')>=0)s=t.nodeValue=s.replace(/→/g,'←');
+  if(!/[A-Za-z0-9∞√π]/.test(s)||!HEB.test(s+((t.parentNode&&t.parentNode.textContent)||'')))return;
+  var frag=document.createDocumentFragment(),last=0,m;RUN.lastIndex=0;
+  while(m=RUN.exec(s)){var r=m[0].replace(/[\s.,:]+$/,'');var open=(r.match(/\(/g)||[]).length,close=(r.match(/\)/g)||[]).length;
+   while(close>open&&r.slice(-1)===')'){r=r.slice(0,-1);close--}
+   if(open>close&&r.slice(-1)==='('){r=r.slice(0,-1).replace(/\s+$/,'')}
+   if(!r)continue;frag.appendChild(document.createTextNode(s.slice(last,m.index)));var b=document.createElement('bdi');b.dir='ltr';b.textContent=r;frag.appendChild(b);last=m.index+r.length;RUN.lastIndex=last}
+  frag.appendChild(document.createTextNode(s.slice(last)));t.parentNode.replaceChild(frag,t)})}
+var finished=false;
+function finish(){if(finished)return;finished=true;bidi($('.wrap'));sims.forEach(function(r){r()});qhide.forEach(function(f){f()});score();
+ if(window.LESSON_INIT)try{window.LESSON_INIT()}catch(e){console.error(e)}}
+window.__lessonFinish=finish;
+window.typesetLater=function(node){if(window.MathJax&&MathJax.typesetPromise){return MathJax.typesetPromise([node]).then(function(){bidi(node)}).catch(function(){})}bidi(node);return Promise.resolve()};
+setTimeout(finish,9000);
+})();
+</script>
+<script>window.MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']],packages:{'[+]':['html']}},loader:{load:['[tex]/html']},svg:{fontCache:'global'},options:{ignoreHtmlClass:'nomj'},startup:{ready:function(){MathJax.startup.defaultReady();MathJax.startup.promise.then(function(){window.__lessonFinish&&window.__lessonFinish()})}}};</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.min.js"></script>
+
+</body></html>

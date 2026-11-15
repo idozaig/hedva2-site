@@ -1,0 +1,697 @@
+<!doctype html><html><head><script>(function(){try{var m=localStorage.getItem("hedva2-theme");if(m==="dark"||m==="light")document.documentElement.setAttribute("data-theme",m);}catch(e){}})();</script><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>חדו״א 2 — תרגול 6</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Assistant:wght@400;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>/* Layout: a calm math notebook — one reading column (max 860px), sticky score bar, section cards on a faint grid. */
+:root{
+  --bg:#f6f8fb; --card:#ffffff; --ink:#1d2533; --muted:#5b6678; --line:#dfe5ee; --soft:#eef2f8; --grid:rgba(40,80,140,.05);
+  --accent:#6d4bd8; --accent-soft:#efeafd; --ok:#1f8a52; --ok-soft:#ddf4e7; --bad:#c53030; --bad-soft:#fde7e7; --note:#fff7dc; --note-line:#e9c46a; --mine:#e8f3ff; --mine-line:#7fb2ea;
+  --amb:#b7791f; --tea:#1386a6; --pur:#7a3fd1; --blu:#2563eb; --pnk:#c2417a; --grn:#2f855a; --org:#c05621; --red:#c53030; --olv:#6b7f1a;
+  --ind:#4c51bf; --brn:#8b5a2b; --mag:#b83280; --sea:#2c7a7b; --plm:#7b3fb0; --rub:#c0265b; --cyn:#0891b2; --sky:#0369a1; --lim:#4d7c0f; --nav:#1e3a8a; --eme:#047857; --bur:#9f1239; --jad:#0f766e; --stl:#475569; --ocr:#a16207;
+  --f-head:"Secular One","Assistant",system-ui,sans-serif; --f-body:"Assistant",system-ui,-apple-system,"Segoe UI",sans-serif; --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#11161f; --card:#18202c; --ink:#e6ebf3; --muted:#9aa7ba; --line:#2a3546; --soft:#1f2937; --grid:rgba(160,190,255,.04);
+  --accent:#a48bff; --accent-soft:#2a2346; --ok:#6fd49b; --ok-soft:#163626; --bad:#ff8a80; --bad-soft:#3d1c1c; --note:#2f2a14; --note-line:#a58a2c; --mine:#15283d; --mine-line:#3f6f9f;
+  --amb:#f0b75a; --tea:#4cc3e0; --pur:#b48cff; --blu:#7aa7ff; --pnk:#f58bbb; --grn:#6fd49b; --org:#f6a26b; --red:#ff8a80; --olv:#b5c95a;
+  --ind:#a3a8ff; --brn:#d6a77a; --mag:#f08ad0; --sea:#6fd1cf; --plm:#c99af0; --rub:#ff7aa3; --cyn:#5fd8f0; --sky:#7cc4f5; --lim:#a3d65c; --nav:#93b4ff; --eme:#34d399; --bur:#fb7185; --jad:#5eead4; --stl:#a5b4c8; --ocr:#facc15; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#11161f; --card:#18202c; --ink:#e6ebf3; --muted:#9aa7ba; --line:#2a3546; --soft:#1f2937; --grid:rgba(160,190,255,.04);
+  --accent:#a48bff; --accent-soft:#2a2346; --ok:#6fd49b; --ok-soft:#163626; --bad:#ff8a80; --bad-soft:#3d1c1c; --note:#2f2a14; --note-line:#a58a2c; --mine:#15283d; --mine-line:#3f6f9f;
+  --amb:#f0b75a; --tea:#4cc3e0; --pur:#b48cff; --blu:#7aa7ff; --pnk:#f58bbb; --grn:#6fd49b; --org:#f6a26b; --red:#ff8a80; --olv:#b5c95a;
+  --ind:#a3a8ff; --brn:#d6a77a; --mag:#f08ad0; --sea:#6fd1cf; --plm:#c99af0; --rub:#ff7aa3; --cyn:#5fd8f0; --sky:#7cc4f5; --lim:#a3d65c; --nav:#93b4ff; --eme:#34d399; --bur:#fb7185; --jad:#5eead4; --stl:#a5b4c8; --ocr:#facc15; color-scheme:dark}
+html{direction:rtl}
+body{background-color:var(--bg);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:22px 22px;color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.65}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--card)}
+.wrap{max-width:860px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:8px 64px}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:6;background:var(--card);border-bottom:1px solid var(--line);margin-inline:calc(-1*max(16px,env(safe-area-inset-left,0px)));padding:8px max(16px,env(safe-area-inset-left,0px));display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.bar .sc{font-weight:700;font-size:15px}
+.bar .sc bdi{font-family:var(--f-mono)}
+.bar .meter{flex:1 1 120px;height:8px;background:var(--soft);border-radius:99px;overflow:hidden;min-width:80px}
+.bar .meter i{display:block;height:100%;width:0;background:var(--accent);transition:width .3s}
+.bar button{font:inherit;font-size:14px;font-weight:600;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:99px;padding:4px 12px;cursor:pointer}
+header.hero{padding-block:22px 6px}
+.credit{font-size:15px;background:var(--accent-soft);color:var(--ink);border-radius:10px;padding:6px 12px;display:inline-block;margin:0 0 12px}
+.eyebrow{font-size:13px;color:var(--muted);letter-spacing:.04em}
+h1{font-family:var(--f-head);font-weight:400;font-size:clamp(30px,6vw,42px);line-height:1.15;margin:4px 0 6px;text-wrap:balance}
+.sub{color:var(--muted);margin:0 0 12px}
+.legend{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.legend span{font-size:14px;border:1px solid var(--line);border-radius:99px;padding:2px 10px;background:var(--card)}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;background:currentColor;margin-inline-end:6px;vertical-align:middle}
+nav.toc{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin:12px 0 4px}
+nav.toc a{display:block;text-decoration:none;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:10px;padding:7px 11px;font-size:15px;font-weight:600}
+nav.toc a:hover{border-color:var(--accent)}
+nav.toc a b{color:var(--accent);font-family:var(--f-mono);margin-inline-end:4px}
+section.sec{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 18px 8px;margin-top:18px;scroll-margin-top:64px}
+@media (max-width:520px){section.sec{padding:14px 12px 6px;border-radius:12px}}
+.secno{font-family:var(--f-mono);font-size:13px;color:var(--muted);direction:ltr;unicode-bidi:isolate}
+h2{font-family:var(--f-head);font-weight:400;font-size:26px;margin:2px 0 10px;line-height:1.25;text-wrap:balance}
+h3{font-size:19px;margin:18px 0 6px}
+p{margin:8px 0}
+.box{border-radius:12px;padding:10px 14px;margin:12px 0;border:1px solid var(--line);background:var(--soft)}
+.box > b:first-child{display:block;margin-bottom:4px}
+.box.rule{background:var(--accent-soft);border-color:var(--accent)}
+.box.mine{background:var(--mine);border-color:var(--mine-line)}
+.box.fix{background:var(--note);border-color:var(--note-line)}
+.box.terms{background:var(--soft)}
+.box ol,.box ul{margin:4px 0;padding-inline-start:22px}
+.tw{overflow-x:auto;margin:10px 0}
+table{border-collapse:collapse;width:100%;font-size:15.5px}
+th,td{border:1px solid var(--line);padding:6px 9px;text-align:start;vertical-align:top}
+th{background:var(--soft)}
+.disp{overflow-x:auto;overflow-y:hidden;text-align:center;margin:10px 0;padding:4px 0}
+mjx-container{direction:ltr;unicode-bidi:isolate}
+mjx-container[display="true"]{margin:.4em 0!important}
+.disp mjx-container{display:inline-block!important}
+.ans{border-bottom:3px solid var(--cyn);padding-bottom:2px}
+.amb{color:var(--amb)}.tea{color:var(--tea)}.pur{color:var(--pur)}.blu{color:var(--blu)}.pnk{color:var(--pnk)}.grn{color:var(--grn)}.org{color:var(--org)}.red{color:var(--red)}.olv{color:var(--olv)}.ind{color:var(--ind)}.brn{color:var(--brn)}.mag{color:var(--mag)}.sea{color:var(--sea)}.plm{color:var(--plm)}.rub{color:var(--rub)}.cyn{color:var(--cyn)}.sky{color:var(--sky)}.lim{color:var(--lim)}.nav{color:var(--nav)}.eme{color:var(--eme)}.bur{color:var(--bur)}.jad{color:var(--jad)}.stl{color:var(--stl)}.ocr{color:var(--ocr)}
+.k{font-weight:700}
+bdi,.m{unicode-bidi:isolate}
+.m{direction:ltr;display:inline-block;max-width:100%}
+code,pre{font-family:var(--f-mono);direction:ltr;unicode-bidi:isolate}
+/* simulation */
+.sim{border:2px solid var(--accent);border-radius:14px;padding:12px;margin:14px 0;background:var(--card)}
+.sim .st-title{font-weight:700;margin-bottom:6px}
+.sim .map{display:flex;flex-wrap:wrap;gap:5px;margin:0 0 8px;padding:0;list-style:none}
+.sim .map li{font-size:13.5px;border:1px solid var(--line);border-radius:99px;padding:2px 10px;color:var(--muted)}
+.sim .map li.on{background:var(--accent);border-color:var(--accent);color:var(--card);font-weight:700}
+.sim .map li.done{color:var(--ink);background:var(--soft)}
+.sim .lines{border:1px solid var(--line);border-radius:10px;padding:6px 8px;background:var(--soft);overflow-x:auto}
+.sim .ln{display:flex;gap:8px;align-items:center;padding:2px 4px;border-radius:6px;direction:ltr;min-height:30px}
+.sim .ln .no{font-family:var(--f-mono);font-size:12px;color:var(--muted);min-width:18px}
+.sim .ln.cur{background:var(--accent-soft);outline:2px solid var(--accent)}
+.sim .ln.fut{display:none}
+.sim .ln .f{min-width:0}
+.sim .x{margin:8px 0;padding:8px 12px;border-inline-start:4px solid var(--accent);background:var(--accent-soft);border-radius:8px}
+.sim .stp{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+.sim .stp > span{border:1px solid var(--line);border-radius:8px;padding:3px 9px;font-size:14.5px;background:var(--card)}
+.sim .stp > span > i{font-style:normal;color:var(--muted);margin-inline-end:6px;font-size:13px}
+.sim .stp .new{outline:2px solid var(--accent)}
+.sim .ctl{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-top:8px}
+.sim .ctl button{font:inherit;font-weight:700;font-size:15px;border:1px solid var(--accent);background:var(--card);color:var(--accent);border-radius:8px;padding:5px 14px;cursor:pointer}
+.sim .ctl button.pri{background:var(--accent);color:var(--card)}
+.sim .ctl button:disabled{opacity:.4;cursor:default}
+.sim .ctl .cnt{font-family:var(--f-mono);font-size:13px;color:var(--muted);direction:ltr;unicode-bidi:isolate}
+.sim .steps{display:none}
+/* quiz */
+.quiz{margin:16px 0 10px;border-top:1px dashed var(--line);padding-top:10px}
+.quiz > .qt{font-family:var(--f-head);font-size:19px;margin:0 0 6px}
+.qq{margin:10px 0 16px}
+.qq .q{font-weight:700;margin:4px 0}
+.qq ol{list-style:none;padding:0;margin:6px 0;display:grid;gap:6px}
+.qq li button{width:100%;text-align:start;font:inherit;font-size:16px;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:10px;padding:8px 12px;cursor:pointer;line-height:1.5}
+.qq li button:hover{border-color:var(--accent)}
+.qq li button.bad{border-color:var(--bad);background:var(--bad-soft)}
+.qq li button.good{border-color:var(--ok);background:var(--ok-soft)}
+.qq li button .lt{font-weight:700;color:var(--muted);margin-inline-end:8px}
+.qq .h,.qq .e{border-radius:8px;padding:6px 10px;font-size:15.5px}
+.qq .h{background:var(--bad-soft)}
+.qq .e{background:var(--ok-soft)}
+/* tools */
+.tool{border:1px solid var(--line);border-radius:12px;padding:12px;margin:12px 0;background:var(--soft)}
+.tool label{font-weight:600;font-size:15px}
+.tool input[type=range]{width:100%}
+.tool .out{font-family:var(--f-mono);direction:ltr;unicode-bidi:isolate;font-size:15px}
+.tool svg{width:100%;height:auto;display:block;background:var(--card);border-radius:8px;border:1px solid var(--line)}
+.tool .row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.tool select,.tool button{font:inherit;font-size:15px;border:1px solid var(--line);border-radius:8px;padding:4px 10px;background:var(--card);color:var(--ink)}
+.end{margin-top:18px;text-align:center;font-weight:700;font-size:18px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+mjx-container:not([display="true"]){display:inline-block;max-width:100%;overflow-x:auto;overflow-y:hidden;vertical-align:middle;padding-block:2px}
+mjx-container > svg{vertical-align:middle!important}
+mjx-assistive-mml{max-width:100%!important;left:0!important}
+[hidden]{display:none!important}
+.disp,.sim .lines{direction:ltr}
+input[type=range]{direction:ltr}
+@media (max-width:520px){.sim .lines mjx-container{font-size:88%}}
+</style>
+
+<div class="wrap" data-key="calc2-tut06-v1">
+<div class="bar"><span class="sc" id="score">ניקוד: 0</span><span class="meter" aria-hidden="true"><i id="meter"></i></span><button type="button" id="resetBtn">⟲ איפוס</button><button type="button" id="themeBtn">🌙 לילה</button></div>
+<header class="hero">
+<p class="credit">קרדיט לסיכומים של עדי מהדרייב 😊 ולעידו דוד צייג!</p>
+<div class="eyebrow">חדו״א 2 · תרגול 6 · לוזון · 01/12/25 · שני עמודים בכתב יד</div>
+<h1>תרגול 6: מבחן האינטגרל, נפח, אורך עקומה ותרגילי חזרה</h1>
+<p class="sub">איך אינטגרל עוזר להחליט אם טור מתכנס, שני שימושים של האינטגרל המסוים (נפח גוף סיבוב ואורך עקומה), ושלושה תרגילי חזרה. כל תרגיל מהמחברת מופיע כאן צעד אחר צעד, וכל מה שנעצר ב-"..." הושלם.</p>
+<div class="legend">
+<span class="rub">איברי הטור $a_n$ וסכומים</span>
+<span class="plm">שטח / אינטגרל $\int f$</span>
+<span class="amb">גבול: הקצה b · sin/cos</span>
+<span class="eme">מתכנס</span>
+<span class="bur">מתבדר</span>
+<span class="pur">הצבה t / arctan</span>
+<span class="grn">ln</span>
+<span class="pnk">חילוק / שברים חלקיים</span>
+<span class="tea">tan/sec · אינטגרציה בחלקים</span>
+<span class="olv">פונקציה עליונה · סכום עליון U</span>
+<span class="red">פונקציה תחתונה · סכום תחתון L</span>
+<span class="stl">נפח V</span>
+<span class="jad">אורך עקומה L</span>
+<span class="mag">ε (דיוק)</span>
+<span class="ocr">תנודה $\omega$ (חדש)</span>
+<span class="cyn">תשובה סופית (קו מתחת)</span>
+</div>
+<nav class="toc" aria-label="תוכן עניינים"></nav>
+</header>
+
+<!-- ============ 1 ============ -->
+<section class="sec" id="s1" data-short="מבחן האינטגרל">
+<h2>מבחן האינטגרל: טור מול אינטגרל</h2>
+<p>יש לנו טור, כלומר סכום אינסופי $\class{rub}{a_1+a_2+a_3+\dots}$. רוצים לדעת אם הוא <span class="eme">מתכנס</span> (הסכום מתקרב למספר) או <span class="bur">מתבדר</span>. הרעיון: במקום לסכם מספרים, מחשבים <span class="plm">שטח</span> מתחת לפונקציה שעוברת דרך אותם מספרים.</p>
+<div class="box mine"><b>מה זה מבחן האינטגרל? (מההתחלה, עם מספרים) — הדוגמה שלי</b>
+<ol>
+<li>שלב 1 – מה יש לנו: הטור $\sum\frac1{n^2}$. האיברים הם $\class{rub}{1,\ \frac14,\ \frac19,\ \frac1{16},\dots}$</li>
+<li>שלב 2 – "הפונקציה המתאימה": מחליפים $n$ ב-$x$ ומקבלים $f(x)=\frac1{x^2}$. אז $f(1)=1$, $f(2)=\frac14$, $f(3)=\frac19$. כלומר $f(n)=a_n$.</li>
+<li>שלב 3 – מציירים כל איבר כמלבן ברוחב 1 ובגובה $a_n$. השטח של המלבן שווה בדיוק ל-$a_n$. אז סכום הטור = סכום שטחי המלבנים.</li>
+<li>שלב 4 – כש-$f$ <b>יורדת</b>, המלבנים והעקומה "צמודים": המלבנים מעל העקומה מוזזים ביחידה אחת מהמלבנים שמתחתיה. לכן הסכום והשטח הם סופיים ביחד או אינסופיים ביחד.</li>
+<li>שלב 5 – כאן: $\int_1^\infty\frac{dx}{x^2}=1$ (סופי). לכן גם $\sum\frac1{n^2}$ <span class="eme">מתכנס</span>. (הסכום עצמו הוא בערך $1.645$, לא 1. המבחן אומר <b>אם</b> מתכנס, לא <b>למה</b> שווה.)</li>
+</ol></div>
+<div class="box rule"><b>המשפט מהמחברת: מבחן האינטגרל</b>יהי $\sum_{n=1}^\infty \class{rub}{a_n}$ טור חיובי, ותהי $f(x)$ הפונקציה המתאימה ל-$a_n$ (כלומר $f(n)=a_n$). אם $f$ מונוטונית יורדת בקרן $[1,\infty)$, אז הטור $\sum_{n=1}^\infty \class{rub}{a_n}$ והאינטגרל $\class{plm}{\int_1^\infty f(x)\,dx}$ <span class="eme">מתכנסים</span> או <span class="bur">מתבדרים</span> יחד.</div>
+<div class="box terms"><b>מילים וסימנים</b>
+<ul>
+<li>טור חיובי: כל האיברים $a_n\gt0$.</li>
+<li>קרן $[1,\infty)$: כל המספרים מ-1 והלאה.</li>
+<li>"מתכנסים יחד": אם אחד מתכנס, גם השני. אם אחד מתבדר, גם השני.</li>
+<li>הקרן לא חייבת להתחיל ב-1. אם הטור מתחיל ב-$n=2$, בודקים ב-$[2,\infty)$. גם מספיק ש-$f$ יורדת "מנקודה מסוימת והלאה", כי כמה איברים ראשונים לא משנים התכנסות.</li>
+</ul></div>
+<div class="tw"><table><tr><th>מה צריך לבדוק לפני שמשתמשים במבחן</th><th>למה זה חשוב</th></tr>
+<tr><td>1. $f(x)\gt0$</td><td>המבחן מדבר על טור חיובי.</td></tr>
+<tr><td>2. $f$ רציפה</td><td>כדי שיהיה אפשר לחשב את האינטגרל.</td></tr>
+<tr><td>3. $f$ יורדת</td><td>בלי זה המלבנים והעקומה יכולים להיות שונים מאוד (ראינו את "האוהלים" בהרצאה 9).</td></tr>
+<tr><td>4. $f(n)=a_n$</td><td>אחרת האינטגרל מדבר על טור אחר.</td></tr>
+</table></div>
+<div class="tool"><b>המחשה: מלבנים של הטור מול השטח מתחת לעקומה</b>
+<div class="row"><label for="s1f">פונקציה:</label><select id="s1f"><option value="0">1/x² (מתכנס)</option><option value="1">1/x (מתבדר)</option><option value="2">√x/(1+x) (תרגיל 2)</option></select></div>
+<label for="s1n">מספר איברים N:</label><input type="range" id="s1n" min="1" max="30" value="8">
+<svg id="s1svg" viewBox="0 0 400 230" role="img" aria-label="מלבנים בגובה a_n ועקומה f"></svg>
+<p class="out" id="s1out"></p></div>
+<div class="box rule"><b>הכלל לזכור</b>טור חיובי עם פונקציה יורדת: הטור והאינטגרל מתנהגים אותו דבר. מחשבים את האינטגרל (זה בדרך כלל קל יותר) ומסיקים על הטור.</div>
+<p><b>אנלוגיה:</b> מדרגות שיורדות לאורך מגלשה. אם המגלשה סופית באורכה, גם המדרגות שלצידה. אם היא אינסופית, גם המדרגות.</p>
+<div class="quiz"><div class="qt">שאלות על סעיף 1</div>
+<div class="qq" data-a="2"><p class="q">בטור $\sum\frac1{n^2}$, מהי "הפונקציה המתאימה"?</p><ol><li>$f(x)=\frac1{x}$, כי זו הפונקציה הבסיסית של טורים</li><li>$f(x)=x^2$, כי זה המכנה של כל איבר בטור</li><li>$f(x)=\frac1{x^2}$, כי מחליפים את $n$ ב-$x$</li><li>$f(x)=-\frac1x$, כי זו הקדומה של האיבר הכללי</li></ol><p class="h">רמז: צריך $f(n)=a_n$ לכל $n$.</p><p class="e">נכון. $f(n)=\frac1{n^2}=a_n$.</p></div>
+<div class="qq" data-a="0"><p class="q">מה המבחן <b>לא</b> אומר על $\sum\frac1{n^2}$?</p><ol><li>שהסכום שלו שווה ל-$\int_1^\infty\frac{dx}{x^2}=1$</li><li>שהוא מתכנס, כי האינטגרל המתאים סופי</li><li>שאפשר לבדוק אותו בעזרת $f(x)=\frac1{x^2}$</li><li>שהתנאי "יורדת" מתקיים ב-$[1,\infty)$</li></ol><p class="h">רמז: המבחן נותן "כן/לא", לא ערך.</p><p class="e">נכון. הסכום הוא בערך $1.645$, והאינטגרל הוא 1. המבחן קובע רק התכנסות.</p></div>
+<div class="qq" data-a="3"><p class="q">למה צריך ש-$f$ תהיה יורדת?</p><ol><li>כדי שהאינטגרל יהיה תמיד קטן מ-1 בכל המקרים</li><li>כדי שהטור יתחיל דווקא ב-$n=1$ ולא במקום אחר</li><li>כדי שהקדומה של $f$ תהיה פונקציה עולה ב-$[1,\infty)$</li><li>כדי שהסכום ייכלא בין שני אינטגרלים דומים</li></ol><p class="h">רמז: חשבו על הציור של המלבנים מעל ומתחת לעקומה.</p><p class="e">נכון. בפונקציה יורדת, הסכום חסום מלמעלה ומלמטה על ידי אינטגרלים, ולכן הם מתנהגים יחד.</p></div>
+<div class="qq" data-a="1"><p class="q">ידוע ש-$\int_1^\infty\frac{dx}{x}$ מתבדר. מה אפשר להסיק על $\sum\frac1n$?</p><ol><li>שהוא מתכנס, כי $\frac1n\to0$ כש-$n$ גדל</li><li>שהוא מתבדר, כי $\frac1x$ חיובית ויורדת</li><li>שאי אפשר לדעת, כי המבחן עובד רק על התכנסות</li><li>שהוא מתכנס ל-$\ln 2$, כמו הטור המתחלף</li></ol><p class="h">רמז: "מתכנסים או מתבדרים יחד".</p><p class="e">נכון. זה הטור ההרמוני, והוא מתבדר.</p></div>
+</div>
+</section>
+
+<!-- ============ 2 ============ -->
+<section class="sec" id="s2" data-short="תרגיל 1: &lt;bdi dir=ltr&gt;1/(n·ln n·ln ln n)&lt;/bdi&gt;">
+<h2>תרגיל 1: $\sum\limits_{n=2}^\infty\frac{1}{n\ln(n)\ln(\ln n)}$</h2>
+<p><b>המשימה מהמחברת:</b> לקבוע אם הטור מתכנס או מתבדר. הפונקציה המתאימה היא $f(x)=\frac{1}{x\ln(x)\ln(\ln x)}$.</p>
+<div class="box mine"><b>מאיפה ההצבה? (עם מספרים) — הדוגמה שלי</b>
+<ol>
+<li>שלב 1 – ראינו כבר: $(\ln x)'=\frac1x$. לכן ב-$\int\frac{dx}{x\ln x}$ מציבים $t=\ln x$ וזה נהיה $\int\frac{dt}{t}$.</li>
+<li>שלב 2 – כאן יש "שכבה" נוספת: $\ln(\ln x)$. הנגזרת שלו לפי כלל השרשרת: $\frac{1}{\ln x}\cdot\frac1x=\frac{1}{x\ln x}$.</li>
+<li>שלב 3 – בדיקה במספרים: ב-$x=10$, $\ln 10\approx2.303$, אז $\frac1{10\cdot2.303}\approx0.0434$. ובאמת, $\ln(\ln 10.01)-\ln(\ln 10)\approx 0.0000434$ לכל צעד של $0.001$.</li>
+<li>שלב 4 – לכן בוחרים $\class{pur}{t=\ln(\ln x)}$, ואז $\class{pur}{dt}=\frac{dx}{x\ln x}$. כל השבר הופך ל-$\frac{dt}{t}$.</li>
+</ol></div>
+<div class="box fix"><b>הערה קטנה שלי על המחברת (תיקון עדין)</b>
+<ul>
+<li>בסוגריים של ההצבה כתוב $t=\ln(x)$. אבל ה-$dt$ והגבולות שכתובים שם ($\frac{dx}{x\ln x}$, ו-$t$ מ-$\ln(\ln 2)$) מתאימים ל-$\class{pur}{t=\ln(\ln x)}$. זו כנראה רק טעות העתקה.</li>
+<li>בעיה בתחום: $\ln(\ln x)\gt0$ רק כש-$\ln x\gt1$, כלומר $x\gt e\approx2.718$. ב-$x=2$ יוצא $\ln(\ln 2)=\ln(0.693)\approx-0.367$, שלילי. וב-$x=e$ המכנה מתאפס. לכן $f$ <b>לא</b> חיובית ב-$[2,\infty)$, ו-$\ln(\ln(\ln 2))$ בשורה האחרונה לא מוגדר.</li>
+<li>התיקון: מתחילים מ-$n=3$. האיבר הראשון ($n=2$) הוא מספר סופי אחד, והוא לא משנה התכנסות. ב-$[3,\infty)$ הפונקציה חיובית, רציפה ויורדת. המסקנה (מתבדר) לא משתנה.</li>
+</ul></div>
+<h3>מפת השלבים</h3>
+<div class="tw"><table><tr><th>שלב</th><th>מה עושים</th></tr>
+<tr><td>1</td><td>בודקים תנאים: חיובית, רציפה, יורדת</td></tr>
+<tr><td>2</td><td>כותבים את האינטגרל כגבול עם קצה <span class="amb">b</span></td></tr>
+<tr><td>3</td><td>הצבה $t=\ln(\ln x)$ ומשנים גבולות</td></tr>
+<tr><td>4</td><td>קדומה: $\ln t$</td></tr>
+<tr><td>5</td><td>גבול כש-$b\to\infty$ ומסקנה על הטור</td></tr>
+</table></div>
+<div class="sim"><div class="st-title">סימולציה: תרגיל 1, שורה אחרי שורה</div>
+<ol class="map"><li>1. תנאים</li><li>2. גבול</li><li>3. הצבה</li><li>4. קדומה</li><li>5. מסקנה</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$f(x)=\frac{1}{x\ln(x)\ln(\ln x)},\quad x\in[3,\infty)$</div><div class="x">כאן $x\ge3\gt e$, לכן $\ln x\gt1$ ו-$\ln(\ln x)\gt0$. כל שלושת הגורמים חיוביים, אז $f\gt0$ ורציפה. כל גורם במכנה עולה, אז המכנה עולה, ולכן $f$ יורדת.</div><div class="st"><span><i>חיובית</i>כן</span><span><i>יורדת</i>כן</span><span><i>מתחילים מ</i>3</span></div></div>
+<div class="step" data-m="1"><div class="f">$\int_3^\infty\frac{dx}{x\ln x\ln(\ln x)}=\lim\limits_{\class{amb}{b}\to\infty}\int_3^{\class{amb}{b}}\frac{dx}{x\ln x\ln(\ln x)}$</div><div class="x">אינטגרל לא אמיתי מסוג 1: עוצרים בקצה סופי $b$, ורק בסוף שולחים אותו לאינסוף.</div><div class="st"><span><i>הקצה</i>$b$</span></div></div>
+<div class="step" data-m="2"><div class="f">$\class{pur}{t=\ln(\ln x)},\quad \class{pur}{dt}=\frac{dx}{x\ln x},\quad t:\ \ln(\ln 3)\to\ln(\ln b)$</div><div class="x">הנגזרת של $\ln(\ln x)$ היא $\frac1{\ln x}\cdot\frac1x$ (כלל השרשרת). הגבולות: מציבים $x=3$ ו-$x=b$ בתוך $t$.</div><div class="st"><span><i>t</i>$\ln(\ln x)$</span><span><i>t בהתחלה</i>$\ln(\ln3)\approx0.094$</span></div></div>
+<div class="step" data-m="2"><div class="f">$=\lim\limits_{b\to\infty}\int_{\ln(\ln 3)}^{\ln(\ln b)}\frac{\class{pur}{dt}}{\class{pur}{t}}$</div><div class="x">מה נשאר? $\frac{dx}{x\ln x}$ הפך ל-$dt$, ו-$\ln(\ln x)$ במכנה הפך ל-$t$.</div><div class="st"><span><i>אינטגרנד</i>$\frac1t$</span></div></div>
+<div class="step" data-m="3"><div class="f">$=\lim\limits_{b\to\infty}\class{grn}{\ln t}\Big|_{\ln(\ln3)}^{\ln(\ln b)}$</div><div class="x">הקדומה של $\frac1t$ היא $\ln|t|$. כאן $t\gt0$, אז אפשר בלי ערך מוחלט.</div><div class="st"><span><i>קדומה</i>$\ln t$</span></div></div>
+<div class="step" data-m="3"><div class="f">$=\lim\limits_{b\to\infty}\Big[\ln(\ln(\ln b))-\ln(\ln(\ln 3))\Big]$</div><div class="x">מציבים גבולות. $\ln(\ln(\ln3))\approx\ln(0.094)\approx-2.36$, מספר רגיל.</div><div class="st"><span><i>קבוע</i>$\approx-2.36$</span></div></div>
+<div class="step" data-m="4"><div class="f"><span class="ans">$=\infty\ \Rightarrow$ הטור מתבדר</span></div><div class="x">כש-$b\to\infty$ גם $\ln b\to\infty$, גם $\ln(\ln b)\to\infty$ וגם $\ln(\ln(\ln b))\to\infty$. האינטגרל <span class="bur">מתבדר</span>, ולפי מבחן האינטגרל גם הטור <span class="bur">מתבדר</span>.</div><div class="st"><span><i>אינטגרל</i>$\infty$</span><span><i>טור</i>מתבדר</span></div></div>
+</div></div>
+<div class="tool"><b>המחשה: כמה לאט זה מתבדר?</b>
+<label for="s2k">הקצה $b=10^k$. הזיזו את $k$:</label><input type="range" id="s2k" min="1" max="300" value="10">
+<p class="out" id="s2out"></p>
+<p>גם עם $b=10^{300}$ (מספר עם 300 אפסים) האינטגרל רק בערך 4.2. אבל אין לו תקרה: אם ממשיכים מספיק, הוא עובר כל מספר. "מתבדר" לא אומר "גדל מהר".</p></div>
+<div class="box rule"><b>הכלל לזכור</b>כשרואים במכנה $x$ כפול $\ln x$ (כפול $\ln(\ln x)$...), ההצבה היא ה-$\ln$ ה"חיצוני" ביותר: הנגזרת שלו היא בדיוק שאר המכנה.</div>
+<div class="quiz"><div class="qt">שאלות על סעיף 2</div>
+<div class="qq" data-a="1"><p class="q">באיזו הצבה האינטגרל $\int\frac{dx}{x\ln x\ln(\ln x)}$ הופך ל-$\int\frac{dt}{t}$?</p><ol><li>$t=\ln x$, כי $(\ln x)'=\frac1x$ נמצא במכנה</li><li>$t=\ln(\ln x)$, כי $dt=\frac{dx}{x\ln x}$</li><li>$t=x\ln x$, כי זה החלק הגדול במכנה</li><li>$t=\frac1x$, כי זו הצבה הפוכה שמעלימה את $x$</li></ol><p class="h">רמז: מה הנגזרת של $\ln(\ln x)$?</p><p class="e">נכון. $(\ln(\ln x))'=\frac{1}{x\ln x}$, ולכן כל השבר הופך ל-$\frac{dt}t$.</p></div>
+<div class="qq" data-a="3"><p class="q">למה כדאי להתחיל את הבדיקה מ-$n=3$ ולא מ-$n=2$?</p><ol><li>כי ב-$x=2$ המכנה מתאפס ולכן האיבר הראשון אינסופי</li><li>כי מבחן האינטגרל עובד רק על קרן שמתחילה במספר אי-זוגי</li><li>כי ב-$x=2$ הפונקציה עולה, וב-$x=3$ היא מתחילה לרדת</li><li>כי $\ln(\ln 2)\lt0$, אז ב-$x=2$ הפונקציה שלילית</li></ol><p class="h">רמז: חשבו $\ln 2\approx0.693$ ואז $\ln$ שלו.</p><p class="e">נכון. $\ln(0.693)\approx-0.367$. הפונקציה חיובית רק מ-$x\gt e$.</p></div>
+<div class="qq" data-a="0"><p class="q">אם $t=\ln(\ln x)$ ו-$x$ רץ מ-3 עד $b$, מאיפה עד איפה רץ $t$?</p><ol><li>מ-$\ln(\ln 3)$ עד $\ln(\ln b)$</li><li>מ-$\ln 3$ עד $\ln b$, כמו בהצבה הרגילה</li><li>מ-3 עד $b$, כי הגבולות לא משתנים</li><li>מ-0 עד $\infty$, כי $\ln$ מתחיל ב-0</li></ol><p class="h">רמז: מציבים את גבולות $x$ בתוך הנוסחה של $t$.</p><p class="e">נכון. מציבים $x=3$ ו-$x=b$ בתוך $\ln(\ln x)$.</p></div>
+<div class="qq" data-a="2"><p class="q">התוצאה $\ln(\ln(\ln b))\to\infty$. מה זה אומר על הטור?</p><ol><li>שהוא מתכנס, כי $\ln(\ln(\ln b))$ גדל לאט מאוד</li><li>שאי אפשר לדעת, כי הטור מתחיל ב-$n=2$ ולא ב-1</li><li>שהוא מתבדר, כי הוא והאינטגרל מתנהגים יחד</li><li>שהוא מתכנס ל-$\ln(\ln(\ln 3))$, הקבוע שנשאר</li></ol><p class="h">רמז: "מתבדר" לא תלוי במהירות.</p><p class="e">נכון. גידול איטי הוא עדיין גידול בלי תקרה.</p></div>
+</div>
+</section>
+
+<!-- ============ 3 ============ -->
+<section class="sec" id="s3" data-short="תרגיל 2: &lt;bdi dir=ltr&gt;√n/(1+n)&lt;/bdi&gt;">
+<h2>תרגיל 2: $\sum\limits_{n=1}^\infty\frac{\sqrt n}{1+n}$</h2>
+<p><b>המשימה מהמחברת:</b> לפתור בעזרת מבחן האינטגרל. הפונקציה המתאימה: $f(x)=\frac{\sqrt x}{1+x}\gt0$. הפעם לא ברור מיד שהיא יורדת (המונה גם עולה!), ולכן גוזרים.</p>
+<div class="box mine"><b>למה צריך לגזור? (עם מספרים) — הדוגמה שלי</b>
+<ol>
+<li>שלב 1 – נציב מספרים: $f(0.25)=\frac{0.5}{1.25}=0.4$, $f(1)=\frac12=0.5$, $f(4)=\frac25=0.4$, $f(9)=\frac3{10}=0.3$.</li>
+<li>שלב 2 – רואים: מ-0.25 עד 1 הפונקציה <b>עולה</b>, ומ-1 והלאה היא <b>יורדת</b>. אז "יורדת" לא תמיד נכון.</li>
+<li>שלב 3 – בגלל זה בודקים עם נגזרת: נגזרת $\le0$ פירושה יורדת. אנחנו צריכים את זה רק ב-$[1,\infty)$.</li>
+</ol></div>
+<h3>מפת השלבים</h3>
+<div class="tw"><table><tr><th>שלב</th><th>מה עושים</th></tr>
+<tr><td>1</td><td>גוזרים (כלל המנה) ובודקים סימן</td></tr>
+<tr><td>2</td><td>הצבה $t=\sqrt x$</td></tr>
+<tr><td>3</td><td>חילוק: $\frac{t^2}{1+t^2}=1-\frac1{1+t^2}$</td></tr>
+<tr><td>4</td><td>קדומה: $t-\arctan t$</td></tr>
+<tr><td>5</td><td>גבול ומסקנה</td></tr>
+</table></div>
+<div class="sim"><div class="st-title">סימולציה: תרגיל 2, שורה אחרי שורה</div>
+<ol class="map"><li>1. יורדת?</li><li>2. הצבה</li><li>3. חילוק</li><li>4. קדומה</li><li>5. מסקנה</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$f'(x)=\frac{\frac{1}{2\sqrt x}(1+x)-\sqrt x\cdot1}{(1+x)^2}$</div><div class="x">כלל המנה: (נגזרת המונה כפול המכנה) פחות (המונה כפול נגזרת המכנה), חלקי המכנה בריבוע. $(\sqrt x)'=\frac1{2\sqrt x}$ ו-$(1+x)'=1$.</div><div class="st"><span><i>כלל</i>מנה</span></div></div>
+<div class="step" data-m="0"><div class="f">$=\frac{1+x-2x}{2\sqrt x(1+x)^2}=\frac{1-x}{2\sqrt x(1+x)^2}\le0\quad\forall x\in[1,\infty)$</div><div class="x">כופלים מונה ומכנה ב-$2\sqrt x$, כדי להעלים את השבר שבמונה: $\sqrt x\cdot2\sqrt x=2x$. המכנה חיובי, והמונה $1-x\le0$ כש-$x\ge1$. לכן $f$ <b>יורדת</b> ב-$[1,\infty)$ ומותר להשתמש במבחן.</div><div class="st"><span><i>f'</i>$\le0$</span><span><i>יורדת</i>כן</span></div></div>
+<div class="step" data-m="1"><div class="f">$\int_1^\infty\frac{\sqrt x}{1+x}dx=\lim\limits_{\class{amb}{b}\to\infty}\int_1^{\class{amb}{b}}\frac{\sqrt x}{1+x}dx$</div><div class="x">כותבים כגבול, כמו תמיד בסוג 1.</div><div class="st"><span><i>הקצה</i>$b$</span></div></div>
+<div class="step" data-m="1"><div class="f">$\class{pur}{t=\sqrt x}\Rightarrow x=t^2,\quad dx=2t\,dt,\quad t:1\to\sqrt b$</div><div class="x">למה $\sqrt x$? הוא "השורש המציק". מ-$x=t^2$ גוזרים: $dx=2t\,dt$. (במחברת הגיעו לזה דרך $dt=\frac{dx}{2\sqrt x}=\frac{dx}{2t}$, וזה אותו דבר.)</div><div class="st"><span><i>t</i>$\sqrt x$</span><span><i>dx</i>$2t\,dt$</span></div></div>
+<div class="step" data-m="1"><div class="f">$=\lim\limits_{b\to\infty}\int_1^{\sqrt b}\frac{\class{pur}{t}}{1+\class{pur}{t^2}}\cdot2t\,dt=\lim\limits_{b\to\infty}2\int_1^{\sqrt b}\frac{t^2}{1+t^2}dt$</div><div class="x">$\sqrt x$ הפך ל-$t$, ו-$x$ הפך ל-$t^2$. כופלים $t\cdot2t=2t^2$.</div><div class="st"><span><i>אינטגרנד</i>$\frac{2t^2}{1+t^2}$</span></div></div>
+<div class="step" data-m="2"><div class="f">$=\lim\limits_{b\to\infty}2\int_1^{\sqrt b}\frac{\class{pnk}{1+t^2-1}}{1+t^2}dt=\lim\limits_{b\to\infty}2\int_1^{\sqrt b}\Big(\class{pnk}{1}-\frac{1}{1+t^2}\Big)dt$</div><div class="x">מעלת המונה = מעלת המכנה, אז צריך חילוק. הטריק במחברת: מוסיפים ומחסירים 1 במונה. $\frac{1+t^2}{1+t^2}=1$, ונשאר $-\frac1{1+t^2}$.</div><div class="st"><span><i>חילוק</i>$1-\frac1{1+t^2}$</span></div></div>
+<div class="step" data-m="3"><div class="f">$=\lim\limits_{b\to\infty}2\Big[t-\class{pur}{\arctan t}\Big]_1^{\sqrt b}$</div><div class="x">קדומה של 1 היא $t$. קדומה של $\frac1{1+t^2}$ היא $\arctan t$.</div><div class="st"><span><i>קדומה</i>$t-\arctan t$</span></div></div>
+<div class="step" data-m="3"><div class="f">$=\lim\limits_{b\to\infty}2\Big[\sqrt b-\arctan\sqrt b-1+\tfrac{\pi}{4}\Big]$</div><div class="x">מציבים: למעלה $\sqrt b$. למטה $t=1$: $1-\arctan1=1-\frac\pi4$, ועם המינוס שלפניו: $-1+\frac\pi4$.</div><div class="st"><span><i>arctan 1</i>$\frac\pi4$</span></div></div>
+<div class="step" data-m="4"><div class="f"><span class="ans">$=\infty\ \Rightarrow$ הטור מתבדר</span></div><div class="x">$\sqrt b\to\infty$, ואילו $\arctan\sqrt b\to\frac\pi2$ (חסום). אז הכול שואף לאינסוף. האינטגרל <span class="bur">מתבדר</span>, ולכן גם הטור.</div><div class="st"><span><i>√b</i>$\infty$</span><span><i>arctan √b</i>$\frac\pi2$</span><span><i>טור</i>מתבדר</span></div></div>
+</div></div>
+<div class="tool"><b>המחשה: $f$ עולה עד 1 ואז יורדת</b>
+<label for="s3x">הזיזו את $x$:</label><input type="range" id="s3x" min="0.05" max="12" step="0.05" value="0.5">
+<svg id="s3svg" viewBox="0 0 400 200" role="img" aria-label="גרף sqrt x חלקי 1+x"></svg>
+<p class="out" id="s3out"></p></div>
+<div class="box mine"><b>דרך קצרה יותר (שלי, לא במחברת)</b>ל-$n\ge1$: $1+n\le2n$, ולכן $\frac{\sqrt n}{1+n}\ge\frac{\sqrt n}{2n}=\frac{1}{2\sqrt n}$. והטור $\sum\frac1{\sqrt n}$ מתבדר ($p=\frac12\le1$). לפי השוואה, גם הטור שלנו מתבדר. במבחן אתם יכולים לבחור כל דרך נכונה, אבל אם כתוב "בעזרת מבחן האינטגרל", צריך את הדרך של המחברת.</div>
+<div class="quiz"><div class="qt">שאלות על סעיף 3</div>
+<div class="qq" data-a="3"><p class="q">למה גוזרים את $f(x)=\frac{\sqrt x}{1+x}$ לפני שמשתמשים במבחן?</p><ol><li>כדי למצוא את הקדומה של $f$ בלי הצבה</li><li>כדי לבדוק ש-$f$ חיובית בכל הקרן $[1,\infty)$</li><li>כדי לחשב את הגבול של $f$ באינסוף ישירות</li><li>כדי לבדוק ש-$f$ יורדת, כי גם המונה עולה</li></ol><p class="h">רמז: איזה תנאי של המבחן לא ברור מהמבט הראשון?</p><p class="e">נכון. גם המונה וגם המכנה עולים, אז צריך נגזרת כדי לדעת.</p></div>
+<div class="qq" data-a="0"><p class="q">בהצבה $t=\sqrt x$, למה שווה $dx$?</p><ol><li>$2t\,dt$, כי $x=t^2$</li><li>$\frac{dt}{2t}$, כי $(\sqrt x)'=\frac1{2\sqrt x}$</li><li>$t^2\,dt$, כי $x=t^2$ פשוט</li><li>$\frac{dt}{2\sqrt t}$, כי גוזרים שורש</li></ol><p class="h">רמז: גזרו את $x=t^2$ לפי $t$.</p><p class="e">נכון. $\frac{dx}{dt}=2t$.</p></div>
+<div class="qq" data-a="2"><p class="q">איך כותבים את $\frac{t^2}{1+t^2}$ כדי לחשב את האינטגרל?</p><ol><li>$1+\frac1{1+t^2}$, כי מוסיפים 1 למונה</li><li>$t^2-\frac1{1+t^2}$, כי מחלקים רק את $t^2$</li><li>$1-\frac1{1+t^2}$, כי $t^2=(1+t^2)-1$</li><li>$\frac{1}{1+t^{-2}}$, כי מחלקים מונה ומכנה ב-$t^2$</li></ol><p class="h">רמז: הוסיפו ו-החסירו 1 במונה.</p><p class="e">נכון. ואז $\int\Big(1-\frac1{1+t^2}\Big)dt=t-\arctan t$.</p></div>
+<div class="qq" data-a="1"><p class="q">בשורה האחרונה, מה קורה ל-$\arctan\sqrt b$ כש-$b\to\infty$?</p><ol><li>שואף לאינסוף, ולכן מבטל את $\sqrt b$</li><li>שואף ל-$\frac\pi2$, ולכן לא עוצר את $\sqrt b$</li><li>שואף ל-0, כי $\sqrt b$ גדל מאוד</li><li>שואף ל-$\frac\pi4$, כמו $\arctan 1$</li></ol><p class="h">רמז: לגרף של $\arctan$ יש קו אופקי למעלה.</p><p class="e">נכון. $\arctan$ חסום ב-$\frac\pi2$, ו-$\sqrt b$ ממשיך לגדול.</p></div>
+</div>
+</section>
+
+<!-- ============ 4 ============ -->
+<section class="sec" id="s4" data-short="נפח גוף סיבוב">
+<h2>נפח גוף סיבוב בין שתי פונקציות</h2>
+<p>תזכורת מהרצאה 7: אם מסובבים את הגרף של $f$ סביב ציר ה-$x$, כל חתך הוא עיגול ברדיוס $f(x)$, ולכן:</p>
+<div class="disp">$\class{stl}{V}=\pi\int_a^b[f(x)]^2\,dx$</div>
+<p><b>התרגיל מהמחברת:</b> חשבו את הנפח של הגוף שנוצר מסיבוב השטח הכלוא בין $\class{olv}{f(x)=x^2}$ לבין $\class{red}{g(x)=x^3}$ והישרים $x=0$ ו-$x=1$, סביב ציר $x$.</p>
+<div class="box mine"><b>מה הצורה של החתך? (עם מספרים) — הדוגמה שלי</b>
+<ol>
+<li>שלב 1 – מי למעלה? ב-$x=0.5$: $\class{olv}{f=0.25}$ ו-$\class{red}{g=0.125}$. ב-$[0,1]$ תמיד $x^3\le x^2$ (כי $x\le1$). אז $f$ העליונה.</li>
+<li>שלב 2 – מסובבים את הקטע האנכי שבין 0.125 ל-0.25. מקבלים <b>טבעת</b> (עיגול עם חור), כמו דסקית.</li>
+<li>שלב 3 – שטח הטבעת = העיגול הגדול פחות החור: $\pi\cdot0.25^2-\pi\cdot0.125^2\approx0.147$.</li>
+<li>שלב 4 – סוכמים את כל הטבעות מ-0 עד 1, כלומר אינטגרל. זה בדיוק נפח הגוף של $f$ פחות נפח הגוף של $g$.</li>
+</ol></div>
+<div class="box fix"><b>זהירות (טעות נפוצה, שלי)</b>לא מסובבים את ההפרש: $\pi\int(f-g)^2$ זה <b>לא</b> הנפח. ב-$x=0.5$: $(0.25-0.125)^2=0.0156$, אבל הטבעת היא $0.25^2-0.125^2=0.0469$. ריבוע של הפרש ≠ הפרש של ריבועים.</div>
+<div class="sim"><div class="st-title">סימולציה: הנפח, שורה אחרי שורה (המחברת נעצרה ב-"...")</div>
+<ol class="map"><li>1. מי למעלה</li><li>2. הפרש נפחים</li><li>3. חישוב</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$x\in[0,1]:\quad \class{red}{x^3}\le\class{olv}{x^2}$</div><div class="x">$x^3=x\cdot x^2$, ו-$x\le1$. לכן $x^3\le x^2$. השטח שמסובבים נמצא בין שני הגרפים.</div><div class="st"><span><i>עליונה</i>$x^2$</span><span><i>תחתונה</i>$x^3$</span></div></div>
+<div class="step" data-m="1"><div class="f">$\class{stl}{V}=\class{stl}{V_f}-\class{stl}{V_g}=\pi\int_0^1(\class{olv}{x^2})^2dx-\pi\int_0^1(\class{red}{x^3})^2dx$</div><div class="x">הגוף של $f$ "מלא", ומוציאים ממנו את הגוף של $g$ (החור).</div><div class="st"><span><i>שיטה</i>הפרש נפחים</span></div></div>
+<div class="step" data-m="2"><div class="f">$=\pi\int_0^1x^4dx-\pi\int_0^1x^6dx=\pi\Big[\frac{x^5}{5}\Big]_0^1-\pi\Big[\frac{x^7}{7}\Big]_0^1$</div><div class="x">$(x^2)^2=x^4$ ו-$(x^3)^2=x^6$. קדומה של $x^n$ היא $\frac{x^{n+1}}{n+1}$.</div><div class="st"><span><i>V_f</i>$\frac\pi5$</span><span><i>V_g</i>$\frac\pi7$</span></div></div>
+<div class="step" data-m="2"><div class="f"><span class="ans">$=\pi\Big(\frac15-\frac17\Big)=\frac{2\pi}{35}\approx0.18$</span></div><div class="x">מכנה משותף 35: $\frac{7-5}{35}=\frac2{35}$.</div><div class="st"><span><i>V</i>$\frac{2\pi}{35}$</span></div></div>
+</div></div>
+<div class="tool"><b>המחשה: הטבעת בכל נקודה $x$</b>
+<label for="s4x">הזיזו את $x$:</label><input type="range" id="s4x" min="0" max="1" step="0.01" value="0.5">
+<svg id="s4svg" viewBox="0 0 400 220" role="img" aria-label="השטח בין x בריבוע ל-x בשלישית והטבעת"></svg>
+<p class="out" id="s4out"></p></div>
+<div class="box rule"><b>הכלל לזכור</b>שטח בין שתי פונקציות שמסתובב סביב ציר $x$: $\class{stl}{V}=\pi\int_a^b\big(\class{olv}{f^2}-\class{red}{g^2}\big)dx$, כש-$0\le g\le f$.</div>
+<div class="quiz"><div class="qt">שאלות על סעיף 4</div>
+<div class="qq" data-a="1"><p class="q">בתרגיל, איזו פונקציה עליונה ב-$[0,1]$ ולמה?</p><ol><li>$x^3$, כי החזקה שלה גדולה יותר</li><li>$x^2$, כי $x^3=x\cdot x^2$ ו-$x\le1$</li><li>$x^3$, כי היא עולה מהר יותר מ-$x^2$</li><li>אין עליונה, כי הן נחתכות באמצע הקטע</li></ol><p class="h">רמז: הציבו $x=0.5$.</p><p class="e">נכון. $0.25\ge0.125$. החזקה הגבוהה יותר קטנה יותר כש-$x$ בין 0 ל-1.</p></div>
+<div class="qq" data-a="2"><p class="q">מה הצורה של חתך הגוף בנקודה $x$?</p><ol><li>עיגול מלא ברדיוס $x^2-x^3$, בלי חור</li><li>ריבוע שהצלע שלו היא $x^2-x^3$</li><li>טבעת: רדיוס חיצוני $x^2$ ופנימי $x^3$</li><li>עיגול מלא שהרדיוס שלו $x^2+x^3$</li></ol><p class="h">רמז: מסובבים קטע אנכי שלא מתחיל בציר.</p><p class="e">נכון. ולכן השטח הוא $\pi(x^4-x^6)$.</p></div>
+<div class="qq" data-a="0"><p class="q">מה הנפח בתרגיל?</p><ol><li>$\frac{2\pi}{35}$</li><li>$\frac{\pi}{35}$</li><li>$\frac{\pi}{12}$</li><li>$\frac{\pi}{105}$</li></ol><p class="h">רמז: $\pi\big(\frac15-\frac17\big)$.</p><p class="e">נכון. $\frac{7-5}{35}\pi=\frac{2\pi}{35}$.</p></div>
+<div class="qq" data-a="3"><p class="q">חבר כתב $V=\pi\int_0^1(x^2-x^3)^2dx$. מה הבעיה?</p><ol><li>אין בעיה, זה אותו דבר כמו הפרש הנפחים</li><li>צריך $2\pi$ ולא $\pi$, כי יש שתי פונקציות</li><li>צריך לסובב סביב ציר $y$, לא סביב ציר $x$</li><li>ריבוע של הפרש שונה מהפרש של ריבועים</li></ol><p class="h">רמז: חשבו את שני הביטויים ב-$x=0.5$.</p><p class="e">נכון. $0.0156\ne0.0469$. החתך הוא טבעת, לא עיגול ברדיוס ההפרש.</p></div>
+</div>
+</section>
+
+<!-- ============ 5 ============ -->
+<section class="sec" id="s5" data-short="אורך עקומה: &lt;bdi dir=ltr&gt;ln(2cos x)&lt;/bdi&gt;">
+<h2>אורך עקומה של $y=\ln(2\cos x)$</h2>
+<p>תזכורת מהרצאה 7:</p>
+<div class="disp">$\class{jad}{L}=\int_a^b\sqrt{1+f'(x)^2}\,dx$</div>
+<p><b>התרגיל מהמחברת:</b> חשבו את אורך העקומה $y=\ln(2\cos x)$ הכלוא בין שתי נקודות החיתוך של הגרף עם ציר $x$ בקטע $\big[-\frac\pi2,\frac\pi2\big]$.</p>
+<div class="box mine"><b>מאיפה מגיעים כל ה"טריקים" כאן? (עם מספרים) — שלי</b>
+<ol>
+<li>שלב 1 – חיתוך עם ציר $x$ אומר $y=0$. ו-$\ln(\text{משהו})=0$ רק כשהמשהו הוא 1. לכן $2\cos x=1$.</li>
+<li>שלב 2 – $\cos x=\frac12$ ב-$x=\pm\frac\pi3$, כי $\cos60^\circ=0.5$. בדיקה: $\ln(2\cdot0.5)=\ln1=0$.</li>
+<li>שלב 3 – הנגזרת: $f'=\frac{(2\cos x)'}{2\cos x}=\frac{-2\sin x}{2\cos x}=-\tan x$. ב-$x=\frac\pi4$: $-1$.</li>
+<li>שלב 4 – הזהות $1+\tan^2x=\frac1{\cos^2x}$. היא מגיעה מחלוקה של $\cos^2+\sin^2=1$ ב-$\cos^2$. ב-$x=\frac\pi4$: $1+1=2$, ו-$\frac1{0.5}=2$.</li>
+<li>שלב 5 – $\frac1{\cos x}$ אין לנו קדומה מוכנה. אז כופלים ב-$\frac{\cos x}{\cos x}$, ובמכנה $\cos^2x=1-\sin^2x$. עכשיו $t=\sin x$ עובד, כי $\cos x\,dx$ הוא בדיוק $dt$.</li>
+</ol></div>
+<h3>מפת השלבים</h3>
+<div class="tw"><table><tr><th>שלב</th><th>מה עושים</th></tr>
+<tr><td>1</td><td>נקודות חיתוך = גבולות האינטגרל</td></tr>
+<tr><td>2</td><td>נגזרת והצבה בנוסחה</td></tr>
+<tr><td>3</td><td>זהות טריגו׳ מעלימה את השורש</td></tr>
+<tr><td>4</td><td>זוגיות + כפל ב-$\frac{\cos x}{\cos x}$</td></tr>
+<tr><td>5</td><td>הצבה $t=\sin x$ ושברים חלקיים</td></tr>
+</table></div>
+<div class="sim"><div class="st-title">סימולציה: אורך העקומה, שורה אחרי שורה</div>
+<ol class="map"><li>1. חיתוך</li><li>2. נוסחה</li><li>3. זהות</li><li>4. זוגיות</li><li>5. הצבה ופירוק</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$\ln(2\cos x)=0\iff2\cos x=1\iff\cos x=\tfrac12\iff x=\pm\tfrac\pi3+2\pi k$</div><div class="x">מתחילים מהסוף להתחלה: $\ln$ מתאפס רק ב-1. הפתרון הכללי של $\cos x=\frac12$ הוא $\pm\frac\pi3+2\pi k$.</div><div class="st"><span><i>פתרונות</i>$\pm\frac\pi3+2\pi k$</span></div></div>
+<div class="step" data-m="0"><div class="f">$k=0:\quad x=\pm\tfrac\pi3\in\big[-\tfrac\pi2,\tfrac\pi2\big]$</div><div class="x">רק $k=0$ נותן נקודות בתוך הקטע. אלה גבולות האינטגרל.</div><div class="st"><span><i>a</i>$-\frac\pi3$</span><span><i>b</i>$\frac\pi3$</span></div></div>
+<div class="step" data-m="1"><div class="f">$\class{jad}{L}=\int_{-\pi/3}^{\pi/3}\sqrt{1+\Big(\frac{-2\sin x}{2\cos x}\Big)^2}dx=\int_{-\pi/3}^{\pi/3}\sqrt{1+\class{tea}{\tan^2x}}\,dx$</div><div class="x">כלל השרשרת: $(\ln u)'=\frac{u'}{u}$ עם $u=2\cos x$. הנגזרת $-\tan x$, ובריבוע המינוס נעלם.</div><div class="st"><span><i>f'</i>$-\tan x$</span></div></div>
+<div class="step" data-m="2"><div class="f">$=\int_{-\pi/3}^{\pi/3}\frac{1}{\sqrt{\cos^2x}}dx=\int_{-\pi/3}^{\pi/3}\frac{1}{\class{amb}{\cos x}}dx$</div><div class="x">$1+\tan^2x=\frac1{\cos^2x}$. ואז $\sqrt{\cos^2x}=|\cos x|$. בקטע הזה $\cos x\gt0$ (כמו שכתוב במחברת: "cos חיובית בתחום"), אז מורידים ערך מוחלט.</div><div class="st"><span><i>אינטגרנד</i>$\frac1{\cos x}$</span></div></div>
+<div class="step" data-m="3"><div class="f">$=2\int_0^{\pi/3}\frac{\class{amb}{\cos x}}{\class{amb}{\cos^2x}}dx=2\int_0^{\pi/3}\frac{\cos x}{1-\class{amb}{\sin^2x}}dx$</div><div class="x">שני דברים: (1) $\cos$ זוגית, אז האינטגרל מ-$-\frac\pi3$ עד $\frac\pi3$ הוא פעמיים מ-0 עד $\frac\pi3$. (2) כופלים ב-$\frac{\cos x}{\cos x}$ ומחליפים $\cos^2x=1-\sin^2x$.</div><div class="st"><span><i>זוגיות</i>×2</span></div></div>
+<div class="step" data-m="4"><div class="f">$\class{pur}{t=\sin x},\ \ \class{pur}{dt}=\cos x\,dx,\ \ t:0\to\tfrac{\sqrt3}{2}\quad\Rightarrow\quad=2\int_0^{\sqrt3/2}\frac{dt}{1-t^2}$</div><div class="x">$\sin0=0$ ו-$\sin\frac\pi3=\frac{\sqrt3}2$. ה-$\cos x\,dx$ שבמונה הפך ל-$dt$.</div><div class="st"><span><i>t</i>$\sin x$</span><span><i>גבול עליון</i>$\frac{\sqrt3}2$</span></div></div>
+<div class="step" data-m="4"><div class="f">$\frac{1}{1-t^2}=\frac{\class{pnk}{1/2}}{\class{grn}{1-t}}+\frac{\class{pnk}{1/2}}{\class{grn}{1+t}}$</div><div class="x">שברים חלקיים: $1-t^2=(1-t)(1+t)$. מציבים $t=1$ ו-$t=-1$ ומקבלים $\frac12$ לכל אחד. הקדומה: $-\frac12\ln|1-t|+\frac12\ln|1+t|=\frac12\ln\Big|\frac{1+t}{1-t}\Big|$.</div><div class="st"><span><i>A</i>$\frac12$</span><span><i>B</i>$\frac12$</span></div></div>
+<div class="step" data-m="4"><div class="f">$=2\cdot\tfrac12\class{grn}{\ln\Big|\frac{1+t}{1-t}\Big|}\,\Big|_0^{\sqrt3/2}=\ln\frac{1+\frac{\sqrt3}2}{1-\frac{\sqrt3}2}-\ln1$</div><div class="x">מציבים. ב-$t=0$: $\ln1=0$.</div><div class="st"><span><i>ln 1</i>0</span></div></div>
+<div class="step" data-m="4"><div class="f"><span class="ans">$\class{jad}{L}=\ln\frac{2+\sqrt3}{2-\sqrt3}=2\ln(2+\sqrt3)\approx2.634$</span></div><div class="x">כופלים מונה ומכנה ב-2. (שלי:) $(2+\sqrt3)(2-\sqrt3)=1$, ולכן השבר שווה ל-$(2+\sqrt3)^2$, ו-$\ln$ שלו הוא $2\ln(2+\sqrt3)$.</div><div class="st"><span><i>L</i>$\approx2.634$</span></div></div>
+</div></div>
+<div class="tool"><b>המחשה: קו שבור מתקרב לאורך העקומה</b>
+<label for="s5n">מספר קטעים בקו השבור:</label><input type="range" id="s5n" min="1" max="40" value="3">
+<svg id="s5svg" viewBox="0 0 400 220" role="img" aria-label="העקומה ln(2cos x) וקו שבור"></svg>
+<p class="out" id="s5out"></p></div>
+<div class="box rule"><b>הכלל לזכור</b>באורך עקומה כמעט תמיד מחפשים זהות שהופכת את $1+f'^2$ לריבוע שלם, כדי שהשורש ייעלם. כאן: $1+\tan^2x=\frac1{\cos^2x}$.</div>
+<div class="quiz"><div class="qt">שאלות על סעיף 5</div>
+<div class="qq" data-a="2"><p class="q">למה נקודות החיתוך עם ציר $x$ הן $\pm\frac\pi3$?</p><ol><li>כי שם $\cos x=0$, ולכן $\ln$ לא מוגדר</li><li>כי שם $2\cos x=0$, ולכן הגרף נוגע בציר</li><li>כי שם $2\cos x=1$, ו-$\ln1=0$</li><li>כי שם $\cos x=1$, ו-$\ln2=0$</li></ol><p class="h">רמז: מתי $\ln$ של משהו הוא אפס?</p><p class="e">נכון. $\cos\frac\pi3=\frac12$, אז $2\cos x=1$.</p></div>
+<div class="qq" data-a="0"><p class="q">מה הנגזרת של $\ln(2\cos x)$?</p><ol><li>$-\tan x$</li><li>$\frac{1}{2\cos x}$</li><li>$\tan x$</li><li>$-2\sin x$</li></ol><p class="h">רמז: $(\ln u)'=\frac{u'}{u}$.</p><p class="e">נכון. $\frac{-2\sin x}{2\cos x}=-\tan x$.</p></div>
+<div class="qq" data-a="3"><p class="q">למה מותר לכתוב $\sqrt{\cos^2x}=\cos x$ כאן?</p><ol><li>כי שורש וריבוע תמיד מבטלים זה את זה</li><li>כי $\cos x$ זוגית, ולכן היא חיובית תמיד</li><li>כי אחרי ההצבה $t=\sin x$ אין יותר שורש</li><li>כי ב-$\big[-\frac\pi3,\frac\pi3\big]$ מתקיים $\cos x\gt0$</li></ol><p class="h">רמז: $\sqrt{u^2}=|u|$.</p><p class="e">נכון. בדרך כלל $\sqrt{\cos^2x}=|\cos x|$, וכאן $\cos$ חיובי.</p></div>
+<div class="qq" data-a="1"><p class="q">למה כופלים את $\frac1{\cos x}$ ב-$\frac{\cos x}{\cos x}$?</p><ol><li>כדי לקבל $\tan x$, שיש לו קדומה מוכרת</li><li>כדי לקבל $\cos x\,dx$, שהוא $dt$ של $t=\sin x$</li><li>כדי להעלים את הערך המוחלט מהמכנה</li><li>כדי שהאינטגרנד יהיה זוגי ואפשר יהיה לכפול ב-2</li></ol><p class="h">רמז: מה הנגזרת של $\sin x$?</p><p class="e">נכון. ואז $\cos^2x=1-\sin^2x=1-t^2$.</p></div>
+</div>
+</section>
+
+<!-- ============ 6 ============ -->
+<section class="sec" id="s6" data-short="חזרה 1: &lt;bdi dir=ltr&gt;1/f&lt;/bdi&gt; אינטגרבילית">
+<h2>תרגיל חזרה 1: אם $f\gt C\gt0$ אינטגרבילית, גם $\frac1f$ אינטגרבילית</h2>
+<p><b>מהמחברת:</b> תהא $f:[a,b]\to\mathbb R$ אינטגרבילית, כך שקיים $C\gt0$ שלכל $x\in[a,b]$ מתקיים $f(x)\gt C$. הוכיחו כי $\frac1{f(x)}$ גם כן אינטגרבילית ב-$[a,b]$.</p>
+<p><b>הרעיון שכתוב במחברת:</b> לקחת חלוקה, ולחסום כל פעם: $0\lt\frac1{f(x)}\lt\frac1C$. וזה אמור לתת לנו שההפרש בין סכום דרבו <span class="olv">עליון</span> ל<span class="red">תחתון</span> "ישאף ל-0", כלומר יהיה קטן מ-$\class{mag}{\varepsilon}$. המחברת לא כתבה את ההוכחה, אז הנה היא מלאה.</p>
+<div class="box terms"><b>מילים וסימנים (תזכורת מתרגול 1)</b>
+<ul>
+<li>$M_i$ ו-$m_i$: הערך הכי גבוה (sup) והכי נמוך (inf) של הפונקציה בקטע מספר $i$.</li>
+<li>$\class{olv}{U}=\sum M_i\Delta x_i$ (סכום עליון), $\class{red}{L}=\sum m_i\Delta x_i$ (סכום תחתון).</li>
+<li><b>קריטריון דרבו:</b> $f$ חסומה אינטגרבילית אם ורק אם לכל $\class{mag}{\varepsilon}\gt0$ יש חלוקה שבה $U-L\lt\varepsilon$.</li>
+<li>חדש: <b>תנודה</b> $\class{ocr}{\omega_i}=M_i-m_i$, כמה הפונקציה "קופצת" בקטע. אז $U-L=\sum\class{ocr}{\omega_i}\Delta x_i$.</li>
+</ul></div>
+<div class="box mine"><b>מה קורה לתנודה כשהופכים? (עם מספרים) — הדוגמה שלי</b>
+<ol>
+<li>שלב 1 – נניח $C=1$, ובקטע אחד $f$ נעה בין $m_i=2$ ל-$M_i=3$. התנודה: $\class{ocr}{\omega_i(f)=1}$.</li>
+<li>שלב 2 – אז $\frac1f$ נעה בין $\frac13$ ל-$\frac12$. שימו לב: המקסימום של $\frac1f$ בא מהמינימום של $f$.</li>
+<li>שלב 3 – התנודה של $\frac1f$: $\frac12-\frac13=\frac{3-2}{2\cdot3}=\frac16$.</li>
+<li>שלב 4 – באופן כללי: $\frac1{m_i}-\frac1{M_i}=\frac{M_i-m_i}{m_iM_i}$. המכנה גדול מ-$C\cdot C$, אז התנודה קטנה מ-$\frac{\omega_i(f)}{C^2}$. כאן: $\frac16\le\frac11$. ✓</li>
+<li>שלב 5 – המסקנה: אם $f$ כמעט לא קופצת, גם $\frac1f$ כמעט לא קופצת. זה כל הסיפור.</li>
+</ol></div>
+<div class="sim"><div class="st-title">סימולציה: ההוכחה המלאה, שורה אחרי שורה</div>
+<ol class="map"><li>1. חסומה</li><li>2. תנודה של 1/f</li><li>3. סכום</li><li>4. בחירת חלוקה</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$f(x)\gt C\gt0\ \Rightarrow\ 0\lt\frac1{f(x)}\lt\frac1C$</div><div class="x">זה מה שכתוב במחברת. למה זה חשוב? קריטריון דרבו עובד רק לפונקציה חסומה. עכשיו ידוע ש-$\frac1f$ חסומה.</div><div class="st"><span><i>1/f חסומה</i>כן</span></div></div>
+<div class="step" data-m="1"><div class="f">$\Big|\frac1{f(x)}-\frac1{f(y)}\Big|=\frac{|f(y)-f(x)|}{f(x)f(y)}$</div><div class="x">מכנה משותף, כמו בדוגמה $\frac12-\frac13$. ניקח שתי נקודות $x,y$ באותו קטע $i$.</div><div class="st"><span><i>x, y</i>באותו קטע</span></div></div>
+<div class="step" data-m="1"><div class="f">$\lt\frac{|f(x)-f(y)|}{C^2}\le\frac{\class{ocr}{\omega_i(f)}}{C^2}$</div><div class="x">$f(x)\gt C$ ו-$f(y)\gt C$, אז המכנה גדול מ-$C^2$ והשבר קטן יותר. וההפרש בין שני ערכים בקטע לא עולה על התנודה $M_i-m_i$.</div><div class="st"><span><i>חסם</i>$\frac{\omega_i(f)}{C^2}$</span></div></div>
+<div class="step" data-m="1"><div class="f">$\class{ocr}{\omega_i\big(\tfrac1f\big)}\le\frac{\class{ocr}{\omega_i(f)}}{C^2}$</div><div class="x">החסם נכון לכל זוג נקודות בקטע, ולכן גם ל-sup פחות inf של $\frac1f$ בקטע.</div><div class="st"><span><i>תנודה של 1/f</i>$\le\frac{\omega_i(f)}{C^2}$</span></div></div>
+<div class="step" data-m="2"><div class="f">$\class{olv}{U}\big(\tfrac1f\big)-\class{red}{L}\big(\tfrac1f\big)=\sum\class{ocr}{\omega_i\big(\tfrac1f\big)}\Delta x_i\le\frac1{C^2}\sum\class{ocr}{\omega_i(f)}\Delta x_i$</div><div class="x">כופלים כל אי-שוויון ב-$\Delta x_i\gt0$ וסוכמים על כל הקטעים.</div><div class="st"><span><i>U−L של 1/f</i>$\le\frac{U(f)-L(f)}{C^2}$</span></div></div>
+<div class="step" data-m="3"><div class="f">$\text{choose }P:\ \ \class{olv}{U}(f)-\class{red}{L}(f)\lt C^2\class{mag}{\varepsilon}$</div><div class="x">נותנים $\varepsilon\gt0$. כי $f$ אינטגרבילית, לפי קריטריון דרבו יש חלוקה $P$ שבה $U-L$ של $f$ קטן כמה שנרצה. בוחרים "קטן מ-$C^2\varepsilon$".</div><div class="st"><span><i>ε</i>נתון</span><span><i>P</i>מ-f</span></div></div>
+<div class="step" data-m="3"><div class="f"><span class="ans">$\class{olv}{U}\big(\tfrac1f\big)-\class{red}{L}\big(\tfrac1f\big)\lt\frac{C^2\varepsilon}{C^2}=\class{mag}{\varepsilon}$</span></div><div class="x">באותה חלוקה $P$, ההפרש של $\frac1f$ קטן מ-$\varepsilon$. לפי קריטריון דרבו, $\frac1f$ אינטגרבילית. ∎</div><div class="st"><span><i>מסקנה</i>1/f אינטגרבילית</span></div></div>
+</div></div>
+<div class="box fix"><b>הערות קטנות שלי על המחברת</b>
+<ul>
+<li>ברעיון כתוב "ניקח חלוקה אחידה". לא חייבים אחידה: לוקחים כל חלוקה שבה $U-L$ של $f$ קטן. (גם חלוקה אחידה עדינה מספיק עובדת, אבל זה לא העיקר.)</li>
+<li>החסם $0\lt\frac1f\lt\frac1C$ לבדו לא מספיק. הוא נותן רק ש-$\frac1f$ חסומה. הצעד החשוב הוא החסם על התנודה, עם $C^2$ במכנה.</li>
+<li>למה צריך $C$ ולא רק $f\gt0$? בלי $C$, $f$ יכולה להתקרב ל-0, ואז $\frac1f$ מתפוצצת. למשל $f(x)=x$ ב-$(0,1]$ עם $f(0)=1$: היא אינטגרבילית, אבל $\frac1f$ לא חסומה.</li>
+</ul></div>
+<div class="box rule"><b>הכלל לזכור</b>כדי להוכיח אינטגרביליות של פונקציה חדשה: חוסמים את התנודה שלה בעזרת התנודה של פונקציה שכבר ידוע שהיא אינטגרבילית, ואז משתמשים בקריטריון דרבו.</div>
+<div class="quiz"><div class="qt">שאלות על סעיף 6</div>
+<div class="qq" data-a="1"><p class="q">בקטע מסוים $f$ נעה בין 4 ל-5. מה התנודה של $\frac1f$ שם?</p><ol><li>$1$, כמו התנודה של $f$ עצמה</li><li>$\frac1{20}$, כי $\frac14-\frac15=\frac{1}{20}$</li><li>$\frac19$, כי $\frac{1}{4+5}$ זה ההפוך של הסכום</li><li>$\frac15$, כי זה הערך הכי קטן של $\frac1f$</li></ol><p class="h">רמז: המקסימום של $\frac1f$ הוא $\frac14$.</p><p class="e">נכון. $\frac{5-4}{4\cdot5}=\frac1{20}$.</p></div>
+<div class="qq" data-a="3"><p class="q">מה התפקיד של החסם $0\lt\frac1f\lt\frac1C$ בהוכחה?</p><ol><li>הוא לבד מוכיח ש-$U-L$ של $\frac1f$ קטן מ-$\varepsilon$</li><li>הוא מראה ש-$\frac1f$ רציפה בכל הקטע $[a,b]$</li><li>הוא קובע איזו חלוקה צריך לבחור בהוכחה</li><li>הוא מראה ש-$\frac1f$ חסומה, כפי שדרבו דורש</li></ol><p class="h">רמז: על איזה סוג פונקציות מדבר קריטריון דרבו?</p><p class="e">נכון. ההפרש הקטן מגיע מהחסם על התנודה, לא מהחסם הזה.</p></div>
+<div class="qq" data-a="0"><p class="q">למה במכנה של החסם מופיע $C^2$?</p><ol><li>כי $f(x)f(y)\gt C\cdot C$ לכל שתי נקודות</li><li>כי גוזרים את $\frac1f$ ומקבלים $\frac{-f'}{f^2}$</li><li>כי $C$ מופיע פעמיים בהגדרה של התנודה</li><li>כי סכום דרבו כולל ריבוע של כל $\Delta x_i$</li></ol><p class="h">רמז: מה המכנה המשותף של $\frac1{f(x)}-\frac1{f(y)}$?</p><p class="e">נכון. $f(x)f(y)$ גדול מ-$C^2$, אז השבר קטן מההפרש חלקי $C^2$.</p></div>
+<div class="qq" data-a="2"><p class="q">למה התנאי $f\gt C\gt0$ חזק יותר מ-$f\gt0$?</p><ol><li>כי עם $f\gt0$ בלבד $f$ לא יכולה להיות אינטגרבילית</li><li>כי $C$ חייב להיות גדול מ-1 כדי שההפיכה תעבוד</li><li>כי עם $f\gt0$ בלבד $f$ יכולה להתקרב ל-0, ו-$\frac1f$ לא חסומה</li><li>כי $f\gt0$ לא מבטיח ש-$\frac1f$ מוגדרת בכל נקודה</li></ol><p class="h">רמז: חשבו על $f(x)=x$ ליד 0.</p><p class="e">נכון. $C$ מרחיק את $f$ מ-0 ושומר על $\frac1f$ חסומה.</p></div>
+</div>
+</section>
+
+<!-- ============ 7 ============ -->
+<section class="sec" id="s7" data-short="חזרה 2: &lt;bdi dir=ltr&gt;∫1/sin⁴x&lt;/bdi&gt;">
+<h2>תרגיל חזרה 2: $\int\frac{dx}{\sin^4x}$</h2>
+<div class="box mine"><b>מאיפה הנוסחאות? (עם מספרים) — שלי</b>
+<ol>
+<li>שלב 1 – זהות הזווית הכפולה: $\cos2x=1-2\sin^2x$, ולכן $\sin^2x=\frac12(1-\cos2x)$. בדיקה ב-$x=\frac\pi4$: $\sin^2=0.5$, ו-$\frac12(1-\cos\frac\pi2)=\frac12(1-0)=0.5$. ✓</li>
+<li>שלב 2 – אז $\sin^4x=\frac14(1-\cos2x)^2$, ולכן $\frac1{\sin^4x}=\frac{4}{(1-\cos2x)^2}$. ב-$x=\frac\pi4$: $\frac1{0.25}=4$ ו-$\frac4{1}=4$. ✓</li>
+<li>שלב 3 – ההצבה האוניברסלית (מתרגול 3): ל-$\cos\theta$ מציבים $t=\tan\frac\theta2$. כאן הזווית היא $\theta=2x$, אז $t=\tan\frac{2x}{2}=\class{pur}{\tan x}$.</li>
+<li>שלב 4 – מאיפה $\cos2x=\frac{1-t^2}{1+t^2}$? $\cos2x=\frac{\cos^2x-\sin^2x}{\cos^2x+\sin^2x}$ (המכנה הוא 1). מחלקים מונה ומכנה ב-$\cos^2x$: $\frac{1-\tan^2x}{1+\tan^2x}$. ב-$x=\frac\pi4$: $t=1$, $\frac{1-1}{2}=0=\cos\frac\pi2$. ✓</li>
+<li>שלב 5 – ה-$dx$: $x=\arctan t$, ולכן $dx=\frac{dt}{1+t^2}$. בלי 2! (ראו ההערה.)</li>
+</ol></div>
+<div class="box fix"><b>תיקון עדין למחברת</b>
+<ul>
+<li>במחברת כתוב $dx=\frac{2}{1+t^2}dt$. זה נכון בהצבה $t=\tan\frac x2$ (שם $x=2\arctan t$). כאן $t=\tan x$, אז $x=\arctan t$ ו-$dx=\frac{dt}{1+t^2}$. בגלל ה-2 המיותר, כל מה שבא אחריו יוצא כפול 2: במקום $8\int$ צריך $4\int$, ובמקום $2\int\frac{1+t^2}{t^4}dt$ צריך $\int\frac{1+t^2}{t^4}dt$.</li>
+<li>בשורה האחרונה כתוב $\frac{t^{-2}}{2}$ כקדומה של $t^{-2}$. הקדומה הנכונה: $\frac{t^{-1}}{-1}=-\frac1t$ (מעלים חזקה ב-1: $-2+1=-1$, ומחלקים ב-$-1$).</li>
+<li>המחברת נעצרה ב-"...". השלמתי: התשובה $-\cot x-\frac{\cot^3x}{3}+C$, ובדקתי בגזירה.</li>
+</ul></div>
+<h3>מפת השלבים</h3>
+<div class="tw"><table><tr><th>שלב</th><th>מה עושים</th></tr>
+<tr><td>1</td><td>זהות: $\sin^2x=\frac12(1-\cos2x)$</td></tr>
+<tr><td>2</td><td>הצבה אוניברסלית $t=\tan x$</td></tr>
+<tr><td>3</td><td>פישוט השבר</td></tr>
+<tr><td>4</td><td>קדומה של חזקות</td></tr>
+<tr><td>5</td><td>חזרה ל-$x$</td></tr>
+</table></div>
+<div class="sim"><div class="st-title">סימולציה: $\int\frac{dx}{\sin^4x}$ (הגרסה המתוקנת)</div>
+<ol class="map"><li>1. זהות</li><li>2. הצבה</li><li>3. פישוט</li><li>4. קדומה</li><li>5. חזרה ל-x</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$\int\frac{dx}{\sin^4x}=\int\frac{dx}{\class{amb}{\sin^2x}\cdot\class{amb}{\sin^2x}}=4\int\frac{dx}{(1-\cos2x)^2}$</div><div class="x">כל $\sin^2x$ הוא $\frac12(1-\cos2x)$. שני חצאים נותנים $\frac14$ במכנה, כלומר 4 בחוץ.</div><div class="st"><span><i>מקדם</i>4</span></div></div>
+<div class="step" data-m="1"><div class="f">$\class{pur}{t=\tan x},\quad\cos2x=\frac{1-t^2}{1+t^2},\quad dx=\frac{dt}{1+t^2}$</div><div class="x">ההצבה האוניברסלית עם הזווית $2x$. ה-$dx$ מגיע מ-$x=\arctan t$.</div><div class="st"><span><i>t</i>$\tan x$</span><span><i>dx</i>$\frac{dt}{1+t^2}$</span></div></div>
+<div class="step" data-m="1"><div class="f">$=4\int\frac{1}{\Big(1-\frac{1-t^2}{1+t^2}\Big)^2}\cdot\frac{1}{1+t^2}\,dt$</div><div class="x">מחליפים את $\cos2x$ ואת $dx$. (במחברת כאן מופיע $\frac{2}{1+t^2}$, זה ה-2 המיותר.)</div><div class="st"><span><i>מקדם</i>4</span></div></div>
+<div class="step" data-m="2"><div class="f">$1-\frac{1-t^2}{1+t^2}=\frac{1+t^2-1+t^2}{1+t^2}=\frac{2t^2}{1+t^2}$</div><div class="x">מכנה משותף. שימו לב למינוס שנכנס לסוגריים: $-(1-t^2)=-1+t^2$.</div><div class="st"><span><i>סוגריים</i>$\frac{2t^2}{1+t^2}$</span></div></div>
+<div class="step" data-m="2"><div class="f">$=4\int\frac{(1+t^2)^2}{4t^4}\cdot\frac1{1+t^2}\,dt=\int\frac{1+t^2}{t^4}\,dt$</div><div class="x">$\big(\frac{2t^2}{1+t^2}\big)^2=\frac{4t^4}{(1+t^2)^2}$, ואחד חלקי זה הופך את השבר. ה-4 מצטמצם, ו-$(1+t^2)$ אחד מצטמצם.</div><div class="st"><span><i>מקדם</i>1</span><span><i>אינטגרנד</i>$\frac{1+t^2}{t^4}$</span></div></div>
+<div class="step" data-m="3"><div class="f">$=\int\big(t^{-4}+t^{-2}\big)dt=\frac{t^{-3}}{-3}+\frac{t^{-1}}{-1}+C$</div><div class="x">מפצלים: $\frac1{t^4}+\frac{t^2}{t^4}=t^{-4}+t^{-2}$. קדומה של $t^n$: $\frac{t^{n+1}}{n+1}$. עם $n=-4$ מקבלים $\frac{t^{-3}}{-3}$, ועם $n=-2$ מקבלים $\frac{t^{-1}}{-1}$.</div><div class="st"><span><i>קדומה</i>$-\frac1{3t^3}-\frac1t$</span></div></div>
+<div class="step" data-m="4"><div class="f"><span class="ans">$\int\frac{dx}{\sin^4x}=-\frac{1}{3\tan^3x}-\frac{1}{\tan x}+C=-\frac{\cot^3x}{3}-\cot x+C$</span></div><div class="x">מחזירים $t=\tan x$, ו-$\frac1{\tan x}=\cot x$. בדיקה בגזירה (שלי): $(-\cot x)'=\frac1{\sin^2x}$ ו-$\big(-\frac{\cot^3x}3\big)'=\frac{\cot^2x}{\sin^2x}$. הסכום: $\frac{1+\cot^2x}{\sin^2x}=\frac{1}{\sin^4x}$. ✓</div><div class="st"><span><i>בדיקה</i>עברה</span></div></div>
+</div></div>
+<div class="box mine"><b>בדיקה עם מספרים (שלי)</b>נחשב את האינטגרל המסוים מ-$\frac\pi4$ עד $\frac\pi2$. לפי התשובה: ב-$\frac\pi2$, $\cot=0$, וב-$\frac\pi4$, $\cot=1$. אז $0-\big(-1-\frac13\big)=\frac43\approx1.333$. חישוב נומרי של $\int_{\pi/4}^{\pi/2}\frac{dx}{\sin^4x}$ נותן גם $1.333$. עם ה-2 של המחברת היה יוצא $2.667$, כפול.</div>
+<div class="box mine"><b>דרך קצרה יותר (שלי, לא במחברת)</b>$\frac1{\sin^4x}=\frac{1}{\sin^2x}\cdot\frac1{\sin^2x}=(1+\cot^2x)\cdot\frac1{\sin^2x}$. מציבים $u=\cot x$, $du=-\frac{dx}{\sin^2x}$: $-\int(1+u^2)du=-u-\frac{u^3}3+C$. אותה תשובה.</div>
+<div class="quiz"><div class="qt">שאלות על סעיף 7</div>
+<div class="qq" data-a="2"><p class="q">למה $\frac1{\sin^4x}=\frac4{(1-\cos2x)^2}$?</p><ol><li>כי $\sin^2x=1-\cos2x$, ולכן מכנה בריבוע</li><li>כי $\sin^4x=\cos4x$ לפי זווית כפולה פעמיים</li><li>כי $\sin^2x=\frac12(1-\cos2x)$, וריבוע של $\frac12$ הוא $\frac14$</li><li>כי $\sin^2x=2(1-\cos2x)$, ולכן 4 במונה</li></ol><p class="h">רמז: מ-$\cos2x=1-2\sin^2x$ מבודדים את $\sin^2x$.</p><p class="e">נכון. $\sin^4x=\frac14(1-\cos2x)^2$, ומהפכים.</p></div>
+<div class="qq" data-a="0"><p class="q">בהצבה $t=\tan x$, למה שווה $dx$?</p><ol><li>$\frac{dt}{1+t^2}$, כי $x=\arctan t$</li><li>$\frac{2\,dt}{1+t^2}$, כמו בהצבה האוניברסלית</li><li>$(1+t^2)\,dt$, כי $(\tan x)'=1+\tan^2x$</li><li>$\frac{2t\,dt}{1+t^2}$, כי גוזרים את $t^2$</li></ol><p class="h">רמז: הנגזרת של $\arctan t$.</p><p class="e">נכון. ה-2 מופיע רק כש-$t=\tan\frac x2$.</p></div>
+<div class="qq" data-a="3"><p class="q">מה הקדומה של $t^{-2}$?</p><ol><li>$\frac{t^{-2}}{2}$, כמו שכתוב במחברת</li><li>$\frac{t^{-3}}{-3}$, כי מורידים את החזקה ב-1</li><li>$-2t^{-3}$, כי גוזרים לפי הכלל</li><li>$-t^{-1}$, כי $\frac{t^{-1}}{-1}$</li></ol><p class="h">רמז: $\frac{t^{n+1}}{n+1}$ עם $n=-2$.</p><p class="e">נכון. בדיקה: $(-t^{-1})'=t^{-2}$.</p></div>
+<div class="qq" data-a="1"><p class="q">מה הערך של $\int_{\pi/4}^{\pi/2}\frac{dx}{\sin^4x}$?</p><ol><li>$\frac83$</li><li>$\frac43$</li><li>$\frac13$</li><li>$1$</li></ol><p class="h">רמז: הציבו בתשובה $-\cot x-\frac{\cot^3x}3$. $\cot\frac\pi2=0$, $\cot\frac\pi4=1$.</p><p class="e">נכון. $0-\big(-1-\frac13\big)=\frac43$. ($\frac83$ זו התוצאה עם ה-2 המיותר.)</p></div>
+</div>
+</section>
+
+<!-- ============ 8 ============ -->
+<section class="sec" id="s8" data-short="חזרה 3: &lt;bdi dir=ltr&gt;∫x·eˣ·cos x&lt;/bdi&gt;">
+<h2>תרגיל חזרה 3: $\int x\,e^x\cos x\,dx$</h2>
+<p><b>מהמחברת:</b> דרך אינטגרציה בחלקים. קודם עושים תרגיל עזר (*): $\int e^x\cos x\,dx$. שם "קיבלנו את אותו ביטוי" (ראו דוגמה דומה באחד התרגולים). המחברת נעצרה שם, אז השלמתי את כל השאר.</p>
+<div class="box terms"><b>תזכורת: אינטגרציה בחלקים</b>$\int\class{tea}{u}\,\class{tea}{dv}=uv-\int v\,du$. בוחרים $u$ (מה שגוזרים) ו-$dv$ (מה שמוצאים לו קדומה).</div>
+<h3>כל הדרכים שבהן "לולאה" של חלקים יכולה להיגמר</h3>
+<p>לפעמים עושים חלקים, ואז שוב חלקים, ושוב. זו לולאה. כך היא יכולה להיגמר:</p>
+<div class="tw"><table><tr><th>מה קורה אחרי עוד סיבוב</th><th>מה עושים</th><th>דוגמה</th></tr>
+<tr><td>האינטגרל שנשאר מיידי</td><td>מסיימים</td><td>$\int xe^x=xe^x-\int e^x$</td></tr>
+<tr><td>חוזר אותו אינטגרל עם מקדם שונה מ-1 (למשל $-I$)</td><td>מעבירים אגף ומחלקים</td><td>$\int e^x\cos x$ (כאן)</td></tr>
+<tr><td>חוזר אותו אינטגרל עם מקדם $+1$ בדיוק</td><td>לא מתקדמים ($I=\dots+I$). מחליפים בחירה של $u$, או שבסיבוב השני החליפו תפקידים בטעות</td><td>אם בסיבוב השני בוחרים $u=e^x$</td></tr>
+<tr><td>האינטגרל נהיה מסובך יותר</td><td>עוצרים ובוחרים $u$ אחר</td><td>$u=e^x\cos x,\ dv=x\,dx$ כאן</td></tr>
+</table></div>
+<div class="box mine"><b>למה האינטגרל "חוזר"? (עם מספרים) — שלי</b>
+<ol>
+<li>שלב 1 – הנגזרות של $\cos$ מסתובבות: $\cos\to-\sin\to-\cos\to\sin\to\cos$. אחרי שתי גזירות חוזרים ל-$\cos$ עם מינוס.</li>
+<li>שלב 2 – ו-$e^x$ לא משתנה בכלל. אז אחרי שני סיבובים של חלקים חוזרים ל-$e^x\cos x$, עם מינוס.</li>
+<li>שלב 3 – נקרא לאינטגרל $I$. נקבל משהו כמו $I=A-I$. אז $2I=A$, ו-$I=\frac A2$. בדיוק כמו במשוואה רגילה: $I=10-I$ נותן $I=5$.</li>
+</ol></div>
+<div class="sim"><div class="st-title">סימולציה: תרגיל העזר (*) ואז התרגיל עצמו</div>
+<ol class="map"><li>1. סיבוב ראשון</li><li>2. סיבוב שני</li><li>3. מעבירים אגף</li><li>4. התרגיל עצמו</li><li>5. תשובה</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$I=\int e^x\class{amb}{\cos x}\,dx,\quad \class{tea}{u=\cos x},\ \class{tea}{dv=e^x dx}$</div><div class="x">בוחרים לגזור את $\cos x$ ($u'=-\sin x$) ולמצוא קדומה ל-$e^x$ ($v=e^x$).</div><div class="st"><span><i>u</i>$\cos x$</span><span><i>v</i>$e^x$</span></div></div>
+<div class="step" data-m="0"><div class="f">$I=e^x\cos x-\int e^x(-\sin x)\,dx=e^x\cos x+\int e^x\sin x\,dx$</div><div class="x">$uv-\int v\,du$. שני מינוסים נותנים פלוס. זו השורה הראשונה במחברת.</div><div class="st"><span><i>נשאר</i>$\int e^x\sin x$</span></div></div>
+<div class="step" data-m="1"><div class="f">$\int e^x\class{amb}{\sin x}\,dx=e^x\sin x-\int e^x\cos x\,dx=e^x\sin x-I$</div><div class="x">שוב חלקים עם <b>אותה</b> בחירה: $u=\sin x$ (גוזרים את הטריגו׳), $v=e^x$. אם הייתם מחליפים כאן ובוחרים $u=e^x$, הייתם חוזרים להתחלה ($I=I$).</div><div class="st"><span><i>u</i>$\sin x$</span><span><i>חזר</i>$-I$</span></div></div>
+<div class="step" data-m="2"><div class="f">$I=e^x\cos x+e^x\sin x-I\ \Rightarrow\ 2I=e^x(\cos x+\sin x)$</div><div class="x">"קיבלנו את אותו ביטוי": $I$ מופיע בשני האגפים, עם מינוס. מעבירים אגף.</div><div class="st"><span><i>2I</i>$e^x(\cos x+\sin x)$</span></div></div>
+<div class="step" data-m="2"><div class="f">$I=\int e^x\cos x\,dx=\frac{e^x(\sin x+\cos x)}{2}+C,\qquad J=\int e^x\sin x\,dx=\frac{e^x(\sin x-\cos x)}{2}+C$</div><div class="x">את $J$ מקבלים מהשורה של הסיבוב השני: $J=e^x\sin x-I$. נצטרך את שניהם עוד מעט.</div><div class="st"><span><i>I</i>מוכן</span><span><i>J</i>מוכן</span></div></div>
+<div class="step" data-m="3"><div class="f">$\int \class{tea}{x}\,\class{tea}{e^x\cos x\,dx},\quad u=x,\ dv=e^x\cos x\,dx,\ v=\frac{e^x(\sin x+\cos x)}{2}$</div><div class="x">עכשיו התרגיל עצמו. גוזרים את $x$ (הוא נעלם: $u'=1$). הקדומה של $e^x\cos x$ היא בדיוק $I$ שחישבנו.</div><div class="st"><span><i>u</i>$x$</span><span><i>v</i>$I$</span></div></div>
+<div class="step" data-m="3"><div class="f">$=x\cdot\frac{e^x(\sin x+\cos x)}{2}-\frac12\int e^x(\sin x+\cos x)\,dx$</div><div class="x">$uv-\int v\cdot1\,dx$. מוציאים $\frac12$ החוצה.</div><div class="st"><span><i>נשאר</i>$\int e^x\sin x+\int e^x\cos x$</span></div></div>
+<div class="step" data-m="3"><div class="f">$\int e^x(\sin x+\cos x)\,dx=J+I=\frac{e^x(\sin x-\cos x)+e^x(\sin x+\cos x)}{2}=e^x\sin x$</div><div class="x">ה-$\cos$ מתבטלים. (אפשר גם לראות ישר: $(e^x\sin x)'=e^x\sin x+e^x\cos x$.)</div><div class="st"><span><i>J+I</i>$e^x\sin x$</span></div></div>
+<div class="step" data-m="4"><div class="f"><span class="ans">$\int x\,e^x\cos x\,dx=\frac{x\,e^x(\sin x+\cos x)}{2}-\frac{e^x\sin x}{2}+C$</span></div><div class="x">בדקתי בגזירה שהתשובה נכונה. בדיקה ב-$x=0$: הנגזרת של הביטוי שווה $\frac{1}{2}(0+1)\cdot1+0-\frac12(0+1)=0$, ו-$0\cdot e^0\cos0=0$. ✓</div><div class="st"><span><i>תשובה</i>מוכנה</span></div></div>
+</div></div>
+<div class="box rule"><b>הכלל לזכור</b>$e^x$ כפול $\sin$ או $\cos$: שני סיבובים של חלקים <b>עם אותה בחירה</b>, ואז מעבירים אגף. אם יש גם $x$ בחוץ, קודם פותרים את תרגיל העזר, ואז חלקים עם $u=x$.</div>
+<div class="quiz"><div class="qt">שאלות על סעיף 8</div>
+<div class="qq" data-a="1"><p class="q">אחרי שני סיבובים יצא $I=e^x\cos x+e^x\sin x-I$. מה עושים?</p><ol><li>מסיקים שאין קדומה, כי האינטגרל חזר על עצמו</li><li>מעבירים אגף: $2I=e^x(\cos x+\sin x)$</li><li>עושים עוד סיבוב חלקים עד ש-$I$ נעלם</li><li>מבטלים את $I$ משני האגפים ומקבלים 0</li></ol><p class="h">רמז: זו משוואה רגילה עם נעלם $I$.</p><p class="e">נכון. ואז מחלקים ב-2.</p></div>
+<div class="qq" data-a="3"><p class="q">בסיבוב השני, מה קורה אם בוחרים $u=e^x$ ו-$dv=\sin x\,dx$?</p><ol><li>מקבלים את התשובה מהר יותר, בסיבוב אחד</li><li>מקבלים $-I$ ואפשר להעביר אגף כרגיל</li><li>האינטגרל נהיה מיידי ומסיימים מיד</li><li>חוזרים להתחלה ומקבלים $I=I$, שלא עוזר</li></ol><p class="h">רמז: הסיבוב השני "מבטל" את הראשון אם מחליפים תפקידים.</p><p class="e">נכון. צריך להשאיר את הטריגו׳ כ-$u$ בשני הסיבובים.</p></div>
+<div class="qq" data-a="0"><p class="q">בתרגיל $\int x\,e^x\cos x\,dx$, איזו בחירה עובדת?</p><ol><li>$u=x$, $dv=e^x\cos x\,dx$, כי $x$ נעלם בגזירה</li><li>$u=e^x\cos x$, $dv=x\,dx$, כי $x$ קל לאינטגרציה</li><li>$u=\cos x$, $dv=xe^x\,dx$, כי $\cos$ מסתובב</li><li>$u=e^x$, $dv=x\cos x\,dx$, כי $e^x$ לא משתנה</li></ol><p class="h">רמז: מה נהיה פשוט יותר אחרי גזירה?</p><p class="e">נכון. והקדומה של $e^x\cos x$ כבר חושבה בתרגיל העזר.</p></div>
+<div class="qq" data-a="2"><p class="q">מה התוצאה של $\int e^x\cos x\,dx$?</p><ol><li>$e^x(\sin x-\cos x)+C$</li><li>$\frac{e^x(\cos x-\sin x)}{2}+C$</li><li>$\frac{e^x(\sin x+\cos x)}{2}+C$</li><li>$e^x\sin x+C$</li></ol><p class="h">רמז: $2I=e^x(\cos x+\sin x)$.</p><p class="e">נכון. בדיקה: הנגזרת היא $\frac{e^x(\sin x+\cos x)+e^x(\cos x-\sin x)}2=e^x\cos x$.</p></div>
+</div>
+</section>
+
+<!-- ============ 9 ============ -->
+<section class="sec" id="s9" data-short="סיכום">
+<h2>סיכום התרגול</h2>
+<div class="tw"><table><tr><th>נושא</th><th>מה לזכור</th><th>תוצאה בתרגול</th></tr>
+<tr><td>מבחן האינטגרל</td><td>טור חיובי, $f$ יורדת עם $f(n)=a_n$: הטור והאינטגרל יחד</td><td>שני הטורים <span class="bur">מתבדרים</span></td></tr>
+<tr><td>תרגיל 1</td><td>הצבה $t=\ln(\ln x)$. מתחילים מ-$n=3$</td><td>$\ln(\ln(\ln b))\to\infty$</td></tr>
+<tr><td>תרגיל 2</td><td>נגזרת לבדיקת ירידה, $t=\sqrt x$, חילוק</td><td>$2(\sqrt b-\arctan\sqrt b-\dots)\to\infty$</td></tr>
+<tr><td>נפח</td><td>$\class{stl}{V}=\pi\int(f^2-g^2)$, טבעות</td><td><span class="ans">$\frac{2\pi}{35}$</span></td></tr>
+<tr><td>אורך עקומה</td><td>$1+\tan^2=\frac1{\cos^2}$, $t=\sin x$, שברים חלקיים</td><td><span class="ans">$2\ln(2+\sqrt3)$</span></td></tr>
+<tr><td>חזרה 1</td><td>$\omega(\frac1f)\le\frac{\omega(f)}{C^2}$ + קריטריון דרבו</td><td>$\frac1f$ אינטגרבילית</td></tr>
+<tr><td>חזרה 2</td><td>$t=\tan x$, $dx=\frac{dt}{1+t^2}$</td><td><span class="ans">$-\cot x-\frac{\cot^3x}{3}+C$</span></td></tr>
+<tr><td>חזרה 3</td><td>לולאת חלקים, מעבירים אגף, ואז $u=x$</td><td><span class="ans">$\frac{xe^x(\sin x+\cos x)-e^x\sin x}{2}+C$</span></td></tr>
+</table></div>
+<div class="quiz"><div class="qt">שאלות סיכום</div>
+<div class="qq" data-a="2"><p class="q">באיזה מקרה <b>אסור</b> להשתמש ישירות במבחן האינטגרל?</p><ol><li>$\sum\frac1{n^3}$, כי $\frac1{x^3}$ יורדת וחיובית</li><li>$\sum\frac1{n\ln n}$ מ-$n=2$, כי $\frac1{x\ln x}$ יורדת שם</li><li>$\sum\frac{(-1)^n}n$, כי יש בו איברים שליליים</li><li>$\sum e^{-n}$, כי $e^{-x}$ חיובית ויורדת</li></ol><p class="h">רמז: מה הדרישה הראשונה של המבחן?</p><p class="e">נכון. המבחן הוא לטורים חיוביים בלבד.</p></div>
+<div class="qq" data-a="0"><p class="q">מה האורך של $y=\ln(2\cos x)$ בין נקודות החיתוך עם ציר $x$?</p><ol><li>$2\ln(2+\sqrt3)$</li><li>$\ln(2+\sqrt3)$</li><li>$\frac{2\pi}{3}$</li><li>$\ln\frac{2-\sqrt3}{2+\sqrt3}$</li></ol><p class="h">רמז: $\ln\frac{2+\sqrt3}{2-\sqrt3}$ ו-$(2+\sqrt3)(2-\sqrt3)=1$.</p><p class="e">נכון. בערך $2.634$. (האפשרות האחרונה שלילית, ואורך לא יכול להיות שלילי.)</p></div>
+<div class="qq" data-a="3"><p class="q">מה הנפח כשמסובבים את השטח בין $x$ ל-$x^2$ ב-$[0,1]$ סביב ציר $x$? (תרגיל דומה, שלי)</p><ol><li>$\frac{\pi}{6}$, כי $\pi\int(x-x^2)$</li><li>$\frac{\pi}{30}$, כי $\pi\int(x-x^2)^2$</li><li>$\frac{\pi}{3}$, כי $\pi\int x^2$ בלבד</li><li>$\frac{2\pi}{15}$, כי $\pi\big(\frac13-\frac15\big)$</li></ol><p class="h">רמז: $\pi\int_0^1(x^2-x^4)dx$.</p><p class="e">נכון. $f=x$ עליונה, $g=x^2$ תחתונה, ו-$\frac13-\frac15=\frac2{15}$.</p></div>
+<div class="qq" data-a="1"><p class="q">איזו טענה נכונה לגבי $\int\frac{dx}{\sin^4x}$ במחברת?</p><ol><li>הכול נכון, רק חסר הצעד האחרון של החזרה ל-$x$</li><li>צריך $dx=\frac{dt}{1+t^2}$, אז שם יצא כפול 2</li><li>הזהות $\sin^2x=\frac12(1-\cos2x)$ שם הפוכה בסימן</li><li>ההצבה צריכה להיות $t=\tan\frac x2$ ולא $t=\tan x$</li></ol><p class="h">רמז: מה הנגזרת של $\arctan t$?</p><p class="e">נכון. ובנוסף הקדומה של $t^{-2}$ היא $-t^{-1}$.</p></div>
+<div class="qq" data-a="0"><p class="q">בהוכחה ש-$\frac1f$ אינטגרבילית, איזו חלוקה בוחרים?</p><ol><li>חלוקה שבה $U-L$ של $f$ קטן מ-$C^2\varepsilon$</li><li>חלוקה אחידה עם $n$ קטעים, כי רק היא עובדת</li><li>חלוקה שבה $\frac1f$ קבועה בכל קטע וקטע</li><li>חלוקה שבה $U-L$ של $f$ קטן מ-$\frac{\varepsilon}{C}$</li></ol><p class="h">רמז: איזה מספר מבטל את $\frac1{C^2}$?</p><p class="e">נכון. ואז $U-L$ של $\frac1f$ קטן מ-$\frac{C^2\varepsilon}{C^2}=\varepsilon$.</p></div>
+</div>
+<p class="end" id="endMsg"></p>
+</section>
+</div>
+
+<script>
+window.LESSON_INIT=function(){
+ function css(v){return getComputedStyle(document.documentElement).getPropertyValue(v).trim()}
+ function $(id){return document.getElementById(id)}
+ function clamp(v,a,b){return Math.max(a,Math.min(b,v))}
+ // generic plot: o={W,H,xmin,xmax,ymin,ymax,fills:[{f,a,b,color}],curves:[{f,color,dash,w,N}],hlines:[{y,color,dash}],vlines:[{x,color,dash}],xticks:[[v,lab]],yticks:[[v,lab]],mark:{x,y,color}}
+ function plot(svg,o){var W=o.W||400,H=o.H||220,pl=34,pr=12,pt=10,pb=24;
+  function X(x){return pl+(x-o.xmin)/(o.xmax-o.xmin)*(W-pl-pr)}function Y(y){return pt+(o.ymax-y)/(o.ymax-o.ymin)*(H-pt-pb)}
+  var s='',mut=css('--muted'),ink=css('--ink');
+  (o.fills||[]).forEach(function(fi){var a=Math.max(fi.a,o.xmin),b=Math.min(fi.b,o.xmax);if(b<=a)return;var N=fi.N||200,p='M'+X(a).toFixed(1)+' '+Y(0).toFixed(1);
+   for(var i=0;i<=N;i++){var x=a+(b-a)*i/N,y=clamp(fi.f(x),o.ymin,o.ymax);p+='L'+X(x).toFixed(1)+' '+Y(y).toFixed(1)}
+   p+='L'+X(b).toFixed(1)+' '+Y(0).toFixed(1)+'Z';s+='<path d="'+p+'" fill="'+fi.color+'" fill-opacity=".28"/>'});
+  (o.rects||[]).forEach(function(r){var y0=Y(0),y1=Y(Math.min(r.h,o.ymax));s+='<rect x="'+X(r.x0).toFixed(1)+'" y="'+y1.toFixed(1)+'" width="'+(X(r.x1)-X(r.x0)).toFixed(1)+'" height="'+(y0-y1).toFixed(1)+'" fill="'+r.color+'" fill-opacity=".22" stroke="'+r.color+'" stroke-width="1"/>'});
+  (o.hlines||[]).forEach(function(l){s+='<line x1="'+pl+'" x2="'+(W-pr)+'" y1="'+Y(l.y).toFixed(1)+'" y2="'+Y(l.y).toFixed(1)+'" stroke="'+l.color+'" stroke-width="1.5" stroke-dasharray="'+(l.dash||'5 4')+'"/>'});
+  (o.vlines||[]).forEach(function(l){s+='<line y1="'+pt+'" y2="'+(H-pb)+'" x1="'+X(l.x).toFixed(1)+'" x2="'+X(l.x).toFixed(1)+'" stroke="'+l.color+'" stroke-width="1.5" stroke-dasharray="'+(l.dash||'5 4')+'"/>'});
+  (o.curves||[]).forEach(function(c){var N=c.N||400,p='',pen=false;for(var i=0;i<=N;i++){var x=o.xmin+(o.xmax-o.xmin)*i/N;if(c.from!=null&&x<c.from){pen=false;continue}var y=c.f(x);if(!isFinite(y)||y>o.ymax*1.0001||y<o.ymin*1.0001&&o.ymin<0||y<o.ymin-1e-9){pen=false;continue}p+=(pen?'L':'M')+X(x).toFixed(1)+' '+Y(y).toFixed(1);pen=true}
+   s+='<path d="'+p+'" fill="none" stroke="'+c.color+'" stroke-width="'+(c.w||2)+'"'+(c.dash?' stroke-dasharray="'+c.dash+'"':'')+'/>'});
+  if(o.ymin<=0&&o.ymax>=0)s+='<line x1="'+pl+'" x2="'+(W-pr)+'" y1="'+Y(0).toFixed(1)+'" y2="'+Y(0).toFixed(1)+'" stroke="'+mut+'"/>';
+  (o.xticks||[]).forEach(function(t){s+='<text x="'+X(t[0]).toFixed(1)+'" y="'+(H-7)+'" fill="'+mut+'" font-size="12" text-anchor="middle">'+t[1]+'</text>'});
+  (o.yticks||[]).forEach(function(t){s+='<text x="'+(pl-5)+'" y="'+(Y(t[0])+4).toFixed(1)+'" fill="'+mut+'" font-size="12" text-anchor="end">'+t[1]+'</text>'});
+  if(o.mark){s+='<circle cx="'+X(o.mark.x).toFixed(1)+'" cy="'+Y(o.mark.y).toFixed(1)+'" r="4.5" fill="'+(o.mark.color||ink)+'"/>'}
+  svg.innerHTML=s}
+ var drawers=[];
+ function bind(ids,fn){ids.forEach(function(id){var e=$(id);e.addEventListener(e.tagName==='SELECT'?'change':'input',fn)});fn();drawers.push(fn)}
+ // s1 rectangles
+ bind(['s1f','s1n'],function(){var o=+$('s1f').value,N=+$('s1n').value;
+  var F=[function(x){return 1/(x*x)},function(x){return 1/x},function(x){return Math.sqrt(x)/(1+x)}][o];
+  var P=[function(b){return 1-1/b},function(b){return Math.log(b)},function(b){var t=Math.sqrt(b);return 2*(t-Math.atan(t)-1+Math.PI/4)}][o];
+  var xmax=Math.max(N+2,8),S=0,rects=[];for(var n=1;n<=N;n++){S+=F(n);rects.push({x0:n,x1:n+1,h:F(n),color:css('--rub')})}
+  plot($('s1svg'),{H:230,xmin:0.5,xmax:xmax,ymin:0,ymax:1.08,rects:rects,curves:[{f:F,color:css('--plm'),w:2.5,from:0.6}],xticks:[[1,'1'],[Math.round(xmax/2),String(Math.round(xmax/2))],[Math.floor(xmax),String(Math.floor(xmax))]],yticks:[[1,'1']]});
+  $('s1out').textContent='N = '+N+'   |   sum a_1..a_N = '+S.toFixed(4)+'   |   integral from 1 to N+1 = '+P(N+1).toFixed(4)+(o===0?'   (both stay below 2)':'   (both keep growing)')});
+ // s2 slow divergence
+ bind(['s2k'],function(){var k=+$('s2k').value,lb=k*Math.LN10,v=Math.log(Math.log(lb))-Math.log(Math.log(Math.log(3)));
+  $('s2out').textContent='b = 10^'+k+'   |   ln b = '+lb.toFixed(2)+'   |   integral from 3 to b = '+v.toFixed(4)});
+ // s3
+ bind(['s3x'],function(){var x=+$('s3x').value,f=function(t){return Math.sqrt(t)/(1+t)},d=(1-x)/(2*Math.sqrt(x)*(1+x)*(1+x));
+  plot($('s3svg'),{H:200,xmin:0,xmax:12,ymin:0,ymax:.6,curves:[{f:f,color:css('--plm'),w:2.5}],vlines:[{x:1,color:css('--muted')}],mark:{x:x,y:f(x),color:d>0?css('--olv'):css('--red')},xticks:[[0,'0'],[1,'1'],[6,'6'],[12,'12']],yticks:[[.5,'.5']]});
+  $('s3out').textContent='x = '+x.toFixed(2)+'   |   f(x) = '+f(x).toFixed(4)+'   |   f\'(x) = '+d.toFixed(4)+(d>1e-9?'   (going up)':d<-1e-9?'   (going down)':'   (top point)')});
+ // s4 washer
+ bind(['s4x'],function(){var x=+$('s4x').value,R=x*x,r=x*x*x;var W=400,H=220;
+  var s='',mut=css('--muted'),olv=css('--olv'),red=css('--red'),stl=css('--stl'),ink=css('--ink');
+  // left: graph region 0..1
+  var gx=function(t){return 20+t*200},gy=function(v){return 190-v*170};
+  var p='M'+gx(0)+' '+gy(0);for(var i=0;i<=100;i++){var t=i/100;p+='L'+gx(t).toFixed(1)+' '+gy(t*t).toFixed(1)}for(i=100;i>=0;i--){t=i/100;p+='L'+gx(t).toFixed(1)+' '+gy(t*t*t).toFixed(1)}
+  s+='<path d="'+p+'Z" fill="'+stl+'" fill-opacity=".25"/>';
+  var c1='',c2='';for(i=0;i<=100;i++){t=i/100;c1+=(i?'L':'M')+gx(t).toFixed(1)+' '+gy(t*t).toFixed(1);c2+=(i?'L':'M')+gx(t).toFixed(1)+' '+gy(t*t*t).toFixed(1)}
+  s+='<path d="'+c1+'" stroke="'+olv+'" stroke-width="2.5" fill="none"/><path d="'+c2+'" stroke="'+red+'" stroke-width="2.5" fill="none"/>';
+  s+='<line x1="'+gx(0)+'" x2="'+gx(1.02)+'" y1="'+gy(0)+'" y2="'+gy(0)+'" stroke="'+mut+'"/>';
+  s+='<line x1="'+gx(x)+'" x2="'+gx(x)+'" y1="'+gy(R)+'" y2="'+gy(r)+'" stroke="'+ink+'" stroke-width="3"/>';
+  s+='<text x="'+gx(1)+'" y="'+(gy(1)-4)+'" fill="'+olv+'" font-size="13" text-anchor="end">x²</text><text x="'+(gx(1)+4)+'" y="'+(gy(.8))+'" fill="'+red+'" font-size="13">x³</text>';
+  s+='<text x="'+gx(0)+'" y="208" fill="'+mut+'" font-size="12" text-anchor="middle">0</text><text x="'+gx(1)+'" y="208" fill="'+mut+'" font-size="12" text-anchor="middle">1</text>';
+  // right: washer
+  var cx=320,cy=110,sc=80;
+  s+='<circle cx="'+cx+'" cy="'+cy+'" r="'+(R*sc).toFixed(1)+'" fill="'+stl+'" fill-opacity=".45" stroke="'+olv+'" stroke-width="2"/>';
+  s+='<circle cx="'+cx+'" cy="'+cy+'" r="'+(r*sc).toFixed(1)+'" fill="'+css('--card')+'" stroke="'+red+'" stroke-width="2"/>';
+  s+='<text x="'+cx+'" y="205" fill="'+mut+'" font-size="12" text-anchor="middle">cross-section (zoom ×4)</text>';
+  $('s4svg').innerHTML=s;
+  $('s4out').textContent='x = '+x.toFixed(2)+'   |   R = x² = '+R.toFixed(4)+'   |   r = x³ = '+r.toFixed(4)+'   |   ring area = π(R²−r²) = '+(Math.PI*(R*R-r*r)).toFixed(4)});
+ // s5 polygon
+ bind(['s5n'],function(){var n=+$('s5n').value,f=function(x){return Math.log(2*Math.cos(x))},a=-Math.PI/3,b=Math.PI/3,len=0,pts=[];
+  for(var i=0;i<=n;i++){var x=a+(b-a)*i/n;pts.push([x,f(x)]);if(i)len+=Math.hypot(pts[i][0]-pts[i-1][0],pts[i][1]-pts[i-1][1])}
+  var W=400,H=220,pl=34,pr=12,pt=10,pb=24,xmin=-1.5,xmax=1.5,ymin=-1.6,ymax=0.9;
+  function X(x){return pl+(x-xmin)/(xmax-xmin)*(W-pl-pr)}function Y(y){return pt+(ymax-y)/(ymax-ymin)*(H-pt-pb)}
+  var mut=css('--muted'),s='',c='',pen=false;
+  for(i=0;i<=400;i++){x=xmin+(xmax-xmin)*i/400;var y=f(x);if(!isFinite(y)||y<ymin){pen=false;continue}c+=(pen?'L':'M')+X(x).toFixed(1)+' '+Y(y).toFixed(1);pen=true}
+  s+='<line x1="'+pl+'" x2="'+(W-pr)+'" y1="'+Y(0)+'" y2="'+Y(0)+'" stroke="'+mut+'"/>';
+  s+='<path d="'+c+'" stroke="'+css('--ink')+'" stroke-width="1.5" fill="none" stroke-dasharray="4 3"/>';
+  var q='';pts.forEach(function(p,j){q+=(j?'L':'M')+X(p[0]).toFixed(1)+' '+Y(p[1]).toFixed(1)});
+  s+='<path d="'+q+'" stroke="'+css('--jad')+'" stroke-width="2.5" fill="none"/>';
+  pts.forEach(function(p){s+='<circle cx="'+X(p[0]).toFixed(1)+'" cy="'+Y(p[1]).toFixed(1)+'" r="3" fill="'+css('--jad')+'"/>'});
+  [[a,'−π/3'],[0,'0'],[b,'π/3']].forEach(function(t){s+='<text x="'+X(t[0]).toFixed(1)+'" y="'+(H-7)+'" fill="'+mut+'" font-size="12" text-anchor="middle">'+t[1]+'</text>'});
+  s+='<text x="'+(pl-5)+'" y="'+(Y(Math.log(2))+4).toFixed(1)+'" fill="'+mut+'" font-size="12" text-anchor="end">ln2</text>';
+  $('s5svg').innerHTML=s;
+  $('s5out').textContent='segments = '+n+'   |   broken line length = '+len.toFixed(5)+'   |   exact L = 2·ln(2+√3) = '+(2*Math.log(2+Math.sqrt(3))).toFixed(5)});
+ var mo=new MutationObserver(function(){drawers.forEach(function(d){d()})});mo.observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+};
+</script>
+
+<script>(function(){
+document.documentElement.dir='rtl';document.documentElement.lang='he';
+var KEY=((document.querySelector('.wrap')||document.body).getAttribute('data-key')||'lesson')+'-quiz';
+var THEMEKEY='calc2-theme';
+function $(s,r){return (r||document).querySelector(s)}
+function $$(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))}
+function el(t,c,h){var n=document.createElement(t);if(c)n.className=c;if(h!=null)n.innerHTML=h;return n}
+function lsGet(k){try{return localStorage.getItem(k)}catch(e){return null}}
+function lsSet(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+// theme
+var tb=$('#themeBtn');
+function curDark(){var t=document.documentElement.getAttribute('data-theme');if(t)return t==='dark';return window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches}
+function paintBtn(){if(tb)tb.textContent=curDark()?'☀️ יום':'🌙 לילה'}
+var saved=lsGet(THEMEKEY);if(saved==='dark'||saved==='light')document.documentElement.setAttribute('data-theme',saved);
+paintBtn();
+if(tb)tb.addEventListener('click',function(){var d=!curDark();document.documentElement.setAttribute('data-theme',d?'dark':'light');lsSet(THEMEKEY,d?'dark':'light');paintBtn()});
+// sections + toc
+var secs=$$('section.sec'),toc=$('nav.toc');
+secs.forEach(function(s,i){var h=$('h2',s);var no=el('div','secno',(i+1)+' / '+secs.length);s.insertBefore(no,h);
+ if(toc){var a=el('a');a.href='#'+s.id;a.innerHTML='<b>'+(i+1)+'</b> '+(s.getAttribute('data-short')||h.textContent);toc.appendChild(a)}});
+// sims
+var sims=[];
+$$('.sim').forEach(function(sim){
+ var steps=$$('.steps > .step',sim);var mapItems=$$('.map > li',sim);
+ var lines=el('div','lines'),xp=el('div','x'),sp=el('div','stp-wrap');
+ var ctl=el('div','ctl');var bP=el('button','','→ הקודם'),bN=el('button','pri','הבא ←'),bR=el('button','','⟲ מההתחלה'),cnt=el('span','cnt');
+ bP.type=bN.type=bR.type='button';ctl.appendChild(bR);ctl.appendChild(bP);ctl.appendChild(bN);ctl.appendChild(cnt);
+ var stepLine=[],lineEls=[],xs=[],sts=[];
+ steps.forEach(function(st,i){var f=$('.f',st);
+  if(f){var ln=el('div','ln');ln.appendChild(el('span','no',String(lineEls.length+1)));ln.appendChild(f);lines.appendChild(ln);lineEls.push(ln)}
+  stepLine.push(lineEls.length-1);
+  var x=$('.x',st)||el('div','','');var xd=el('div','');while(x.firstChild)xd.appendChild(x.firstChild);xp.appendChild(xd);xs.push(xd);
+  var s=$('.st',st);var sd=el('div','stp');if(s){while(s.firstChild)sd.appendChild(s.firstChild)}sp.appendChild(sd);sts.push(sd)});
+ var stepsBox=$('.steps',sim);sim.insertBefore(lines,stepsBox);sim.insertBefore(xp,stepsBox);sim.insertBefore(sp,stepsBox);sim.insertBefore(ctl,stepsBox);stepsBox.remove();
+ var cur=0;
+ function render(){var L=stepLine[cur];
+  lineEls.forEach(function(ln,j){ln.classList.toggle('cur',j===L);ln.classList.toggle('fut',j>L)});
+  xs.forEach(function(x,j){x.hidden=j!==cur});
+  sts.forEach(function(s,j){s.hidden=j!==cur;
+   if(j===cur&&j>0){var prev={};$$('span',sts[j-1]).forEach(function(p){var k=$('i',p);if(k)prev[k.textContent]=p.textContent});
+    $$(':scope > span',s).forEach(function(p){var k=$('i',p);p.classList.toggle('new',!!k&&prev[k.textContent]!==p.textContent)})}});
+  var m=+(steps[cur].getAttribute('data-m')||-1);
+  mapItems.forEach(function(li,j){li.classList.toggle('on',j===m);li.classList.toggle('done',m>=0&&j<m)});
+  bP.disabled=cur===0;bN.disabled=cur===steps.length-1;cnt.textContent=(cur+1)+' / '+steps.length}
+ bP.onclick=function(){if(cur>0){cur--;render()}};bN.onclick=function(){if(cur<steps.length-1){cur++;render()}};bR.onclick=function(){cur=0;render()};
+ sims.push(render)});
+// quiz
+var st={};try{st=JSON.parse(lsGet(KEY)||'{}')||{}}catch(e){st={}}
+var qs=$$('.qq'),LET=['א','ב','ג','ד','ה'];
+function score(){var c=0,d=0;qs.forEach(function(q,i){var s=st[i];if(s&&s.done){d++;if(s.first)c++}});
+ var sc=$('#score');if(sc)sc.innerHTML='ניקוד: <bdi dir="ltr">'+c+' / '+qs.length+'</bdi>';var m=$('#meter');if(m)m.style.width=(qs.length?100*d/qs.length:0)+'%';
+ var end=$('#endMsg');if(end)end.textContent=d===qs.length?('סיימת את כל '+qs.length+' השאלות! ענית נכון בניסיון הראשון על '+c+'. '+(c>=qs.length*0.8?'מצוין, ביג בוס 💪':'כדאי לחזור על הסעיפים שבהם טעית.')):'ענית על '+d+' מתוך '+qs.length+' שאלות.'}
+var qhide=[];
+qs.forEach(function(q,i){var a=+q.getAttribute('data-a');var h=$('.h',q),e=$('.e',q);
+ $$('ol > li',q).forEach(function(li,j){var b=el('button','');b.type='button';b.appendChild(el('span','lt',LET[j]+'.'));while(li.firstChild)b.appendChild(li.firstChild);li.appendChild(b);
+  b.addEventListener('click',function(){var s=st[i]||{tried:[]};if(s.done)return;s.tried.push(j);
+   if(j===a){s.done=true;s.first=s.tried.length===1}st[i]=s;lsSet(KEY,JSON.stringify(st));paintQ();score()})});
+ function paintQ(){var s=st[i]||{tried:[]};var bs=$$('ol > li > button',q);
+  bs.forEach(function(b,j){b.classList.toggle('good',!!s.done&&j===a);b.classList.toggle('bad',s.tried.indexOf(j)>=0&&j!==a)});
+  var lastBad=s.tried.length&&s.tried[s.tried.length-1]!==a;if(h)h.hidden=!(lastBad&&!s.done);if(e)e.hidden=!s.done}
+ q._paint=paintQ;qhide.push(paintQ)});
+var rb=$('#resetBtn');if(rb)rb.addEventListener('click',function(){st={};lsSet(KEY,'{}');qhide.forEach(function(f){f()});score()});
+// bidi fix
+var HEB=/[֐-׿]/,RUN=/[A-Za-z0-9∞√π][A-Za-z0-9∞√π²³⁻¹\s+\-−*\/=^().,'·:≤≥<>|_]*/g;
+var SKIP={'MJX-CONTAINER':1,'CODE':1,'PRE':1,'SVG':1,'BDI':1,'SCRIPT':1,'STYLE':1,'TEXTAREA':1,'INPUT':1};
+function bidi(root){var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode:function(n){for(var p=n.parentNode;p&&p!==root.parentNode;p=p.parentNode){if(SKIP[p.nodeName.toUpperCase()]||(p.classList&&(p.classList.contains('m')||p.classList.contains('ltr'))))return NodeFilter.FILTER_REJECT}return NodeFilter.FILTER_ACCEPT}});
+ var nodes=[],n;while(n=w.nextNode())nodes.push(n);
+ nodes.forEach(function(t){var s=t.nodeValue;if(HEB.test(s)&&s.indexOf('→')>=0)s=t.nodeValue=s.replace(/→/g,'←');
+  if(!/[A-Za-z0-9∞√π]/.test(s)||!HEB.test(s+((t.parentNode&&t.parentNode.textContent)||'')))return;
+  var frag=document.createDocumentFragment(),last=0,m;RUN.lastIndex=0;
+  while(m=RUN.exec(s)){var r=m[0].replace(/[\s.,:]+$/,'');var open=(r.match(/\(/g)||[]).length,close=(r.match(/\)/g)||[]).length;
+   while(close>open&&r.slice(-1)===')'){r=r.slice(0,-1);close--}
+   if(open>close&&r.slice(-1)==='('){r=r.slice(0,-1).replace(/\s+$/,'')}
+   if(!r)continue;frag.appendChild(document.createTextNode(s.slice(last,m.index)));var b=document.createElement('bdi');b.dir='ltr';b.textContent=r;frag.appendChild(b);last=m.index+r.length;RUN.lastIndex=last}
+  frag.appendChild(document.createTextNode(s.slice(last)));t.parentNode.replaceChild(frag,t)})}
+var finished=false;
+function finish(){if(finished)return;finished=true;bidi($('.wrap'));sims.forEach(function(r){r()});qhide.forEach(function(f){f()});score();
+ if(window.LESSON_INIT)try{window.LESSON_INIT()}catch(e){console.error(e)}}
+window.__lessonFinish=finish;
+window.typesetLater=function(node){if(window.MathJax&&MathJax.typesetPromise){return MathJax.typesetPromise([node]).then(function(){bidi(node)}).catch(function(){})}bidi(node);return Promise.resolve()};
+setTimeout(finish,9000);
+})();
+</script>
+<script>window.MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']],packages:{'[+]':['html']}},loader:{load:['[tex]/html']},svg:{fontCache:'global'},options:{ignoreHtmlClass:'nomj'},startup:{ready:function(){MathJax.startup.defaultReady();MathJax.startup.promise.then(function(){window.__lessonFinish&&window.__lessonFinish()})}}};</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.min.js"></script>
+
+</body></html>

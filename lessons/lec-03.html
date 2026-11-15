@@ -1,0 +1,869 @@
+<!doctype html><html><head><script>(function(){try{var m=localStorage.getItem("hedva2-theme");if(m==="dark"||m==="light")document.documentElement.setAttribute("data-theme",m);}catch(e){}})();</script><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>חדו״א 2 — הרצאה 3</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&family=Secular+One&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: one reading column on graph-paper ground, like the lecturer's notebook; sticky score bar on top */
+:root{
+  --bg:#f4f7fb; --surface:#ffffff; --ink:#172131; --muted:#566275; --line:#d6dee9; --grid:rgba(70,120,190,.10);
+  --accent:#1d5fa8; --accent-ink:#ffffff; --hl:#bfeaf6;
+  --lo:#c43a3a; --up:#4f7a0c; --rs:#4a4fd0; --part:#8a5a2b;
+  --ok:#1d874a; --okbg:#e3f5ea; --bad:#c03636; --badbg:#fbe7e7; --notebg:#eef4fc; --warnbg:#fff4e2;
+  --f-body:"Assistant",system-ui,"Segoe UI",Arial,sans-serif;
+  --f-head:"Secular One","Assistant",system-ui,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f141c; --surface:#161d28; --ink:#e5eaf2; --muted:#9ba7b9; --line:#2a3445; --grid:rgba(120,170,240,.07);
+  --accent:#7db1ee; --accent-ink:#0f141c; --hl:#1c4757;
+  --lo:#ff8a80; --up:#b2d860; --rs:#a5a8ff; --part:#e0b07a;
+  --ok:#5fd38d; --okbg:#143222; --bad:#ff8080; --badbg:#3a1a1c; --notebg:#18253a; --warnbg:#33270f;
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f141c; --surface:#161d28; --ink:#e5eaf2; --muted:#9ba7b9; --line:#2a3445; --grid:rgba(120,170,240,.07);
+  --accent:#7db1ee; --accent-ink:#0f141c; --hl:#1c4757;
+  --lo:#ff8a80; --up:#b2d860; --rs:#a5a8ff; --part:#e0b07a;
+  --ok:#5fd38d; --okbg:#143222; --bad:#ff8080; --badbg:#3a1a1c; --notebg:#18253a; --warnbg:#33270f;
+  color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.7;direction:rtl;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:22px 22px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--surface)}
+.wrap{max-width:820px;margin:0 auto;padding-block:8px 60px}
+h1,h2,h3{font-family:var(--f-head);font-weight:400;text-wrap:balance;line-height:1.25;margin:0}
+h1{font-size:clamp(30px,6vw,44px)}
+h2{font-size:clamp(23px,4.4vw,30px)}
+h3{font-size:20px;margin-top:22px}
+p{margin:10px 0}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--surface);border:1px solid var(--line);border-radius:0 0 12px 12px;
+  display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;padding:10px 14px;margin-bottom:18px;box-shadow:0 4px 14px rgba(0,0,0,.06)}
+.bar .lbl{font-weight:700}
+.bar .score{font-variant-numeric:tabular-nums}
+.meter{flex:1 1 140px;height:9px;background:var(--line);border-radius:6px;overflow:hidden;min-width:100px}
+.meter>i{display:block;height:100%;width:0;background:var(--accent);transition:width .3s}
+button{font-family:var(--f-body);font-size:15px;cursor:pointer}
+.btn{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:8px;padding:6px 12px;min-height:36px}
+.btn:hover{border-color:var(--accent)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn:disabled{opacity:.45;cursor:default}
+button:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.hero{padding-block:22px 10px}
+.credit{display:inline-block;margin-bottom:12px;padding:6px 12px;border:1px solid var(--line);border-radius:10px;background:var(--surface);font-size:15px}
+.meta{display:flex;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:15px;margin-bottom:8px}
+.chip{border:1px solid var(--line);background:var(--surface);border-radius:20px;padding:1px 10px;font-size:14px;color:var(--muted)}
+.legend{display:flex;flex-wrap:wrap;gap:8px 14px;margin-top:14px;font-size:15px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.dot{width:12px;height:12px;border-radius:3px;display:inline-block}
+.toc{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:6px 10px;margin:16px 0 0;padding:0;list-style:none;font-size:15px}
+.toc a{display:block;color:var(--accent);text-decoration:none;background:var(--surface);border:1px solid var(--line);border-radius:9px;padding:5px 10px}
+.toc a:hover{border-color:var(--accent)}
+section.sec{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px max(14px,3vw);margin-top:26px}
+.eyebrow{display:flex;flex-wrap:wrap;align-items:center;gap:8px;color:var(--muted);font-size:14px;margin-bottom:6px;letter-spacing:.02em}
+.eyebrow b{direction:ltr;unicode-bidi:isolate;color:var(--accent);font-family:var(--f-mono);font-weight:600}
+.m{direction:ltr;overflow-x:auto;overflow-y:hidden;padding:4px 0;max-width:100%}
+mjx-container{direction:ltr}
+mjx-container:not([display="true"]){display:inline-block;max-width:100%;overflow-x:auto;overflow-y:hidden;vertical-align:middle}
+mjx-assistive-mml{max-width:100%}
+mjx-container[display="true"]{margin:.4em 0!important}
+.final{background:linear-gradient(transparent 62%,var(--hl) 62%);padding:0 4px;border-radius:2px;display:inline-block}
+.c-lo{fill:var(--lo);stroke:var(--lo)}.c-up{fill:var(--up);stroke:var(--up)}.c-rs{fill:var(--rs);stroke:var(--rs)}.c-part{fill:var(--part);stroke:var(--part)}
+.t-lo{color:var(--lo);font-weight:700}.t-up{color:var(--up);font-weight:700}.t-rs{color:var(--rs);font-weight:700}.t-part{color:var(--part);font-weight:700}
+.box{border-radius:10px;padding:12px 14px;margin:14px 0;border:1px solid var(--line)}
+.box h4{margin:0 0 4px;font-size:16px}
+.terms{background:var(--notebg)}
+.terms dl{margin:4px 0 0;display:grid;gap:6px}
+.terms dt{font-weight:700}
+.terms dd{margin:0 0 4px 0}
+.terms dl>*{min-width:0}
+.rule{background:var(--surface);border:2px solid var(--accent)}
+.rule h4{color:var(--accent)}
+.analogy{background:var(--surface);border-style:dashed}
+.mynote{background:var(--warnbg)}
+.tw{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:15.5px}
+th,td{border:1px solid var(--line);padding:6px 9px;text-align:right;vertical-align:middle}
+th{background:var(--notebg);font-weight:700}
+td.num{font-variant-numeric:tabular-nums;direction:ltr;text-align:center}
+.sim{border:1px solid var(--line);border-radius:12px;margin:16px 0;overflow:hidden}
+.sim header{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;padding:8px 12px;background:var(--notebg);border-bottom:1px solid var(--line)}
+.sim header b{font-size:15px}
+.sim .ctr{font-family:var(--f-mono);font-size:13px;color:var(--muted)}
+.sim .ctrls{display:flex;gap:6px}
+.board{padding:6px 12px}
+.ln{display:grid;grid-template-columns:30px minmax(0,1fr);gap:8px;align-items:center;border:2px solid transparent;border-radius:8px;padding:2px 6px;margin:3px 0}
+.ln .no{font-family:var(--f-mono);font-size:12px;color:var(--muted);text-align:center}
+.ln.cur{border-color:var(--accent);background:var(--notebg)}
+.expl{border-top:1px solid var(--line);padding:10px 12px;background:var(--surface);min-height:70px}
+.expl b{color:var(--accent)}
+.lab{border:1px solid var(--line);border-radius:12px;margin:16px 0;overflow:hidden}
+.lab header{padding:8px 12px;background:var(--notebg);border-bottom:1px solid var(--line);font-weight:700;font-size:15px}
+.lab .body{padding:10px 12px;display:grid;gap:10px}
+.lab .row{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.lab .row>span.lb{font-size:14px;color:var(--muted);margin-inline-end:4px}
+.lab svg{direction:ltr;width:100%;height:auto;display:block;background:var(--surface);border:1px solid var(--line);border-radius:8px}
+.lab svg text{fill:var(--muted);font-family:var(--f-mono);font-size:12px}
+.lab svg .axis{stroke:var(--muted);stroke-width:1.2;fill:none}
+.lab svg .gridl{stroke:var(--line);stroke-width:1;fill:none}
+.lab svg .curve{stroke:var(--ink);stroke-width:2.4;fill:none}
+.lab svg .rlo{fill:var(--lo);fill-opacity:.25;stroke:var(--lo);stroke-width:1.3}
+.lab svg .rup{fill:var(--up);fill-opacity:.16;stroke:var(--up);stroke-width:1.3;stroke-dasharray:4 3}
+.lab svg .rrs{fill:var(--rs);fill-opacity:.22;stroke:var(--rs);stroke-width:1.3}
+.lab svg .ptrs{fill:var(--rs)}
+.lab svg .apos{fill:var(--up);fill-opacity:.3}
+.lab svg .aneg{fill:var(--lo);fill-opacity:.3}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(112px,1fr));gap:6px}
+.stat{border:1px solid var(--line);border-radius:8px;padding:6px 10px;font-size:14px}
+.stat b{display:block;font-family:var(--f-mono);font-size:18px;font-variant-numeric:tabular-nums;direction:ltr;text-align:right}
+input[type=range]{direction:ltr;width:100%;accent-color:var(--accent)}
+.out{border:1px solid var(--line);border-radius:10px;padding:8px 12px;min-height:60px}
+.quiz{margin-top:20px;border-top:2px dashed var(--line);padding-top:12px}
+.quiz>h3{margin:0 0 8px;font-size:18px;color:var(--accent)}
+.q{margin:14px 0 18px}
+.q .qt{font-weight:600}
+.q .qm{direction:ltr;background:var(--notebg);border-radius:8px;padding:4px 10px;margin:6px 0;overflow-x:auto}
+.opts{display:grid;gap:6px;margin-top:6px}
+.opt{display:flex;gap:10px;align-items:center;text-align:right;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);border-radius:9px;padding:6px 10px;min-height:44px}
+.opt .k{font-family:var(--f-mono);font-size:13px;color:var(--muted);flex:none;width:18px}
+.opt .ot{min-width:0;overflow-x:auto}
+.opt:hover{border-color:var(--accent)}
+.opt.wrong{border-color:var(--bad);background:var(--badbg)}
+.opt.right{border-color:var(--ok);background:var(--okbg)}
+.fb{border-radius:8px;padding:8px 12px;margin-top:6px;font-size:15.5px}
+.fb.hint{background:var(--badbg);border:1px solid var(--bad)}
+.fb.why{background:var(--okbg);border:1px solid var(--ok)}
+.endmsg{margin-top:18px;text-align:center;font-size:19px;font-weight:700}
+@media (prefers-reduced-motion:reduce){.meter>i{transition:none}}
+@media (max-width:520px){body{font-size:16px}.bar{gap:8px}}
+</style>
+<style>
+:root{--ep:#a3207a;--av:#0d8a73;--lm:#b26a00}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--ep:#f07ac8;--av:#4fd6b8;--lm:#ffbe55}}
+:root[data-theme="dark"]{--ep:#f07ac8;--av:#4fd6b8;--lm:#ffbe55}
+.c-ep{fill:var(--ep);stroke:var(--ep)}.c-av{fill:var(--av);stroke:var(--av)}.c-lm{fill:var(--lm);stroke:var(--lm)}
+.t-ep{color:var(--ep);font-weight:700}.t-av{color:var(--av);font-weight:700}.t-lm{color:var(--lm);font-weight:700}
+.lab svg .rav{fill:var(--av);fill-opacity:.18;stroke:var(--av);stroke-width:1.6;stroke-dasharray:5 3}
+.lab svg .pav{fill:var(--av)}
+.lab svg .one{fill:var(--rs);fill-opacity:.25;stroke:var(--rs);stroke-width:1.2}
+.lab svg .dotq{fill:var(--up)}.lab svg .dotn{fill:var(--lo)}
+.ok{color:var(--ok);font-weight:700}
+</style>
+<style>
+:root{--F:#7b3fb0;--pp:#1386a6}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--F:#c79bf2;--pp:#5ccbe8}}
+:root[data-theme="dark"]{--F:#c79bf2;--pp:#5ccbe8}
+.c-F{fill:var(--F);stroke:var(--F)}.c-pp{fill:var(--pp);stroke:var(--pp)}
+.t-F{color:var(--F);font-weight:700}.t-pp{color:var(--pp);font-weight:700}
+.lab svg .aF{fill:var(--F);fill-opacity:.28}
+.lab svg .aFn{fill:var(--lo);fill-opacity:.28}
+.lab svg .Fcurve{stroke:var(--F);stroke-width:2.6;fill:none}
+.lab svg .Fghost{stroke:var(--F);stroke-width:1.4;stroke-dasharray:4 4;fill:none;opacity:.45}
+.lab svg .tan{stroke:var(--lm);stroke-width:2;fill:none}
+.lab svg .pF{fill:var(--F)}
+.lab svg .mline{stroke:var(--lo);stroke-width:1.6;stroke-dasharray:6 4;fill:none}
+.lab svg .Mline{stroke:var(--up);stroke-width:1.6;stroke-dasharray:6 4;fill:none}
+.lab svg .cmark{stroke:var(--av);stroke-width:1.4;stroke-dasharray:3 3;fill:none}
+.lab svg .lbl{font-family:var(--f-body);font-size:13px;font-weight:700}
+.lab input[type=range]+.hint{font-size:13px;color:var(--muted)}
+</style>
+
+<div class="wrap">
+  <div class="bar" role="status">
+    <span class="lbl">ציון:</span>
+    <span class="score" id="score">0 / 0</span>
+    <div class="meter" aria-hidden="true"><i id="meter"></i></div>
+    <span class="score" id="prog">נענו 0</span>
+    <button class="btn" id="reset" type="button">איפוס</button>
+  </div>
+
+  <header class="hero">
+    <div class="credit">קרדיט לסיכומים של עדי מהדרייב 😊 ולעידו דוד צייג!</div>
+    <div class="meta"><span class="chip">חדו״א 2</span><span class="chip">הרצאה 3 · 03/11/25</span><span class="chip">3 עמודי מחברת</span></div>
+    <h1>המשפט היסודי של החדו״א</h1>
+    <p>היי ביג בוס 👋 עד עכשיו חישבנו אינטגרל עם מלבנים וגבולות, וזה היה ארוך (זוכר את \(\int_0^1e^x\,dx\)?). בהרצאה הזאת מגיע הקיצור הגדול: <b>אינטגרל ונגזרת הם פעולות הפוכות</b>. בזכות זה מחשבים אינטגרל בשורה אחת. בסוף מתחילים את שיטות האינטגרציה, עם אינטגרציה בחלקים. אחרי כל חלק יש שאלות. תשובה לא נכונה נותנת רמז, ואפשר לנסות שוב.</p>
+    <div class="legend" aria-label="מקרא צבעים">
+      <span><i class="dot" style="background:var(--lo)"></i>\(m\), מינימום</span>
+      <span><i class="dot" style="background:var(--up)"></i>\(M\), מקסימום</span>
+      <span><i class="dot" style="background:var(--av)"></i>ערך ממוצע \(f(c)\)</span>
+      <span><i class="dot" style="background:var(--F)"></i>\(F\), \(D\): פונקציה צוברת / קדומה (חדש)</span>
+      <span><i class="dot" style="background:var(--lm)"></i>גבול \(h\to0\)</span>
+      <span><i class="dot" style="background:var(--pp)"></i>אינטגרציה בחלקים</span>
+      <span><span class="final" style="font-size:14px">תשובה סופית</span></span>
+    </div>
+    <ul class="toc">
+      <li><a href="#s1">1 · תזכורת: משפט הערך הממוצע</a></li>
+      <li><a href="#s2">2 · אינטואיציה: מהירות ומרחק</a></li>
+      <li><a href="#s3">3 · הפונקציה הצוברת \(F(x)\)</a></li>
+      <li><a href="#s4">4 · המשפט היסודי, חלק 1</a></li>
+      <li><a href="#s5">5 · חלק 2: ניוטון-לייבניץ</a></li>
+      <li><a href="#s6">6 · פונקציה קדומה ו-3 הטענות</a></li>
+      <li><a href="#s7">7 · דוגמאות: אינטגרלים מיידיים</a></li>
+      <li><a href="#s8">8 · אינטגרציה בחלקים</a></li>
+      <li><a href="#sum">סיכום ומבחן מסכם</a></li>
+    </ul>
+  </header>
+
+  <!-- 1 -->
+  <section class="sec" id="s1">
+    <div class="eyebrow"><b>1 / 8</b><span>עמוד 1 במחברת · תזכורת + הוכחה</span></div>
+    <h2>תזכורת: משפט הערך הממוצע האינטגרלי</h2>
+    <p>את המשפט ראינו בסוף הרצאה 2. עכשיו המרצה <b>מוכיח</b> אותו, כי הוא הכלי המרכזי בהוכחה של המשפט היסודי (חלק 4).</p>
+    <h3>דוגמה שלי עם מספרים: \(f(x)=2x+1\) בקטע \([0,2]\)</h3>
+    <p>השטח מתחת לגרף הוא טרפז: \(\int_0^2(2x+1)\,dx=\frac{1+5}{2}\cdot2=6\). אורך הקטע 2. גובה המלבן עם אותו שטח: \(\av{\frac62=3}\). והפונקציה מגיעה לגובה 3 ב-\(2c+1=3\Rightarrow c=1\). אז \(\int_0^2f=\av{f(1)}\cdot2\) ✓.</p>
+    <div class="box rule"><h4>משפט</h4>אם \(f\) רציפה בקטע \([a,b]\), אז קיימת נקודה \(c\in[a,b]\) כך ש-
+      <div class="m">\[\int_a^bf(x)\,dx=\av{f(c)}\cdot(b-a)\qquad\Longleftrightarrow\qquad\av{f(c)}=\frac1{b-a}\int_a^bf(x)\,dx\]</div></div>
+    <p><b>בציור במחברת:</b> הנקודה \(c\) מבטיחה ששטח המלבן הירוק (גובה \(f(c)\), רוחב \(b-a\)) יהיה שווה לשטח מתחת לגרף.</p>
+    <div class="box terms"><h4>שני משפטים מחדו״א 1 שההוכחה משתמשת בהם</h4><dl>
+      <dt>משפט ויירשטראס</dt><dd>פונקציה רציפה בקטע <b>סגור</b> מקבלת בו מינימום ומקסימום. כלומר יש נקודות \(x_m, x_M\) עם \(f(x_m)=\lo{m}\) (הכי נמוך) ו-\(f(x_M)=\up{M}\) (הכי גבוה).</dd>
+      <dt>משפט ערך הביניים</dt><dd>פונקציה רציפה בקטע מקבלת <b>כל</b> ערך שבין שני ערכים שלה. דוגמה: אם \(f(1)=2\) ו-\(f(4)=7\), אז לכל מספר בין 2 ל-7 (למשל 5) יש נקודה בין 1 ל-4 שבה \(f\) שווה לו.</dd>
+      <dt>תכונת החסמים (הרצאה 2)</dt><dd>אם \(m\le f(x)\le M\) בכל הקטע, אז \(m(b-a)\le\int_a^bf\le M(b-a)\).</dd>
+    </dl></div>
+    <h3>מפת השלבים של ההוכחה</h3>
+    <div class="tw"><table>
+      <tr><th>שלב</th><th>מה עושים</th><th>הכלי</th></tr>
+      <tr><td>1</td><td>מוצאים את הנקודה הכי נמוכה והכי גבוהה</td><td>ויירשטראס</td></tr>
+      <tr><td>2</td><td>חוסמים את האינטגרל בין \(m(b-a)\) ל-\(M(b-a)\)</td><td>תכונת החסמים</td></tr>
+      <tr><td>3</td><td>מחלקים ב-\(b-a\): הממוצע תקוע בין \(m\) ל-\(M\)</td><td>אלגברה</td></tr>
+      <tr><td>4</td><td>\(f\) עוברת מ-\(m\) ל-\(M\), אז היא "פוגשת" גם את הממוצע</td><td>ערך הביניים</td></tr>
+    </table></div>
+    <div class="sim" data-sim="mvt"></div>
+    <div class="lab" id="mvLab">
+      <header>המחשה: הממוצע תמיד בין \(m\) ל-\(M\), ולכן יש \(c\)</header>
+      <div class="body">
+        <div class="row" id="mvF"><span class="lb">פונקציה:</span></div>
+        <svg id="mvSvg" viewBox="0 0 520 300" role="img" aria-label="מלבן בגובה הערך הממוצע בין קו המינימום לקו המקסימום"></svg>
+        <div class="stats" id="mvStats"></div>
+        <div class="out" id="mvOut"></div>
+      </div>
+    </div>
+    <div class="box analogy"><h4>אנלוגיה</h4>נסיעה של שעתיים שבה עברת 120 ק״מ. המהירות הממוצעת 60 קמ״ש. המהירות שלך השתנתה בצורה רציפה, בין המינימום למקסימום, אז בשלב כלשהו מד המהירות הראה <b>בדיוק</b> 60.</div>
+    <div class="box rule"><h4>הכלל לזכור</h4>\(\lo m\le\av{\frac1{b-a}\int_a^bf}\le\up M\), ופונקציה רציפה מקבלת כל ערך בין \(m\) ל-\(M\). מכאן ה-\(c\).</div>
+    <div class="quiz" data-quiz="s1"></div>
+  </section>
+
+  <!-- 2 -->
+  <section class="sec" id="s2">
+    <div class="eyebrow"><b>2 / 8</b><span>עמוד 1 במחברת · אינטואיציה</span></div>
+    <h2>אינטואיציה: מהירות ומרחק</h2>
+    <p>לפני המשפט, המרצה נותן סיפור שמראה <b>למה</b> הוא צריך להיות נכון. נזכור מהרצאה 1: אם \(v(t)\) היא המהירות, אז המרחק בזמן \([a,b]\) הוא \(\int_a^bv(t)\,dt\).</p>
+    <h3>דוגמה שלי עם מספרים: האבן מהרצאה 1</h3>
+    <p>האבן נופלת במהירות \(v(t)=10t\). נתחיל ב-\(a=0\), אבל ניתן לזמן הסוף <b>לזוז</b>, ונקרא לו \(x\). אז המרחק עד רגע \(x\) הוא פונקציה של \(x\) (שטח של משולש, בסיס \(x\), גובה \(10x\)):</p>
+    <div class="m">\[\Fc{D(x)}=\int_0^x10t\,dt=\frac{x\cdot10x}{2}=5x^2\]</div>
+    <div class="tw"><table>
+      <tr><th>זמן \(x\)</th><td class="num">1</td><td class="num">2</td><td class="num">3</td><td class="num">4</td></tr>
+      <tr><th class="t-F">מרחק \(D(x)\)</th><td class="num">5</td><td class="num">20</td><td class="num">45</td><td class="num">80</td></tr>
+    </table></div>
+    <p>(ב-\(x=4\) יוצא 80: זה בדיוק הערך האמיתי שחסמנו בהרצאה 1 בין 60 ל-100.)</p>
+    <h3>מה המהירות הממוצעת בין שני רגעים?</h3>
+    <p>בין שנייה 2 לשנייה 3 האבן עברה \(45-20=25\) מטר בשנייה אחת: מהירות ממוצעת 25. באופן כללי, בקטע \([x,y]\):</p>
+    <div class="m">\[\tilde v=\frac{\Fc{D(y)}-\Fc{D(x)}}{y-x}\qquad\xrightarrow{\ h=y-x\ }\qquad\tilde v=\frac{\Fc{D(x+h)}-\Fc{D(x)}}{h}\]</div>
+    <p>ככל שהקטע קצר יותר, הממוצע קרוב יותר למהירות <b>ברגע</b> \(x\). אם \(D\) גזירה:</p>
+    <div class="m">\[v(x)=\lm{\lim_{h\to0}}\frac{\Fc{D(x+h)}-\Fc{D(x)}}{h}=\Fc{D}'(x)\]</div>
+    <div class="box terms"><h4>מונחים וסימנים</h4><dl>
+      <dt>\(\tilde v\) ("וי גל")</dt><dd>המהירות הממוצעת. הגל מעל רק מסמן "ממוצע", כדי לא להתבלבל עם \(v\).</dd>
+      <dt>\(h=y-x\)</dt><dd>אורך הקטע הקצר (כמה זמן עבר). כש-\(h\to0\) הקטע מתכווץ לרגע אחד.</dd>
+      <dt>\(\int_0^x\dots dt\)</dt><dd>למה \(t\) בפנים ולא \(x\)? כי \(x\) כבר תפוס: הוא הגבול העליון. \(t\) הוא הזמן שרץ מ-0 עד \(x\).</dd>
+    </dl></div>
+    <div class="lab" id="spLab">
+      <header>נסה בעצמך: מכווצים את \(h\) ורואים את המהירות הממוצעת מתקרבת ל-\(v(x)=10x\)</header>
+      <div class="body">
+        <div class="row" id="spX"><span class="lb">רגע \(x\) =</span></div>
+        <label for="spH" class="row"><span class="lb">\(h\):</span> <b id="spHv" style="font-family:var(--f-mono);direction:ltr;unicode-bidi:isolate"></b></label>
+        <input id="spH" type="range" min="0" max="100" step="1" value="0">
+        <div class="stats" id="spStats"></div>
+      </div>
+    </div>
+    <div class="box rule"><h4>מה לקחת מזה</h4>מרחק = אינטגרל של מהירות, ומהירות = נגזרת של מרחק. כלומר <b>הנגזרת של "האינטגרל עד \(x\)" מחזירה את הפונקציה שבפנים</b>. זה בדיוק המשפט היסודי.</div>
+    <div class="quiz" data-quiz="s2"></div>
+  </section>
+
+  <!-- 3 -->
+  <section class="sec" id="s3">
+    <div class="eyebrow"><b>3 / 8</b><span>עמוד 2 במחברת · באופן פורמלי</span></div>
+    <h2>הפונקציה הצוברת \(F(x)=\int_a^xf(t)\,dt\)</h2>
+    <p>עכשיו אותו רעיון בלי סיפור. תהי \(f:[a,b]\to\mathbb R\) רציפה. לכל \(x\) בין \(a\) ל-\(b\) נגדיר:</p>
+    <div class="m">\[\Fc{F(x)}=\int_a^xf(t)\,dt\qquad(a\le x\le b)\]</div>
+    <p>במילים: \(F(x)\) = השטח (עם סימן) מתחת ל-\(f\), מ-\(a\) עד \(x\). כש-\(x\) זז ימינה, נוסף עוד שטח. לכן המחברת קוראת לה <b>פונקציה צוברת / אוספת שטח</b> (השטח המקווקו בציור).</p>
+    <h3>דוגמה שלי: \(f(t)=t\), \(a=0\)</h3>
+    <div class="tw"><table>
+      <tr><th>\(x\)</th><td class="num">0</td><td class="num">1</td><td class="num">2</td><td class="num">3</td></tr>
+      <tr><th>השטח (משולש \(\frac{x\cdot x}2\))</th><td class="num t-F">0</td><td class="num t-F">0.5</td><td class="num t-F">2</td><td class="num t-F">4.5</td></tr>
+    </table></div>
+    <p>כלומר \(\Fc{F(x)}=\frac{x^2}2\). ועכשיו שים לב: הנגזרת של \(\frac{x^2}{2}\) היא \(x\), בדיוק \(f\). זה לא מקרי. בהמחשה למטה רואים את זה לכל פונקציה.</p>
+    <div class="box terms"><h4>מונחים</h4><dl>
+      <dt>\(f:[a,b]\to\mathbb R\)</dt><dd>\(f\) מקבלת מספר מהקטע \([a,b]\) ומחזירה מספר ממשי.</dd>
+      <dt>\(t\) ו-\(x\)</dt><dd>\(x\) = עד איפה צוברים (הקלט של \(F\)). \(t\) = משתנה האינטגרציה, "רץ" מ-\(a\) עד \(x\). אפשר לקרוא לו גם \(s\) או \(u\), זה לא משנה את התוצאה.</dd>
+      <dt>\(F(a)\)</dt><dd>תמיד \(\int_a^af=0\): עוד לא צברנו שום שטח.</dd>
+    </dl></div>
+    <div class="lab" id="acLab">
+      <header>המחשה: גוררים את \(x\). למעלה השטח שנצבר, למטה הגרף של \(F\) והשיפוע שלו</header>
+      <div class="body">
+        <div class="row" id="acF"><span class="lb">\(f(t)\) =</span></div>
+        <label for="acX" class="row"><span class="lb">\(x\):</span> <b id="acXv" style="font-family:var(--f-mono);direction:ltr;unicode-bidi:isolate"></b></label>
+        <input id="acX" type="range" min="0" max="1000" step="1" value="500">
+        <svg id="acTop" viewBox="0 0 520 220" role="img" aria-label="השטח מתחת ל-f מ-a עד x"></svg>
+        <svg id="acBot" viewBox="0 0 520 220" role="img" aria-label="הגרף של F עם קו משיק"></svg>
+        <div class="stats" id="acStats"></div>
+      </div>
+    </div>
+    <p>מה רואים בהמחשה: <b>השיפוע של \(F\) בנקודה \(x\) (הקו הכתום) שווה לגובה של \(f\) באותה נקודה.</b> כש-\(f\) גבוהה, \(F\) עולה מהר. כש-\(f\) שלילית, השטח "נגרע" ו-\(F\) יורדת.</p>
+    <div class="box analogy"><h4>אנלוגיה</h4>\(f\) = כמה מים זורמים לבריכה בכל רגע. \(F(x)\) = כמה מים יש בבריכה ברגע \(x\). קצב השינוי של כמות המים (\(F'\)) הוא בדיוק הזרימה (\(f\)).</div>
+    <div class="quiz" data-quiz="s3"></div>
+  </section>
+
+  <!-- 4 -->
+  <section class="sec" id="s4">
+    <div class="eyebrow"><b>4 / 8</b><span>עמוד 2 במחברת · משפט + הוכחת חלק 1</span></div>
+    <h2>המשפט היסודי של החדו״א</h2>
+    <div class="box rule"><h4>המשפט (בסימונים הנ״ל)</h4>
+      <p style="margin:0"><b>חלק 1:</b> \(\Fc{F(x)}=\int_a^xf(t)\,dt\) גזירה, ו-\(\Fc F'(x)=f(x)\).<br>בפרט: כל פונקציה רציפה \(f:[a,b]\to\mathbb R\) היא נגזרת של פונקציה גזירה.</p>
+      <p style="margin:8px 0 0"><b>חלק 2 (ולהיפך):</b> אם \(F\) גזירה ברציפות ב-\([a,b]\), אז \(\int_a^bF'(x)\,dx=F(b)-F(a)\). (חלק 5)</p></div>
+    <h3>קודם בדיקה עם מספרים: \(f(t)=t^2\), \(x=1\)</h3>
+    <p>\(\Fc{F(x)}=\int_0^xt^2dt=\frac{x^3}{3}\) (הרצאה 2, עם \(b=x\)). המשפט אומר ש-\(F'(1)=f(1)=1\). נבדוק עם \(h=0.1\):</p>
+    <div class="m">\[\frac{\Fc{F(1.1)}-\Fc{F(1)}}{0.1}=\frac{\frac{1.331}{3}-\frac13}{0.1}=\frac{0.331}{0.3}\approx1.103\quad\lm{\xrightarrow{h\to0}}\quad1=f(1)\ \checkmark\]</div>
+    <h3>מפת השלבים של ההוכחה</h3>
+    <div class="tw"><table>
+      <tr><th>שלב</th><th>מה עושים</th><th>הכלי</th></tr>
+      <tr><td>1</td><td>כותבים את מנת ההפרשים של \(F\) לפי ההגדרה</td><td>הגדרת נגזרת</td></tr>
+      <tr><td>2</td><td>הופכים את ההפרש לאינטגרל אחד, על הרצועה הצרה \([x,x+h]\)</td><td>תכונות האינטגרל (הרצאה 2)</td></tr>
+      <tr><td>3</td><td>האינטגרל חלקי \(h\) = ממוצע = \(f(c_h)\)</td><td>משפט הערך הממוצע (חלק 1)</td></tr>
+      <tr><td>4</td><td>\(h\to0\) דוחף את \(c_h\) ל-\(x\), ולכן \(f(c_h)\to f(x)\)</td><td>רציפות של \(f\)</td></tr>
+    </table></div>
+    <div class="sim" data-sim="ftc1"></div>
+    <div class="lab" id="dqLab">
+      <header>המחשה: \(f(t)=t^2\), \(x=1\). הרצועה \([x,x+h]\) והמלבן בגובה \(f(c_h)\)</header>
+      <div class="body">
+        <label for="dqH" class="row"><span class="lb">\(h\):</span> <b id="dqHv" style="font-family:var(--f-mono);direction:ltr;unicode-bidi:isolate"></b></label>
+        <input id="dqH" type="range" min="-100" max="100" step="1" value="80">
+        <svg id="dqSvg" viewBox="0 0 520 280" role="img" aria-label="רצועה צרה מתחת ל-t בריבוע ומלבן הממוצע שלה"></svg>
+        <div class="stats" id="dqStats"></div>
+      </div>
+    </div>
+    <div class="box mynote"><h4>הערה שלי: מה עם \(h\) שלילי, ומה בקצוות?</h4>במחברת ההוכחה כתובה כאילו \(h&gt;0\) (הרצועה \([x,x+h]\)). אם \(h&lt;0\) הכל עובד אותו דבר על הרצועה \([x+h,x]\): \(\frac1h\int_x^{x+h}f=\frac{1}{|h|}\int_{x+h}^{x}f=f(c_h)\), עם \(c_h\) בין \(x+h\) ל-\(x\) (נסה \(h\) שלילי בהמחשה). ובקצוות \(x=a\) או \(x=b\) מקבלים נגזרת חד-צדדית (רק \(h&gt;0\) ב-\(a\), רק \(h&lt;0\) ב-\(b\)). לכן ההוכחה כתובה ל-\(x\in(a,b)\).</div>
+    <div class="box rule"><h4>הכלל לזכור</h4>\(\frac{d}{dx}\int_a^xf(t)\,dt=f(x)\). גוזרים "אינטגרל עד \(x\)", ומקבלים את מה שבפנים, עם \(x\) במקום \(t\).</div>
+    <div class="quiz" data-quiz="s4"></div>
+  </section>
+
+  <!-- 5 -->
+  <section class="sec" id="s5">
+    <div class="eyebrow"><b>5 / 8</b><span>עמוד 2 במחברת · הוכחת חלק 2</span></div>
+    <h2>חלק 2: \(\int_a^bF'=F(b)-F(a)\)</h2>
+    <p><b>למה זה כל כך חשוב?</b> כי זה הופך חישוב אינטגרל לחיפוש: מוצאים פונקציה \(F\) שהנגזרת שלה היא מה שבפנים, ומציבים את הקצוות. בלי מלבנים ובלי גבולות.</p>
+    <h3>דוגמה שלי עם מספרים</h3>
+    <p>בהרצאה 2 עבדנו קשה כדי לקבל \(\int_0^3x^2dx=9\). עכשיו: \(F(x)=\frac{x^3}{3}\) מקיימת \(F'(x)=x^2\). לכן \(\int_0^3x^2dx=F(3)-F(0)=\frac{27}{3}-0=\) <span class="final">\(9\)</span>. שורה אחת!</p>
+    <div class="box terms"><h4>כלי מחדו״א 1: מסקנה ממשפט לגרנז׳</h4>אם \(G'(x)=0\) לכל \(x\) בקטע, אז \(G\) <b>קבועה</b> בקטע. לכן: אם לשתי פונקציות יש <b>אותה נגזרת</b>, ההפרש ביניהן הוא קבוע \(C\). דוגמה: \(x^2\) ו-\(x^2+7\) — אותה נגזרת \(2x\), וההפרש תמיד 7.</div>
+    <h3>מפת השלבים של ההוכחה</h3>
+    <div class="tw"><table>
+      <tr><th>שלב</th><th>מה עושים</th><th>הכלי</th></tr>
+      <tr><td>1</td><td>בונים פונקציה צוברת חדשה \(F_a(x)=\int_a^xF'(t)\,dt\)</td><td>\(F'\) רציפה, אז מותר</td></tr>
+      <tr><td>2</td><td>לפי חלק 1: \(F_a'=F'\)</td><td>חלק 1</td></tr>
+      <tr><td>3</td><td>אותה נגזרת ⇒ \(F_a-F=C\)</td><td>לגרנז׳</td></tr>
+      <tr><td>4</td><td>מוצאים את \(C\) בעזרת \(x=a\), ואז מציבים \(x=b\)</td><td>\(\int_a^a=0\)</td></tr>
+    </table></div>
+    <div class="sim" data-sim="ftc2"></div>
+    <div class="box rule"><h4>הכלל לזכור (ניוטון-לייבניץ)</h4>\(\int_a^bf(x)\,dx=F(b)-F(a)\), כאשר \(F\) היא כל פונקציה עם \(F'=f\). את הקבוע \(C\) לא צריך: הוא מתבטל בחיסור.</div>
+    <div class="quiz" data-quiz="s5"></div>
+  </section>
+
+  <!-- 6 -->
+  <section class="sec" id="s6">
+    <div class="eyebrow"><b>6 / 8</b><span>עמוד 3 במחברת · הערה + הגדרה</span></div>
+    <h2>פונקציה קדומה, ו-3 הטענות של המשפט</h2>
+    <div class="box rule"><h4>הגדרה</h4>פונקציה \(F\) שמקיימת \(F'=f\) נקראת <b>פונקציה קדומה</b> של \(f\).</div>
+    <p>דוגמה שלי: \(x^3\) היא קדומה של \(3x^2\). גם \(x^3+7\) וגם \(x^3-100\). לכל פונקציה יש הרבה קדומות, וכולן נבדלות בקבוע (בגלל הכלי מחלק 5).</p>
+    <p>לפי המחברת, המשפט היסודי בעצם מורכב מ-3 טענות שונות:</p>
+    <div class="tw"><table>
+      <tr><th>#</th><th>הטענה</th><th>במילים פשוטות</th><th>דוגמה שלי</th></tr>
+      <tr><td>1</td><td>לכל פונקציה רציפה \(f\) יש פונקציה גזירה \(F\) כך ש-\(F'=f\)</td><td>לכל רציפה יש קדומה (למשל \(\int_a^xf\))</td><td>ל-\(e^{-x^2}\) יש קדומה, גם אם אין לה נוסחה "יפה"</td></tr>
+      <tr><td>2</td><td>לכל \(f\) גזירה ברציפות: \(\int_a^bf'(x)\,dx=f(b)-f(a)=f(x)\Big|_a^b\)</td><td><b>נוסחת ניוטון-לייבניץ</b></td><td>\(\int_0^\pi\cos x\,dx=\sin x\Big|_0^\pi=0-0=0\)</td></tr>
+      <tr><td>3</td><td>לכל \(f\) רציפה: \(f(a)=\lm{\lim_{h\to0}}\frac1h\int_a^{a+h}f(t)\,dt\)</td><td>הממוצע על רצועה צרה ליד \(a\) שואף לערך ב-\(a\)</td><td>\(f=\cos\), \(a=0\), \(h=0.1\): \(\frac{\sin0.1}{0.1}\approx0.998\to1=\cos0\)</td></tr>
+    </table></div>
+    <div class="box terms"><h4>מונחים וסימנים</h4><dl>
+      <dt>\(f(x)\Big|_a^b\)</dt><dd>קיצור ל-\(f(b)-f(a)\): "הצב \(b\), הצב \(a\), חסר". למשל \(x^2\Big|_1^3=9-1=8\).</dd>
+      <dt>גזירה ברציפות</dt><dd>גזירה, <b>והנגזרת עצמה רציפה</b>. צריך את זה בחלק 2, כי שם בונים אינטגרל של \(F'\) ומשתמשים בחלק 1, שדורש פונקציה רציפה.</dd>
+      <dt>פונקציה קדומה = אינטגרל לא מסוים</dt><dd>בהמשך נכתוב \(\int f(x)\,dx=F(x)+C\) (בלי גבולות) לכל הקדומות ביחד.</dd>
+    </dl></div>
+    <div class="box mynote"><h4>הערה שלי: טענה 3 היא בעצם חלק 1 בנקודה \(a\)</h4>\(\frac1h\int_a^{a+h}f=\frac{F(a+h)-F(a)}{h}\), והגבול הוא \(F'(a)=f(a)\). זה בדיוק שלבים 2-4 בסימולציה של חלק 4.</div>
+    <div class="quiz" data-quiz="s6"></div>
+  </section>
+
+  <!-- 7 -->
+  <section class="sec" id="s7">
+    <div class="eyebrow"><b>7 / 8</b><span>עמוד 3 במחברת · דוגמאות</span></div>
+    <h2>דוגמאות: אינטגרלים מיידיים</h2>
+    <p>"מיידי" = מכירים פונקציה שהנגזרת שלה היא מה שבפנים, אז מציבים ישר בניוטון-לייבניץ. הדרך לבדוק כל שורה: <b>לגזור את התשובה</b> ולקבל את מה שבפנים.</p>
+    <div class="tw"><table>
+      <tr><th>#</th><th>האינטגרל</th><th>קדומה \(F\)</th><th>בדיקה: \(F'\)</th></tr>
+      <tr><td>1</td><td><div class="m">\(\int_0^bx^2dx=\frac{x^3}{3}\Big|_0^b=\frac{b^3}3\)</div></td><td>\(\frac{x^3}3\)</td><td>\(x^2\) ✓ (כמו בהרצאה 2, בלי מלבנים)</td></tr>
+      <tr><td>2</td><td><div class="m">\(\int_0^1e^xdx=e^x\Big|_0^1=e-1\)</div></td><td>\(e^x\)</td><td>\(e^x\) ✓</td></tr>
+      <tr><td>3</td><td><div class="m">\(\int_a^bc\,dx=c\int_a^b1\,dx=c\cdot x\Big|_a^b=c(b-a)\)</div></td><td>\(cx\)</td><td>\(c\) ✓ — שטח מלבן</td></tr>
+      <tr><td>4</td><td><div class="m">\(\int_a^bx\,dx=\frac{x^2}2\Big|_a^b=\frac{b^2-a^2}2\)</div></td><td>\(\frac{x^2}2\)</td><td>\(x\) ✓</td></tr>
+      <tr><td>כללי</td><td><div class="m">\(\int_a^bx^ndx=\frac{x^{n+1}}{n+1}\Big|_a^b=\frac{b^{n+1}-a^{n+1}}{n+1}\)</div></td><td>\(\frac{x^{n+1}}{n+1}\)</td><td>\(x^n\) ✓</td></tr>
+      <tr><td>5</td><td><div class="m">\(\int_a^b\cos x\,dx=\sin x\Big|_a^b=\sin b-\sin a\)</div></td><td>\(\sin x\)</td><td>\(\cos x\) ✓</td></tr>
+      <tr><td>6</td><td><div class="m">\(\int_a^b\sin x\,dx=-\cos x\Big|_a^b=\cos a-\cos b\)</div></td><td>\(-\cos x\)</td><td>\(\sin x\) ✓ (שים לב לסדר!)</td></tr>
+      <tr><td>7</td><td><div class="m">\(\int_a^b\frac1x\,dx=\ln x\Big|_a^b=\ln\frac ba\)</div>, \(a,b&gt;0\)</td><td>\(\ln x\)</td><td>\(\frac1x\) ✓</td></tr>
+      <tr><td>8</td><td><div class="m">\(\int_a^b\frac{dx}{x^n}=\frac{x^{-n+1}}{-n+1}\Big|_a^b=\frac{b^{-n+1}-a^{-n+1}}{-n+1}\)</div>, \(n&gt;1\)</td><td>\(\frac{x^{-n+1}}{-n+1}\)</td><td>\(x^{-n}\) ✓</td></tr>
+      <tr><td>9</td><td><div class="m">\(\int_a^bx^\alpha dx=\frac{x^{\alpha+1}}{\alpha+1}\Big|_a^b=\frac{b^{\alpha+1}-a^{\alpha+1}}{\alpha+1}\)</div>, \(\alpha&gt;0\)</td><td>\(\frac{x^{\alpha+1}}{\alpha+1}\)</td><td>\(x^\alpha\) ✓</td></tr>
+    </table></div>
+    <div class="box terms"><h4>מונחים</h4><dl>
+      <dt>\(dx\) לבד במונה (דוגמה 8)</dt><dd>\(\int\frac{dx}{x^n}\) זה אותו דבר כמו \(\int\frac{1}{x^n}\,dx\). כותבים ככה רק לקיצור.</dd>
+      <dt>\(\frac1{x^n}=x^{-n}\)</dt><dd>חזקה שלילית = 1 חלקי. ככה אפשר להשתמש בנוסחה הכללית של \(x^n\).</dd>
+      <dt>\(\alpha\) (אלפא)</dt><dd>חזקה שהיא כל מספר ממשי, לא רק שלם. למשל \(\sqrt x=x^{1/2}\), אז \(\alpha=\frac12\).</dd>
+    </dl></div>
+    <div class="box mynote"><h4>הערות שלי על התנאים</h4>
+      <p style="margin:0">(1) בדוגמה 8 צריך גם ש-\(0\) <b>לא</b> בקטע (למשל \(a,b&gt;0\)), אחרת \(\frac1{x^n}\) לא חסומה ליד 0. לכן אי אפשר לחשב ככה את \(\int_{-1}^1\frac{dx}{x^2}\). (2) הנוסחה של 8 עובדת לכל \(n\ne1\), לא רק \(n&gt;1\). ב-\(n=1\) מתחלקים ב-0, ושם צריך את \(\ln\) מדוגמה 7. (3) בדוגמה 9, עם \(a,b&gt;0\) הנוסחה נכונה לכל \(\alpha\ne-1\). התנאי \(\alpha&gt;0\) מאפשר גם קטע שמתחיל ב-0.</p></div>
+    <div class="lab" id="exLab">
+      <header>בדיקה: \(F(b)-F(a)\) מול סכום רימן עם 1000 מלבנים</header>
+      <div class="body">
+        <div class="row" id="exF"><span class="lb">דוגמה:</span></div>
+        <label for="exA" class="row"><span class="lb">\(a\):</span> <b id="exAv" style="font-family:var(--f-mono);direction:ltr;unicode-bidi:isolate"></b></label>
+        <input id="exA" type="range" min="0" max="100" step="1" value="20">
+        <label for="exB" class="row"><span class="lb">\(b\):</span> <b id="exBv" style="font-family:var(--f-mono);direction:ltr;unicode-bidi:isolate"></b></label>
+        <input id="exB" type="range" min="0" max="100" step="1" value="70">
+        <div class="stats" id="exStats"></div>
+        <div class="out" id="exOut"></div>
+      </div>
+    </div>
+    <div class="box rule"><h4>הכלל לזכור</h4>\(\int_a^bx^ndx=\frac{x^{n+1}}{n+1}\Big|_a^b\): מעלים את החזקה ב-1 ומחלקים בחזקה החדשה. החריג: \(n=-1\), ושם \(\ln x\).</div>
+    <div class="quiz" data-quiz="s7"></div>
+  </section>
+
+  <!-- 8 -->
+  <section class="sec" id="s8">
+    <div class="eyebrow"><b>8 / 8</b><span>עמוד 3 במחברת · שיטות אינטגרציה</span></div>
+    <h2>שיטות אינטגרציה: I. אינטגרציה בחלקים</h2>
+    <p><b>הבעיה:</b> ניוטון-לייבניץ עובד רק אם מוצאים קדומה. לא לכל פונקציה נצליח למצוא אותה מיד. גם לפונקציות אלמנטריות ורציפות (שלפי טענה 1 בטוח יש להן קדומה), לא תמיד אפשר "לנחש" אותה. למשל \(\ln x\) ו-\(\tan x\): מה הפונקציה שהנגזרת שלה \(\ln x\)? לא ברור מיד. בשביל זה יש <b>שיטות אינטגרציה</b>.</p>
+    <h3>מאיפה הנוסחה? מכלל המכפלה</h3>
+    <p>מחדו״א 1: \(\pp{(fg)'=f'g+fg'}\). כלומר \(fg\) היא קדומה של \(f'g+fg'\). לפי ניוטון-לייבניץ:</p>
+    <div class="m">\[\int_a^b\big(f'(x)g(x)+f(x)g'(x)\big)dx=f(x)g(x)\Big|_a^b\]</div>
+    <p>מפצלים את האינטגרל לשניים (לינאריות) ומעבירים אגף:</p>
+    <div class="box rule"><h4>נוסחת האינטגרציה בחלקים</h4>
+      <div class="m">\[\int_a^b\pp{f'(x)}\,g(x)\,dx=f(x)g(x)\Big|_a^b-\int_a^bf(x)\,\pp{g'(x)}\,dx\]</div>
+      <p style="margin:0">כש<b>לא</b> מדובר באינטגרל מסוים (בלי גבולות): \(\int f'g\,dx=fg-\int fg'\,dx\).</p></div>
+    <div class="box mynote"><h4>הערה שלי (תיקון קטן)</h4>במחברת כתוב \(f(x)g(x)=\int\big(f'g+fg'\big)dx\). אינטגרל לא מסוים הוא <b>כל</b> הקדומות, אז צריך להוסיף קבוע: \(\int(f'g+fg')\,dx=f(x)g(x)+C\). בנוסחה עם הגבולות \(a,b\) זה לא משנה, כי הקבוע מתבטל.</div>
+    <h3>איך משתמשים: מפת השלבים</h3>
+    <div class="tw"><table>
+      <tr><th>שלב</th><th>מה עושים</th></tr>
+      <tr><td>1</td><td>כותבים את מה שבפנים כמכפלה של שני חלקים</td></tr>
+      <tr><td>2</td><td>בוחרים: חלק אחד הוא \(\pp{f'}\) (צריך לדעת לעשות לו אינטגרל), השני \(g\) (נעים לגזור אותו)</td></tr>
+      <tr><td>3</td><td>מחשבים \(f\) (אינטגרל של \(f'\)) ו-\(\pp{g'}\) (נגזרת של \(g\)) — זה הסוגר המרובע במחברת</td></tr>
+      <tr><td>4</td><td>מציבים בנוסחה: \(fg-\int fg'\)</td></tr>
+      <tr><td>5</td><td>פותרים את האינטגרל החדש (מקווים שהוא קל יותר)</td></tr>
+    </table></div>
+    <h3>הדוגמה של המרצה: \(\int\ln x\,dx\)</h3>
+    <p><b>מאיפה מגיע ה-1?</b> \(\ln x\) לבד הוא לא מכפלה. אבל מותר לכפול ב-1: \(\ln x=1\cdot\ln x\). את ה-1 בוחרים להיות \(f'\), כי קל לעשות לו אינטגרל (\(f=x\)). ואת \(\ln x\) בוחרים להיות \(g\), כי לגזור אותו קל (\(\frac1x\)) — וזה בדיוק מה שלא ידענו לעשות לו אינטגרל.</p>
+    <div class="sim" data-sim="ln"></div>
+    <div class="box analogy"><h4>אנלוגיה</h4>החלפה בשוק: נותנים את החלק הקשה (\(\ln x\)) ומקבלים במקומו משהו קל יותר (\(\frac1x\)). המחיר: אינטגרל חדש, \(\int x\cdot\frac1x\,dx\). העסקה טובה אם האינטגרל החדש קל יותר מהישן.</div>
+    <div class="box rule"><h4>הכלל לזכור</h4>\(\int f'g=fg-\int fg'\). את \(g\) בוחרים כך שהנגזרת שלו "תפשט" את האינטגרל. תמיד אפשר לבדוק: לגזור את התשובה.</div>
+    <div class="quiz" data-quiz="s8"></div>
+  </section>
+
+  <!-- summary -->
+  <section class="sec" id="sum">
+    <div class="eyebrow"><b>סיכום</b><span>כל ההרצאה</span></div>
+    <h2>מה לקחת מההרצאה</h2>
+    <div class="tw"><table>
+      <tr><th>נושא</th><th>העיקר</th></tr>
+      <tr><td>ערך ממוצע</td><td>\(f\) רציפה ⇒ יש \(c\) עם \(f(c)=\frac1{b-a}\int_a^bf\). הוכחה: ויירשטראס + חסמים + ערך הביניים.</td></tr>
+      <tr><td>מהירות ומרחק</td><td>\(D(x)=\int_a^xv\), ו-\(D'(x)=v(x)\).</td></tr>
+      <tr><td>פונקציה צוברת</td><td>\(F(x)=\int_a^xf(t)\,dt\), השטח מ-\(a\) עד \(x\). \(F(a)=0\).</td></tr>
+      <tr><td>המשפט היסודי, חלק 1</td><td>\(f\) רציפה ⇒ \(F'(x)=f(x)\). הוכחה: \(\frac1h\int_x^{x+h}f=f(c_h)\to f(x)\).</td></tr>
+      <tr><td>חלק 2 (ניוטון-לייבניץ)</td><td>\(\int_a^bF'=F(b)-F(a)\). הוכחה: \(F_a-F\) קבוע (לגרנז׳).</td></tr>
+      <tr><td>פונקציה קדומה</td><td>\(F'=f\). כל שתי קדומות נבדלות בקבוע.</td></tr>
+      <tr><td>אינטגרלים מיידיים</td><td>\(x^n\to\frac{x^{n+1}}{n+1}\), \(\frac1x\to\ln x\), \(e^x\to e^x\), \(\cos\to\sin\), \(\sin\to-\cos\).</td></tr>
+      <tr><td>אינטגרציה בחלקים</td><td>\(\int f'g=fg-\int fg'\). דוגמה: \(\int\ln x\,dx=x\ln x-x+C\).</td></tr>
+    </table></div>
+    <h3>מבחן מסכם</h3>
+    <div class="quiz" data-quiz="fin"></div>
+    <div class="endmsg" id="endmsg" hidden></div>
+  </section>
+</div>
+<script>
+const R = String.raw;
+const LS = {get(k){try{return JSON.parse(localStorage.getItem(k)||'null')}catch(e){return null}}, set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+const NS='http://www.w3.org/2000/svg';
+function sv(tag,attrs,parent){const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);if(parent)parent.appendChild(e);return e;}
+function typeset(el){ if(window.MathJax&&MathJax.typesetPromise){ MathJax.typesetPromise(el?[el]:undefined).catch(()=>{}); } }
+const fmt=(x,d=3)=>{const s=(+x).toFixed(d);return s.replace(/\.?0+$/,'')||'0';};
+function plotFrame(svg,{x0,x1,y0,y1,xt,yt,W=520,H=300,padL=44,padB=28,padT=12,padR=14}){
+  svg.innerHTML='';
+  const X=x=>padL+(x-x0)/(x1-x0)*(W-padL-padR), Y=y=>H-padB-(y-y0)/(y1-y0)*(H-padB-padT);
+  yt.forEach(v=>{sv('line',{x1:padL,x2:W-padR,y1:Y(v),y2:Y(v),class:'gridl'},svg);const t=sv('text',{x:padL-6,y:Y(v)+4,'text-anchor':'end'},svg);t.textContent=fmt(v,2);});
+  xt.forEach(v=>{const t=sv('text',{x:X(v),y:H-padB+16,'text-anchor':'middle'},svg);t.textContent=fmt(v,2);});
+  const g=sv('g',{},svg);
+  sv('line',{x1:padL,x2:W-padR,y1:Y(Math.max(y0,Math.min(0,y1))),y2:Y(Math.max(y0,Math.min(0,y1))),class:'axis'},svg);
+  sv('line',{x1:X(Math.max(x0,0)),x2:X(Math.max(x0,0)),y1:padT,y2:H-padB,class:'axis'},svg);
+  return {X,Y,g};
+}
+function curve(svg,f,a,b,X,Y){let d='';for(let k=0;k<=200;k++){const x=a+(b-a)*k/200;d+=(k?'L':'M')+X(x).toFixed(1)+' '+Y(f(x)).toFixed(1);}sv('path',{d,class:'curve'},svg);}
+function stat(label,val,cls){return `<div class="stat"><span class="${cls||''}">${label}</span><b class="${cls||''}">${val}</b></div>`;}
+function btnRow(row,items,init,onPick){
+  const bs=items.map((it,i)=>{const b=document.createElement('button');b.type='button';b.className='btn';b.innerHTML=it.label;b.setAttribute('aria-pressed',i===init);
+    b.addEventListener('click',()=>{bs.forEach((x,j)=>x.setAttribute('aria-pressed',j===i));onPick(it,i);});row.appendChild(b);return b;});
+  return bs;
+}
+function simpson(f,a,b,n=400){if(a===b)return 0;const h=(b-a)/n;let s=f(a)+f(b);for(let k=1;k<n;k++)s+=(k%2?4:2)*f(a+k*h);return s*h/3;}
+/* ---------- step-through simulations ---------- */
+const SIMS = {
+ mvt:{title:"סימולציה 1: הוכחת משפט הערך הממוצע", steps:[
+  {m:R`f \text{ continuous on } [a,b]\ \Rightarrow\ \exists\,x_m,x_M\in[a,b]:\ \ f(x_m)=\lo{m}=\min f,\quad f(x_M)=\up{M}=\max f`, e:R`<b>שלב 1 (ויירשטראס):</b> \(f\) רציפה בקטע סגור, אז יש לה נקודת מינימום \(x_m\) ונקודת מקסימום \(x_M\).`},
+  {m:R`\lo{m}\le f(x)\le\up{M}\ \ \forall x\in[a,b]\quad\Rightarrow\quad \lo{m}(b-a)\le\int_a^bf(x)\,dx\le\up{M}(b-a)`, e:R`<b>שלב 2 (תכונת החסמים מהרצאה 2):</b> כל הגרף נמצא בין הקו \(y=m\) לקו \(y=M\), אז גם השטח בין שטחי שני המלבנים.`},
+  {m:R`f(x_m)=\lo{m}\le\av{\frac1{b-a}\int_a^bf(x)\,dx}\le\up{M}=f(x_M)`, e:R`<b>שלב 3:</b> מחלקים ב-\(b-a\). מותר, כי \(b-a&gt;0\), אז כיוון האי-שוויון לא משתנה. באמצע: <span class="t-av">הממוצע</span>.`},
+  {m:R`\text{IVT between } x_m \text{ and } x_M:\quad \exists\,c:\ \ \av{f(c)}=\frac1{b-a}\int_a^bf(x)\,dx`, e:R`<b>שלב 4 (ערך הביניים):</b> \(f\) רציפה, והממוצע הוא ערך שבין \(f(x_m)\) ל-\(f(x_M)\). לכן \(f\) מקבלת אותו בנקודה \(c\) שבין \(x_m\) ל-\(x_M\).`},
+  {m:R`c \text{ between } x_m,x_M\ \Rightarrow\ c\in[a,b]\qquad \av{f(c)}=\frac1{b-a}\int_a^bf(x)\,dx`, e:R`\(x_m\) ו-\(x_M\) שתיהן בקטע, אז גם כל מה שביניהן. <b>מש״ל.</b>`, final:true},
+  {m:R`\text{my example: } 2x+1 \text{ on } [0,2]:\ \ \lo{m}=1,\ \up{M}=5,\ \int=6,\ \ 2\le6\le10,\ \ \av{\tfrac62=3}=f(1)`, e:R`<b>דוגמה שלי:</b> \(x_m=0\), \(x_M=2\). שלב 2: \(1\cdot2\le6\le5\cdot2\). שלב 3: \(1\le3\le5\). שלב 4: \(2c+1=3\), אז \(c=1\).`}
+ ]},
+ ftc1:{title:"סימולציה 2: הוכחת חלק 1, שורה אחרי שורה", steps:[
+  {m:R`\text{goal:}\quad \lm{\lim_{h\to0}}\frac{\Fc{F(x+h)}-\Fc{F(x)}}{h}=f(x)\qquad (x\in(a,b))`, e:R`<b>המטרה:</b> להראות שהגבול קיים ושווה ל-\(f(x)\). זה בדיוק "\(F\) גזירה ו-\(F'(x)=f(x)\)" (הגדרת הנגזרת).`},
+  {m:R`\frac{\Fc{F(x+h)}-\Fc{F(x)}}{h}=\frac{\int_a^{x+h}f(t)\,dt-\int_a^{x}f(t)\,dt}{h}`, e:R`<b>שלב 1:</b> מציבים את ההגדרה של \(F\): פעם עם \(x+h\) ופעם עם \(x\).`},
+  {m:R`=\frac{\int_a^{x+h}f(t)\,dt+\int_x^{a}f(t)\,dt}{h}`, e:R`<b>שלב 2:</b> מינוס אינטגרל = אינטגרל עם גבולות הפוכים (תכונה 4 מהרצאה 2): \(-\int_a^x=\int_x^a\).`},
+  {m:R`=\frac1h\int_x^{x+h}f(t)\,dt`, e:R`אדיטיביות: מ-\(x\) ל-\(a\), ואז מ-\(a\) ל-\(x+h\) = ישר מ-\(x\) ל-\(x+h\). נשאר רק השטח של הרצועה הצרה.`},
+  {m:R`f \text{ continuous on } [x,x+h]\ \Rightarrow\ \exists\,c_h\in[x,x+h]:\ \ \frac1h\int_x^{x+h}f(t)\,dt=\av{f(c_h)}`, e:R`<b>שלב 3:</b> \(\frac1h\int_x^{x+h}\) זה בדיוק <span class="t-av">ממוצע</span> של \(f\) על קטע באורך \(h\). משפט הערך הממוצע (חלק 1) נותן נקודה \(c_h\). הקטן \(h\) מזכיר ש-\(c_h\) תלוי ב-\(h\).`},
+  {m:R`x\le c_h\le x+h\ \ \Rightarrow\ \ c_h\ \lm{\xrightarrow[h\to0]{}}\ x`, e:R`<b>שלב 4:</b> \(c_h\) תקוע בין \(x\) ל-\(x+h\). כש-\(h\to0\), שני הקצוות הולכים ל-\(x\), אז גם \(c_h\) (סנדוויץ').`},
+  {m:R`\frac{\Fc{F(x+h)}-\Fc{F(x)}}{h}=\av{f(c_h)}\ \lm{\xrightarrow[h\to0]{}}\ f(x)\qquad\Rightarrow\qquad \Fc{F}'(x)=f(x)`, e:R`\(f\) רציפה, אז \(c_h\to x\) גורר \(f(c_h)\to f(x)\). (במחברת: החץ "רציפות של \(f\)".) <b>מש״ל חלק 1.</b>`, final:true},
+  {m:R`\text{my example: } f=t^2,\ x=1,\ h=0.1:\quad \frac{1}{0.1}\int_1^{1.1}t^2dt\approx1.103=\av{f(c_h)},\ \ c_h\approx1.050`, e:R`<b>דוגמה שלי:</b> \(c_h=\sqrt{1.103}\approx1.050\), ובאמת בין 1 ל-1.1. עם \(h=0.01\): הממוצע \(\approx1.010\) ו-\(c_h\approx1.005\). הכל מתקרב ל-\(x=1\) ול-\(f(1)=1\).`}
+ ]},
+ ftc2:{title:"סימולציה 3: הוכחת חלק 2, שורה אחרי שורה", steps:[
+  {m:R`F'\ \text{continuous on } [a,b]:\qquad \Fc{F_a(x)}=\int_a^xF'(t)\,dt`, e:R`<b>שלב 1:</b> לפי ההנחה \(F'\) רציפה, אז אפשר להגדיר לה פונקציה צוברת. קוראים לה \(F_a\) (צוברת מ-\(a\)).`},
+  {m:R`\Fc{F_a}'(x)=F'(x)`, e:R`<b>שלב 2:</b> חלק 1 עם \(f=F'\): הנגזרת של הצוברת היא מה שבפנים.`},
+  {m:R`(\Fc{F_a}-F)'(x)=F'(x)-F'(x)=0\ \ \Rightarrow\ \ \Fc{F_a(x)}-F(x)=C`, e:R`<b>שלב 3:</b> לשתי הפונקציות אותה נגזרת, אז הנגזרת של ההפרש היא 0. לפי מסקנה ממשפט לגרנז׳, ההפרש קבוע \(C\).`},
+  {m:R`x=a:\quad \Fc{F_a(a)}=\int_a^aF'(t)\,dt=0\ \ \Rightarrow\ \ C=0-F(a)=-F(a)`, e:R`<b>שלב 4:</b> השוויון נכון לכל \(x\), אז מציבים את ה-\(x\) הכי נוח: \(x=a\). שם האינטגרל הוא 0 (קטע באורך 0).`},
+  {m:R`\Fc{F_a(x)}-F(x)=-F(a)\ \ \Rightarrow\ \ \Fc{F_a(x)}=F(x)-F(a)`, e:R`מעבירים \(F(x)\) לצד ימין.`},
+  {m:R`x=b:\qquad \int_a^bF'(t)\,dt=F(b)-F(a)`, e:R`מציבים \(x=b\): בצד שמאל \(F_a(b)=\int_a^bF'\). <b>מש״ל חלק 2.</b>`, final:true},
+  {m:R`\text{my example: } F=\tfrac{x^3}{3},\ F'=x^2:\quad \int_1^2x^2dx=\tfrac83-\tfrac13=\tfrac73`, e:R`<b>דוגמה שלי:</b> וזה מתאים להרצאה 2: \(\int_0^2x^2=\frac83\), פחות \(\int_0^1x^2=\frac13\).`}
+ ]},
+ ln:{title:"סימולציה 4: ∫ln x dx בחלקים, צעד אחרי צעד", steps:[
+  {m:R`\int\ln(x)\,dx=\int\pp{1}\cdot\ln(x)\,dx`, e:R`<b>שלב 1:</b> כופלים ב-1 כדי לקבל מכפלה. זה לא משנה כלום, אבל עכשיו יש שני חלקים.`},
+  {m:R`\pp{f'(x)=1}\Rightarrow f(x)=x\qquad g(x)=\ln(x)\Rightarrow \pp{g'(x)=\tfrac1x}`, e:R`<b>שלבים 2-3:</b> 1 הוא \(f'\), אז \(f=x\) (כי \(x'=1\)). \(\ln x\) הוא \(g\), אז \(g'=\frac1x\). זה הסוגר המרובע במחברת.`},
+  {m:R`=x\ln(x)-\int x\cdot\pp{\tfrac1x}\,dx`, e:R`<b>שלב 4:</b> מציבים ב-\(fg-\int fg'\): \(f\cdot g=x\ln x\), ובאינטגרל \(f\cdot g'=x\cdot\frac1x\).`},
+  {m:R`=x\ln(x)-\int1\,dx`, e:R`<b>שלב 5:</b> \(x\cdot\frac1x=1\). האינטגרל החדש הכי קל שיש.`},
+  {m:R`=x\ln(x)-x+C`, e:R`\(\int1\,dx=x\), ומוסיפים \(+C\) כי זה אינטגרל לא מסוים.`, final:true},
+  {m:R`\text{check: }\ (x\ln x-x)'=\ln x+x\cdot\tfrac1x-1=\ln x\ \checkmark`, e:R`<b>בדיקה:</b> גוזרים את התשובה (כלל המכפלה על \(x\ln x\)) ומקבלים בדיוק את מה שהיה בפנים.`}
+ ]}
+};
+function buildSim(el){
+  const s=SIMS[el.dataset.sim]; let cur=0;
+  el.innerHTML=`<header><b>${s.title}</b><span class="ctr"></span><div class="ctrls">
+    <button class="btn" data-a="prev" type="button">הקודם</button>
+    <button class="btn primary" data-a="next" type="button">הבא</button>
+    <button class="btn" data-a="restart" type="button">מההתחלה</button></div></header>
+    <div class="board"></div><div class="expl"></div>`;
+  const board=el.querySelector('.board'),expl=el.querySelector('.expl'),ctr=el.querySelector('.ctr');
+  const lines=s.steps.map((st,i)=>{const d=document.createElement('div');d.className='ln';
+    d.innerHTML=`<span class="no">${i+1}</span><div class="m">${st.final?'<span class="final">':''}\\(\\displaystyle ${st.m}\\)${st.final?'</span>':''}</div>`;board.appendChild(d);return d;});
+  const exps=s.steps.map(st=>{const d=document.createElement('div');d.innerHTML=st.e;expl.appendChild(d);return d;});
+  function show(){lines.forEach((l,i)=>{l.hidden=i>cur;l.classList.toggle('cur',i===cur)});
+    exps.forEach((x,i)=>x.hidden=i!==cur);ctr.textContent=`צעד ${cur+1} מתוך ${s.steps.length}`;
+    el.querySelector('[data-a=prev]').disabled=cur===0;el.querySelector('[data-a=next]').disabled=cur===s.steps.length-1;}
+  el.addEventListener('click',e=>{const a=e.target.closest('button')?.dataset.a;if(!a)return;
+    if(a==='prev'&&cur>0)cur--; if(a==='next'&&cur<s.steps.length-1)cur++; if(a==='restart')cur=0; show();});
+  show();
+}
+document.querySelectorAll('.sim').forEach(buildSim);
+
+/* ---------- s1: mean value lab ---------- */
+(function(){
+  const FS=[
+    {label:R`<bdi dir="ltr">2x+1 , [0,2]</bdi>`,f:x=>2*x+1,a:0,b:2,y0:0,y1:5.6,yt:[0,1,2,3,4,5],xt:[0,0.5,1,1.5,2]},
+    {label:R`<bdi dir="ltr">x² , [0,3]</bdi>`,f:x=>x*x,a:0,b:3,y0:0,y1:9.6,yt:[0,3,6,9],xt:[0,1,2,3]},
+    {label:R`<bdi dir="ltr">sin x , [0,π]</bdi>`,f:Math.sin,a:0,b:Math.PI,y0:0,y1:1.15,yt:[0,0.5,1],xt:[0,1,2,3]},
+    {label:'כמו בציור במחברת',f:x=>x*x*x-3*x*x+2*x+1.2,a:0,b:2.6,y0:0,y1:4.2,yt:[0,1,2,3,4],xt:[0,0.5,1,1.5,2,2.5]}
+  ];
+  let F=FS[0];
+  const svg=document.getElementById('mvSvg'),st=document.getElementById('mvStats'),out=document.getElementById('mvOut');
+  btnRow(document.getElementById('mvF'),FS,0,it=>{F=it;draw();});
+  function draw(){
+    const {X,Y}=plotFrame(svg,{x0:F.a,x1:F.b,y0:F.y0,y1:F.y1,xt:F.xt,yt:F.yt});
+    const I=simpson(F.f,F.a,F.b), avg=I/(F.b-F.a);
+    let mn=Infinity,mx=-Infinity;const N=600,cs=[];
+    for(let k=0;k<=N;k++){const x=F.a+(F.b-F.a)*k/N,v=F.f(x);if(v<mn)mn=v;if(v>mx)mx=v;}
+    for(let k=0;k<N;k++){const x1=F.a+(F.b-F.a)*k/N,x2=F.a+(F.b-F.a)*(k+1)/N,g1=F.f(x1)-avg,g2=F.f(x2)-avg;
+      if(g1===0)cs.push(x1);else if(g1*g2<0){let lo=x1,hi=x2;for(let j=0;j<40;j++){const md=(lo+hi)/2;if((F.f(lo)-avg)*(F.f(md)-avg)<=0)hi=md;else lo=md;}cs.push((lo+hi)/2);}}
+    if(Math.abs(F.f(F.b)-avg)<1e-9)cs.push(F.b);
+    sv('rect',{x:X(F.a),y:Y(avg),width:X(F.b)-X(F.a),height:Y(0)-Y(avg),class:'rav'},svg);
+    sv('line',{x1:X(F.a),x2:X(F.b),y1:Y(mn),y2:Y(mn),class:'mline'},svg);
+    sv('line',{x1:X(F.a),x2:X(F.b),y1:Y(mx),y2:Y(mx),class:'Mline'},svg);
+    curve(svg,F.f,F.a,F.b,X,Y);
+    cs.forEach(c=>{sv('line',{x1:X(c),x2:X(c),y1:Y(avg),y2:Y(0),class:'cmark'},svg);sv('circle',{cx:X(c),cy:Y(avg),r:5,class:'pav'},svg);});
+    const tm=sv('text',{x:X(F.b)-4,y:Y(mn)-5,'text-anchor':'end',class:'lbl c-lo',style:'stroke:none'},svg);tm.textContent='m';
+    const tM=sv('text',{x:X(F.b)-4,y:Y(mx)+15,'text-anchor':'end',class:'lbl c-up',style:'stroke:none'},svg);tM.textContent='M';
+    st.innerHTML=stat('<bdi dir="ltr">m</bdi> (מינימום)',fmt(mn),'t-lo')+stat('ממוצע',fmt(avg),'t-av')+stat('<bdi dir="ltr">M</bdi> (מקסימום)',fmt(mx),'t-up')+stat('השטח',fmt(I))+stat('<bdi dir="ltr">c</bdi>',cs.map(c=>fmt(c,2)).join(' , '),'t-av');
+    out.innerHTML=`הקו הירוק (הממוצע) תמיד בין הקו האדום (\\(m\\)) לקו הזית (\\(M\\)). בכל מקום שבו הגרף חוצה אותו, יש \\(c\\). כאן: <b>${cs.length}</b> ${cs.length===1?'נקודה':'נקודות'}.`;
+    typeset(out);
+  }
+  draw();
+})();
+
+/* ---------- s2: average speed lab ---------- */
+(function(){
+  const XS=[{label:'1',x:1},{label:'2',x:2},{label:'3',x:3}];
+  let x0=2;
+  const hIn=document.getElementById('spH'),hv=document.getElementById('spHv'),st=document.getElementById('spStats');
+  btnRow(document.getElementById('spX'),XS,1,it=>{x0=it.x;draw();});
+  const D=x=>5*x*x;
+  function draw(){
+    const h=Math.pow(10,-3*(+hIn.value)/100); // 1 → 0.001
+    hv.textContent=fmt(h,4);
+    const vt=(D(x0+h)-D(x0))/h;
+    st.innerHTML=stat('<bdi dir="ltr">D(x)</bdi>',fmt(D(x0),4),'t-F')+stat('<bdi dir="ltr">D(x+h)</bdi>',fmt(D(x0+h),4),'t-F')+stat('ממוצע <bdi dir="ltr">ṽ</bdi>',fmt(vt,4))+stat('<bdi dir="ltr">v(x)=10x</bdi>',fmt(10*x0),'t-lm');
+  }
+  hIn.addEventListener('input',draw);draw();
+})();
+
+/* ---------- s3: accumulation function lab ---------- */
+(function(){
+  const FS=[
+    {label:R`<bdi dir="ltr">t</bdi>`,f:t=>t,a:0,b:3,fy:[-0.2,3.2],Fy:[-0.2,4.8],fyt:[0,1,2,3],Fyt:[0,1,2,3,4]},
+    {label:R`<bdi dir="ltr">1 − t</bdi>`,f:t=>1-t,a:0,b:3,fy:[-2.2,1.2],Fy:[-1.7,0.8],fyt:[-2,-1,0,1],Fyt:[-1.5,-1,-0.5,0,0.5]},
+    {label:'גל (כמו במחברת)',f:t=>1.5+Math.sin(1.6*t),a:0,b:4,fy:[0,2.7],Fy:[0,7.5],fyt:[0,1,2],Fyt:[0,2,4,6]}
+  ];
+  let F=FS[0];
+  const xIn=document.getElementById('acX'),xv=document.getElementById('acXv'),top=document.getElementById('acTop'),bot=document.getElementById('acBot'),st=document.getElementById('acStats');
+  btnRow(document.getElementById('acF'),FS,0,it=>{F=it;draw();});
+  function draw(){
+    const x=F.a+(F.b-F.a)*(+xIn.value)/1000; xv.textContent=fmt(x,2);
+    const xt=[];for(let k=F.a;k<=F.b;k++)xt.push(k);
+    let P=plotFrame(top,{x0:F.a,x1:F.b,y0:F.fy[0],y1:F.fy[1],xt,yt:F.fyt,H:220});
+    // shaded area a..x, split by sign
+    const N=120;
+    for(let k=0;k<N;k++){const t1=F.a+(x-F.a)*k/N,t2=F.a+(x-F.a)*(k+1)/N,v=F.f((t1+t2)/2);
+      const y=P.Y(Math.max(v,0)),y2=P.Y(Math.min(v,0));
+      sv('rect',{x:P.X(t1),y:Math.min(y,y2),width:Math.max(0.1,P.X(t2)-P.X(t1)+0.3),height:Math.abs(y2-y),class:v>=0?'aF':'aFn'},top);}
+    curve(top,F.f,F.a,F.b,P.X,P.Y);
+    sv('line',{x1:P.X(x),x2:P.X(x),y1:P.Y(F.fy[0]),y2:P.Y(F.fy[1]),class:'cmark'},top);
+    sv('circle',{cx:P.X(x),cy:P.Y(F.f(x)),r:5,class:'ptrs'},top);
+    const t1=sv('text',{x:52,y:24,class:'lbl'},top);t1.textContent='f(t)';
+    // bottom: F
+    const Fv=s=>simpson(F.f,F.a,s,200);
+    let Q=plotFrame(bot,{x0:F.a,x1:F.b,y0:F.Fy[0],y1:F.Fy[1],xt,yt:F.Fyt,H:220});
+    let dg='',dd='';for(let k=0;k<=160;k++){const s=F.a+(F.b-F.a)*k/160;dg+=(k?'L':'M')+Q.X(s).toFixed(1)+' '+Q.Y(Fv(s)).toFixed(1);}
+    sv('path',{d:dg,class:'Fghost'},bot);
+    for(let k=0;k<=120;k++){const s=F.a+(x-F.a)*k/120;dd+=(k?'L':'M')+Q.X(s).toFixed(1)+' '+Q.Y(Fv(s)).toFixed(1);}
+    sv('path',{d:dd,class:'Fcurve'},bot);
+    const Fx=Fv(x),sl=F.f(x),w=(F.b-F.a)*0.12;
+    sv('line',{x1:Q.X(x-w),y1:Q.Y(Fx-sl*w),x2:Q.X(x+w),y2:Q.Y(Fx+sl*w),class:'tan'},bot);
+    sv('circle',{cx:Q.X(x),cy:Q.Y(Fx),r:5,class:'pF'},bot);
+    const t2=sv('text',{x:52,y:24,class:'lbl c-F',style:'stroke:none'},bot);t2.textContent='F(x)';
+    st.innerHTML=stat('<bdi dir="ltr">x</bdi>',fmt(x,2))+stat('<bdi dir="ltr">F(x)</bdi> = השטח',fmt(Fx),'t-F')+stat('<bdi dir="ltr">f(x)</bdi> = גובה',fmt(sl),'')+stat('שיפוע של <bdi dir="ltr">F</bdi>',fmt((Fv(x+1e-4)-Fv(x-1e-4))/2e-4),'t-lm');
+  }
+  xIn.addEventListener('input',draw);draw();
+})();
+
+/* ---------- s4: difference quotient lab ---------- */
+(function(){
+  const hIn=document.getElementById('dqH'),hv=document.getElementById('dqHv'),svg=document.getElementById('dqSvg'),st=document.getElementById('dqStats');
+  const f=t=>t*t,x=1;
+  function draw(){
+    let k=+hIn.value; if(k===0)k=1;
+    const h=Math.sign(k)*Math.pow(10,-2*(1-Math.abs(k)/100))*1; // |h| from 0.01 to 1
+    hv.textContent=fmt(h,3);
+    const q=((x+h)**3-x**3)/(3*h), c=Math.sqrt(q);
+    const {X,Y}=plotFrame(svg,{x0:0,x1:2.1,y0:0,y1:4.4,xt:[0,0.5,1,1.5,2],yt:[0,1,2,3,4],H:280});
+    const L=Math.min(x,x+h),Rr=Math.max(x,x+h);
+    const N=60;for(let i=0;i<N;i++){const t1=L+(Rr-L)*i/N,t2=L+(Rr-L)*(i+1)/N,v=f((t1+t2)/2);
+      sv('rect',{x:X(t1),y:Y(v),width:X(t2)-X(t1)+0.3,height:Y(0)-Y(v),class:'aF'},svg);}
+    sv('rect',{x:X(L),y:Y(q),width:X(Rr)-X(L),height:Y(0)-Y(q),class:'rav'},svg);
+    curve(svg,f,0,2.1,X,Y);
+    sv('line',{x1:X(c),x2:X(c),y1:Y(q),y2:Y(0),class:'cmark'},svg);
+    sv('circle',{cx:X(c),cy:Y(q),r:5,class:'pav'},svg);
+    sv('circle',{cx:X(x),cy:Y(f(x)),r:4,class:'ptrs'},svg);
+    st.innerHTML=stat('<bdi dir="ltr">h</bdi>',fmt(h,3))+stat('<bdi dir="ltr">(F(x+h)−F(x))/h</bdi>',fmt(q,4),'t-av')+stat('<bdi dir="ltr">c_h</bdi>',fmt(c,4),'t-av')+stat('<bdi dir="ltr">f(x)=f(1)</bdi>','1','t-lm');
+  }
+  hIn.addEventListener('input',draw);draw();
+})();
+
+/* ---------- s7: examples checker ---------- */
+(function(){
+  const EX=[
+    {label:R`<bdi dir="ltr">x²</bdi>`,f:x=>x*x,F:x=>x**3/3,tex:R`\frac{x^3}{3}`,lo:-2,hi:3},
+    {label:R`<bdi dir="ltr">eˣ</bdi>`,f:Math.exp,F:Math.exp,tex:R`e^x`,lo:-2,hi:2},
+    {label:R`<bdi dir="ltr">cos x</bdi>`,f:Math.cos,F:Math.sin,tex:R`\sin x`,lo:-3.2,hi:3.2},
+    {label:R`<bdi dir="ltr">sin x</bdi>`,f:Math.sin,F:x=>-Math.cos(x),tex:R`-\cos x`,lo:-3.2,hi:3.2},
+    {label:R`<bdi dir="ltr">1/x</bdi>`,f:x=>1/x,F:Math.log,tex:R`\ln x`,lo:0.1,hi:5},
+    {label:R`<bdi dir="ltr">1/x³</bdi>`,f:x=>x**-3,F:x=>x**-2/(-2),tex:R`\frac{x^{-2}}{-2}`,lo:0.3,hi:4},
+    {label:R`<bdi dir="ltr">√x</bdi>`,f:Math.sqrt,F:x=>x**1.5/1.5,tex:R`\frac{x^{3/2}}{3/2}`,lo:0,hi:9}
+  ];
+  let E=EX[0];
+  const aIn=document.getElementById('exA'),bIn=document.getElementById('exB'),av=document.getElementById('exAv'),bv=document.getElementById('exBv'),st=document.getElementById('exStats'),out=document.getElementById('exOut');
+  btnRow(document.getElementById('exF'),EX,0,it=>{E=it;draw();});
+  function val(inp){return E.lo+(E.hi-E.lo)*(+inp.value)/100;}
+  function draw(){
+    const a=val(aIn),b=val(bIn); av.textContent=fmt(a,2); bv.textContent=fmt(b,2);
+    const exact=E.F(b)-E.F(a);
+    const n=1000,h=(b-a)/n;let s=0;for(let i=0;i<n;i++)s+=E.f(a+(i+0.5)*h)*h;
+    st.innerHTML=stat('<bdi dir="ltr">F(b) − F(a)</bdi>',fmt(exact,4),'t-F')+stat('רימן, 1000 מלבנים',fmt(s,4),'t-rs')+stat('הפרש',fmt(Math.abs(exact-s),6));
+    out.innerHTML=R`\(\displaystyle\int_{${fmt(a,2)}}^{${fmt(b,2)}}\!f\,dx=\Fc{${E.tex}}\Big|_{${fmt(a,2)}}^{${fmt(b,2)}}\approx ${fmt(exact,4)}\)`+(b<a?' <span class="t-lo">(\\(b&lt;a\\): התוצאה שלילית, כמו "שינוי סדר הגבולות")</span>':'');
+    typeset(out);
+  }
+  aIn.addEventListener('input',draw);bIn.addEventListener('input',draw);draw();
+})();
+const QUIZ = {
+ s1:[
+  {q:R`מהו הערך הממוצע של \(f(x)=2x+1\) בקטע \([0,2]\)?`, o:[R`\(3\), השטח 6 חלקי האורך 2`,R`\(6\), השטח מתחת לגרף`,R`\(5\), הערך הגדול ביותר`,R`\(1.5\), השטח חלקי 4`],
+   h:R`ממוצע = \(\frac1{b-a}\int_a^bf\). השטח הוא 6.`, w:R`\(\frac12\cdot6=3\), ואכן \(f(1)=3\).`},
+  {q:R`בהוכחת המשפט, איזה משפט נותן את הנקודות \(x_m\) ו-\(x_M\)?`, o:[R`ויירשטראס: יש מינימום ומקסימום`,R`ערך הביניים: יש כל ערך באמצע`,R`קנטור: רציפות במידה שווה בקטע`,R`לגרנז׳: נגזרת מתאפסת בפנים`],
+   h:R`צריך שהפונקציה תקבל ערך הכי נמוך והכי גבוה בקטע סגור.`, w:R`ויירשטראס: רציפה בקטע סגור מקבלת מינימום ומקסימום.`},
+  {q:R`ואיזה משפט נותן בסוף את הנקודה \(c\)?`, o:[R`משפט ערך הביניים, כי הממוצע בין m ל-M`,R`משפט ויירשטראס, כי הממוצע הוא מקסימום`,R`משפט רול, כי הנגזרת מתאפסת ב-c`,R`משפט קנטור, כי f רציפה במידה שווה`],
+   h:R`ידוע ש-\(f(x_m)\le\) ממוצע \(\le f(x_M)\). איזה משפט מבטיח שהפונקציה "פוגשת" ערך שבין שני ערכים שלה?`, w:R`ערך הביניים: \(f\) רציפה מקבלת כל ערך בין \(f(x_m)\) ל-\(f(x_M)\).`},
+  {q:R`\(f(x)=x^2\) בקטע \([0,3]\). השטח 9 והממוצע 3. מה \(c\)?`, o:[R`\(\sqrt3\approx1.73\)`,R`\(1.5\), אמצע הקטע`,R`\(3\), הממוצע עצמו`,R`\(9\), השטח עצמו`],
+   h:R`פותרים \(f(c)=3\), כלומר \(c^2=3\).`, w:R`\(c=\sqrt3\), והוא באמת בקטע \([0,3]\). שים לב: \(c\) לא חייב להיות אמצע הקטע.`},
+  {q:R`בשלב 3 מחלקים את \(m(b-a)\le\int\le M(b-a)\) ב-\(b-a\). למה סימני \(\le\) לא מתהפכים?`, o:[R`כי \(b-a>0\), וחלוקה בחיובי שומרת על הכיוון`,R`כי \(b-a<0\), וחלוקה בשלילי שומרת על הכיוון`,R`כי \(m\le M\), ולכן הכיוון תמיד נשמר בחלוקה`,R`כי האינטגרל חיובי, ולכן מותר לחלק בכל מספר`],
+   h:R`מתי אי-שוויון מתהפך כשמחלקים?`, w:R`\(a<b\), אז \(b-a\) חיובי. רק חלוקה במספר שלילי הופכת את הכיוון.`}
+ ],
+ s2:[
+  {q:R`אבן במהירות \(v(t)=10t\), ו-\(D(x)=5x^2\). מה המהירות הממוצעת בין שנייה 2 לשנייה 3?`, o:[R`\(25\)`,R`\(20\)`,R`\(30\)`,R`\(45\)`],
+   h:R`\(\tilde v=\frac{D(3)-D(2)}{3-2}\).`, w:R`\(\frac{45-20}{1}=25\). (20 ו-30 הן המהירויות ברגעים 2 ו-3, ו-45 הוא \(D(3)\).)`},
+  {q:R`עם אותה אבן, מה \(D(4)=\int_0^410t\,dt\)?`, o:[R`\(80\), כי \(5\cdot4^2=80\)`,R`\(40\), כי \(10\cdot4=40\)`,R`\(160\), כי \(10\cdot4^2=160\)`,R`\(120\), כי \(10\cdot4\cdot3=120\)`],
+   h:R`\(D(x)=5x^2\). מציבים \(x=4\).`, w:R`80, הערך שחסמנו בהרצאה 1 בין 60 ל-100.`},
+  {q:R`מה קורה ל-\(\tilde v=\frac{D(x+h)-D(x)}{h}\) כש-\(h\to0\)?`, o:[R`שואף ל-\(D'(x)=v(x)\), מהירות רגעית`,R`שואף ל-\(D(x)\), המרחק עד רגע x`,R`שואף ל-0, כי הקטע מתכווץ לנקודה`,R`שואף ל-\(\frac{D(x)}{x}\), הממוצע מההתחלה`],
+   h:R`זו בדיוק הגדרת הנגזרת של \(D\).`, w:R`הגבול הוא \(D'(x)\), וזו המהירות הרגעית \(v(x)\).`},
+  {q:R`למה כותבים \(D(x)=\int_0^xv(t)\,dt\) עם \(t\) בפנים ולא \(\int_0^xv(x)\,dx\)?`, o:[R`כי \(x\) הוא הגבול העליון, ו-\(t\) רץ מ-0 עד \(x\)`,R`כי \(t\) הוא קבוע, ו-\(x\) הוא המשתנה שרץ בפנים`,R`כי עם \(x\) בפנים יוצא אינטגרל אחר לגמרי בערכו`,R`כי \(t\) מסמן זמן, ו-\(x\) מותר רק למרחק בפיזיקה`],
+   h:R`לאות אחת אסור לשמש לשני תפקידים באותו ביטוי.`, w:R`\(x\) תפוס כגבול העליון. משתנה האינטגרציה צריך שם אחר, ולכן \(t\).`}
+ ],
+ s3:[
+  {q:R`\(f(t)=t\), \(a=0\). מה \(F(2)=\int_0^2t\,dt\)?`, o:[R`\(2\)`,R`\(4\)`,R`\(1\)`,R`\(0\)`],
+   h:R`זה משולש עם בסיס 2 וגובה 2.`, w:R`\(\frac{2\cdot2}2=2\), כמו \(\frac{x^2}2\) ב-\(x=2\).`},
+  {q:R`מה הערך של \(F(a)=\int_a^af(t)\,dt\) לכל \(f\) רציפה?`, o:[R`\(0\), כי עוד לא נצבר שום שטח`,R`\(f(a)\), הגובה של f בנקודה a`,R`\(\int_a^bf\), השטח של כל הקטע`,R`לא מוגדר, כי הקטע באורך אפס`],
+   h:R`מה השטח מעל קטע באורך 0?`, w:R`קטע מ-\(a\) עד \(a\) אין לו רוחב, אז השטח 0.`},
+  {q:R`\(f(t)=1-t\) בקטע \([0,3]\). באיזה \(x\) הפונקציה \(F(x)=\int_0^xf\) הכי גדולה?`, o:[R`\(x=1\), שם f מתחלפת מחיובית לשלילית`,R`\(x=3\), בסוף הקטע, כי שם נצבר הכי הרבה`,R`\(x=0\), בהתחלה, כי שם f הכי גבוהה`,R`\(x=0.5\), באמצע הקטע שבו f חיובית`],
+   h:R`כל עוד \(f>0\) השטח מתווסף, וכש-\(f<0\) הוא נגרע. נסה בהמחשה.`, w:R`עד 1 מוסיפים שטח, ואחרי 1 גורעים. לכן המקסימום ב-1 (\(F(1)=0.5\)).`},
+  {q:R`בהמחשה, מה הקשר בין השיפוע של \(F\) בנקודה \(x\) לבין \(f\)?`, o:[R`השיפוע של \(F\) שווה ל-\(f(x)\)`,R`השיפוע של \(F\) שווה ל-\(f'(x)\)`,R`השיפוע של \(F\) שווה ל-\(F(x)\)`,R`השיפוע של \(F\) שווה ל-\(\frac{F(x)}{x}\)`],
+   h:R`הסתכל על שתי השורות בהמחשה: "f(x) = גובה" ו"שיפוע של F".`, w:R`הם שווים. זה בדיוק \(F'(x)=f(x)\), חלק 1 של המשפט.`}
+ ],
+ s4:[
+  {q:R`\(F(x)=\int_0^x\cos t\,dt\). מה \(F'(x)\)?`, o:[R`\(\cos x\)`,R`\(\sin x\)`,R`\(-\sin x\)`,R`\(\cos x-1\)`],
+   h:R`גוזרים "אינטגרל עד \(x\)": מקבלים את מה שבפנים.`, w:R`לפי חלק 1, \(F'(x)=\cos x\). (\(\sin x\) הוא \(F\) עצמה.)`},
+  {q:R`\(G(x)=\int_1^xe^{t^2}dt\). מה \(G'(1)\)?`, o:[R`\(e\)`,R`\(0\)`,R`\(1\)`,R`\(e-1\)`],
+   h:R`\(G'(x)=e^{x^2}\). הצב \(x=1\). (לא צריך לחשב את האינטגרל עצמו!)`, w:R`\(e^{1^2}=e\). מעניין: את \(G\) אי אפשר לכתוב בנוסחה פשוטה, אבל את הנגזרת יודעים מיד. (0 הוא \(G(1)\).)`},
+  {q:R`בהוכחה, למה \(\int_a^{x+h}f-\int_a^xf\) שווה ל-\(\int_x^{x+h}f\)?`, o:[R`הופכים גבולות ומחברים: אדיטיביות בתחום`,R`מוציאים \(h\) החוצה: לינאריות של האינטגרל`,R`גוזרים את שני האינטגרלים: חלק 1 של המשפט`,R`חוסמים את שני האינטגרלים: תכונת החסמים`],
+   h:R`\(-\int_a^x=\int_x^a\), ואז "מ-\(x\) ל-\(a\) ומ-\(a\) ל-\(x+h\)".`, w:R`תכונה 4 (היפוך גבולות) ואז תכונה 3 (אדיטיביות). נשאר רק השטח של הרצועה.`},
+  {q:R`מה בדיוק נותן משפט הערך הממוצע בהוכחה?`, o:[R`נקודה \(c_h\in[x,x+h]\) עם \(\frac1h\int_x^{x+h}f=f(c_h)\)`,R`נקודה \(c_h\in[a,b]\) עם \(\int_a^bf=f(c_h)\cdot h\)`,R`נקודה \(c_h\in[x,x+h]\) עם \(f'(c_h)=\frac{f(x+h)-f(x)}{h}\)`,R`נקודה \(c_h\in[a,x]\) עם \(\frac1{x-a}\int_a^xf=f(c_h)\)`],
+   h:R`המשפט מופעל על הרצועה הצרה \([x,x+h]\), שאורכה \(h\).`, w:R`הממוצע של \(f\) על \([x,x+h]\) הוא \(f(c_h)\). (האפשרות עם \(f'\) היא לגרנז׳, לא ערך ממוצע אינטגרלי.)`},
+  {q:R`למה \(f(c_h)\to f(x)\) כש-\(h\to0\)?`, o:[R`כי \(c_h\) בין \(x\) ל-\(x+h\), אז \(c_h\to x\), ו-\(f\) רציפה`,R`כי \(c_h=x\) תמיד, אז \(f(c_h)=f(x)\) לכל \(h\) בכלל`,R`כי \(f\) גזירה, אז \(f(c_h)\) קבוע ושווה ל-\(f(x)\)`,R`כי \(c_h\to x+h\), ולכן מקבלים את \(f(x+h)\to f(x)\)`],
+   h:R`שני דברים: איפה \(c_h\) נמצא, ומה מבטיחה רציפות.`, w:R`\(c_h\) נדחס ל-\(x\) (סנדוויץ'), ורציפות של \(f\) מעבירה את הגבול פנימה.`}
+ ],
+ s5:[
+  {q:R`בעזרת \(F(x)=x^2\), מה \(\int_1^22x\,dx\)?`, o:[R`\(3\)`,R`\(4\)`,R`\(1\)`,R`\(2\)`],
+   h:R`\(F(2)-F(1)\).`, w:R`\(4-1=3\). (4 הוא רק \(F(2)\).)`},
+  {q:R`בהוכחה, למה \(F_a(x)-F(x)\) הוא קבוע?`, o:[R`כי הנגזרת של ההפרש היא 0, ולפי לגרנז׳ הוא קבוע`,R`כי שתי הפונקציות שוות ב-\(a\), ולכן שוות בכל מקום`,R`כי \(F_a\) היא אינטגרל, ולכן היא תמיד פונקציה קבועה`,R`כי \(F\) רציפה, ופונקציה רציפה פחות אינטגרל היא קבועה`],
+   h:R`לפי חלק 1, \(F_a'=F'\). מה זה אומר על \((F_a-F)'\)?`, w:R`\((F_a-F)'=0\), ופונקציה עם נגזרת 0 בקטע היא קבועה.`},
+  {q:R`איך מוצאים את \(C\) בהוכחה, ומה הוא יוצא?`, o:[R`מציבים \(x=a\), ויוצא \(C=-F(a)\)`,R`מציבים \(x=b\), ויוצא \(C=F(b)\)`,R`מציבים \(x=a\), ויוצא \(C=F(a)\)`,R`מציבים \(x=0\), ויוצא \(C=0\)`],
+   h:R`באיזה \(x\) ידוע ש-\(F_a(x)=0\)?`, w:R`\(F_a(a)=0\), אז \(0-F(a)=C\).`},
+  {q:R`מה ההנחה על \(F\) בחלק 2, ולמה צריך אותה?`, o:[R`גזירה ברציפות, כדי שמותר להפעיל חלק 1 על \(F'\)`,R`רציפה בלבד, כדי שמותר לגזור אותה בכל נקודה`,R`חסומה בלבד, כדי שהאינטגרל של \(F\) יהיה מוגדר`,R`עולה ממש, כדי שההפרש \(F(b)-F(a)\) יהיה חיובי`],
+   h:R`בשלב 2 מפעילים את חלק 1 על הפונקציה שבפנים, \(F'\). מה חלק 1 דורש?`, w:R`חלק 1 דורש פונקציה רציפה. לכן \(F'\) צריכה להיות רציפה, כלומר \(F\) גזירה ברציפות.`}
+ ],
+ s6:[
+  {q:R`איזו פונקציה היא קדומה של \(f(x)=3x^2\)?`, o:[R`\(x^3+7\)`,R`\(6x\)`,R`\(\frac{x^3}{3}\)`,R`\(3x^3\)`],
+   h:R`צריך \(F'=3x^2\). גזור כל אפשרות.`, w:R`\((x^3+7)'=3x^2\). (\(6x\) היא הנגזרת של \(f\), לא הקדומה.)`},
+  {q:R`מה פירוש הסימון \(F(x)\Big|_a^b\)?`, o:[R`\(F(b)-F(a)\)`,R`\(F(a)-F(b)\)`,R`\(F(b)+F(a)\)`,R`\(F(b)\cdot F(a)\)`],
+   h:R`"הצב את העליון, פחות הצבת התחתון".`, w:R`\(F(b)-F(a)\), למשל \(x^2\Big|_1^3=9-1=8\).`},
+  {q:R`מה \(\lim_{h\to0}\frac1h\int_0^h\cos t\,dt\)?`, o:[R`\(1\)`,R`\(0\)`,R`\(-1\)`,R`לא קיים`],
+   h:R`טענה 3: הגבול שווה ל-\(f(a)\), כאן \(\cos0\).`, w:R`\(\cos0=1\). בדיקה: \(\frac{\sin h}{h}\to1\).`},
+  {q:R`מה אומרת טענה 1 מתוך שלוש הטענות?`, o:[R`לכל פונקציה רציפה יש פונקציה קדומה`,R`לכל פונקציה גזירה יש פונקציה רציפה`,R`לכל פונקציה קדומה יש נוסחה מפורשת`,R`לכל פונקציה חסומה יש פונקציה קדומה`],
+   h:R`הקדומה שמובטחת היא \(\int_a^xf\), וזה עובד בזכות חלק 1.`, w:R`רציפה ⇒ יש קדומה. אבל לא בהכרח עם נוסחה "יפה" (למשל \(e^{-x^2}\)).`}
+ ],
+ s7:[
+  {q:R`מה \(\int_0^\pi\sin x\,dx\)?`, o:[R`\(2\)`,R`\(0\)`,R`\(-2\)`,R`\(1\)`],
+   h:R`דוגמה 6: \(\cos a-\cos b\).`, w:R`\(\cos0-\cos\pi=1-(-1)=2\). (\(-2\) יוצא אם שוכחים את המינוס של \(-\cos\).)`},
+  {q:R`מה \(\int_1^e\frac1x\,dx\)?`, o:[R`\(1\)`,R`\(e-1\)`,R`\(0\)`,R`\(\frac1e\)`],
+   h:R`דוגמה 7: \(\ln b-\ln a\).`, w:R`\(\ln e-\ln1=1-0=1\).`},
+  {q:R`מה \(\int_1^2\frac{dx}{x^2}\)?`, o:[R`\(\frac12\)`,R`\(-\frac12\)`,R`\(\frac32\)`,R`\(\frac{7}{3}\)`],
+   h:R`דוגמה 8 עם \(n=2\): הקדומה \(\frac{x^{-1}}{-1}=-\frac1x\).`, w:R`\(-\frac12-(-1)=\frac12\). (\(\frac73\) זה \(\int_1^2x^2\), חזקה חיובית בטעות.)`},
+  {q:R`מה \(\int_0^4\sqrt x\,dx\)?`, o:[R`\(\frac{16}{3}\)`,R`\(\frac83\)`,R`\(4\)`,R`\(2\)`],
+   h:R`דוגמה 9 עם \(\alpha=\frac12\): \(\frac{x^{3/2}}{3/2}\).`, w:R`\(4^{3/2}=8\), ו-\(\frac{8}{3/2}=\frac{16}{3}\). (\(\frac83\) יוצא אם שוכחים לחלק ב-\(\frac32\) ומחלקים ב-3.)`},
+  {q:R`למה אי אפשר לחשב את \(\int_{-1}^1\frac{dx}{x^2}\) עם דוגמה 8?`, o:[R`כי 0 בתוך הקטע, ושם הפונקציה לא חסומה`,R`כי הקטע סימטרי, ושם כל אינטגרל יוצא אפס`,R`כי \(n=2\) זוגי, והנוסחה עובדת רק ל-\(n\) אי-זוגי`,R`כי \(a\) שלילי, והנוסחה עובדת רק ל-\(a\) שלם`],
+   h:R`מה קורה ל-\(\frac1{x^2}\) ליד \(x=0\)?`, w:R`\(\frac1{x^2}\to\infty\) ליד 0, אז היא לא רציפה (ולא חסומה) בקטע, וניוטון-לייבניץ לא חל.`}
+ ],
+ s8:[
+  {q:R`איזו נוסחה היא האינטגרציה בחלקים?`, o:[R`\(\int_a^bf'g\,dx=fg\Big|_a^b-\int_a^bfg'\,dx\)`,R`\(\int_a^bf'g\,dx=fg\Big|_a^b+\int_a^bfg'\,dx\)`,R`\(\int_a^bf'g\,dx=f'g'\Big|_a^b-\int_a^bfg\,dx\)`,R`\(\int_a^bf'g\,dx=fg\Big|_a^b-\int_a^bf'g'\,dx\)`],
+   h:R`מתחילים מ-\((fg)'=f'g+fg'\) ומעבירים אגף.`, w:R`\(\int f'g=fg-\int fg'\): הנגזרת "עוברת" מ-\(f\) ל-\(g\), עם מינוס.`},
+  {q:R`מאיפה מגיעה נוסחת האינטגרציה בחלקים?`, o:[R`מכלל המכפלה, ואז ניוטון-לייבניץ`,R`מכלל השרשרת, ואז משפט הערך הממוצע`,R`מכלל הנגזרת של מנה, ואז אדיטיביות`,R`ממשפט לגרנז׳, ואז תכונת החסמים`],
+   h:R`בנוסחה מופיעים \(f'g\) ו-\(fg'\) ביחד. איפה עוד הם מופיעים ביחד?`, w:R`\((fg)'=f'g+fg'\), ואז אינטגרל על שני הצדדים.`},
+  {q:R`ב-\(\int\ln x\,dx\), למה בוחרים \(f'=1\) ו-\(g=\ln x\)?`, o:[R`כי ל-1 קל לעשות אינטגרל, ואת \(\ln x\) קל לגזור`,R`כי את 1 קל לגזור, ול-\(\ln x\) קל לעשות אינטגרל`,R`כי כך יוצא \(g'=1\), וזה מבטל את האינטגרל`,R`כי כך יוצא \(f=\ln x\), וזו התשובה הסופית`],
+   h:R`את האינטגרל של \(\ln x\) בדיוק לא ידענו לחשב. מה כן ידענו לעשות לו?`, w:R`\(f=x\) ו-\(g'=\frac1x\), ואז \(\int x\cdot\frac1x=\int1\) קל.`},
+  {q:R`מה \(\int_1^e\ln x\,dx\)? (הקדומה: \(x\ln x-x\))`, o:[R`\(1\)`,R`\(e\)`,R`\(e-1\)`,R`\(0\)`],
+   h:R`\((e\ln e-e)-(1\cdot\ln1-1)\).`, w:R`\((e-e)-(0-1)=0+1=1\).`},
+  {q:R`איך בודקים ש-\(\int\ln x\,dx=x\ln x-x+C\) נכון?`, o:[R`גוזרים את \(x\ln x-x\) ובודקים שיוצא \(\ln x\)`,R`גוזרים את \(\ln x\) ובודקים שיוצא \(x\ln x-x\)`,R`מציבים \(x=0\) ובודקים ששני הצדדים שווים לאפס`,R`מעלים את \(x\ln x-x\) בריבוע ובודקים שיוצא \(\ln x\)`],
+   h:R`קדומה = פונקציה שהנגזרת שלה היא מה שבפנים.`, w:R`\((x\ln x-x)'=\ln x+1-1=\ln x\) ✓. (ב-\(x=0\) בכלל \(\ln\) לא מוגדר.)`}
+ ],
+ fin:[
+  {q:R`מה \(\frac{d}{dx}\int_2^x\sqrt{1+t^3}\,dt\)?`, o:[R`\(\sqrt{1+x^3}\)`,R`\(0\)`,R`\(\sqrt{1+x^3}-3\)`,R`\(\frac{3x^2}{2\sqrt{1+x^3}}\)`],
+   h:R`חלק 1: הנגזרת של "אינטגרל עד \(x\)" היא מה שבפנים.`, w:R`\(\sqrt{1+x^3}\). הגבול התחתון 2 לא משנה את הנגזרת. (האפשרות האחרונה היא נגזרת של השורש עצמו.)`},
+  {q:R`מה הערך הממוצע של \(\sin x\) בקטע \([0,\pi]\)?`, o:[R`\(\frac2\pi\)`,R`\(\frac12\)`,R`\(2\)`,R`\(\frac1\pi\)`],
+   h:R`\(\frac1{\pi-0}\int_0^\pi\sin x\,dx\), והאינטגרל יצא 2.`, w:R`\(\frac2\pi\approx0.64\). (2 הוא השטח לפני החלוקה.)`},
+  {q:R`מה \(\int_0^1(x^2+e^x)\,dx\)?`, o:[R`\(e-\frac23\)`,R`\(e+\frac13\)`,R`\(e-\frac13\)`,R`\(\frac43\)`],
+   h:R`לינאריות: \(\int_0^1x^2+\int_0^1e^x=\frac13+(e-1)\).`, w:R`\(\frac13+e-1=e-\frac23\approx2.05\). (\(e+\frac13\) יוצא אם שוכחים את \(-e^0\).)`},
+  {q:R`אם \(F'=f\) וגם \(G'=f\) בקטע, מה אפשר להגיד על \(G-F\)?`, o:[R`\(G-F\) הוא קבוע בכל הקטע`,R`\(G-F\) שווה לאפס בכל הקטע`,R`\(G-F\) שווה ל-\(f\) בכל הקטע`,R`\(G-F\) שווה ל-\(x\) בכל הקטע`],
+   h:R`מה הנגזרת של \(G-F\)?`, w:R`\((G-F)'=0\), אז ההפרש קבוע (לא בהכרח 0: \(x^3\) ו-\(x^3+7\)).`},
+  {q:R`מה \(\int_0^2x^3\,dx\)?`, o:[R`\(4\)`,R`\(8\)`,R`\(2\)`,R`\(16\)`],
+   h:R`\(\frac{x^4}{4}\Big|_0^2\).`, w:R`\(\frac{16}{4}-0=4\). (8 זה \(2^3\), ו-16 זה \(2^4\) בלי לחלק ב-4.)`}
+ ]
+};
+const POS=[1,3,0,2,2,0,3,1,3,1,2,0,0,2,1,3,1,0,3,2,2,3,0,1,0,1,3,2,3,2,1,0,1,3,2,0,2,0,3,1];
+(function(){let k=0;for(const id in QUIZ)QUIZ[id].forEach(q=>{const p=POS[k++%POS.length];const o=q.o.slice();const r=o.shift();o.splice(p,0,r);q.o=o;q.a=p;});})();
+const KEY='calc2-lec3-v1';
+let state=LS.get(KEY)||{};
+const save=()=>LS.set(KEY,state);
+const LET=['א','ב','ג','ד'];
+let total=0;
+document.querySelectorAll('.quiz').forEach(box=>{
+  const id=box.dataset.quiz, qs=QUIZ[id];
+  box.insertAdjacentHTML('beforeend','<h3>בדיקה עצמית</h3>');
+  qs.forEach((qq,qi)=>{
+    total++;
+    const key=id+'-'+qi;
+    const d=document.createElement('div');d.className='q';d.dataset.key=key;
+    d.innerHTML=`<div class="qt">${qi+1}. ${qq.q}</div>`+(qq.m?`<div class="qm">\\[${qq.m}\\]</div>`:'')+
+      `<div class="opts">${qq.o.map((t,i)=>`<button type="button" class="opt" data-i="${i}"><span class="k">${LET[i]}</span><span class="ot">${t}</span></button>`).join('')}</div>
+       <div class="fb hint" hidden><b>רמז:</b> ${qq.h}</div><div class="fb why" hidden><b>נכון!</b> ${qq.w}</div>`;
+    box.appendChild(d);
+    d.addEventListener('click',e=>{
+      const b=e.target.closest('.opt');if(!b)return;
+      const st=state[key]||(state[key]={tried:[],solved:false});
+      if(st.solved)return;
+      const i=+b.dataset.i;
+      if(!st.tried.includes(i))st.tried.push(i);
+      if(i===qq.a){st.solved=true;st.first=st.tried.length===1;}
+      save();paint(d,qq,st);updateScore();
+    });
+    if(state[key])paint(d,qq,state[key]);
+  });
+});
+function paint(d,qq,st){
+  d.querySelectorAll('.opt').forEach(b=>{const i=+b.dataset.i;
+    b.classList.toggle('wrong',st.tried.includes(i)&&i!==qq.a);
+    b.classList.toggle('right',st.solved&&i===qq.a);});
+  d.querySelector('.hint').hidden=st.solved||!st.tried.some(i=>i!==qq.a);
+  d.querySelector('.why').hidden=!st.solved;
+}
+function updateScore(){
+  let first=0,solved=0;
+  Object.values(state).forEach(s=>{if(s.solved){solved++;if(s.first)first++;}});
+  document.getElementById('score').textContent=`${first} / ${total} בניסיון ראשון`;
+  document.getElementById('prog').textContent=`נענו ${solved} מתוך ${total}`;
+  document.getElementById('meter').style.width=(100*solved/total)+'%';
+  const end=document.getElementById('endmsg');
+  if(solved===total){end.hidden=false;const pct=Math.round(100*first/total);
+    end.textContent=`סיימת את כל השאלות, ביג בוס! ${first} מתוך ${total} נכונות בניסיון הראשון (${pct}%). `+(pct>=80?'מעולה, אתה מוכן להמשך.':'כדאי לעבור שוב על ההמחשות של החלקים שבהם טעית.');}
+  else end.hidden=true;
+}
+document.getElementById('reset').addEventListener('click',()=>{
+  state={};save();
+  document.querySelectorAll('.q').forEach(d=>{const [sid,qi]=d.dataset.key.split('-');paint(d,QUIZ[sid][+qi],{tried:[],solved:false});});
+  updateScore();
+});
+updateScore();
+</script>
+<script>
+window.MathJax={
+  loader:{load:['[tex]/html']},
+  tex:{packages:{'[+]':['html']},inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']],
+    macros:{lo:['\\class{c-lo}{#1}',1],up:['\\class{c-up}{#1}',1],rs:['\\class{c-rs}{#1}',1],pt:['\\class{c-part}{#1}',1],ep:['\\class{c-ep}{#1}',1],av:['\\class{c-av}{#1}',1],lm:['\\class{c-lm}{#1}',1],Fc:['\\class{c-F}{#1}',1],pp:['\\class{c-pp}{#1}',1]}},
+  svg:{fontCache:'global'}
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.js"></script>
+
+</body></html>

@@ -1,0 +1,676 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<script>(function(){try{var m=localStorage.getItem("hedva2-theme");if(m==="dark"||m==="light")document.documentElement.setAttribute("data-theme",m);}catch(e){}})();</script>
+<title>שברים יסודיים וחלקיים</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&family=Secular+One&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: one reading column on graph-paper ground, like the lecturer's notebook; sticky score bar on top */
+:root{
+  --bg:#f4f7fb; --surface:#ffffff; --ink:#172131; --muted:#566275; --line:#d6dee9; --grid:rgba(70,120,190,.10);
+  --accent:#1d5fa8; --accent-ink:#ffffff; --hl:#bfeaf6;
+  --lin:#11805a; --rep:#c0570a; --quad:#7a3dc0; --poly:#b5305a;
+  --ok:#1d874a; --okbg:#e3f5ea; --bad:#c03636; --badbg:#fbe7e7; --notebg:#eef4fc; --warnbg:#fff4e2;
+  --f-body:"Assistant",system-ui,"Segoe UI",Arial,sans-serif;
+  --f-head:"Secular One","Assistant",system-ui,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f141c; --surface:#161d28; --ink:#e5eaf2; --muted:#9ba7b9; --line:#2a3445; --grid:rgba(120,170,240,.07);
+  --accent:#7db1ee; --accent-ink:#0f141c; --hl:#1c4757;
+  --lin:#4fd19f; --rep:#f2a560; --quad:#bb9bf3; --poly:#f38cab;
+  --ok:#5fd38d; --okbg:#143222; --bad:#ff8080; --badbg:#3a1a1c; --notebg:#18253a; --warnbg:#33270f;
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f141c; --surface:#161d28; --ink:#e5eaf2; --muted:#9ba7b9; --line:#2a3445; --grid:rgba(120,170,240,.07);
+  --accent:#7db1ee; --accent-ink:#0f141c; --hl:#1c4757;
+  --lin:#4fd19f; --rep:#f2a560; --quad:#bb9bf3; --poly:#f38cab;
+  --ok:#5fd38d; --okbg:#143222; --bad:#ff8080; --badbg:#3a1a1c; --notebg:#18253a; --warnbg:#33270f;
+  color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.7;direction:rtl;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:22px 22px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--surface)}
+.wrap{max-width:820px;margin:0 auto;padding-block:8px 60px}
+h1,h2,h3{font-family:var(--f-head);font-weight:400;text-wrap:balance;line-height:1.25;margin:0}
+h1{font-size:clamp(30px,6vw,44px)}
+h2{font-size:clamp(23px,4.4vw,30px)}
+h3{font-size:20px;margin-top:22px}
+p{margin:10px 0}
+.mono{font-family:var(--f-mono);font-size:.82em}
+
+/* score bar */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--surface);border:1px solid var(--line);border-radius:0 0 12px 12px;
+  display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;padding:10px 14px;margin-bottom:18px;box-shadow:0 4px 14px rgba(0,0,0,.06)}
+.bar .lbl{font-weight:700}
+.bar .score{font-variant-numeric:tabular-nums}
+.meter{flex:1 1 140px;height:9px;background:var(--line);border-radius:6px;overflow:hidden;min-width:100px}
+.meter>i{display:block;height:100%;width:0;background:var(--accent);transition:width .3s}
+button{font-family:var(--f-body);font-size:15px;cursor:pointer}
+.btn{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:8px;padding:6px 12px}
+.btn:hover{border-color:var(--accent)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+
+/* hero */
+.hero{padding-block:22px 10px}
+.meta{display:flex;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:15px;margin-bottom:8px}
+.chip{border:1px solid var(--line);background:var(--surface);border-radius:20px;padding:1px 10px;font-size:14px;color:var(--muted)}
+.legend{display:flex;flex-wrap:wrap;gap:8px 14px;margin-top:14px;font-size:15px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.dot{width:12px;height:12px;border-radius:3px;display:inline-block}
+.toc{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:6px 16px;margin:16px 0 0;padding:0;list-style:none;font-size:15px}
+.toc a{color:var(--accent);text-decoration:none}
+.toc a:hover{text-decoration:underline}
+
+/* sections */
+section.sec{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px max(16px,3vw);margin-top:26px}
+.eyebrow{display:flex;flex-wrap:wrap;align-items:center;gap:8px;color:var(--muted);font-size:14px;margin-bottom:6px;letter-spacing:.02em}
+.eyebrow b{color:var(--accent);font-family:var(--f-mono);font-weight:600}
+.m{direction:ltr;overflow-x:auto;overflow-y:hidden;padding:4px 0;max-width:100%}
+mjx-container{direction:ltr}
+mjx-container[display="true"]{margin:.4em 0!important}
+.final{background:linear-gradient(transparent 62%,var(--hl) 62%);padding:0 4px;border-radius:2px;display:inline-block}
+
+.c-lin{fill:var(--lin);stroke:var(--lin)}
+.c-rep{fill:var(--rep);stroke:var(--rep)}
+.c-quad{fill:var(--quad);stroke:var(--quad)}
+.c-poly{fill:var(--poly);stroke:var(--poly)}
+.c-hl{fill:var(--accent);stroke:var(--accent)}
+.t-lin{color:var(--lin);font-weight:700}.t-rep{color:var(--rep);font-weight:700}.t-quad{color:var(--quad);font-weight:700}.t-poly{color:var(--poly);font-weight:700}
+
+.box{border-radius:10px;padding:12px 14px;margin:14px 0;border:1px solid var(--line)}
+.box h4{margin:0 0 4px;font-size:16px}
+.terms{background:var(--notebg)}
+.terms dl{margin:4px 0 0;display:grid;gap:6px}
+.terms dt{font-weight:700}
+.terms dd{margin:0 0 4px 0}
+.rule{background:var(--surface);border:2px solid var(--accent)}
+.rule h4{color:var(--accent)}
+.analogy{background:var(--surface);border-style:dashed}
+.mynote{background:var(--warnbg)}
+.tw{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:15.5px}
+th,td{border:1px solid var(--line);padding:6px 9px;text-align:right;vertical-align:middle}
+th{background:var(--notebg);font-weight:700}
+td .m{padding:0}
+
+/* stepper */
+.sim{border:1px solid var(--line);border-radius:12px;margin:16px 0;overflow:hidden}
+.sim header{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;padding:8px 12px;background:var(--notebg);border-bottom:1px solid var(--line)}
+.sim header b{font-size:15px}
+.sim .ctr{font-family:var(--f-mono);font-size:13px;color:var(--muted)}
+.sim .ctrls{display:flex;gap:6px}
+.board{padding:6px 12px}
+.ln{display:grid;grid-template-columns:30px 1fr;gap:8px;align-items:center;border:2px solid transparent;border-radius:8px;padding:2px 6px;margin:3px 0}
+.ln .no{font-family:var(--f-mono);font-size:12px;color:var(--muted);text-align:center}
+.ln .m{min-width:0}
+.ln.cur{border-color:var(--accent);background:var(--notebg)}
+.ln .ttl{grid-column:2;font-size:13px;color:var(--muted);margin-bottom:-6px}
+.expl{border-top:1px solid var(--line);padding:10px 12px;background:var(--surface);min-height:70px}
+.expl b{color:var(--accent)}
+
+/* quiz */
+.quiz{margin-top:20px;border-top:2px dashed var(--line);padding-top:12px}
+.quiz>h3{margin:0 0 8px;font-size:18px;color:var(--accent)}
+.q{margin:14px 0 18px}
+.q .qt{font-weight:600}
+.q .qm{direction:ltr;background:var(--notebg);border-radius:8px;padding:4px 10px;margin:6px 0;overflow-x:auto}
+.opts{display:grid;gap:6px;margin-top:6px}
+.opt{display:flex;gap:10px;align-items:center;text-align:right;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);border-radius:9px;padding:6px 10px;min-height:44px}
+.opt .k{font-family:var(--f-mono);font-size:13px;color:var(--muted);flex:none;width:18px}
+.opt .ot{min-width:0;overflow-x:auto}
+.opt:hover{border-color:var(--accent)}
+.opt.wrong{border-color:var(--bad);background:var(--badbg)}
+.opt.right{border-color:var(--ok);background:var(--okbg)}
+.fb{border-radius:8px;padding:8px 12px;margin-top:6px;font-size:15.5px}
+.fb.hint{background:var(--badbg);border:1px solid var(--bad)}
+.fb.why{background:var(--okbg);border:1px solid var(--ok)}
+
+/* explorer */
+.explorer .btns{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.explorer .btn[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.explorer .out{border:1px solid var(--line);border-radius:10px;padding:8px 12px;min-height:90px}
+.endmsg{margin-top:18px;text-align:center;font-size:19px;font-weight:700}
+@media (prefers-reduced-motion:reduce){.meter>i{transition:none}}
+@media (max-width:520px){body{font-size:16px}.bar{gap:8px}}
+</style>
+
+<div class="wrap">
+  <div class="bar" role="status">
+    <span class="lbl">ציון:</span>
+    <span class="score" id="score">0 / 0</span>
+    <div class="meter" aria-hidden="true"><i id="meter"></i></div>
+    <span class="score" id="prog">נענו 0</span>
+    <button class="btn" id="reset" type="button">איפוס</button>
+  </div>
+
+  <header class="hero">
+    <div class="credit" style="display:inline-block;margin-bottom:12px;padding:6px 12px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);font-size:15px">קרדיט לסיכומים של עדי מהדרייב 😊 ולעידו דוד צייג!</div>
+    <div class="meta"><span class="chip">חדו״א 2</span><span class="chip">הרצאה 6 · 12/11/25</span><span class="chip">4 עמודי מחברת</span></div>
+    <h1>שברים יסודיים וחלקיים</h1>
+    <p>איך מחשבים אינטגרל של שבר של פולינומים? מפרקים אותו לחתיכות קטנות שכבר יודעים לאנטגרל. בסוף כל חלק יש שאלות. לחיצה על תשובה לא נכונה נותנת רמז ואפשר לנסות שוב.</p>
+    <div class="legend" aria-label="מקרא צבעים">
+      <span><i class="dot" style="background:var(--lin)"></i>גורם לינארי \((x-\alpha)\) → ln</span>
+      <span><i class="dot" style="background:var(--rep)"></i>חזקה / גורם חוזר</span>
+      <span><i class="dot" style="background:var(--quad)"></i>ריבועי אי-פריק → ln + arctan</span>
+      <span><i class="dot" style="background:var(--poly)"></i>חלק פולינום (חילוק)</span>
+    </div>
+    <ul class="toc">
+      <li><a href="#s1">1. מה זה שבר יסודי</a></li>
+      <li><a href="#s2">2. אינטגרל של סוג 1 ו-2</a></li>
+      <li><a href="#s3">3. אינטגרל של סוג 3</a></li>
+      <li><a href="#s4">4. אינטגרל של סוג 4</a></li>
+      <li><a href="#s5">5. פירוק: גורמים לינאריים שונים</a></li>
+      <li><a href="#s6">6. פירוק: גורם לינארי חוזר</a></li>
+      <li><a href="#s7">7. פירוק: גורם ריבועי</a></li>
+      <li><a href="#s8">8. גורם ריבועי חוזר + חילוק</a></li>
+      <li><a href="#sum">סיכום ומבחן מסכם</a></li>
+    </ul>
+  </header>
+
+  <!-- 1 -->
+  <section class="sec" id="s1">
+    <div class="eyebrow"><b>1 / 8</b><span>עמוד 1 במחברת</span></div>
+    <h2>מה זה שבר יסודי?</h2>
+    <p><b>הבעיה:</b> נניח שצריך לחשב \(\displaystyle\int \frac{x^2+2x-1}{2x^3+3x^2-2x}\,dx\). אין לזה נוסחה מוכנה. אבל את \(\int \frac{1}{x-2}dx\) אנחנו כבר יודעים לחשב (זה \(\ln|x-2|\)).</p>
+    <p><b>הרעיון:</b> לכתוב שבר "קשה" כ<b>סכום</b> של שברים "קלים". השברים הקלים נקראים <b>שברים יסודיים</b>.</p>
+
+    <div class="box analogy"><h4>אנלוגיה</h4>
+      בדיוק כמו בבית ספר: \(\frac{5}{6}=\frac{1}{2}+\frac{1}{3}\). השבר \(\frac56\) "בנוי" משני שברים פשוטים. כאן עושים אותו דבר, רק עם פולינומים במקום מספרים.</div>
+
+    <h3>ארבעת סוגי השברים היסודיים</h3>
+    <div class="tw"><table>
+      <tr><th>סוג</th><th>השבר</th><th>תנאי</th><th>במילים</th></tr>
+      <tr><td class="t-lin">1</td><td><div class="m">\(\lin{\dfrac{A}{x-\alpha}}\)</div></td><td>\(A,\alpha\in\mathbb R\)</td><td>קבוע חלקי גורם לינארי</td></tr>
+      <tr><td class="t-rep">2</td><td><div class="m">\(\rep{\dfrac{A}{(x-\alpha)^n}}\)</div></td><td>\(n\in\mathbb N,\ n\ne1\)</td><td>קבוע חלקי חזקה של גורם לינארי</td></tr>
+      <tr><td class="t-quad">3</td><td><div class="m">\(\qd{\dfrac{Ax+B}{x^2+px+q}}\)</div></td><td>\(p^2-4q<0\)</td><td>ביטוי לינארי חלקי ריבועי בלי שורשים</td></tr>
+      <tr><td class="t-quad">4</td><td><div class="m">\(\qd{\dfrac{Ax+B}{(x^2+px+q)^n}}\)</div></td><td>\(n\ne1,\ p^2-4q<0\)</td><td>אותו דבר, אבל המכנה בחזקה</td></tr>
+    </table></div>
+
+    <div class="box terms"><h4>מונחים וסימנים</h4><dl>
+      <dt>פונקציה רציונלית</dt><dd>שבר של שני פולינומים: \(\frac{P(x)}{Q(x)}\). למשל \(\frac{x^2+1}{x^3-x}\).</dd>
+      <dt>פונקציה רציונלית "פשוטה"</dt><dd>המעלה של המונה <b>קטנה</b> מהמעלה של המכנה: \(\deg P<\deg Q\). למשל \(\frac{x+1}{x^2+3}\) פשוטה, אבל \(\frac{x^3}{x^2+1}\) לא.</dd>
+      <dt>\(p^2-4q<0\)</dt><dd>זה הדיסקרימיננטה (\(b^2-4ac\)) של \(x^2+px+q\). אם היא שלילית, אין לפולינום שורשים ממשיים, ולכן אי אפשר לפרק אותו לשני גורמים לינאריים. קוראים לו <b>אי-פריק</b>.</dd>
+      <dt>\(A, B, \alpha, p, q\)</dt><dd>סתם מספרים קבועים (ממשיים). \(x\) הוא המשתנה.</dd>
+      <dt>\(n\in\mathbb N,\ n\neq 1\)</dt><dd>\(n\) מספר טבעי: 2, 3, 4... (כש-\(n=1\) זה בכלל סוג 1 או סוג 3).</dd>
+    </dl></div>
+
+    <h3>המשפט</h3>
+    <div class="box rule"><h4>משפט</h4>כל פונקציה רציונלית <b>פשוטה</b> \(\frac{P(x)}{Q(x)}\) אפשר לכתוב כסכום של שברים יסודיים.</div>
+    <p><b>הערת המרצה:</b> ראינו כבר שכל פונקציה רציונלית אפשר לכתוב כ<span class="t-poly">פולינום</span> + פונקציה רציונלית פשוטה (בעזרת חילוק פולינומים). את הפולינום קל לאנטגרל. לכן מספיק לדעת לחשב אינטגרל של 4 סוגי השברים היסודיים, וככה נדע לחשב אינטגרל של <b>כל</b> פונקציה רציונלית.</p>
+    <div class="box rule"><h4>הכלל לזכור</h4>שבר רציונלי = <span class="t-poly">פולינום</span> + סכום של שברים יסודיים. ולכל שבר יסודי יש נוסחת אינטגרל.</div>
+    <div class="quiz" data-quiz="s1"></div>
+  </section>
+
+  <!-- 2 -->
+  <section class="sec" id="s2">
+    <div class="eyebrow"><b>2 / 8</b><span>עמוד 1 במחברת</span></div>
+    <h2>אינטגרל של סוג 1 וסוג 2</h2>
+    <p>אלה הקלים. הם כמעט ישר מנוסחאות שאתה כבר מכיר.</p>
+    <h3>סוג 1</h3>
+    <div class="m">\[\int \lin{\frac{A}{x-\alpha}}\,dx = A\cdot \ln|x-\alpha| + C\]</div>
+    <h3>סוג 2</h3>
+    <div class="m">\[\int \rep{\frac{A}{(x-\alpha)^n}}\,dx=\int A\,(x-\alpha)^{-n}dx = A\cdot\frac{(x-\alpha)^{-n+1}}{-n+1}+C\]</div>
+
+    <div class="box terms"><h4>למה זה נכון?</h4><dl>
+      <dt>סוג 1</dt><dd>הנגזרת של \(\ln|u|\) היא \(\frac1u\). כאן \(u=x-\alpha\), והנגזרת שלו היא 1, אז אין צורך לתקן כלום.</dd>
+      <dt>למה ערך מוחלט \(|\ |\)?</dt><dd>\(\ln\) מוגדר רק למספרים חיוביים. \(x-\alpha\) יכול להיות שלילי, לכן כותבים \(\ln|x-\alpha|\).</dd>
+      <dt>סוג 2</dt><dd>כלל החזקה: \(\int u^k\,du=\frac{u^{k+1}}{k+1}\) לכל \(k\ne-1\). כאן \(k=-n\), ומכיוון ש-\(n\ne1\), אז \(k\ne-1\) ואין חלוקה ב-0.</dd>
+    </dl></div>
+
+    <h3>דוגמאות שלי עם מספרים</h3>
+    <div class="tw"><table>
+      <tr><th>אינטגרל</th><th>מה עושים</th><th>תוצאה</th></tr>
+      <tr><td><div class="m">\(\int\frac{3}{x+2}dx\)</div></td><td>סוג 1 עם \(A=3,\ \alpha=-2\)</td><td><div class="m">\(3\ln|x+2|+C\)</div></td></tr>
+      <tr><td><div class="m">\(\int\frac{6}{(x-1)^4}dx\)</div></td><td>סוג 2: \(6\cdot\frac{(x-1)^{-3}}{-3}\)</td><td><div class="m">\(-\frac{2}{(x-1)^3}+C\)</div></td></tr>
+    </table></div>
+    <div class="box mynote"><h4>הערה שלי</h4>במחברת, בנוסחה של סוג 1 חסר \(+C\). תמיד מוסיפים אותו באינטגרל לא מסוים.</div>
+    <div class="box rule"><h4>הכלל לזכור</h4>גורם לינארי בחזקה 1 → <span class="t-lin">ln</span>. גורם לינארי בחזקה \(n\ge2\) → <span class="t-rep">כלל החזקה</span> (מקבלים שבר, בלי ln).</div>
+    <div class="quiz" data-quiz="s2"></div>
+  </section>
+
+  <!-- 3 -->
+  <section class="sec" id="s3">
+    <div class="eyebrow"><b>3 / 8</b><span>עמוד 1 במחברת</span></div>
+    <h2>אינטגרל של סוג 3</h2>
+    <p><b>הבעיה:</b> המכנה \(x^2+px+q\) אין לו שורשים, אז אי אפשר לפרק אותו. מה עושים? <b>שני טריקים</b>:</p>
+    <ol>
+      <li><b>השלמה לריבוע</b>: הופכים את המכנה ל-\(t^2+\alpha^2\).</li>
+      <li><b>מפצלים את המונה</b> לשני חלקים: חלק שהוא בדיוק הנגזרת של המכנה (נותן <span class="t-lin">ln</span>), וחלק קבוע (נותן <span class="t-quad">arctan</span>).</li>
+    </ol>
+
+    <div class="box terms"><h4>מונחים וכלים</h4><dl>
+      <dt>השלמה לריבוע</dt><dd>\(x^2+px+q=\left(x+\frac p2\right)^2+\left(q-\frac{p^2}{4}\right)\). בודקים: \(\left(x+\frac p2\right)^2=x^2+px+\frac{p^2}{4}\), ואז מוסיפים \(q-\frac{p^2}4\) כדי לחזור למקור.</dd>
+      <dt>למה \(q-\frac{p^2}{4}\) חיובי?</dt><dd>\(q-\frac{p^2}{4}=\frac{4q-p^2}{4}\), ובגלל ש-\(p^2-4q<0\), המונה \(4q-p^2\) חיובי. לכן אפשר לקרוא לו \(\alpha^2\).</dd>
+      <dt>הטריק \(\frac{f'}{f}\)</dt><dd>\(\int\frac{f'(t)}{f(t)}dt=\ln|f(t)|+C\). אם המונה הוא בדיוק הנגזרת של המכנה, התשובה היא ln של המכנה.</dd>
+      <dt>הנוסחה של arctan</dt><dd>\(\int\frac{1}{t^2+\alpha^2}dt=\frac1\alpha\arctan\left(\frac t\alpha\right)+C\). (הוכחה בטבלה למטה.)</dd>
+    </dl></div>
+
+    <div class="sim" data-sim="type3"></div>
+
+    <h3>הוכחת נוסחת arctan (הכוכבית במחברת)</h3>
+    <div class="tw"><table>
+      <tr><th>#</th><th>שורה</th><th>למה?</th></tr>
+      <tr><td>1</td><td><div class="m">\(\int\frac{1}{t^2+\alpha^2}dt=\frac{1}{\alpha^2}\int\frac{1}{\left(\frac t\alpha\right)^2+1}dt\)</div></td><td>מוציאים \(\alpha^2\) מהמכנה: \(t^2+\alpha^2=\alpha^2\left(\frac{t^2}{\alpha^2}+1\right)\)</td></tr>
+      <tr><td>2</td><td><div class="m">\(u=\frac t\alpha,\quad du=\frac1\alpha dt\)</div></td><td>הצבה. מכאן \(dt=\alpha\,du\)</td></tr>
+      <tr><td>3</td><td><div class="m">\(=\frac{1}{\alpha^2}\cdot\alpha\int\frac{1}{u^2+1}du=\frac1\alpha\int\frac{1}{u^2+1}du\)</div></td><td>\(\frac{\alpha}{\alpha^2}=\frac1\alpha\)</td></tr>
+      <tr><td>4</td><td><div class="m">\(=\frac1\alpha\arctan(u)+C=\frac1\alpha\arctan\left(\frac t\alpha\right)+C\)</div></td><td>\((\arctan u)'=\frac{1}{1+u^2}\), ואז מחזירים \(u=\frac t\alpha\)</td></tr>
+    </table></div>
+
+    <h3>דוגמה שלי עם מספרים</h3>
+    <p>\(\displaystyle\int\frac{x+3}{x^2+2x+5}dx\). כאן \(A=1,\ B=3,\ p=2,\ q=5\). בודקים: \(p^2-4q=4-20<0\) ✓.</p>
+    <div class="tw"><table>
+      <tr><th>שלב</th><th>חישוב</th></tr>
+      <tr><td>השלמה לריבוע</td><td><div class="m">\(x^2+2x+5=(x+1)^2+4,\quad \alpha=2,\ t=x+1\)</div></td></tr>
+      <tr><td>פיצול המונה</td><td><div class="m">\(x+3=\tfrac12(2x+2)+2\)</div></td></tr>
+      <tr><td>חלק ln</td><td><div class="m">\(\tfrac12\ln(x^2+2x+5)\)</div></td></tr>
+      <tr><td>חלק arctan</td><td><div class="m">\(2\cdot\tfrac12\arctan\left(\tfrac{x+1}{2}\right)=\arctan\left(\tfrac{x+1}{2}\right)\)</div></td></tr>
+      <tr><td>תוצאה</td><td><div class="m"><span class="final">\(\tfrac12\ln(x^2+2x+5)+\arctan\left(\tfrac{x+1}2\right)+C\)</span></div></td></tr>
+    </table></div>
+    <div class="box analogy"><h4>אנלוגיה</h4>השלמה לריבוע זה כמו להזיז את הפרבולה כך שהמרכז שלה יהיה ב-0. אחרי ההזזה (\(t=x+\frac p2\)) המכנה נראה "נקי": \(t^2+\alpha^2\).</div>
+    <div class="box rule"><h4>הכלל לזכור</h4>סוג 3 = השלמה לריבוע + פיצול המונה → <span class="t-lin">ln</span> של המכנה + <span class="t-quad">arctan</span>.</div>
+    <div class="quiz" data-quiz="s3"></div>
+  </section>
+
+  <!-- 4 -->
+  <section class="sec" id="s4">
+    <div class="eyebrow"><b>4 / 8</b><span>עמוד 2 במחברת</span></div>
+    <h2>אינטגרל של סוג 4</h2>
+    <p>מתחילים בדיוק כמו בסוג 3: השלמה לריבוע, \(t=x+\frac p2\), ופיצול המונה. ההבדל: המכנה בחזקה \(n\).</p>
+    <div class="m">\[\int\frac{Ax+B}{(x^2+px+q)^n}dx=\frac A2\int\frac{2t}{(t^2+\alpha^2)^n}dt+\left(B-\frac p2A\right)\int\frac{1}{(t^2+\alpha^2)^n}dt\]</div>
+    <div class="tw"><table>
+      <tr><th>חלק</th><th>איך פותרים</th><th>תוצאה</th></tr>
+      <tr><td>ראשון: \(\int\frac{2t}{(t^2+\alpha^2)^n}dt\)</td><td>המונה \(2t\) הוא הנגזרת של \(t^2+\alpha^2\). זה כמו <span class="t-rep">סוג 2</span> (המרצה כתב: "מהצורה של שבר יסודי 2")</td><td><div class="m">\(\frac{(t^2+\alpha^2)^{-n+1}}{-n+1}\)</div></td></tr>
+      <tr><td>שני: \(\int\frac{1}{(t^2+\alpha^2)^n}dt\)</td><td>הצבה טריגונומטרית \(t=\alpha\tan\theta\)</td><td>(המרצה לא המשיך במחברת)</td></tr>
+    </table></div>
+
+    <div class="box terms"><h4>למה דווקא \(t=\alpha\tan\theta\)?</h4>
+      בגלל הזהות \(1+\tan^2\theta=\frac{1}{\cos^2\theta}\). אחרי ההצבה: \(t^2+\alpha^2=\alpha^2(\tan^2\theta+1)=\frac{\alpha^2}{\cos^2\theta}\). המכנה הופך לחזקה של \(\cos\), וזה הרבה יותר קל.</div>
+
+    <h3>דוגמה שלי: \(n=2,\ \alpha=1\)</h3>
+    <div class="tw"><table>
+      <tr><th>#</th><th>שורה</th><th>למה?</th></tr>
+      <tr><td>1</td><td><div class="m">\(t=\tan\theta,\quad dt=\frac{d\theta}{\cos^2\theta}\)</div></td><td>הנגזרת של \(\tan\) היא \(\frac1{\cos^2}\)</td></tr>
+      <tr><td>2</td><td><div class="m">\(\int\frac{dt}{(t^2+1)^2}=\int\cos^4\theta\cdot\frac{d\theta}{\cos^2\theta}=\int\cos^2\theta\,d\theta\)</div></td><td>\(t^2+1=\frac1{\cos^2\theta}\), אז \(\frac1{(t^2+1)^2}=\cos^4\theta\)</td></tr>
+      <tr><td>3</td><td><div class="m">\(=\frac\theta2+\frac{\sin2\theta}{4}+C\)</div></td><td>\(\cos^2\theta=\frac{1+\cos2\theta}{2}\)</td></tr>
+      <tr><td>4</td><td><div class="m"><span class="final">\(=\frac12\arctan t+\frac{t}{2(t^2+1)}+C\)</span></div></td><td>\(\theta=\arctan t\), ו-\(\frac{\sin2\theta}{4}=\frac{\tan\theta}{2(1+\tan^2\theta)}\)</td></tr>
+    </table></div>
+    <div class="box mynote"><h4>הערה שלי</h4>במחברת השורה הראשונה אחרי ההצבה כתובה \(A(t-\frac p2)+B\) (ה"2" נראה קצת מטושטש). זה אותו דבר כמו בסוג 3: \(x=t-\frac p2\).</div>
+    <div class="box rule"><h4>הכלל לזכור</h4>סוג 4: חלק עם \(2t\) → כלל החזקה. חלק עם קבוע → הצבה \(t=\alpha\tan\theta\).</div>
+    <div class="quiz" data-quiz="s4"></div>
+  </section>
+
+  <!-- 5 -->
+  <section class="sec" id="s5">
+    <div class="eyebrow"><b>5 / 8</b><span>עמוד 2 במחברת · פירוק לשברים חלקיים, מקרה 1</span></div>
+    <h2>פירוק: גורמים לינאריים שונים</h2>
+    <p>עכשיו השאלה ההפוכה: יש לנו שבר \(\frac{R(x)}{Q(x)}\), <b>איך מוצאים</b> את השברים היסודיים שלו? זה נקרא <b>פירוק לשברים חלקיים</b>.</p>
+    <p><b>מקרה 1:</b> המכנה מתפרק לגורמים לינאריים, וכולם <b>שונים</b> זה מזה:</p>
+    <div class="m">\[Q(x)=(a_1x+b_1)(a_2x+b_2)\cdots(a_kx+b_k)\ \Longrightarrow\ \frac{R(x)}{Q(x)}=\lin{\frac{A_1}{a_1x+b_1}}+\lin{\frac{A_2}{a_2x+b_2}}+\dots+\lin{\frac{A_k}{a_kx+b_k}}\]</div>
+    <p>לכל גורם לינארי יש שבר אחד, עם קבוע \(A_i\) במונה. צריך למצוא את הקבועים.</p>
+
+    <div class="box terms"><h4>מונחים וכלים</h4><dl>
+      <dt>גורם לינארי</dt><dd>ביטוי מהצורה \(ax+b\) (חזקה 1 של \(x\)). למשל \(x\), \(2x-1\), \(x+2\).</dd>
+      <dt>השוואת מקדמים</dt><dd>אם שני פולינומים שווים <b>לכל</b> \(x\), אז המקדמים שלהם שווים: מקדם \(x^2\) שווה למקדם \(x^2\), מקדם \(x\) למקדם \(x\), והמספר החופשי למספר החופשי.</dd>
+      <dt>\(\int\frac{1}{2x-1}dx\)</dt><dd>שים לב: זה \(\frac12\ln|2x-1|\), לא \(\ln|2x-1|\). כי הנגזרת של \(2x-1\) היא 2 (כלל השרשרת).</dd>
+      <dt>טריק מהיר (שלי): הצבת שורשים</dt><dd>אחרי שמכפילים במכנה, מציבים \(x\) ששווה לשורש של גורם. כל האיברים מתאפסים חוץ מאחד, ומקבלים קבוע ישר. למשל \(x=0\) נותן \(-1=-2A\).</dd>
+    </dl></div>
+
+    <div class="sim" data-sim="ex1"></div>
+    <div class="box mynote"><h4>הערה שלי</h4>במחברת השורה אחרי "נמצא את A,B,C" כתובה \(A(2x-1)+Bx(x+2)+\dots\). חסר שם הגורם \((x+2)\): צריך להיות \(A(2x-1)(x+2)\). הפתיחה של הסוגריים בשורה הבאה כבר נכונה, אז התשובה הסופית נכונה.</div>
+    <div class="box analogy"><h4>אנלוגיה</h4>כמו מתכון: רואים עוגה (השבר הגדול) וצריך לנחש כמה מכל מצרך (A, B, C) שמו בה. כל מצרך הוא שבר עם גורם אחד מהמכנה.</div>
+    <div class="box rule"><h4>הכלל לזכור</h4>גורם לינארי שונה → שבר אחד \(\frac{A}{ax+b}\) → אחרי אינטגרל: <span class="t-lin">\(\frac Aa\ln|ax+b|\)</span>.</div>
+    <div class="quiz" data-quiz="s5"></div>
+  </section>
+
+  <!-- 6 -->
+  <section class="sec" id="s6">
+    <div class="eyebrow"><b>6 / 8</b><span>עמוד 2 במחברת · מקרה 2</span></div>
+    <h2>פירוק: גורם לינארי חוזר</h2>
+    <p><b>מקרה 2:</b> אחד הגורמים מופיע בחזקה \(m>1\):</p>
+    <div class="m">\[Q(x)=(a_1x+b_1)^m(a_2x+b_2)\cdots\ \Longrightarrow\ \frac{R(x)}{Q(x)}=\rep{\frac{B_1}{a_1x+b_1}+\frac{B_2}{(a_1x+b_1)^2}+\dots+\frac{B_m}{(a_1x+b_1)^m}}+\lin{\frac{A_2}{a_2x+b_2}}+\dots\]</div>
+    <p>לגורם החוזר צריך שבר לכל חזקה: מ-1 ועד \(m\). אם שוכחים חזקה, המערכת לא נפתרת.</p>
+    <div class="box terms"><h4>מונחים</h4><dl>
+      <dt>גורם חוזר</dt><dd>גורם שמופיע יותר מפעם אחת, כמו \((x-1)^2=(x-1)(x-1)\).</dd>
+      <dt>\(\int\frac{1}{(x-1)^2}dx\)</dt><dd>זה סוג 2: \(\frac{(x-1)^{-1}}{-1}=-\frac{1}{x-1}\). בלי ln!</dd>
+      <dt>\(A_1, B_1, B_2\)</dt><dd>סתם שמות לקבועים. האות B מסמנת את הקבועים של הגורם החוזר.</dd>
+    </dl></div>
+    <div class="sim" data-sim="ex2"></div>
+    <div class="box analogy"><h4>אנלוגיה</h4>כמו סולם: לגורם בחזקה 3 צריך את כל השלבים: חזקה 1, חזקה 2, חזקה 3. אי אפשר לקפוץ ישר לשלב העליון.</div>
+    <div class="box rule"><h4>הכלל לזכור</h4>גורם \((ax+b)^m\) → \(m\) שברים, חזקות 1 עד \(m\). חזקה 1 נותנת <span class="t-lin">ln</span>, השאר נותנים <span class="t-rep">כלל החזקה</span>.</div>
+    <div class="quiz" data-quiz="s6"></div>
+  </section>
+
+  <!-- 7 -->
+  <section class="sec" id="s7">
+    <div class="eyebrow"><b>7 / 8</b><span>עמוד 3 במחברת · מקרה 3</span></div>
+    <h2>פירוק: גורם ריבועי אי-פריק</h2>
+    <p><b>מקרה 3:</b> במכנה יש גורם ריבועי \(ax^2+bx+c\) עם \(b^2-4ac<0\) (אי אפשר לפרק אותו):</p>
+    <div class="m">\[Q(x)=(ax^2+bx+c)(a_2x+b_2)\cdots\ \Longrightarrow\ \frac{R(x)}{Q(x)}=\qd{\frac{Ax+B}{ax^2+bx+c}}+\lin{\frac{A_2}{a_2x+b_2}}+\dots\]</div>
+    <div class="box terms"><h4>למה במונה \(Ax+B\) ולא רק \(A\)?</h4>
+      בשבר יסודי המונה צריך להיות ממעלה <b>קטנה</b> מהמכנה. מעל גורם לינארי (מעלה 1) זה קבוע (מעלה 0). מעל גורם ריבועי (מעלה 2) זה יכול להיות עד מעלה 1, כלומר \(Ax+B\). אם נשים רק \(A\), לא תמיד יהיה פתרון.</div>
+    <div class="sim" data-sim="ex3"></div>
+    <div class="box mynote"><h4>הערה שלי</h4>במחברת כתוב \(\ln|x^2+4|\). זה בסדר, אבל הערך המוחלט לא נחוץ: \(x^2+4\) תמיד חיובי. לכן אפשר לכתוב \(\ln(x^2+4)\).</div>
+    <div class="box rule"><h4>הכלל לזכור</h4>גורם ריבועי אי-פריק → שבר \(\frac{Ax+B}{\dots}\) → אחרי אינטגרל: <span class="t-quad">ln + arctan</span> (כמו סוג 3).</div>
+    <div class="quiz" data-quiz="s7"></div>
+  </section>
+
+  <!-- 8 -->
+  <section class="sec" id="s8">
+    <div class="eyebrow"><b>8 / 8</b><span>עמוד 3 במחברת · מקרה 4</span></div>
+    <h2>גורם ריבועי חוזר, וחילוק פולינומים</h2>
+    <p><b>מקרה 4:</b> הגורם הריבועי האי-פריק מופיע בחזקה \(m>1\). כמו במקרה 2, צריך שבר לכל חזקה, אבל עכשיו כל מונה הוא \(Ax+B\):</p>
+    <div class="m">\[\frac{R(x)}{Q(x)}=\qd{\frac{A_1x+B_1}{ax^2+bx+c}+\dots+\frac{A_mx+B_m}{(ax^2+bx+c)^m}}+\lin{\frac{C_2}{a_2x+b_2}}+\dots\]</div>
+
+    <h3>דוגמה שלי למקרה 4</h3>
+    <p>\(\frac{1}{x(x^2+1)^2}\). הגורם \(x^2+1\) אי-פריק ומופיע בחזקה 2.</p>
+    <div class="tw"><table>
+      <tr><th>שלב</th><th>חישוב</th></tr>
+      <tr><td>צורת הפירוק</td><td><div class="m">\(\lin{\frac Ax}+\qd{\frac{Bx+C}{x^2+1}+\frac{Dx+E}{(x^2+1)^2}}\)</div></td></tr>
+      <tr><td>כפל במכנה</td><td><div class="m">\(1=A(x^2+1)^2+(Bx+C)x(x^2+1)+(Dx+E)x\)</div></td></tr>
+      <tr><td>פתרון</td><td><div class="m">\(A=1,\ B=-1,\ C=0,\ D=-1,\ E=0\)</div></td></tr>
+      <tr><td>פירוק</td><td><div class="m">\(\frac1x-\frac{x}{x^2+1}-\frac{x}{(x^2+1)^2}\)</div></td></tr>
+      <tr><td>בדיקה ב-\(x=1\)</td><td>\(\frac14\) מול \(1-\frac12-\frac14=\frac14\) ✓</td></tr>
+    </table></div>
+
+    <h3>הדוגמה של המרצה: קודם חילוק</h3>
+    <p>המרצה נתן כאן את \(\displaystyle\int\frac{x^3+x}{x^2+x+1}dx\). שים לב: הפונקציה <b>לא פשוטה</b> (מעלה 3 במונה, מעלה 2 במכנה). לכן קודם עושים <span class="t-poly">חילוק פולינומים</span>.</p>
+    <div class="box mynote"><h4>הערה שלי</h4>הדוגמה הזאת לא באמת מקרה 4 (המכנה \(x^2+x+1\) בחזקה 1). היא מראה מה עושים כשהשבר לא פשוט. אחרי החילוק נשאר שבר יסודי מסוג 3.</div>
+
+    <h3>חילוק ארוך, שורה אחרי שורה</h3>
+    <div class="tw"><table>
+      <tr><th>#</th><th>מה עושים</th><th>תוצאה</th></tr>
+      <tr><td>1</td><td>מחלקים את האיבר הגבוה: \(x^3\div x^2\)</td><td>\(\poly{x}\) (חלק מהמנה)</td></tr>
+      <tr><td>2</td><td>כופלים: \(x\cdot(x^2+x+1)\)</td><td>\(x^3+x^2+x\)</td></tr>
+      <tr><td>3</td><td>מחסרים: \((x^3+x)-(x^3+x^2+x)\)</td><td>\(-x^2\)</td></tr>
+      <tr><td>4</td><td>מחלקים שוב: \(-x^2\div x^2\)</td><td>\(\poly{-1}\) (חלק מהמנה)</td></tr>
+      <tr><td>5</td><td>כופלים: \(-1\cdot(x^2+x+1)\)</td><td>\(-x^2-x-1\)</td></tr>
+      <tr><td>6</td><td>מחסרים: \(-x^2-(-x^2-x-1)\)</td><td>\(x+1\) = שארית (מעלה 1 &lt; 2, עוצרים)</td></tr>
+    </table></div>
+    <p>מכאן: \(x^3+x=\poly{(x-1)}(x^2+x+1)+(x+1)\), כלומר \(\frac{x^3+x}{x^2+x+1}=\poly{x-1}+\frac{x+1}{x^2+x+1}\).</p>
+    <div class="sim" data-sim="ex4"></div>
+    <div class="box rule"><h4>הכלל לזכור</h4>תמיד בודקים קודם מעלות. אם \(\deg P\ge\deg Q\) → <span class="t-poly">חילוק</span>, ורק אז פירוק.</div>
+    <div class="quiz" data-quiz="s8"></div>
+  </section>
+
+  <!-- summary -->
+  <section class="sec" id="sum">
+    <div class="eyebrow"><b>סיכום</b><span>כל ההרצאה</span></div>
+    <h2>המתכון המלא</h2>
+    <ol>
+      <li>בודקים מעלות. אם המונה לא קטן מהמכנה → <span class="t-poly">חילוק פולינומים</span>.</li>
+      <li>מפרקים את המכנה לגורמים (לינאריים וריבועיים אי-פריקים).</li>
+      <li>כותבים את צורת הפירוק לפי הטבלה.</li>
+      <li>מוצאים את הקבועים: כפל במכנה, ואז השוואת מקדמים (או הצבת שורשים).</li>
+      <li>מחשבים אינטגרל לכל שבר יסודי.</li>
+    </ol>
+    <div class="tw"><table>
+      <tr><th>גורם במכנה</th><th>מה כותבים בפירוק</th><th>מה יוצא באינטגרל</th></tr>
+      <tr><td class="t-lin">\(ax+b\)</td><td><div class="m">\(\frac{A}{ax+b}\)</div></td><td>ln</td></tr>
+      <tr><td class="t-rep">\((ax+b)^m\)</td><td><div class="m">\(\frac{B_1}{ax+b}+\dots+\frac{B_m}{(ax+b)^m}\)</div></td><td>ln + כלל החזקה</td></tr>
+      <tr><td class="t-quad">\(ax^2+bx+c\), \(b^2-4ac<0\)</td><td><div class="m">\(\frac{Ax+B}{ax^2+bx+c}\)</div></td><td>ln + arctan</td></tr>
+      <tr><td class="t-quad">\((ax^2+bx+c)^m\)</td><td><div class="m">\(\frac{A_1x+B_1}{ax^2+bx+c}+\dots+\frac{A_mx+B_m}{(ax^2+bx+c)^m}\)</div></td><td>ln + arctan + הצבת tan</td></tr>
+    </table></div>
+
+    <div class="box explorer"><h4>תרגול: בחר מכנה וראה את צורת הפירוק</h4>
+      <div class="btns" id="exbtns"></div>
+      <div class="out" id="exout"></div>
+    </div>
+
+    <h3>מבחן מסכם</h3>
+    <div class="quiz" data-quiz="fin"></div>
+    <div class="endmsg" id="endmsg" hidden></div>
+  </section>
+</div>
+
+<script>
+const R = String.raw;
+
+/* ---------- step-through simulations ---------- */
+const SIMS = {
+ type3:{title:"סימולציה 1: איך מגיעים לנוסחה של סוג 3", steps:[
+  {m:R`\int\frac{Ax+B}{x^2+px+q}\,dx`, e:R`מתחילים מהשבר היסודי מסוג 3. המכנה אי-פריק (\(p^2-4q<0\)).`},
+  {m:R`x^2+px+q=\left(x+\tfrac p2\right)^2+\underbrace{q-\tfrac{p^2}{4}}_{=\alpha^2}`, e:R`<b>השלמה לריבוע.</b> \(q-\frac{p^2}4\) חיובי, אז קוראים לו \(\alpha^2\).`},
+  {m:R`t=x+\tfrac p2,\quad dt=dx,\quad x=t-\tfrac p2`, e:R`<b>הצבה.</b> כל \(x\) במונה מחליפים ב-\(t-\frac p2\).`},
+  {m:R`=\int\frac{A\left(t-\frac p2\right)+B}{t^2+\alpha^2}\,dt=\int\frac{At+B-\frac p2A}{t^2+\alpha^2}\,dt`, e:R`פותחים סוגריים במונה: \(A\cdot t-A\cdot\frac p2+B\).`},
+  {m:R`=\frac A2\int\lin{\frac{2t}{t^2+\alpha^2}}dt+\left(B-\tfrac p2A\right)\int\qd{\frac{1}{t^2+\alpha^2}}dt`, e:R`<b>פיצול.</b> כופלים ומחלקים ב-2 כדי שבמונה יהיה \(2t\), שזו בדיוק הנגזרת של \(t^2+\alpha^2\).`},
+  {m:R`=\lin{\frac A2\ln(t^2+\alpha^2)}+\left(B-\tfrac p2A\right)\cdot\qd{\frac1\alpha\arctan\left(\frac t\alpha\right)}+C`, e:R`חלק ראשון: הטריק \(\frac{f'}{f}\) נותן ln. חלק שני: נוסחת arctan.`},
+  {m:R`=\frac A2\ln(x^2+px+q)+\left(B-\tfrac p2A\right)\frac{2}{\sqrt{4q-p^2}}\arctan\left(\frac{2x+p}{\sqrt{4q-p^2}}\right)+C`, e:R`חוזרים ל-\(x\): \(\alpha=\frac{\sqrt{4q-p^2}}{2}\), אז \(\frac1\alpha=\frac{2}{\sqrt{4q-p^2}}\) ו-\(\frac t\alpha=\frac{2x+p}{\sqrt{4q-p^2}}\).`, final:true}
+ ]},
+ ex1:{title:"סימולציה 2: הדוגמה של המרצה, מקרה 1", steps:[
+  {m:R`\int\frac{x^2+2x-1}{2x^3+3x^2-2x}\,dx`, e:R`מעלה 2 במונה, מעלה 3 במכנה: השבר פשוט, אין צורך בחילוק.`},
+  {m:R`2x^3+3x^2-2x=x(2x^2+3x-2)=\lin{x}\,\lin{(2x-1)}\,\lin{(x+2)}`, e:R`<b>פירוק המכנה.</b> מוציאים \(x\). שורשי \(2x^2+3x-2\): \(x_{1,2}=\frac{-3\pm\sqrt{9+16}}{4}=\frac{-3\pm5}{4}\), כלומר \(\frac12\) ו-\(-2\).`},
+  {m:R`\frac{x^2+2x-1}{x(2x-1)(x+2)}=\lin{\frac Ax}+\lin{\frac B{2x-1}}+\lin{\frac C{x+2}}`, e:R`<b>צורת הפירוק.</b> שלושה גורמים לינאריים שונים → שלושה שברים.`},
+  {m:R`x^2+2x-1=A(2x-1)(x+2)+Bx(x+2)+Cx(2x-1)`, e:R`<b>כפל במכנה.</b> כל שבר מקבל את הגורמים שחסרים לו.`},
+  {m:R`x^2+2x-1=(2A+B+2C)x^2+(3A+2B-C)x+(-2A)`, e:R`פותחים סוגריים: \(A(2x^2+3x-2)+B(x^2+2x)+C(2x^2-x)\), ומקבצים לפי חזקות.`},
+  {m:R`\begin{cases}2A+B+2C=1\\3A+2B-C=2\\-2A=-1\end{cases}`, e:R`<b>השוואת מקדמים:</b> \(x^2\) מול 1, \(x\) מול 2, מספר חופשי מול \(-1\).`},
+  {m:R`A=\tfrac12\ \Rightarrow\ \begin{cases}B+2C=0\\2B-C=\tfrac12\end{cases}\Rightarrow\ C=-\tfrac1{10},\ B=\tfrac15`, e:R`מהשורה השלישית \(A=\frac12\). מציבים: \(B=-2C\), אז \(-4C-C=\frac12\), כלומר \(C=-\frac1{10}\), ו-\(B=\frac15\).`},
+  {m:R`=\int\left(\frac{1/2}{x}+\frac{1/5}{2x-1}-\frac{1/10}{x+2}\right)dx=\tfrac12\ln|x|+\tfrac1{10}\ln|2x-1|-\tfrac1{10}\ln|x+2|+C`, e:R`אינטגרל לכל שבר. שים לב: \(\frac15\cdot\frac12=\frac1{10}\) בגלל \(2x\) (כלל השרשרת).`},
+  {m:R`=\tfrac12\ln|x|+\tfrac1{10}\ln\left|\frac{2x-1}{x+2}\right|+C`, e:R`מאחדים: \(\ln a-\ln b=\ln\frac ab\).`, final:true}
+ ]},
+ ex2:{title:"סימולציה 3: הדוגמה של המרצה, מקרה 2", steps:[
+  {m:R`\int\frac{-x+2}{x(x-1)^2}\,dx`, e:R`הגורם \((x-1)\) מופיע בחזקה 2 → מקרה 2.`},
+  {m:R`\frac{-x+2}{x(x-1)^2}=\lin{\frac{A_1}x}+\rep{\frac{B_1}{x-1}+\frac{B_2}{(x-1)^2}}`, e:R`<b>צורת הפירוק.</b> לגורם \(x\) שבר אחד. לגורם \((x-1)^2\) שני שברים: חזקה 1 וחזקה 2.`},
+  {m:R`-x+2=A_1(x-1)^2+B_1x(x-1)+B_2x`, e:R`<b>כפל במכנה</b> \(x(x-1)^2\).`},
+  {m:R`-x+2=(A_1+B_1)x^2+(-2A_1-B_1+B_2)x+A_1`, e:R`פותחים: \(A_1(x^2-2x+1)+B_1(x^2-x)+B_2x\).`},
+  {m:R`\begin{cases}A_1+B_1=0\\-2A_1-B_1+B_2=-1\\A_1=2\end{cases}\Rightarrow\ B_1=-2,\ B_2=1`, e:R`<b>השוואת מקדמים.</b> \(A_1=2\), אז \(B_1=-2\). ואז \(-4+2+B_2=-1\), כלומר \(B_2=1\).`},
+  {m:R`=\int\left(\frac2x-\frac2{x-1}+\frac1{(x-1)^2}\right)dx=\lin{2\ln|x|}-\rep{2\ln|x-1|}-\rep{\frac1{x-1}}+C`, e:R`השבר האחרון הוא סוג 2: \(\int(x-1)^{-2}dx=-\frac{1}{x-1}\).`},
+  {m:R`=2\ln\left|\frac{x}{x-1}\right|-\frac1{x-1}+C`, e:R`מאחדים את שני ה-ln.`, final:true}
+ ]},
+ ex3:{title:"סימולציה 4: הדוגמה של המרצה, מקרה 3", steps:[
+  {m:R`\int\frac{2x^2-x+4}{x^3+4x}\,dx`, e:R`מעלה 2 מול 3: פשוטה.`},
+  {m:R`x^3+4x=\lin{x}\,\qd{(x^2+4)}`, e:R`<b>פירוק המכנה.</b> \(x^2+4\): \(p=0,q=4\), \(p^2-4q=-16<0\), אי-פריק.`},
+  {m:R`\frac{2x^2-x+4}{x(x^2+4)}=\lin{\frac Ax}+\qd{\frac{Bx+C}{x^2+4}}`, e:R`<b>צורת הפירוק.</b> מעל הגורם הריבועי המונה הוא \(Bx+C\).`},
+  {m:R`2x^2-x+4=A(x^2+4)+(Bx+C)x=(A+B)x^2+Cx+4A`, e:R`<b>כפל במכנה</b> ופתיחת סוגריים.`},
+  {m:R`\begin{cases}A+B=2\\C=-1\\4A=4\end{cases}\Rightarrow A=1,\ B=1,\ C=-1`, e:R`<b>השוואת מקדמים.</b>`},
+  {m:R`=\int\left(\frac1x+\frac{x-1}{x^2+4}\right)dx=\int\frac{dx}x+\frac12\int\frac{2x}{x^2+4}dx-\int\frac{dx}{x^2+4}`, e:R`מפצלים את \(\frac{x-1}{x^2+4}\): החלק \(x\) (כפול ומחולק ב-2) נותן ln, החלק \(-1\) נותן arctan.`},
+  {m:R`=\lin{\ln|x|}+\qd{\tfrac12\ln(x^2+4)-\tfrac12\arctan\left(\tfrac x2\right)}+C`, e:R`נוסחת arctan עם \(\alpha=2\): \(\int\frac{dx}{x^2+4}=\frac12\arctan\frac x2\).`, final:true}
+ ]},
+ ex4:{title:"סימולציה 5: הדוגמה של המרצה, חילוק ואז סוג 3", steps:[
+  {m:R`\int\frac{x^3+x}{x^2+x+1}\,dx`, e:R`מעלה 3 במונה, מעלה 2 במכנה → <b>לא פשוטה</b>. צריך חילוק.`},
+  {m:R`x^3+x=\poly{(x-1)}(x^2+x+1)+(x+1)`, e:R`<b>חילוק פולינומים</b> (הטבלה למעלה): מנה \(x-1\), שארית \(x+1\).`},
+  {m:R`=\int\left(\poly{x-1}+\frac{x+1}{x^2+x+1}\right)dx=\poly{\frac{x^2}2-x}+\int\frac{x+1}{x^2+x+1}dx`, e:R`את חלק הפולינום מאנטגרלים ישר.`},
+  {m:R`x^2+x+1=\left(x+\tfrac12\right)^2+\tfrac34`, e:R`<b>השלמה לריבוע:</b> \(x^2+x+\frac14+\frac34\). כאן \(\alpha^2=\frac34\).`},
+  {m:R`x+1=\left(x+\tfrac12\right)+\tfrac12\ \Rightarrow\ \frac12\int\lin{\frac{2(x+\frac12)}{(x+\frac12)^2+\frac34}}dx+\int\qd{\frac{\frac12}{(x+\frac12)^2+\frac34}}dx`, e:R`<b>פיצול המונה:</b> \(2(x+\frac12)=2x+1\) היא הנגזרת של המכנה.`},
+  {m:R`=\frac{x^2}2-x+\lin{\tfrac12\ln(x^2+x+1)}+\qd{\tfrac12\cdot\frac1{\sqrt{3/4}}\arctan\left(\frac{x+\frac12}{\sqrt{3/4}}\right)}+C`, e:R`ln מהחלק הראשון, arctan מהשני עם \(\alpha=\sqrt{3/4}\).`},
+  {m:R`=\frac{x^2}2-x+\tfrac12\ln(x^2+x+1)+\frac1{\sqrt3}\arctan\left(\frac{2x+1}{\sqrt3}\right)+C`, e:R`מסדרים: \(\sqrt{3/4}=\frac{\sqrt3}2\), אז \(\frac12\cdot\frac2{\sqrt3}=\frac1{\sqrt3}\) ו-\(\frac{x+1/2}{\sqrt3/2}=\frac{2x+1}{\sqrt3}\).`, final:true}
+ ]}
+};
+
+function buildSim(el){
+  const s = SIMS[el.dataset.sim]; let cur = 0;
+  el.innerHTML = `<header><b>${s.title}</b><span class="ctr"></span><div class="ctrls">
+    <button class="btn" data-a="prev" type="button">הקודם</button>
+    <button class="btn primary" data-a="next" type="button">הבא</button>
+    <button class="btn" data-a="restart" type="button">מההתחלה</button></div></header>
+    <div class="board"></div><div class="expl"></div>`;
+  const board = el.querySelector('.board'), expl = el.querySelector('.expl'), ctr = el.querySelector('.ctr');
+  const lines = s.steps.map((st,i)=>{const d=document.createElement('div');d.className='ln';
+    d.innerHTML=`<span class="no">${i+1}</span><div class="m">${st.final?'<span class="final">':''}\\(\\displaystyle ${st.m}\\)${st.final?'</span>':''}</div>`;board.appendChild(d);return d;});
+  const exps = s.steps.map(st=>{const d=document.createElement('div');d.innerHTML=st.e;expl.appendChild(d);return d;});
+  function show(){lines.forEach((l,i)=>{l.hidden=i>cur;l.classList.toggle('cur',i===cur)});
+    exps.forEach((x,i)=>x.hidden=i!==cur);ctr.textContent=`צעד ${cur+1} מתוך ${s.steps.length}`;
+    el.querySelector('[data-a=prev]').disabled=cur===0;el.querySelector('[data-a=next]').disabled=cur===s.steps.length-1;}
+  el.addEventListener('click',e=>{const a=e.target.closest('button')?.dataset.a;if(!a)return;
+    if(a==='prev'&&cur>0)cur--; if(a==='next'&&cur<s.steps.length-1)cur++; if(a==='restart')cur=0; show();});
+  show();
+}
+document.querySelectorAll('.sim').forEach(buildSim);
+
+/* ---------- quizzes ---------- */
+/*QUIZ_START*/
+const QUIZ = {
+ s1:[
+  {q:R`איזה מהשברים הבאים הוא שבר יסודי?`, o:[R`\(\frac{x+1}{x^2-4}\)`,R`\(\frac{x^2}{x-1}\)`,R`\(\frac{x+1}{x^2+2x+5}\)`,R`\(\frac{x+3}{(x-1)^2}\)`], a:2,
+   h:R`בדוק לכל אחד: האם המכנה מתפרק? האם המונה ממעלה נכונה? בסוג 2 המונה הוא רק קבוע.`, w:R`כאן \(p=2,q=5\): \(p^2-4q=4-20<0\), וזה בדיוק סוג 3. \(x^2-4\) מתפרק, ב-\(\frac{x^2}{x-1}\) המונה גבוה מדי, ובסוג 2 המונה חייב להיות קבוע.`},
+  {q:R`במשפט כתוב "פונקציה רציונלית פשוטה". מה זה אומר?`, o:[R`מעלת המונה קטנה ממעלת המכנה`,R`מעלת המונה קטנה או שווה למכנה`,R`למכנה אין שורשים חוזרים בכלל`,R`למונה ולמכנה אין גורם משותף`], a:0,
+   h:R`חשוב על \(\frac{x^3}{x^2+1}\). למה אי אפשר לפרק אותו ישר?`, w:R`"פשוטה" = \(\deg P<\deg Q\) (קטנה ממש). אם המעלות שוות, עדיין צריך חילוק.`},
+  {q:R`מה המשמעות של התנאי \(p^2-4q<0\) עבור \(x^2+px+q\)?`, o:[R`יש לו שני שורשים ממשיים שונים`,R`אין לו שורשים ממשיים בכלל`,R`יש לו שורש ממשי אחד כפול`,R`הוא שלילי לכל ערך של \(x\)`], a:1,
+   h:R`\(p^2-4q\) זו הדיסקרימיננטה. מה קורה בנוסחת השורשים כשהיא שלילית?`, w:R`דיסקרימיננטה שלילית → שורש של מספר שלילי → אין שורשים ממשיים. לכן הפולינום אי-פריק (והוא דווקא תמיד חיובי).`},
+  {q:R`מה עושים ראשון כדי לחשב את האינטגרל של \(\frac{x^3}{x^2+1}\)?`, o:[R`פירוק ישר לשברים חלקיים לפי המכנה`,R`השלמה לריבוע של המכנה \(x^2+1\)`,R`השוואת מקדמים של A ו-B מההתחלה`,R`חילוק פולינומים, כי היא לא פשוטה`], a:3,
+   h:R`השווה את מעלת המונה למעלת המכנה.`, w:R`מעלה 3 במונה ≥ מעלה 2 במכנה, אז זו לא פונקציה פשוטה. קודם מחלקים, ורק אחר כך מפרקים.`}
+ ],
+ s2:[
+  {q:R`חשב:`, m:R`\int\frac{5}{x-3}\,dx`, o:[R`\(\ln|5x-15|+C\)`,R`\(-\frac{5}{(x-3)^2}+C\)`,R`\(\frac52(x-3)^2+C\)`,R`\(5\ln|x-3|+C\)`], a:3,
+   h:R`זה סוג 1: \(\frac{A}{x-\alpha}\). מה הנוסחה?`, w:R`\(A=5,\alpha=3\), ולפי סוג 1: \(5\ln|x-3|+C\). (\(\ln|5x-15|\) נותן נגזרת \(\frac1{x-3}\), בלי ה-5.)`},
+  {q:R`חשב:`, m:R`\int\frac{4}{(x+1)^3}\,dx`, o:[R`\(-\frac{4}{(x+1)^2}+C\)`,R`\(-\frac{2}{(x+1)^2}+C\)`,R`\(-\frac{1}{(x+1)^4}+C\)`,R`\(\frac{2}{(x+1)^2}+C\)`], a:1,
+   h:R`כתוב \(4(x+1)^{-3}\) והשתמש בכלל החזקה: מעלים חזקה ב-1 ומחלקים בחזקה החדשה.`, w:R`\(4\cdot\frac{(x+1)^{-2}}{-2}=-\frac{2}{(x+1)^2}\). צריך לחלק ב-\(-2\), לא רק להוריד חזקה.`},
+  {q:R`למה בסוג 2 יש תנאי \(n\neq1\)?`, o:[R`כי ב-\(n=1\) מחלקים ב-0, וזה סוג 1`,R`כי ב-\(n=1\) המכנה אי-פריק ואין פתרון`,R`כי ב-\(n=1\) האינטגרל יוצא שלילי תמיד`,R`כי ב-\(n=1\) צריך קודם חילוק פולינומים`], a:0,
+   h:R`הצב \(n=1\) בנוסחה \(\frac{(x-\alpha)^{-n+1}}{-n+1}\). מה יוצא במכנה?`, w:R`ב-\(n=1\) המכנה \(-n+1=0\). במקרה הזה התשובה היא ln, כלומר סוג 1.`}
+ ],
+ s3:[
+  {q:R`מה ההשלמה לריבוע של:`, m:R`x^2+6x+13`, o:[R`\((x+3)^2+4\)`,R`\((x+3)^2+13\)`,R`\((x+6)^2-23\)`,R`\((x-3)^2+4\)`], a:0,
+   h:R`\(\left(x+\frac p2\right)^2+q-\frac{p^2}4\) עם \(p=6,q=13\).`, w:R`\(\frac p2=3\), ו-\(13-9=4\). בודקים: \((x+3)^2+4=x^2+6x+9+4\) ✓.`},
+  {q:R`בביטוי \(x^2+6x+13\), מה הערך של \(\alpha\)?`, o:[R`\(\alpha=4\)`,R`\(\alpha=\sqrt{13}\)`,R`\(\alpha=3\)`,R`\(\alpha=2\)`], a:3,
+   h:R`\(\alpha^2=q-\frac{p^2}{4}\). שים לב שזה \(\alpha^2\), לא \(\alpha\).`, w:R`\(\alpha^2=13-9=4\), אז \(\alpha=2\). (4 זה \(\alpha^2\), ו-3 זה \(\frac p2\).)`},
+  {q:R`חשב:`, m:R`\int\frac{1}{t^2+9}\,dt`, o:[R`\(\arctan\left(\frac t3\right)+C\)`,R`\(\frac13\arctan\left(\frac t3\right)+C\)`,R`\(\frac19\arctan\left(\frac t9\right)+C\)`,R`\(3\arctan\left(\frac t3\right)+C\)`], a:1,
+   h:R`הנוסחה: \(\frac1\alpha\arctan\frac t\alpha\). מה \(\alpha\) כאן?`, w:R`\(\alpha^2=9\Rightarrow\alpha=3\), אז \(\frac13\arctan\frac t3\).`},
+  {q:R`למה מפצלים את המונה ל-\(\frac A2\cdot 2t\) ועוד קבוע?`, o:[R`כדי שהמכנה יהפוך לגורמים לינאריים`,R`כדי שהקבוע יתבטל ויישאר רק arctan`,R`כדי שיהיה במונה הנגזרת של המכנה`,R`כדי להיפטר מההצבה \(t=x+\frac p2\)`], a:2,
+   h:R`מה הנגזרת של \(t^2+\alpha^2\)?`, w:R`\((t^2+\alpha^2)'=2t\). כשהמונה הוא הנגזרת של המכנה, הטריק \(\frac{f'}{f}\) נותן ln.`}
+ ],
+ s4:[
+  {q:R`חשב:`, m:R`\int\frac{2t}{(t^2+4)^3}\,dt`, o:[R`\(\ln(t^2+4)^3+C\)`,R`\(-\frac{1}{2(t^2+4)^2}+C\)`,R`\(-\frac{2}{(t^2+4)^2}+C\)`,R`\(\frac{1}{4(t^2+4)^4}+C\)`], a:1,
+   h:R`\(2t\) הוא הנגזרת של \(t^2+4\). חשוב על \(u=t^2+4\) וכלל החזקה.`, w:R`\(\int u^{-3}du=\frac{u^{-2}}{-2}=-\frac{1}{2(t^2+4)^2}\). זה "מהצורה של סוג 2", בלי ln.`},
+  {q:R`איזו הצבה מתאימה ל-\(\int\frac{1}{(t^2+\alpha^2)^n}dt\)?`, o:[R`\(t=\alpha\sin\theta\)`,R`\(u=t^2+\alpha^2\)`,R`\(t=\frac{\alpha}{x}\)`,R`\(t=\alpha\tan\theta\)`], a:3,
+   h:R`איזו זהות טריגונומטרית הופכת \(\tan^2\theta+1\) לביטוי פשוט?`, w:R`\(t=\alpha\tan\theta\), כי \(\tan^2\theta+1=\frac1{\cos^2\theta}\). ההצבה \(u=t^2+\alpha^2\) לא עובדת כי אין \(t\) במונה.`},
+  {q:R`למה ההצבה \(t=\alpha\tan\theta\) עוזרת?`, o:[R`כי \(1+\tan^2\theta=\frac1{\cos^2\theta}\)`,R`כי \(\tan\theta\) היא פונקציה זוגית`,R`כי \(1-\sin^2\theta=\cos^2\theta\)`,R`כי \(\tan\theta\) חסומה בין 1 ל-1-`], a:0,
+   h:R`מה קורה ל-\(t^2+\alpha^2\) אחרי ההצבה?`, w:R`\(\alpha^2\tan^2\theta+\alpha^2=\frac{\alpha^2}{\cos^2\theta}\). המכנה הופך לחזקה של \(\cos\).`}
+ ],
+ s5:[
+  {q:R`מה צורת הפירוק של:`, m:R`\frac{3x+1}{(x-1)(x+2)}`, o:[R`\(\frac{Ax+B}{(x-1)(x+2)}\)`,R`\(\frac{A}{x-1}+\frac{B}{(x-1)^2}\)`,R`\(\frac{A}{x-1}+\frac{B}{x+2}\)`,R`\(\frac{Ax+B}{x-1}+\frac{C}{x+2}\)`], a:2,
+   h:R`שני גורמים לינאריים שונים. כמה שברים, ומה במונה של כל אחד?`, w:R`מקרה 1: שבר לכל גורם, עם קבוע במונה.`},
+  {q:R`בדוגמה של המרצה הגענו לשוויון למטה. מה יוצא אם מציבים \(x=0\)?`, m:R`x^2+2x-1=A(2x-1)(x+2)+Bx(x+2)+Cx(2x-1)`, o:[R`\(A=-\frac12\)`,R`\(A=-1\)`,R`\(A=2\)`,R`\(A=\frac12\)`], a:3,
+   h:R`ב-\(x=0\) האיברים עם B ו-C מתאפסים. מה נשאר משני הצדדים?`, w:R`שמאל: \(-1\). ימין: \(A\cdot(-1)\cdot 2=-2A\). אז \(-1=-2A\), \(A=\frac12\).`},
+  {q:R`בפירוק למטה, מה הערך של \(A\)?`, m:R`\frac{x+5}{(x-1)(x+3)}=\frac{A}{x-1}+\frac{B}{x+3}`, o:[R`\(A=6\)`,R`\(A=\frac32\)`,R`\(A=\frac12\)`,R`\(A=-\frac32\)`], a:1,
+   h:R`כפול במכנה: \(x+5=A(x+3)+B(x-1)\), והצב \(x=1\).`, w:R`ב-\(x=1\): \(6=A\cdot4\), אז \(A=\frac32\).`},
+  {q:R`חשב:`, m:R`\int\frac{1/5}{2x-1}\,dx`, o:[R`\(\frac{1}{10}\ln|2x-1|+C\)`,R`\(\frac{1}{5}\ln|2x-1|+C\)`,R`\(\frac{2}{5}\ln|2x-1|+C\)`,R`\(-\frac{1}{5(2x-1)}+C\)`], a:0,
+   h:R`גזור את \(\ln|2x-1|\). מה יוצא? (כלל השרשרת)`, w:R`\((\ln|2x-1|)'=\frac{2}{2x-1}\), אז צריך לחלק ב-2: \(\frac15\cdot\frac12=\frac1{10}\).`}
+ ],
+ s6:[
+  {q:R`מה צורת הפירוק של:`, m:R`\frac{1}{(x+1)^3(x-2)}`, o:[R`\(\frac{A}{x-2}+\frac{B_1}{x+1}+\frac{B_2}{(x+1)^2}+\frac{B_3}{(x+1)^4}\)`,R`\(\frac{A}{x-2}+\frac{B_1}{x+1}+\frac{B_2}{(x+1)^2}+\frac{B_3}{(x+1)^3}\)`,R`\(\frac{A}{x-2}+\frac{B_1}{(x+1)^2}+\frac{B_2}{(x+1)^3}\)`,R`\(\frac{A}{x-2}+\frac{B_1x+B_2}{(x+1)^3}\)`], a:1,
+   h:R`גורם בחזקה 3 → צריך שבר לכל חזקה, מ-1 עד 3.`, w:R`חזקות 1, 2, 3 של \((x+1)\), כל אחת עם קבוע, ועוד שבר אחד ל-\((x-2)\).`},
+  {q:R`חשב:`, m:R`\int\frac{1}{(x-1)^2}\,dx`, o:[R`\(2\ln|x-1|+C\)`,R`\(\frac{1}{x-1}+C\)`,R`\(-\frac{2}{(x-1)^3}+C\)`,R`\(-\frac{1}{x-1}+C\)`], a:3,
+   h:R`זה סוג 2. כתוב \((x-1)^{-2}\) ועשה כלל חזקה.`, w:R`\(\frac{(x-1)^{-1}}{-1}=-\frac1{x-1}\). (\(-\frac2{(x-1)^3}\) זו הנגזרת, לא האינטגרל.)`},
+  {q:R`בדוגמה של המרצה הגענו לשוויון למטה. מה מקבלים מהצבת \(x=1\)?`, m:R`-x+2=A_1(x-1)^2+B_1x(x-1)+B_2x`, o:[R`\(B_2=-1\)`,R`\(B_1=1\)`,R`\(B_2=1\)`,R`\(A_1=1\)`], a:2,
+   h:R`ב-\(x=1\) כל איבר עם \((x-1)\) מתאפס. מה נשאר?`, w:R`שמאל: \(-1+2=1\). ימין: \(B_2\cdot1\). אז \(B_2=1\).`}
+ ],
+ s7:[
+  {q:R`מה צורת הפירוק של:`, m:R`\frac{x+2}{(x-1)(x^2+x+1)}`, o:[R`\(\frac{A}{x-1}+\frac{B}{x^2+x+1}\)`,R`\(\frac{Ax+B}{x-1}+\frac{C}{x^2+x+1}\)`,R`\(\frac{A}{x-1}+\frac{Bx+C}{(x^2+x+1)^2}\)`,R`\(\frac{A}{x-1}+\frac{Bx+C}{x^2+x+1}\)`], a:3,
+   h:R`\(x^2+x+1\): \(1-4<0\), אי-פריק. מה שמים במונה מעל גורם ריבועי?`, w:R`מעל לינארי: קבוע. מעל ריבועי אי-פריק: \(Bx+C\). והחזקה במכנה נשארת 1.`},
+  {q:R`למה מעל גורם ריבועי שמים במונה \(Bx+C\)?`, o:[R`כי המונה יכול להיות ממעלה עד 1`,R`כי ככה המכנה הופך לפריק`,R`כי \(B\) ו-\(C\) תמיד יוצאים שווים`,R`כי אחרת האינטגרל לא מתכנס`], a:0,
+   h:R`בשבר יסודי, מה הקשר בין מעלת המונה למעלת המכנה?`, w:R`המונה צריך להיות ממעלה קטנה מ-2, כלומר עד 1: \(Bx+C\).`},
+  {q:R`חשב:`, m:R`\int\frac{x}{x^2+4}\,dx`, o:[R`\(\ln(x^2+4)+C\)`,R`\(2\ln(x^2+4)+C\)`,R`\(\frac12\ln(x^2+4)+C\)`,R`\(\frac12\arctan\left(\frac x2\right)+C\)`], a:2,
+   h:R`הנגזרת של \(x^2+4\) היא \(2x\). מה חסר במונה?`, w:R`\(\frac12\int\frac{2x}{x^2+4}dx=\frac12\ln(x^2+4)\). arctan מגיע רק מקבוע במונה.`},
+  {q:R`איזה מהפולינומים הבאים אי-פריק?`, o:[R`\(x^2+2x-3\)`,R`\(x^2-4x+4\)`,R`\(x^2+5x+6\)`,R`\(x^2-2x+5\)`], a:3,
+   h:R`חשב \(p^2-4q\) לכל אחד. צריך תוצאה שלילית.`, w:R`\(4-20=-16<0\). האחרים: \(4+12>0\), \(16-16=0\) (שורש כפול), \(25-24>0\).`}
+ ],
+ s8:[
+  {q:R`מה המנה והשארית בחילוק למטה?`, m:R`(x^3+x)\div(x^2+x+1)`, o:[R`מנה \(x+1\), שארית \(x-1\)`,R`מנה \(x-1\), שארית \(x+1\)`,R`מנה \(x\), שארית \(-x^2\)`,R`מנה \(x-1\), שארית \(-x+1\)`], a:1,
+   h:R`בדוק: מנה × מחלק + שארית צריך לתת \(x^3+x\).`, w:R`\((x-1)(x^2+x+1)=x^3-1\), ועוד \(x+1\) נותן \(x^3+x\) ✓.`},
+  {q:R`מה צורת הפירוק של:`, m:R`\frac{1}{x(x^2+1)^2}`, o:[R`\(\frac Ax+\frac{Bx+C}{(x^2+1)^2}\)`,R`\(\frac Ax+\frac{B}{x^2+1}+\frac{C}{(x^2+1)^2}\)`,R`\(\frac Ax+\frac{Bx+C}{x^2+1}+\frac{Dx+E}{(x^2+1)^2}\)`,R`\(\frac Ax+\frac{Bx+C}{x^2+1}+\frac{Dx+E}{x^2+1}\)`], a:2,
+   h:R`מקרה 4: שבר לכל חזקה, ומעל ריבועי המונה לינארי.`, w:R`חזקה 1 וחזקה 2 של \(x^2+1\), כל אחת עם \(Ax+B\) במונה.`},
+  {q:R`מתי חייבים לעשות חילוק פולינומים לפני הפירוק?`, o:[R`כשלמכנה יש גורם ריבועי אי-פריק`,R`כשלמכנה יש גורם לינארי חוזר`,R`כשמעלת המונה גדולה או שווה למכנה`,R`כשהמונה והמכנה מאותה מעלה בלבד`], a:2,
+   h:R`המשפט מדבר רק על פונקציות "פשוטות".`, w:R`אם \(\deg P\ge\deg Q\), השבר לא פשוט. מחלקים, ורק השארית מפרקים.`},
+  {q:R`חשב:`, m:R`\int\frac{1/2}{\left(x+\frac12\right)^2+\frac34}\,dx`, o:[R`\(\frac{1}{\sqrt3}\arctan\left(\frac{2x+1}{\sqrt3}\right)+C\)`,R`\(\frac{2}{\sqrt3}\arctan\left(\frac{2x+1}{\sqrt3}\right)+C\)`,R`\(\frac{\sqrt3}{2}\arctan\left(\frac{2x+1}{\sqrt3}\right)+C\)`,R`\(\frac12\ln\left(x^2+x+1\right)+C\)`], a:0,
+   h:R`\(\alpha=\sqrt{3/4}=\frac{\sqrt3}2\). אל תשכח את \(\frac12\) שבמונה.`, w:R`\(\frac12\cdot\frac1\alpha=\frac12\cdot\frac2{\sqrt3}=\frac1{\sqrt3}\).`}
+ ],
+ fin:[
+  {q:R`חשב:`, m:R`\int\frac{1}{x^2-1}\,dx`, o:[R`\(\frac12\ln\left|\frac{x+1}{x-1}\right|+C\)`,R`\(\frac12\ln\left|\frac{x-1}{x+1}\right|+C\)`,R`\(\ln\left|x^2-1\right|+C\)`,R`\(-\arctan(x)+C\)`], a:1,
+   h:R`\(x^2-1=(x-1)(x+1)\). פרק ל-\(\frac{A}{x-1}+\frac{B}{x+1}\).`, w:R`\(A=\frac12,\ B=-\frac12\). אז \(\frac12\ln|x-1|-\frac12\ln|x+1|=\frac12\ln\left|\frac{x-1}{x+1}\right|\).`},
+  {q:R`מה צורת הפירוק של:`, m:R`\frac{3x+1}{x^2(x^2+4)}`, o:[R`\(\frac{A}{x^2}+\frac{Bx+C}{x^2+4}\)`,R`\(\frac{Ax+B}{x^2}+\frac{C}{x^2+4}\)`,R`\(\frac{A}{x}+\frac{B}{x^2}+\frac{C}{x^2+4}\)`,R`\(\frac{A}{x}+\frac{B}{x^2}+\frac{Cx+D}{x^2+4}\)`], a:3,
+   h:R`\(x^2=x\cdot x\) זה גורם לינארי חוזר. ו-\(x^2+4\) ריבועי אי-פריק.`, w:R`מקרה 2 בשביל \(x^2\) (חזקות 1 ו-2), ומקרה 3 בשביל \(x^2+4\) (מונה \(Cx+D\)).`},
+  {q:R`חשב:`, m:R`\int\frac{x+1}{x^2+2x+2}\,dx`, o:[R`\(\arctan(x+1)+C\)`,R`\(\ln(x^2+2x+2)+C\)`,R`\(\frac12\ln(x^2+2x+2)+C\)`,R`\(2\ln(x^2+2x+2)+C\)`], a:2,
+   h:R`גזור את המכנה. איך המונה קשור לנגזרת?`, w:R`הנגזרת היא \(2x+2=2(x+1)\), אז המונה הוא חצי ממנה: \(\frac12\ln(x^2+2x+2)\).`},
+  {q:R`מה הצעד הראשון ב-\(\int\frac{2x+3}{x^2+2x+5}dx\)?`, o:[R`פירוק המכנה לשני גורמים לינאריים`,R`השלמה לריבוע ופיצול המונה`,R`חילוק פולינומים כי השבר לא פשוט`,R`הצבה \(u=2x+3\) במקום \(x\)`], a:1,
+   h:R`בדוק את \(p^2-4q\) ואת המעלות. איזה סוג שבר יסודי זה כבר?`, w:R`\(4-20<0\) ומעלה 1 < 2: זה כבר שבר יסודי מסוג 3. משלימים לריבוע ומפצלים ל-ln + arctan.`}
+ ]
+};
+/*QUIZ_END*/
+
+const KEY = 'calc2-lec6-v1';
+let state = {};
+try { state = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch(e) { state = {}; }
+function save(){ try { localStorage.setItem(KEY, JSON.stringify(state)); } catch(e) {} }
+const LET = ['א','ב','ג','ד'];
+let total = 0;
+
+document.querySelectorAll('.quiz').forEach(box=>{
+  const id = box.dataset.quiz, qs = QUIZ[id];
+  box.insertAdjacentHTML('beforeend', `<h3>בדיקה עצמית</h3>`);
+  qs.forEach((qq,qi)=>{
+    total++;
+    const key = id+'-'+qi;
+    const d = document.createElement('div'); d.className='q'; d.dataset.key=key;
+    d.innerHTML = `<div class="qt">${qi+1}. ${qq.q}</div>` + (qq.m?`<div class="qm">\\[${qq.m}\\]</div>`:'') +
+      `<div class="opts">${qq.o.map((t,i)=>`<button type="button" class="opt" data-i="${i}"><span class="k">${LET[i]}</span><span class="ot">${t}</span></button>`).join('')}</div>
+       <div class="fb hint" hidden><b>רמז:</b> ${qq.h}</div><div class="fb why" hidden><b>נכון!</b> ${qq.w}</div>`;
+    box.appendChild(d);
+    d.addEventListener('click',e=>{
+      const b = e.target.closest('.opt'); if(!b) return;
+      const st = state[key] || (state[key]={tried:[],solved:false});
+      if(st.solved) return;
+      const i = +b.dataset.i;
+      if(!st.tried.includes(i)) st.tried.push(i);
+      if(i===qq.a){ st.solved=true; st.first = st.tried.length===1; }
+      save(); paint(d,qq,st); updateScore();
+    });
+    if(state[key]) paint(d,qq,state[key]);
+  });
+});
+
+function paint(d,qq,st){
+  d.querySelectorAll('.opt').forEach(b=>{const i=+b.dataset.i;
+    b.classList.toggle('wrong', st.tried.includes(i) && i!==qq.a);
+    b.classList.toggle('right', st.solved && i===qq.a);});
+  d.querySelector('.hint').hidden = st.solved || !st.tried.some(i=>i!==qq.a);
+  d.querySelector('.why').hidden = !st.solved;
+}
+function updateScore(){
+  let first=0, solved=0;
+  Object.values(state).forEach(s=>{ if(s.solved){solved++; if(s.first) first++;} });
+  document.getElementById('score').textContent = `${first} / ${total} בניסיון ראשון`;
+  document.getElementById('prog').textContent = `נענו ${solved} מתוך ${total}`;
+  document.getElementById('meter').style.width = (100*solved/total)+'%';
+  const end = document.getElementById('endmsg');
+  if(solved===total){ end.hidden=false;
+    const pct = Math.round(100*first/total);
+    end.textContent = `סיימת את כל השאלות, ביג בוס! ${first} מתוך ${total} נכונות בניסיון הראשון (${pct}%). ` + (pct>=80?'מעולה, אתה מוכן לתרגילים.':'כדאי לעבור שוב על הסימולציות של החלקים שבהם טעית.');
+  } else end.hidden=true;
+}
+document.getElementById('reset').addEventListener('click',()=>{
+  state={}; save();
+  document.querySelectorAll('.q').forEach(d=>{const [sid,qi]=[d.dataset.key.split('-')[0], +d.dataset.key.split('-')[1]];
+    paint(d,QUIZ[sid][qi],{tried:[],solved:false});});
+  updateScore();
+});
+updateScore();
+
+/* ---------- explorer ---------- */
+const EX = [
+  {b:R`\((x-1)(x+3)\)`, f:R`\lin{\frac{A}{x-1}}+\lin{\frac{B}{x+3}}`, t:'שני גורמים לינאריים שונים → מקרה 1.'},
+  {b:R`\(x(x-2)^2\)`, f:R`\lin{\frac{A}{x}}+\rep{\frac{B_1}{x-2}+\frac{B_2}{(x-2)^2}}`, t:'הגורם \\((x-2)\\) חוזר פעמיים → מקרה 2, שבר לכל חזקה.'},
+  {b:R`\((x+1)(x^2+4)\)`, f:R`\lin{\frac{A}{x+1}}+\qd{\frac{Bx+C}{x^2+4}}`, t:'\\(x^2+4\\) אי-פריק (\\(0-16<0\\)) → מקרה 3, במונה \\(Bx+C\\).'},
+  {b:R`\(x(x^2+1)^2\)`, f:R`\lin{\frac{A}{x}}+\qd{\frac{Bx+C}{x^2+1}+\frac{Dx+E}{(x^2+1)^2}}`, t:'גורם ריבועי אי-פריק בחזקה 2 → מקרה 4.'},
+  {b:R`\(x^2+2x-3\)`, f:R`x^2+2x-3=(x+3)(x-1)\ \Rightarrow\ \lin{\frac{A}{x+3}}+\lin{\frac{B}{x-1}}`, t:'מלכודת: \\(4+12>0\\), הפולינום <b>כן</b> מתפרק. קודם מפרקים, ואז זה מקרה 1.'},
+  {b:R`\(x^2(x-1)^3\)`, f:R`\rep{\frac{A_1}{x}+\frac{A_2}{x^2}}+\rep{\frac{B_1}{x-1}+\frac{B_2}{(x-1)^2}+\frac{B_3}{(x-1)^3}}`, t:'שני גורמים חוזרים: 2 שברים בשביל \\(x^2\\) ו-3 בשביל \\((x-1)^3\\). סה״כ 5 קבועים, כמו מעלת המכנה.'}
+];
+const exb = document.getElementById('exbtns'), exo = document.getElementById('exout');
+EX.forEach((x,i)=>{
+  const b=document.createElement('button');b.type='button';b.className='btn';b.setAttribute('aria-pressed',i===0);b.innerHTML=x.b;exb.appendChild(b);
+  const o=document.createElement('div');o.hidden=i!==0;o.innerHTML=`<div class="m">\\[${x.f}\\]</div><p>${x.t}</p>`;exo.appendChild(o);
+  b.addEventListener('click',()=>{[...exb.children].forEach((c,j)=>c.setAttribute('aria-pressed',j===i));[...exo.children].forEach((c,j)=>c.hidden=j!==i);});
+});
+</script>
+<script>
+window.MathJax = {
+  loader:{load:['[tex]/html']},
+  tex:{packages:{'[+]':['html']}, inlineMath:[['\\(','\\)']], displayMath:[['\\[','\\]']],
+    macros:{lin:['\\class{c-lin}{#1}',1], rep:['\\class{c-rep}{#1}',1], qd:['\\class{c-quad}{#1}',1], poly:['\\class{c-poly}{#1}',1]}},
+  svg:{fontCache:'global'}
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.js"></script>
+
+</body></html>

@@ -1,0 +1,739 @@
+<!doctype html><html><head><script>(function(){try{var m=localStorage.getItem("hedva2-theme");if(m==="dark"||m==="light")document.documentElement.setAttribute("data-theme",m);}catch(e){}})();</script><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>חדו״א 2 — הרצאה 9</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Assistant:wght@400;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>/* Layout: a calm math notebook — one reading column (max 860px), sticky score bar, section cards on a faint grid. */
+:root{
+  --bg:#f6f8fb; --card:#ffffff; --ink:#1d2533; --muted:#5b6678; --line:#dfe5ee; --soft:#eef2f8; --grid:rgba(40,80,140,.05);
+  --accent:#6d4bd8; --accent-soft:#efeafd; --ok:#1f8a52; --ok-soft:#ddf4e7; --bad:#c53030; --bad-soft:#fde7e7; --note:#fff7dc; --note-line:#e9c46a; --mine:#e8f3ff; --mine-line:#7fb2ea;
+  --amb:#b7791f; --tea:#1386a6; --pur:#7a3fd1; --blu:#2563eb; --pnk:#c2417a; --grn:#2f855a; --org:#c05621; --red:#c53030; --olv:#6b7f1a;
+  --ind:#4c51bf; --brn:#8b5a2b; --mag:#b83280; --sea:#2c7a7b; --plm:#7b3fb0; --rub:#c0265b; --cyn:#0891b2; --sky:#0369a1; --lim:#4d7c0f; --nav:#1e3a8a; --eme:#047857; --bur:#9f1239; --jad:#0f766e; --rus:#a8441a;
+  --f-head:"Secular One","Assistant",system-ui,sans-serif; --f-body:"Assistant",system-ui,-apple-system,"Segoe UI",sans-serif; --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#11161f; --card:#18202c; --ink:#e6ebf3; --muted:#9aa7ba; --line:#2a3546; --soft:#1f2937; --grid:rgba(160,190,255,.04);
+  --accent:#a48bff; --accent-soft:#2a2346; --ok:#6fd49b; --ok-soft:#163626; --bad:#ff8a80; --bad-soft:#3d1c1c; --note:#2f2a14; --note-line:#a58a2c; --mine:#15283d; --mine-line:#3f6f9f;
+  --amb:#f0b75a; --tea:#4cc3e0; --pur:#b48cff; --blu:#7aa7ff; --pnk:#f58bbb; --grn:#6fd49b; --org:#f6a26b; --red:#ff8a80; --olv:#b5c95a;
+  --ind:#a3a8ff; --brn:#d6a77a; --mag:#f08ad0; --sea:#6fd1cf; --plm:#c99af0; --rub:#ff7aa3; --cyn:#5fd8f0; --sky:#7cc4f5; --lim:#a3d65c; --nav:#93b4ff; --eme:#34d399; --bur:#fb7185; --jad:#5eead4; --rus:#f0936a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#11161f; --card:#18202c; --ink:#e6ebf3; --muted:#9aa7ba; --line:#2a3546; --soft:#1f2937; --grid:rgba(160,190,255,.04);
+  --accent:#a48bff; --accent-soft:#2a2346; --ok:#6fd49b; --ok-soft:#163626; --bad:#ff8a80; --bad-soft:#3d1c1c; --note:#2f2a14; --note-line:#a58a2c; --mine:#15283d; --mine-line:#3f6f9f;
+  --amb:#f0b75a; --tea:#4cc3e0; --pur:#b48cff; --blu:#7aa7ff; --pnk:#f58bbb; --grn:#6fd49b; --org:#f6a26b; --red:#ff8a80; --olv:#b5c95a;
+  --ind:#a3a8ff; --brn:#d6a77a; --mag:#f08ad0; --sea:#6fd1cf; --plm:#c99af0; --rub:#ff7aa3; --cyn:#5fd8f0; --sky:#7cc4f5; --lim:#a3d65c; --nav:#93b4ff; --eme:#34d399; --bur:#fb7185; --jad:#5eead4; --rus:#f0936a; color-scheme:dark}
+html{direction:rtl}
+body{background-color:var(--bg);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:22px 22px;color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.65}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--card)}
+.wrap{max-width:860px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:8px 64px}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:6;background:var(--card);border-bottom:1px solid var(--line);margin-inline:calc(-1*max(16px,env(safe-area-inset-left,0px)));padding:8px max(16px,env(safe-area-inset-left,0px));display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.bar .sc{font-weight:700;font-size:15px}
+.bar .sc bdi{font-family:var(--f-mono)}
+.bar .meter{flex:1 1 120px;height:8px;background:var(--soft);border-radius:99px;overflow:hidden;min-width:80px}
+.bar .meter i{display:block;height:100%;width:0;background:var(--accent);transition:width .3s}
+.bar button{font:inherit;font-size:14px;font-weight:600;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:99px;padding:4px 12px;cursor:pointer}
+header.hero{padding-block:22px 6px}
+.credit{font-size:15px;background:var(--accent-soft);color:var(--ink);border-radius:10px;padding:6px 12px;display:inline-block;margin:0 0 12px}
+.eyebrow{font-size:13px;color:var(--muted);letter-spacing:.04em}
+h1{font-family:var(--f-head);font-weight:400;font-size:clamp(30px,6vw,42px);line-height:1.15;margin:4px 0 6px;text-wrap:balance}
+.sub{color:var(--muted);margin:0 0 12px}
+.legend{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.legend span{font-size:14px;border:1px solid var(--line);border-radius:99px;padding:2px 10px;background:var(--card)}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;background:currentColor;margin-inline-end:6px;vertical-align:middle}
+nav.toc{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin:12px 0 4px}
+nav.toc a{display:block;text-decoration:none;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:10px;padding:7px 11px;font-size:15px;font-weight:600}
+nav.toc a:hover{border-color:var(--accent)}
+nav.toc a b{color:var(--accent);font-family:var(--f-mono);margin-inline-end:4px}
+section.sec{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 18px 8px;margin-top:18px;scroll-margin-top:64px}
+@media (max-width:520px){section.sec{padding:14px 12px 6px;border-radius:12px}}
+.secno{font-family:var(--f-mono);font-size:13px;color:var(--muted);direction:ltr;unicode-bidi:isolate}
+h2{font-family:var(--f-head);font-weight:400;font-size:26px;margin:2px 0 10px;line-height:1.25;text-wrap:balance}
+h3{font-size:19px;margin:18px 0 6px}
+p{margin:8px 0}
+.box{border-radius:12px;padding:10px 14px;margin:12px 0;border:1px solid var(--line);background:var(--soft)}
+.box > b:first-child{display:block;margin-bottom:4px}
+.box.rule{background:var(--accent-soft);border-color:var(--accent)}
+.box.mine{background:var(--mine);border-color:var(--mine-line)}
+.box.fix{background:var(--note);border-color:var(--note-line)}
+.box.terms{background:var(--soft)}
+.box ol,.box ul{margin:4px 0;padding-inline-start:22px}
+.tw{overflow-x:auto;margin:10px 0}
+table{border-collapse:collapse;width:100%;font-size:15.5px}
+th,td{border:1px solid var(--line);padding:6px 9px;text-align:start;vertical-align:top}
+th{background:var(--soft)}
+.disp{overflow-x:auto;overflow-y:hidden;text-align:center;margin:10px 0;padding:4px 0}
+mjx-container{direction:ltr;unicode-bidi:isolate}
+mjx-container[display="true"]{margin:.4em 0!important}
+.disp mjx-container{display:inline-block!important}
+.ans{border-bottom:3px solid var(--cyn);padding-bottom:2px}
+.amb{color:var(--amb)}.tea{color:var(--tea)}.pur{color:var(--pur)}.blu{color:var(--blu)}.pnk{color:var(--pnk)}.grn{color:var(--grn)}.org{color:var(--org)}.red{color:var(--red)}.olv{color:var(--olv)}.ind{color:var(--ind)}.brn{color:var(--brn)}.mag{color:var(--mag)}.sea{color:var(--sea)}.plm{color:var(--plm)}.rub{color:var(--rub)}.cyn{color:var(--cyn)}.sky{color:var(--sky)}.lim{color:var(--lim)}.nav{color:var(--nav)}.eme{color:var(--eme)}.bur{color:var(--bur)}.jad{color:var(--jad)}.rus{color:var(--rus)}
+.k{font-weight:700}
+bdi,.m{unicode-bidi:isolate}
+.m{direction:ltr;display:inline-block;max-width:100%}
+code,pre{font-family:var(--f-mono);direction:ltr;unicode-bidi:isolate}
+/* simulation */
+.sim{border:2px solid var(--accent);border-radius:14px;padding:12px;margin:14px 0;background:var(--card)}
+.sim .st-title{font-weight:700;margin-bottom:6px}
+.sim .map{display:flex;flex-wrap:wrap;gap:5px;margin:0 0 8px;padding:0;list-style:none}
+.sim .map li{font-size:13.5px;border:1px solid var(--line);border-radius:99px;padding:2px 10px;color:var(--muted)}
+.sim .map li.on{background:var(--accent);border-color:var(--accent);color:var(--card);font-weight:700}
+.sim .map li.done{color:var(--ink);background:var(--soft)}
+.sim .lines{border:1px solid var(--line);border-radius:10px;padding:6px 8px;background:var(--soft);overflow-x:auto}
+.sim .ln{display:flex;gap:8px;align-items:center;padding:2px 4px;border-radius:6px;direction:ltr;min-height:30px}
+.sim .ln .no{font-family:var(--f-mono);font-size:12px;color:var(--muted);min-width:18px}
+.sim .ln.cur{background:var(--accent-soft);outline:2px solid var(--accent)}
+.sim .ln.fut{display:none}
+.sim .ln .f{min-width:0}
+.sim .x{margin:8px 0;padding:8px 12px;border-inline-start:4px solid var(--accent);background:var(--accent-soft);border-radius:8px}
+.sim .stp{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+.sim .stp > span{border:1px solid var(--line);border-radius:8px;padding:3px 9px;font-size:14.5px;background:var(--card)}
+.sim .stp > span > i{font-style:normal;color:var(--muted);margin-inline-end:6px;font-size:13px}
+.sim .stp .new{outline:2px solid var(--accent)}
+.sim .ctl{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-top:8px}
+.sim .ctl button{font:inherit;font-weight:700;font-size:15px;border:1px solid var(--accent);background:var(--card);color:var(--accent);border-radius:8px;padding:5px 14px;cursor:pointer}
+.sim .ctl button.pri{background:var(--accent);color:var(--card)}
+.sim .ctl button:disabled{opacity:.4;cursor:default}
+.sim .ctl .cnt{font-family:var(--f-mono);font-size:13px;color:var(--muted);direction:ltr;unicode-bidi:isolate}
+.sim .steps{display:none}
+/* quiz */
+.quiz{margin:16px 0 10px;border-top:1px dashed var(--line);padding-top:10px}
+.quiz > .qt{font-family:var(--f-head);font-size:19px;margin:0 0 6px}
+.qq{margin:10px 0 16px}
+.qq .q{font-weight:700;margin:4px 0}
+.qq ol{list-style:none;padding:0;margin:6px 0;display:grid;gap:6px}
+.qq li button{width:100%;text-align:start;font:inherit;font-size:16px;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:10px;padding:8px 12px;cursor:pointer;line-height:1.5}
+.qq li button:hover{border-color:var(--accent)}
+.qq li button.bad{border-color:var(--bad);background:var(--bad-soft)}
+.qq li button.good{border-color:var(--ok);background:var(--ok-soft)}
+.qq li button .lt{font-weight:700;color:var(--muted);margin-inline-end:8px}
+.qq .h,.qq .e{border-radius:8px;padding:6px 10px;font-size:15.5px}
+.qq .h{background:var(--bad-soft)}
+.qq .e{background:var(--ok-soft)}
+/* tools */
+.tool{border:1px solid var(--line);border-radius:12px;padding:12px;margin:12px 0;background:var(--soft)}
+.tool label{font-weight:600;font-size:15px}
+.tool input[type=range]{width:100%}
+.tool .out{font-family:var(--f-mono);direction:ltr;unicode-bidi:isolate;font-size:15px}
+.tool svg{width:100%;height:auto;display:block;background:var(--card);border-radius:8px;border:1px solid var(--line)}
+.tool .row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.tool select,.tool button{font:inherit;font-size:15px;border:1px solid var(--line);border-radius:8px;padding:4px 10px;background:var(--card);color:var(--ink)}
+.end{margin-top:18px;text-align:center;font-weight:700;font-size:18px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+mjx-container:not([display="true"]){display:inline-block;max-width:100%;overflow-x:auto;overflow-y:hidden;vertical-align:middle;padding-block:2px}
+mjx-container > svg{vertical-align:middle!important}
+mjx-assistive-mml{max-width:100%!important;left:0!important}
+[hidden]{display:none!important}
+.disp,.sim .lines{direction:ltr}
+input[type=range]{direction:ltr}
+@media (max-width:520px){.sim .lines mjx-container{font-size:88%}}
+.tool svg{direction:ltr}
+.tw.tight table{font-size:14px}.tw.tight th,.tw.tight td{padding:4px 5px}
+</style>
+<div class="wrap" data-key="calc2-lec09-v1">
+<div class="bar"><span class="sc" id="score">ניקוד: 0</span><span class="meter" aria-hidden="true"><i id="meter"></i></span><button type="button" id="resetBtn">⟲ איפוס</button><button type="button" id="themeBtn">🌙 לילה</button></div>
+<header class="hero">
+<p class="credit">קרדיט לסיכומים של עדי מהדרייב 😊 ולעידו דוד צייג!</p>
+<div class="eyebrow">חדו״א 2 • הרצאה 9 • לנדסמן • 24/11/25 • שלושה עמודים בכתב יד</div>
+<h1>הרצאה 9: סוג שני, מבחן גבולי ומבחן האינטגרל</h1>
+<p class="sub">ממשיכים מהרצאה 8. קודם התכנסות בהחלט, אחר כך אינטגרל של פונקציה שמתפוצצת, מבחן ההשוואה הגבולי, ובסוף הקשר בין אינטגרל לטור.</p>
+<div class="legend">
+<span class="amb">הקצה הזז $t$ וגבול</span>
+<span class="rus">הנקודה הבעייתית (חדש)</span>
+<span class="plm">השטח שנצבר $I(t)$</span>
+<span class="eme">מתכנס</span>
+<span class="bur">מתבדר</span>
+<span class="mag">הפרמטר $p$</span>
+<span class="sky">ערך מוחלט $|f|$</span>
+<span class="olv">הפונקציה הגדולה</span>
+<span class="red">הפונקציה הקטנה</span>
+<span class="grn">$\ln$ ו-$\frac1x$</span>
+<span class="jad">הגבול $L$ של המנה</span>
+<span class="rub">סדרה $a_n$ וטור $S_n$</span>
+<span class="cyn">תשובה סופית (קו מתחת)</span>
+</div>
+<nav class="toc" aria-label="תוכן עניינים"></nav>
+</header>
+
+<!-- ============ 1 ============ -->
+<section class="sec" id="s1" data-short="בהחלט גורר התכנסות">
+<h2>אם האינטגרל מתכנס בהחלט, הוא מתכנס</h2>
+<p>בהרצאה 8 ראינו מה זה <span class="sky">התכנסות בהחלט</span>. עכשיו המשפט משתמש בזה כדי לטפל בפונקציות שמחליפות סימן.</p>
+<div class="box mine"><b>מה זה "אינטגרבילית בהחלט"? (מההתחלה, עם מספרים) — הדוגמה שלי</b>
+<ol>
+<li>שלב 1 – מה יש לנו: $f(x)=\frac{\sin x}{x^2}$ על $[1,\infty)$. הפונקציה עולה ויורדת מעל ומתחת לציר.</li>
+<li>שלב 2 – שמים ערך מוחלט. ב-$x=4$ יש $f(4)\approx-0.047$, ואילו $|f(4)|\approx0.047$. השטחים השליליים הופכים לחיוביים.</li>
+<li>שלב 3 – בודקים את השטח החיובי: $|f(x)|\le\frac1{x^2}$, ו-$\int_1^\infty\frac{dx}{x^2}=1$. לכן $\int_1^\infty|f|$ <span class="eme">מתכנס</span>.</li>
+<li>שלב 4 – המשמעות: גם אם סופרים את כל החלקים כחיוביים, השטח סופי. אז בוודאי שכשחלק מהם מתקזזים, לא קורה אסון.</li>
+<li>שלב 5 – המסקנה: $\int_1^\infty f$ עצמו מתכנס.</li>
+</ol></div>
+<div class="box terms"><b>מילים וסימנים</b>
+<ul>
+<li>$f$ אינטגרבילית בהחלט ב-$[a,\infty)$: האינטגרל $\int_a^\infty|f(x)|\,dx$ מתכנס.</li>
+<li>למה לא מחשבים ישר את $\int f$? כי מבחן ההשוואה מדבר רק על פונקציות <b>אי-שליליות</b>. ל-$|f|$ מותר להפעיל אותו. ל-$f$ שמחליפה סימן אסור.</li>
+</ul></div>
+<div class="box rule"><b>המשפט מהמחברת</b>אם לכל $t\ge a$ הפונקציה $f$ אינטגרבילית בקטע $[a,t]$, ו-$f$ אינטגרבילית <span class="sky">בהחלט</span> בקטע $[a,\infty)$, אז $\int_a^\infty f(x)\,dx$ <span class="eme">מתכנס</span>.</div>
+<div class="box mine"><b>למה זה נכון? (רעיון, לא כתוב במחברת)</b>
+כדי לקבל פונקציה לא שלילית מוסיפים $|f|$. לכל $x$ מתקיים $0\le f+|f|\le 2|f|$. למשל אם $f=-3$ אז $f+|f|=0$, ואם $f=3$ אז $f+|f|=6=2\cdot 3$. לכן לפי מבחן ההשוואה $\int(f+|f|)$ מתכנס. ואז $f=(f+|f|)-|f|$ הוא הפרש של שני דברים מתכנסים.</div>
+<h3>הדוגמה מההרצאה: $\int_0^\infty e^{-x}\sin(x^2)\,dx$</h3>
+<div class="tw"><table><tr><th>שלב</th><th>מה עושים</th></tr>
+<tr><td>1</td><td>חוסמים את $|f|$ בפונקציה פשוטה</td></tr>
+<tr><td>2</td><td>מוכיחים שהאינטגרל של הפונקציה הפשוטה מתכנס</td></tr>
+<tr><td>3</td><td>מבחן ההשוואה נותן ש-$\int|f|$ מתכנס</td></tr>
+<tr><td>4</td><td>המשפט נותן ש-$\int f$ מתכנס</td></tr>
+</table></div>
+<div class="sim"><div class="st-title">סימולציה: הוכחה שהאינטגרל מתכנס</div>
+<ol class="map"><li>1. חסם</li><li>2. אינטגרל החסם</li><li>3. השוואה</li><li>4. המשפט</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$f(x)=e^{-x}\sin(x^2)$</div><div class="x">הפונקציה מחליפה סימן, כי $\sin(x^2)$ חיובי ושלילי לסירוגין. לכן אי אפשר להפעיל עליה ישירות את מבחן ההשוואה. אין לה גם קדומה פשוטה.</div><div class="st"><span><i>מצב</i>$f$ מחליפה סימן</span></div></div>
+<div class="step" data-m="0"><div class="f">$|\sin(x^2)|\le 1\quad\text{for } x\in[0,\infty)$</div><div class="x">עובדה קבועה: סינוס תמיד בין $-1$ ל-$1$. לא משנה מה בתוך הסוגריים.</div><div class="st"><span><i>מצב</i>יש חסם ל-$\sin$</span></div></div>
+<div class="step" data-m="0"><div class="f">$0\le\class{sky}{|e^{-x}\sin(x^2)|}\le \class{olv}{e^{-x}}$</div><div class="x">כופלים ב-$e^{-x}$, שהוא חיובי ולכן לא הופך אי-שוויון. עכשיו יש פונקציה גדולה ופשוטה.</div><div class="st"><span><i>גדולה</i>$e^{-x}$</span><span><i>קטנה</i>$|f|$</span></div></div>
+<div class="step" data-m="1"><div class="f">$\int_0^\infty e^{-x}dx=\lim\limits_{\class{amb}{t}\to\infty}\int_0^{\class{amb}{t}}e^{-x}dx$</div><div class="x">הקטע אינסופי, לכן לפי ההגדרה מהרצאה 8 עוצרים בקצה סופי $t$.</div><div class="st"><span><i>גדולה</i>$e^{-x}$</span><span><i>קטנה</i>$|f|$</span></div></div>
+<div class="step" data-m="1"><div class="f">$=\lim\limits_{t\to\infty}\left(-e^{-x}\right)\Big|_0^{t}$</div><div class="x">הקדומה של $e^{-x}$ היא $-e^{-x}$.</div><div class="st"><span><i>גדולה</i>$e^{-x}$</span><span><i>קטנה</i>$|f|$</span></div></div>
+<div class="step" data-m="1"><div class="f">$=\lim\limits_{t\to\infty}\left(1-e^{-t}\right)=1$</div><div class="x">מציבים: $-e^{-t}-(-e^{0})=1-e^{-t}$. כש-$t$ גדל, $e^{-t}\to0$. למשל ב-$t=10$ יוצא $0.99995$.</div><div class="st"><span><i>גדולה</i><span class="eme">מתכנס ל-1</span></span><span><i>קטנה</i>$|f|$</span></div></div>
+<div class="step" data-m="2"><div class="f">$\int_0^\infty\class{sky}{|e^{-x}\sin(x^2)|}\,dx\ \text{ converges}$</div><div class="x">מבחן ההשוואה מהרצאה 8: הפונקציה הקטנה מתחת לפונקציה שהאינטגרל שלה מתכנס, ולכן גם היא <span class="eme">מתכנסת</span>. כלומר $f$ אינטגרבילית בהחלט.</div><div class="st"><span><i>גדולה</i>מתכנס</span><span><i>קטנה</i><span class="eme">מתכנס</span></span></div></div>
+<div class="step" data-m="3"><div class="f"><span class="ans">$\int_0^\infty e^{-x}\sin(x^2)\,dx\ \text{ converges}$</span></div><div class="x">עכשיו המשפט: בהחלט גורר התכנסות. הערה: המשפט אומר שיש ערך, אבל לא נותן אותו. בחישוב מחשב יוצא בערך $0.2705$.</div><div class="st"><span><i>תשובה</i><span class="eme">מתכנס</span></span></div></div>
+</div></div>
+<div class="tool"><b>המחשה: הפונקציה כלואה בין $e^{-x}$ ל-$-e^{-x}$</b>
+<label for="s1t">הזיזו את הקצה $t$:</label><input type="range" id="s1t" min="0.2" max="8" step="0.05" value="2.5">
+<svg id="s1svg" viewBox="0 0 400 220" role="img" aria-label="גרף הפונקציה בין שתי מעטפות"></svg>
+<p class="out" id="s1out"></p></div>
+<div class="box rule"><b>הכלל לזכור</b>פונקציה שמחליפה סימן: בודקים קודם את $|f|$. אם $\int|f|$ מתכנס, סיימנו.</div>
+<p><b>אנלוגיה:</b> חשבון בנק עם הפקדות ומשיכות. אם סך כל התנועות, בלי להסתכל על הכיוון, הוא סופי, אז גם היתרה הסופית היא מספר ברור.</p>
+<div class="quiz"><div class="qt">שאלות על סעיף 1</div>
+<div class="qq" data-a="2"><p class="q">מה המשמעות של "אינטגרבילית בהחלט" בקטע $[a,\infty)$?</p><ol><li>האינטגרל $\int_a^\infty f$ מתכנס לערך חיובי</li><li>הפונקציה $f$ שואפת לאפס ואף פעם לא שלילית</li><li>האינטגרל $\int_a^\infty|f|$ מתכנס למספר סופי</li><li>הפונקציה $|f|$ חסומה בכל הקטע מלמעלה</li></ol><p class="h">רמז: איפה נמצא הערך המוחלט בהגדרה?</p><p class="e">נכון. ההגדרה היא על האינטגרל של $|f|$.</p></div>
+<div class="qq" data-a="0"><p class="q">בדוגמה של $e^{-x}\sin(x^2)$, למה אי אפשר להפעיל ישר את מבחן ההשוואה על $f$?</p><ol><li>כי $f$ מחליפה סימן, והמבחן דורש פונקציה אי-שלילית</li><li>כי $f$ לא רציפה בקטע, והמבחן דורש פונקציה רציפה</li><li>כי $f$ לא חסומה בקטע, והמבחן דורש פונקציה חסומה</li><li>כי $f$ עולה בקטע, והמבחן דורש פונקציה יורדת</li></ol><p class="h">רמז: מה הסימן של $\sin(x^2)$ לאורך הציר?</p><p class="e">נכון. לכן עוברים ל-$|f|$, ולו מותר להפעיל את המבחן.</p></div>
+<div class="qq" data-a="3"><p class="q">מה הערך של $\int_0^\infty e^{-x}dx$?</p><ol><li>$0$, כי $e^{-t}$ שואף לאפס באינסוף</li><li>$e$, כי הקדומה מקבלת $e$ בנקודה $x=0$</li><li>$\infty$, כי הקטע אינסופי ולכן גם השטח</li><li>$1$, כי $1-e^{-t}$ שואף ל-$1$ כש-$t$ גדל</li></ol><p class="h">רמז: הקדומה היא $-e^{-x}$. הציבו $t$ ו-$0$.</p><p class="e">נכון. $-e^{-t}-(-1)=1-e^{-t}\to1$.</p></div>
+<div class="qq" data-a="1"><p class="q">אם ידוע ש-$\int_a^\infty f$ מתכנס, מה אפשר להסיק על $\int_a^\infty|f|$?</p><ol><li>גם הוא מתכנס, כי זה אותו שטח בדיוק</li><li>לא בטוח, כי הכיוון ההפוך של המשפט לא נכון</li><li>הוא מתבדר, כי ערך מוחלט תמיד מגדיל שטח</li><li>הוא מתכנס, אבל רק אם $f$ חיובית מ-$a$ והלאה</li></ol><p class="h">רמז: בהרצאה 8 ראינו את $\frac{\sin x}{x}$.</p><p class="e">נכון. המשפט הוא בכיוון אחד בלבד. $\int_1^\infty\frac{\sin x}{x}dx$ מתכנס, אבל לא בהחלט.</p></div>
+</div>
+</section>
+
+<!-- ============ 2 ============ -->
+<section class="sec" id="s2" data-short="סוג שני: הגדרה">
+<h2>אינטגרל לא אמיתי מסוג שני</h2>
+<p>בהרצאה 8 הבעיה הייתה קטע אינסופי. עכשיו הקטע סופי, אבל הפונקציה "מתפוצצת" בנקודה. אינטגרל רגיל דורש פונקציה חסומה, אז צריך הגדרה חדשה. הרעיון זהה: עוצרים לפני הצרה, ואז מתקרבים אליה.</p>
+<div class="box mine"><b>מה זה סוג שני? (מההתחלה, עם מספרים) — הדוגמה שלי</b>
+<ol>
+<li>שלב 1 – מה יש לנו: $f(x)=\frac1{\sqrt x}$ על $(0,1]$. ב-$x=0.01$ הערך הוא $10$, ב-$x=0.0001$ הערך הוא $100$. הפונקציה לא חסומה ליד <span class="rus">$0$</span>.</li>
+<li>שלב 2 – עוצרים במרחק בטוח: במקום מ-$0$, מתחילים מ-<span class="amb">$t$</span> קטן וחיובי. על $[t,1]$ הפונקציה חסומה, וזה אינטגרל רגיל.</li>
+<li>שלב 3 – מחשבים: $\int_t^1\frac{dx}{\sqrt x}=2\sqrt x\Big|_t^1=2-2\sqrt t$.</li>
+<li>שלב 4 – מציבים מספרים: $t=0.01$ נותן $1.8$. $t=0.0001$ נותן $1.98$. המספרים מתקרבים ל-$2$.</li>
+<li>שלב 5 – המסקנה: $\int_0^1\frac{dx}{\sqrt x}=2$. הגרף עולה בלי סוף, אבל השטח <span class="eme">סופי</span>.</li>
+</ol></div>
+<div class="box rule"><b>ההגדרה מהמחברת (הבעיה בקצה הימני $b$)</b>נניח ש-$f$ מוגדרת ולא חסומה בקטע $[a,b)$, ולכל $a\le t\lt b$ היא אינטגרבילית בקטע הסגור $[a,t]$ (בפרט חסומה שם). כלומר $\class{plm}{I(t)}=\int_a^{\class{amb}{t}}f(x)\,dx$ מוגדר לכל $a\le t\lt b$.<br>אם קיים הגבול $I=\lim\limits_{\class{amb}{t}\to \class{rus}{b}^-}\class{plm}{I(t)}$, אז $I$ נקרא <b>האינטגרל הלא אמיתי מהסוג השני</b>, ומסמנים אותו $\int_a^b f(x)\,dx$. אחרת, האינטגרל <span class="bur">מתבדר</span>.</div>
+<div class="box terms"><b>מילים וסימנים</b>
+<ul>
+<li>קטע חצי פתוח $[a,b)$: הנקודה $a$ בפנים, הנקודה $b$ בחוץ.</li>
+<li>$t\to b^-$: הנקודה $t$ מתקרבת ל-$b$ <b>משמאל</b>, מערכים קטנים ממנו. $t\to a^+$: מתקרבת ל-$a$ <b>מימין</b>.</li>
+<li>לא חסומה ב-$b$: אפשר למצוא ליד $b$ ערכים גדולים ככל שרוצים.</li>
+<li>הסימון $\int_a^b$ נראה כמו אינטגרל רגיל. לכן תמיד בודקים קודם אם יש נקודה בעייתית.</li>
+</ul></div>
+<h3>שלושת המקרים לפי מקום הבעיה</h3>
+<div class="tw"><table><tr><th>איפה הבעיה</th><th>מה כותבים</th></tr>
+<tr><td>בקצה הימני <span class="rus">$b$</span></td><td>$\lim\limits_{t\to b^-}\int_a^t f\,dx$</td></tr>
+<tr><td>בקצה השמאלי <span class="rus">$a$</span></td><td>$\lim\limits_{t\to a^+}\int_t^b f\,dx$</td></tr>
+<tr><td>בנקודה <span class="rus">$c$</span> באמצע, $a\lt c\lt b$</td><td>$\int_a^c f\,dx+\int_c^b f\,dx$, וכל אחד מהם לפי השורות הקודמות</td></tr>
+</table></div>
+<h3>מפת השלבים, וכל הדרכים שבהן זה נגמר</h3>
+<div class="tw"><table><tr><th>שלב</th><th>מה עושים</th></tr>
+<tr><td>1</td><td>מחפשים נקודה בעייתית: מכנה שמתאפס, שורש במכנה, $\ln$ של אפס</td></tr>
+<tr><td>2</td><td>אם היא באמצע, מפצלים לשני אינטגרלים</td></tr>
+<tr><td>3</td><td>מחליפים את הקצה הבעייתי ב-$t$ וכותבים גבול</td></tr>
+<tr><td>4</td><td>מוצאים קדומה ומציבים</td></tr>
+<tr><td>5</td><td>מחשבים את הגבול, ורק אז מחליטים</td></tr>
+</table></div>
+<div class="tw tight"><table><tr><th>מה הגבול עושה</th><th>דוגמה</th><th>התוצאה</th></tr>
+<tr><td>מתקרב למספר סופי</td><td>$2-2\sqrt t\to2$</td><td class="eme">מתכנס</td></tr>
+<tr><td>הולך ל-$+\infty$ או ל-$-\infty$</td><td>$-\ln t\to\infty$</td><td class="bur">מתבדר</td></tr>
+<tr><td>לא מתקרב לשום דבר (מתנדנד)</td><td>הדוגמה שלי: $\int_t^1\frac{\sin(1/x)}{x^2}dx=\cos1-\cos\frac1t$</td><td class="bur">מתבדר</td></tr>
+<tr><td>נקודה באמצע: לפחות חצי אחד לא קיים</td><td>$\int_0^3\frac{dx}{x-1}$, בדוגמה 2</td><td class="bur">מתבדר</td></tr>
+</table></div>
+<div class="tool"><b>המחשה: מתקרבים לנקודה הבעייתית</b>
+<div class="row"><label for="s2m">הבעיה נמצאת:</label><select id="s2m"><option value="0">בקצה השמאלי</option><option value="1">בקצה הימני</option><option value="2">באמצע</option></select></div>
+<label for="s2d">כמה קרוב מתקרבים:</label><input type="range" id="s2d" min="0" max="100" value="35">
+<svg id="s2svg" viewBox="0 0 400 220" role="img" aria-label="שטח שמתקרב לנקודה הבעייתית"></svg>
+<p class="out" id="s2out"></p></div>
+<div class="box rule"><b>הכלל לזכור</b>סוג ראשון: הקטע אינסופי. סוג שני: הפונקציה אינסופית. בשניהם עוצרים ב-$t$, מחשבים, ושולחים את $t$ לקצה.</div>
+<p><b>אנלוגיה:</b> הולכים לכיוון קצה של צוק. לא דורכים עליו. נעצרים חצי צעד לפני, בודקים כמה הלכנו, ואז מתקרבים עוד קצת.</p>
+<div class="quiz"><div class="qt">שאלות על סעיף 2</div>
+<div class="qq" data-a="1"><p class="q">מה מבדיל סוג שני מסוג ראשון?</p><ol><li>בסוג שני הקטע אינסופי, ובסוג ראשון הפונקציה לא חסומה</li><li>בסוג שני הפונקציה לא חסומה, ובסוג ראשון הקטע אינסופי</li><li>בסוג שני תמיד יש התכנסות, ובסוג ראשון תמיד יש התבדרות</li><li>בסוג שני אין גבול בכלל, ובסוג ראשון יש גבול של $t$</li></ol><p class="h">רמז: מה הייתה הבעיה בהרצאה 8?</p><p class="e">נכון. בהרצאה 8 הקטע היה אינסופי. כאן הקטע סופי והפונקציה מתפוצצת.</p></div>
+<div class="qq" data-a="3"><p class="q">עבור $\int_0^1\frac{dx}{\sqrt{x}}$, איך כותבים את הגבול הנכון?</p><ol><li>$\lim\limits_{t\to1^-}\int_0^t\frac{dx}{\sqrt x}$, כי הגבול בקצה העליון</li><li>$\lim\limits_{t\to\infty}\int_0^t\frac{dx}{\sqrt x}$, כי הפונקציה גדלה לאינסוף</li><li>$\lim\limits_{t\to0^-}\int_t^1\frac{dx}{\sqrt x}$, כי מתקרבים אל אפס</li><li>$\lim\limits_{t\to0^+}\int_t^1\frac{dx}{\sqrt x}$, כי הבעיה בקצה השמאלי</li></ol><p class="h">רמז: איפה המכנה מתאפס? ומאיזה צד של הנקודה נמצא הקטע?</p><p class="e">נכון. הבעיה ב-$0$, והקטע נמצא מימין לאפס, לכן $t\to0^+$.</p></div>
+<div class="qq" data-a="0"><p class="q">הפונקציה לא חסומה בנקודה $c$ באמצע הקטע $[a,b]$. מתי האינטגרל קיים?</p><ol><li>רק כששני האינטגרלים, מ-$a$ עד $c$ ומ-$c$ עד $b$, קיימים</li><li>כשלפחות אחד מהשניים, מ-$a$ עד $c$ או מ-$c$ עד $b$, קיים</li><li>כשמציבים ישר בקדומה ויוצא מספר סופי</li><li>כשהפונקציה חסומה מצד אחד של הנקודה $c$</li></ol><p class="h">רמז: מה כתוב במחברת על "לפחות אחד לא קיים"?</p><p class="e">נכון. אם לפחות אחד לא קיים, כל האינטגרל לא קיים.</p></div>
+<div class="qq" data-a="2"><p class="q">עבור $\int_t^1\frac{dx}{\sqrt x}=2-2\sqrt t$, מה יוצא בהצבה $t=0.04$?</p><ol><li>$1.92$, כי מחסירים $2t$ מתוך $2$</li><li>$1.96$, כי מחסירים $t$ מתוך $2$</li><li>$1.6$, כי $\sqrt{0.04}=0.2$ ואז $2-0.4$</li><li>$1.8$, כי $\sqrt{0.04}=0.2$ ואז $2-0.2$</li></ol><p class="h">רמז: חשבו קודם $\sqrt{0.04}$, ואל תשכחו את הכפל ב-$2$.</p><p class="e">נכון. $2-2\cdot0.2=1.6$.</p></div>
+</div>
+</section>
+
+<!-- ============ 3 ============ -->
+<section class="sec" id="s3" data-short="דוגמה 1: שורש במכנה">
+<h2>דוגמה 1: $\int_2^5\frac{dx}{\sqrt{x-2}}$</h2>
+<p>המכנה מתאפס ב-$x=2$, שזה בדיוק הקצה השמאלי. שאר הקטע תקין. לכן זה המקרה השני בטבלה: $t\to2^+$.</p>
+<div class="tw"><table><tr><th>שלב</th><th>מה עושים</th></tr>
+<tr><td>1</td><td>מזהים את הנקודה הבעייתית</td></tr>
+<tr><td>2</td><td>כותבים גבול</td></tr>
+<tr><td>3</td><td>קדומה והצבה</td></tr>
+<tr><td>4</td><td>גבול</td></tr>
+</table></div>
+<div class="sim"><div class="st-title">סימולציה: דוגמה 1, שורה אחרי שורה</div>
+<ol class="map"><li>1. בעיה</li><li>2. גבול</li><li>3. קדומה</li><li>4. תוצאה</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$\int_{\class{rus}{2}}^5\frac{dx}{\sqrt{x-2}}$</div><div class="x">ב-$x=2$ יש $\sqrt 0=0$ במכנה. ב-$x=2.01$ הערך הוא כבר $10$. לכן הפונקציה לא חסומה ליד $2$.</div><div class="st"><span><i>בעיה</i>$x=2$</span><span><i>מצד</i>ימין</span></div></div>
+<div class="step" data-m="1"><div class="f">$=\lim\limits_{\class{amb}{t}\to2^+}\int_{\class{amb}{t}}^5\frac{dx}{\sqrt{x-2}}$</div><div class="x">מחליפים את הקצה $2$ ב-$t$ שנמצא קצת מימין. על $[t,5]$ זה אינטגרל רגיל.</div><div class="st"><span><i>בעיה</i>$x=2$</span><span><i>$t$</i>$2.0001$ למשל</span></div></div>
+<div class="step" data-m="2"><div class="f">$=\lim\limits_{t\to2^+}\ 2\sqrt{x-2}\ \Big|_t^5$</div><div class="x">מאיפה הקדומה? נגזרת של $2\sqrt{x-2}$ היא $2\cdot\frac1{2\sqrt{x-2}}=\frac1{\sqrt{x-2}}$. בדיוק מה שצריך.</div><div class="st"><span><i>קדומה</i>$2\sqrt{x-2}$</span></div></div>
+<div class="step" data-m="2"><div class="f">$=\lim\limits_{t\to2^+}\left(2\sqrt3-2\sqrt{t-2}\right)$</div><div class="x">מציבים: למעלה $x=5$ נותן $2\sqrt 3$. למטה $x=t$ נותן $2\sqrt{t-2}$.</div><div class="st"><span><i>קדומה</i>$2\sqrt{x-2}$</span><span><i>$t$</i>נשאר בביטוי</span></div></div>
+<div class="step" data-m="3"><div class="f"><span class="ans">$=2\sqrt3\approx3.46$</span></div><div class="x">כש-$t\to2^+$, $\sqrt{t-2}\to0$. קיבלנו מספר סופי, ולכן האינטגרל <span class="eme">מתכנס</span>. בדיקה: $t=2.01$ נותן $3.264$, ו-$t=2.0001$ נותן $3.444$.</div><div class="st"><span><i>תשובה</i>$2\sqrt3$</span><span><i>מצב</i><span class="eme">מתכנס</span></span></div></div>
+</div></div>
+<div class="box rule"><b>הכלל לזכור</b>קודם הגבול, אחר כך הקדומה. לא מציבים את הנקודה הבעייתית ישירות.</div>
+<div class="quiz"><div class="qt">שאלות על סעיף 3</div>
+<div class="qq" data-a="2"><p class="q">בדוגמה $\int_2^5\frac{dx}{\sqrt{x-2}}$, למה הגבול הוא $t\to2^+$ ולא $t\to2^-$?</p><ol><li>כי $2$ הוא מספר חיובי, ולכן מתקרבים מהפלוס</li><li>כי הקדומה לא גזירה בנקודה $x=5$ שבקצה העליון</li><li>כי הקטע נמצא מימין ל-$2$, ושם מותר לעמוד</li><li>כי הגבול מ-$t\to2^-$ שווה תמיד לאפס בדוגמה</li></ol><p class="h">רמז: איפה נמצאת הנקודה $t$ ביחס ל-$2$ אם רוצים להישאר בתוך הקטע?</p><p class="e">נכון. בנוסף, משמאל ל-$2$ השורש בכלל לא מוגדר.</p></div>
+<div class="qq" data-a="1"><p class="q">מה הקדומה של $\frac1{\sqrt{x-2}}$?</p><ol><li>$\frac12\sqrt{x-2}$, כי מחלקים ב-$2$ בעת אינטגרציה</li><li>$2\sqrt{x-2}$, כי הנגזרת שלה נותנת את הפונקציה</li><li>$\sqrt{x-2}$, כי השורש נשאר בלי מקדם בכלל</li><li>$\ln|x-2|$, כי יש ביטוי במכנה של השבר</li></ol><p class="h">רמז: גזרו כל אחד מהביטויים ובדקו.</p><p class="e">נכון. $(2\sqrt{x-2})'=\frac{1}{\sqrt{x-2}}$.</p></div>
+<div class="qq" data-a="3"><p class="q">מה קורה ל-$2\sqrt3-2\sqrt{t-2}$ כש-$t\to2^+$?</p><ol><li>שואף ל-$\infty$, כי הפונקציה לא חסומה ליד הנקודה</li><li>שואף ל-$0$, כי שני האיברים מצטמצמים זה עם זה</li><li>לא קיים, כי לא מותר להציב $t=2$ בשורש</li><li>שואף ל-$2\sqrt3$, כי $\sqrt{t-2}$ שואף לאפס</li></ol><p class="h">רמז: מה עושה השורש כש-$t$ מתקרב ל-$2$?</p><p class="e">נכון. לכן האינטגרל מתכנס.</p></div>
+</div>
+</section>
+
+<!-- ============ 4 ============ -->
+<section class="sec" id="s4" data-short="דוגמה 2: המלכודת">
+<h2>דוגמה 2: המלכודת $\int_0^3\frac{dx}{x-1}$</h2>
+<p>כאן הגבולות נראים תמימים: $0$ ו-$3$. אבל המכנה מתאפס ב-$x=1$, <b>בתוך</b> הקטע. אם מציבים ישר, מקבלים מספר, והוא שגוי.</p>
+<div class="box fix"><b>הערה שלי על המחברת</b>בשורה האדומה (שמסומנת "פתרון שגוי") כתוב $\ln(3)-\ln(0)=\ln(3)$. גם כחישוב זה לא מדויק: צריך להציב ב-$|x-1|$. מקבלים $\ln|3-1|=\ln 2$ ו-$\ln|0-1|=\ln 1=0$, ולכן יוצא $\ln2$. ובנוסף $\ln 0$ לא מוגדר. הטעות העיקרית נשארת כמו במחברת: אסור להציב ישר, כי הנקודה $x=1$ בעייתית.</div>
+<div class="tw"><table><tr><th>שלב</th><th>מה עושים</th></tr>
+<tr><td>1</td><td>רואים את הפיתוי: הצבה ישירה</td></tr>
+<tr><td>2</td><td>מוצאים את הנקודה הבעייתית בתוך הקטע</td></tr>
+<tr><td>3</td><td>מפצלים לשני אינטגרלים</td></tr>
+<tr><td>4</td><td>מחשבים אחד מהם</td></tr>
+<tr><td>5</td><td>מחליטים</td></tr>
+</table></div>
+<div class="sim"><div class="st-title">סימולציה: דוגמה 2, שורה אחרי שורה</div>
+<ol class="map"><li>1. הפיתוי</li><li>2. בעיה</li><li>3. פיצול</li><li>4. חצי שמאל</li><li>5. מסקנה</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$\int_0^3\frac{dx}{x-1}\overset{?}{=}\class{grn}{\ln|x-1|}\Big|_0^3$</div><div class="x">זה הפתרון השגוי: לוקחים קדומה כאילו זה אינטגרל רגיל.</div><div class="st"><span><i>מצב</i><span class="bur">פתרון שגוי</span></span></div></div>
+<div class="step" data-m="0"><div class="f">$\overset{?}{=}\ln2-\ln1=\ln2$</div><div class="x">מציבים $x=3$ ו-$x=0$. יצא מספר יפה, אז קל להאמין לו.</div><div class="st"><span><i>מצב</i><span class="bur">פתרון שגוי</span></span></div></div>
+<div class="step" data-m="1"><div class="f">$\class{rus}{x=1}:\quad\frac1{x-1}\to\pm\infty$</div><div class="x">בודקים לפני הכול: $x=1$ נמצא בתוך $[0,3]$. שם המכנה מתאפס. כש-$x=0.99$ הערך הוא $-100$, וכש-$x=1.01$ הערך הוא $100$. לכן זה אינטגרל לא אמיתי, וניוטון-לייבניץ לא חל על כל הקטע.</div><div class="st"><span><i>בעיה</i>$x=1$ באמצע</span></div></div>
+<div class="step" data-m="2"><div class="f">$\int_0^{\class{rus}{1}}\frac{dx}{x-1}\ ,\qquad \int_{\class{rus}{1}}^3\frac{dx}{x-1}$</div><div class="x">מפצלים בנקודה הבעייתית. עכשיו בכל חצי הבעיה נמצאת בקצה. שני החצאים צריכים להתכנס.</div><div class="st"><span><i>בעיה</i>$x=1$ באמצע</span><span><i>חצאים</i>שניים</span></div></div>
+<div class="step" data-m="3"><div class="f">$\int_0^1\frac{dx}{x-1}=\lim\limits_{\class{amb}{t}\to1^-}\int_0^{\class{amb}{t}}\frac{dx}{x-1}$</div><div class="x">בוחרים את החצי השמאלי. $t$ מתקרב ל-$1$ משמאל, כי הקטע נמצא משמאל ל-$1$.</div><div class="st"><span><i>בודקים</i>חצי שמאל</span></div></div>
+<div class="step" data-m="3"><div class="f">$=\lim\limits_{t\to1^-}\class{grn}{\ln|x-1|}\Big|_0^{t}$</div><div class="x">הקדומה של $\frac1{x-1}$ היא $\ln|x-1|$. הערך המוחלט חשוב, כי פה $x-1$ שלילי.</div><div class="st"><span><i>בודקים</i>חצי שמאל</span></div></div>
+<div class="step" data-m="3"><div class="f">$=\lim\limits_{t\to1^-}\left(\ln|t-1|-\ln|0-1|\right)$</div><div class="x">מציבים $t$ ו-$0$. הצבה של $0$ נותנת $\ln 1$, וזה $0$.</div><div class="st"><span><i>בודקים</i>חצי שמאל</span><span><i>$\ln 1$</i>$0$</span></div></div>
+<div class="step" data-m="3"><div class="f">$=\lim\limits_{t\to1^-}\ln|t-1|=-\infty$</div><div class="x">כש-$t$ מתקרב ל-$1$, המספר $|t-1|$ קטן מאוד, ו-$\ln$ של מספר קטן מאוד שלילי מאוד. למשל $\ln 0.001\approx-6.9$. החצי השמאלי <span class="bur">מתבדר</span>.</div><div class="st"><span><i>חצי שמאל</i><span class="bur">מתבדר</span></span></div></div>
+<div class="step" data-m="4"><div class="f"><span class="ans">$\int_0^3\frac{dx}{x-1}\ \text{ diverges}$</span></div><div class="x">מספיק חצי אחד שלא קיים. לא צריך אפילו לבדוק את החצי השני. האינטגרל <span class="bur">מתבדר</span> (לא קיים), והתשובה $\ln 2$ שגויה.</div><div class="st"><span><i>תשובה</i><span class="bur">מתבדר</span></span></div></div>
+</div></div>
+<div class="tool"><b>המחשה: מאיפה בא $\ln 2$ השגוי?</b>
+<p>שני קצוות שמתקרבים ל-$1$. אם מזיזים אותם באותה מהירות, השטחים מתקזזים ויוצא $\ln2$. אם לא, יוצא משהו אחר לגמרי. לכן אין כאן מספר אחד אמיתי.</p>
+<div class="row"><label for="s4same"><input type="checkbox" id="s4same"> אותו מרחק משני הצדדים</label></div>
+<label for="s4a">מרחק משמאל ל-1:</label><input type="range" id="s4a" min="0" max="100" value="40">
+<label for="s4b">מרחק מימין ל-1:</label><input type="range" id="s4b" min="0" max="100" value="70">
+<svg id="s4svg" viewBox="0 0 400 240" role="img" aria-label="גרף של אחד חלקי x פחות אחד עם שני שטחים"></svg>
+<p class="out" id="s4out"></p></div>
+<div class="box rule"><b>הכלל לזכור</b>לפני כל אינטגרל מסוים, בודקים: האם המכנה מתאפס <b>בתוך</b> הקטע? אם כן, מפצלים.</div>
+<div class="quiz"><div class="qt">שאלות על סעיף 4</div>
+<div class="qq" data-a="3"><p class="q">למה הפתרון $\ln2$ של $\int_0^3\frac{dx}{x-1}$ שגוי?</p><ol><li>כי הקדומה הנכונה היא $\frac{1}{(x-1)^2}$ ולא $\ln$</li><li>כי צריך גבול באינסוף, והקטע הזה הוא קטע אינסופי</li><li>כי $\ln 2$ הוא מספר שלילי, ושטח חייב להיות חיובי</li><li>כי $f$ לא חסומה ב-$x=1$, שנמצא בתוך הקטע</li></ol><p class="h">רמז: מה התנאי של ניוטון-לייבניץ?</p><p class="e">נכון. בנקודה $x=1$ הפונקציה מתפוצצת, ולכן אי אפשר להציב ישר.</p></div>
+<div class="qq" data-a="0"><p class="q">אחרי הפיצול, כמה מהחצאים צריך לבדוק כדי לקבוע שהאינטגרל מתבדר?</p><ol><li>מספיק למצוא חצי אחד שלא קיים</li><li>צריך תמיד לבדוק את שני החצאים</li><li>צריך לבדוק את החצי הימני בלבד</li><li>צריך לחשב קודם את סכום החצאים</li></ol><p class="h">רמז: מה דורשת ההגדרה עבור נקודה באמצע?</p><p class="e">נכון. שני החצאים חייבים להתכנס. אחד שנכשל מפיל הכול.</p></div>
+<div class="qq" data-a="2"><p class="q">כש-$t\to1^-$, למה $\ln|t-1|$ שואף?</p><ol><li>ל-$0$, כי $|t-1|$ שואף לאפס</li><li>ל-$1$, כי $t$ שואף למספר $1$</li><li>ל-$-\infty$, כי $\ln$ של מספר קטן שלילי</li><li>ל-$+\infty$, כי הפונקציה לא חסומה שם</li></ol><p class="h">רמז: חשבו $\ln(0.001)$.</p><p class="e">נכון. $\ln(0.001)\approx-6.9$ וזה רק ממשיך לרדת.</p></div>
+<div class="qq" data-a="1"><p class="q">במה מהאינטגרלים הבאים מותר להציב ישר בקדומה?</p><ol><li>$\int_{-1}^{1}\frac{dx}{x}$, כי הגבולות סימטריים סביב אפס</li><li>$\int_{2}^{3}\frac{dx}{x-1}$, כי המכנה לא מתאפס בקטע</li><li>$\int_{0}^{2}\frac{dx}{x-1}$, כי התשובה יוצאת מספר נחמד</li><li>$\int_{0}^{1}\frac{dx}{\sqrt x}$, כי ידוע שהאינטגרל קיים</li></ol><p class="h">רמז: חפשו אפס של המכנה בתוך כל קטע.</p><p class="e">נכון. בקטע $[2,3]$ הפונקציה רציפה וחסומה, אז זה אינטגרל רגיל.</p></div>
+</div>
+</section>
+
+<!-- ============ 5 ============ -->
+<section class="sec" id="s5" data-short="דוגמאות 3-4 ומבחן ה-p">
+<h2>דוגמאות 3 ו-4, והכלל של $\frac1{x^p}$ ליד אפס</h2>
+<p>שתי הדוגמאות בקטע $[0,1]$, והבעיה בקצה <span class="rus">$0$</span>. תראו איך הן מובילות לכלל אחד.</p>
+<div class="sim"><div class="st-title">סימולציה: דוגמה 3, $\int_0^1\frac{dx}{x}$</div>
+<ol class="map"><li>1. גבול</li><li>2. קדומה</li><li>3. תוצאה</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$\int_{\class{rus}{0}}^1\frac{dx}{x}=\lim\limits_{\class{amb}{t}\to0^+}\int_{\class{amb}{t}}^1\frac{dx}{x}$</div><div class="x">המכנה מתאפס ב-$0$, שזה הקצה השמאלי. לכן $t$ מתקרב ל-$0$ מימין.</div><div class="st"><span><i>$p$</i>$1$</span></div></div>
+<div class="step" data-m="1"><div class="f">$=\lim\limits_{t\to0^+}\class{grn}{\ln|x|}\Big|_t^1=\lim\limits_{t\to0^+}\left(\ln 1-\ln|t|\right)$</div><div class="x">הקדומה של $\frac1x$ היא $\ln|x|$. מציבים $1$ ואת $t$. ובנוסף $\ln 1=0$.</div><div class="st"><span><i>$p$</i>$1$</span><span><i>$\ln 1$</i>$0$</span></div></div>
+<div class="step" data-m="2"><div class="f"><span class="ans">$=\lim\limits_{t\to0^+}\left(-\ln|t|\right)=\infty$</span></div><div class="x">$t=0.01$ נותן $4.6$. $t=0.0001$ נותן $9.2$. זה עולה בלי סוף. האינטגרל <span class="bur">מתבדר</span>.</div><div class="st"><span><i>$p$</i>$1$</span><span><i>מצב</i><span class="bur">מתבדר</span></span></div></div>
+</div></div>
+<div class="sim"><div class="st-title">סימולציה: דוגמה 4, $\int_0^1\frac{dx}{x^2}$</div>
+<ol class="map"><li>1. גבול</li><li>2. קדומה</li><li>3. תוצאה</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$\int_{\class{rus}{0}}^1\frac{dx}{x^2}=\lim\limits_{\class{amb}{t}\to0^+}\int_{\class{amb}{t}}^1\frac{dx}{x^2}$</div><div class="x">אותה בעיה באותה נקודה. הפעם המכנה קטן עוד יותר מהר.</div><div class="st"><span><i>$p$</i>$2$</span></div></div>
+<div class="step" data-m="1"><div class="f">$=\lim\limits_{t\to0^+}\left(-\frac1x\right)\Big|_t^1=\lim\limits_{t\to0^+}\left(-1+\frac1t\right)$</div><div class="x">הקדומה של $x^{-2}$ היא $-x^{-1}$. מציבים $1$ ואז מחסירים את הצבת $t$. שני מינוסים הופכים לפלוס.</div><div class="st"><span><i>$p$</i>$2$</span><span><i>קדומה</i>$-\frac1x$</span></div></div>
+<div class="step" data-m="2"><div class="f"><span class="ans">$=\lim\limits_{t\to0^+}\left(\frac1t-1\right)=\infty$</span></div><div class="x">$t=0.01$ נותן $99$. $t=0.001$ נותן $999$. האינטגרל <span class="bur">מתבדר</span>.</div><div class="st"><span><i>$p$</i>$2$</span><span><i>מצב</i><span class="bur">מתבדר</span></span></div></div>
+</div></div>
+<div class="box fix"><b>הערה שלי על המחברת</b>בשורה "באופן דומה, מראים שלכל $0\lt p\lt1$ האינטגרל מתכנס" כתוב $\int_0^\infty\frac{dx}{x^p}$. צריך להיות $\int_0^{\mathbf 1}\frac{dx}{x^p}$. עד אינסוף זה לא נכון: עבור $p\le1$ החלק $\int_1^\infty$ מתבדר (הרצאה 8). כך גם יוצא בדוגמה של המבחן הגבולי, שם המחברת משתמשת ב-$\int_0^1\frac{dx}{\sqrt x}$.</div>
+<div class="sim"><div class="st-title">סימולציה: הכלל הכללי לכל $p$ (השלמה של "באופן דומה")</div>
+<ol class="map"><li>1. קדומה</li><li>2. $p&lt;1$</li><li>3. $p&gt;1$</li><li>4. $p=1$</li><li>5. עד אינסוף</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$\int_{\class{amb}{t}}^1\frac{dx}{x^{\class{mag}{p}}}=\frac{1-\class{amb}{t}^{\,1-\class{mag}{p}}}{1-\class{mag}{p}}\qquad(p\ne1)$</div><div class="x">אותה נוסחת חזקה: הקדומה של $x^{-p}$ היא $\frac{x^{1-p}}{1-p}$. מציבים $1$ ו-$t$. השאלה היחידה: מה קורה ל-$t^{1-p}$ כש-$t\to0^+$.</div><div class="st"><span><i>השאלה</i>$t^{1-p}$</span></div></div>
+<div class="step" data-m="1"><div class="f">$p<1:\quad \int_0^1\frac{dx}{x^p}=\frac{1}{1-p}$</div><div class="x">אם $1-p\gt0$, אז $t^{1-p}\to0$: חזקה חיובית של מספר קטן נשארת קטנה. למשל $p=\frac12$: $\sqrt t\to0$, ומקבלים $\frac1{1/2}=2$. זה בדיוק מה שמצאנו בסעיף 2. <span class="eme">מתכנס</span>.</div><div class="st"><span><i>$p<1$</i><span class="eme">מתכנס</span></span></div></div>
+<div class="step" data-m="2"><div class="f">$p>1:\quad t^{1-p}=\frac1{t^{\,p-1}}\to\infty$</div><div class="x">אם $1-p\lt0$, החזקה שלילית. למשל $p=2$: $t^{-1}=\frac1t\to\infty$. כמו בדוגמה 4. <span class="bur">מתבדר</span>.</div><div class="st"><span><i>$p<1$</i>מתכנס</span><span><i>$p>1$</i><span class="bur">מתבדר</span></span></div></div>
+<div class="step" data-m="3"><div class="f">$p=1:\quad -\ln t\to\infty$</div><div class="x">כאן הנוסחה לא עובדת, כי מחלקים ב-$0$. משתמשים ב-$\ln$. זו דוגמה 3. <span class="bur">מתבדר</span>.</div><div class="st"><span><i>$p<1$</i>מתכנס</span><span><i>$p\ge1$</i><span class="bur">מתבדר</span></span></div></div>
+<div class="step" data-m="4"><div class="f"><span class="ans">$\int_0^\infty\frac{dx}{x^p}\ \text{ diverges for all } p$</span></div><div class="x">מפצלים: $\int_0^\infty=\int_0^1+\int_1^\infty$. שני החלקים מתכנסים בתנאים הפוכים: ליד אפס צריך $p\lt1$, ובאינסוף צריך $p\gt1$. אין $p$ שמקיים את שניהם. לכן זה תמיד <span class="bur">מתבדר</span>.</div><div class="st"><span><i>$[0,\infty)$</i><span class="bur">תמיד מתבדר</span></span></div></div>
+</div></div>
+<div class="tw"><table><tr><th>$p$</th><th>$\int_0^1\frac{dx}{x^p}$ (ליד אפס)</th><th>$\int_1^\infty\frac{dx}{x^p}$ (באינסוף)</th><th>$\int_0^\infty\frac{dx}{x^p}$</th></tr>
+<tr><td>$0\lt p\lt1$</td><td class="eme">מתכנס ל-$\frac1{1-p}$</td><td class="bur">מתבדר</td><td class="bur">מתבדר</td></tr>
+<tr><td>$p=1$</td><td class="bur">מתבדר</td><td class="bur">מתבדר</td><td class="bur">מתבדר</td></tr>
+<tr><td>$p\gt1$</td><td class="bur">מתבדר</td><td class="eme">מתכנס ל-$\frac1{p-1}$</td><td class="bur">מתבדר</td></tr>
+</table></div>
+<div class="tool"><b>המחשה: שנו את $p$ ואת $t$</b>
+<label for="s5p">הפרמטר $p$:</label><input type="range" id="s5p" min="0.1" max="2.2" step="0.05" value="0.5">
+<label for="s5t">כמה קרוב לאפס:</label><input type="range" id="s5t" min="0" max="100" value="40">
+<svg id="s5svg" viewBox="0 0 400 220" role="img" aria-label="גרף של אחד חלקי x בחזקת p"></svg>
+<p class="out" id="s5out"></p></div>
+<div class="box rule"><b>הכלל לזכור</b>ליד אפס: $p\lt1$ מתכנס. באינסוף: $p\gt1$ מתכנס. $p=1$ מתבדר בשניהם.</div>
+<div class="quiz"><div class="qt">שאלות על סעיף 5</div>
+<div class="qq" data-a="0"><p class="q">מתי $\int_0^1\frac{dx}{x^p}$ מתכנס (כאשר $p\gt0$)?</p><ol><li>בדיוק כאשר $p\lt 1$, כי אז $t^{1-p}\to0$</li><li>בדיוק כאשר $p\gt 1$, כי אז $t^{1-p}\to0$</li><li>בדיוק כאשר $p=1$, כי אז מקבלים $\ln$</li><li>לכל $p\gt0$, כי הקטע סופי ולכן השטח סופי</li></ol><p class="h">רמז: מה הסימן של החזקה $1-p$?</p><p class="e">נכון. למשל $p=\frac12$ נותן $2$.</p></div>
+<div class="qq" data-a="2"><p class="q">כמה שווה $\int_0^1\frac{dx}{x^{2/3}}$?</p><ol><li>$\frac32$, כי מחלקים ב-$\frac23$ ומקבלים את זה</li><li>$\frac13$, כי זו התוצאה של $1-p$ עם $p=\frac23$</li><li>$3$, כי $\frac1{1-p}$ עם $p=\frac23$ נותן את זה</li><li>$\infty$, כי הפונקציה לא חסומה ליד אפס</li></ol><p class="h">רמז: הנוסחה היא $\frac1{1-p}$.</p><p class="e">נכון. $1-\frac23=\frac13$, ואחד חלקי זה הוא $3$.</p></div>
+<div class="qq" data-a="3"><p class="q">למה $\int_0^\infty\frac{dx}{x^{1/2}}$ מתבדר, למרות ש-$p\lt1$?</p><ol><li>כי החלק שליד אפס מתבדר, והחלק באינסוף מתכנס</li><li>כי הפונקציה לא רציפה באף נקודה מהקטע הזה</li><li>כי $\frac12$ הוא לא מספר שלם, והכלל דורש כזה</li><li>כי החלק שליד אפס מתכנס, והחלק באינסוף מתבדר</li></ol><p class="h">רמז: חלקו ב-$1$ ובדקו כל חלק בנפרד.</p><p class="e">נכון. ב-$[1,\infty)$ התנאי הוא $p\gt1$, והוא לא מתקיים.</p></div>
+<div class="qq" data-a="1"><p class="q">מדוע במקרה $p=1$ לא משתמשים בנוסחה $\frac{1-t^{1-p}}{1-p}$?</p><ol><li>כי במקרה הזה $t^{1-p}$ שואף לאינסוף</li><li>כי מקבלים חלוקה באפס, ולכן הקדומה היא $\ln$</li><li>כי הפונקציה $\frac1x$ חסומה ליד הנקודה $x=0$</li><li>כי אי אפשר להציב $x=1$ בקדומה של $\frac1x$</li></ol><p class="h">רמז: הציבו $p=1$ במכנה של הנוסחה.</p><p class="e">נכון. המכנה $1-p$ מתאפס, ואז עוברים ל-$\ln$.</p></div>
+</div>
+</section>
+
+<!-- ============ 6 ============ -->
+<section class="sec" id="s6" data-short="מבחן ההשוואה הגבולי">
+<h2>מבחן ההשוואה הגבולי</h2>
+<p>מבחן ההשוואה הרגיל דורש אי-שוויון. לפעמים הוא הולך לכיוון הלא נוח. במבחן הגבולי לא צריך אי-שוויון: מחשבים גבול אחד של המנה.</p>
+<div class="box mine"><b>מה זה מבחן גבולי? (מההתחלה, עם מספרים) — הדוגמה שלי</b>
+<ol>
+<li>שלב 1 – מה יש לנו: $f(x)=\frac1{\sqrt{x-x^2}}$ על $(0,\frac12]$, ורוצים לדעת על השטח ליד <span class="rus">$0$</span>.</li>
+<li>שלב 2 – מי דומה לה? ליד אפס $x^2$ קטן בהרבה מ-$x$. ב-$x=0.01$: $x=0.01$ ו-$x^2=0.0001$. לכן $f$ דומה ל-$g(x)=\frac1{\sqrt x}$.</li>
+<li>שלב 3 – הבעיה: $\sqrt{x-x^2}\lt\sqrt x$, לכן $f\ge g$. הפונקציה שלנו <b>מעל</b> $g$, ומבחן ההשוואה הרגיל לא יעזור.</li>
+<li>שלב 4 – במקום זה מחשבים מנה: ב-$x=0.01$, $\frac fg=\frac1{\sqrt{0.99}}\approx1.005$. ב-$x=0.0001$ יוצא בערך $1.00005$.</li>
+<li>שלב 5 – המנה שואפת ל-$L=1$. כלומר ליד אפס $f$ ו-$g$ כמעט זהות. לכן הן מתנהגות אותו דבר, ו-$\int_0^{1/2}\frac{dx}{\sqrt{x-x^2}}$ <span class="eme">מתכנס</span>.</li>
+</ol></div>
+<div class="box rule"><b>המבחן מהמחברת</b>נניח ש-$f$ ו-$g$ מוגדרות, אי-שליליות ולא חסומות בקטע חצי פתוח $[a,b)$, ואינטגרביליות ב-$[a,t]$ לכל $a\le t\lt b$. נסמן $\class{jad}{L}=\lim\limits_{x\to b^-}\frac{f(x)}{g(x)}$. אז:
+<ol>
+<li>אם $0\le \class{jad}{L}\lt\infty$ וגם $\int_a^b g$ <span class="eme">מתכנס</span>, אז $\int_a^b f$ <span class="eme">מתכנס</span>.</li>
+<li>אם $0\lt \class{jad}{L}\le\infty$ וגם $\int_a^b g$ <span class="bur">מתבדר</span>, אז $\int_a^b f$ <span class="bur">מתבדר</span>.</li>
+</ol></div>
+<div class="tw"><table><tr><th>הקטע</th><th>הגבול</th></tr>
+<tr><td>$[a,b)$</td><td>$x\to b^-$</td></tr>
+<tr><td>$(a,b]$</td><td>$x\to a^+$</td></tr>
+<tr><td>$[a,\infty)$</td><td>$x\to\infty$</td></tr>
+</table></div>
+<div class="box fix"><b>הערה שלי על המחברת</b>שני דברים קטנים: (1) צריך גם $g\gt0$ ליד הקצה, אחרת המנה לא מוגדרת. (2) "לא חסומות" נכון לקטעים סופיים. בקטע $[a,\infty)$ הפונקציות לא חייבות להיות לא חסומות.</div>
+<h3>מה מסיקים מכל $L$</h3>
+<div class="tw"><table><tr><th>$L$</th><th>$\int g$ מתכנס</th><th>$\int g$ מתבדר</th></tr>
+<tr><td>$L=0$</td><td class="eme">$\int f$ מתכנס</td><td>אין מסקנה</td></tr>
+<tr><td>$0\lt L\lt\infty$</td><td class="eme">$\int f$ מתכנס</td><td class="bur">$\int f$ מתבדר</td></tr>
+<tr><td>$L=\infty$</td><td>אין מסקנה</td><td class="bur">$\int f$ מתבדר</td></tr>
+</table></div>
+<div class="box mine"><b>למה זה עובד? (רעיון, לא כתוב במחברת)</b>אם $L=1$, אז קרוב לקצה המנה בין $\frac12$ ל-$2$. לכן $\frac12 g\le f\le 2g$. עכשיו זה מבחן ההשוואה הרגיל משני הכיוונים. אם $L=0$, אז קרוב לקצה $f\le g$, ויש רק כיוון אחד. אם $L=\infty$, אז קרוב לקצה $f\ge g$, ושוב רק כיוון אחד.</div>
+<h3>הדוגמה מההרצאה: $\int_0^1\frac{dt}{\sqrt{t+t^2}}$</h3>
+<div class="box fix"><b>הערה שלי על המחברת</b>בדוגמה המשתנה מתחלף בין $t$ ל-$x$. זה אותו דבר, כי שם המשתנה לא משנה. בנוסף, המחברת נעצרת ב-$L=1$, ובסוף הסימולציה השלמתי את המסקנה.</div>
+<div class="sim"><div class="st-title">סימולציה: שתי דרכים לאותה דוגמה</div>
+<ol class="map"><li>1. בעיה</li><li>2. השוואה רגילה</li><li>3. מבחן גבולי</li><li>4. מסקנה</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$\int_{\class{rus}{0}}^1\frac{dt}{\sqrt{t+t^2}}$</div><div class="x">ב-$t=0$ המכנה מתאפס. בקצה הזה יש בעיה, ושאר הקטע תקין. הפונקציה חיובית, אז מותר להשתמש במבחנים.</div><div class="st"><span><i>בעיה</i>$t=0$</span></div></div>
+<div class="step" data-m="1"><div class="f">$0\le\class{red}{\frac1{\sqrt{t+t^2}}}\le\class{olv}{\frac1{\sqrt t}}\qquad t\in(0,1]$</div><div class="x">מאיפה? $t+t^2\ge t$, כי $t^2\ge0$. מכנה גדול יותר נותן שבר קטן יותר.</div><div class="st"><span><i>קטנה</i>$\frac1{\sqrt{t+t^2}}$</span><span><i>גדולה</i>$\frac1{\sqrt t}$</span></div></div>
+<div class="step" data-m="1"><div class="f">$\int_0^1\class{olv}{\frac{dx}{\sqrt x}}\ \text{ converges}\quad (p=\tfrac12<1)$</div><div class="x">מבחן ה-$p$ מסעיף 5: $\sqrt x=x^{1/2}$, כלומר $p=\frac12$, ולכן זה <span class="eme">מתכנס</span> (הערך הוא $2$).</div><div class="st"><span><i>גדולה</i><span class="eme">מתכנס</span></span></div></div>
+<div class="step" data-m="1"><div class="f">$\Rightarrow\ \int_0^1\frac{dt}{\sqrt{t+t^2}}\ \text{ converges}$</div><div class="x">הקטנה מתחת לגדולה שמתכנסת, לפי מבחן ההשוואה. זו הדרך הראשונה.</div><div class="st"><span><i>קטנה</i><span class="eme">מתכנס</span></span></div></div>
+<div class="step" data-m="2"><div class="f">$\class{jad}{L}=\lim\limits_{x\to0^+}\dfrac{\frac1{\sqrt{x+x^2}}}{\frac1{\sqrt x}}=\lim\limits_{x\to0^+}\frac{\sqrt x}{\sqrt{x+x^2}}$</div><div class="x">עכשיו הדרך השנייה. לחילוק בשבר מכפילים בהופכי. למה $g=\frac1{\sqrt x}$? כי ליד אפס $x^2$ קטן בהרבה מ-$x$, אז $\sqrt{x+x^2}$ דומה ל-$\sqrt x$.</div><div class="st"><span><i>$g$</i>$\frac1{\sqrt x}$</span></div></div>
+<div class="step" data-m="2"><div class="f">$=\lim\limits_{x\to0^+}\frac{\sqrt x}{\sqrt x\,\sqrt{1+x}}=\lim\limits_{x\to0^+}\frac1{\sqrt{1+x}}=\class{jad}{1}$</div><div class="x">מוציאים גורם משותף: $x+x^2=x(1+x)$. מצמצמים $\sqrt x$. ואז מציבים $x=0$.</div><div class="st"><span><i>$L$</i>$1$</span></div></div>
+<div class="step" data-m="3"><div class="f"><span class="ans">$\int_0^1\frac{dt}{\sqrt{t+t^2}}\ \text{ converges}$</span></div><div class="x">$L=1$ נמצא בין $0$ ל-$\infty$, ו-$\int_0^1 g$ מתכנס. לכן לפי סעיף 1 של המבחן, האינטגרל <span class="eme">מתכנס</span>. (הערך המדויק הוא בערך $1.76$.)</div><div class="st"><span><i>$L$</i>$1$</span><span><i>תשובה</i><span class="eme">מתכנס</span></span></div></div>
+</div></div>
+<div class="tool"><b>המחשה: מנה ליד הקצה, ומה מסיקים</b>
+<label for="s6sel">בחרו זוג פונקציות (ליד אפס):</label>
+<select id="s6sel"><option value="0">f = 1/√(x+x²),  g = 1/√x</option><option value="1">f = 1/√(x−x²),  g = 1/√x</option><option value="2">f = 1/x^(1/4),  g = 1/√x</option><option value="3">f = 1/x,  g = 1/√x</option><option value="4">f = 1/x,  g = 1/x²</option></select>
+<label for="s6x">מיקום $x$:</label><input type="range" id="s6x" min="0" max="100" value="55">
+<svg id="s6svg" viewBox="0 0 400 200" role="img" aria-label="גרף המנה f חלקי g"></svg>
+<p class="out" id="s6out"></p></div>
+<div class="box rule"><b>הכלל לזכור</b>מה ש"שולט" ליד הקצה הוא ה-$g$ שלך. אם $L$ הוא מספר חיובי, $f$ ו-$g$ מתנהגות אותו דבר.</div>
+<p><b>אנלוגיה:</b> שני רצים. אם היחס בין המהירויות שלהם מתייצב, למשל פי 2, אז אם אחד סיים את המרוץ, גם השני יסיים.</p>
+<div class="quiz"><div class="qt">שאלות על סעיף 6</div>
+<div class="qq" data-a="1"><p class="q">אם $L=3$ ו-$\int_a^b g$ מתבדר, מה המסקנה?</p><ol><li>$\int_a^b f$ מתכנס, כי $L$ הוא מספר סופי</li><li>$\int_a^b f$ מתבדר, כי $L$ חיובי ולכן הן דומות</li><li>אין מסקנה, כי $L$ שונה מ-$1$ במקרה הזה</li><li>אין מסקנה, כי $L$ גדול מ-$1$ במקרה הזה</li></ol><p class="h">רמז: מה דורש סעיף 2 של המבחן על $L$?</p><p class="e">נכון. הטווח הוא $0\lt L\le\infty$, ו-$L=3$ בפנים.</p></div>
+<div class="qq" data-a="3"><p class="q">אם $L=0$ ו-$\int_a^b g$ מתבדר, מה המסקנה?</p><ol><li>$\int_a^b f$ מתבדר, כי $g$ מתבדר בקצה הקטע</li><li>$\int_a^b f$ מתכנס, כי $f$ קטנה מ-$g$ בקצה</li><li>$\int_a^b f$ מתכנס לאפס, כי $L$ שווה לאפס</li><li>אין מסקנה, כי $f$ קטנה וה-$g$ הגדולה מתבדרת</li></ol><p class="h">רמז: חפשו את השורה הזו בטבלה.</p><p class="e">נכון. למשל $\frac1x$ מול $\frac1{x^2}$ מתבדר, ומצד שני $\frac1{\sqrt x}$ מול $\frac1{x^2}$ מתכנס. שניהם $L=0$.</p></div>
+<div class="qq" data-a="0"><p class="q">למה בדוגמה בחרנו $g=\frac1{\sqrt x}$ עבור $f=\frac1{\sqrt{x+x^2}}$ ליד אפס?</p><ol><li>כי ליד אפס $x^2$ קטן בהרבה מ-$x$, לכן $x$ שולט</li><li>כי ליד אפס $x$ קטן בהרבה מ-$x^2$, לכן $x^2$ שולט</li><li>כי $g$ חייבת להיות תמיד גדולה יותר מהפונקציה $f$</li><li>כי $\sqrt{x+x^2}=\sqrt x+x$ לכל $x$ בקטע הזה</li></ol><p class="h">רמז: הציבו $x=0.01$ וחשבו את שני האיברים.</p><p class="e">נכון. ב-$x=0.01$ יש $x=0.01$ ו-$x^2=0.0001$.</p></div>
+<div class="qq" data-a="2"><p class="q">עבור $f=\frac1{\sqrt{x+x^2}}$ ו-$g=\frac1{\sqrt{x}}$, כמה יוצא $\lim\limits_{x\to0^+}\frac fg$?</p><ol><li>$0$, כי המונה של השבר שואף לאפס</li><li>$\infty$, כי שתי הפונקציות לא חסומות</li><li>$1$, כי המנה היא $\frac1{\sqrt{1+x}}$ ושואפת ל-$1$</li><li>$\frac12$, כי יש שני איברים בתוך השורש</li></ol><p class="h">רמז: הוציאו $x$ מהשורש ואז צמצמו.</p><p class="e">נכון. $\sqrt{x+x^2}=\sqrt x\sqrt{1+x}$.</p></div>
+</div>
+</section>
+
+<!-- ============ 7 ============ -->
+<section class="sec" id="s7" data-short="מבחן האינטגרל לטורים">
+<h2>מבחן האינטגרל להתכנסות טורים</h2>
+<p>עד עכשיו דיברנו על שטח. כאן מחברים את זה לדבר אחר: סכום של אינסוף מספרים. אם הסדרה יורדת יפה, אפשר לדעת אם הסכום סופי דרך האינטגרל.</p>
+<div class="box terms"><b>מילים וסימנים (אם לא זוכרים טורים)</b>
+<ul>
+<li>סדרה: רשימה של מספרים. למשל $\class{rub}{a_n}=\frac1{n^2}$ נותנת $1,\ \frac14,\ \frac19,\ \frac1{16},\dots$</li>
+<li>טור: הסכום של כולם, $\sum_{n=1}^{\infty}a_n$.</li>
+<li>סכום חלקי: סכום של $n$ האיברים הראשונים, $\class{rub}{S_n}=a_1+\dots+a_n$. למשל $S_1=1$, ואז $S_2=1.25$, ואז $S_3\approx1.361$.</li>
+<li>הטור מתכנס: לסדרה $S_n$ יש גבול סופי. מתבדר: אין לה גבול כזה.</li>
+<li>אמ"מ: קיצור של "אם ורק אם". כלומר שני הכיוונים נכונים.</li>
+</ul></div>
+<div class="box mine"><b>איך אינטגרל קשור לטור? (מההתחלה, עם מספרים) — הדוגמה שלי</b>
+<ol>
+<li>שלב 1 – מה יש לנו: $f(x)=\frac1{x^2}$, ואז $a_n=f(n)$: $a_1=1$, $a_2=0.25$, $a_3=0.111$, $a_4=0.0625$.</li>
+<li>שלב 2 – מלבן ברוחב $1$ שגובהו $a_k$ הוא פשוט שטח בגודל $a_k$. לכן סכום של איברים הוא סכום של שטחי מלבנים.</li>
+<li>שלב 3 – השטח מתחת לעקומה מ-$1$ עד $4$: $\int_1^4\frac{dx}{x^2}=1-\frac14=0.75$.</li>
+<li>שלב 4 – מלבנים <b>מתחת</b> לעקומה: $a_2+a_3+a_4\approx0.424$. זה פחות מ-$0.75$.</li>
+<li>שלב 5 – מלבנים <b>מעל</b> העקומה: $a_1+a_2+a_3\approx1.361$. זה יותר מ-$0.75$.</li>
+<li>שלב 6 – האינטגרל כלוא בין שני סכומים. לכן הטור והאינטגרל "מתנהגים" אותו דבר.</li>
+</ol></div>
+<div class="box rule"><b>המשפט מהמחברת</b>תהי $f(x)$ רציפה, חיובית ויורדת ב-$[1,\infty)$, ותהי $\class{rub}{a_n}=f(n)$. אזי $\int_1^\infty f(x)\,dx$ <span class="eme">מתכנס</span> אמ"מ $\sum_{n=1}^\infty \class{rub}{a_n}$ <span class="eme">מתכנס</span>.</div>
+<div class="tool"><b>המחשה: הציור מהמחברת (מלבנים מתחת ומעל)</b>
+<div class="row"><label for="s7f">הפונקציה:</label><select id="s7f"><option value="0">f(x) = 1/x²</option><option value="1">f(x) = 1/x</option><option value="2">f(x) = 1/x^1.5</option></select><label for="s7v">להציג:</label><select id="s7v"><option value="0">שני הסוגים</option><option value="1">רק מתחת</option><option value="2">רק מעל</option></select></div>
+<label for="s7n">עד איפה ($n$):</label><input type="range" id="s7n" min="2" max="12" step="1" value="5">
+<svg id="s7svg" viewBox="0 0 400 220" role="img" aria-label="עקומה עם מלבנים מתחת ומעל"></svg>
+<p class="out" id="s7out"></p></div>
+<div class="sim"><div class="st-title">סימולציה: הוכחת המשפט, שורה אחרי שורה</div>
+<ol class="map"><li>1. אי-השוויון</li><li>2. אינטגרל מתכנס</li><li>3. אינטגרל מתבדר</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$a_{k+1}\ \le\ \int_k^{k+1}f(x)\,dx\ \le\ a_k$</div><div class="x">$f$ יורדת, אז ב-$[k,k+1]$ הערך הכי גדול הוא $f(k)=a_k$, והכי קטן הוא $f(k+1)=a_{k+1}$. הרוחב הוא $1$. זה מלבן מתחת ומלבן מעל.</div><div class="st"><span><i>משתמשים ב</i>$f$ יורדת</span></div></div>
+<div class="step" data-m="0"><div class="f">$a_2+\dots+a_n\ \le\ \int_1^n f\,dx$</div><div class="x">מחברים את השורה הקודמת עבור $k=1,2,\dots,n-1$. באמצע השטחים מתחברים ל-$\int_1^n f$. בצד שמאל מתחילים מ-$a_2$, ולכן זה $S_n-a_1$.</div><div class="st"><span><i>שמאל</i>$S_n-a_1$</span></div></div>
+<div class="step" data-m="0"><div class="f">$\int_1^n f\,dx\ \le\ a_1+\dots+a_{n-1}$</div><div class="x">החלק השני של אותו סכום. בצד ימין עוצרים ב-$a_{n-1}$, ולכן זה $S_{n-1}$.</div><div class="st"><span><i>שמאל</i>$S_n-a_1$</span><span><i>ימין</i>$S_{n-1}$</span></div></div>
+<div class="step" data-m="1"><div class="f">$S_{n+1}-S_n=a_{n+1}>0$</div><div class="x">כיוון ראשון: נניח ש-$\int_1^\infty f$ מתכנס. $f$ חיובית, אז כל $a_n$ חיובי. לכן כל איבר נוסף מגדיל את הסכום: $S_n$ מונוטונית עולה.</div><div class="st"><span><i>$S_n$</i>עולה</span></div></div>
+<div class="step" data-m="1"><div class="f">$S_n-a_1\ \le\ \int_1^n f\,dx\ \le\ \int_1^\infty f\,dx$</div><div class="x">אי-השוויון השמאלי הוא מהשורה 2 בסימולציה. הימני נובע מכך ש-$f$ חיובית, ולכן עוד קטע מוסיף עוד שטח.</div><div class="st"><span><i>$S_n$</i>עולה</span><span><i>חסם</i>בדרך</span></div></div>
+<div class="step" data-m="1"><div class="f">$S_n\ \le\ a_1+\int_1^\infty f\,dx$</div><div class="x">העברנו אגף. צד ימין הוא מספר קבוע, כי האינטגרל מתכנס, והוא לא תלוי ב-$n$. לכן $S_n$ חסומה מלמעלה.</div><div class="st"><span><i>$S_n$</i>עולה</span><span><i>חסם</i>יש חסם עליון</span></div></div>
+<div class="step" data-m="1"><div class="f">$\Rightarrow\ \sum_{n=1}^\infty a_n\ \text{ converges}$</div><div class="x">סדרה עולה וחסומה מלמעלה מתכנסת (משפט מחדו"א 1). $S_n$ מתכנסת, כלומר הטור <span class="eme">מתכנס</span>.</div><div class="st"><span><i>$S_n$</i><span class="eme">מתכנסת</span></span></div></div>
+<div class="step" data-m="2"><div class="f">$\lim\limits_{n\to\infty}\int_1^n f\,dx=\infty$</div><div class="x">כיוון שני: נניח ש-$\int_1^\infty f$ מתבדר. $f$ חיובית, ולכן $\int_1^n f$ רק עולה. אם הוא לא מתכנס, הוא חייב לעלות לאינסוף. אין לו אפשרות להתנדנד.</div><div class="st"><span><i>השטח</i>עולה לאינסוף</span></div></div>
+<div class="step" data-m="2"><div class="f">$\int_1^n f\,dx\ \le\ S_{n-1}$</div><div class="x">זה הצד הימני של אי-השוויון.</div><div class="st"><span><i>השטח</i>עולה לאינסוף</span><span><i>$S_{n-1}$</i>גדול ממנו</span></div></div>
+<div class="step" data-m="2"><div class="f"><span class="ans">$S_{n-1}\to\infty\ \Rightarrow\ \sum a_n\ \text{ diverges}$</span></div><div class="x">אם הקטן שואף לאינסוף, גם הגדול שואף לאינסוף. לכן הטור <span class="bur">מתבדר</span>. סוף ההוכחה (מש"ל).</div><div class="st"><span><i>$S_n$</i><span class="bur">מתבדרת</span></span></div></div>
+</div></div>
+<div class="box mine"><b>אותו דבר במספרים — הדוגמה שלי</b>
+<div class="tw tight"><table><tr><th>$n$</th><th>$\sum\frac1{k^2}$</th><th>$\int_1^n\frac{dx}{x^2}$</th><th>$\sum\frac1{k}$</th><th>$\int_1^n\frac{dx}{x}$</th></tr>
+<tr><td>$10$</td><td>$1.550$</td><td>$0.9$</td><td>$2.929$</td><td>$2.303$</td></tr>
+<tr><td>$100$</td><td>$1.635$</td><td>$0.99$</td><td>$5.187$</td><td>$4.605$</td></tr>
+<tr><td>$10000$</td><td>$1.645$</td><td>$0.9999$</td><td>$9.788$</td><td>$9.210$</td></tr>
+</table></div>
+שימו לב: הטור והאינטגרל <b>מתנהגים</b> אותו דבר, אבל הם <b>לא שווים</b>. ב-$\frac1{x^2}$ האינטגרל הוא $1$, והטור הוא בערך $1.645$. המבחן אומר רק אם מתכנס, לא כמה.</div>
+<div class="box mine"><b>הערה מהמחברת: אפשר גם על $[a,\infty)$ — הדוגמה שלי</b>המשפט נכון גם אם מתחילים מ-$a$. למשל $f(x)=\frac1{x\ln x}$ על $[2,\infty)$: חיובית ויורדת. בהצבה $u=\ln x$: $\int_2^t\frac{dx}{x\ln x}=\ln\ln t-\ln\ln2\to\infty$. לכן $\sum_{n=2}^\infty\frac1{n\ln n}$ <span class="bur">מתבדר</span>.</div>
+<div class="box rule"><b>הכלל לזכור</b>בודקים טור דרך אינטגרל רק אם $f$ חיובית ויורדת. הטור והאינטגרל יתכנסו או יתבדרו יחד, אבל ערכים שונים.</div>
+<p><b>אנלוגיה:</b> מדרגות שיורדות לאורך מדרון. המדרגות והמדרון צמודים זה לזה כל הדרך. אם המדרון לא נגמר בעומק אינסופי, גם המדרגות לא.</p>
+<div class="quiz"><div class="qt">שאלות על סעיף 7</div>
+<div class="qq" data-a="2"><p class="q">מה התנאים של מבחן האינטגרל, כפי שמופיעים במחברת?</p><ol><li>$f$ רציפה, שלילית ועולה בקטע $[1,\infty)$</li><li>$f$ גזירה, חסומה ועולה בקטע $[1,\infty)$</li><li>$f$ רציפה, חיובית ויורדת בקטע $[1,\infty)$</li><li>$f$ גזירה, חיובית ועולה בקטע $[1,\infty)$</li></ol><p class="h">רמז: איך נראית העקומה בציור?</p><p class="e">נכון. בלי "יורדת" המלבנים לא כלואים מסביב לעקומה.</p></div>
+<div class="qq" data-a="0"><p class="q">עבור $f$ יורדת, איזו שורה נכונה?</p><ol><li>$a_2+\dots+a_n\le\int_1^n f\le a_1+\dots+a_{n-1}$</li><li>$a_1+\dots+a_{n-1}\le\int_1^n f\le a_2+\dots+a_n$</li><li>$a_1+\dots+a_n\le\int_1^n f\le a_2+\dots+a_{n-1}$</li><li>$a_1+\dots+a_n\le\int_1^n f\le a_1+\dots+a_{n-1}$</li></ol><p class="h">רמז: מלבנים שגובהם $a_1$ הם המלבנים מעל העקומה.</p><p class="e">נכון. המלבנים מתחת מתחילים ב-$a_2$, והמלבנים מעל נגמרים ב-$a_{n-1}$.</p></div>
+<div class="qq" data-a="3"><p class="q">עבור $\sum_{n=1}^\infty\frac1{n^2}$, אנחנו יודעים ש-$\int_1^\infty\frac{dx}{x^2}=1$. מה המסקנה?</p><ol><li>הטור מתכנס, וערכו בדיוק $1$ כמו האינטגרל</li><li>הטור מתבדר, כי הסכום כבר עובר את האינטגרל</li><li>הטור מתכנס, וערכו קטן מ-$1$ בגלל המלבנים</li><li>הטור מתכנס, אבל הערך שלו אינו בהכרח $1$</li></ol><p class="h">רמז: מה המבחן אומר, ומה הוא לא אומר?</p><p class="e">נכון. המבחן נותן רק התכנסות. בפועל הערך בערך $1.645$.</p></div>
+<div class="qq" data-a="1"><p class="q">באיזה שלב בהוכחת הכיוון הראשון משתמשים בכך ש-$f$ חיובית?</p><ol><li>כדי להראות ש-$f$ יורדת לאורך כל הקטע $[1,\infty)$</li><li>כדי להראות ש-$S_n$ עולה ו-$\int_1^n f\le\int_1^\infty f$</li><li>כדי להראות ש-$a_1$ הוא האיבר הקטן ביותר בסדרה</li><li>כדי להראות ש-$\int_1^n f$ קטן מ-$S_n$ לכל $n$</li></ol><p class="h">רמז: איפה אומרים "עוד שטח מוסיף"?</p><p class="e">נכון. חיוביות נותנת גם $a_n\gt0$ וגם שהשטח רק גדל.</p></div>
+<div class="qq" data-a="2"><p class="q">מה קובע מבחן האינטגרל על $\sum_{n=1}^\infty\frac1n$?</p><ol><li>הטור מתכנס, כי $\frac1n\to0$ כש-$n$ שואף לאינסוף</li><li>הטור מתכנס, כי $\frac1x$ חיובית ויורדת בקטע</li><li>הטור מתבדר, כי $\int_1^n\frac{dx}{x}=\ln n\to\infty$</li><li>הטור מתבדר, כי $\frac1x$ אינה יורדת בקטע</li></ol><p class="h">רמז: מה עושה $\int_1^n\frac{dx}x$?</p><p class="e">נכון. והטבלה מראה שהסכום עולה בדיוק כמו $\ln n$.</p></div>
+</div>
+</section>
+
+<!-- ============ 8 ============ -->
+<section class="sec" id="s8" data-short="האם f חייבת לשאוף ל-0?">
+<h2>שאלה: האם $f$ חייבת לשאוף ל-$0$?</h2>
+<p>בטור: אם הטור מתכנס, האיברים שואפים ל-$0$. האם אותו דבר נכון לאינטגרל? המחברת עונה: רק אם הפונקציה מונוטונית.</p>
+<div class="box rule"><b>מה כתוב במחברת</b>אם $f:[a,\infty)\to\mathbb R$ אינטגרבילית ב-$[a,\infty)$ <b>ומונוטונית יורדת</b>, אז $f(x)\to0$ כש-$x\to\infty$. אבל ייתכן פונקציה שאיננה שואפת לאפס, והאינטגרל עדיין קיים.</div>
+<div class="box mine"><b>למה זה נכון עם "יורדת"? (השלמה שלי, במחברת רק נאמר "ניתן להסיק")</b>
+<ol>
+<li>$f$ לא יכולה להיות שלילית באף נקודה: אם $f(x_1)\lt0$, אז מכאן והלאה $f\le f(x_1)$ והשטח יורד ל-$-\infty$.</li>
+<li>לכן $f\ge0$ ויורדת. מכאן ההוכחה של מבחן האינטגרל נותנת ש-$\sum f(n)$ מתכנס.</li>
+<li>טור מתכנס, ולכן האיברים שואפים לאפס, כלומר $f(n)\to0$.</li>
+<li>כיוון ש-$f$ יורדת, היא נמצאת בין $f(n)$ ל-$f(n+1)$ בין המספרים השלמים, ולכן $f(x)\to0$.</li>
+</ol></div>
+<h3>הדוגמה הנגדית: פונקציית האוהלים</h3>
+<div class="tw"><table><tr><th>שלב</th><th>מה עושים</th></tr>
+<tr><td>1</td><td>מגדירים את האוהלים: מרכז, גובה, רוחב</td></tr>
+<tr><td>2</td><td>מחשבים שטח של אוהל אחד</td></tr>
+<tr><td>3</td><td>מחברים את כל השטחים</td></tr>
+<tr><td>4</td><td>מראים ש-$f$ לא שואפת לאפס</td></tr>
+</table></div>
+<div class="tool"><b>המחשה: הציור מהמחברת (אוהלים שנעשים צרים)</b>
+<label for="s8n">כמה אוהלים:</label><input type="range" id="s8n" min="1" max="8" step="1" value="4">
+<svg id="s8svg" viewBox="0 0 400 200" role="img" aria-label="אוהלים בגובה אחד שהולכים ונעשים צרים"></svg>
+<p class="out" id="s8out"></p>
+<p>התוויות הוורודות בציור שבמחברת הן חצי מהרוחב: $\frac12,\frac14,\frac18,\frac1{16}$.</p></div>
+<div class="sim"><div class="st-title">סימולציה: פונקציית האוהלים</div>
+<ol class="map"><li>1. אוהל</li><li>2. שטח</li><li>3. סכום</li><li>4. לא שואפת ל-0</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$h_n=1,\qquad w_n=\frac1{2^{\,n-1}}$</div><div class="x">$h_n$ הוא הגובה של אוהל מספר $n$, ו-$w_n$ הוא הרוחב שלו. סביב כל מספר שלם יש משולש. בין המשולשים הפונקציה היא $0$. ככל ש-$n$ גדל, המשולש צר יותר, אבל הגובה נשאר $1$. ב-$n=1$ הרוחב $1$. ב-$n=2$ הוא $\frac12$. ב-$n=3$ הוא $\frac14$.</div><div class="st"><span><i>אוהל 1</i>רוחב $1$</span><span><i>אוהל 2</i>רוחב $\frac12$</span></div></div>
+<div class="step" data-m="1"><div class="f">$\text{area}_n=\frac12\cdot\frac1{2^{\,n-1}}\cdot1=\frac1{2^n}$</div><div class="x">שטח משולש הוא חצי בסיס כפול גובה. אוהל 1 בשטח $\frac12$. אוהל 2 בשטח $\frac14$. אוהל 3 בשטח $\frac18$.</div><div class="st"><span><i>אוהל 1</i>שטח $\frac12$</span><span><i>אוהל 2</i>שטח $\frac14$</span></div></div>
+<div class="step" data-m="2"><div class="f"><span class="ans">$\int_0^\infty f(x)\,dx=\sum_{n=1}^\infty\frac1{2^n}=1$</span></div><div class="x">טור הנדסי: $\frac12+\frac14+\frac18+\dots=1$. אפילו שהאוהלים לא נגמרים, השטח <span class="eme">מתכנס</span>.</div><div class="st"><span><i>שטח כולל</i><span class="eme">$1$</span></span></div></div>
+<div class="step" data-m="3"><div class="f">$f(n)=1\quad\text{for every } n\in\mathbb N$</div><div class="x">בנקודה $x=n$ אנחנו בראש האוהל, ולכן הערך $1$. לא משנה כמה רחוק הולכים.</div><div class="st"><span><i>הערכים</i>$f(n)=1$</span></div></div>
+<div class="step" data-m="3"><div class="f"><span class="ans">$f(x)\not\to0\ \text{ as } x\to\infty$</span></div><div class="x">קריטריון היינה: אם $f(x)\to0$, אז לכל סדרה $x_n\to\infty$ צריך $f(x_n)\to0$. אבל הסדרה $x_n=n$ נותנת $f(n)=1$, לא $0$. לכן $f$ לא שואפת ל-$0$.</div><div class="st"><span><i>מסקנה</i>$f$ לא שואפת ל-$0$</span></div></div>
+</div></div>
+<div class="box terms"><b>מילים</b>
+<ul><li>קריטריון היינה: אומר שגבול של פונקציה קיים אמ"מ לכל סדרה שמתקרבת לנקודה הערכים מתקרבים לאותו מספר. כדי להוכיח שאין גבול, מספיקה סדרה אחת שנכשלת.</li>
+<li>הקשר למבחן האינטגרל: ב-$\sum f(n)=1+1+1+\dots$ הטור מתבדר, והאינטגרל מתכנס. זה לא סותר את המבחן, כי פונקציית האוהלים לא יורדת.</li></ul></div>
+<div class="box rule"><b>הכלל לזכור</b>$f\to0$ הוא לא תנאי הכרחי להתכנסות של אינטגרל. בטור הוא כן הכרחי.</div>
+<div class="quiz"><div class="qt">שאלות על סעיף 8</div>
+<div class="qq" data-a="0"><p class="q">למה פונקציית האוהלים היא דוגמה נגדית?</p><ol><li>האינטגרל שלה מתכנס, אבל $f$ לא שואפת ל-$0$</li><li>האינטגרל שלה מתבדר, אבל $f$ כן שואפת ל-$0$</li><li>האינטגרל שלה מתכנס, והיא מונוטונית יורדת</li><li>האינטגרל שלה מתבדר, והיא מונוטונית יורדת</li></ol><p class="h">רמז: השטח הוא $1$. ומה הערך ב-$x=n$?</p><p class="e">נכון. שטח סופי, אבל $f(n)=1$ תמיד.</p></div>
+<div class="qq" data-a="3"><p class="q">אוהל מספר $n=3$: מה השטח שלו?</p><ol><li>$\frac12$, כי כל אוהל הוא בגובה $1$</li><li>$\frac14$, כי הרוחב של האוהל הוא $\frac14$</li><li>$\frac16$, כי מחלקים את הרוחב ל-$3$</li><li>$\frac18$, כי חצי בסיס $\frac14$ כפול גובה $1$</li></ol><p class="h">רמז: הרוחב הוא $\frac1{2^{2}}$, והשטח הוא חצי בסיס כפול גובה.</p><p class="e">נכון. $\frac12\cdot\frac14\cdot1=\frac18=\frac1{2^3}$.</p></div>
+<div class="qq" data-a="1"><p class="q">מדוע פונקציית האוהלים לא סותרת את מבחן האינטגרל?</p><ol><li>כי הטור $\sum f(n)$ שלה מתכנס גם הוא בסופו של דבר</li><li>כי היא לא יורדת, ולכן תנאי המבחן לא מתקיימים</li><li>כי האינטגרל שלה מתבדר למרות שהשטח נראה סופי</li><li>כי היא לא רציפה, ולכן האינטגרל שלה לא מוגדר</li></ol><p class="h">רמז: מהם תנאי המשפט?</p><p class="e">נכון. המשפט דורש יורדת. פה הפונקציה עולה ויורדת שוב ושוב.</p></div>
+<div class="qq" data-a="2"><p class="q">אם $f$ יורדת ו-$\int_1^\infty f$ מתכנס, מה ידוע?</p><ol><li>$f$ שואפת למספר שלילי, כי היא יורדת תמיד</li><li>$f$ שואפת ל-$\infty$, כי האינטגרל קיים וסופי</li><li>$f$ שואפת ל-$0$, כמו שהמחברת מסיקה מהמבחן</li><li>$f$ לא שואפת לשום דבר, כמו בדוגמת האוהלים</li></ol><p class="h">רמז: מה ההבדל בין הפונקציה הזו לאוהלים?</p><p class="e">נכון. המונוטוניות היא מה שמציל את המצב.</p></div>
+</div>
+</section>
+
+<!-- ============ 9 ============ -->
+<section class="sec" id="s9" data-short="סיכום ומפת החלטות">
+<h2>סיכום ומפת החלטות</h2>
+<div class="tw"><table><tr><th>נושא</th><th>העיקר</th></tr>
+<tr><td>התכנסות בהחלט גוררת התכנסות</td><td>אם $\int|f|$ מתכנס אז $\int f$ מתכנס. הכיוון ההפוך לא נכון.</td></tr>
+<tr><td>סוג שני</td><td>$f$ לא חסומה בנקודה. עוצרים ב-$t$, מחשבים גבול.</td></tr>
+<tr><td>נקודה באמצע</td><td>מפצלים. אם חצי אחד לא קיים, הכול לא קיים. אסור להציב ישר.</td></tr>
+<tr><td>כלל $p$ ליד אפס</td><td>$\int_0^1\frac{dx}{x^p}$ מתכנס אמ"מ $p\lt1$, וערכו $\frac1{1-p}$.</td></tr>
+<tr><td>מבחן גבולי</td><td>$L$ בין $0$ ל-$\infty$: $f$ ו-$g$ מתנהגות אותו דבר. $L=0$ או $L=\infty$: רק כיוון אחד.</td></tr>
+<tr><td>מבחן האינטגרל</td><td>$f$ רציפה, חיובית ויורדת: $\int_1^\infty f$ מתכנס אמ"מ $\sum f(n)$ מתכנס.</td></tr>
+<tr><td>$f\to0$</td><td>נכון לפונקציה יורדת. בלי מונוטוניות לא נכון (אוהלים).</td></tr>
+</table></div>
+<h3>מפת החלטות: אינטגרל חדש מול העיניים</h3>
+<div class="tw"><table><tr><th>שלב</th><th>השאלה</th><th>מה עושים</th></tr>
+<tr><td>1</td><td>האם יש קצה אינסופי או נקודה שבה $f$ לא חסומה?</td><td>מסמנים את כולן</td></tr>
+<tr><td>2</td><td>יש יותר מבעיה אחת, או בעיה באמצע?</td><td>מפצלים כך שבכל חלק תהיה בעיה אחת בקצה</td></tr>
+<tr><td>3</td><td>יודעים למצוא קדומה?</td><td>כן: הגדרה עם $t$ וגבול. לא: עוברים לשלב הבא</td></tr>
+<tr><td>4</td><td>הפונקציה מחליפה סימן?</td><td>בודקים את $|f|$</td></tr>
+<tr><td>5</td><td>מי שולט ליד הקצה?</td><td>בוחרים $g=\frac1{x^p}$ ומפעילים השוואה או מבחן גבולי</td></tr>
+</table></div>
+<div class="quiz"><div class="qt">שאלות מסכמות</div>
+<div class="qq" data-a="1"><p class="q">עבור $\int_{-1}^{2}\frac{dx}{x^2}$, מה הצעד הראשון הנכון?</p><ol><li>להציב בקדומה $-\frac1x$ ולקבל את התשובה מיד</li><li>לפצל ב-$x=0$, כי שם $f$ לא חסומה בתוך הקטע</li><li>לבדוק את $\int_{-1}^{2}|f|$ כי הפונקציה מחליפה סימן</li><li>להחליף את הקצה $2$ ב-$t$ ולשלוח אותו ל-$\infty$</li></ol><p class="h">רמז: בדקו אם המכנה מתאפס בתוך הקטע.</p><p class="e">נכון. וזה מתבדר, כי החצי מ-$0$ עד $2$ מתבדר.</p></div>
+<div class="qq" data-a="3"><p class="q">האם $\int_0^1\frac{dx}{\sqrt{x}+x^2}$ מתכנס?</p><ol><li>מתבדר, כי הפונקציה לא חסומה ליד הנקודה $x=0$</li><li>מתבדר, כי ליד אפס $x^2$ שולט, ו-$p=2\ge1$</li><li>מתכנס, כי ליד אפס $x^2$ שולט, ו-$p=2\gt1$</li><li>מתכנס, כי ליד אפס $\sqrt x$ שולט, ו-$p=\frac12\lt1$</li></ol><p class="h">רמז: הציבו $x=0.01$ במכנה. מי גדול יותר?</p><p class="e">נכון. $\sqrt{0.01}=0.1$ ואילו $0.01^2=0.0001$. לכן $g=\frac1{\sqrt x}$ ו-$L=1$.</p></div>
+<div class="qq" data-a="0"><p class="q">מה קובע מבחן האינטגרל על $\sum_{n=1}^\infty\frac1{n^3}$?</p><ol><li>מתכנס, כי $\int_1^\infty\frac{dx}{x^3}$ מתכנס עם $p=3\gt1$</li><li>מתבדר, כי $\int_1^\infty\frac{dx}{x^3}$ מתבדר עם $p=3\gt1$</li><li>מתכנס, כי $\int_0^1\frac{dx}{x^3}$ מתכנס עם $p=3\gt1$</li><li>מתבדר, כי $\int_0^1\frac{dx}{x^3}$ מתבדר עם $p=3\gt1$</li></ol><p class="h">רמז: הטור מתחיל מ-$1$ והולך לאינסוף.</p><p class="e">נכון. המבחן משתמש ב-$\int_1^\infty$, לא ב-$\int_0^1$.</p></div>
+<div class="qq" data-a="2"><p class="q">באיזה מהמקרים הבאים המבחן הגבולי נותן מסקנה?</p><ol><li>$L=0$ והאינטגרל של $g$ מתבדר בקצה הקטע</li><li>$L=\infty$ והאינטגרל של $g$ מתכנס בקצה הקטע</li><li>$L=2$ והאינטגרל של $g$ מתכנס בקצה הקטע</li><li>הגבול $L$ לא קיים בכלל בקצה של הקטע</li></ol><p class="h">רמז: מה כתוב בטבלת "מה מסיקים מכל $L$"?</p><p class="e">נכון. $L$ סופי וחיובי, אז $f$ מתכנס יחד עם $g$.</p></div>
+</div>
+<p class="end" id="endMsg"></p>
+<p>מה עזר לך הכי הרבה בדף הזה, ביג בוס? כתוב לי בצ'אט.</p>
+</section>
+</div>
+
+<script>
+window.LESSON_INIT=function(){
+ function css(v){return getComputedStyle(document.documentElement).getPropertyValue(v).trim()}
+ function $(id){return document.getElementById(id)}
+ function clamp(v,a,b){return Math.max(a,Math.min(b,v))}
+ // generic plot: o={W,H,xmin,xmax,ymin,ymax,fills:[{f,a,b,color}],curves:[{f,color,dash,w,N}],hlines:[{y,color,dash}],vlines:[{x,color,dash}],xticks:[[v,lab]],yticks:[[v,lab]],mark:{x,y,color}}
+ function plot(svg,o){var W=o.W||400,H=o.H||220,pl=34,pr=12,pt=10,pb=24;
+  function X(x){return pl+(x-o.xmin)/(o.xmax-o.xmin)*(W-pl-pr)}function Y(y){return pt+(o.ymax-y)/(o.ymax-o.ymin)*(H-pt-pb)}
+  var s='',mut=css('--muted'),ink=css('--ink');
+  (o.polys||[]).forEach(function(q){var d=q.pts.map(function(p,i){return (i?'L':'M')+X(p[0]).toFixed(1)+' '+Y(p[1]).toFixed(1)}).join('')+'Z';s+='<path d="'+d+'" fill="'+q.color+'" fill-opacity="'+(q.op||.25)+'"'+(q.stroke?' stroke="'+q.color+'" stroke-width="1.6"':'')+'/>'});
+  (o.fills||[]).forEach(function(fi){var a=Math.max(fi.a,o.xmin),b=Math.min(fi.b,o.xmax);if(b<=a)return;var N=fi.N||200,p='M'+X(a).toFixed(1)+' '+Y(0).toFixed(1);
+   for(var i=0;i<=N;i++){var x=a+(b-a)*i/N,y=clamp(fi.f(x),o.ymin,o.ymax);p+='L'+X(x).toFixed(1)+' '+Y(y).toFixed(1)}
+   p+='L'+X(b).toFixed(1)+' '+Y(0).toFixed(1)+'Z';s+='<path d="'+p+'" fill="'+fi.color+'" fill-opacity=".28"/>'});
+  (o.hlines||[]).forEach(function(l){s+='<line x1="'+pl+'" x2="'+(W-pr)+'" y1="'+Y(l.y).toFixed(1)+'" y2="'+Y(l.y).toFixed(1)+'" stroke="'+l.color+'" stroke-width="1.5" stroke-dasharray="'+(l.dash||'5 4')+'"/>'});
+  (o.vlines||[]).forEach(function(l){s+='<line y1="'+pt+'" y2="'+(H-pb)+'" x1="'+X(l.x).toFixed(1)+'" x2="'+X(l.x).toFixed(1)+'" stroke="'+l.color+'" stroke-width="1.5" stroke-dasharray="'+(l.dash||'5 4')+'"/>'});
+  (o.curves||[]).forEach(function(c){var N=c.N||400,p='',pen=false;for(var i=0;i<=N;i++){var x=o.xmin+(o.xmax-o.xmin)*i/N;if(c.from!=null&&x<c.from){pen=false;continue}var y=c.f(x);if(!isFinite(y)||y>o.ymax*1.0001||y<o.ymin*1.0001&&o.ymin<0||y<o.ymin-1e-9){pen=false;continue}p+=(pen?'L':'M')+X(x).toFixed(1)+' '+Y(y).toFixed(1);pen=true}
+   s+='<path d="'+p+'" fill="none" stroke="'+c.color+'" stroke-width="'+(c.w||2)+'"'+(c.dash?' stroke-dasharray="'+c.dash+'"':'')+'/>'});
+  if(o.ymin<=0&&o.ymax>=0)s+='<line x1="'+pl+'" x2="'+(W-pr)+'" y1="'+Y(0).toFixed(1)+'" y2="'+Y(0).toFixed(1)+'" stroke="'+mut+'"/>';
+  (o.xticks||[]).forEach(function(t){s+='<text x="'+X(t[0]).toFixed(1)+'" y="'+(H-7)+'" fill="'+mut+'" font-size="12" text-anchor="middle">'+t[1]+'</text>'});
+  (o.yticks||[]).forEach(function(t){s+='<text x="'+(pl-5)+'" y="'+(Y(t[0])+4).toFixed(1)+'" fill="'+mut+'" font-size="12" text-anchor="end">'+t[1]+'</text>'});
+  if(o.mark){s+='<circle cx="'+X(o.mark.x).toFixed(1)+'" cy="'+Y(o.mark.y).toFixed(1)+'" r="4.5" fill="'+(o.mark.color||ink)+'"/>'}
+  svg.innerHTML=s}
+ var drawers=[];
+ function bind(ids,fn){ids.forEach(function(id){var e=$(id);e.addEventListener(e.tagName==='SELECT'?'change':'input',fn)});fn();drawers.push(fn)}
+ function simpson(f,a,b,n){var h=(b-a)/n,s=f(a)+f(b);for(var i=1;i<n;i++)s+=f(a+i*h)*(i%2?4:2);return s*h/3}
+ function logd(k,lo,hi){return Math.pow(10,lo+(hi-lo)*k/100)}
+ function fmt(v,n){return v.toFixed(n==null?4:n)}
+ // s1
+ bind(['s1t'],function(){var t=+$('s1t').value,f=function(x){return Math.exp(-x)*Math.sin(x*x)},e=function(x){return Math.exp(-x)},m=function(x){return -Math.exp(-x)};
+  plot($('s1svg'),{xmin:0,xmax:8,ymin:-1.05,ymax:1.05,fills:[{f:f,a:0,b:t,color:css('--plm'),N:800}],curves:[{f:e,color:css('--olv'),w:1.6},{f:m,color:css('--olv'),w:1.6,dash:'5 4'},{f:f,color:css('--sky'),N:1600,w:1.7}],vlines:[{x:t,color:css('--amb')}],xticks:[[0,'0'],[4,'4'],[8,'8']],yticks:[[1,'1'],[-1,'−1']]});
+  var I=simpson(f,0,t,6000),A=simpson(function(x){return Math.abs(f(x))},0,t,6000);
+  $('s1out').textContent='t = '+fmt(t,2)+'   |   integral of f = '+fmt(I)+'   |   integral of |f| = '+fmt(A)+'   (limit of f: 0.2705)'});
+ // s2
+ bind(['s2m','s2d'],function(){var mode=+$('s2m').value,d=logd(+$('s2d').value,-0.3,-4),rus=css('--rus'),amb=css('--amb'),plm=css('--plm');
+  var o={xmin:mode===2?-1:0,xmax:1,ymin:0,ymax:9,yticks:[[8,'8']]};
+  if(mode===0){var f=function(x){return x>0?1/Math.sqrt(x):NaN};o.fills=[{f:f,a:d,b:1,color:plm,N:500}];o.curves=[{f:f,color:css('--ink')}];o.vlines=[{x:0,color:rus,dash:'2 2'},{x:d,color:amb}];o.xticks=[[0,'0 (bad)'],[1,'1']]}
+  if(mode===1){var f=function(x){return x<1?1/Math.sqrt(1-x):NaN};o.fills=[{f:f,a:0,b:1-d,color:plm,N:500}];o.curves=[{f:f,color:css('--ink')}];o.vlines=[{x:1,color:rus,dash:'2 2'},{x:1-d,color:amb}];o.xticks=[[0,'0'],[1,'1 (bad)']]}
+  if(mode===2){var f=function(x){return x!==0?1/Math.sqrt(Math.abs(x)):NaN};o.fills=[{f:f,a:-1,b:-d,color:plm,N:500},{f:f,a:d,b:1,color:plm,N:500}];o.curves=[{f:f,color:css('--ink'),N:800}];o.vlines=[{x:0,color:rus,dash:'2 2'},{x:-d,color:amb},{x:d,color:amb}];o.xticks=[[-1,'−1'],[0,'0 (bad)'],[1,'1']]}
+  plot($('s2svg'),o);
+  var v=(mode===2?2:1)*(2-2*Math.sqrt(d)),lim=mode===2?4:2;
+  $('s2out').textContent='distance from the bad point = '+d.toPrecision(2)+'   |   area = '+fmt(v)+'   |   limit = '+lim});
+ // s4
+ bind(['s4same','s4a','s4b'],function(){var same=$('s4same').checked;if(same)$('s4b').value=$('s4a').value;$('s4b').disabled=same;
+  var a=logd(+$('s4a').value,-0.3,-3),b=logd(+$('s4b').value,-0.3,-3),f=function(x){return Math.abs(x-1)<1e-9?NaN:1/(x-1)};
+  plot($('s4svg'),{H:240,xmin:0,xmax:3,ymin:-10,ymax:10,fills:[{f:f,a:0,b:1-a,color:css('--red'),N:600},{f:f,a:1+b,b:3,color:css('--olv'),N:600}],curves:[{f:f,color:css('--ink'),N:900}],vlines:[{x:1,color:css('--rus'),dash:'2 2'},{x:1-a,color:css('--amb')},{x:1+b,color:css('--amb')}],xticks:[[0,'0'],[1,'1'],[3,'3']],yticks:[[10,'10'],[-10,'−10']]});
+  var L=Math.log(a),R=Math.log(2)-Math.log(b);
+  $('s4out').textContent='left = ln('+a.toPrecision(2)+') = '+fmt(L,3)+'   |   right = ln 2 − ln('+b.toPrecision(2)+') = '+fmt(R,3)+'   |   sum = '+fmt(L+R,3)+(same?'   (= ln 2)':'   (changes with the speeds)')});
+ // s5
+ bind(['s5p','s5t'],function(){var p=+$('s5p').value,t=logd(+$('s5t').value,-0.3,-4),f=function(x){return x>0?Math.pow(x,-p):NaN};
+  plot($('s5svg'),{xmin:0,xmax:1,ymin:0,ymax:14,fills:[{f:f,a:t,b:1,color:css('--plm'),N:800}],curves:[{f:f,color:css('--mag'),N:900}],vlines:[{x:t,color:css('--amb')}],xticks:[[0,'0'],[.5,'.5'],[1,'1']],yticks:[[14,'14']]});
+  var I=Math.abs(p-1)<1e-9?-Math.log(t):(1-Math.pow(t,1-p))/(1-p);
+  var lab=p<1-1e-9?'converges to 1/(1−p) = '+fmt(1/(1-p),3):'diverges';
+  $('s5out').textContent='p = '+fmt(p,2)+'   |   t = '+t.toPrecision(2)+'   |   area from t to 1 = '+fmt(I,3)+'   |   as t→0: '+lab});
+ // s6
+ var P6=[{r:function(x){return 1/Math.sqrt(1+x)},y:1.2,L:1,lab:'L = 1, g converges ⇒ f converges'},{r:function(x){return 1/Math.sqrt(1-x)},y:1.6,L:1,lab:'L = 1, g converges ⇒ f converges'},{r:function(x){return Math.pow(x,.25)},y:1,L:0,lab:'L = 0, g converges ⇒ f converges'},{r:function(x){return Math.pow(x,-.5)},y:20,L:null,lab:'L = ∞, g converges ⇒ no conclusion'},{r:function(x){return x},y:.6,L:0,lab:'L = 0, g diverges ⇒ no conclusion'}];
+ bind(['s6sel','s6x'],function(){var P=P6[+$('s6sel').value],x=logd(+$('s6x').value,-0.3,-4),hl=[];if(P.L!==null)hl.push({y:P.L,color:css('--jad')});
+  plot($('s6svg'),{H:200,xmin:0,xmax:.5,ymin:0,ymax:P.y,curves:[{f:function(t){return t>0?P.r(t):NaN},color:css('--jad'),N:600}],hlines:hl,mark:{x:x,y:Math.min(P.r(x),P.y),color:css('--jad')},xticks:[[0,'0'],[.25,'.25'],[.5,'.5']],yticks:[[P.y,String(P.y)]]});
+  $('s6out').textContent='x = '+x.toPrecision(2)+'   |   f/g = '+fmt(P.r(x))+'   |   '+P.lab});
+ // s7
+ var F7=[{f:function(x){return 1/(x*x)},I:function(n){return 1-1/n}},{f:function(x){return 1/x},I:function(n){return Math.log(n)}},{f:function(x){return Math.pow(x,-1.5)},I:function(n){return 2*(1-Math.pow(n,-.5))}}];
+ bind(['s7f','s7v','s7n'],function(){var F=F7[+$('s7f').value],v=+$('s7v').value,n=+$('s7n').value,polys=[],olv=css('--olv'),red=css('--red');
+  for(var k=1;k<n;k++){if(v!==1)polys.push({pts:[[k,0],[k,F.f(k)],[k+1,F.f(k)],[k+1,0]],color:olv,op:.18});
+   if(v!==2)polys.push({pts:[[k,0],[k,F.f(k+1)],[k+1,F.f(k+1)],[k+1,0]],color:red,op:.3})}
+  var ticks=[[1,'1']];for(var j=2;j<=n;j+=(n>7?2:1))ticks.push([j,String(j)]);
+  plot($('s7svg'),{xmin:0.5,xmax:n+.5,ymin:0,ymax:1.1,polys:polys,curves:[{f:function(x){return x>=1?F.f(x):NaN},color:css('--ink'),N:600}],xticks:ticks,yticks:[[1,'1']]});
+  var lo=0,hi=0;for(var i=2;i<=n;i++)lo+=F.f(i);for(i=1;i<n;i++)hi+=F.f(i);
+  $('s7out').textContent='n = '+n+'   |   a2+…+an = '+fmt(lo,3)+'  ≤  integral = '+fmt(F.I(n),3)+'  ≤  a1+…+a(n−1) = '+fmt(hi,3)});
+ // s8
+ bind(['s8n'],function(){var N=+$('s8n').value,polys=[],sum=0,c=css('--plm');
+  for(var n=1;n<=N;n++){var w=Math.pow(2,-n);polys.push({pts:[[n-w,0],[n,1],[n+w,0]],color:c,op:.28,stroke:true});sum+=w}
+  var xt=[];for(var j=1;j<=N;j++)xt.push([j,String(j)]);
+  plot($('s8svg'),{H:200,xmin:0,xmax:N+1,ymin:0,ymax:1.15,polys:polys,hlines:[{y:1,color:css('--muted')}],xticks:xt,yticks:[[1,'1']]});
+  $('s8out').textContent='tents: '+N+'   |   area = 1 − 1/2^'+N+' = '+sum.toFixed(5)+'   |   f('+N+') = 1'});
+ var mo=new MutationObserver(function(){drawers.forEach(function(d){d()})});mo.observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+};
+</script>
+<script>(function(){
+document.documentElement.dir='rtl';document.documentElement.lang='he';
+var KEY=((document.querySelector('.wrap')||document.body).getAttribute('data-key')||'lesson')+'-quiz';
+var THEMEKEY='calc2-theme';
+function $(s,r){return (r||document).querySelector(s)}
+function $$(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))}
+function el(t,c,h){var n=document.createElement(t);if(c)n.className=c;if(h!=null)n.innerHTML=h;return n}
+function lsGet(k){try{return localStorage.getItem(k)}catch(e){return null}}
+function lsSet(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+// theme
+var tb=$('#themeBtn');
+function curDark(){var t=document.documentElement.getAttribute('data-theme');if(t)return t==='dark';return window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches}
+function paintBtn(){if(tb)tb.textContent=curDark()?'☀️ יום':'🌙 לילה'}
+var saved=lsGet(THEMEKEY);if(saved==='dark'||saved==='light')document.documentElement.setAttribute('data-theme',saved);
+paintBtn();
+if(tb)tb.addEventListener('click',function(){var d=!curDark();document.documentElement.setAttribute('data-theme',d?'dark':'light');lsSet(THEMEKEY,d?'dark':'light');paintBtn()});
+// sections + toc
+var secs=$$('section.sec'),toc=$('nav.toc');
+secs.forEach(function(s,i){var h=$('h2',s);var no=el('div','secno',(i+1)+' / '+secs.length);s.insertBefore(no,h);
+ if(toc){var a=el('a');a.href='#'+s.id;a.innerHTML='<b>'+(i+1)+'</b> '+(s.getAttribute('data-short')||h.textContent);toc.appendChild(a)}});
+// sims
+var sims=[];
+$$('.sim').forEach(function(sim){
+ var steps=$$('.steps > .step',sim);var mapItems=$$('.map > li',sim);
+ var lines=el('div','lines'),xp=el('div','x'),sp=el('div','stp-wrap');
+ var ctl=el('div','ctl');var bP=el('button','','→ הקודם'),bN=el('button','pri','הבא ←'),bR=el('button','','⟲ מההתחלה'),cnt=el('span','cnt');
+ bP.type=bN.type=bR.type='button';ctl.appendChild(bR);ctl.appendChild(bP);ctl.appendChild(bN);ctl.appendChild(cnt);
+ var stepLine=[],lineEls=[],xs=[],sts=[];
+ steps.forEach(function(st,i){var f=$('.f',st);
+  if(f){var ln=el('div','ln');ln.appendChild(el('span','no',String(lineEls.length+1)));ln.appendChild(f);lines.appendChild(ln);lineEls.push(ln)}
+  stepLine.push(lineEls.length-1);
+  var x=$('.x',st)||el('div','','');var xd=el('div','');while(x.firstChild)xd.appendChild(x.firstChild);xp.appendChild(xd);xs.push(xd);
+  var s=$('.st',st);var sd=el('div','stp');if(s){while(s.firstChild)sd.appendChild(s.firstChild)}sp.appendChild(sd);sts.push(sd)});
+ var stepsBox=$('.steps',sim);sim.insertBefore(lines,stepsBox);sim.insertBefore(xp,stepsBox);sim.insertBefore(sp,stepsBox);sim.insertBefore(ctl,stepsBox);stepsBox.remove();
+ var cur=0;
+ function render(){var L=stepLine[cur];
+  lineEls.forEach(function(ln,j){ln.classList.toggle('cur',j===L);ln.classList.toggle('fut',j>L)});
+  xs.forEach(function(x,j){x.hidden=j!==cur});
+  sts.forEach(function(s,j){s.hidden=j!==cur;
+   if(j===cur&&j>0){var prev={};$$('span',sts[j-1]).forEach(function(p){var k=$('i',p);if(k)prev[k.textContent]=p.textContent});
+    $$(':scope > span',s).forEach(function(p){var k=$('i',p);p.classList.toggle('new',!!k&&prev[k.textContent]!==p.textContent)})}});
+  var m=+(steps[cur].getAttribute('data-m')||-1);
+  mapItems.forEach(function(li,j){li.classList.toggle('on',j===m);li.classList.toggle('done',m>=0&&j<m)});
+  bP.disabled=cur===0;bN.disabled=cur===steps.length-1;cnt.textContent=(cur+1)+' / '+steps.length}
+ bP.onclick=function(){if(cur>0){cur--;render()}};bN.onclick=function(){if(cur<steps.length-1){cur++;render()}};bR.onclick=function(){cur=0;render()};
+ sims.push(render)});
+// quiz
+var st={};try{st=JSON.parse(lsGet(KEY)||'{}')||{}}catch(e){st={}}
+var qs=$$('.qq'),LET=['א','ב','ג','ד','ה'];
+function score(){var c=0,d=0;qs.forEach(function(q,i){var s=st[i];if(s&&s.done){d++;if(s.first)c++}});
+ var sc=$('#score');if(sc)sc.innerHTML='ניקוד: <bdi dir="ltr">'+c+' / '+qs.length+'</bdi>';var m=$('#meter');if(m)m.style.width=(qs.length?100*d/qs.length:0)+'%';
+ var end=$('#endMsg');if(end)end.textContent=d===qs.length?('סיימת את כל '+qs.length+' השאלות! ענית נכון בניסיון הראשון על '+c+'. '+(c>=qs.length*0.8?'מצוין, ביג בוס 💪':'כדאי לחזור על הסעיפים שבהם טעית.')):'ענית על '+d+' מתוך '+qs.length+' שאלות.'}
+var qhide=[];
+qs.forEach(function(q,i){var a=+q.getAttribute('data-a');var h=$('.h',q),e=$('.e',q);
+ $$('ol > li',q).forEach(function(li,j){var b=el('button','');b.type='button';b.appendChild(el('span','lt',LET[j]+'.'));while(li.firstChild)b.appendChild(li.firstChild);li.appendChild(b);
+  b.addEventListener('click',function(){var s=st[i]||{tried:[]};if(s.done)return;s.tried.push(j);
+   if(j===a){s.done=true;s.first=s.tried.length===1}st[i]=s;lsSet(KEY,JSON.stringify(st));paintQ();score()})});
+ function paintQ(){var s=st[i]||{tried:[]};var bs=$$('ol > li > button',q);
+  bs.forEach(function(b,j){b.classList.toggle('good',!!s.done&&j===a);b.classList.toggle('bad',s.tried.indexOf(j)>=0&&j!==a)});
+  var lastBad=s.tried.length&&s.tried[s.tried.length-1]!==a;if(h)h.hidden=!(lastBad&&!s.done);if(e)e.hidden=!s.done}
+ q._paint=paintQ;qhide.push(paintQ)});
+var rb=$('#resetBtn');if(rb)rb.addEventListener('click',function(){st={};lsSet(KEY,'{}');qhide.forEach(function(f){f()});score()});
+// bidi fix
+var HEB=/[֐-׿]/,RUN=/[A-Za-z0-9∞√π][A-Za-z0-9∞√π²³⁻¹\s+\-−*\/=^().,'·:≤≥<>|_]*/g;
+var SKIP={'MJX-CONTAINER':1,'CODE':1,'PRE':1,'SVG':1,'BDI':1,'SCRIPT':1,'STYLE':1,'TEXTAREA':1,'INPUT':1};
+function bidi(root){var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode:function(n){for(var p=n.parentNode;p&&p!==root.parentNode;p=p.parentNode){if(SKIP[p.nodeName.toUpperCase()]||(p.classList&&(p.classList.contains('m')||p.classList.contains('ltr'))))return NodeFilter.FILTER_REJECT}return NodeFilter.FILTER_ACCEPT}});
+ var nodes=[],n;while(n=w.nextNode())nodes.push(n);
+ nodes.forEach(function(t){var s=t.nodeValue;if(HEB.test(s)&&s.indexOf('→')>=0)s=t.nodeValue=s.replace(/→/g,'←');
+  if(!/[A-Za-z0-9∞√π]/.test(s)||!HEB.test(s+((t.parentNode&&t.parentNode.textContent)||'')))return;
+  var frag=document.createDocumentFragment(),last=0,m;RUN.lastIndex=0;
+  while(m=RUN.exec(s)){var r=m[0].replace(/[\s.,:]+$/,'');var open=(r.match(/\(/g)||[]).length,close=(r.match(/\)/g)||[]).length;
+   while(close>open&&r.slice(-1)===')'){r=r.slice(0,-1);close--}
+   if(open>close&&r.slice(-1)==='('){r=r.slice(0,-1).replace(/\s+$/,'')}
+   if(!r)continue;frag.appendChild(document.createTextNode(s.slice(last,m.index)));var b=document.createElement('bdi');b.dir='ltr';b.textContent=r;frag.appendChild(b);last=m.index+r.length;RUN.lastIndex=last}
+  frag.appendChild(document.createTextNode(s.slice(last)));t.parentNode.replaceChild(frag,t)})}
+var finished=false;
+function finish(){if(finished)return;finished=true;bidi($('.wrap'));sims.forEach(function(r){r()});qhide.forEach(function(f){f()});score();
+ if(window.LESSON_INIT)try{window.LESSON_INIT()}catch(e){console.error(e)}}
+window.__lessonFinish=finish;
+window.typesetLater=function(node){if(window.MathJax&&MathJax.typesetPromise){return MathJax.typesetPromise([node]).then(function(){bidi(node)}).catch(function(){})}bidi(node);return Promise.resolve()};
+setTimeout(finish,9000);
+})();
+</script>
+<script>window.MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']],packages:{'[+]':['html']}},loader:{load:['[tex]/html']},svg:{fontCache:'global'},options:{ignoreHtmlClass:'nomj'},startup:{ready:function(){MathJax.startup.defaultReady();MathJax.startup.promise.then(function(){window.__lessonFinish&&window.__lessonFinish()})}}};</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.min.js"></script>
+
+
+</body></html>

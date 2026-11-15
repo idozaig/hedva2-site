@@ -1,0 +1,895 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<script>(function(){try{var m=localStorage.getItem("hedva2-theme");if(m==="dark"||m==="light")document.documentElement.setAttribute("data-theme",m);}catch(e){}})();</script>
+<title>חדו״א 2 · הרצאה 5</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&family=Secular+One&family=JetBrains+Mono:wght@400;600&family=STIX+Two+Text:ital,wght@0,400;0,600;1,400&display=swap">
+<style>
+/* Layout: one reading column on graph-paper ground (like the course notebook); sticky score bar; numbered sections 1/8 */
+:root{
+  --bg:#f7f8fb; --paper:#ffffff; --grid:#dfe5f1; --fg:#1d2433; --muted:#5b6478; --line:#d6dbe6;
+  --sc:#b7791f; --sc-bg:#fdf3e1;   /* sin / cos  = amber */
+  --ts:#0f8a7e; --ts-bg:#e2f5f2;   /* tan / sec  = teal */
+  --tv:#7048c8; --tv-bg:#efe9fb;   /* t (substitution) = violet */
+  --th:#2563c9; --th-bg:#e5eefc;   /* θ (trig substitution) = blue */
+  --ra:#c43d63; --ra-bg:#fbe7ed;   /* rational / division = rose */
+  --ok:#1f8a4c; --ok-bg:#e3f5ea; --bad:#c2372f; --bad-bg:#fbe5e3;
+  --body:"Assistant",system-ui,sans-serif; --head:"Secular One","Assistant",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace; --math:"STIX Two Text","Times New Roman",serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#121621; --paper:#1a1f2c; --grid:#222a3a; --fg:#e6e9f1; --muted:#9aa3b8; --line:#2f374a;
+  --sc:#f0b452; --sc-bg:#3a2d14; --ts:#4fd1c0; --ts-bg:#123631; --tv:#b49af5; --tv-bg:#2a2245;
+  --th:#7eaaf5; --th-bg:#1a2a48; --ra:#f0819f; --ra-bg:#43202b;
+  --ok:#5ad08a; --ok-bg:#163525; --bad:#f2827a; --bad-bg:#43201d; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#121621; --paper:#1a1f2c; --grid:#222a3a; --fg:#e6e9f1; --muted:#9aa3b8; --line:#2f374a;
+  --sc:#f0b452; --sc-bg:#3a2d14; --ts:#4fd1c0; --ts-bg:#123631; --tv:#b49af5; --tv-bg:#2a2245;
+  --th:#7eaaf5; --th-bg:#1a2a48; --ra:#f0819f; --ra-bg:#43202b;
+  --ok:#5ad08a; --ok-bg:#163525; --bad:#f2827a; --bad-bg:#43201d; color-scheme:dark}
+
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.65;direction:rtl;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:22px 22px;}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+.wrap{max-width:820px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 60px}
+h1,h2,h3{font-family:var(--head);font-weight:400;text-wrap:balance;line-height:1.25}
+h1{font-size:2.3rem;margin:0}
+h2{font-size:1.6rem;margin:0 0 .2em}
+h3{font-size:1.15rem;margin:1.4em 0 .4em}
+p{margin:.55em 0}
+
+/* sticky bar */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--paper);border-bottom:1px solid var(--line);
+  padding-block:8px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.bar-in{max-width:820px;margin:0 auto;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.bar b{font-variant-numeric:tabular-nums}
+.meter{flex:1;min-width:120px;height:8px;background:var(--grid);border-radius:4px;overflow:hidden}
+.meter i{display:block;height:100%;width:0;background:var(--ok);transition:width .3s}
+button{font-family:var(--body);font-size:.95rem;cursor:pointer;border:1px solid var(--line);background:var(--paper);color:var(--fg);border-radius:8px;padding:5px 12px}
+button:hover{border-color:var(--muted)}
+button:focus-visible,input:focus-visible{outline:2px solid var(--th);outline-offset:2px}
+
+header.hero{padding-block:28px 10px}
+.eyebrow{font-size:.85rem;letter-spacing:.06em;color:var(--muted)}
+.legend{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:999px;font-size:.9rem;border:1px solid var(--line);background:var(--paper)}
+.chip::before{content:"";width:10px;height:10px;border-radius:50%;background:currentColor}
+.k-sc{color:var(--sc)} .k-ts{color:var(--ts)} .k-tv{color:var(--tv)} .k-th{color:var(--th)} .k-ra{color:var(--ra)}
+.chip span{color:var(--fg)}
+.toc{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:6px;margin-top:16px;padding:0;list-style:none}
+.toc a{display:block;padding:6px 10px;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--fg);text-decoration:none;font-size:.95rem}
+.toc a:hover{border-color:var(--th)}
+
+section.sec{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding-block:22px;padding-inline:clamp(16px,4vw,32px);margin-top:26px}
+.secnum{font-family:var(--mono);font-size:.8rem;color:var(--muted)}
+.src{font-size:.85rem;color:var(--muted);margin-bottom:8px}
+
+/* math */
+.m{direction:ltr;unicode-bidi:isolate;display:inline-block;font-family:var(--math);font-size:1.07em;white-space:nowrap}
+.m sup,.m sub{font-size:.68em}
+.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;font-size:.92em;line-height:1.15;margin:0 .1em}
+.fr>span:first-child{border-bottom:1px solid currentColor;padding:0 .2em}
+.fr>span:last-child{padding:0 .2em}
+.sq .ov{border-top:1px solid currentColor;padding-top:1px}
+.sc{color:var(--sc);font-weight:600} .ts{color:var(--ts);font-weight:600} .tv{color:var(--tv);font-weight:600}
+.th{color:var(--th);font-weight:600} .ra{color:var(--ra);font-weight:600}
+.big{display:block;text-align:center;font-size:1.25em;margin:.6em 0;overflow-x:auto;padding:6px 0}
+.subst{display:inline-block;border:1px solid currentColor;border-radius:6px;padding:0 6px;font-size:.92em}
+
+/* boxes */
+.box{border-radius:10px;padding:12px 16px;margin:14px 0;border:1px solid var(--line)}
+.box>strong:first-child{display:block;font-family:var(--head);font-weight:400;margin-bottom:4px}
+.terms{background:var(--th-bg);border-color:transparent}
+.rule{background:var(--sc-bg);border:2px solid var(--sc)}
+.analogy{background:var(--tv-bg);border-color:transparent}
+.mine{background:var(--ra-bg);border-color:transparent}
+.terms ul{margin:4px 0;padding-inline-start:20px}
+.terms li{margin:4px 0}
+
+/* tables */
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:.97rem}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:right;vertical-align:middle}
+th{background:var(--bg);font-weight:700}
+
+/* derivations */
+figure.deriv{margin:16px 0;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+figure.deriv figcaption{background:var(--bg);padding:6px 12px;font-size:.88rem;color:var(--muted);border-bottom:1px solid var(--line)}
+ol.lines{list-style:none;margin:0;padding:8px 0;direction:ltr;counter-reset:ln;overflow-x:auto}
+ol.lines li{counter-increment:ln;display:flex;gap:14px;align-items:center;padding:3px 12px;font-family:var(--math);font-size:1.05rem;white-space:nowrap;min-height:2em}
+ol.lines li::before{content:counter(ln);font-family:var(--mono);font-size:.75rem;color:var(--muted);min-width:1.6em;text-align:right}
+ol.lines li.cur{background:var(--th-bg);outline:2px solid var(--th);outline-offset:-2px}
+ol.lines li.hid{opacity:.18}
+ol.lines li .why{font-family:var(--body);font-size:.85rem;color:var(--muted);direction:rtl;margin-inline-start:auto}
+
+/* simulation */
+.sim{border:2px solid var(--th);border-radius:12px;margin:18px 0;overflow:hidden}
+.sim-h{background:var(--th-bg);padding:8px 12px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.sim-h strong{font-family:var(--head);font-weight:400;flex:1;min-width:160px}
+.sim-h .cnt{font-family:var(--mono);font-size:.85rem;font-variant-numeric:tabular-nums}
+.sim .exp{padding:10px 14px;border-top:1px solid var(--line);min-height:3.2em}
+.state{display:flex;flex-wrap:wrap;gap:8px;padding:10px 14px;border-top:1px solid var(--line);background:var(--bg)}
+.cell{border:1px solid var(--line);border-radius:8px;padding:4px 10px;background:var(--paper);min-width:0}
+.cell small{display:block;font-size:.75rem;color:var(--muted)}
+.cell.chg{outline:2px solid var(--ok);outline-offset:1px}
+.cell.c-sc{border-color:var(--sc)} .cell.c-ts{border-color:var(--ts)} .cell.c-tv{border-color:var(--tv)} .cell.c-th{border-color:var(--th)} .cell.c-ra{border-color:var(--ra)} .cell.c-ok{border-color:var(--ok);background:var(--ok-bg)}
+
+/* tools */
+.tool{border:1px dashed var(--muted);border-radius:10px;padding:12px 14px;margin:16px 0}
+.tool .row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.tool input{width:4.5em;font-size:1rem;padding:4px 6px;border:1px solid var(--line);border-radius:6px;background:var(--paper);color:var(--fg);font-family:var(--mono)}
+.tool .out{margin-top:10px;padding:10px;border-radius:8px;background:var(--bg)}
+.seg button.on{background:var(--th-bg);border-color:var(--th);color:var(--fg)}
+
+/* quiz */
+.quiz{margin-top:22px;border-top:2px dashed var(--line);padding-top:12px}
+.quiz>h3{margin-top:0}
+.q{margin:14px 0;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--paper)}
+.q .qt{font-weight:600}
+.q .qbox{direction:ltr;text-align:left;font-family:var(--math);font-size:1.15rem;background:var(--bg);border-radius:8px;padding:8px 12px;margin:8px 0;overflow-x:auto;white-space:nowrap}
+.opts{display:grid;gap:6px;margin-top:8px}
+.opt{display:flex;gap:10px;align-items:flex-start;text-align:right;width:100%;padding:8px 12px;border-radius:8px;font-size:1rem;line-height:1.45}
+.opt .L{font-family:var(--head);color:var(--muted);flex:none}
+.opt .t{min-width:0}
+.opt.wrong{background:var(--bad-bg);border-color:var(--bad)}
+.opt.right{background:var(--ok-bg);border-color:var(--ok)}
+.fb{margin-top:8px;padding:8px 12px;border-radius:8px;font-size:.95rem}
+.fb.h{background:var(--bad-bg)}
+.mx{font-family:var(--math);font-size:1.04em} .fb.e{background:var(--ok-bg)}
+.end{margin-top:14px;padding:14px;border-radius:10px;background:var(--ok-bg);font-weight:600}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="bar"><div class="bar-in">
+  <span>ציון: <b id="sc">0 / 0</b></span>
+  <span class="meter" aria-hidden="true"><i id="mt"></i></span>
+  <span style="font-size:.85rem;color:var(--muted)">נענו <b id="dn">0</b></span>
+  <button id="reset" type="button">איפוס</button>
+</div></div>
+
+<div class="wrap">
+<header class="hero">
+  <div class="credit" style="display:inline-block;margin-bottom:12px;padding:6px 12px;border:1px solid var(--line);border-radius:10px;background:var(--paper);color:var(--fg);font-size:.95rem">קרדיט לסיכומים של עדי מהדרייב 😊 ולעידו דוד צייג!</div>
+  <div class="eyebrow">חדו״א 2 · הרצאה 5 · 10/11/25</div>
+  <h1>אינטגרלים טריגונומטריים, הצבות ורציונליות</h1>
+  <p>שיעור לפי הסיכום שלך. כל סעיף: הסבר קצר, דוגמאות מההרצאה, סימולציה צעד-אחר-צעד, ושאלות. כל צבע = מושג אחד, לאורך כל הדף:</p>
+  <div class="legend">
+    <span class="chip k-sc"><span>sin / cos</span></span>
+    <span class="chip k-ts"><span>tan / sec</span></span>
+    <span class="chip k-tv"><span>t — משתנה ההצבה</span></span>
+    <span class="chip k-th"><span>θ — הצבה טריגונומטרית</span></span>
+    <span class="chip k-ra"><span>פונקציה רציונלית / חילוק</span></span>
+  </div>
+  <ul class="toc">
+    <li><a href="#s1">1 · תזכורת: שינוי משתנה</a></li>
+    <li><a href="#s2">2 · sin<sup>n</sup>·cos<sup>m</sup></a></li>
+    <li><a href="#s3">3 · tan<sup>n</sup>·sec<sup>m</sup></a></li>
+    <li><a href="#s4">4 · טבלת הצבות טריגו׳</a></li>
+    <li><a href="#s5">5 · דוגמה: √(9−x²)/x²</a></li>
+    <li><a href="#s6">6 · דוגמה: x/√(x²+4)</a></li>
+    <li><a href="#s7">7 · פונקציות רציונליות</a></li>
+    <li><a href="#s8">8 · סיכום</a></li>
+  </ul>
+</header>
+
+<!-- ========== 1 ========== -->
+<section class="sec" id="s1">
+  <div class="secnum">1 / 8</div>
+  <h2>תזכורת: שינוי משתנה באינטגרל</h2>
+  <div class="src">עמוד 1 בסיכום, "תזכורת"</div>
+  <p>כל ההרצאה בנויה על כלי אחד: <b>הצבה</b>. רואים באינטגרל פונקציה, <b>והנגזרת שלה</b> כבר יושבת לידה. אז קוראים לפונקציה <span class="m tv">t</span>, והאינטגרל נהיה פשוט.</p>
+  <span class="m big">∫<sub>a</sub><sup>b</sup> f(g(x))·g′(x) dx &nbsp;=&nbsp; ∫<sub>g(a)</sub><sup>g(b)</sup> f(<span class="tv">t</span>) d<span class="tv">t</span> &nbsp;&nbsp;&nbsp; <span class="subst tv">t = g(x), dt = g′(x)dx</span></span>
+  <div class="box terms"><strong>מונחים וסימונים</strong>
+    <ul>
+      <li><span class="m">dt = g′(x)dx</span> — זה בא מגזירה: <span class="m">dt/dx = g′(x)</span>, "מכפילים" ב-dx. המשמעות: את החלק <span class="m">g′(x)dx</span> באינטגרל מחליפים ב-<span class="m">dt</span>.</li>
+      <li><b>הגבולות משתנים:</b> באינטגרל מסוים, אם x רץ מ-a ל-b, אז <span class="m">t = g(x)</span> רץ מ-<span class="m">g(a)</span> ל-<span class="m">g(b)</span>.</li>
+      <li>הסוגריים המרובעים בסיכום, למשל <span class="m">[t = cos(x), dt = −sin(x)dx]</span>, הם רק "פתק צד" שבו כותבים את ההצבה. הם לא חלק מהחישוב.</li>
+    </ul>
+  </div>
+  <p><b>דוגמה שלי (קטנה):</b> <span class="m">∫ 2x·cos(x²) dx</span>. הפונקציה x², והנגזרת שלה 2x נמצאת בחוץ. מציבים <span class="m tv">t = x², dt = 2x dx</span> ומקבלים <span class="m">∫ cos(t) dt = sin(t) + C = sin(x²) + C</span>.</p>
+  <div class="box analogy"><strong>אנלוגיה</strong>החלפת מטבע: עוברים משקלים לדולרים. חייבים להמיר <b>הכל</b> — גם את הסכומים (הפונקציה), גם את העמלה (dx → dt), וגם את גבולות התקציב (a,b → g(a),g(b)). אם שוכחים חלק אחד, החשבון לא נכון.</div>
+  <div class="box rule"><strong>הכלל לזכור</strong>מחפשים "פונקציה + הנגזרת שלה". הפונקציה = <span class="m tv">t</span>, הנגזרת שלה כפול dx = <span class="m tv">dt</span>. כל ההרצאה היא תרגילים לסדר את האינטגרל כך שזה יקרה.</div>
+  <div class="quiz" data-quiz="s1"></div>
+</section>
+
+<!-- ========== 2 ========== -->
+<section class="sec" id="s2">
+  <div class="secnum">2 / 8</div>
+  <h2>אינטגרל של <span class="m"><span class="sc">sin</span><sup>n</sup>(x)·<span class="sc">cos</span><sup>m</sup>(x)</span></h2>
+  <div class="src">עמוד 1 בסיכום, דוגמה 1</div>
+  <p><b>הבעיה:</b> איך מחשבים למשל <span class="m">∫ sin⁵(x)cos²(x) dx</span>? אין נוסחה ישירה. אבל יש לנו שני דברים חשובים:</p>
+  <ul>
+    <li>הנגזרת של <span class="m sc">cos(x)</span> היא <span class="m sc">−sin(x)</span>, והנגזרת של <span class="m sc">sin(x)</span> היא <span class="m sc">cos(x)</span>.</li>
+    <li>הזהות <span class="m">sin²(x) + cos²(x) = 1</span>, שמאפשרת להפוך sin² ל-cos² ולהפך.</li>
+  </ul>
+  <p><b>הרעיון:</b> "מוציאים" <b>sin אחד</b> (או cos אחד) הצידה — הוא יהיה ה-dt. את כל השאר הופכים לפונקציה אחרת בעזרת הזהות. ככה מקבלים <b>פולינום</b> ב-t, ופולינום אנחנו יודעים לחשב.</p>
+
+  <div class="box terms"><strong>מונחים וסימונים</strong>
+    <ul>
+      <li><span class="m">n = 2k + 1</span> — זו דרך לכתוב "n אי-זוגי" (למשל n = 5 ⇒ k = 2). <span class="m">n = 2n₀</span> — דרך לכתוב "n זוגי".</li>
+      <li><span class="m">sin<sup>2k+1</sup>(x) = sin(x)·sin<sup>2k</sup>(x)</span> — חוקי חזקות: מוציאים עותק אחד.</li>
+      <li><span class="m">sin<sup>2k</sup>(x) = (sin²(x))<sup>k</sup></span> — אותו דבר, רק כתוב כחזקה של sin². כך אפשר להחליף את sin² בזהות.</li>
+      <li><b>למה דווקא אי-זוגי?</b> כי אחרי שמוציאים עותק אחד, נשארת חזקה <b>זוגית</b>, ורק חזקה זוגית אפשר לכתוב כ-(sin²)<sup>k</sup>.</li>
+    </ul>
+  </div>
+
+  <h3>שלושה מקרים</h3>
+  <div class="tbl"><table>
+    <tr><th>מקרה</th><th>מה מוציאים הצידה</th><th>הצבה</th><th>זהות שמשתמשים בה</th></tr>
+    <tr><td>n (החזקה של sin) אי-זוגי</td><td><span class="m sc">sin(x)dx</span></td><td><span class="m tv">t = cos(x), dt = −sin(x)dx</span></td><td><span class="m">sin² = 1 − cos²</span></td></tr>
+    <tr><td>m (החזקה של cos) אי-זוגי</td><td><span class="m sc">cos(x)dx</span></td><td><span class="m tv">t = sin(x), dt = cos(x)dx</span></td><td><span class="m">cos² = 1 − sin²</span></td></tr>
+    <tr><td>n ו-m שניהם זוגיים</td><td>—</td><td>אין הצבה ישירה</td><td>זווית כפולה (ראו בהמשך)</td></tr>
+  </table></div>
+
+  <h3>מקרה א׳: n אי-זוגי</h3>
+  <div data-sim="A"></div>
+
+  <h3>מקרה ב׳: m אי-זוגי</h3>
+  <p>בדיוק אותו דבר, רק התפקידים מתחלפים: מוציאים cos אחד, והשאר הופך ל-sin.</p>
+  <div data-deriv="d2"></div>
+
+  <h3>מקרה ג׳: שתי החזקות זוגיות</h3>
+  <p>כאן אין "עותק בודד" להוציא. במקום זה משתמשים בזהויות שמורידות חזקה:</p>
+  <div class="tbl"><table>
+    <tr><th>זהות</th><th>מה היא עושה</th></tr>
+    <tr><td><span class="m">sin(x)cos(x) = ½·sin(2x)</span></td><td>הופכת מכפלה של sin ו-cos ל-sin אחד</td></tr>
+    <tr><td><span class="m">cos²(x) = <span class="fr"><span>1 + cos(2x)</span><span>2</span></span></span></td><td>מורידה את החזקה של cos מ-2 ל-1</td></tr>
+    <tr><td><span class="m">sin²(x) = <span class="fr"><span>1 − cos(2x)</span><span>2</span></span></span></td><td>מורידה את החזקה של sin מ-2 ל-1</td></tr>
+  </table></div>
+  <div data-deriv="d3"></div>
+  <p>בשורה 1: <span class="m">sin²·cos² = (sin·cos)² = (½ sin(2x))²</span>. בשורה 2: מוציאים את ¼ החוצה. את <span class="m">∫ sin²(2x) dx</span> כבר ראינו בכיתה איך מחשבים (עם הזהות של sin²).</p>
+  <div data-deriv="d4"></div>
+  <div class="box mine"><strong>ההשלמה שלי (לא בסיכום)</strong>בהרצאה נאמר: "תמיד נגיע איכשהו לאחד המקרים הראשונים". הנה איך: פותחים סוגריים בשורה 3 —
+    <span class="m big">⅛ ∫ sin²(2x) dx &nbsp;+&nbsp; ⅛ ∫ sin²(2x)·<span class="sc">cos</span>(2x) dx</span>
+    החלק הראשון — זהות sin² שוב. החלק השני — החזקה של cos היא 1, <b>אי-זוגית</b>! אז מקרה ב׳: <span class="m tv">t = sin(2x)</span>.</div>
+
+  <div class="tool" id="evenTool">
+    <strong>המחשה: מה עושים כששתי החזקות זוגיות?</strong>
+    <p style="margin:.3em 0">הלולאה תמיד אותה לולאה: <b>זוגי-זוגי ⇒ זהות ⇒ החזקה יורדת והזווית מוכפלת (x → 2x → 4x) ⇒ בודקים שוב</b>. עוצרים כשמגיעים לחזקה אי-זוגית (מקרה א׳/ב׳) או לאינטגרל מיידי. בחר דוגמה ולחץ "הבא":</p>
+    <div class="row seg" id="evenSeg">
+      <button type="button" data-e="F1" class="on"><span class="m">sin²·cos²</span></button>
+      <button type="button" data-e="F2"><span class="m">sin²·cos⁴</span></button>
+      <button type="button" data-e="F3"><span class="m">sin⁴</span> (m = 0)</button>
+    </div>
+    <div data-sim="F1"></div>
+    <div data-sim="F2" hidden></div>
+    <div data-sim="F3" hidden></div>
+    <div class="tbl" style="margin-bottom:0"><table>
+      <tr><th>רואים</th><th>זהות</th><th>מה קורה</th></tr>
+      <tr><td><span class="m">sin·cos</span> ביחד</td><td><span class="m">= ½ sin(2x)</span></td><td>שני גורמים נהיים אחד, הזווית מוכפלת</td></tr>
+      <tr><td><span class="m">cos²</span> לבד</td><td><span class="m">= (1 + cos 2x)/2</span></td><td>חזקה 2 ⇒ חזקה 1, הזווית מוכפלת</td></tr>
+      <tr><td><span class="m">sin²</span> לבד</td><td><span class="m">= (1 − cos 2x)/2</span></td><td>חזקה 2 ⇒ חזקה 1, הזווית מוכפלת</td></tr>
+    </table></div>
+    <div class="box mine" style="margin-bottom:0"><strong>זהירות: לא תמיד מגיעים לחזקה אי-זוגית</strong>
+      זה לא "לשחק" עם זהויות — יש סדר קבוע: קודם מחברים <span class="m">sin·cos</span> לזוג, ואת מה שנשאר לבד (<span class="m">sin²</span> או <span class="m">cos²</span>) מחליפים בזהות. בכל סיבוב החזקה יורדת, ולכן זה תמיד נגמר. ואחרי פתיחת סוגריים — <b>כל חלק נבדק בנפרד</b>. יש שתי דרכים שחלק יכול להיגמר בהן:
+      <div class="tbl"><table>
+        <tr><th>מה מקבלים בסוף</th><th>מה עושים</th><th>דוגמה</th></tr>
+        <tr><td>חזקה אי-זוגית ליד חזקה אחרת</td><td>מקרה א׳/ב׳ (הצבה <span class="m tv">t</span>)</td><td><span class="m">sin²(2x)·cos(2x)</span> ⇒ <span class="m tv">t = sin(2x)</span></td></tr>
+        <tr><td><span class="m">sin</span> או <span class="m">cos</span> בחזקה 1, לבד</td><td>אינטגרל מיידי</td><td><span class="m">∫ cos(4x) dx = sin(4x)/4</span></td></tr>
+      </table></div>
+      <b>המשפט לזכור:</b> משתמשים בזהויות זווית כפולה, וכל פעם החזקה יורדת. ממשיכים עד שכל חלק הוא אחד משניים: מקרה עם חזקה אי-זוגית (ואז הצבה t), או אינטגרל מיידי.
+    </div>
+  </div>
+
+  <div class="tool" id="caseTool">
+    <strong>כלי: איזה מקרה?</strong> הכנס חזקות ותראה מה עושים.
+    <div class="row" style="margin-top:8px">
+      <label for="cn">n (חזקת sin)</label><input id="cn" type="number" min="0" value="5">
+      <label for="cm">m (חזקת cos)</label><input id="cm" type="number" min="0" value="2">
+    </div>
+    <div class="out" id="caseOut"></div>
+  </div>
+
+  <div class="box analogy"><strong>אנלוגיה</strong>זוג נעליים: חזקה זוגית היא "זוגות שלמים" של sin², וכל זוג אפשר להחליף בזהות. חזקה אי-זוגית = יש נעל אחת בודדת. את הנעל הבודדת שמים בצד, והיא הופכת ל-dt.</div>
+  <div class="box rule"><strong>הכלל לזכור</strong>מי שהחזקה שלו <b>אי-זוגית</b> — מוציאים ממנו עותק אחד, ו-t = <b>השני</b>. שתיהן זוגיות — זהויות זווית כפולה.</div>
+  <div class="quiz" data-quiz="s2"></div>
+</section>
+
+<!-- ========== 3 ========== -->
+<section class="sec" id="s3">
+  <div class="secnum">3 / 8</div>
+  <h2>אינטגרל של <span class="m"><span class="ts">tan</span><sup>n</sup>(x)·<span class="ts">sec</span><sup>m</sup>(x)</span></h2>
+  <div class="src">עמודים 1–2 בסיכום, דוגמה 2</div>
+  <p>אותו רעיון בדיוק, רק עם זוג אחר של פונקציות. קודם צריך להכיר את <span class="m ts">sec</span>:</p>
+  <div class="box terms"><strong>מונחים וסימונים</strong>
+    <ul>
+      <li><span class="m ts">sec(x) = <span class="fr"><span>1</span><span>cos(x)</span></span></span> — "סקנס". זו רק שם קצר ל-1 חלקי cos.</li>
+      <li><b>הנגזרת של sec:</b> <span class="m">(1/cos x)′ = −<span class="fr"><span>1</span><span>cos²x</span></span>·(−sin x) = <span class="fr"><span>sin x</span><span>cos x</span></span>·<span class="fr"><span>1</span><span>cos x</span></span> = tan(x)·sec(x)</span>. (זו השורה בסוגריים בסיכום.)</li>
+      <li><b>הנגזרת של tan:</b> <span class="m">(tan x)′ = <span class="fr"><span>1</span><span>cos²x</span></span> = sec²(x)</span>.</li>
+      <li><b>הזהות:</b> <span class="m">1 + tan²(x) = sec²(x)</span>, ולכן <span class="m">tan²(x) = sec²(x) − 1</span>. (מקבלים אותה ממחלקים את <span class="m">sin² + cos² = 1</span> ב-cos².)</li>
+    </ul>
+  </div>
+  <div class="tbl"><table>
+    <tr><th>מקרה</th><th>מה מוציאים הצידה</th><th>הצבה</th><th>זהות</th></tr>
+    <tr><td>n (חזקת tan) אי-זוגי</td><td><span class="m ts">tan(x)·sec(x)dx</span></td><td><span class="m tv">t = sec(x)</span></td><td><span class="m">tan² = sec² − 1</span></td></tr>
+    <tr><td>m (חזקת sec) זוגי</td><td><span class="m ts">sec²(x)dx</span></td><td><span class="m tv">t = tan(x)</span></td><td><span class="m">sec² = tan² + 1</span></td></tr>
+  </table></div>
+  <p>שימו לב להבדל מסעיף 2: כאן ב-sec המקרה הוא "<b>זוגי</b>", כי מה שמוציאים הוא <span class="m">sec²</span> (שני עותקים), שהוא בדיוק הנגזרת של tan.</p>
+
+  <h3>מקרה א׳: n אי-זוגי</h3>
+  <div data-sim="B"></div>
+  <h3>מקרה ב׳: m זוגי</h3>
+  <div data-deriv="d6"></div>
+  <p>שורה 1: <span class="m">sec<sup>2k</sup> = sec²·sec<sup>2k−2</sup></span>, ואז <span class="m">sec<sup>2k−2</sup> = (sec²)<sup>k−1</sup> = (tan² + 1)<sup>k−1</sup></span>. ה-<span class="m">sec²dx</span> שנשאר בחוץ הוא בדיוק <span class="m tv">dt</span>.</p>
+
+  <div class="box analogy"><strong>אנלוגיה</strong>שתי "משפחות" של זוגות: (sin, cos) ו-(tan, sec). בכל משפחה, אחד הוא "כמעט הנגזרת" של השני. התרגיל תמיד: להשאיר בצד את חלק-הנגזרת, ולתרגם את כל השאר לפונקציה השנייה.</div>
+  <div class="box rule"><strong>הכלל לזכור</strong>tan בחזקה אי-זוגית ⇒ מוציאים <span class="m">tan·sec</span>, ו-<span class="m tv">t = sec</span>. sec בחזקה זוגית ⇒ מוציאים <span class="m">sec²</span>, ו-<span class="m tv">t = tan</span>.</div>
+  <div class="quiz" data-quiz="s3"></div>
+</section>
+
+<!-- ========== 4 ========== -->
+<section class="sec" id="s4">
+  <div class="secnum">4 / 8</div>
+  <h2>הצבות טריגונומטריות</h2>
+  <div class="src">עמוד 2 בסיכום, הטבלה</div>
+  <p><b>הבעיה:</b> אינטגרל כמו <span class="m">∫ √(9 − x²) dx</span>. אין כאן "פונקציה + נגזרת", אז הצבה רגילה לא עובדת. השורש הוא המכשול.</p>
+  <p><b>הרעיון ההפוך:</b> במקום <span class="m">t = משהו של x</span>, כותבים <span class="m th">x = משהו של θ</span>. בוחרים את המשהו כך שזהות טריגונומטרית תהפוך את מה שבתוך השורש <b>לריבוע</b>, והשורש ייעלם.</p>
+  <div class="box terms"><strong>למה פתאום sin? שלב אחרי שלב (על √(9 − x²))</strong>
+    <ol style="margin:4px 0;padding-inline-start:20px">
+      <li><b>מותר לנו לבחור מה זה x.</b> בהצבה רגילה בחרנו <span class="m tv">t = משהו</span>. כאן בוחרים <span class="m th">x = משהו</span>. זו בחירה שלנו, והשאלה רק מה יעזור.</li>
+      <li><b>מה מפריע?</b> השורש. שורש נעלם רק כשבפנים יש <b>ריבוע</b>: <span class="m">√(cos²θ) = cos θ</span>. אז מחפשים x שיהפוך את <span class="m">9 − x²</span> לריבוע.</li>
+      <li><b>איפה ראינו "1 פחות ריבוע = ריבוע"?</b> בזהות של פיתגורס: <span class="m">sin²θ + cos²θ = 1 ⇒ 1 − sin²θ = cos²θ</span>. זה עובד רק אם מה שבריבוע הוא <b>sin</b> — בגלל זה sin מופיע.</li>
+      <li><b>מתאימים לזהות:</b> אצלנו יש 9 ולא 1, אז מוציאים אותו: <span class="m">9 − x² = 9·(1 − (x/3)²)</span>. עכשיו בסוגריים "1 פחות משהו²", והמשהו הוא <span class="m">x/3</span>. בוחרים <span class="m th">x/3 = sin θ</span>, כלומר <span class="m th">x = 3sin θ</span>.</li>
+      <li><b>התוצאה:</b> <span class="m">9·(1 − sin²θ) = 9cos²θ ⇒ √(9cos²θ) = 3cos θ</span>. השורש נעלם.</li>
+    </ol>
+    <div class="tbl" style="margin:6px 0"><table>
+      <tr><th colspan="2">בדיקה עם מספרים: x = 1.5</th></tr>
+      <tr><td>ישירות</td><td><span class="m">√(9 − 1.5²) = √(9 − 2.25) = √6.75 ≈ 2.598</span></td></tr>
+      <tr><td>דרך sin</td><td><span class="m">sin θ = 1.5/3 = 0.5 ⇒ θ = 30° ⇒ 3·cos 30° ≈ 3·0.866 = 2.598</span></td></tr>
+    </table></div>
+    <b>למה זה תמיד אפשרי?</b> sin מקבל כל ערך בין −1 ל-1, אז כל x בין −3 ל-3 אפשר לכתוב כ-<span class="m">3sin θ</span>. ומחוץ לזה <span class="m">√(9 − x²)</span> ממילא לא מוגדר. באותה דרך בדיוק מגיעים ל-tan ול-1/cos — כל אחד מהזהות "שלו" (ראו הטבלה).
+  </div>
+  <div class="box mine"><strong>זהירות: זה לא כמו הצבה רגילה</strong>בהצבה רגילה בוחרים t כי <b>הנגזרת</b> שלו יושבת באינטגרל. כאן לא מחפשים נגזרת — בוחרים sin רק בגלל <b>הזהות</b> שהופכת את מה שבשורש לריבוע.</div>
+  <div class="tbl"><table>
+    <tr><th>מה יש בשורש</th><th>ההצבה + הטווח של θ</th><th>הזהות שעובדת</th><th>השורש הופך ל-</th></tr>
+    <tr><td><span class="m">√(a² − x²)</span></td><td><span class="m th">x = a·sin(θ), −π/2 ≤ θ ≤ π/2</span></td><td><span class="m">1 − sin²θ = cos²θ</span></td><td><span class="m">a·cos(θ)</span></td></tr>
+    <tr><td><span class="m">√(a² + x²)</span></td><td><span class="m th">x = a·tan(θ), −π/2 &lt; θ &lt; π/2</span></td><td><span class="m">1 + tan²θ = <span class="fr"><span>1</span><span>cos²θ</span></span></span></td><td><span class="m"><span class="fr"><span>a</span><span>cos(θ)</span></span></span></td></tr>
+    <tr><td><span class="m">√(x² − a²)</span></td><td><span class="m th">x = <span class="fr"><span>a</span><span>cos(θ)</span></span>, 0 ≤ θ &lt; π/2</span></td><td><span class="m"><span class="fr"><span>1</span><span>cos²θ</span></span> − 1 = tan²θ</span></td><td><span class="m">a·tan(θ)</span></td></tr>
+  </table></div>
+  <div class="box terms"><strong>מונחים וסימונים</strong>
+    <ul>
+      <li><b>θ</b> (תטא) — סתם שם למשתנה החדש, כמו t. משתמשים באות של זווית כי הוא באמת זווית.</li>
+      <li><b>למה צריך טווח ל-θ?</b> כי <span class="m">√(cos²θ) = |cos θ|</span>, עם ערך מוחלט. בטווח שבטבלה <span class="m">cos θ ≥ 0</span>, אז מותר לכתוב פשוט <span class="m">cos θ</span>. בנוסף, בטווח הזה אפשר "לחזור" מ-x ל-θ (למשל <span class="m">θ = arcsin(x/a)</span>).</li>
+      <li><b>הצבה הפוכה:</b> בסוף התשובה יוצאת ב-θ, ו<b>חייבים לחזור ל-x</b>. את זה עושים עם ההצבה והזהות <span class="m">sin² + cos² = 1</span> (רואים בדוגמאות).</li>
+      <li>במקרה x = a/cos(θ) הסיכום כותב בעמודה השלישית <span class="m"><span class="fr"><span>1</span><span>cos²θ</span></span> − 1 = tan²θ</span> — זו אותה זהות מסעיף 3, רק בכיוון ההפוך.</li>
+    </ul>
+  </div>
+  <div class="tool">
+    <strong>כלי: בחר שורש</strong>
+    <div class="row seg" style="margin-top:8px" id="rootSeg">
+      <button type="button" data-r="0" class="on"><span class="m">√(a² − x²)</span></button>
+      <button type="button" data-r="1"><span class="m">√(a² + x²)</span></button>
+      <button type="button" data-r="2"><span class="m">√(x² − a²)</span></button>
+    </div>
+    <div class="out" id="rootOut"></div>
+  </div>
+  <div class="tool" id="triTool">
+    <strong>הדגמה: למה השורש נעלם? כי הוא פשוט צלע במשולש</strong>
+    <p style="margin:.3em 0">כל הצבה טריגונומטרית היא משולש ישר-זווית עם זווית <span class="m th">θ</span>. שתי צלעות הן <span class="m">a</span> ו-<span class="m">x</span>, והצלע השלישית (לפי פיתגורס) היא <b>בדיוק השורש</b>. הזז את x ותראה שהשורש תמיד שווה לביטוי הטריגונומטרי. (כאן a = 3)</p>
+    <div class="row seg" id="triSeg">
+      <button type="button" data-t="0" class="on"><span class="m">√(9 − x²)</span></button>
+      <button type="button" data-t="1"><span class="m">√(9 + x²)</span></button>
+      <button type="button" data-t="2"><span class="m">√(x² − 9)</span></button>
+    </div>
+    <div class="row" style="margin-top:10px">
+      <label for="triX">x =</label>
+      <input id="triX" type="range" min="0" max="1" step="0.01" value="0.5" style="width:min(260px,60vw)">
+      <b class="m" id="triXv"></b>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:8px">
+      <svg id="triSvg" viewBox="0 0 320 200" width="320" height="200" role="img" aria-label="משולש ישר זווית של ההצבה" style="max-width:100%;direction:ltr;flex:none"></svg>
+      <div class="out" id="triOut" style="flex:1;min-width:220px;margin:0"></div>
+    </div>
+  </div>
+
+  <div class="box analogy"><strong>אנלוגיה</strong>מנעול ומפתח: לכל סוג שורש יש מפתח אחד שמתאים. הסימן בתוך השורש (מינוס לפני x², פלוס, או מינוס לפני a²) אומר לך איזה מפתח לקחת.</div>
+  <div class="box rule"><strong>הכלל לזכור</strong><span class="m">a² − x²</span> ⇒ sin. &nbsp; <span class="m">a² + x²</span> ⇒ tan. &nbsp; <span class="m">x² − a²</span> ⇒ 1/cos. ובסוף — תמיד חוזרים ל-x.</div>
+  <div class="quiz" data-quiz="s4"></div>
+</section>
+
+<!-- ========== 5 ========== -->
+<section class="sec" id="s5">
+  <div class="secnum">5 / 8</div>
+  <h2>דוגמה 1: <span class="m">∫ <span class="fr"><span>√(9 − x²)</span><span>x²</span></span> dx</span></h2>
+  <div class="src">עמוד 2 בסיכום, דוגמה 1</div>
+  <p>בשורש יש <span class="m">9 − x² = 3² − x²</span>, כלומר <span class="m">a² − x²</span> עם a = 3. לפי הטבלה: <span class="m th">x = 3sin(θ)</span>.</p>
+  <div class="box terms"><strong>הסדר המלא: 4 שלבים (θ = arcsin(x/a) הוא השלב האחרון!)</strong>
+    <div class="tbl" style="margin:6px 0"><table>
+      <tr><th>שלב</th><th>מה עושים</th><th>בדוגמה הזו</th></tr>
+      <tr><td>1. הצבה</td><td>מחליפים כל x ו-dx ב-θ</td><td><span class="m th">x = 3sin θ, dx = 3cos θ dθ</span></td></tr>
+      <tr><td>2. מפשטים</td><td>השורש נפתח, מצמצמים</td><td><span class="m">∫ cot²θ dθ</span></td></tr>
+      <tr><td>3. <b>מחשבים את האינטגרל</b></td><td>הכל ב-θ. כאן החישוב נגמר</td><td><span class="m">−cot θ − θ + C</span></td></tr>
+      <tr><td>4. חוזרים ל-x</td><td>מחליפים כל θ בביטוי של x</td><td><span class="m">θ = arcsin(x/3)</span>, <span class="m">cot θ = √(9 − x²)/x</span></td></tr>
+    </table></div>
+    <b>שימו לב:</b> את <span class="m">θ = arcsin(x/a)</span> לא משתמשים כדי <b>לחשב</b> את האינטגרל, אלא רק אחרי שהוא כבר חושב — כדי לתרגם את התשובה חזרה ל-x. התשובה הסופית לא מכילה θ בכלל.
+    <br><b>אנלוגיה:</b> טסים לחו״ל — מחליפים שקלים לדולרים (שלב 1), קונים הכל בדולרים (שלבים 2-3), ובסוף מחזירים את מה שנשאר לשקלים (שלב 4). arcsin הוא ההמרה בחזרה, לא הקנייה.
+  </div>
+  <div data-sim="C"></div>
+  <div class="box terms"><strong>מונחים וסימונים</strong>
+    <ul>
+      <li><span class="m">cot(θ) = <span class="fr"><span>cos θ</span><span>sin θ</span></span></span> — קוטנגנס, ההפוך של tan.</li>
+      <li><span class="m">∫ <span class="fr"><span>1</span><span>sin²θ</span></span> dθ = −cot(θ)</span> — אינטגרל מיידי (כי הנגזרת של cot היא <span class="m">−1/sin²</span>).</li>
+      <li><span class="m">cot²θ = <span class="fr"><span>1 − sin²θ</span><span>sin²θ</span></span> = <span class="fr"><span>1</span><span>sin²θ</span></span> − 1</span> — מפצלים את השבר לשני חלקים.</li>
+    </ul>
+  </div>
+  <div class="box mine"><strong>דרך שלי לחזור ל-x: משולש</strong>
+    <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center">
+      <svg viewBox="0 0 220 140" width="220" height="140" role="img" aria-label="משולש ישר זווית: יתר 3, ניצב מול θ הוא x, ניצב צמוד הוא שורש 9 פחות x בריבוע" style="max-width:100%;direction:ltr">
+        <polygon points="20,120 190,120 190,25" fill="none" stroke="var(--fg)" stroke-width="2"/>
+        <rect x="178" y="108" width="12" height="12" fill="none" stroke="var(--muted)"/>
+        <path d="M55,120 A35,35 0 0 0 51,104" fill="none" stroke="var(--th)" stroke-width="2"/>
+        <text x="60" y="113" fill="var(--th)" font-size="15" font-family="serif">θ</text>
+        <text x="88" y="62" fill="var(--fg)" font-size="15" font-family="serif">3</text>
+        <text x="197" y="78" fill="var(--fg)" font-size="15" font-family="serif">x</text>
+        <text x="72" y="138" fill="var(--fg)" font-size="14" font-family="serif">√(9 − x²)</text>
+      </svg>
+      <p style="flex:1;min-width:200px;margin:0"><span class="m">sin θ = x/3</span> ⇒ ניצב מול = x, יתר = 3. לפי פיתגורס הניצב השני = <span class="m">√(9 − x²)</span>. עכשיו קוראים ישר: <span class="m">cot θ = <span class="fr"><span>צמוד</span><span>מול</span></span> = <span class="fr"><span>√(9 − x²)</span><span>x</span></span></span>. אותה תשובה כמו בסיכום, בלי אלגברה.</p>
+    </div>
+  </div>
+  <div class="box rule"><strong>הכלל לזכור</strong>אחרי ההצבה: (1) לפתוח את השורש עם הזהות, (2) לצמצם, (3) לחשב ב-θ, (4) לחזור ל-x עם <span class="m">θ = arcsin(x/a)</span> ו-<span class="m">cos θ = √(a² − x²)/a</span>.</div>
+  <div class="quiz" data-quiz="s5"></div>
+</section>
+
+<!-- ========== 6 ========== -->
+<section class="sec" id="s6">
+  <div class="secnum">6 / 8</div>
+  <h2>דוגמה 2: <span class="m">∫ <span class="fr"><span>x</span><span>√(x² + 4)</span></span> dx</span></h2>
+  <div class="src">עמוד 2 בסיכום, דוגמה 2</div>
+  <p>בשורש יש <span class="m">x² + 4 = x² + 2²</span>, כלומר <span class="m">a² + x²</span> עם a = 2. לפי הטבלה: <span class="m th">x = 2tan(θ)</span>. שימו לב: בדרך יש <b>הצבה שנייה</b> <span class="m tv">t = cos(θ)</span> — הצבה בתוך הצבה.</p>
+  <div data-sim="D"></div>
+  <div class="box mine"><strong>הערה שלי: תיקון קטן בסיכום</strong>בסיכום כתוב <span class="m">−2∫ <span class="fr"><span>dt</span><span>t</span></span></span>, אבל צריך להיות <span class="m">−2∫ <span class="fr"><span>dt</span><span>t²</span></span></span> (כי במכנה יש <span class="m">cos²θ = t²</span>). השורה שאחריה (<span class="m">−2∫ t⁻² dt = 2/t</span>) כבר נכונה, אז זו רק טעות העתקה.</div>
+  <div class="box terms"><strong>מונחים: שלב החזרה ל-x</strong>
+    <ul>
+      <li>מ-<span class="m">x = 2tan θ</span>: <span class="m">tan θ = sin θ / cos θ = x/2</span>, ולכן <span class="m">sin θ = <span class="fr"><span>x</span><span>2</span></span>·cos θ</span>.</li>
+      <li>מציבים את זה בזהות <span class="m">sin²θ + cos²θ = 1</span>: <span class="m"><span class="fr"><span>x²</span><span>4</span></span>cos²θ + cos²θ = 1</span>.</li>
+      <li>מוציאים cos²θ כגורם משותף: <span class="m">cos²θ·<span class="fr"><span>x² + 4</span><span>4</span></span> = 1</span> ⇒ <span class="m">cos θ = <span class="fr"><span>2</span><span>√(x² + 4)</span></span></span>.</li>
+    </ul>
+  </div>
+  <div class="box mine"><strong>דרך קצרה שלי (לבדיקה)</strong>כאן יש x בחוץ, שהוא כמעט הנגזרת של <span class="m">x² + 4</span>. אז גם הצבה רגילה עובדת: <span class="m tv">u = x² + 4, du = 2x dx</span> ⇒ <span class="m">½∫ u<sup>−½</sup> du = √u = √(x² + 4) + C</span>. אותה תשובה! במבחן — אם רואים "פונקציה + נגזרת", זה קודם. ההרצאה פשוט רצתה לתרגל את ההצבה הטריגונומטרית.</div>
+  <div class="box rule"><strong>הכלל לזכור</strong>אחרי הצבה טריגונומטרית מותר (ולפעמים צריך) לעשות עוד הצבה רגילה בתוך θ. ולפני שמתחילים — לבדוק אם הצבה פשוטה לא מספיקה.</div>
+  <div class="quiz" data-quiz="s6"></div>
+</section>
+
+<!-- ========== 7 ========== -->
+<section class="sec" id="s7">
+  <div class="secnum">7 / 8</div>
+  <h2>אינטגרציה של פונקציות רציונליות</h2>
+  <div class="src">עמוד 3 בסיכום</div>
+  <p><b>המטרה:</b> שיטה שמאפשרת לחשב אינטגרל של כל פונקציה מהצורה <span class="m ra"><span class="fr"><span>P(x)</span><span>Q(x)</span></span></span>, כש-P ו-Q פולינומים. בהרצאה הזו עשינו רק את <b>הצעד הראשון</b>.</p>
+  <div class="box terms"><strong>מונחים וסימונים</strong>
+    <ul>
+      <li><b>פונקציה רציונלית</b> = פולינום חלקי פולינום. למשל <span class="m">(x⁴ + x³)/(x² + 2)</span>.</li>
+      <li><span class="m">deg</span> = <b>מעלה</b> של פולינום = החזקה הגבוהה ביותר של x. <span class="m">deg(x⁴ + x³) = 4</span>, <span class="m">deg(x² + 2) = 2</span>.</li>
+      <li><b>פשוטה</b> (במילים אחרות: "אמיתית") = המונה ממעלה <b>קטנה ממש</b> מהמכנה.</li>
+    </ul>
+  </div>
+  <div class="box rule" style="border-color:var(--ra);background:var(--ra-bg)"><strong>הגדרה</strong>פונקציה רציונלית <span class="m">P(x)/Q(x)</span> נקראת <b>פשוטה</b> אם <span class="m">deg P(x) &lt; deg Q(x)</span>.</div>
+  <div class="box rule" style="border-color:var(--ra);background:var(--ra-bg)"><strong>טענה</strong>אם <span class="m">P/Q</span> אינה פשוטה, אפשר לכתוב אותה כ-
+    <span class="m big">M(x) + <span class="fr"><span>r(x)</span><span>Q(x)</span></span></span>
+    כאשר <span class="m">M(x)</span> פולינום (המנה), ו-<span class="m">r(x)/Q(x)</span> רציונלית פשוטה (r = השארית).</div>
+  <div class="tbl"><table>
+    <tr><th></th><th>מספרים (דוגמה שלי)</th><th>פולינומים</th></tr>
+    <tr><td>"לא פשוט"</td><td>שבר מדומה <span class="m">17/5</span></td><td><span class="m">deg P ≥ deg Q</span></td></tr>
+    <tr><td>מחלקים</td><td><span class="m">17 = 3·5 + 2</span></td><td><span class="m">P = M·Q + r</span></td></tr>
+    <tr><td>התוצאה</td><td><span class="m">3 + 2/5</span></td><td><span class="m">M + r/Q</span></td></tr>
+    <tr><td>השארית קטנה מהמחלק</td><td><span class="m">2 &lt; 5</span></td><td><span class="m">deg r &lt; deg Q</span></td></tr>
+  </table></div>
+  <h3>הדוגמה מההרצאה: חילוק ארוך</h3>
+  <div data-sim="E"></div>
+  <p><b>בדיקה (שלי):</b> <span class="m">(x² + 2)(x² + x − 2) = x⁴ + x³ + 2x − 4</span>, ועוד השארית <span class="m">−2x + 4</span> נותן <span class="m">x⁴ + x³</span>. ✓</p>
+  <p><b>למה זה עוזר?</b> את <span class="m">∫ M(x) dx</span> קל לחשב — זה פולינום. נשאר רק <span class="m">∫ r(x)/Q(x) dx</span>, של פונקציה <b>פשוטה</b>. איך מחשבים את זה — זה הנושא של ההרצאה הבאה.</p>
+  <div class="box analogy"><strong>אנלוגיה</strong>17 עוגיות ל-5 ילדים: כל אחד מקבל 3 שלמות (= M, הפולינום), ונשארות 2 עוגיות שצריך לחתוך (= r/Q, החלק ה"קשה"). קודם מחלקים את השלמות, ורק אז מתעסקים בשאר.</div>
+  <div class="quiz" data-quiz="s7"></div>
+</section>
+
+<!-- ========== 8 ========== -->
+<section class="sec" id="s8">
+  <div class="secnum">8 / 8</div>
+  <h2>סיכום: מה עושים כשרואים...</h2>
+  <div class="tbl"><table>
+    <tr><th>רואים</th><th>עושים</th></tr>
+    <tr><td><span class="m sc">sin<sup>n</sup>·cos<sup>m</sup></span>, n אי-זוגי</td><td>מוציאים sin(x)dx, <span class="m tv">t = cos(x)</span>, sin² = 1 − cos²</td></tr>
+    <tr><td><span class="m sc">sin<sup>n</sup>·cos<sup>m</sup></span>, m אי-זוגי</td><td>מוציאים cos(x)dx, <span class="m tv">t = sin(x)</span>, cos² = 1 − sin²</td></tr>
+    <tr><td><span class="m sc">sin<sup>n</sup>·cos<sup>m</sup></span>, שתיהן זוגיות</td><td>זהויות זווית כפולה, עד שמגיעים למקרה קודם · <a href="#evenTool">להמחשה בסעיף 2 ↑</a></td></tr>
+    <tr><td><span class="m ts">tan<sup>n</sup>·sec<sup>m</sup></span>, n אי-זוגי</td><td>מוציאים tan·sec dx, <span class="m tv">t = sec(x)</span>, tan² = sec² − 1</td></tr>
+    <tr><td><span class="m ts">tan<sup>n</sup>·sec<sup>m</sup></span>, m זוגי</td><td>מוציאים sec²dx, <span class="m tv">t = tan(x)</span>, sec² = tan² + 1</td></tr>
+    <tr><td><span class="m">√(a² − x²)</span></td><td><span class="m th">x = a·sin(θ)</span></td></tr>
+    <tr><td><span class="m">√(a² + x²)</span></td><td><span class="m th">x = a·tan(θ)</span></td></tr>
+    <tr><td><span class="m">√(x² − a²)</span></td><td><span class="m th">x = a/cos(θ)</span></td></tr>
+    <tr><td><span class="m ra">P/Q</span> עם <span class="m">deg P ≥ deg Q</span></td><td>חילוק ארוך ⇒ <span class="m">M(x) + r(x)/Q(x)</span></td></tr>
+  </table></div>
+  <div class="box rule" style="border-color:var(--th);background:var(--th-bg)"><strong>איך מגיעים להצבה טריגונומטרית (בלי לשנן)</strong>
+    <ol style="margin:4px 0;padding-inline-start:20px">
+      <li><b>המטרה:</b> שמה שבתוך השורש יהיה ריבוע, ואז השורש נפתח.</li>
+      <li><b>מוציאים a² משותף</b> ומקבלים צורה של 1 ועוד/פחות <span class="m">(x/a)²</span>.</li>
+      <li><b>מחפשים זהות עם אותה צורה בדיוק</b>, ומשווים: <span class="m">x/a</span> = הפונקציה שבזהות.</li>
+    </ol>
+    <div class="tbl" style="margin-bottom:4px"><table>
+      <tr><th>מוציאים a²</th><th>זהות באותה צורה</th><th>משווים ⇒ הצבה</th></tr>
+      <tr><td><span class="m">a²(1 − (x/a)²)</span></td><td><span class="m">1 − sin²θ = cos²θ</span></td><td><span class="m th">x/a = sin θ ⇒ x = a·sin θ</span></td></tr>
+      <tr><td><span class="m">a²(1 + (x/a)²)</span></td><td><span class="m">1 + tan²θ = 1/cos²θ</span></td><td><span class="m th">x/a = tan θ ⇒ x = a·tan θ</span></td></tr>
+      <tr><td><span class="m">a²((x/a)² − 1)</span></td><td><span class="m">1/cos²θ − 1 = tan²θ</span></td><td><span class="m th">x/a = 1/cos θ ⇒ x = a/cos θ</span></td></tr>
+    </table></div>
+    <b>דוגמה:</b> <span class="m">√(9 − x²) = √(9(1 − (x/3)²))</span> ⇒ <span class="m th">x/3 = sin θ</span> ⇒ <span class="m">√(9cos²θ) = 3cos θ</span>.
+  </div>
+  <div class="quiz" data-quiz="s8"></div>
+  <div class="end" id="endMsg" hidden></div>
+</section>
+</div>
+
+<script>
+function bidiHTML(str){
+  const HEB=/[֐-׿]/, MATHY=/[A-Za-z0-9θπ∫√=+−×÷²³⁴⁵⁰¹⁻½¼⅛∞≤≥<>\/()·|]/;
+  let out='',run='';
+  const flush=()=>{ if(!run)return;
+    const lead=run.match(/^[\s,.:—\-]*/)[0], rest=run.slice(lead.length);
+    const trail=rest.match(/[\s,.:?!—]*$/)[0], core=rest.slice(0,rest.length-trail.length);
+    out+= (core && MATHY.test(core.replace(/<[^>]+>/g,''))) ? lead+'<bdi dir="ltr" class="mx">'+core+'</bdi>'+trail : run;
+    run=''; };
+  for(const tok of str.split(/(<[^>]+>)/)){
+    if(!tok)continue;
+    if(tok[0]==='<'&&tok.endsWith('>')){ if(/^<\/?su[pb]>$/.test(tok)) run+=tok; else {flush(); out+=tok;} continue; }
+    for(const ch of tok){ if(HEB.test(ch)){flush(); out+=ch;} else run+=ch; }
+  }
+  flush(); return out;
+}
+const ESC=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+const F=(a,b)=>`<span class="fr"><span>${a}</span><span>${b}</span></span>`;
+const t='<span class="tv">t</span>', th='<span class="th">θ</span>';
+
+/* ---------- static derivations ---------- */
+const DERIV={
+ d2:{cap:'גזירה 2 · m אי-זוגי (m = 2k + 1)',lines:[
+  ['∫ sin<sup>n</sup>(x) cos<sup>m</sup>(x) dx = ∫ sin<sup>n</sup>(x) cos<sup>2k</sup>(x) <span class="sc">cos(x)</span> dx','מוציאים cos אחד'],
+  ['= ∫ sin<sup>n</sup>(x) (cos²(x))<sup>k</sup> <span class="sc">cos(x)</span> dx','חזקה זוגית = (cos²)^k'],
+  ['= ∫ sin<sup>n</sup>(x) (1 − sin²(x))<sup>k</sup> <span class="sc">cos(x)</span> dx','cos² = 1 − sin²'],
+  ['<span class="subst tv">t = sin(x), dt = cos(x)dx</span>','cos(x)dx הוא בדיוק dt'],
+  [`= ∫ ${t}<sup>n</sup> (1 − ${t}²)<sup>k</sup> d${t}`,'פולינום ב-t — יודעים לחשב']]},
+ d3:{cap:'גזירה 3 · דוגמה: n₀ = m₀ = 1 (כלומר n = m = 2)',lines:[
+  ['∫ sin²(x) cos²(x) dx = ∫ (½ sin(2x))² dx','sin·cos = ½sin(2x)'],
+  ['= ¼ ∫ sin²(2x) dx','½ בריבוע = ¼']]},
+ d4:{cap:'גזירה 4 · דוגמה: m₀ = 2, n₀ = 1 (כלומר n = 2, m = 4)',lines:[
+  ['∫ sin²(x) cos⁴(x) dx = ∫ sin²(x) cos²(x) · '+F('1 + cos(2x)','2')+' dx','cos⁴ = cos²·cos²'],
+  ['= ∫ ¼ sin²(2x) · '+F('1 + cos(2x)','2')+' dx','sin²cos² = ¼sin²(2x)']]},
+ d6:{cap:'גזירה 6 · m זוגי (m = 2k)',lines:[
+  ['∫ tan<sup>n</sup>(x) sec<sup>m</sup>(x) dx = ∫ tan<sup>n</sup>(x) <span class="ts">sec²(x)</span> sec<sup>2k−2</sup>(x) dx','מוציאים sec²'],
+  ['= ∫ tan<sup>n</sup>(x) (tan²(x) + 1)<sup>k−1</sup> <span class="ts">sec²(x)</span> dx','sec² = tan² + 1'],
+  ['<span class="subst tv">t = tan(x), dt = sec²(x)dx</span>','(tan)′ = sec²'],
+  [`= ∫ ${t}<sup>n</sup> (${t}² + 1)<sup>k−1</sup> d${t}`,'פולינום ב-t']]}
+};
+document.querySelectorAll('[data-deriv]').forEach(el=>{
+  const d=DERIV[el.dataset.deriv];
+  el.innerHTML=`<figure class="deriv"><figcaption>${d.cap}</figcaption><ol class="lines">${d.lines.map(l=>`<li><span>${l[0]}</span><span class="why">${bidiHTML(l[1])}</span></li>`).join('')}</ol></figure>`;
+});
+
+/* ---------- simulations ---------- */
+const SIM={
+ A:{title:'סימולציה 1 · sin בחזקה אי-זוגית (גזירה 1)',lines:[
+   '∫ <span class="sc">sin</span><sup>n</sup>(x) cos<sup>m</sup>(x) dx, &nbsp; n = 2k + 1',
+   '= ∫ <span class="sc">sin(x)</span> · sin<sup>2k</sup>(x) · cos<sup>m</sup>(x) dx',
+   '= ∫ <span class="sc">sin(x)</span> · (sin²(x))<sup>k</sup> · cos<sup>m</sup>(x) dx',
+   '= ∫ <span class="sc">sin(x)</span> · (1 − cos²(x))<sup>k</sup> · cos<sup>m</sup>(x) dx',
+   '<span class="subst tv">t = cos(x), &nbsp; dt = −sin(x)dx</span>',
+   `= −∫ (1 − ${t}²)<sup>k</sup> · ${t}<sup>m</sup> d${t}`],
+  steps:[
+   [-1,'מתחילים. יש לנו sin בחזקה אי-זוגית. ננסה להגיע לפולינום.',[]],
+   [0,'השורה הראשונה: האינטגרל. החזקה של sin היא n = 2k + 1, כלומר אי-זוגית. דוגמה: n = 5 ⇒ k = 2.',[['n','2k + 1 (אי-זוגי)','sc']],0],
+   [1,'מוציאים <b>sin אחד</b> הצידה: sin<sup>2k+1</sup> = sin · sin<sup>2k</sup>. הוא ישמש אחר כך כ-dt.',[['n','2k + 1 (אי-זוגי)','sc'],['בצד','sin(x)dx','sc']],1],
+   [2,'כותבים את החזקה הזוגית כחזקה של sin²: sin<sup>2k</sup> = (sin²)<sup>k</sup>.',[['n','2k + 1 (אי-זוגי)','sc'],['בצד','sin(x)dx','sc'],['נשאר','(sin²)^k','sc']],2],
+   [3,'מחליפים sin² = 1 − cos². עכשיו חוץ מה-sin שבצד, <b>הכל ב-cos</b>.',[['n','2k + 1 (אי-זוגי)','sc'],['בצד','sin(x)dx','sc'],['נשאר','(1 − cos²)^k','sc']],2],
+   [4,'מציבים t = cos(x). גוזרים: dt = −sin(x)dx, ולכן sin(x)dx = −dt. זה בדיוק מה ששמנו בצד!',[['t','cos(x)','tv'],['dt','−sin(x)dx','tv'],['sin(x)dx','= −dt','tv']],0],
+   [5,'מחליפים: cos ⇒ t, ו-sin(x)dx ⇒ −dt. המינוס יוצא לפני האינטגרל. קיבלנו <b>פולינום ב-t</b> — פותחים סוגריים ומשלבים.',[['t','cos(x)','tv'],['תוצאה','−∫(1−t²)^k t^m dt','tv']],1]]},
+ B:{title:'סימולציה 2 · tan בחזקה אי-זוגית (גזירה 5)',lines:[
+   '∫ <span class="ts">tan</span><sup>n</sup>(x) sec<sup>m</sup>(x) dx, &nbsp; n = 2k + 1',
+   '= ∫ <span class="ts">tan(x)</span> tan<sup>2k</sup>(x) sec<sup>m</sup>(x) dx',
+   '= ∫ <span class="ts">tan(x)sec(x)</span> (tan²(x))<sup>k</sup> sec<sup>m−1</sup>(x) dx',
+   '= ∫ <span class="ts">tan(x)sec(x)</span> (sec²(x) − 1)<sup>k</sup> sec<sup>m−1</sup>(x) dx',
+   '<span class="subst tv">t = sec(x), &nbsp; dt = tan(x)sec(x)dx</span>',
+   `= ∫ (${t}² − 1)<sup>k</sup> ${t}<sup>m−1</sup> d${t}`],
+  steps:[
+   [-1,'מתחילים. tan בחזקה אי-זוגית.',[]],
+   [0,'n = 2k + 1, אי-זוגי.',[['n','2k + 1 (אי-זוגי)','ts']],0],
+   [1,'מוציאים <b>tan אחד</b>: tan<sup>2k+1</sup> = tan · tan<sup>2k</sup>.',[['n','2k + 1','ts'],['בצד','tan(x)','ts']],1],
+   [2,'הטריק: צריך בצד גם sec אחד, כי הנגזרת של sec היא tan·sec. "לוקחים" sec אחד מ-sec<sup>m</sup>, ולכן נשאר sec<sup>m−1</sup>. וגם tan<sup>2k</sup> = (tan²)<sup>k</sup>.',[['בצד','tan(x)sec(x)dx','ts'],['sec שנשאר','m − 1','ts']],0],
+   [3,'מחליפים tan² = sec² − 1. עכשיו חוץ ממה שבצד — הכל ב-sec.',[['בצד','tan(x)sec(x)dx','ts'],['נשאר','(sec² − 1)^k','ts']],1],
+   [4,'מציבים t = sec(x). הנגזרת: dt = tan(x)sec(x)dx — בדיוק מה ששמנו בצד.',[['t','sec(x)','tv'],['dt','tan(x)sec(x)dx','tv']],0],
+   [5,'מחליפים הכל: מקבלים פולינום ב-t. (כאן אין מינוס, כי הנגזרת של sec חיובית.)',[['t','sec(x)','tv'],['תוצאה','∫(t²−1)^k t^(m−1) dt','tv']],1]]},
+ C:{title:'סימולציה 3 · דוגמה 1 מההרצאה',lines:[
+   '∫ '+F('√(9 − x²)','x²')+' dx',
+   '<span class="subst th">x = 3sin(θ), &nbsp; dx = 3cos(θ)dθ</span>',
+   '= ∫ '+F('√(9 − 9sin²θ)','9sin²θ')+' · 3cos(θ) dθ',
+   '= ∫ '+F('√(9cos²θ)','9sin²θ')+' · 3cos(θ) dθ',
+   '= ∫ '+F('cos θ','sin²θ')+' · cos θ dθ = ∫ cot²(θ) dθ',
+   '= ∫ ( '+F('1','sin²θ')+' − 1 ) dθ',
+   '= −cot(θ) − θ + C',
+   '<span class="subst th">θ = arcsin(x/3), &nbsp; cos θ = '+F('√(9 − x²)','3')+'</span>',
+   '= −'+F('√(9 − x²)','x')+' − arcsin('+F('x','3')+') + C'],
+  steps:[
+   [-1,'מתחילים מאינטגרל ריק.',[]],
+   [0,'זה האינטגרל. בשורש: 9 − x² = 3² − x². לפי הטבלה: a = 3, הצבה עם sin.',[['סוג','a² − x², a = 3','th']],0],
+   [1,'מציבים x = 3sin(θ). גוזרים לפי θ: dx = 3cos(θ)dθ.',[['x','3sin(θ)','th'],['dx','3cos(θ)dθ','th']],0],
+   [2,'מחליפים כל x: x² = 9sin²θ, גם בתוך השורש וגם במכנה. ו-dx בחוץ.',[['x','3sin(θ)','th'],['x²','9sin²θ','th']],1],
+   [3,'מוציאים 9 משותף בשורש: 9 − 9sin²θ = 9(1 − sin²θ) = 9cos²θ. עכשיו יש ריבוע בתוך השורש!',[['x','3sin(θ)','th'],['בתוך השורש','9cos²θ','th']],1],
+   [4,'√(9cos²θ) = 3cosθ (כי cos ≥ 0 בטווח). 3·3 = 9 מצטמצם עם ה-9 במכנה. נשאר cos²/sin² = cot².',[['השורש','3cos(θ)','th'],['אחרי צמצום','cot²(θ)','th']],1],
+   [5,'cot² = (1 − sin²)/sin² = 1/sin² − 1. מפצלים לשני אינטגרלים מיידיים.',[['cot²θ','1/sin²θ − 1','th']],0],
+   [6,'∫1/sin² dθ = −cot θ, ו-∫1 dθ = θ. התשובה ב-θ — עכשיו חייבים לחזור ל-x.',[['תוצאה ב-θ','−cotθ − θ + C','th']],0],
+   [7,'מההצבה: sinθ = x/3 ⇒ θ = arcsin(x/3). מהזהות: cos²θ = 1 − x²/9 = (9 − x²)/9 ⇒ cosθ = √(9−x²)/3.',[['θ','arcsin(x/3)','th'],['sinθ','x/3','th'],['cosθ','√(9−x²)/3','th']],2],
+   [8,'cotθ = cosθ/sinθ = (√(9−x²)/3)/(x/3) = √(9−x²)/x. מציבים — וזו התשובה הסופית ב-x.',[['cotθ','√(9−x²)/x','th'],['θ','arcsin(x/3)','th']],0]]},
+ D:{title:'סימולציה 4 · דוגמה 2 מההרצאה',lines:[
+   '∫ '+F('x','√(x² + 4)')+' dx',
+   '<span class="subst th">x = 2tan(θ), &nbsp; dx = '+F('2','cos²θ')+'dθ</span>',
+   '= ∫ '+F('2tan θ','√(4tan²θ + 4)')+' · '+F('2','cos²θ')+' dθ',
+   '= ∫ '+F('4tan θ','√(4/cos²θ)')+' · '+F('dθ','cos²θ'),
+   '= ∫ '+F('4tan θ',F('2','cos θ')+'· cos²θ')+' dθ = 2∫ '+F('sin θ','cos²θ')+' dθ',
+   '<span class="subst tv">t = cos(θ), &nbsp; dt = −sin(θ)dθ</span>',
+   `= −2∫ `+F(`d${t}`,`${t}²`)+` = −2∫ ${t}<sup>−2</sup> d${t} = `+F('2',t)+' + C',
+   '= '+F('2','cos θ')+' + C',
+   '<span class="subst th">cos θ = '+F('2','√(x² + 4)')+'</span>',
+   '= √(x² + 4) + C'],
+  steps:[
+   [-1,'מתחילים מאינטגרל ריק.',[]],
+   [0,'בשורש: x² + 4 = x² + 2². לפי הטבלה: a = 2, הצבה עם tan.',[['סוג','a² + x², a = 2','th']],0],
+   [1,'x = 2tan(θ). הנגזרת של tan היא 1/cos², ולכן dx = 2/cos²θ dθ.',[['x','2tan(θ)','th'],['dx','2/cos²θ dθ','th']],0],
+   [2,'מחליפים: במונה x = 2tanθ, בשורש x² = 4tan²θ, ובחוץ dx.',[['x','2tan(θ)','th'],['x²','4tan²θ','th']],1],
+   [3,'4tan²θ + 4 = 4(tan²θ + 1) = 4/cos²θ (הזהות מהטבלה). המונה: 2·2 = 4.',[['בתוך השורש','4/cos²θ','th']],0],
+   [4,'√(4/cos²θ) = 2/cosθ. במכנה: (2/cosθ)·cos²θ = 2cosθ. אז 4tanθ/(2cosθ) = 2·(sinθ/cosθ)/cosθ = 2sinθ/cos²θ.',[['השורש','2/cosθ','th'],['אחרי צמצום','2 sinθ/cos²θ','th']],1],
+   [5,'הצבה שנייה (רגילה): t = cosθ, dt = −sinθ dθ. כי sinθ dθ כבר יושב במונה.',[['t','cos(θ)','tv'],['dt','−sin(θ)dθ','tv']],0],
+   [6,'sinθ dθ = −dt, ו-cos²θ = t². אז −2∫dt/t² = −2∫t⁻²dt = −2·(t⁻¹/(−1)) = 2/t. (בסיכום כתוב dt/t — זו טעות העתקה.)',[['t','cos(θ)','tv'],['תוצאה ב-t','2/t + C','tv']],1],
+   [7,'מחזירים t = cosθ: 2/cosθ + C.',[['תוצאה ב-θ','2/cosθ + C','th']],0],
+   [8,'חוזרים ל-x: tanθ = x/2 ⇒ sinθ = (x/2)cosθ. מציבים ב-sin² + cos² = 1 ⇒ cos²θ·(x²+4)/4 = 1 ⇒ cosθ = 2/√(x²+4).',[['tanθ','x/2','th'],['cosθ','2/√(x²+4)','th']],1],
+   [9,'2/cosθ = 2 ÷ (2/√(x²+4)) = √(x²+4). התשובה הסופית.',[['תוצאה','√(x²+4) + C','th']],0]]},
+ F1:{title:'דוגמה: ∫ sin²(x)·cos²(x) dx',lines:[
+   '∫ sin²(x) cos²(x) dx',
+   '= ∫ (sin x · cos x)² dx = ∫ (½ sin(2x))² dx',
+   '= ¼ ∫ sin²(2x) dx',
+   '<span class="subst sc">sin²(2x) = '+F('1 − cos(4x)','2')+'</span>',
+   '= ⅛ ∫ (1 − cos(4x)) dx',
+   '= ⅛ ( x − '+F('sin(4x)','4')+' ) + C = '+F('x','8')+' − '+F('sin(4x)','32')+' + C'],
+  steps:[
+   [-1,'שתי החזקות זוגיות (2 ו-2). אין sin בודד ואין cos בודד להוציא.',[['sin','חזקה 2 (זוגי)','sc'],['cos','חזקה 2 (זוגי)','sc'],['זווית','x','th']]],
+   [0,'זה האינטגרל. זוגי-זוגי ⇒ זהויות.',[['sin','חזקה 2 (זוגי)','sc'],['cos','חזקה 2 (זוגי)','sc'],['זווית','x','th']],0],
+   [1,'יש sin ו-cos באותה חזקה, אז מחברים אותם לזוג: sin²·cos² = (sin·cos)². ואז sin·cos = ½ sin(2x).',[['sin','חזקה 2 (זוגי)','sc'],['cos','נעלם','sc'],['זווית','2x','th']],2],
+   [2,'½ בריבוע = ¼, יוצא החוצה. עכשיו יש רק sin²(2x) — <b>עדיין חזקה זוגית</b>. בודקים שוב ⇒ עוד זהות.',[['sin(2x)','חזקה 2 (זוגי)','sc'],['זווית','2x','th'],['מה עושים','שוב זהות','sc']],2],
+   [3,'הזהות של sin²: הזווית מוכפלת שוב (2x → 4x) והחזקה יורדת ל-1.',[['cos(4x)','חזקה 1','sc'],['זווית','4x','th']],0],
+   [4,'¼·½ = ⅛. עכשיו האינטגרל מיידי: 1 ו-cos(4x) בחזקה 1.',[['cos(4x)','חזקה 1','sc'],['מה עושים','אינטגרל מיידי','ok']],1],
+   [5,'∫1 dx = x, ∫cos(4x) dx = sin(4x)/4. סיימנו.',[['תוצאה','x/8 − sin(4x)/32 + C','ok']],0]]},
+ F2:{title:'דוגמה מההרצאה: ∫ sin²(x)·cos⁴(x) dx',lines:[
+   '∫ sin²(x) cos⁴(x) dx',
+   '= ∫ (sin x · cos x)² · cos²(x) dx',
+   '= ∫ ¼ sin²(2x) · '+F('1 + cos(2x)','2')+' dx',
+   '= ⅛ ∫ sin²(2x) dx &nbsp;+&nbsp; ⅛ ∫ sin²(2x)·<span class="sc">cos(2x)</span> dx',
+   'חלק א׳: ⅛ ∫ '+F('1 − cos(4x)','2')+' dx = '+F('x','16')+' − '+F('sin(4x)','64'),
+   'חלק ב׳: <span class="subst tv">t = sin(2x), dt = 2cos(2x)dx</span> ⇒ '+F('1','16')+'∫ '+t+'² d'+t+' = '+F('sin³(2x)','48'),
+   '= '+F('x','16')+' − '+F('sin(4x)','64')+' + '+F('sin³(2x)','48')+' + C'],
+  steps:[
+   [-1,'sin בחזקה 2, cos בחזקה 4 — שתיהן זוגיות.',[['sin','חזקה 2 (זוגי)','sc'],['cos','חזקה 4 (זוגי)','sc'],['זווית','x','th']]],
+   [0,'זוגי-זוגי ⇒ זהויות.',[['sin','חזקה 2 (זוגי)','sc'],['cos','חזקה 4 (זוגי)','sc'],['זווית','x','th']],0],
+   [1,'מוציאים זוג אחד של sin·cos: cos⁴ = cos²·cos², ואחד מהם הולך עם sin² לזוג. נשאר cos² לבד.',[['זוג','(sin·cos)²','sc'],['לבד','cos²(x)','sc']],0],
+   [2,'על הזוג: (½ sin 2x)² = ¼ sin²(2x). על cos² שלבד: (1 + cos 2x)/2. הזווית עכשיו 2x בכל מקום.',[['sin(2x)','חזקה 2','sc'],['cos(2x)','חזקה 1 (בחלק אחד)','sc'],['זווית','2x','th']],2],
+   [3,'פותחים סוגריים ⇒ שני אינטגרלים. בודקים כל אחד בנפרד: בראשון sin² זוגי ⇒ שוב זהות. בשני cos בחזקה 1 — <b>אי-זוגי!</b> ⇒ מקרה ב׳.',[['חלק א׳','sin²(2x) — זוגי','sc'],['חלק ב׳','cos¹(2x) — אי-זוגי','tv']],1],
+   [4,'חלק א׳: הזהות של sin² ⇒ זווית 4x, ואינטגרל מיידי. ⅛·½ = 1/16.',[['חלק א׳','x/16 − sin(4x)/64','ok'],['זווית','4x','th']],0],
+   [5,'חלק ב׳: t = sin(2x), dt = 2cos(2x)dx ⇒ cos(2x)dx = dt/2. אז ⅛·½∫t²dt = t³/48.',[['t','sin(2x)','tv'],['חלק ב׳','sin³(2x)/48','ok']],1],
+   [6,'מחברים את שני החלקים. זה בדיוק "תמיד נגיע לאחד המקרים הראשונים" מההרצאה.',[['תוצאה','x/16 − sin(4x)/64 + sin³(2x)/48 + C','ok']],0]]},
+ F3:{title:'דוגמה: ∫ sin⁴(x) dx (כאן m = 0, גם זוגי)',lines:[
+   '∫ sin⁴(x) dx',
+   '= ∫ (sin²(x))² dx = ∫ ( '+F('1 − cos(2x)','2')+' )² dx',
+   '= ¼ ∫ (1 − 2cos(2x) + cos²(2x)) dx',
+   '<span class="subst sc">cos²(2x) = '+F('1 + cos(4x)','2')+'</span>',
+   '= ¼ ∫ ( '+F('3','2')+' − 2cos(2x) + ½cos(4x) ) dx',
+   '= '+F('3x','8')+' − '+F('sin(2x)','4')+' + '+F('sin(4x)','32')+' + C'],
+  steps:[
+   [-1,'אין cos בכלל: m = 0, וגם 0 זוגי! אז זה עדיין זוגי-זוגי.',[['sin','חזקה 4 (זוגי)','sc'],['cos','חזקה 0 (זוגי)','sc'],['זווית','x','th']]],
+   [0,'אין זוג sin·cos, אז משתמשים בזהות של sin² לבד.',[['sin','חזקה 4 (זוגי)','sc'],['זווית','x','th']],0],
+   [1,'sin⁴ = (sin²)². מחליפים sin² = (1 − cos 2x)/2.',[['cos(2x)','בתוך ריבוע','sc'],['זווית','2x','th']],1],
+   [2,'פותחים את הריבוע: (a − b)² = a² − 2ab + b². ½ בריבוע = ¼. מופיע cos²(2x) — <b>שוב חזקה זוגית</b>.',[['cos(2x)','חזקה 1 — מיידי','ok'],['cos²(2x)','חזקה 2 — שוב זהות','sc']],1],
+   [3,'הזהות של cos²: זווית 4x, חזקה 1.',[['cos(4x)','חזקה 1','sc'],['זווית','4x','th']],0],
+   [4,'מסדרים: 1 + ½ = 3/2. עכשיו כל האיברים מיידיים.',[['כל האיברים','חזקה ≤ 1','ok']],0],
+   [5,'מכפילים ב-¼ ומשלבים כל איבר: ∫cos(2x) = sin(2x)/2, ∫cos(4x) = sin(4x)/4.',[['תוצאה','3x/8 − sin(2x)/4 + sin(4x)/32 + C','ok']],0]]},
+ E:{title:'סימולציה 5 · חילוק ארוך: (x⁴ + x³) ÷ (x² + 2)',lines:[
+   '(x⁴ + x³) ÷ (x² + 2)',
+   'x⁴ ÷ x² = <span class="ra">x²</span>',
+   '(x⁴ + x³) − <span class="ra">x²</span>(x² + 2) = (x⁴ + x³) − (x⁴ + 2x²) = x³ − 2x²',
+   'x³ ÷ x² = <span class="ra">x</span>',
+   '(x³ − 2x²) − <span class="ra">x</span>(x² + 2) = (x³ − 2x²) − (x³ + 2x) = −2x² − 2x',
+   '−2x² ÷ x² = <span class="ra">−2</span>',
+   '(−2x² − 2x) − (<span class="ra">−2</span>)(x² + 2) = (−2x² − 2x) − (−2x² − 4) = −2x + 4',
+   'deg(−2x + 4) = 1 &lt; 2 = deg(x² + 2) ⇒ עוצרים',
+   F('x⁴ + x³','x² + 2')+' = <span class="ra">x² + x − 2</span> + '+F('−2x + 4','x² + 2')],
+  steps:[
+   [-1,'חילוק ארוך של פולינומים — בדיוק כמו חילוק ארוך של מספרים.',[['מנה M(x)','—','ra'],['מה שנשאר','x⁴ + x³','ra']]],
+   [0,'P = x⁴ + x³ (מעלה 4), Q = x² + 2 (מעלה 2). 4 ≥ 2, אז לא פשוטה — מחלקים.',[['מנה M(x)','—','ra'],['מה שנשאר','x⁴ + x³','ra']],1],
+   [1,'מחלקים רק את האיברים המובילים: x⁴ ÷ x² = x². זה האיבר הראשון במנה.',[['מנה M(x)','x²','ra'],['מה שנשאר','x⁴ + x³','ra']],0],
+   [2,'כופלים x² במחלק: x⁴ + 2x². מחסירים. ה-x⁴ נעלם, ויש לנו x³ − 2x² (בגלל ש-0x² − 2x² = −2x²).',[['מנה M(x)','x²','ra'],['מה שנשאר','x³ − 2x²','ra']],1],
+   [3,'שוב איברים מובילים: x³ ÷ x² = x. מוסיפים למנה.',[['מנה M(x)','x² + x','ra'],['מה שנשאר','x³ − 2x²','ra']],0],
+   [4,'x·(x² + 2) = x³ + 2x. מחסירים: x³ מתבטל, נשאר −2x² − 2x.',[['מנה M(x)','x² + x','ra'],['מה שנשאר','−2x² − 2x','ra']],1],
+   [5,'−2x² ÷ x² = −2. מוסיפים למנה.',[['מנה M(x)','x² + x − 2','ra'],['מה שנשאר','−2x² − 2x','ra']],0],
+   [6,'−2·(x² + 2) = −2x² − 4. מחסירים (זהירות עם המינוסים!): −2x² מתבטל, ו-0 − (−4) = +4. נשאר −2x + 4.',[['מנה M(x)','x² + x − 2','ra'],['שארית r(x)','−2x + 4','ra']],1],
+   [7,'המעלה של מה שנשאר (1) קטנה מהמעלה של המחלק (2). אי אפשר להמשיך — זו השארית.',[['מנה M(x)','x² + x − 2','ra'],['שארית r(x)','−2x + 4','ra']],1],
+   [8,'התוצאה: פולינום M(x) ועוד רציונלית פשוטה r(x)/Q(x).',[['M(x)','x² + x − 2','ra'],['r/Q','(−2x+4)/(x²+2)','ra']],0]]}
+};
+document.querySelectorAll('[data-sim]').forEach(el=>{
+  const S=SIM[el.dataset.sim]; let i=0;
+  el.innerHTML=`<div class="sim"><div class="sim-h"><strong>${S.title}</strong>
+    <button type="button" data-a="p">→ הקודם</button><span class="cnt"></span><button type="button" data-a="n">הבא ←</button><button type="button" data-a="r">התחל מחדש</button></div>
+    <ol class="lines">${S.lines.map(l=>`<li><span>${l}</span></li>`).join('')}</ol>
+    <div class="exp"></div><div class="state"></div></div>`;
+  const lis=el.querySelectorAll('li'),exp=el.querySelector('.exp'),st=el.querySelector('.state'),cnt=el.querySelector('.cnt');
+  function draw(){
+    const [l,txt,cells,chg]=S.steps[i];
+    lis.forEach((li,k)=>{li.classList.toggle('hid',k>l);li.classList.toggle('cur',k===l)});
+    exp.innerHTML=bidiHTML(txt); cnt.textContent=`צעד ${i+1} / ${S.steps.length}`;
+    st.innerHTML=cells.length?cells.map((c,k)=>`<div class="cell c-${c[2]}${k===chg?' chg':''}"><small>${c[0]}</small><span class="m">${c[1]}</span></div>`).join(''):'<span style="color:var(--muted)">עדיין ריק</span>';
+  }
+  el.addEventListener('click',e=>{const a=e.target.closest('button')?.dataset.a;if(!a)return;
+    if(a==='n'&&i<S.steps.length-1)i++; if(a==='p'&&i>0)i--; if(a==='r')i=0; draw();});
+  draw();
+});
+
+/* ---------- even-even switcher ---------- */
+document.getElementById('evenSeg').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;
+  document.querySelectorAll('#evenSeg button').forEach(x=>x.classList.toggle('on',x===b));
+  ['F1','F2','F3'].forEach(k=>document.querySelector('#evenTool [data-sim="'+k+'"]').hidden=(k!==b.dataset.e));});
+
+/* ---------- case tool ---------- */
+function caseCalc(){
+  const n=parseInt(document.getElementById('cn').value),m=parseInt(document.getElementById('cm').value),o=document.getElementById('caseOut');
+  if(isNaN(n)||isNaN(m)||n<0||m<0){o.innerHTML='הכנס שני מספרים שלמים, 0 או יותר.';return}
+  let s=`<span class="m">∫ sin<sup>${n}</sup>(x)cos<sup>${m}</sup>(x) dx</span>: `;
+  if(n%2===1&&m%2===1) s+=`שתי החזקות אי-זוגיות — אפשר כל אחת מהדרכים. למשל: מוציאים sin(x)dx, <span class="m tv">t = cos(x)</span>, ונשאר <span class="m">−∫(1 − t²)<sup>${(n-1)/2}</sup> t<sup>${m}</sup> dt</span>.`;
+  else if(n%2===1) s+=`n אי-זוגי ⇒ מוציאים sin(x)dx, <span class="m tv">t = cos(x)</span>. k = ${(n-1)/2}, ומקבלים <span class="m">−∫(1 − t²)<sup>${(n-1)/2}</sup> t<sup>${m}</sup> dt</span>.`;
+  else if(m%2===1) s+=`m אי-זוגי ⇒ מוציאים cos(x)dx, <span class="m tv">t = sin(x)</span>. k = ${(m-1)/2}, ומקבלים <span class="m">∫ t<sup>${n}</sup>(1 − t²)<sup>${(m-1)/2}</sup> dt</span>.`;
+  else s+=`שתיהן זוגיות (n₀ = ${n/2}, m₀ = ${m/2}) ⇒ זהויות זווית כפולה: sin·cos = ½sin(2x), cos² = (1+cos2x)/2, sin² = (1−cos2x)/2.`;
+  o.innerHTML=s;
+}
+['cn','cm'].forEach(id=>document.getElementById(id).addEventListener('input',caseCalc)); caseCalc();
+
+/* ---------- root tool ---------- */
+const ROOTS=[
+ ['√(a² − x²)','x = a·sin(θ)','dx = a·cos(θ)dθ','−π/2 ≤ θ ≤ π/2','a² − a²sin²θ = a²(1 − sin²θ) = a²cos²θ','a·cos(θ)','θ = arcsin(x/a)'],
+ ['√(a² + x²)','x = a·tan(θ)','dx = a/cos²(θ) dθ','−π/2 &lt; θ &lt; π/2','a² + a²tan²θ = a²(1 + tan²θ) = a²/cos²θ','a / cos(θ)','θ = arctan(x/a)'],
+ ['√(x² − a²)','x = a / cos(θ)','dx = a·tan(θ)/cos(θ) dθ','0 ≤ θ &lt; π/2','a²/cos²θ − a² = a²(1/cos²θ − 1) = a²tan²θ','a·tan(θ)','cos θ = a/x']];
+function rootShow(r){const R=ROOTS[r];
+  document.querySelectorAll('#rootSeg button').forEach(b=>b.classList.toggle('on',+b.dataset.r===r));
+  document.getElementById('rootOut').innerHTML=`<div class="tbl" style="margin:0"><table>
+   <tr><th>הצבה</th><td><span class="m th">${R[1]}</span>, &nbsp; <span class="m">${R[2]}</span></td></tr>
+   <tr><th>טווח</th><td><span class="m">${R[3]}</span></td></tr>
+   <tr><th>בתוך השורש</th><td><span class="m">${R[4]}</span></td></tr>
+   <tr><th>השורש נהיה</th><td><span class="m th">${R[5]}</span></td></tr>
+   <tr><th>חזרה ל-x</th><td><span class="m">${R[6]}</span></td></tr></table></div>`;}
+document.getElementById('rootSeg').addEventListener('click',e=>{const b=e.target.closest('button');if(b)rootShow(+b.dataset.r)}); rootShow(0);
+
+
+/* ---------- triangle demo ---------- */
+(function(){
+  const a=3, svg=document.getElementById('triSvg'), sl=document.getElementById('triX'), out=document.getElementById('triOut'), xv=document.getElementById('triXv');
+  let T=0;
+  const R={0:[0.2,2.95],1:[0.2,6],2:[3.1,8]};
+  const f2=v=>v.toFixed(2);
+  function draw(){
+    const [lo,hi]=R[T], x=lo+(hi-lo)*(+sl.value);
+    let th,hyp,lab,root,rootName,sub,trig,trigVal,back;
+    if(T===0){th=Math.asin(x/a);hyp=a;lab={hyp:'a = 3',opp:'x',adj:'√(9 − x²)'};root=Math.sqrt(9-x*x);rootName='√(9 − x²)';sub='x = 3·sin(θ)';trig='3·cos(θ)';trigVal=3*Math.cos(th);back='sin θ = x/3 ⇒ θ = arcsin(x/3)';}
+    else if(T===1){th=Math.atan(x/a);hyp=Math.sqrt(9+x*x);lab={hyp:'√(9 + x²)',opp:'x',adj:'a = 3'};root=hyp;rootName='√(9 + x²)';sub='x = 3·tan(θ)';trig='3 / cos(θ)';trigVal=3/Math.cos(th);back='tan θ = x/3 ⇒ θ = arctan(x/3)';}
+    else {th=Math.acos(a/x);hyp=x;lab={hyp:'x',opp:'√(x² − 9)',adj:'a = 3'};root=Math.sqrt(x*x-9);rootName='√(x² − 9)';sub='x = 3 / cos(θ)';trig='3·tan(θ)';trigVal=3*Math.tan(th);back='cos θ = 3/x ⇒ θ = arccos(3/x)';}
+    const adj=hyp*Math.cos(th), opp=hyp*Math.sin(th);
+    const k=Math.min(220/adj,150/opp);
+    const Ax=40, Ay=175, Bx=Ax+adj*k, By=Ay, Cx=Bx, Cy=Ay-opp*k;
+    const which=T===0?'adj':(T===1?'hyp':'opp');
+    const col=n=>n===which?'var(--th)':'var(--fg)', w=n=>n===which?4:2;
+    const ang=Math.min(28,adj*k*0.4);
+    svg.innerHTML=
+      `<line x1="${Ax}" y1="${Ay}" x2="${Bx}" y2="${By}" stroke="${col('adj')}" stroke-width="${w('adj')}"/>`+
+      `<line x1="${Bx}" y1="${By}" x2="${Cx}" y2="${Cy}" stroke="${col('opp')}" stroke-width="${w('opp')}"/>`+
+      `<line x1="${Ax}" y1="${Ay}" x2="${Cx}" y2="${Cy}" stroke="${col('hyp')}" stroke-width="${w('hyp')}"/>`+
+      `<rect x="${Bx-10}" y="${By-10}" width="10" height="10" fill="none" stroke="var(--muted)"/>`+
+      `<path d="M${Ax+ang},${Ay} A${ang},${ang} 0 0 0 ${Ax+ang*Math.cos(th)},${Ay-ang*Math.sin(th)}" fill="none" stroke="var(--th)" stroke-width="2"/>`+
+      `<text x="${Ax+ang+4}" y="${Ay-4}" fill="var(--th)" font-size="14" font-family="serif">θ</text>`+
+      `<text x="${(Ax+Bx)/2}" y="${Ay+18}" text-anchor="middle" fill="${col('adj')}" font-size="13" font-family="serif">${lab.adj}</text>`+
+      `<text x="${Math.min(Bx+6,250)}" y="${(By+Cy)/2+4}" fill="${col('opp')}" font-size="13" font-family="serif">${lab.opp}</text>`+
+      `<text x="${(Ax+Cx)/2-8}" y="${(Ay+Cy)/2-8}" text-anchor="end" fill="${col('hyp')}" font-size="13" font-family="serif">${lab.hyp}</text>`;
+    xv.textContent=f2(x);
+    out.innerHTML=`<div><b>הצבה:</b> <span class="m th">${sub}</span></div>
+      <div><b>θ =</b> <span class="m">${f2(th)}</span> רדיאנים (${Math.round(th*180/Math.PI)}°) · <span class="m">${back}</span></div>
+      <div style="margin-top:6px"><b>השורש ישירות:</b> <span class="m">${rootName} = ${f2(root)}</span></div>
+      <div><b>הביטוי הטריגונומטרי:</b> <span class="m th">${trig} = ${f2(trigVal)}</span></div>
+      <div style="margin-top:6px;color:var(--ok);font-weight:600">שווים! ✓ הצלע הכחולה היא השורש.</div>`;
+  }
+  document.getElementById('triSeg').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;T=+b.dataset.t;
+    document.querySelectorAll('#triSeg button').forEach(x=>x.classList.toggle('on',x===b));draw();});
+  sl.addEventListener('input',draw); draw();
+})();
+
+/* ---------- quiz data (correct option is written first; POS places it) ---------- */
+/*QUIZ*/
+const QUIZ={
+s1:[
+ {q:'איזו הצבה הופכת את האינטגרל הזה לפשוט?',box:'∫ 2x·cos(x²) dx',o:['t = x², כי 2x הוא הנגזרת שלו','t = cos(x²), כי זו הפונקציה החיצונית','t = 2x, כי הוא מופיע ראשון באינטגרל','t = x, כי זה המשתנה המקורי שלנו'],h:'חפש פונקציה שהנגזרת שלה כבר יושבת בחוץ, ליד dx.',e:'t = x² ⇒ dt = 2x dx, ונשאר ∫cos(t)dt = sin(t) + C = sin(x²) + C.'},
+ {q:'אם מציבים t = g(x), מה זה dt?',o:['dt = g′(x)dx','dt = g(x)dx','dt = g′(t)dt','dt = dx / g(x)'],h:'גוזרים את שני הצדדים של t = g(x) לפי x.',e:'dt/dx = g′(x), ולכן dt = g′(x)dx.'},
+ {q:'באינטגרל מסוים מ-a עד b, מה קורה לגבולות אחרי ההצבה t = g(x)?',o:['הם הופכים ל-g(a) ול-g(b)','הם נשארים a ו-b בלי שינוי','הם הופכים ל-g′(a) ול-g′(b)','הם הופכים ל-g(b) ול-g(a)'],h:'אם x = a, מה הערך של t?',e:'כש-x = a, t = g(a). כש-x = b, t = g(b). הסדר נשאר: התחתון g(a), העליון g(b).'}],
+s2:[
+ {q:'איזו הצבה מתאימה לאינטגרל הזה?',box:'∫ sin⁵(x) cos²(x) dx',o:['t = cos(x), כי החזקה של sin אי-זוגית','t = sin(x), כי החזקה של sin אי-זוגית','t = tan(x), כי יש גם sin וגם cos','זווית כפולה, כי החזקה של cos זוגית'],h:'מי בחזקה אי-זוגית? ממנו מוציאים עותק אחד — ו-t הוא השני.',e:'5 אי-זוגי ⇒ מוציאים sin(x)dx, והוא יהיה −dt של t = cos(x).'},
+ {q:'איזו הצבה מתאימה כאן, ומה משאירים בצד?',box:'∫ sin²(x) cos³(x) dx',o:['t = sin(x), ובצד נשאר cos(x)dx','t = cos(x), ובצד נשאר sin(x)dx','t = sin(x), ובצד נשאר sin(x)dx','t = cos²(x), ובצד נשאר cos(x)dx'],h:'עכשיו cos הוא בחזקה האי-זוגית.',e:'3 אי-זוגי ⇒ מוציאים cos(x)dx = dt של t = sin(x). את cos² שנשאר הופכים ל-1 − sin².'},
+ {q:'למה כשמציבים t = cos(x) מופיע מינוס לפני האינטגרל?',o:['כי dt = −sin(x)dx, אז sin(x)dx = −dt','כי 1 − cos²(x) יוצא תמיד מספר שלילי','כי sin(x) שלילי ברוב התחום של x','כי t^m מחליף סימן כש-m אי-זוגי'],h:'מה הנגזרת של cos(x)?',e:'(cos x)′ = −sin x. אז החלק sin(x)dx שבצד שווה ל-−dt, והמינוס יוצא החוצה.'},
+ {q:'מה עושים כששתי החזקות (של sin ושל cos) זוגיות?',o:['זהויות זווית כפולה, כדי להוריד חזקות','מציבים t = cos(x), כמו במקרה האי-זוגי','מציבים t = sin(x), ומשאירים cos בצד','חילוק פולינומים, כמו בפונקציה רציונלית'],h:'אין עותק בודד להוציא. צריך דרך אחרת להוריד חזקה.',e:'sin·cos = ½sin(2x), cos² = (1+cos2x)/2, sin² = (1−cos2x)/2. בסוף מגיעים לאחד המקרים האי-זוגיים.'},
+ {q:'למה שווה הביטוי הזה?',box:'sin(x)·cos(x) = ?',o:['½·sin(2x)','sin(2x)','2·sin(2x)','½·cos(2x)'],h:'sin(2x) = 2sin(x)cos(x).',e:'sin(2x) = 2sin·cos, ולכן sin·cos = ½sin(2x). זה מה שהשתמשנו בו בגזירה 3.'},
+ {q:'למה שווה הביטוי הזה?',box:'cos²(x) = ?',o:['(1 + cos(2x)) / 2','(1 − cos(2x)) / 2','(1 + sin(2x)) / 2','(1 − sin(2x)) / 2'],h:'ב-x = 0: cos²(0) = 1. איזו אפשרות נותנת 1?',e:'cos² = (1 + cos2x)/2. בדיקה: x = 0 ⇒ (1+1)/2 = 1 ✓. עם מינוס זו הזהות של sin².'},
+ {q:'בדוגמה של sin⁴ הגענו לשורה הזו. מה עושים עכשיו?',box:'¼ ∫ ( 3/2 − 2cos(2x) + ½cos(4x) ) dx',o:['אינטגרל מיידי לכל איבר, בלי הצבה ובלי זהות','עוד זהות זווית כפולה, כי כל איבר כאן זוגי','t = cos(2x), כי cos(2x) בחזקה אי-זוגית','t = cos(4x), כי זו הזווית הגדולה מכולן'],h:'מה החזקה של כל cos כאן? והאם הוא לבד?',e:'כל cos כאן בחזקה 1 ולבד, אז האינטגרל מיידי: ∫cos(2x) = sin(2x)/2, ∫cos(4x) = sin(4x)/4. לא כל סיום הוא חזקה אי-זוגית שצריכה הצבה.'}],
+s3:[
+ {q:'מה הנגזרת של sec(x) = 1/cos(x)?',o:['tan(x)·sec(x)','sec²(x)','−tan(x)·sec(x)','1 / sin(x)'],h:'גוזרים (cos x)⁻¹ עם כלל השרשרת. שים לב לשני מינוסים.',e:'−(cos x)⁻²·(−sin x) = sin x/cos²x = tan(x)·sec(x). sec² היא הנגזרת של tan, לא של sec.'},
+ {q:'איזו הצבה מתאימה לאינטגרל הזה?',box:'∫ tan²(x) sec⁴(x) dx',o:['t = tan(x), ובצד נשאר sec²(x)dx','t = sec(x), ובצד נשאר tan·sec dx','t = tan(x), ובצד נשאר tan(x)dx','t = cos(x), ובצד נשאר sin(x)dx'],h:'החזקה של tan זוגית. מה עם החזקה של sec?',e:'4 זוגי ⇒ מוציאים sec²(x)dx = dt של t = tan(x). את sec² שנשאר הופכים ל-tan² + 1.'},
+ {q:'איזו הצבה מתאימה לאינטגרל הזה?',box:'∫ tan⁵(x) sec³(x) dx',o:['t = sec(x), כי החזקה של tan אי-זוגית','t = tan(x), כי החזקה של sec אי-זוגית','t = tan(x), כי החזקה של tan אי-זוגית','t = sec(x), כי החזקה של sec אי-זוגית'],h:'כאן sec בחזקה אי-זוגית, אז מקרה "m זוגי" לא עובד.',e:'tan⁵ — אי-זוגי ⇒ מוציאים tan·sec dx, ו-t = sec(x). sec³ לא זוגי, אז t = tan לא היה עובד.'},
+ {q:'איזו זהות הופכת tan² לביטוי עם sec?',o:['tan²(x) = sec²(x) − 1','tan²(x) = 1 − sec²(x)','tan²(x) = sec²(x) + 1','tan²(x) = 1 / sec²(x)'],h:'מחלקים את sin² + cos² = 1 ב-cos².',e:'tan² + 1 = sec², ולכן tan² = sec² − 1. (sec ≥ 1 תמיד, אז 1 − sec² שלילי ולא יכול להיות ריבוע.)'}],
+s4:[
+ {q:'איזו הצבה מתאימה לשורש הזה?',box:'√(16 − x²)',o:['x = 4·sin(θ)','x = 4·tan(θ)','x = 4 / cos(θ)','x = 16·sin(θ)'],h:'הצורה היא a² − x². מה a?',e:'16 − x² = 4² − x² ⇒ a = 4 ⇒ x = 4sinθ, ואז השורש = 4cosθ.'},
+ {q:'איזו הצבה מתאימה לשורש הזה?',box:'√(x² − 25)',o:['x = 5 / cos(θ)','x = 5·sin(θ)','x = 5·tan(θ)','x = 25 / cos(θ)'],h:'כאן x² בא ראשון, והמינוס לפני a².',e:'x² − 5² ⇒ x = 5/cosθ, ואז 25/cos²θ − 25 = 25tan²θ, השורש = 5tanθ.'},
+ {q:'בהצבה x = a·tan(θ), למה הטווח הוא −π/2 < θ < π/2?',o:['כדי ש-cos(θ) > 0 והשורש ייפתח בלי ערך מוחלט','כדי ש-sin(θ) > 0 והשורש ייפתח בלי ערך מוחלט','כי tan(θ) מוגדר רק בין 0 ל-π/2 ולא בשאר','כי שם tan(θ) חסום ולא מגיע אף פעם לאינסוף'],h:'השורש נהיה a/cosθ. מה צריך לדעת על cosθ?',e:'√(a²/cos²θ) = a/|cosθ|. בטווח הזה cosθ > 0, אז אפשר לכתוב a/cosθ. (sin שם יכול להיות שלילי.)'},
+ {q:'למה שווה √(a² + x²) אחרי ההצבה x = a·tan(θ)?',o:['a / cos(θ)','a·cos(θ)','a·tan(θ)','a / sin(θ)'],h:'a² + a²tan²θ = a²(1 + tan²θ). מה זה 1 + tan²θ?',e:'1 + tan²θ = 1/cos²θ ⇒ √(a²/cos²θ) = a/cosθ.'},
+ {q:'למה ל-√(9 − x²) בוחרים דווקא x = 3sin(θ)?',o:['כי 1 − sin² = cos², וכך בשורש יש ריבוע','כי הנגזרת של sin היא cos, וכך מקבלים dt','כי sin חסום, וכך גם השורש תמיד חסום','כי x קטן מ-3, וכך הוא חייב להיות זווית'],h:'מה צריך לקרות בתוך השורש כדי שהשורש ייעלם?',e:'9 − 9sin²θ = 9(1 − sin²θ) = 9cos²θ, ושורש של ריבוע נפתח: 3cosθ. הבחירה באה מהזהות, לא מנגזרת.'}],
+s5:[
+ {q:'בדוגמה 1 הצבנו x = 3sin(θ). למה שווה הביטוי הזה?',box:'√(9 − 9sin²θ) = ?',o:['3cos(θ)','9cos(θ)','3sin(θ)','3 − 3sin(θ)'],h:'מוציאים 9 משותף, ומשתמשים ב-1 − sin² = cos².',e:'√(9(1 − sin²θ)) = √(9cos²θ) = 3cosθ (cos ≥ 0 בטווח).'},
+ {q:'אחרי ההצבה הגענו לאינטגרל הזה. איך ממשיכים?',box:'∫ cot²(θ) dθ',o:['כותבים cot² = 1/sin² − 1 ומשלבים כל חלק','כותבים cot² = 1 − 1/sin² ומשלבים כל חלק','כותבים cot² = 1/cos² − 1 ומשלבים כל חלק','מציבים t = cot(θ) ומשאירים dθ בצד'],h:'cot² = cos²/sin². מחליפים את cos² ב-1 − sin².',e:'cos²/sin² = (1 − sin²)/sin² = 1/sin² − 1. וכל חלק מיידי: −cotθ ו-θ.'},
+ {q:'הצבנו x = 3sin(θ). מה זה θ במונחי x?',o:['θ = arcsin(x/3)','θ = arcsin(3x)','θ = arccos(x/3)','θ = sin(x/3)'],h:'קודם מבודדים את sin(θ).',e:'sinθ = x/3 ⇒ θ = arcsin(x/3). (בטווח −π/2..π/2 ה-arcsin מחזיר בדיוק את θ.)'},
+ {q:'בדוגמה 1, למה שווה cot(θ) במונחי x?',box:'x = 3sin(θ)',o:['√(9 − x²) / x','x / √(9 − x²)','√(9 − x²) / 3','3 / x'],h:'cot = cos/sin. sinθ = x/3 ו-cosθ = √(9 − x²)/3.',e:'(√(9−x²)/3) ÷ (x/3) = √(9 − x²)/x. ה-3 מצטמצמים.'},
+ {q:'אחרי ההצבה x = 3sin(θ), באיזה שלב משתמשים ב-θ = arcsin(x/3)?',o:['בסוף, אחרי שהאינטגרל ב-θ כבר חושב','בהתחלה, לפני שמחליפים את x ואת dx','באמצע, כדי לפתוח את השורש של 9cos²θ','אף פעם, כי התשובה נשארת כתובה ב-θ'],h:'מה עושים עם התשובה −cotθ − θ + C?',e:'קודם מחשבים הכל ב-θ ומקבלים −cotθ − θ + C. רק אז מחליפים θ = arcsin(x/3) (ו-cotθ = √(9−x²)/x) כדי שהתשובה תהיה ב-x.'}],
+s6:[
+ {q:'בדוגמה 2, x = 2tan(θ). מה זה dx?',o:['dx = 2/cos²(θ) dθ','dx = 2tan(θ)sec(θ) dθ','dx = 2/sin²(θ) dθ','dx = 2cos²(θ) dθ'],h:'מה הנגזרת של tan?',e:'(tanθ)′ = 1/cos²θ ⇒ dx = 2/cos²θ dθ. (tan·sec היא הנגזרת של sec, לא של tan.)'},
+ {q:'מציבים t = cos(θ) באינטגרל הזה. מה מקבלים?',box:'∫ 2·sin(θ) / cos²(θ) dθ',o:['−2∫ dt / t²','−2∫ dt / t','2∫ dt / t²','2∫ t² dt'],h:'sinθ dθ = −dt. ומה קורה ל-cos²θ?',e:'sinθ dθ = −dt, cos²θ = t² ⇒ −2∫dt/t². (בסיכום נכתב dt/t — טעות העתקה.)'},
+ {q:'x = 2tan(θ). למה שווה cos(θ) במונחי x?',o:['2 / √(x² + 4)','√(x² + 4) / 2','x / √(x² + 4)','2 / (x² + 4)'],h:'הגענו ל-cos²θ·(x² + 4)/4 = 1. בודדים ומוציאים שורש.',e:'cos²θ = 4/(x² + 4) ⇒ cosθ = 2/√(x² + 4). x/√(x²+4) זה דווקא sinθ.'},
+ {q:'איזו הצבה רגילה (לא טריגונומטרית) הייתה פותרת את זה מהר יותר?',box:'∫ x / √(x² + 4) dx',o:['t = x² + 4, כי dt = 2x dx','t = 1/x, כי dt = −dx/x²','t = √x, כי dt = dx/(2√x)','t = x + 2, כי dt = dx'],h:'חפש פונקציה שהנגזרת שלה (כמעט) יושבת במונה.',e:'t = x² + 4, dt = 2x dx ⇒ ½∫t^(−½)dt = √t = √(x² + 4) + C. אותה תשובה.'}],
+s7:[
+ {q:'מתי פונקציה רציונלית P(x)/Q(x) נקראת פשוטה?',o:['כש-deg P < deg Q','כש-deg P > deg Q','כש-deg P ≤ deg Q','כש-deg Q = 1 בדיוק'],h:'"פשוטה" — כמו שבר אמיתי כמו 2/5.',e:'המונה ממעלה קטנה ממש מהמכנה. אם המעלות שוות — זו עוד לא פשוטה, וצריך לחלק.'},
+ {q:'האם הפונקציה הזו פשוטה?',box:'(x³ + 1) / (x² + 1)',o:['לא, כי מעלת המונה 3 גדולה מ-2','כן, כי מעלת המונה 3 גדולה מ-2','כן, כי המכנה לא מתאפס אף פעם','לא, כי המכנה לא מתאפס אף פעם'],h:'משווים רק מעלות: 3 מול 2.',e:'deg P = 3 ≥ 2 = deg Q ⇒ לא פשוטה. אם המכנה מתאפס או לא — לא קשור להגדרה.'},
+ {q:'בחילוק הזה, מה האיבר הראשון במנה M(x)?',box:'(x⁴ + x³) ÷ (x² + 2)',o:['x²','x⁴','x³','x'],h:'מחלקים רק את האיברים המובילים.',e:'x⁴ ÷ x² = x². אחר כך x ואחר כך −2, ובסוף M = x² + x − 2.'},
+ {q:'בפירוק P/Q = M(x) + r(x)/Q(x), מה נכון על השארית r(x)?',o:['deg r < deg Q','deg r = deg Q','deg r > deg Q','deg r = deg P'],h:'מתי עצרנו את החילוק הארוך?',e:'עוצרים כשהמעלה של מה שנשאר קטנה מהמחלק. בדוגמה: deg(−2x+4) = 1 < 2.'}],
+s8:[
+ {q:'מה הצעד הראשון באינטגרל הזה?',box:'∫ sin³(x) cos⁴(x) dx',o:['t = cos(x), ומוציאים sin(x)dx','t = sin(x), ומוציאים cos(x)dx','זהויות זווית כפולה לשתי החזקות','x = sin(θ), הצבה טריגונומטרית'],h:'מי בחזקה אי-זוגית?',e:'sin³ — אי-זוגי ⇒ מוציאים sin(x)dx, t = cos(x), ונשאר −∫(1 − t²)t⁴ dt.'},
+ {q:'איזו הצבה מתאימה לאינטגרל הזה?',box:'∫ √(4 − x²) dx',o:['x = 2·sin(θ)','x = 2·tan(θ)','x = 2 / cos(θ)','t = 4 − x²'],h:'a² − x² עם a = 2. ושים לב שאין x בחוץ.',e:'4 − x² = 2² − x² ⇒ x = 2sinθ. t = 4 − x² לא עובד, כי אין 2x בחוץ שיהיה dt.'},
+ {q:'איזו הצבה מתאימה לאינטגרל הזה?',box:'∫ tan³(x) sec(x) dx',o:['t = sec(x)','t = tan(x)','t = cos(x)','x = tan(θ)'],h:'tan בחזקה אי-זוגית; sec בחזקה 1 (לא זוגית).',e:'מוציאים tan·sec dx = dt של t = sec, ו-tan² = sec² − 1 ⇒ ∫(t² − 1)dt.'},
+ {q:'איזו הצבה מתאימה לאינטגרל הזה?',box:'∫ dx / √(x² + 9)',o:['x = 3·tan(θ)','x = 3·sin(θ)','x = 3 / cos(θ)','x = 9·tan(θ)'],h:'הסימן בשורש: x² ועוד a².',e:'x² + 3² ⇒ x = 3tanθ, והשורש נהיה 3/cosθ.'},
+ {q:'מה עושים קודם באינטגרל הזה?',box:'∫ x³ / (x + 1) dx',o:['חילוק פולינומים, כי deg P ≥ deg Q','הצבה t = x + 1, כי זה המכנה','הצבה x = tan(θ), כי יש מכנה','זווית כפולה, כי יש חזקה אי-זוגית'],h:'מעלת המונה 3, מעלת המכנה 1.',e:'3 ≥ 1 ⇒ לא פשוטה ⇒ קודם חילוק ארוך ל-M(x) + r/(x+1). (t = x + 1 גם עובד כאן, אבל השיטה מההרצאה היא חילוק.)'}]
+};
+const POS='2031130231200213320311023223100132310';
+/*ENDQUIZ*/
+
+/* ---------- quiz engine ---------- */
+const KEY='hedva2-l5-quiz-v4';
+let saved={}; try{saved=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(saved))}catch(e){}}
+const ALL=[];let gi=0;
+Object.keys(QUIZ).forEach(sec=>QUIZ[sec].forEach((q,k)=>{
+  const p=+POS[gi]; const others=q.o.slice(1); const opts=[...others]; opts.splice(p,0,q.o[0]);
+  ALL.push({id:sec+'-'+k,sec,q,opts,ans:p}); gi++;}));
+const L=['א','ב','ג','ד'];
+document.querySelectorAll('[data-quiz]').forEach(host=>{
+  const qs=ALL.filter(x=>x.sec===host.dataset.quiz);
+  host.innerHTML='<h3>בדוק את עצמך</h3>';
+  qs.forEach((Q,n)=>{
+    const d=document.createElement('div');d.className='q';d.id='q-'+Q.id;
+    const qt=document.createElement('div');qt.className='qt';qt.innerHTML=bidiHTML(ESC((n+1)+'. '+Q.q.q));d.appendChild(qt);
+    if(Q.q.box){const b=document.createElement('div');b.className='qbox';b.textContent=Q.q.box;d.appendChild(b)}
+    const os=document.createElement('div');os.className='opts';
+    Q.opts.forEach((o,j)=>{const bt=document.createElement('button');bt.type='button';bt.className='opt';bt.dataset.j=j;
+      bt.innerHTML=`<span class="L">${L[j]}.</span><span class="t"></span>`;bt.querySelector('.t').innerHTML=bidiHTML(ESC(o));os.appendChild(bt)});
+    d.appendChild(os);const fb=document.createElement('div');fb.className='fb';fb.hidden=true;d.appendChild(fb);
+    host.appendChild(d);
+    os.addEventListener('click',e=>{const bt=e.target.closest('.opt');if(!bt)return;
+      const s=saved[Q.id]||{tries:[],done:false}; if(s.done)return; const j=+bt.dataset.j;
+      if(!s.tries.includes(j))s.tries.push(j); if(j===Q.ans)s.done=true; saved[Q.id]=s;save();paint(Q);score();});
+    paint(Q);
+  });
+});
+function paint(Q){const d=document.getElementById('q-'+Q.id),s=saved[Q.id];const fb=d.querySelector('.fb');
+  d.querySelectorAll('.opt').forEach(b=>{const j=+b.dataset.j;b.classList.toggle('wrong',!!s&&s.tries.includes(j)&&j!==Q.ans);b.classList.toggle('right',!!s&&s.done&&j===Q.ans)});
+  if(!s){fb.hidden=true;return}
+  fb.hidden=false; if(s.done){fb.className='fb e';fb.innerHTML=bidiHTML(ESC('נכון! '+Q.q.e))}else{fb.className='fb h';fb.innerHTML=bidiHTML(ESC('לא בדיוק. רמז: '+Q.q.h))}}
+function score(){let first=0,done=0;ALL.forEach(Q=>{const s=saved[Q.id];if(s&&s.done){done++;if(s.tries.length===1)first++}});
+  document.getElementById('sc').textContent=first+' / '+ALL.length;document.getElementById('dn').textContent=done;
+  document.getElementById('mt').style.width=(100*done/ALL.length)+'%';
+  const em=document.getElementById('endMsg');
+  if(done===ALL.length){em.hidden=false;em.textContent=`סיימת את כל ${ALL.length} השאלות! ${first} נכונות בניסיון הראשון (${Math.round(100*first/ALL.length)}%). ${first/ALL.length>=.8?'מעולה — אתה מוכן להרצאה 6.':'כדאי לחזור על הסעיפים שבהם טעית ולעבור שוב על הסימולציות.'}`}else em.hidden=true;}
+document.getElementById('reset').addEventListener('click',()=>{saved={};save();ALL.forEach(paint);score();});
+score();
+</script>
+
+</body></html>

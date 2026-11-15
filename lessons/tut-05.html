@@ -1,0 +1,758 @@
+<!doctype html><html><head><script>(function(){try{var m=localStorage.getItem("hedva2-theme");if(m==="dark"||m==="light")document.documentElement.setAttribute("data-theme",m);}catch(e){}})();</script><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>חדו״א 2 — תרגול 5</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Assistant:wght@400;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>/* Layout: a calm math notebook — one reading column (max 860px), sticky score bar, section cards on a faint grid. */
+:root{
+  --bg:#f6f8fb; --card:#ffffff; --ink:#1d2533; --muted:#5b6678; --line:#dfe5ee; --soft:#eef2f8; --grid:rgba(40,80,140,.05);
+  --accent:#6d4bd8; --accent-soft:#efeafd; --ok:#1f8a52; --ok-soft:#ddf4e7; --bad:#c53030; --bad-soft:#fde7e7; --note:#fff7dc; --note-line:#e9c46a; --mine:#e8f3ff; --mine-line:#7fb2ea;
+  --amb:#b7791f; --tea:#1386a6; --pur:#7a3fd1; --blu:#2563eb; --pnk:#c2417a; --grn:#2f855a; --org:#c05621; --red:#c53030; --olv:#6b7f1a;
+  --ind:#4c51bf; --brn:#8b5a2b; --mag:#b83280; --sea:#2c7a7b; --plm:#7b3fb0; --rub:#c0265b; --cyn:#0891b2; --sky:#0369a1; --lim:#4d7c0f; --nav:#1e3a8a; --eme:#047857; --bur:#9f1239; --jad:#0f766e;
+  --f-head:"Secular One","Assistant",system-ui,sans-serif; --f-body:"Assistant",system-ui,-apple-system,"Segoe UI",sans-serif; --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#11161f; --card:#18202c; --ink:#e6ebf3; --muted:#9aa7ba; --line:#2a3546; --soft:#1f2937; --grid:rgba(160,190,255,.04);
+  --accent:#a48bff; --accent-soft:#2a2346; --ok:#6fd49b; --ok-soft:#163626; --bad:#ff8a80; --bad-soft:#3d1c1c; --note:#2f2a14; --note-line:#a58a2c; --mine:#15283d; --mine-line:#3f6f9f;
+  --amb:#f0b75a; --tea:#4cc3e0; --pur:#b48cff; --blu:#7aa7ff; --pnk:#f58bbb; --grn:#6fd49b; --org:#f6a26b; --red:#ff8a80; --olv:#b5c95a;
+  --ind:#a3a8ff; --brn:#d6a77a; --mag:#f08ad0; --sea:#6fd1cf; --plm:#c99af0; --rub:#ff7aa3; --cyn:#5fd8f0; --sky:#7cc4f5; --lim:#a3d65c; --nav:#93b4ff; --eme:#34d399; --bur:#fb7185; --jad:#5eead4; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#11161f; --card:#18202c; --ink:#e6ebf3; --muted:#9aa7ba; --line:#2a3546; --soft:#1f2937; --grid:rgba(160,190,255,.04);
+  --accent:#a48bff; --accent-soft:#2a2346; --ok:#6fd49b; --ok-soft:#163626; --bad:#ff8a80; --bad-soft:#3d1c1c; --note:#2f2a14; --note-line:#a58a2c; --mine:#15283d; --mine-line:#3f6f9f;
+  --amb:#f0b75a; --tea:#4cc3e0; --pur:#b48cff; --blu:#7aa7ff; --pnk:#f58bbb; --grn:#6fd49b; --org:#f6a26b; --red:#ff8a80; --olv:#b5c95a;
+  --ind:#a3a8ff; --brn:#d6a77a; --mag:#f08ad0; --sea:#6fd1cf; --plm:#c99af0; --rub:#ff7aa3; --cyn:#5fd8f0; --sky:#7cc4f5; --lim:#a3d65c; --nav:#93b4ff; --eme:#34d399; --bur:#fb7185; --jad:#5eead4; color-scheme:dark}
+html{direction:rtl}
+body{background-color:var(--bg);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:22px 22px;color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.65}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--card)}
+.wrap{max-width:860px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:8px 64px}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:6;background:var(--card);border-bottom:1px solid var(--line);margin-inline:calc(-1*max(16px,env(safe-area-inset-left,0px)));padding:8px max(16px,env(safe-area-inset-left,0px));display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.bar .sc{font-weight:700;font-size:15px}
+.bar .sc bdi{font-family:var(--f-mono)}
+.bar .meter{flex:1 1 120px;height:8px;background:var(--soft);border-radius:99px;overflow:hidden;min-width:80px}
+.bar .meter i{display:block;height:100%;width:0;background:var(--accent);transition:width .3s}
+.bar button{font:inherit;font-size:14px;font-weight:600;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:99px;padding:4px 12px;cursor:pointer}
+header.hero{padding-block:22px 6px}
+.credit{font-size:15px;background:var(--accent-soft);color:var(--ink);border-radius:10px;padding:6px 12px;display:inline-block;margin:0 0 12px}
+.eyebrow{font-size:13px;color:var(--muted);letter-spacing:.04em}
+h1{font-family:var(--f-head);font-weight:400;font-size:clamp(30px,6vw,42px);line-height:1.15;margin:4px 0 6px;text-wrap:balance}
+.sub{color:var(--muted);margin:0 0 12px}
+.legend{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.legend span{font-size:14px;border:1px solid var(--line);border-radius:99px;padding:2px 10px;background:var(--card)}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;background:currentColor;margin-inline-end:6px;vertical-align:middle}
+nav.toc{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin:12px 0 4px}
+nav.toc a{display:block;text-decoration:none;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:10px;padding:7px 11px;font-size:15px;font-weight:600}
+nav.toc a:hover{border-color:var(--accent)}
+nav.toc a b{color:var(--accent);font-family:var(--f-mono);margin-inline-end:4px}
+section.sec{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 18px 8px;margin-top:18px;scroll-margin-top:64px}
+@media (max-width:520px){section.sec{padding:14px 12px 6px;border-radius:12px}}
+.secno{font-family:var(--f-mono);font-size:13px;color:var(--muted);direction:ltr;unicode-bidi:isolate}
+h2{font-family:var(--f-head);font-weight:400;font-size:26px;margin:2px 0 10px;line-height:1.25;text-wrap:balance}
+h3{font-size:19px;margin:18px 0 6px}
+p{margin:8px 0}
+.box{border-radius:12px;padding:10px 14px;margin:12px 0;border:1px solid var(--line);background:var(--soft)}
+.box > b:first-child{display:block;margin-bottom:4px}
+.box.rule{background:var(--accent-soft);border-color:var(--accent)}
+.box.mine{background:var(--mine);border-color:var(--mine-line)}
+.box.fix{background:var(--note);border-color:var(--note-line)}
+.box.terms{background:var(--soft)}
+.box ol,.box ul{margin:4px 0;padding-inline-start:22px}
+.tw{overflow-x:auto;margin:10px 0}
+table{border-collapse:collapse;width:100%;font-size:15.5px}
+th,td{border:1px solid var(--line);padding:6px 9px;text-align:start;vertical-align:top}
+th{background:var(--soft)}
+.disp{overflow-x:auto;overflow-y:hidden;text-align:center;margin:10px 0;padding:4px 0}
+mjx-container{direction:ltr;unicode-bidi:isolate}
+mjx-container[display="true"]{margin:.4em 0!important}
+.disp mjx-container{display:inline-block!important}
+.ans{border-bottom:3px solid var(--cyn);padding-bottom:2px}
+.amb{color:var(--amb)}.tea{color:var(--tea)}.pur{color:var(--pur)}.blu{color:var(--blu)}.pnk{color:var(--pnk)}.grn{color:var(--grn)}.org{color:var(--org)}.red{color:var(--red)}.olv{color:var(--olv)}.ind{color:var(--ind)}.brn{color:var(--brn)}.mag{color:var(--mag)}.sea{color:var(--sea)}.plm{color:var(--plm)}.rub{color:var(--rub)}.cyn{color:var(--cyn)}.sky{color:var(--sky)}.lim{color:var(--lim)}.nav{color:var(--nav)}.eme{color:var(--eme)}.bur{color:var(--bur)}.jad{color:var(--jad)}
+.k{font-weight:700}
+bdi,.m{unicode-bidi:isolate}
+.m{direction:ltr;display:inline-block;max-width:100%}
+code,pre{font-family:var(--f-mono);direction:ltr;unicode-bidi:isolate}
+/* simulation */
+.sim{border:2px solid var(--accent);border-radius:14px;padding:12px;margin:14px 0;background:var(--card)}
+.sim .st-title{font-weight:700;margin-bottom:6px}
+.sim .map{display:flex;flex-wrap:wrap;gap:5px;margin:0 0 8px;padding:0;list-style:none}
+.sim .map li{font-size:13.5px;border:1px solid var(--line);border-radius:99px;padding:2px 10px;color:var(--muted)}
+.sim .map li.on{background:var(--accent);border-color:var(--accent);color:var(--card);font-weight:700}
+.sim .map li.done{color:var(--ink);background:var(--soft)}
+.sim .lines{border:1px solid var(--line);border-radius:10px;padding:6px 8px;background:var(--soft);overflow-x:auto}
+.sim .ln{display:flex;gap:8px;align-items:center;padding:2px 4px;border-radius:6px;direction:ltr;min-height:30px}
+.sim .ln .no{font-family:var(--f-mono);font-size:12px;color:var(--muted);min-width:18px}
+.sim .ln.cur{background:var(--accent-soft);outline:2px solid var(--accent)}
+.sim .ln.fut{display:none}
+.sim .ln .f{min-width:0}
+.sim .x{margin:8px 0;padding:8px 12px;border-inline-start:4px solid var(--accent);background:var(--accent-soft);border-radius:8px}
+.sim .stp{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+.sim .stp > span{border:1px solid var(--line);border-radius:8px;padding:3px 9px;font-size:14.5px;background:var(--card)}
+.sim .stp > span > i{font-style:normal;color:var(--muted);margin-inline-end:6px;font-size:13px}
+.sim .stp .new{outline:2px solid var(--accent)}
+.sim .ctl{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-top:8px}
+.sim .ctl button{font:inherit;font-weight:700;font-size:15px;border:1px solid var(--accent);background:var(--card);color:var(--accent);border-radius:8px;padding:5px 14px;cursor:pointer}
+.sim .ctl button.pri{background:var(--accent);color:var(--card)}
+.sim .ctl button:disabled{opacity:.4;cursor:default}
+.sim .ctl .cnt{font-family:var(--f-mono);font-size:13px;color:var(--muted);direction:ltr;unicode-bidi:isolate}
+.sim .steps{display:none}
+/* quiz */
+.quiz{margin:16px 0 10px;border-top:1px dashed var(--line);padding-top:10px}
+.quiz > .qt{font-family:var(--f-head);font-size:19px;margin:0 0 6px}
+.qq{margin:10px 0 16px}
+.qq .q{font-weight:700;margin:4px 0}
+.qq ol{list-style:none;padding:0;margin:6px 0;display:grid;gap:6px}
+.qq li button{width:100%;text-align:start;font:inherit;font-size:16px;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:10px;padding:8px 12px;cursor:pointer;line-height:1.5}
+.qq li button:hover{border-color:var(--accent)}
+.qq li button.bad{border-color:var(--bad);background:var(--bad-soft)}
+.qq li button.good{border-color:var(--ok);background:var(--ok-soft)}
+.qq li button .lt{font-weight:700;color:var(--muted);margin-inline-end:8px}
+.qq .h,.qq .e{border-radius:8px;padding:6px 10px;font-size:15.5px}
+.qq .h{background:var(--bad-soft)}
+.qq .e{background:var(--ok-soft)}
+/* tools */
+.tool{border:1px solid var(--line);border-radius:12px;padding:12px;margin:12px 0;background:var(--soft)}
+.tool label{font-weight:600;font-size:15px}
+.tool input[type=range]{width:100%}
+.tool .out{font-family:var(--f-mono);direction:ltr;unicode-bidi:isolate;font-size:15px}
+.tool svg{width:100%;height:auto;display:block;background:var(--card);border-radius:8px;border:1px solid var(--line)}
+.tool .row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.tool select,.tool button{font:inherit;font-size:15px;border:1px solid var(--line);border-radius:8px;padding:4px 10px;background:var(--card);color:var(--ink)}
+.end{margin-top:18px;text-align:center;font-weight:700;font-size:18px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+mjx-container:not([display="true"]){display:inline-block;max-width:100%;overflow-x:auto;overflow-y:hidden;vertical-align:middle;padding-block:2px}
+mjx-container > svg{vertical-align:middle!important}
+mjx-assistive-mml{max-width:100%!important;left:0!important}
+[hidden]{display:none!important}
+.disp,.sim .lines{direction:ltr}
+input[type=range]{direction:ltr}
+@media (max-width:520px){.sim .lines mjx-container{font-size:88%}}
+</style>
+
+<div class="wrap" data-key="calc2-tut05-v1">
+<div class="bar"><span class="sc" id="score">ניקוד: 0</span><span class="meter" aria-hidden="true"><i id="meter"></i></span><button type="button" id="resetBtn">⟲ איפוס</button><button type="button" id="themeBtn">🌙 לילה</button></div>
+<header class="hero">
+<p class="credit">קרדיט לסיכומים של עדי מהדרייב 😊 ולעידו דוד צייג!</p>
+<div class="eyebrow">חדו״א 2 · תרגול 5 · לוזון · 24/11/25 · שלושה עמודים בכתב יד</div>
+<h1>תרגול 5: אינטגרלים לא אמיתיים ומבחני ההשוואה</h1>
+<p class="sub">סוג 1 (קטע אינסופי), סוג 2 (פונקציה לא חסומה), שני מבחני השוואה, והתכנסות בהחלט. כל תרגיל מהמחברת מופיע כאן צעד אחר צעד.</p>
+<div class="legend">
+<span class="amb">גבול: הקצה b או ε</span>
+<span class="eme">מתכנס</span>
+<span class="bur">מתבדר</span>
+<span class="mag">הפרמטר p</span>
+<span class="olv">הפונקציה הגדולה f</span>
+<span class="red">הפונקציה הקטנה g</span>
+<span class="grn">ln ו-1/x</span>
+<span class="pur">arctan / הצבה</span>
+<span class="jad">הגבול L של המנה (מבחן 2)</span>
+<span class="nav">הנקודה $x_0$ (חדש)</span>
+<span class="sky">ערך מוחלט $|f|$ (חדש)</span>
+<span class="cyn">תשובה סופית (קו מתחת)</span>
+</div>
+<nav class="toc" aria-label="תוכן עניינים"></nav>
+</header>
+
+<!-- ============ 1 ============ -->
+<section class="sec" id="s1" data-short="סוג 1: קטע אינסופי">
+<h2>סוג 1: אינטגרל על קטע אינסופי</h2>
+<p>עד עכשיו האינטגרל הוגדר רק על קטע <b>סופי</b>. מה עושים כשהקטע הוא $[a,\infty)$? עוצרים בקצה סופי, ואז נותנים לקצה לברוח לאינסוף.</p>
+<div class="box mine"><b>מה זה אינטגרל עד אינסוף? (מההתחלה, עם מספרים) — הדוגמה שלי</b>
+<ol>
+<li>שלב 1 – מה יש לנו: $f(x)=\frac1{x^2}$. רוצים את השטח מ-1 עד אינסוף.</li>
+<li>שלב 2 – עוצרים בקצה סופי: $\int_1^{\class{amb}{b}}\frac{dx}{x^2}=1-\frac1{\class{amb}{b}}$.</li>
+<li>שלב 3 – מציבים: $b=10$ נותן $0.9$. $b=100$ נותן $0.99$. $b=1000$ נותן $0.999$.</li>
+<li>שלב 4 – המספרים מתקרבים ל-1. לכן אומרים: $\int_1^\infty\frac{dx}{x^2}=1$. השטח <span class="eme">מתכנס</span>.</li>
+<li>שלב 5 – לא תמיד זה עובד: ל-$\frac1x$ יוצא $\ln b$, כלומר $2.3,\ 4.6,\ 6.9,\dots$ זה עולה בלי סוף. השטח <span class="bur">מתבדר</span>.</li>
+</ol></div>
+<div class="box rule"><b>ההגדרה מהמחברת</b>תהא $f$ מוגדרת ב-$[a,\infty)$ ואינטגרבילית ב-$[a,b]$ לכל $b\gt a$. אם הגבול $\lim\limits_{\class{amb}{b}\to\infty}\int_a^{\class{amb}{b}}f(x)\,dx$ קיים וסופי, אומרים ש-$f$ אינטגרבילית בקטע $[a,\infty)$, והגבול נקרא <b>האינטגרל הלא אמיתי מסוג 1</b>, ומסמנים $\int_a^\infty f(x)\,dx$. במקרה הזה האינטגרל <span class="eme">מתכנס</span>. אחרת הוא <span class="bur">מתבדר</span>. הגדרה סימטרית עבור $(-\infty,b]$.</div>
+<div class="box terms"><b>מילים וסימנים</b>
+<ul>
+<li>מתכנס: הגבול קיים והוא מספר סופי. מתבדר: כל מצב אחר.</li>
+<li>הסימן $\int_a^\infty$ הוא קיצור. אי אפשר "להציב אינסוף". תמיד הכוונה לגבול של אינטגרל רגיל.</li>
+<li>$b\to\infty$: הקצה הימני גדל בלי סוף.</li>
+</ul></div>
+<h3>כל הדרכים שבהן הגבול יכול להסתיים</h3>
+<div class="tw"><table><tr><th>מה קורה ל-$\int_a^b f$ כש-$b\to\infty$</th><th>דוגמה</th><th>התוצאה</th></tr>
+<tr><td>מתקרב למספר סופי</td><td>$\int_1^b\frac{dx}{x^2}\to1$</td><td class="eme">מתכנס</td></tr>
+<tr><td>עולה בלי סוף ($+\infty$) או יורד בלי סוף ($-\infty$)</td><td>$\int_1^b\frac{dx}{x}=\ln b\to\infty$</td><td class="bur">מתבדר</td></tr>
+<tr><td>לא מתקרב לשום דבר (מתנדנד)</td><td>$\int_0^b\cos x\,dx=\sin b$</td><td class="bur">מתבדר</td></tr>
+</table></div>
+<h3>תרגיל א: $\int_2^\infty\frac{dx}{x^2+x-2}$</h3>
+<div class="tw"><table><tr><th>שלב</th><th>מה עושים</th></tr>
+<tr><td>1</td><td>הופכים את הסימן $\int^\infty$ לגבול של אינטגרל רגיל</td></tr>
+<tr><td>2</td><td>מפרקים לשברים חלקיים (כמו בתרגול 4)</td></tr>
+<tr><td>3</td><td>מוצאים קדומה: שני $\ln$</td></tr>
+<tr><td>4</td><td>מציבים את הגבולות $2$ ו-$b$</td></tr>
+<tr><td>5</td><td>מחשבים את הגבול כש-$b\to\infty$</td></tr>
+</table></div>
+<div class="sim"><div class="st-title">סימולציה: תרגיל א, שורה אחרי שורה</div>
+<ol class="map"><li>1. לגבול</li><li>2. שברים חלקיים</li><li>3. קדומה</li><li>4. הצבה</li><li>5. גבול</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$\int_2^\infty\frac{dx}{x^2+x-2}$</div><div class="x">הקטע אינסופי, אז זה סוג 1. המכנה מתאפס רק ב-$x=1$ וב-$x=-2$, ושתי הנקודות מחוץ ל-$[2,\infty)$. לכן אין בעיה אחרת.</div><div class="st"><span><i>שלב</i>מזהים סוג</span><span><i>הקצה</i>$\infty$</span></div></div>
+<div class="step" data-m="0"><div class="f">$=\lim\limits_{\class{amb}{b}\to\infty}\int_2^{\class{amb}{b}}\frac{dx}{x^2+x-2}$</div><div class="x">זו בדיוק ההגדרה: עוצרים ב-$b$ סופי, ובסוף שולחים את $b$ לאינסוף.</div><div class="st"><span><i>שלב</i>גבול</span><span><i>הקצה</i>$b$</span></div></div>
+<div class="step" data-m="1"><div class="f">$\frac1{(\class{grn}{x-1})(\class{grn}{x+2})}=\frac{A}{\class{grn}{x-1}}+\frac{B}{\class{grn}{x+2}}\ \Rightarrow\ 1=A(x+2)+B(x-1)$</div><div class="x">מפרקים: $x^2+x-2=(x-1)(x+2)$. מציבים $x=1$: $1=3A$, אז $A=\frac13$. מציבים $x=-2$: $1=-3B$, אז $B=-\frac13$.</div><div class="st"><span><i>A</i>$\frac13$</span><span><i>B</i>$-\frac13$</span></div></div>
+<div class="step" data-m="1"><div class="f">$=\lim\limits_{b\to\infty}\frac13\int_2^b\left(\frac1{\class{grn}{x-1}}-\frac1{\class{grn}{x+2}}\right)dx$</div><div class="x">מוציאים את $\frac13$ החוצה. עכשיו יש שני שברים פשוטים.</div><div class="st"><span><i>A</i>$\frac13$</span><span><i>B</i>$-\frac13$</span></div></div>
+<div class="step" data-m="2"><div class="f">$=\lim\limits_{b\to\infty}\frac13\left(\class{grn}{\ln(x-1)}\Big|_2^b-\class{grn}{\ln(x+2)}\Big|_2^b\right)$</div><div class="x">הקדומה של $\frac1{x-1}$ היא $\ln(x-1)$, ואותו דבר ל-$x+2$. בקטע הזה $x-1\gt 0$ ו-$x+2\gt 0$, ולכן לא צריך ערך מוחלט.</div><div class="st"><span><i>קדומה</i>שני $\ln$</span></div></div>
+<div class="step" data-m="3"><div class="f">$=\frac13\lim\limits_{b\to\infty}\Big(\ln(b-1)-\ln 1-\ln(b+2)+\ln 4\Big)$</div><div class="x">הצבה של $b$ ושל $2$. שימו לב למינוסים: $-\ln(b+2)$ ואז $+\ln 4$, כי $\ln(x+2)$ ב-$x=2$ הוא $\ln4$. ובנוסף $\ln 1=0$.</div><div class="st"><span><i>ln 1</i>$0$</span><span><i>קבוע</i>$\ln 4$</span></div></div>
+<div class="step" data-m="4"><div class="f">$=\frac13\lim\limits_{b\to\infty}\ln\frac{b-1}{b+2}+\frac13\ln 4$</div><div class="x">למה מאחדים? בנפרד יש $\infty-\infty$, וזה לא מוגדר. אחרי האיחוד, שני האינסופים הופכים לשבר.</div><div class="st"><span><i>גבול</i>של השבר</span></div></div>
+<div class="step" data-m="4"><div class="f"><span class="ans">$=\frac13\ln 1+\frac13\ln4=\frac13\ln 4\approx0.462$</span></div><div class="x">כש-$b$ ענק, $\frac{b-1}{b+2}$ קרוב ל-1. ו-$\ln 1=0$. קיבלנו מספר סופי, אז האינטגרל <span class="eme">מתכנס</span>.</div><div class="st"><span><i>תשובה</i>$\frac13\ln4$</span><span><i>מצב</i>מתכנס</span></div></div>
+</div></div>
+<div class="tool"><b>המחשה: השטח עד $b$ מתקרב ל-$\frac13\ln4$</b>
+<label for="s1b">הזיזו את הקצה $b$:</label><input type="range" id="s1b" min="0" max="100" value="25">
+<svg id="s1svg" viewBox="0 0 400 220" role="img" aria-label="גרף הפונקציה ושטח מ-2 עד b"></svg>
+<p class="out" id="s1out"></p></div>
+<div class="box rule"><b>הכלל לזכור</b>אינטגרל עד אינסוף = גבול של אינטגרל רגיל. מחשבים עם $b$ סופי, ורק בסוף שולחים את $b$ לאינסוף.</div>
+<p><b>אנלוגיה:</b> כמו מים שמוזגים לכוס, כל פעם חצי ממה שמזגת קודם. מוזגים "בלי סוף", אבל הכוס לא עולה על גדותיה: הכמות הכוללת מתקרבת למספר.</p>
+<div class="quiz"><div class="qt">שאלות על סעיף 1</div>
+<div class="qq" data-a="2"><p class="q">מתי אומרים ש-$\int_a^\infty f(x)\,dx$ מתכנס?</p><ol><li>כש-$f(x)\to0$ כאשר $x\to\infty$, כי אז השטח קטן</li><li>כש-$f$ חסומה בכל הקטע $[a,\infty)$ מלמעלה</li><li>כשהגבול של $\int_a^b f$ כש-$b\to\infty$ הוא מספר סופי</li><li>כשאפשר להציב $\infty$ בקדומה של $f$ ישירות</li></ol><p class="h">רמז: חזרו להגדרה. על מה עושים גבול?</p><p class="e">נכון. ההתכנסות מוגדרת דרך הגבול של האינטגרל. למשל $\frac1x\to0$, ובכל זאת $\int_1^\infty\frac{dx}x$ מתבדר.</p></div>
+<div class="qq" data-a="0"><p class="q">בתרגיל א, למה מאחדים את שני ה-$\ln$ לפני הגבול?</p><ol><li>כי בנפרד כל אחד שואף לאינסוף, ו-$\infty-\infty$ לא מוגדר</li><li>כי $\ln$ של מכפלה תמיד גדול יותר מכל אחד מהשניים</li><li>כי $\ln(b-1)$ הוא שלילי, ולכן הוא מבטל את השני</li><li>כי אי אפשר לחשב גבול של $\ln$ בלי שבר בתוכו</li></ol><p class="h">רמז: מה קורה ל-$\ln(b-1)$ ול-$\ln(b+2)$ כש-$b$ גדל?</p><p class="e">נכון. הטריק הוא $\ln A-\ln B=\ln\frac AB$, ואז השבר שואף ל-1.</p></div>
+<div class="qq" data-a="3"><p class="q">בתרגיל א, מאיפה מגיע $\ln 4$?</p><ol><li>מהצבת $b$ בביטוי $\ln(b+2)$, כש-$b$ שואף לאינסוף</li><li>מהצבת $x=2$ בביטוי $\ln(x-1)$, כי זה הגבול התחתון</li><li>מהמקדם $\frac13$ שיצא מהפירוק לשברים חלקיים</li><li>מהצבת $x=2$ בביטוי $\ln(x+2)$, כי זה הגבול התחתון</li></ol><p class="h">רמז: חשבו $x+2$ ב-$x=2$.</p><p class="e">נכון. $x+2=4$. והצבת $x=2$ ב-$\ln(x-1)$ נותנת $\ln 1=0$.</p></div>
+<div class="qq" data-a="1"><p class="q">מה הערך של $\int_1^\infty\frac{dx}{x^2}$?</p><ol><li>$\frac12$, כי הקדומה היא $\frac{x^2}{2}$ בגבול</li><li>$1$, כי $1-\frac1b\to1$ כש-$b$ גדל</li><li>$\infty$, כי הקטע אינסופי ולכן השטח גם</li><li>$0$, כי $\frac1{x^2}$ שואפת ל-0 באינסוף</li></ol><p class="h">רמז: חשבו $\int_1^b x^{-2}dx$ והציבו גבולות.</p><p class="e">נכון. קטע אינסופי לא מחייב שטח אינסופי.</p></div>
+</div>
+</section>
+
+<!-- ============ 2 ============ -->
+<section class="sec" id="s2" data-short="תרגיל ב: &lt;bdi dir=ltr&gt;cos&lt;/bdi&gt;">
+<h2>תרגיל ב: $\int_0^\infty\cos x\,dx$</h2>
+<div class="box mine"><b>מה זה "הגבול לא קיים"? (עם מספרים) — הדוגמה שלי</b>
+<ol>
+<li>שלב 1 – הקדומה של $\cos x$ היא $\sin x$, אז $\int_0^b\cos x\,dx=\sin b$.</li>
+<li>שלב 2 – מציבים: $\sin\frac\pi2=1$, $\sin\pi=0$, $\sin\frac{3\pi}2=-1$, $\sin 2\pi=0$.</li>
+<li>שלב 3 – אחר כך זה חוזר על עצמו שוב ושוב.</li>
+<li>שלב 4 – אין מספר אחד שהערכים מתקרבים אליו. לכן הגבול לא קיים, והאינטגרל <span class="bur">מתבדר</span>.</li>
+</ol></div>
+<div class="sim"><div class="st-title">סימולציה: תרגיל ב</div>
+<ol class="map"><li>1. לגבול</li><li>2. קדומה</li><li>3. גבול</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$\int_0^\infty\cos x\,dx=\lim\limits_{\class{amb}{b}\to\infty}\int_0^{\class{amb}{b}}\cos x\,dx$</div><div class="x">כמו בתרגיל א: הקטע אינסופי, אז כותבים גבול.</div><div class="st"><span><i>שלב</i>גבול</span></div></div>
+<div class="step" data-m="1"><div class="f">$=\lim\limits_{b\to\infty}\sin x\Big|_0^b=\lim\limits_{b\to\infty}\sin b$</div><div class="x">$\sin 0=0$, אז נשאר רק $\sin b$.</div><div class="st"><span><i>קדומה</i>$\sin x$</span></div></div>
+<div class="step" data-m="2"><div class="f"><span class="ans">$\lim\limits_{b\to\infty}\sin b$ לא קיים</span></div><div class="x">$\sin b$ מתנדנד בין $-1$ ל-$1$ ולא מתקרב לכלום. התוצאה: האינטגרל <span class="bur">מתבדר</span>. שימו לב: הוא לא שואף לאינסוף, ובכל זאת מתבדר.</div><div class="st"><span><i>מצב</i>מתבדר</span></div></div>
+</div></div>
+<div class="tool"><b>המחשה: הערך $\int_0^b\cos x\,dx=\sin b$ לעולם לא נרגע</b>
+<label for="s2b">הזיזו את $b$:</label><input type="range" id="s2b" min="0" max="40" step="0.1" value="8">
+<svg id="s2svg" viewBox="0 0 400 200" role="img" aria-label="גרף של sin b כפונקציה של b"></svg>
+<p class="out" id="s2out"></p></div>
+<div class="box rule"><b>הכלל לזכור</b>"מתבדר" לא אומר "שואף לאינסוף". גם תנודה בלי גבול היא התבדרות.</div>
+<div class="quiz"><div class="qt">שאלות על סעיף 2</div>
+<div class="qq" data-a="1"><p class="q">למה $\int_0^\infty\cos x\,dx$ מתבדר?</p><ol><li>כי $\cos x$ שואף ל-0, ולכן השטח נעצר</li><li>כי $\sin b$ מתנדנד ואין לו גבול כש-$b\to\infty$</li><li>כי $\sin b$ שואף ל-$+\infty$ כש-$b$ גדל</li><li>כי $\cos x$ לא רציפה על הקטע $[0,\infty)$</li></ol><p class="h">רמז: הקדומה היא $\sin x$. מה עושה $\sin b$ כש-$b$ גדל?</p><p class="e">נכון. הערכים חוזרים על עצמם ולא מתקרבים למספר אחד.</p></div>
+<div class="qq" data-a="3"><p class="q">מה הערך של $\int_0^{2\pi}\cos x\,dx$?</p><ol><li>$2\pi$, כי זה אורך הקטע שעליו מסכמים</li><li>$1$, כי $\sin(2\pi)$ הוא המקסימום של sin</li><li>$-1$, כי החלק השלילי של cos גדול יותר</li><li>$0$, כי $\sin(2\pi)=\sin 0=0$ בדיוק</li></ol><p class="h">רמז: הציבו $b=2\pi$ ב-$\sin b$.</p><p class="e">נכון. בנקודות מסוימות הערך הוא 0, אבל זה לא גבול: בנקודות אחרות הוא 1 או $-1$.</p></div>
+<div class="qq" data-a="0"><p class="q">איזו דרך סיום נכונה לתרגיל ב מתוך הטבלה של סעיף 1?</p><ol><li>לא מתקרב לשום דבר, ולכן האינטגרל מתבדר</li><li>מתקרב למספר סופי, ולכן האינטגרל מתכנס</li><li>עולה בלי סוף, ולכן האינטגרל מתבדר</li><li>יורד בלי סוף, ולכן האינטגרל מתכנס</li></ol><p class="h">רמז: מה עושה $\sin b$?</p><p class="e">נכון. זו דרך הסיום השלישית: תנודה.</p></div>
+</div>
+</section>
+
+<!-- ============ 3 ============ -->
+<section class="sec" id="s3" data-short="תרגיל ג: &lt;bdi dir=ltr&gt;1/xᵖ&lt;/bdi&gt; עד אינסוף">
+<h2>תרגיל ג: $\int_a^\infty\frac{dx}{x^{\class{mag}{p}}}$</h2>
+<p>במחברת מופיעה רק התשובה: <span class="eme">מתכנס</span> כש-$p\gt 1$, <span class="bur">מתבדר</span> כש-$p\le 1$. ראינו את זה בהרצאה 8. כאן נראה מאיפה זה מגיע, כי נשתמש בזה בכל מבחני ההשוואה.</p>
+<div class="box mine"><b>מספרים לפני הכלל — הדוגמה שלי (עם $a=1$)</b>
+<div class="tw"><table><tr><th>$b$</th><th>$p=2$: $1-\frac1b$</th><th>$p=1$: $\ln b$</th><th>$p=\frac12$: $2(\sqrt b-1)$</th></tr>
+<tr><td>10</td><td>0.9</td><td>2.30</td><td>4.32</td></tr>
+<tr><td>100</td><td>0.99</td><td>4.61</td><td>18</td></tr>
+<tr><td>1000</td><td>0.999</td><td>6.91</td><td>61.25</td></tr>
+<tr><td>מתקרב ל-</td><td class="eme">1</td><td class="bur">$\infty$</td><td class="bur">$\infty$</td></tr>
+</table></div>
+<p>רק כש-$p\gt 1$ השורה נרגעת. ככל ש-$p$ גדול יותר, הפונקציה יורדת מהר יותר.</p></div>
+<div class="sim"><div class="st-title">סימולציה: למה הגבול של $p$ הוא בדיוק 1 (ההשלמה שלי)</div>
+<ol class="map"><li>1. קדומה</li><li>2. p גדול מ-1</li><li>3. p קטן מ-1</li><li>4. p שווה 1</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$\int_a^{\class{amb}{b}}x^{-\class{mag}{p}}dx=\frac{x^{1-p}}{1-p}\Big|_a^b=\frac{b^{1-p}-a^{1-p}}{1-p}\quad(p\ne1)$</div><div class="x">נוסחת החזקה. היא עובדת רק כש-$p\ne1$, אחרת מחלקים ב-0.</div><div class="st"><span><i>מקרה</i>$p\ne1$</span></div></div>
+<div class="step" data-m="1"><div class="f">$p\gt 1:\ b^{1-p}=\frac1{b^{p-1}}\to0$</div><div class="x">כש-$p\gt 1$ החזקה $1-p$ שלילית. למשל $p=2$: $b^{-1}=\frac1b\to 0$.</div><div class="st"><span><i>מקרה</i>$p\gt 1$</span><span><i>$b^{1-p}$</i>$\to 0$</span></div></div>
+<div class="step" data-m="1"><div class="f">$\int_a^\infty\frac{dx}{x^p}=\frac{0-a^{1-p}}{1-p}=\frac{a^{1-p}}{p-1}$</div><div class="x">קיבלנו מספר סופי: <span class="eme">מתכנס</span>.</div><div class="st"><span><i>מצב</i>מתכנס</span></div></div>
+<div class="step" data-m="2"><div class="f">$p\lt 1:\ b^{1-p}\to\infty$</div><div class="x">כאן החזקה $1-p$ חיובית. למשל $p=\frac12$: $\sqrt b\to\infty$. התוצאה: <span class="bur">מתבדר</span>.</div><div class="st"><span><i>מצב</i>מתבדר</span></div></div>
+<div class="step" data-m="3"><div class="f">$p=1:\ \int_a^b\frac{dx}{x}=\class{grn}{\ln b}-\class{grn}{\ln a}\to\infty$</div><div class="x">המקרה שלא נכנס לנוסחה. גם כאן <span class="bur">מתבדר</span>.</div><div class="st"><span><i>מצב</i>מתבדר</span></div></div>
+</div></div>
+<div class="box fix"><b>הערה שלי על המחברת</b>במחברת כתוב $\int_a^\infty\frac{dx}{x^p}$ בלי להגיד מה זה $a$. צריך $a\gt 0$. אם $a=0$, יש גם בעיה ב-0 (הפונקציה מתפוצצת שם), ואז זה כבר לא רק סוג 1.</div>
+<div class="box rule"><b>הכלל לזכור</b>$\int_a^\infty\frac{dx}{x^p}$ (עם $a\gt 0$): מתכנס רק כש-$p\gt 1$. עם $p=1$ מתבדר.</div>
+<div class="quiz"><div class="qt">שאלות על סעיף 3</div>
+<div class="qq" data-a="2"><p class="q">עבור איזה ערך של $p$ האינטגרל $\int_1^\infty\frac{dx}{x^p}$ מתכנס?</p><ol><li>$p=1$, כי זה המקרה שבו יוצא $\ln$</li><li>$p=\frac12$, כי החזקה קטנה מ-1</li><li>$p=\frac76$, כי החזקה גדולה מ-1</li><li>$p=0$, כי אז הפונקציה קבועה</li></ol><p class="h">רמז: צריך $p\gt 1$.</p><p class="e">נכון. $\frac76\gt 1$. בעוד סעיף נשתמש בדיוק בחזקה הזו.</p></div>
+<div class="qq" data-a="0"><p class="q">מה הערך של $\int_1^\infty\frac{dx}{x^3}$?</p><ol><li>$\frac12$, לפי הנוסחה $\frac{1}{p-1}$</li><li>$\frac13$, לפי הנוסחה $\frac1p$</li><li>$1$, כמו הערך עבור $p=2$</li><li>$\frac14$, לפי הנוסחה $\frac{1}{p+1}$</li></ol><p class="h">רמז: הציבו $a=1$ ו-$p=3$ ב-$\frac{a^{1-p}}{p-1}$.</p><p class="e">נכון. $\frac{1^{-2}}{3-1}=\frac12$.</p></div>
+<div class="qq" data-a="3"><p class="q">למה נוסחת החזקה לא עובדת עבור $p=1$?</p><ol><li>כי $x^{-1}$ לא מוגדר עבור אף ערך של $x$</li><li>כי הקדומה הייתה יוצאת שלילית בכל הקטע</li><li>כי $b^{0}$ שואף לאינסוף כש-$b$ גדל מאוד</li><li>כי יוצא מכנה $1-p=0$, ואסור לחלק באפס</li></ol><p class="h">רמז: מה יש במכנה של הנוסחה?</p><p class="e">נכון. לכן עבור $p=1$ משתמשים ב-$\ln$.</p></div>
+</div>
+</section>
+
+<!-- ============ 4 ============ -->
+<section class="sec" id="s4" data-short="שני קצוות אינסופיים">
+<h2>סוג 1 עם שני קצוות: $\int_{-\infty}^\infty f(x)\,dx$</h2>
+<div class="box mine"><b>למה חייבים לחתוך לשניים? (עם מספרים) — הדוגמה שלי</b>
+<ol>
+<li>שלב 1 – הפונקציה $\sin x$. הקדומה: $-\cos x$. לכן $\int_{A}^{B}\sin x\,dx=\cos A-\cos B$.</li>
+<li>שלב 2 – רצים סימטרית, מ-$-10$ עד $10$: $\cos 10-\cos 10=0$.</li>
+<li>שלב 3 – רצים קצת לא סימטרית, מ-$-10$ עד $10+\pi$: יוצא $\cos 10-\cos(10+\pi)=2\cos 10\approx-1.68$.</li>
+<li>שלב 4 – שני הקצוות הגיעו "לאינסוף", אבל התשובה תלויה <b>איך</b> רצנו. זה לא יכול להיות הגדרה טובה.</li>
+<li>שלב 5 – הפתרון: בוחרים נקודה $x_0$ ודורשים ש<b>כל צד בנפרד</b> יתכנס.</li>
+</ol></div>
+<div class="box rule"><b>ההגדרה מהמחברת</b>תהא $f:\mathbb R\to\mathbb R$ אינטגרבילית בכל קטע סגור. נניח שקיים $x_0\in\mathbb R$ כך שגם $\lim\limits_{a\to-\infty}\int_a^{x_0}f$ קיים וסופי וגם $\lim\limits_{b\to\infty}\int_{x_0}^{b}f$ קיים וסופי. אז מגדירים $$\int_{-\infty}^\infty f(x)\,dx=\int_{-\infty}^{x_0}f(x)\,dx+\int_{x_0}^\infty f(x)\,dx$$</div>
+<div class="sim"><div class="st-title">סימולציה: הדוגמה מהמחברת, $\int_{-\infty}^\infty\sin x\,dx$</div>
+<ol class="map"><li>1. הטעות</li><li>2. הדרך הנכונה</li><li>3. המסקנה</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$\int_{-\infty}^\infty\sin x\,dx\ \overset{?}{=}\ \lim\limits_{m\to\infty}\int_{-m}^{m}\sin x\,dx=0$</div><div class="x">זו הטעות שהמחברת מסמנת ב-X אדום. $\sin$ אי-זוגית, אז על קטע סימטרי תמיד יוצא 0. אבל זו לא ההגדרה.</div><div class="st"><span><i>מצב</i>טעות</span></div></div>
+<div class="step" data-m="1"><div class="f">$=\lim\limits_{a\to-\infty}\int_a^0\sin x\,dx+\lim\limits_{b\to\infty}\int_0^b\sin x\,dx$</div><div class="x">הדרך הנכונה לפי ההגדרה: חותכים ב-$x_0=0$ ומחשבים כל צד לבד. יש שני גבולות נפרדים.</div><div class="st"><span><i>שלב</i>שני גבולות</span></div></div>
+<div class="step" data-m="1"><div class="f">$=\lim\limits_{a\to-\infty}(-\cos x)\Big|_a^0+\lim\limits_{b\to\infty}(-\cos x)\Big|_0^b$</div><div class="x">הקדומה של $\sin$ היא $-\cos$.</div><div class="st"><span><i>קדומה</i>$-\cos x$</span></div></div>
+<div class="step" data-m="1"><div class="f">$=\lim\limits_{a\to-\infty}(\cos a-1)+\lim\limits_{b\to\infty}(1-\cos b)$</div><div class="x">מציבים. משמאל: $-\cos 0+\cos a=\cos a-1$. מימין: $-\cos b+\cos 0=1-\cos b$.</div><div class="st"><span><i>שלב</i>הצבה</span></div></div>
+<div class="step" data-m="2"><div class="f"><span class="ans">שני הגבולות לא קיימים</span></div><div class="x">$\cos a$ ו-$\cos b$ מתנודדים. מספיק שגבול אחד לא קיים. האינטגרל <span class="bur">מתבדר</span>.</div><div class="st"><span><i>מצב</i>מתבדר</span></div></div>
+</div></div>
+<div class="tool"><b>המחשה: התשובה תלויה איך רצים</b>
+<div class="row"><label for="s4sel">התוספת לצד ימין:</label>
+<select id="s4sel"><option value="0">אין (סימטרי)</option><option value="1">π/2</option><option value="2">π</option></select></div>
+<label for="s4m">הזיזו את $m$ (הקטע הוא מ-$-m$ עד $m$ ועוד התוספת):</label><input type="range" id="s4m" min="0" max="30" step="0.1" value="10">
+<svg id="s4svg" viewBox="0 0 400 200" role="img" aria-label="ערך האינטגרל כפונקציה של m"></svg>
+<p class="out" id="s4out"></p></div>
+<div class="box fix"><b>הערות שלי על המחברת</b>
+<ul>
+<li>במחברת כתוב $\lim\int f\lt\infty$. הכוונה: הגבול קיים והוא מספר סופי (גם לא $-\infty$).</li>
+<li>במחברת מראים ששני הגבולות לא קיימים. מספיק שאחד לא קיים כדי שהאינטגרל יתבדר.</li>
+</ul></div>
+<div class="box rule"><b>הכלל לזכור</b>$\int_{-\infty}^\infty$ מתכנס רק אם <b>שני</b> הצדדים מתכנסים בנפרד. בגבול סימטרי אסור להשתמש כהגדרה.</div>
+<div class="quiz"><div class="qt">שאלות על סעיף 4</div>
+<div class="qq" data-a="3"><p class="q">מה לא בסדר בחישוב $\int_{-\infty}^\infty\sin x\,dx=\lim\limits_{m\to\infty}\int_{-m}^m\sin x\,dx=0$?</p><ol><li>הקדומה של $\sin$ נכתבה עם סימן הפוך, ולכן יצא 0</li><li>צריך לחשב על $[0,\infty)$ בלבד, ואז להכפיל בשניים</li><li>$\sin$ זוגית, ולכן על קטע סימטרי התשובה לא 0</li><li>ההגדרה דורשת שני גבולות נפרדים, ולא גבול אחד סימטרי</li></ol><p class="h">רמז: מה דורשת ההגדרה?</p><p class="e">נכון. בגבול אחד סימטרי שני הצדדים "מתבטלים" בכוח, ולכן זו לא ההגדרה.</p></div>
+<div class="qq" data-a="1"><p class="q">נניח ש-$\int_0^\infty f$ מתכנס ו-$\int_{-\infty}^0 f$ מתבדר. מה אפשר להגיד על $\int_{-\infty}^\infty f$?</p><ol><li>מתכנס, כי לפחות צד אחד מהם מתכנס</li><li>מתבדר, כי צריך ששני הצדדים יתכנסו</li><li>מתכנס לחצי מהערך של הצד המתכנס</li><li>אי אפשר לדעת בלי לבחור נקודה $x_0$ אחרת</li></ol><p class="h">רמז: חזרו למילה "וגם" בהגדרה.</p><p class="e">נכון. צריך את שני הצדדים. בחירת $x_0$ אחרת לא משנה את זה.</p></div>
+<div class="qq" data-a="2"><p class="q">מה הערך של $\lim\limits_{a\to-\infty}(\cos a-1)$ בדוגמה?</p><ol><li>$-1$, כי $\cos a$ שואף ל-0 כש-$a$ קטן מאוד</li><li>$0$, כי $\cos a$ שואף ל-1 כש-$a$ קטן מאוד</li><li>אין גבול, כי $\cos a$ מתנדנד בין $-1$ ל-$1$</li><li>$-\infty$, כי $a$ שואף למינוס אינסוף</li></ol><p class="h">רמז: מה עושה $\cos$ כשהזווית גדלה בערך מוחלט?</p><p class="e">נכון. בדיוק כמו $\sin b$ בתרגיל ב.</p></div>
+</div>
+</section>
+
+<!-- ============ 5 ============ -->
+<section class="sec" id="s5" data-short="סוג 2: פונקציה לא חסומה">
+<h2>סוג 2: הפונקציה מתפוצצת בקצה הקטע</h2>
+<p>עכשיו הקטע <b>סופי</b>, אבל בקצה שלו הפונקציה לא חסומה. שוב: מתרחקים קצת מהקצה הבעייתי, ואז מתקרבים אליו בגבול.</p>
+<div class="box mine"><b>מה זה סוג 2? (עם מספרים) — הדוגמה שלי</b>
+<ol>
+<li>שלב 1 – הפונקציה $\frac1{\sqrt x}$ בקטע $(0,1]$. ב-$x=0$ היא "מתפוצצת": $f(0.01)=10$, $f(0.0001)=100$.</li>
+<li>שלב 2 – מתחילים קצת אחרי האפס: $\int_{\class{amb}{\varepsilon}}^1\frac{dx}{\sqrt x}=2-2\sqrt{\class{amb}{\varepsilon}}$.</li>
+<li>שלב 3 – מציבים: $\varepsilon=0.01$ נותן $1.8$. $\varepsilon=0.0001$ נותן $1.98$.</li>
+<li>שלב 4 – המספרים מתקרבים ל-2. לכן $\int_0^1\frac{dx}{\sqrt x}=2$. <span class="eme">מתכנס</span>.</li>
+</ol></div>
+<div class="box rule"><b>ההגדרה מהמחברת</b>תהא $f$ מוגדרת ב-$(a,b]$ ואינטגרבילית ב-$[a+\varepsilon,b]$ לכל $0\lt\varepsilon\lt b-a$, אך לא חסומה בסביבה ימנית של $a$ (למשל $\lim\limits_{x\to a^+}f(x)=\pm\infty$). אם הגבול $\lim\limits_{\class{amb}{\varepsilon}\to0^+}\int_{a+\class{amb}{\varepsilon}}^b f(x)\,dx$ קיים וסופי, אומרים ש-$f$ אינטגרבילית בקטע $(a,b]$, והגבול נקרא <b>האינטגרל הלא אמיתי מסוג 2</b>, ומסמנים $\int_a^b f(x)\,dx$. במקרה הזה הוא <span class="eme">מתכנס</span>, אחרת <span class="bur">מתבדר</span>. הגדרה סימטרית עבור $[a,b-\varepsilon]$.</div>
+<div class="box terms"><b>מילים וסימנים</b>
+<ul>
+<li>$\varepsilon\to0^+$: המספר $\varepsilon$ חיובי ומתקרב לאפס.</li>
+<li>$x\to a^+$: מתקרבים ל-$a$ מימין (מספרים גדולים מ-$a$).</li>
+<li>אינטגרל סוג 2 נראה כמו אינטגרל רגיל! צריך לבדוק אם הפונקציה מתפוצצת בקצה.</li>
+</ul></div>
+<div class="tw"><table><tr><th></th><th>סוג 1</th><th>סוג 2</th></tr>
+<tr><td>מה הבעיה</td><td>הקטע אינסופי</td><td>הפונקציה לא חסומה בקצה</td></tr>
+<tr><td>איך נראה</td><td>$\int_a^\infty f$</td><td>$\int_a^b f$ רגיל למראה</td></tr>
+<tr><td>מה מזיזים</td><td>$b\to\infty$</td><td>$\varepsilon\to0^+$</td></tr>
+</table></div>
+<h3>תרגיל א: $\int_0^1\frac{dx}{\sqrt{1-x^2}}$</h3>
+<div class="sim"><div class="st-title">סימולציה: הקצה הבעייתי הוא $x=1$</div>
+<ol class="map"><li>1. מוצאים את הבעיה</li><li>2. לגבול</li><li>3. קדומה</li><li>4. גבול</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$\frac1{\sqrt{1-x^2}}\ \xrightarrow{x\to1^-}\ \infty$</div><div class="x">ב-$x=1$ המכנה הוא 0, אז הפונקציה מתפוצצת שם. ב-$x=0$ הכול בסדר ($f(0)=1$). לכן הבעיה בקצה ה<b>ימני</b>.</div><div class="st"><span><i>בעיה</i>ב-$x=1$</span></div></div>
+<div class="step" data-m="1"><div class="f">$\int_0^1\frac{dx}{\sqrt{1-x^2}}=\lim\limits_{\class{amb}{\varepsilon}\to0^+}\int_0^{1-\class{amb}{\varepsilon}}\frac{dx}{\sqrt{1-x^2}}$</div><div class="x">עוצרים קצת לפני הקצה הבעייתי, ב-$1-\varepsilon$. במחברת מוסיפים בסוגריים: אפשר גם לכתוב $\lim\limits_{b\to1^-}\int_0^b$, זה אותו דבר.</div><div class="st"><span><i>קצה</i>$1-\varepsilon$</span></div></div>
+<div class="step" data-m="2"><div class="f">$=\lim\limits_{\varepsilon\to0^+}\arcsin x\Big|_0^{1-\varepsilon}$</div><div class="x">$\arcsin$ היא הקדומה: הנגזרת שלה היא בדיוק $\frac1{\sqrt{1-x^2}}$.</div><div class="st"><span><i>קדומה</i>$\arcsin x$</span></div></div>
+<div class="step" data-m="3"><div class="f"><span class="ans">$=\lim\limits_{\varepsilon\to0^+}\arcsin(1-\varepsilon)=\frac\pi2$</span></div><div class="x">$\arcsin 0=0$. ו-$\arcsin 1=\frac\pi2$, כי $\sin\frac\pi2=1$. האינטגרל <span class="eme">מתכנס</span>.</div><div class="st"><span><i>תשובה</i>$\frac\pi2$</span></div></div>
+</div></div>
+<div class="tool"><b>המחשה: השטח עד $1-\varepsilon$ מתקרב ל-$\frac\pi2$</b>
+<label for="s5e">הקטינו את $\varepsilon$:</label><input type="range" id="s5e" min="0" max="100" value="30">
+<svg id="s5svg" viewBox="0 0 400 220" role="img" aria-label="גרף הפונקציה ושטח עד אחד פחות אפסילון"></svg>
+<p class="out" id="s5out"></p></div>
+<div class="box rule"><b>הכלל לזכור</b>לפני כל אינטגרל שואלים: הקטע סופי? הפונקציה חסומה בו? בעיה בקצה = לא אמיתי מסוג 2.</div>
+<div class="quiz"><div class="qt">שאלות על סעיף 5</div>
+<div class="qq" data-a="1"><p class="q">באינטגרל $\int_0^1\frac{dx}{\sqrt{1-x^2}}$, איפה הפונקציה לא חסומה?</p><ol><li>ב-$x=0$, כי שם המכנה הכי גדול בקטע</li><li>ב-$x=1$, כי שם המכנה שווה בדיוק ל-0</li><li>ב-$x=\frac12$, כי זו נקודת האמצע של הקטע</li><li>בכל הקטע, כי יש שורש במכנה של הפונקציה</li></ol><p class="h">רמז: הציבו את שני הקצוות במכנה.</p><p class="e">נכון. לכן עוצרים ב-$1-\varepsilon$.</p></div>
+<div class="qq" data-a="0"><p class="q">איזה מהאינטגרלים הבאים הוא לא אמיתי מסוג 2?</p><ol><li>$\int_0^1\frac{dx}{x}$, כי הפונקציה מתפוצצת ב-0</li><li>$\int_1^2\frac{dx}{x}$, כי יש $x$ במכנה של הפונקציה</li><li>$\int_0^\infty e^{-x}dx$, כי הקטע שלו אינסופי</li><li>$\int_0^1 x^2dx$, כי הפונקציה מתאפסת ב-0</li></ol><p class="h">רמז: סוג 2 = קטע סופי, פונקציה לא חסומה בקצה.</p><p class="e">נכון. $\int_1^2\frac{dx}x$ רגיל, כי $x$ לא מגיע ל-0.</p></div>
+<div class="qq" data-a="3"><p class="q">כמה זה $\int_0^1\frac{dx}{\sqrt x}$ לפי החישוב עם $\varepsilon$?</p><ol><li>$\frac12$, כי החזקה של $x$ היא $\frac12$</li><li>$1$, כי זה אורך הקטע שעליו מסכמים</li><li>$\infty$, כי הפונקציה מתפוצצת באפס</li><li>$2$, כי $2-2\sqrt\varepsilon\to2$ כש-$\varepsilon\to0^+$</li></ol><p class="h">רמז: הציבו $\varepsilon=0$ בביטוי $2-2\sqrt\varepsilon$.</p><p class="e">נכון. פונקציה שמתפוצצת יכולה להיות עם שטח סופי.</p></div>
+<div class="qq" data-a="2"><p class="q">למה $\arcsin 1=\frac\pi2$?</p><ol><li>כי $\cos\frac\pi2=1$ לפי הזהויות של הזווית</li><li>כי $\arcsin$ של כל מספר חיובי הוא $\frac\pi2$</li><li>כי $\sin\frac\pi2=1$, ו-$\arcsin$ היא הפעולה ההפוכה</li><li>כי $\frac\pi2$ הוא הערך הקטן ביותר של $\arcsin$</li></ol><p class="h">רמז: $\arcsin y$ הוא הזווית ש-$\sin$ שלה שווה ל-$y$.</p><p class="e">נכון. $\arcsin$ מחזירה את הזווית.</p></div>
+</div>
+</section>
+
+<!-- ============ 6 ============ -->
+<section class="sec" id="s6" data-short="תרגיל ב: &lt;bdi dir=ltr&gt;1/xᵖ&lt;/bdi&gt; ליד אפס">
+<h2>תרגיל ב: $\int_0^b\frac{dx}{x^{\class{mag}{p}}}$ (עם $b\gt 0$)</h2>
+<p>אותה פונקציה כמו בסעיף 3, אבל הפעם הבעיה היא ב-0. התשובה <b>הפוכה</b>!</p>
+<div class="box mine"><b>למה הפוך? (עם מספרים) — הדוגמה שלי</b>
+<ol>
+<li>שלב 1 – ליד 0 חשוב מי <b>מתפוצץ לאט</b>. ליד אינסוף חשוב מי <b>יורד מהר</b>.</li>
+<li>שלב 2 – ב-$x=0.01$: $\frac1{x^{1/2}}=10$ ואילו $\frac1{x^2}=10000$.</li>
+<li>שלב 3 – ב-$x=100$: $\frac1{x^{1/2}}=0.1$ ואילו $\frac1{x^2}=0.0001$.</li>
+<li>שלב 4 – כלומר $p$ גדול עוזר באינסוף (יורד מהר), ומזיק ליד 0 (מתפוצץ מהר).</li>
+</ol></div>
+<div class="sim"><div class="st-title">סימולציה: תרגיל ב, כל המקרים</div>
+<ol class="map"><li>1. לגבול</li><li>2. קדומה</li><li>3. בודקים p</li><li>4. p שווה 1</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$\int_0^b\frac{dx}{x^p}=\lim\limits_{\class{amb}{\varepsilon}\to0^+}\int_{\class{amb}{\varepsilon}}^b x^{-p}dx$</div><div class="x">הפונקציה לא חסומה ב-0, אז מתחילים מ-$\varepsilon$.</div><div class="st"><span><i>קצה</i>$\varepsilon$</span></div></div>
+<div class="step" data-m="1"><div class="f">$=\lim\limits_{\varepsilon\to0^+}\frac{x^{-p+1}}{-p+1}\Big|_\varepsilon^b=\lim\limits_{\varepsilon\to0^+}\left(\frac{b^{1-p}}{1-p}-\frac{\varepsilon^{1-p}}{1-p}\right)$</div><div class="x">נוסחת החזקה (עבור $p\ne1$, כתוב גם במחברת).</div><div class="st"><span><i>מקרה</i>$p\ne1$</span></div></div>
+<div class="step" data-m="2"><div class="f">$p\gt 1:\ \varepsilon^{1-p}=\frac1{\varepsilon^{p-1}}\to\infty$</div><div class="x">החזקה שלילית, ומספר קטן בחזקה שלילית הוא ענק. למשל $p=2$: $\frac1\varepsilon$. לכן <span class="bur">מתבדר</span>.</div><div class="st"><span><i>מצב</i>מתבדר</span></div></div>
+<div class="step" data-m="2"><div class="f">$p\lt 1:\ \varepsilon^{1-p}\to0\ \Rightarrow\ \int_0^b\frac{dx}{x^p}=\frac{b^{1-p}}{1-p}$</div><div class="x">החזקה חיובית, ולכן $\varepsilon^{1-p}$ שואף ל-0. יוצא מספר סופי: <span class="eme">מתכנס</span>.</div><div class="st"><span><i>מצב</i>מתכנס</span></div></div>
+<div class="step" data-m="3"><div class="f"><span class="ans">$p=1:\ \lim\limits_{\varepsilon\to0^+}\ln x\Big|_\varepsilon^b=\lim\limits_{\varepsilon\to0^+}(\ln b-\ln\varepsilon)=\infty$</span></div><div class="x">כש-$\varepsilon\to0^+$, $\ln\varepsilon\to-\infty$, ולכן $-\ln\varepsilon\to+\infty$. <span class="bur">מתבדר</span>.</div><div class="st"><span><i>מצב</i>מתבדר</span></div></div>
+</div></div>
+<div class="tool"><b>המחשה: בחרו $p$ וראו מה קורה בשני הצדדים של $x=1$</b>
+<label for="s6p">הפרמטר $p$:</label><input type="range" id="s6p" min="0.1" max="3" step="0.05" value="0.5">
+<svg id="s6svg" viewBox="0 0 400 220" role="img" aria-label="הפונקציה אחד חלקי x בחזקת p משני צדי x שווה 1"></svg>
+<p class="out" id="s6out"></p></div>
+<div class="tw"><table><tr><th>$p$</th><th>$\int_0^1\frac{dx}{x^p}$ (ליד 0)</th><th>$\int_1^\infty\frac{dx}{x^p}$ (ליד אינסוף)</th></tr>
+<tr><td>$p\lt 1$</td><td class="eme">מתכנס ל-$\frac1{1-p}$</td><td class="bur">מתבדר</td></tr>
+<tr><td>$p=1$</td><td class="bur">מתבדר</td><td class="bur">מתבדר</td></tr>
+<tr><td>$p\gt 1$</td><td class="bur">מתבדר</td><td class="eme">מתכנס ל-$\frac1{p-1}$</td></tr>
+</table></div>
+<div class="box fix"><b>הערה שלי על המחברת</b>במחברת המקרה $p\gt 1$ כתוב במילה אחת: "מתבדר". הוספתי את הסיבה: $\varepsilon^{1-p}$ הוא $\frac1{\varepsilon^{p-1}}$. וגם: עבור $p\le 0$ אין כאן בעיה בכלל, כי הפונקציה חסומה, והנוסחה עובדת כרגיל.</div>
+<div class="box rule"><b>הכלל לזכור</b>ליד אינסוף צריך $p\gt 1$. ליד 0 צריך $p\lt 1$. עם $p=1$ מתבדר בשניהם.</div>
+<div class="quiz"><div class="qt">שאלות על סעיף 6</div>
+<div class="qq" data-a="1"><p class="q">עבור איזה $p$ האינטגרל $\int_0^1\frac{dx}{x^p}$ מתכנס?</p><ol><li>$p=2$, כי החזקה גדולה מ-1</li><li>$p=\frac13$, כי החזקה קטנה מ-1</li><li>$p=1$, כי הקדומה היא $\ln$</li><li>$p=3$, כי הפונקציה יורדת מהר</li></ol><p class="h">רמז: ליד 0 צריך $p\lt 1$.</p><p class="e">נכון. ההפך מאינסוף.</p></div>
+<div class="qq" data-a="3"><p class="q">מה הערך של $\int_0^1\frac{dx}{x^{1/2}}$ לפי $\frac{b^{1-p}}{1-p}$?</p><ol><li>$\frac12$, כי $1-p=\frac12$ והוא במכנה</li><li>$1$, כי $1^{1-p}=1$ לכל חזקה $p$</li><li>$\infty$, כי הפונקציה לא חסומה ב-0</li><li>$2$, כי מחלקים 1 ב-$\frac12$</li></ol><p class="h">רמז: הציבו $b=1$ ו-$p=\frac12$.</p><p class="e">נכון. בדיוק מה שקיבלנו עם $\varepsilon$ בסעיף 5.</p></div>
+<div class="qq" data-a="0"><p class="q">איזו טענה נכונה לגבי $p=1$?</p><ol><li>מתבדר גם ליד 0 וגם ליד אינסוף</li><li>מתכנס ליד 0 ומתבדר ליד אינסוף</li><li>מתבדר ליד 0 ומתכנס ליד אינסוף</li><li>מתכנס גם ליד 0 וגם ליד אינסוף</li></ol><p class="h">רמז: חשבו על $\ln x$ בשני הקצוות.</p><p class="e">נכון. $\ln x$ בורח גם ב-0 וגם באינסוף.</p></div>
+<div class="qq" data-a="2"><p class="q">למה עבור $p=3$ מתקיים $\int_0^1\frac{dx}{x^3}=\infty$?</p><ol><li>כי $\varepsilon^{1-p}$ שואף ל-0 כש-$\varepsilon$ מתקטן</li><li>כי $b^{1-p}$ שואף לאינסוף כש-$b$ שואף ל-1</li><li>כי $\varepsilon^{-2}$ ענק כש-$\varepsilon$ מתקטן</li><li>כי $\frac1{x^3}$ שלילית בכל הקטע $(0,1]$</li></ol><p class="h">רמז: $1-p=-2$.</p><p class="e">נכון. $\varepsilon^{-2}=\frac1{\varepsilon^2}$, ולכן השטח מתפוצץ.</p></div>
+</div>
+</section>
+
+<!-- ============ 7 ============ -->
+<section class="sec" id="s7" data-short="מבחן ההשוואה הראשון">
+<h2>טענת הזנב ומבחן ההשוואה הראשון</h2>
+<p>לרוב אי אפשר למצוא קדומה. אז שואלים רק שאלה אחת: <b>מתכנס או לא?</b> בשביל זה יש מבחנים. קודם טענה קטנה שנצטרך.</p>
+<div class="box mine"><b>הזנב קובע (עם מספרים) — הדוגמה שלי</b>
+<ol>
+<li>שלב 1 – $\int_1^\infty\frac{dx}{x^2}=1$.</li>
+<li>שלב 2 – חותכים ב-5: החלק הסופי הוא $\int_1^5\frac{dx}{x^2}=1-\frac15=0.8$.</li>
+<li>שלב 3 – הזנב: $\int_5^\infty\frac{dx}{x^2}=\frac15=0.2$.</li>
+<li>שלב 4 – בודקים: $0.8+0.2=1$. החלק הסופי הוא סתם מספר, ולא משפיע על התכנסות.</li>
+</ol></div>
+<div class="box rule"><b>טענה (מהמחברת)</b>לכל $a\lt b$: אם $\int_a^b f$ קיים וסופי, אז $\int_a^\infty f=\int_a^b f+\int_b^\infty f$. ולכן $\int_a^\infty f$ מתכנס $\iff$ $\int_b^\infty f$ מתכנס.</div>
+<div class="box mine"><b>מבחן ההשוואה הראשון — קודם עם מספרים (הדוגמה שלי)</b>
+<ol>
+<li>שלב 1 – רוצים לדעת על $\int_1^\infty\frac{dx}{x^2+5}$. קשה לחשב ישירות.</li>
+<li>שלב 2 – נשווה: לכל $x$, $x^2+5\gt x^2$, ולכן $\frac1{x^2+5}\lt\frac1{x^2}$.</li>
+<li>שלב 3 – הגדולה, $\frac1{x^2}$, נותנת שטח $1$.</li>
+<li>שלב 4 – הקטנה נמצאת מתחת לגרף של הגדולה, אז השטח שלה קטן מ-1. <span class="eme">מתכנס</span>.</li>
+</ol></div>
+<div class="box rule"><b>משפט: מבחן ההשוואה הראשון</b>נניח ש-$f$ ו-$g$ מוגדרות בקטע $[a,\infty)$ ואינטגרביליות ב-$[a,t]$ לכל $t\ge a$. נניח שקיים $b\ge a$ כך שלכל $x\ge b$ מתקיים $\class{olv}{f(x)}\ge\class{red}{g(x)}\ge0$. אז:
+<ol><li>אם $\int_a^\infty\class{olv}{f}$ <span class="eme">מתכנס</span>, אז $\int_a^\infty\class{red}{g}$ <span class="eme">מתכנס</span>.</li>
+<li>אם $\int_a^\infty\class{red}{g}$ <span class="bur">מתבדר</span>, אז $\int_a^\infty\class{olv}{f}$ <span class="bur">מתבדר</span>.</li></ol>
+<b>חובה: הפונקציות אי-שליליות!</b></div>
+<div class="tw"><table><tr><th>מה ידוע</th><th>מה מסיקים</th></tr>
+<tr><td>הגדולה <span class="eme">מתכנסת</span></td><td>הקטנה <span class="eme">מתכנסת</span></td></tr>
+<tr><td>הקטנה <span class="bur">מתבדרת</span></td><td>הגדולה <span class="bur">מתבדרת</span></td></tr>
+<tr><td>הגדולה <span class="bur">מתבדרת</span></td><td>לא מסיקים כלום</td></tr>
+<tr><td>הקטנה <span class="eme">מתכנסת</span></td><td>לא מסיקים כלום</td></tr>
+</table></div>
+<h3>תרגיל: $I=\int_1^\infty\frac{dx}{\sqrt x\,\sqrt[3]{x^2+1}}$</h3>
+<div class="sim"><div class="st-title">סימולציה: מבחן ראשון עם $\frac1{x^{7/6}}$</div>
+<ol class="map"><li>1. מורידים פרט</li><li>2. מפשטים חזקות</li><li>3. הפונקציה הידועה</li><li>4. המבחן</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$\frac1{\sqrt x\,\sqrt[3]{x^2+1}}$</div><div class="x">הפונקציה חיובית, אז מותר להשתמש במבחן. הקושי: $+1$ בתוך השורש. נפטרים ממנו.</div><div class="st"><span><i>שלב</i>התחלה</span></div></div>
+<div class="step" data-m="0"><div class="f">$\frac1{\sqrt x\,\sqrt[3]{x^2+1}}\le\frac1{\sqrt x\,\sqrt[3]{x^2}}$</div><div class="x">$x^2+1\ge x^2$. מכנה גדול יותר נותן שבר קטן יותר. לכן הורדת ה-$+1$ <b>מגדילה</b> את השבר. כיוון האי-שוויון: "אני קטן מ-".</div><div class="st"><span><i>שלב</i>הורדנו $+1$</span></div></div>
+<div class="step" data-m="1"><div class="f">$=\frac1{x^{1/2}\cdot x^{2/3}}=\frac1{x^{1/2+2/3}}=\frac1{x^{7/6}}$</div><div class="x">מחברים חזקות: $\frac12+\frac23=\frac36+\frac46=\frac76$.</div><div class="st"><span><i>חזקה</i>$\frac76$</span></div></div>
+<div class="step" data-m="2"><div class="f">$\int_1^\infty\frac{dx}{x^{7/6}}\ \text{converges},\quad \frac76\gt 1$</div><div class="x">לפי סעיף 3, כי $p=\frac76\gt 1$.</div><div class="st"><span><i>הגדולה</i>מתכנסת</span></div></div>
+<div class="step" data-m="3"><div class="f"><span class="ans">$I$ מתכנס</span></div><div class="x">במונחי המשפט: $\class{olv}{f}=\frac1{x^{7/6}}$ היא הגדולה, $\class{red}{g}$ היא האינטגרנד של $I$. הגדולה מתכנסת, לכן הקטנה מתכנסת.</div><div class="st"><span><i>מצב</i>מתכנס</span></div></div>
+</div></div>
+<div class="box terms"><b>שימו לב לשמות</b>במשפט $f$ היא <b>הגדולה</b> ו-$g$ <b>הקטנה</b>. בתרגיל הפונקציה שמעניינת אותנו היא דווקא הקטנה. אל תתבלבלו: השמות במשפט הם לפי הגודל.</div>
+<div class="tool"><b>המחשה: האינטגרנד תמיד מתחת ל-$\frac1{x^{7/6}}$</b>
+<label for="s7x">הזיזו את $x$:</label><input type="range" id="s7x" min="1" max="30" step="0.1" value="3">
+<svg id="s7svg" viewBox="0 0 400 220" role="img" aria-label="גרף האינטגרנד והפונקציה הגדולה"></svg>
+<p class="out" id="s7out"></p></div>
+<div class="box rule"><b>הכלל לזכור</b>מורידים פרטים קטנים כדי להגיע ל-$\frac1{x^p}$, ובודקים לאיזה כיוון האי-שוויון. רק גדולה מתכנסת או קטנה מתבדרת נותנות מסקנה.</div>
+<div class="quiz"><div class="qt">שאלות על סעיף 7</div>
+<div class="qq" data-a="2"><p class="q">נתון $0\le g(x)\le f(x)$ לכל $x\ge1$, ו-$\int_1^\infty f$ מתבדר. מה נובע על $\int_1^\infty g$?</p><ol><li>גם $\int g$ מתבדר, כי הוא קטן מ-$\int f$</li><li>$\int g$ מתכנס, כי הוא קטן מדבר שמתבדר</li><li>כלום: הידיעה על הגדולה שמתבדרת לא עוזרת</li><li>$\int g$ שווה ל-0, כי $g$ קטנה מ-$f$ בכל הקטע</li></ol><p class="h">רמז: איזה מהכיוונים במשפט מדבר על הגדולה שמתבדרת?</p><p class="e">נכון. למשל $f=\frac1x$ עם $g=\frac1{x^2}$ ועם $g=\frac1{2x}$: ה-$g$ הראשון מתכנס והשני מתבדר.</p></div>
+<div class="qq" data-a="0"><p class="q">למה $\int_1^\infty\frac{dx}{x^2+5}$ מתכנס?</p><ol><li>כי $\frac1{x^2+5}\le\frac1{x^2}$, ו-$\int_1^\infty\frac{dx}{x^2}$ מתכנס</li><li>כי $\frac1{x^2+5}\ge\frac1{x^2}$, ו-$\int_1^\infty\frac{dx}{x^2}$ מתכנס</li><li>כי $\frac1{x^2+5}\le\frac1{x}$, ו-$\int_1^\infty\frac{dx}{x}$ מתבדר</li><li>כי $\frac1{x^2+5}\to0$, וזה מספיק כדי להתכנס</li></ol><p class="h">רמז: כדי להוכיח התכנסות צריך לשים את הפונקציה מתחת למשהו שמתכנס.</p><p class="e">נכון. קטנה מתחת לגדולה שמתכנסת.</p></div>
+<div class="qq" data-a="3"><p class="q">בתרגיל $I$, למה הורדת ה-$+1$ שומרת על הכיוון הנכון?</p><ol><li>כי $\sqrt[3]{x^2+1}$ קטן מ-$\sqrt[3]{x^2}$, ולכן השבר גדל</li><li>כי השורש השלישי הופך את הכיוון של האי-שוויון</li><li>כי $x$ קטן מ-1 בכל הקטע $[1,\infty)$ כולו</li><li>כי מכנה קטן יותר נותן שבר גדול יותר, וזה מה שרצינו</li></ol><p class="h">רמז: מה קרה למכנה כשהורדנו את ה-$+1$?</p><p class="e">נכון. המכנה קטן, השבר גדל, ולכן הפונקציה המקורית מתחת לחדשה.</p></div>
+<div class="qq" data-a="1"><p class="q">מה החזקה של $x$ במכפלה $\sqrt x\cdot\sqrt[3]{x^2}$?</p><ol><li>$\frac13$, כי מכפילים את שתי החזקות</li><li>$\frac76$, כי מחברים $\frac12+\frac23$</li><li>$\frac56$, כי מחברים $\frac12+\frac13$</li><li>$\frac32$, כי מחברים $\frac12+1$</li></ol><p class="h">רמז: $\sqrt[3]{x^2}=x^{2/3}$.</p><p class="e">נכון. במכפלה מחברים חזקות.</p></div>
+</div>
+</section>
+
+<!-- ============ 8 ============ -->
+<section class="sec" id="s8" data-short="מבחן ההשוואה הגבולי">
+<h2>מבחן ההשוואה השני (הגבולי)</h2>
+<p>לפעמים קשה לכתוב אי-שוויון. במקום זה בודקים את המנה $\frac fg$.</p>
+<div class="box mine"><b>מה בודק המבחן? (עם מספרים) — הדוגמה שלי</b>
+<ol>
+<li>שלב 1 – $f=\frac1{x^2+5x}$ ו-$g=\frac1{x^2}$. המנה: $\frac fg=\frac{x^2}{x^2+5x}=\frac{x}{x+5}$.</li>
+<li>שלב 2 – $x=10$: $\frac{10}{15}\approx0.67$. $x=100$: $\frac{100}{105}\approx0.95$. $x=1000$: $\approx0.995$.</li>
+<li>שלב 3 – המנה שואפת ל-$\class{jad}{L}=1$. כלומר באינסוף שתי הפונקציות כמעט זהות.</li>
+<li>שלב 4 – אם הן כמעט זהות באינסוף, הן חייבות להתנהג אותו דבר: <span class="eme">שתיהן מתכנסות</span> או <span class="bur">שתיהן מתבדרות</span>.</li>
+<li>שלב 5 – כאן $\int_1^\infty g$ מתכנס, לכן גם $\int_1^\infty f$ מתכנס.</li>
+</ol></div>
+<div class="box rule"><b>משפט: מבחן ההשוואה השני</b>תהיינה $f,g$ פונקציות אי-שליליות ב-$[a,\infty)$ ואינטגרביליות בכל קטע $[a,b]$. נניח שקיים הגבול $\class{jad}{L}=\lim\limits_{x\to\infty}\frac{f(x)}{g(x)}$.
+<ul>
+<li>אם $0\lt\class{jad}{L}\lt\infty$: $\int_a^\infty f$ ו-$\int_a^\infty g$ מתכנסים ומתבדרים יחד.</li>
+<li>אם $\class{jad}{L}=0$: אם $\int_a^\infty g$ מתכנס אז $\int_a^\infty f$ מתכנס.</li>
+<li>אם $\class{jad}{L}=\infty$: אם $\int_a^\infty g$ מתבדר אז $\int_a^\infty f$ מתבדר.</li>
+</ul></div>
+<div class="box mine"><b>למה זה עובד? רעיון ההוכחה — ההשלמה שלי</b>אם $\class{jad}{L}=2$, אז מ-$x$ מסוים והלאה המנה בין 1 ל-3, כלומר $g\le f\le 3g$. עכשיו זה מבחן ההשוואה הראשון, בשני הכיוונים. אם $\class{jad}{L}=0$, אז מ-$x$ מסוים $f\le g$. ואם $\class{jad}{L}=\infty$, אז מ-$x$ מסוים $f\ge g$.</div>
+<div class="tw"><table><tr><th>$L$</th><th>מה יוצא</th><th>מה לא יוצא</th></tr>
+<tr><td>$0\lt L\lt\infty$</td><td>שתיהן אותו דבר</td><td>תמיד יש מסקנה</td></tr>
+<tr><td>$L=0$ ($f$ קטנה בהרבה)</td><td>$g$ מתכנסת $\Rightarrow$ $f$ מתכנסת</td><td>$g$ מתבדרת: לא מסיקים</td></tr>
+<tr><td>$L=\infty$ ($f$ גדולה בהרבה)</td><td>$g$ מתבדרת $\Rightarrow$ $f$ מתבדרת</td><td>$g$ מתכנסת: לא מסיקים</td></tr>
+</table></div>
+<div class="tool"><b>המחשה: מה עושה המנה $f/g$ באינסוף</b>
+<div class="row"><label for="s8sel">בחרו זוג:</label>
+<select id="s8sel"><option value="0">f = 1/(x²+5x), g = 1/x²</option><option value="1">f = 1/x³, g = 1/x²</option><option value="2">f = 1/√x, g = 1/x</option></select></div>
+<label for="s8x">הזיזו את $x$:</label><input type="range" id="s8x" min="1" max="200" value="20">
+<svg id="s8svg" viewBox="0 0 400 200" role="img" aria-label="המנה f חלקי g כפונקציה של x"></svg>
+<p class="out" id="s8out"></p></div>
+<div class="box fix"><b>הערה שלי על המחברת</b>במחברת כתוב "פונקציות אי-שליליות". כדי שהמנה $\frac fg$ תהיה מוגדרת צריך גם $g(x)\gt 0$ (לפחות מ-$x$ מסוים והלאה).</div>
+<div class="box rule"><b>הכלל לזכור</b>בוחרים $g$ שהיא $\frac1{x^p}$ עם אותו קצב כמו $f$, ואז המנה נותנת $L$ חיובי סופי, ומקבלים תשובה.</div>
+<div class="quiz"><div class="qt">שאלות על סעיף 8</div>
+<div class="qq" data-a="0"><p class="q">נתון $L=\lim\frac fg=7$ ו-$\int_1^\infty g$ מתבדר. מה נובע על $\int_1^\infty f$?</p><ol><li>מתבדר, כי עם $L$ חיובי סופי הן מתנהגות יחד</li><li>מתכנס, כי $L$ הוא מספר סופי ולכן השטח סופי</li><li>לא ניתן לדעת, כי $L$ גדול מ-1 ואין מסקנה</li><li>מתכנס, כי $f$ קטנה מ-$g$ מנקודה מסוימת</li></ol><p class="h">רמז: איזה מקרה במשפט מתאים ל-$0\lt L\lt\infty$?</p><p class="e">נכון. $L=7$ הוא מספר חיובי סופי.</p></div>
+<div class="qq" data-a="2"><p class="q">נתון $L=0$ ו-$\int_1^\infty g$ מתבדר. מה נובע על $\int_1^\infty f$?</p><ol><li>מתבדר, כי במקרה $L=0$ הן מתנהגות יחד</li><li>מתכנס, כי $L=0$ אומר ש-$f$ שואפת ל-0</li><li>כלום: במקרה $L=0$ מסיקים רק כש-$g$ מתכנס</li><li>מתבדר, כי $f$ גדולה מ-$g$ מנקודה מסוימת</li></ol><p class="h">רמז: חזרו לטבלה, עמודה "מה לא יוצא".</p><p class="e">נכון. למשל $f=\frac1{x^2}$, $g=\frac1x$: $L=0$, $g$ מתבדר ו-$f$ מתכנס. ואם $f=\frac1{x\ln x}$ — מתבדר. שני המצבים אפשריים.</p></div>
+<div class="qq" data-a="3"><p class="q">עבור $f=\frac{3x+1}{x^3}$ ו-$g=\frac1{x^2}$, מה הערך של $L$?</p><ol><li>$0$, כי $f$ קטנה מ-$g$ באינסוף</li><li>$1$, כי שתיהן שואפות לאפס באינסוף</li><li>$\infty$, כי במונה של $f$ יש $3x$</li><li>$3$, כי $\frac fg=\frac{3x+1}{x}\to3$</li></ol><p class="h">רמז: חלקו שברים: $\frac{3x+1}{x^3}\cdot x^2$.</p><p class="e">נכון. $L=3$, ולכן $\int f$ מתנהג כמו $\int\frac1{x^2}$, כלומר מתכנס.</p></div>
+<div class="qq" data-a="1"><p class="q">למה המבחן דורש $g\gt 0$ בנוסף ל-$f\ge0$?</p><ol><li>כי $g$ שלילית תהפוך את כיוון כל האי-שוויונות</li><li>כי מחלקים ב-$g$ במנה, ואסור לחלק ב-0</li><li>כי $g$ חייבת להיות מתכנסת כדי לקבל מסקנה</li><li>כי $f$ תמיד גדולה מ-$g$ בקטע $[a,\infty)$</li></ol><p class="h">רמז: מה יש במכנה של $\frac fg$?</p><p class="e">נכון. המנה חייבת להיות מוגדרת.</p></div>
+</div>
+</section>
+
+<!-- ============ 9 ============ -->
+<section class="sec" id="s9" data-short="התרגיל הקשה: &lt;bdi dir=ltr&gt;sin(1000/√…)&lt;/bdi&gt;">
+<h2>התרגיל הקשה: $I=\int_1^\infty\sin\!\left(\frac{1000}{\sqrt{x^2+1}}\right)dx$</h2>
+<div class="box terms"><b>למה התרגיל קשה? שלושה דברים</b>
+<ul>
+<li>אין קדומה ידועה ל-$\sin\frac{1000}{\sqrt{x^2+1}}$. אז רק מבחנים.</li>
+<li>מבחני השוואה דורשים פונקציה אי-שלילית. אבל $\sin$ יכול להיות שלילי: ב-$x=1$ הערך הוא $\sin(707.1)\approx-0.25$.</li>
+<li>הפתרון: לזנב יש סימן קבוע. בודקים רק אותו (טענת הזנב מסעיף 7).</li>
+</ul></div>
+<div class="tw"><table><tr><th>שלב</th><th>מה עושים</th></tr>
+<tr><td>1</td><td>מראים שהפונקציה חיובית מ-$x_0$ והלאה</td></tr>
+<tr><td>2</td><td>טענת הזנב: מספיק לבדוק על $[x_0,\infty)$</td></tr>
+<tr><td>3</td><td>משווים ל-$g=\frac{1000}{\sqrt{x^2+1}}$ (מבחן 2)</td></tr>
+<tr><td>4</td><td>בודקים את $g$ מול $\frac1x$ (מבחן 2 עוד פעם)</td></tr>
+<tr><td>5</td><td>שרשרת המסקנות</td></tr>
+</table></div>
+<div class="sim"><div class="st-title">סימולציה: התרגיל, צעד אחר צעד</div>
+<ol class="map"><li>1. חיובית מ-$x_0$</li><li>2. הזנב</li><li>3. מול g</li><li>4. g מול 1/x</li><li>5. מסקנה</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$u(x)=\frac{1000}{\sqrt{x^2+1}}\gt 0,\qquad \lim\limits_{x\to\infty}u(x)=0$</div><div class="x">כדי להבין מתי $\sin$ חיובי, נסתכל על מה שבפנים. קוראים לו $u$. הוא חיובי ושואף ל-0.</div><div class="st"><span><i>u</i>חיובי, שואף ל-0</span></div></div>
+<div class="step" data-m="0"><div class="f">$\varepsilon=\pi\ \Rightarrow\ \exists\,\class{nav}{x_0}:\ \forall x\gt\class{nav}{x_0},\ 0\lt u(x)\lt\pi$</div><div class="x">הגדרת הגבול עם $\varepsilon=\pi$: מנקודה מסוימת $u$ קטן מ-$\pi$. במקרה שלנו: $\sqrt{x^2+1}\gt\frac{1000}\pi$, כלומר $x_0\approx318.3$ (המספר שלי, במחברת $x_0$ כללי).</div><div class="st"><span><i>$x_0$</i>$\approx 318.3$</span></div></div>
+<div class="step" data-m="0"><div class="f">$0\lt u\lt\pi\ \Rightarrow\ \sin u\gt 0$</div><div class="x">$\sin$ חיובי בין 0 ל-$\pi$. לכן מ-$x_0$ והלאה הפונקציה שלנו חיובית.</div><div class="st"><span><i>$x_0$</i>$\approx 318.3$</span><span><i>f</i>חיובית</span></div></div>
+<div class="step" data-m="1"><div class="f">$\int_1^\infty f\ \text{converges}\iff\int_{x_0}^\infty f\ \text{converges}$</div><div class="x">טענת הזנב. החלק $\int_1^{x_0}$ הוא אינטגרל רגיל של פונקציה רציפה, לכן הוא מספר סופי.</div><div class="st"><span><i>קטע</i>$[x_0,\infty)$</span></div></div>
+<div class="step" data-m="2"><div class="f">$g(x)=\frac{1000}{\sqrt{x^2+1}},\qquad \lim\limits_{x\to\infty}\frac{f(x)}{g(x)}=\lim\limits_{u\to0}\frac{\sin u}{u}=\class{jad}{1}$</div><div class="x">$f=\sin u$ ו-$g=u$. הגבול המפורסם $\frac{\sin u}{u}\to1$ כש-$u\to0$. מותר כי $u\to0$ כש-$x\to\infty$.</div><div class="st"><span><i>L</i>$1$</span></div></div>
+<div class="step" data-m="2"><div class="f">$0\lt\class{jad}{L}=1\lt\infty\Rightarrow\ \int f,\int g$ together</div><div class="x">מבחן 2: מתכנסים ומתבדרים יחד. נותר לבדוק את $g$. הפונקציה $g$ חיובית, בלי בעיות סימן.</div><div class="st"><span><i>L</i>$1$</span><span><i>נותר</i>לבדוק $g$</span></div></div>
+<div class="step" data-m="3"><div class="f">$h(x)=\frac1x,\qquad \lim\limits_{x\to\infty}\frac{g(x)}{h(x)}=\lim\limits_{x\to\infty}\frac{1000\,x}{\sqrt{x^2+1}}=\class{jad}{1000}$</div><div class="x">נחלק מונה ומכנה ב-$x$: $\frac{1000}{\sqrt{1+1/x^2}}\to1000$. מבחן 2 שוב: $L=1000$ הוא חיובי סופי.</div><div class="st"><span><i>L שני</i>$1000$</span></div></div>
+<div class="step" data-m="3"><div class="f">$\int_1^\infty\frac{dx}{x}\ \text{diverges}\ \Rightarrow\ \int_1^\infty g\ \text{diverges}$</div><div class="x">$\frac1x$ מתבדר (סעיף 3, $p=1$), ולכן גם $g$ <span class="bur">מתבדר</span>.</div><div class="st"><span><i>g</i>מתבדר</span></div></div>
+<div class="step" data-m="4"><div class="f"><span class="ans">$I$ מתבדר</span></div><div class="x">שרשרת: $\frac1x$ מתבדר $\Rightarrow$ $g$ מתבדר $\Rightarrow$ $f$ מתבדר על $[x_0,\infty)$ $\Rightarrow$ $I$ <span class="bur">מתבדר</span>.</div><div class="st"><span><i>מצב</i>מתבדר</span></div></div>
+</div></div>
+<div class="tool"><b>המחשה: לפני $x_0$ הפונקציה משתוללת, אחריו היא חיובית</b>
+<label for="s9x">הזיזו את $x$ (סקלה לוגריתמית):</label><input type="range" id="s9x" min="0" max="100" value="60">
+<svg id="s9svg" viewBox="0 0 400 200" role="img" aria-label="גרף הפונקציה sin של 1000 חלקי שורש x בריבוע ועוד 1"></svg>
+<p class="out" id="s9out"></p></div>
+<div class="box fix"><b>הערות שלי על המחברת</b>
+<ul>
+<li>בשורה של הפונקציה $\frac1x$ הכתיב נראה כמו $\ln(x)=\frac1x$. הכוונה לפונקציית עזר $h(x)=\frac1x$. הפונקציה $\ln x$ לא קשורה לכאן.</li>
+<li>השלמתי את המספר $x_0\approx318.3$, ובדיקה ש-$\int_1^{x_0}f$ הוא סופי (הפונקציה רציפה).</li>
+</ul></div>
+<div class="box rule"><b>הכלל לזכור</b>פונקציה שמשנה סימן רק בהתחלה? חותכים (טענת הזנב) ועובדים על הזנב שבו הסימן קבוע.</div>
+<div class="quiz"><div class="qt">שאלות על סעיף 9</div>
+<div class="qq" data-a="1"><p class="q">למה אי אפשר להפעיל מבחן השוואה ישירות על כל הקטע $[1,\infty)$ בתרגיל הזה?</p><ol><li>כי הפונקציה לא רציפה בנקודה $x=1$ של הקטע</li><li>כי בתחילת הקטע הפונקציה יכולה להיות שלילית</li><li>כי הפונקציה לא מוגדרת עבור $x$ גדול מ-318.3</li><li>כי מבחני השוואה עובדים רק על קטעים סופיים</li></ol><p class="h">רמז: מה דורשים המבחנים מהפונקציות?</p><p class="e">נכון. למשל ב-$x=1$ הערך בערך $-0.25$. מ-$x_0$ והלאה זה מסתדר.</p></div>
+<div class="qq" data-a="0"><p class="q">בתרגיל הזה, למה בחרנו $\varepsilon=\pi$ בהגדרת הגבול?</p><ol><li>כי $\sin u$ חיובי כש-$u$ בין 0 ל-$\pi$</li><li>כי $\sin\pi=1$, ולכן המנה שווה ל-1</li><li>כי $\pi$ הוא המספר הגדול ביותר שאפשר</li><li>כי הגבול של $\frac{\sin u}{u}$ הוא $\pi$</li></ol><p class="h">רמז: מה אנחנו רוצים להבטיח על $\sin u$?</p><p class="e">נכון. עם $u$ בין 0 ל-$\pi$, הסינוס חיובי.</p></div>
+<div class="qq" data-a="3"><p class="q">למה $\lim\limits_{x\to\infty}\frac{f(x)}{g(x)}=1$ בתרגיל?</p><ol><li>כי המונה והמכנה שווים לכל $x$ בקטע $[x_0,\infty)$</li><li>כי $\sin u$ גדול מ-$u$ לכל $u$ חיובי</li><li>כי $\sin u\to1$ כש-$u$ מתקרב לאפס</li><li>כי $\frac{\sin u}{u}\to1$ כש-$u$ מתקרב לאפס</li></ol><p class="h">רמז: $f=\sin u$ ו-$g=u$.</p><p class="e">נכון. זה הגבול המוכר $\frac{\sin u}{u}\to 1$.</p></div>
+</div>
+</section>
+
+<!-- ============ 10 ============ -->
+<section class="sec" id="s10" data-short="התכנסות בהחלט">
+<h2>התכנסות בהחלט</h2>
+<div class="box mine"><b>למה צריך את זה? (עם מספרים) — הדוגמה שלי</b>
+<ol>
+<li>שלב 1 – $f(x)=\frac{\sin x}{x^2}$. הסימן משתנה: $f(2)\gt 0$, $f(4)\lt 0$. מבחני ההשוואה דורשים אי-שלילית, אז הם לא עובדים ישירות.</li>
+<li>שלב 2 – שמים ערך מוחלט: $\left|\frac{\sin x}{x^2}\right|\le\frac1{x^2}$, כי $|\sin x|\le1$.</li>
+<li>שלב 3 – עכשיו אין בעיית סימן. $\int_1^\infty\frac{dx}{x^2}$ מתכנס, אז $\int_1^\infty\left|\frac{\sin x}{x^2}\right|dx$ מתכנס.</li>
+<li>שלב 4 – הטענה למטה נותנת: אז גם $\int_1^\infty\frac{\sin x}{x^2}dx$ עצמו מתכנס.</li>
+</ol></div>
+<div class="box rule"><b>הגדרה</b>נאמר ש-$\int_a^\infty f(x)\,dx$ <b>מתכנס בהחלט</b> אם $\int_a^\infty\class{sky}{|f(x)|}\,dx$ מתכנס.<br><b>טענה:</b> התכנסות בהחלט $\Rightarrow$ התכנסות.</div>
+<div class="box mine"><b>למה הטענה נכונה? רעיון — ההשלמה שלי</b>מתקיים $0\le f+\class{sky}{|f|}\le2\class{sky}{|f|}$. לפי מבחן 1, $\int(f+|f|)$ מתכנס. ואז $f=(f+|f|)-|f|$, הפרש של שני אינטגרלים מתכנסים. הכיוון ההפוך לא נכון: $\int_1^\infty\frac{\sin x}{x}dx$ מתכנס, אך לא בהחלט (ראינו בהרצאה 8).</div>
+<h3>תרגיל: $I=\int_1^\infty\frac{\sin(2x^3)}{9x^2-1}\,dx$</h3>
+<div class="sim"><div class="st-title">סימולציה: בודקים התכנסות בהחלט</div>
+<ol class="map"><li>1. ערך מוחלט</li><li>2. חסם</li><li>3. המבחן</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$\class{sky}{\left|\frac{\sin(2x^3)}{9x^2-1}\right|}$</div><div class="x">$\sin(2x^3)$ משנה סימן, אז בודקים התכנסות בהחלט. ב-$x\ge1$ המכנה חיובי ($9x^2-1\ge8$).</div><div class="st"><span><i>שלב</i>ערך מוחלט</span></div></div>
+<div class="step" data-m="1"><div class="f">$\le\frac1{9x^2-1}$</div><div class="x">$|\sin(\cdot)|\le1$ תמיד. מחליפים את המונה ב-1, והשבר גדל.</div><div class="st"><span><i>חסם 1</i>$\frac1{9x^2-1}$</span></div></div>
+<div class="step" data-m="1"><div class="f">$\le\frac1{x^2}$</div><div class="x">למה? צריך $9x^2-1\ge x^2$, כלומר $8x^2\ge1$. ב-$x\ge1$ זה בוודאי נכון.</div><div class="st"><span><i>חסם 1</i>$\frac1{9x^2-1}$</span><span><i>חסם 2</i>$\frac1{x^2}$</span></div></div>
+<div class="step" data-m="2"><div class="f">$\int_1^\infty\frac{dx}{x^2}\ \text{converges}\ (p=2)$</div><div class="x">לפי מבחן 1, האינטגרל של הערך המוחלט מתכנס. כלומר $I$ <b>מתכנס בהחלט</b>.</div><div class="st"><span><i>מצב</i>בהחלט</span></div></div>
+<div class="step" data-m="2"><div class="f"><span class="ans">$I$ מתכנס</span></div><div class="x">התכנסות בהחלט $\Rightarrow$ התכנסות. סיימנו.</div><div class="st"><span><i>מצב</i>מתכנס</span></div></div>
+</div></div>
+<div class="tool"><b>המחשה: הפונקציה חסומה בין קווי החסם</b>
+<label for="s10x">הזיזו את $x$:</label><input type="range" id="s10x" min="1" max="6" step="0.01" value="2">
+<svg id="s10svg" viewBox="0 0 400 200" role="img" aria-label="הפונקציה sin של 2x בשלישית חלקי 9x בריבוע פחות 1 וקווי החסם"></svg>
+<p class="out" id="s10out"></p></div>
+<div class="box fix"><b>הערה שלי על המחברת</b>ליד $\frac1{x^2}$ כתוב "החל מ-$x$ מסוים". בפועל האי-שוויון נכון לכל $x\ge1$ (כי $8x^2\ge1$), אז אפשר להשתמש בו בכל הקטע. כתיבה כזו תמיד מותרת, כי מבחן ההשוואה דורש רק "מ-$b$ והלאה".</div>
+<div class="box rule"><b>הכלל לזכור</b>$\sin$ או $\cos$ בתוך האינטגרנד? חוסמים $|\sin|\le 1$ ומקבלים פונקציה אי-שלילית. אם היא מתכנסת, סיימתם.</div>
+<div class="quiz"><div class="qt">שאלות על סעיף 10</div>
+<div class="qq" data-a="2"><p class="q">מה פירוש "מתכנס בהחלט"?</p><ol><li>$\int f$ מתכנס וגם $f$ חיובית בכל הקטע</li><li>$\int f$ מתכנס לערך חיובי, ולא שלילי</li><li>$\int|f|$ מתכנס, בלי קשר לסימן של $f$</li><li>$|\int f|$ מתכנס, כלומר הערך המוחלט בחוץ</li></ol><p class="h">רמז: איפה נמצא הערך המוחלט בהגדרה?</p><p class="e">נכון. הערך המוחלט בתוך האינטגרל.</p></div>
+<div class="qq" data-a="0"><p class="q">נתון ש-$\int_1^\infty|f|$ מתבדר. מה נובע על $\int_1^\infty f$?</p><ol><li>כלום: הוא עלול להתכנס, כמו $\frac{\sin x}{x}$</li><li>הוא בהכרח מתבדר, כי זה הכיוון של הטענה</li><li>הוא בהכרח מתכנס, כי יש ביטול של סימנים</li><li>הוא שווה לאפס, כי שני הצדדים מתאזנים</li></ol><p class="h">רמז: הטענה היא רק בכיוון אחד.</p><p class="e">נכון. "בהחלט ⇒ מתכנס" אומר רק את זה.</p></div>
+<div class="qq" data-a="3"><p class="q">למה מותר לומר $\left|\frac{\sin(2x^3)}{9x^2-1}\right|\le\frac1{9x^2-1}$ בקטע $[1,\infty)$?</p><ol><li>כי $\sin$ הוא תמיד חיובי, לכל קלט שמציבים בו</li><li>כי $2x^3$ קטן מ-1 לכל $x$ בקטע $[1,\infty)$</li><li>כי המכנה שלילי, ולכן הכיוון מתהפך כאן</li><li>כי $|\sin|$ קטן או שווה 1, והמכנה חיובי</li></ol><p class="h">רמז: מה החסם הכי פשוט ל-$\sin$?</p><p class="e">נכון. ב-$x\ge 1$ המכנה לפחות 8.</p></div>
+</div>
+</section>
+
+<!-- ============ 11 ============ -->
+<section class="sec" id="s11" data-short="סיכום ומפת החלטות">
+<h2>סיכום ומפת החלטות</h2>
+<div class="tw"><table><tr><th>נושא</th><th>מה לזכור</th></tr>
+<tr><td>סוג 1</td><td>$\int_a^\infty f=\lim\limits_{b\to\infty}\int_a^b f$. מתכנס = מספר סופי.</td></tr>
+<tr><td>דרכי התבדרות</td><td>שואף ל-$\pm\infty$, או לא קיים (מתנדנד).</td></tr>
+<tr><td>תרגיל א</td><td>$\int_2^\infty\frac{dx}{x^2+x-2}=\frac13\ln4$. שברים חלקיים ואיחוד $\ln$.</td></tr>
+<tr><td>$\int_{-\infty}^\infty$</td><td>שני גבולות נפרדים. $\int_{-\infty}^\infty\sin x\,dx$ מתבדר.</td></tr>
+<tr><td>סוג 2</td><td>$\int_a^b f=\lim\limits_{\varepsilon\to0^+}\int_{a+\varepsilon}^b f$. בעיה בקצה.</td></tr>
+<tr><td>$\frac1{x^p}$</td><td>ליד אינסוף: $p\gt 1$. ליד 0: $p\lt 1$. עם $p=1$: מתבדר.</td></tr>
+<tr><td>מבחן ראשון</td><td>$f\ge g\ge0$. הגדולה מתכנסת $\Rightarrow$ הקטנה. הקטנה מתבדרת $\Rightarrow$ הגדולה.</td></tr>
+<tr><td>מבחן שני</td><td>$L=\lim\frac fg$. $0\lt L\lt\infty$: אותה התנהגות.</td></tr>
+<tr><td>בהחלט</td><td>$\int|f|$ מתכנס $\Rightarrow$ $\int f$ מתכנס.</td></tr>
+</table></div>
+<h3>איך לבדוק התכנסות (מפה שלי)</h3>
+<div class="tw"><table><tr><th>שלב</th><th>שאלה</th><th>מה עושים</th></tr>
+<tr><td>1</td><td>איפה הבעיה?</td><td>קטע אינסופי או פיצוץ בקצה. אם יש כמה בעיות, חותכים.</td></tr>
+<tr><td>2</td><td>יש קדומה קלה?</td><td>מחשבים עם $b$ או $\varepsilon$ וגבול.</td></tr>
+<tr><td>3</td><td>הפונקציה אי-שלילית מנקודה מסוימת?</td><td>מבחן 1 או 2 מול $\frac1{x^p}$.</td></tr>
+<tr><td>4</td><td>היא משנה סימן בלי סוף?</td><td>ערך מוחלט, $|\sin|\le 1$, התכנסות בהחלט.</td></tr>
+</table></div>
+<div class="quiz"><div class="qt">מבחן מסכם</div>
+<div class="qq" data-a="2"><p class="q">מה הערך של $\int_0^\infty e^{-x}dx$?</p><ol><li>$0$, כי $e^{-x}$ שואפת ל-0 באינסוף</li><li>$e$, כי זו התוצאה של הקדומה ב-0</li><li>$1$, כי $-e^{-x}$ נותן $0-(-1)$</li><li>$\infty$, כי הקטע אינסופי ולכן גם השטח</li></ol><p class="h">רמז: הקדומה היא $-e^{-x}$.</p><p class="e">נכון. $\lim_{b\to\infty}(1-e^{-b})=1$.</p></div>
+<div class="qq" data-a="1"><p class="q">האם $\int_1^\infty\frac{dx}{\sqrt{x^3+x}}$ מתכנס?</p><ol><li>לא, כי ההשוואה נותנת $p=\frac12$ וזה קטן מ-1</li><li>כן, כי המנה מול $\frac1{x^{3/2}}$ שואפת ל-1</li><li>לא, כי ההשוואה נותנת $p=1$ וזה מקרה גבולי</li><li>כן, אבל רק בגלל שהפונקציה חסומה ב-$[1,\infty)$</li></ol><p class="h">רמז: מה החזקה הדומיננטית בתוך השורש?</p><p class="e">נכון. $\sqrt{x^3+x}\sim x^{3/2}$, ו-$p=\frac32\gt 1$.</p></div>
+<div class="qq" data-a="3"><p class="q">האם $\int_0^1\frac{dx}{x^{0.9}}$ מתכנס?</p><ol><li>לא, כי הפונקציה לא חסומה ב-0 ואז מתבדר תמיד</li><li>לא, כי $p=0.9$ קרוב ל-1 וזה מספיק להתבדר</li><li>כן, והערך הוא $\frac1{1+0.9}$ לפי הנוסחה</li><li>כן, והערך הוא $\frac1{0.1}=10$ לפי הנוסחה</li></ol><p class="h">רמז: ליד 0, $p\lt 1$ מתכנס, והערך $\frac{1}{1-p}$.</p><p class="e">נכון. קרוב ל-1 זה לא 1. והערך $\frac{1}{1-0.9}=10$.</p></div>
+<div class="qq" data-a="0"><p class="q">האם $\int_1^\infty\frac{\cos(5x)}{x^4+1}dx$ מתכנס?</p><ol><li>כן, בהחלט, כי הוא חסום על ידי $\frac1{x^4}$</li><li>לא, כי $\cos$ מתנדנד ולכן הגבול לא קיים</li><li>לא, כי $\cos(5x)$ שלילי בחלק גדול מהקטע</li><li>כן, אבל רק אם מחשבים את הקדומה ישירות</li></ol><p class="h">רמז: $|\cos|\le 1$ ו-$x^4+1\ge x^4$.</p><p class="e">נכון. $\frac1{x^4}$ הוא $p=4\gt 1$.</p></div>
+<div class="qq" data-a="2"><p class="q">איזה אינטגרל דורש חיתוך לשני אינטגרלים לא אמיתיים?</p><ol><li>$\int_1^\infty\frac{dx}{x^2}$, כי הקטע שלו אינסופי</li><li>$\int_1^2\frac{dx}{x}$, כי יש $x$ במכנה שלו</li><li>$\int_0^\infty\frac{dx}{x^2}$, כי הבעיה בשני הקצוות</li><li>$\int_0^1 x\,dx$, כי הקצה התחתון הוא בדיוק 0</li></ol><p class="h">רמז: חפשו אינטגרל עם שתי בעיות: אינסוף וגם פיצוץ.</p><p class="e">נכון. בעיה ב-0 וגם באינסוף. חותכים, למשל ב-1.</p></div>
+</div>
+<p class="end" id="endMsg"></p>
+</section>
+</div>
+
+<script>
+window.LESSON_INIT=function(){
+ function css(v){return getComputedStyle(document.documentElement).getPropertyValue(v).trim()}
+ function $(id){return document.getElementById(id)}
+ function clamp(v,a,b){return Math.max(a,Math.min(b,v))}
+ // generic plot: o={W,H,xmin,xmax,ymin,ymax,fills:[{f,a,b,color}],curves:[{f,color,dash,w,N}],hlines:[{y,color,dash}],vlines:[{x,color,dash}],xticks:[[v,lab]],yticks:[[v,lab]],mark:{x,y,color}}
+ function plot(svg,o){var W=o.W||400,H=o.H||220,pl=34,pr=12,pt=10,pb=24;
+  function X(x){return pl+(x-o.xmin)/(o.xmax-o.xmin)*(W-pl-pr)}function Y(y){return pt+(o.ymax-y)/(o.ymax-o.ymin)*(H-pt-pb)}
+  var s='',mut=css('--muted'),ink=css('--ink');
+  (o.fills||[]).forEach(function(fi){var a=Math.max(fi.a,o.xmin),b=Math.min(fi.b,o.xmax);if(b<=a)return;var N=fi.N||200,p='M'+X(a).toFixed(1)+' '+Y(0).toFixed(1);
+   for(var i=0;i<=N;i++){var x=a+(b-a)*i/N,y=clamp(fi.f(x),o.ymin,o.ymax);p+='L'+X(x).toFixed(1)+' '+Y(y).toFixed(1)}
+   p+='L'+X(b).toFixed(1)+' '+Y(0).toFixed(1)+'Z';s+='<path d="'+p+'" fill="'+fi.color+'" fill-opacity=".28"/>'});
+  (o.hlines||[]).forEach(function(l){s+='<line x1="'+pl+'" x2="'+(W-pr)+'" y1="'+Y(l.y).toFixed(1)+'" y2="'+Y(l.y).toFixed(1)+'" stroke="'+l.color+'" stroke-width="1.5" stroke-dasharray="'+(l.dash||'5 4')+'"/>'});
+  (o.vlines||[]).forEach(function(l){s+='<line y1="'+pt+'" y2="'+(H-pb)+'" x1="'+X(l.x).toFixed(1)+'" x2="'+X(l.x).toFixed(1)+'" stroke="'+l.color+'" stroke-width="1.5" stroke-dasharray="'+(l.dash||'5 4')+'"/>'});
+  (o.curves||[]).forEach(function(c){var N=c.N||400,p='',pen=false;for(var i=0;i<=N;i++){var x=o.xmin+(o.xmax-o.xmin)*i/N;if(c.from!=null&&x<c.from){pen=false;continue}var y=c.f(x);if(!isFinite(y)||y>o.ymax*1.0001||y<o.ymin*1.0001&&o.ymin<0||y<o.ymin-1e-9){pen=false;continue}p+=(pen?'L':'M')+X(x).toFixed(1)+' '+Y(y).toFixed(1);pen=true}
+   s+='<path d="'+p+'" fill="none" stroke="'+c.color+'" stroke-width="'+(c.w||2)+'"'+(c.dash?' stroke-dasharray="'+c.dash+'"':'')+'/>'});
+  if(o.ymin<=0&&o.ymax>=0)s+='<line x1="'+pl+'" x2="'+(W-pr)+'" y1="'+Y(0).toFixed(1)+'" y2="'+Y(0).toFixed(1)+'" stroke="'+mut+'"/>';
+  (o.xticks||[]).forEach(function(t){s+='<text x="'+X(t[0]).toFixed(1)+'" y="'+(H-7)+'" fill="'+mut+'" font-size="12" text-anchor="middle">'+t[1]+'</text>'});
+  (o.yticks||[]).forEach(function(t){s+='<text x="'+(pl-5)+'" y="'+(Y(t[0])+4).toFixed(1)+'" fill="'+mut+'" font-size="12" text-anchor="end">'+t[1]+'</text>'});
+  if(o.mark){s+='<circle cx="'+X(o.mark.x).toFixed(1)+'" cy="'+Y(o.mark.y).toFixed(1)+'" r="4.5" fill="'+(o.mark.color||ink)+'"/>'}
+  svg.innerHTML=s}
+ var drawers=[];
+ function bind(ids,fn){ids.forEach(function(id){var e=$(id);e.addEventListener(e.tagName==='SELECT'?'change':'input',fn)});fn();drawers.push(fn)}
+ // s1
+ bind(['s1b'],function(){var k=+$('s1b').value,b=2+(Math.pow(10,3*k/100)-1);var f=function(x){return 1/(x*x+x-2)};var I=(Math.log((b-1)/(b+2))+Math.log(4))/3,L=Math.log(4)/3;
+  plot($('s1svg'),{xmin:2,xmax:14,ymin:0,ymax:.28,fills:[{f:f,a:2,b:b,color:css('--amb')}],curves:[{f:f,color:css('--ink')}],vlines:b<=14?[{x:b,color:css('--amb')}]:[],xticks:[[2,'2'],[8,'8'],[14,'14']],yticks:[[.25,'.25']]});
+  $('s1out').textContent='b = '+b.toFixed(1)+'   |   area = '+I.toFixed(5)+'   |   (1/3)·ln 4 = '+L.toFixed(5)+(b>14?'   (b is past the picture)':'')});
+ // s2
+ bind(['s2b'],function(){var b=+$('s2b').value;
+  plot($('s2svg'),{H:200,xmin:0,xmax:40,ymin:-1.15,ymax:1.15,curves:[{f:Math.sin,color:css('--amb')}],mark:{x:b,y:Math.sin(b),color:css('--bur')},xticks:[[0,'0'],[20,'20'],[40,'40']],yticks:[[1,'1'],[-1,'−1']]});
+  $('s2out').textContent='b = '+b.toFixed(1)+'   |   sin b = '+Math.sin(b).toFixed(4)});
+ // s4
+ bind(['s4m','s4sel'],function(){var m=+$('s4m').value,o=+$('s4sel').value,sh=[0,Math.PI/2,Math.PI][o],f=function(t){return Math.cos(t)-Math.cos(t+sh)};
+  plot($('s4svg'),{H:200,xmin:0,xmax:30,ymin:-2.2,ymax:2.2,curves:[{f:f,color:css('--amb')}],mark:{x:m,y:f(m),color:css('--bur')},xticks:[[0,'0'],[15,'15'],[30,'30']],yticks:[[2,'2'],[-2,'−2'],[0,'0']]});
+  $('s4out').textContent='m = '+m.toFixed(1)+'   |   integral of sin over [−m, m + '+['0','π/2','π'][o]+'] = '+f(m).toFixed(4)+(o===0?'   (always 0)':'   (keeps moving)')});
+ // s5
+ bind(['s5e'],function(){var k=+$('s5e').value,e=Math.pow(10,-0.3-3.2*k/100),f=function(x){return 1/Math.sqrt(1-x*x)},end=1-e;
+  plot($('s5svg'),{xmin:0,xmax:1,ymin:0,ymax:6,fills:[{f:f,a:0,b:end,color:css('--amb'),N:400}],curves:[{f:f,color:css('--ink')}],vlines:[{x:end,color:css('--amb')}],xticks:[[0,'0'],[.5,'.5'],[1,'1']],yticks:[[1,'1'],[6,'6']]});
+  $('s5out').textContent='ε = '+e.toFixed(4)+'   |   arcsin(1−ε) = '+Math.asin(end).toFixed(4)+'   |   π/2 = '+(Math.PI/2).toFixed(4)});
+ // s6
+ bind(['s6p'],function(){var p=+$('s6p').value,f=function(x){return Math.pow(x,-p)};
+  plot($('s6svg'),{xmin:0,xmax:5,ymin:0,ymax:5,fills:[{f:f,a:.001,b:1,color:css('--amb'),N:300},{f:f,a:1,b:5,color:css('--sky')}],curves:[{f:f,color:css('--ink')}],vlines:[{x:1,color:css('--muted')}],xticks:[[0,'0'],[1,'1'],[5,'5']],yticks:[[1,'1'],[5,'5']]});
+  var l=p<1?'converges to '+(1/(1-p)).toFixed(3):'diverges',r=p>1?'converges to '+(1/(p-1)).toFixed(3):'diverges';
+  $('s6out').textContent='p = '+p.toFixed(2)+'   |   near 0 [0,1]: '+l+'   |   near ∞ [1,∞): '+r});
+ // s7
+ bind(['s7x'],function(){var x=+$('s7x').value,f=function(t){return 1/(Math.sqrt(t)*Math.cbrt(t*t+1))},h=function(t){return Math.pow(t,-7/6)};
+  plot($('s7svg'),{xmin:1,xmax:30,ymin:0,ymax:1.05,curves:[{f:h,color:css('--olv')},{f:f,color:css('--red')}],vlines:[{x:x,color:css('--muted')}],mark:{x:x,y:f(x),color:css('--red')},xticks:[[1,'1'],[15,'15'],[30,'30']],yticks:[[1,'1']]});
+  $('s7out').textContent='x = '+x.toFixed(1)+'   |   integrand = '+f(x).toFixed(4)+'   ≤   1/x^(7/6) = '+h(x).toFixed(4)});
+ // s8
+ bind(['s8x','s8sel'],function(){var x=+$('s8x').value,o=+$('s8sel').value;
+  var P=[{f:function(t){return 1/(t*t+5*t)},g:function(t){return 1/(t*t)},y:1.1,L:1,txt:'L = 1: same behavior'},{f:function(t){return 1/(t*t*t)},g:function(t){return 1/(t*t)},y:1.1,L:0,txt:'L = 0: g converges so f converges'},{f:function(t){return 1/Math.sqrt(t)},g:function(t){return 1/t},y:15,L:null,txt:'L = ∞: g diverges so f diverges'}][o];
+  var r=function(t){return P.f(t)/P.g(t)};
+  plot($('s8svg'),{H:200,xmin:1,xmax:200,ymin:0,ymax:P.y,curves:[{f:r,color:css('--jad')}],hlines:P.L===null?[]:[{y:P.L,color:css('--jad')}],mark:{x:x,y:r(x),color:css('--jad')},xticks:[[1,'1'],[100,'100'],[200,'200']],yticks:[[P.y>2?14:1,P.y>2?'14':'1']]});
+  $('s8out').textContent='x = '+x+'   |   f/g = '+r(x).toFixed(4)+'   |   '+P.txt});
+ // s9
+ var X0=Math.sqrt(Math.pow(1000/Math.PI,2)-1);
+ bind(['s9x'],function(){var k=+$('s9x').value,x=Math.pow(10,4*k/100),u=function(t){return 1000/Math.sqrt(t*t+1)},f=function(t){return Math.sin(u(t))};
+  var xp=Math.min(x,1000);
+  plot($('s9svg'),{H:200,xmin:1,xmax:1000,ymin:-1.15,ymax:1.15,curves:[{f:f,color:css('--amb'),N:2400,w:1.5}],vlines:[{x:X0,color:css('--nav')}],mark:{x:xp,y:f(xp),color:css('--bur')},xticks:[[1,'1'],[X0,'x₀'],[1000,'1000']],yticks:[[1,'1'],[-1,'−1']]});
+  var U=u(x),F=Math.sin(U),G=U,H=1/x;
+  $('s9out').textContent='x = '+x.toFixed(1)+'   |   u = '+U.toFixed(3)+'   |   sin u = '+F.toFixed(4)+'   |   f/g = '+(F/G).toFixed(4)+'   |   g/h = '+(G/H).toFixed(1)});
+ // s10
+ bind(['s10x'],function(){var x=+$('s10x').value,f=function(t){return Math.sin(2*t*t*t)/(9*t*t-1)},b1=function(t){return 1/(9*t*t-1)},b2=function(t){return 1/(t*t)},nb1=function(t){return -b1(t)},nb2=function(t){return -b2(t)};
+  plot($('s10svg'),{H:200,xmin:1,xmax:6,ymin:-.2,ymax:.2,curves:[{f:f,color:css('--sky'),N:1800,w:1.4},{f:b1,color:css('--olv'),dash:'5 4',w:1.5},{f:nb1,color:css('--olv'),dash:'5 4',w:1.5},{f:b2,color:css('--red'),dash:'2 3',w:1.5},{f:nb2,color:css('--red'),dash:'2 3',w:1.5}],mark:{x:x,y:f(x),color:css('--sky')},xticks:[[1,'1'],[3.5,'3.5'],[6,'6']],yticks:[[.2,'.2'],[-.2,'−.2']]});
+  $('s10out').textContent='x = '+x.toFixed(2)+'   |   |f| = '+Math.abs(f(x)).toFixed(4)+'   ≤   1/(9x²−1) = '+b1(x).toFixed(4)+'   ≤   1/x² = '+b2(x).toFixed(4)});
+ var mo=new MutationObserver(function(){drawers.forEach(function(d){d()})});mo.observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+};
+</script>
+
+<script>(function(){
+document.documentElement.dir='rtl';document.documentElement.lang='he';
+var KEY=((document.querySelector('.wrap')||document.body).getAttribute('data-key')||'lesson')+'-quiz';
+var THEMEKEY='calc2-theme';
+function $(s,r){return (r||document).querySelector(s)}
+function $$(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))}
+function el(t,c,h){var n=document.createElement(t);if(c)n.className=c;if(h!=null)n.innerHTML=h;return n}
+function lsGet(k){try{return localStorage.getItem(k)}catch(e){return null}}
+function lsSet(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+// theme
+var tb=$('#themeBtn');
+function curDark(){var t=document.documentElement.getAttribute('data-theme');if(t)return t==='dark';return window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches}
+function paintBtn(){if(tb)tb.textContent=curDark()?'☀️ יום':'🌙 לילה'}
+var saved=lsGet(THEMEKEY);if(saved==='dark'||saved==='light')document.documentElement.setAttribute('data-theme',saved);
+paintBtn();
+if(tb)tb.addEventListener('click',function(){var d=!curDark();document.documentElement.setAttribute('data-theme',d?'dark':'light');lsSet(THEMEKEY,d?'dark':'light');paintBtn()});
+// sections + toc
+var secs=$$('section.sec'),toc=$('nav.toc');
+secs.forEach(function(s,i){var h=$('h2',s);var no=el('div','secno',(i+1)+' / '+secs.length);s.insertBefore(no,h);
+ if(toc){var a=el('a');a.href='#'+s.id;a.innerHTML='<b>'+(i+1)+'</b> '+(s.getAttribute('data-short')||h.textContent);toc.appendChild(a)}});
+// sims
+var sims=[];
+$$('.sim').forEach(function(sim){
+ var steps=$$('.steps > .step',sim);var mapItems=$$('.map > li',sim);
+ var lines=el('div','lines'),xp=el('div','x'),sp=el('div','stp-wrap');
+ var ctl=el('div','ctl');var bP=el('button','','→ הקודם'),bN=el('button','pri','הבא ←'),bR=el('button','','⟲ מההתחלה'),cnt=el('span','cnt');
+ bP.type=bN.type=bR.type='button';ctl.appendChild(bR);ctl.appendChild(bP);ctl.appendChild(bN);ctl.appendChild(cnt);
+ var stepLine=[],lineEls=[],xs=[],sts=[];
+ steps.forEach(function(st,i){var f=$('.f',st);
+  if(f){var ln=el('div','ln');ln.appendChild(el('span','no',String(lineEls.length+1)));ln.appendChild(f);lines.appendChild(ln);lineEls.push(ln)}
+  stepLine.push(lineEls.length-1);
+  var x=$('.x',st)||el('div','','');var xd=el('div','');while(x.firstChild)xd.appendChild(x.firstChild);xp.appendChild(xd);xs.push(xd);
+  var s=$('.st',st);var sd=el('div','stp');if(s){while(s.firstChild)sd.appendChild(s.firstChild)}sp.appendChild(sd);sts.push(sd)});
+ var stepsBox=$('.steps',sim);sim.insertBefore(lines,stepsBox);sim.insertBefore(xp,stepsBox);sim.insertBefore(sp,stepsBox);sim.insertBefore(ctl,stepsBox);stepsBox.remove();
+ var cur=0;
+ function render(){var L=stepLine[cur];
+  lineEls.forEach(function(ln,j){ln.classList.toggle('cur',j===L);ln.classList.toggle('fut',j>L)});
+  xs.forEach(function(x,j){x.hidden=j!==cur});
+  sts.forEach(function(s,j){s.hidden=j!==cur;
+   if(j===cur&&j>0){var prev={};$$('span',sts[j-1]).forEach(function(p){var k=$('i',p);if(k)prev[k.textContent]=p.textContent});
+    $$(':scope > span',s).forEach(function(p){var k=$('i',p);p.classList.toggle('new',!!k&&prev[k.textContent]!==p.textContent)})}});
+  var m=+(steps[cur].getAttribute('data-m')||-1);
+  mapItems.forEach(function(li,j){li.classList.toggle('on',j===m);li.classList.toggle('done',m>=0&&j<m)});
+  bP.disabled=cur===0;bN.disabled=cur===steps.length-1;cnt.textContent=(cur+1)+' / '+steps.length}
+ bP.onclick=function(){if(cur>0){cur--;render()}};bN.onclick=function(){if(cur<steps.length-1){cur++;render()}};bR.onclick=function(){cur=0;render()};
+ sims.push(render)});
+// quiz
+var st={};try{st=JSON.parse(lsGet(KEY)||'{}')||{}}catch(e){st={}}
+var qs=$$('.qq'),LET=['א','ב','ג','ד','ה'];
+function score(){var c=0,d=0;qs.forEach(function(q,i){var s=st[i];if(s&&s.done){d++;if(s.first)c++}});
+ var sc=$('#score');if(sc)sc.innerHTML='ניקוד: <bdi dir="ltr">'+c+' / '+qs.length+'</bdi>';var m=$('#meter');if(m)m.style.width=(qs.length?100*d/qs.length:0)+'%';
+ var end=$('#endMsg');if(end)end.textContent=d===qs.length?('סיימת את כל '+qs.length+' השאלות! ענית נכון בניסיון הראשון על '+c+'. '+(c>=qs.length*0.8?'מצוין, ביג בוס 💪':'כדאי לחזור על הסעיפים שבהם טעית.')):'ענית על '+d+' מתוך '+qs.length+' שאלות.'}
+var qhide=[];
+qs.forEach(function(q,i){var a=+q.getAttribute('data-a');var h=$('.h',q),e=$('.e',q);
+ $$('ol > li',q).forEach(function(li,j){var b=el('button','');b.type='button';b.appendChild(el('span','lt',LET[j]+'.'));while(li.firstChild)b.appendChild(li.firstChild);li.appendChild(b);
+  b.addEventListener('click',function(){var s=st[i]||{tried:[]};if(s.done)return;s.tried.push(j);
+   if(j===a){s.done=true;s.first=s.tried.length===1}st[i]=s;lsSet(KEY,JSON.stringify(st));paintQ();score()})});
+ function paintQ(){var s=st[i]||{tried:[]};var bs=$$('ol > li > button',q);
+  bs.forEach(function(b,j){b.classList.toggle('good',!!s.done&&j===a);b.classList.toggle('bad',s.tried.indexOf(j)>=0&&j!==a)});
+  var lastBad=s.tried.length&&s.tried[s.tried.length-1]!==a;if(h)h.hidden=!(lastBad&&!s.done);if(e)e.hidden=!s.done}
+ q._paint=paintQ;qhide.push(paintQ)});
+var rb=$('#resetBtn');if(rb)rb.addEventListener('click',function(){st={};lsSet(KEY,'{}');qhide.forEach(function(f){f()});score()});
+// bidi fix
+var HEB=/[֐-׿]/,RUN=/[A-Za-z0-9∞√π][A-Za-z0-9∞√π²³⁻¹\s+\-−*\/=^().,'·:≤≥<>|_]*/g;
+var SKIP={'MJX-CONTAINER':1,'CODE':1,'PRE':1,'SVG':1,'BDI':1,'SCRIPT':1,'STYLE':1,'TEXTAREA':1,'INPUT':1};
+function bidi(root){var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode:function(n){for(var p=n.parentNode;p&&p!==root.parentNode;p=p.parentNode){if(SKIP[p.nodeName.toUpperCase()]||(p.classList&&(p.classList.contains('m')||p.classList.contains('ltr'))))return NodeFilter.FILTER_REJECT}return NodeFilter.FILTER_ACCEPT}});
+ var nodes=[],n;while(n=w.nextNode())nodes.push(n);
+ nodes.forEach(function(t){var s=t.nodeValue;if(HEB.test(s)&&s.indexOf('→')>=0)s=t.nodeValue=s.replace(/→/g,'←');
+  if(!/[A-Za-z0-9∞√π]/.test(s)||!HEB.test(s+((t.parentNode&&t.parentNode.textContent)||'')))return;
+  var frag=document.createDocumentFragment(),last=0,m;RUN.lastIndex=0;
+  while(m=RUN.exec(s)){var r=m[0].replace(/[\s.,:]+$/,'');var open=(r.match(/\(/g)||[]).length,close=(r.match(/\)/g)||[]).length;
+   while(close>open&&r.slice(-1)===')'){r=r.slice(0,-1);close--}
+   if(open>close&&r.slice(-1)==='('){r=r.slice(0,-1).replace(/\s+$/,'')}
+   if(!r)continue;frag.appendChild(document.createTextNode(s.slice(last,m.index)));var b=document.createElement('bdi');b.dir='ltr';b.textContent=r;frag.appendChild(b);last=m.index+r.length;RUN.lastIndex=last}
+  frag.appendChild(document.createTextNode(s.slice(last)));t.parentNode.replaceChild(frag,t)})}
+var finished=false;
+function finish(){if(finished)return;finished=true;bidi($('.wrap'));sims.forEach(function(r){r()});qhide.forEach(function(f){f()});score();
+ if(window.LESSON_INIT)try{window.LESSON_INIT()}catch(e){console.error(e)}}
+window.__lessonFinish=finish;
+window.typesetLater=function(node){if(window.MathJax&&MathJax.typesetPromise){return MathJax.typesetPromise([node]).then(function(){bidi(node)}).catch(function(){})}bidi(node);return Promise.resolve()};
+setTimeout(finish,9000);
+})();
+</script>
+<script>window.MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']],packages:{'[+]':['html']}},loader:{load:['[tex]/html']},svg:{fontCache:'global'},options:{ignoreHtmlClass:'nomj'},startup:{ready:function(){MathJax.startup.defaultReady();MathJax.startup.promise.then(function(){window.__lessonFinish&&window.__lessonFinish()})}}};</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.min.js"></script>
+
+</body></html>

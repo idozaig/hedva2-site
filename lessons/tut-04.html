@@ -1,0 +1,712 @@
+<!doctype html><html><head><script>(function(){try{var m=localStorage.getItem("hedva2-theme");if(m==="dark"||m==="light")document.documentElement.setAttribute("data-theme",m);}catch(e){}})();</script><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>חדו״א 2 — תרגול 4</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Assistant:wght@400;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>/* Layout: a calm math notebook — one reading column (max 860px), sticky score bar, section cards on a faint grid. */
+:root{
+  --bg:#f6f8fb; --card:#ffffff; --ink:#1d2533; --muted:#5b6678; --line:#dfe5ee; --soft:#eef2f8; --grid:rgba(40,80,140,.05);
+  --accent:#6d4bd8; --accent-soft:#efeafd; --ok:#1f8a52; --ok-soft:#ddf4e7; --bad:#c53030; --bad-soft:#fde7e7; --note:#fff7dc; --note-line:#e9c46a; --mine:#e8f3ff; --mine-line:#7fb2ea;
+  --amb:#b7791f; --tea:#1386a6; --pur:#7a3fd1; --blu:#2563eb; --pnk:#c2417a; --grn:#2f855a; --org:#c05621; --red:#c53030; --olv:#6b7f1a;
+  --ind:#4c51bf; --brn:#8b5a2b; --mag:#b83280; --sea:#2c7a7b; --plm:#7b3fb0; --rub:#c0265b; --cyn:#0891b2; --sky:#0369a1; --lim:#4d7c0f; --nav:#1e3a8a;
+  --f-head:"Secular One","Assistant",system-ui,sans-serif; --f-body:"Assistant",system-ui,-apple-system,"Segoe UI",sans-serif; --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#11161f; --card:#18202c; --ink:#e6ebf3; --muted:#9aa7ba; --line:#2a3546; --soft:#1f2937; --grid:rgba(160,190,255,.04);
+  --accent:#a48bff; --accent-soft:#2a2346; --ok:#6fd49b; --ok-soft:#163626; --bad:#ff8a80; --bad-soft:#3d1c1c; --note:#2f2a14; --note-line:#a58a2c; --mine:#15283d; --mine-line:#3f6f9f;
+  --amb:#f0b75a; --tea:#4cc3e0; --pur:#b48cff; --blu:#7aa7ff; --pnk:#f58bbb; --grn:#6fd49b; --org:#f6a26b; --red:#ff8a80; --olv:#b5c95a;
+  --ind:#a3a8ff; --brn:#d6a77a; --mag:#f08ad0; --sea:#6fd1cf; --plm:#c99af0; --rub:#ff7aa3; --cyn:#5fd8f0; --sky:#7cc4f5; --lim:#a3d65c; --nav:#93b4ff; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#11161f; --card:#18202c; --ink:#e6ebf3; --muted:#9aa7ba; --line:#2a3546; --soft:#1f2937; --grid:rgba(160,190,255,.04);
+  --accent:#a48bff; --accent-soft:#2a2346; --ok:#6fd49b; --ok-soft:#163626; --bad:#ff8a80; --bad-soft:#3d1c1c; --note:#2f2a14; --note-line:#a58a2c; --mine:#15283d; --mine-line:#3f6f9f;
+  --amb:#f0b75a; --tea:#4cc3e0; --pur:#b48cff; --blu:#7aa7ff; --pnk:#f58bbb; --grn:#6fd49b; --org:#f6a26b; --red:#ff8a80; --olv:#b5c95a;
+  --ind:#a3a8ff; --brn:#d6a77a; --mag:#f08ad0; --sea:#6fd1cf; --plm:#c99af0; --rub:#ff7aa3; --cyn:#5fd8f0; --sky:#7cc4f5; --lim:#a3d65c; --nav:#93b4ff; color-scheme:dark}
+html{direction:rtl}
+body{background-color:var(--bg);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:22px 22px;color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.65}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--card)}
+.wrap{max-width:860px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:8px 64px}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:6;background:var(--card);border-bottom:1px solid var(--line);margin-inline:calc(-1*max(16px,env(safe-area-inset-left,0px)));padding:8px max(16px,env(safe-area-inset-left,0px));display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.bar .sc{font-weight:700;font-size:15px}
+.bar .sc bdi{font-family:var(--f-mono)}
+.bar .meter{flex:1 1 120px;height:8px;background:var(--soft);border-radius:99px;overflow:hidden;min-width:80px}
+.bar .meter i{display:block;height:100%;width:0;background:var(--accent);transition:width .3s}
+.bar button{font:inherit;font-size:14px;font-weight:600;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:99px;padding:4px 12px;cursor:pointer}
+header.hero{padding-block:22px 6px}
+.credit{font-size:15px;background:var(--accent-soft);color:var(--ink);border-radius:10px;padding:6px 12px;display:inline-block;margin:0 0 12px}
+.eyebrow{font-size:13px;color:var(--muted);letter-spacing:.04em}
+h1{font-family:var(--f-head);font-weight:400;font-size:clamp(30px,6vw,42px);line-height:1.15;margin:4px 0 6px;text-wrap:balance}
+.sub{color:var(--muted);margin:0 0 12px}
+.legend{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.legend span{font-size:14px;border:1px solid var(--line);border-radius:99px;padding:2px 10px;background:var(--card)}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;background:currentColor;margin-inline-end:6px;vertical-align:middle}
+nav.toc{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin:12px 0 4px}
+nav.toc a{display:block;text-decoration:none;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:10px;padding:7px 11px;font-size:15px;font-weight:600}
+nav.toc a:hover{border-color:var(--accent)}
+nav.toc a b{color:var(--accent);font-family:var(--f-mono);margin-inline-end:4px}
+section.sec{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 18px 8px;margin-top:18px;scroll-margin-top:64px}
+@media (max-width:520px){section.sec{padding:14px 12px 6px;border-radius:12px}}
+.secno{font-family:var(--f-mono);font-size:13px;color:var(--muted);direction:ltr;unicode-bidi:isolate}
+h2{font-family:var(--f-head);font-weight:400;font-size:26px;margin:2px 0 10px;line-height:1.25;text-wrap:balance}
+h3{font-size:19px;margin:18px 0 6px}
+p{margin:8px 0}
+.box{border-radius:12px;padding:10px 14px;margin:12px 0;border:1px solid var(--line);background:var(--soft)}
+.box > b:first-child{display:block;margin-bottom:4px}
+.box.rule{background:var(--accent-soft);border-color:var(--accent)}
+.box.mine{background:var(--mine);border-color:var(--mine-line)}
+.box.fix{background:var(--note);border-color:var(--note-line)}
+.box.terms{background:var(--soft)}
+.box ol,.box ul{margin:4px 0;padding-inline-start:22px}
+.tw{overflow-x:auto;margin:10px 0}
+table{border-collapse:collapse;width:100%;font-size:15.5px}
+th,td{border:1px solid var(--line);padding:6px 9px;text-align:start;vertical-align:top}
+th{background:var(--soft)}
+.disp{overflow-x:auto;overflow-y:hidden;text-align:center;margin:10px 0;padding:4px 0}
+mjx-container{direction:ltr;unicode-bidi:isolate}
+mjx-container[display="true"]{margin:.4em 0!important}
+.disp mjx-container{display:inline-block!important}
+.ans{border-bottom:3px solid var(--cyn);padding-bottom:2px}
+.amb{color:var(--amb)}.tea{color:var(--tea)}.pur{color:var(--pur)}.blu{color:var(--blu)}.pnk{color:var(--pnk)}.grn{color:var(--grn)}.org{color:var(--org)}.red{color:var(--red)}.olv{color:var(--olv)}.ind{color:var(--ind)}.brn{color:var(--brn)}.mag{color:var(--mag)}.sea{color:var(--sea)}.plm{color:var(--plm)}.rub{color:var(--rub)}.cyn{color:var(--cyn)}.sky{color:var(--sky)}.lim{color:var(--lim)}.nav{color:var(--nav)}
+.k{font-weight:700}
+bdi,.m{unicode-bidi:isolate}
+.m{direction:ltr;display:inline-block;max-width:100%}
+code,pre{font-family:var(--f-mono);direction:ltr;unicode-bidi:isolate}
+/* simulation */
+.sim{border:2px solid var(--accent);border-radius:14px;padding:12px;margin:14px 0;background:var(--card)}
+.sim .st-title{font-weight:700;margin-bottom:6px}
+.sim .map{display:flex;flex-wrap:wrap;gap:5px;margin:0 0 8px;padding:0;list-style:none}
+.sim .map li{font-size:13.5px;border:1px solid var(--line);border-radius:99px;padding:2px 10px;color:var(--muted)}
+.sim .map li.on{background:var(--accent);border-color:var(--accent);color:var(--card);font-weight:700}
+.sim .map li.done{color:var(--ink);background:var(--soft)}
+.sim .lines{border:1px solid var(--line);border-radius:10px;padding:6px 8px;background:var(--soft);overflow-x:auto}
+.sim .ln{display:flex;gap:8px;align-items:center;padding:2px 4px;border-radius:6px;direction:ltr;min-height:30px}
+.sim .ln .no{font-family:var(--f-mono);font-size:12px;color:var(--muted);min-width:18px}
+.sim .ln.cur{background:var(--accent-soft);outline:2px solid var(--accent)}
+.sim .ln.fut{display:none}
+.sim .ln .f{min-width:0}
+.sim .x{margin:8px 0;padding:8px 12px;border-inline-start:4px solid var(--accent);background:var(--accent-soft);border-radius:8px}
+.sim .stp{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+.sim .stp > span{border:1px solid var(--line);border-radius:8px;padding:3px 9px;font-size:14.5px;background:var(--card)}
+.sim .stp > span > i{font-style:normal;color:var(--muted);margin-inline-end:6px;font-size:13px}
+.sim .stp .new{outline:2px solid var(--accent)}
+.sim .ctl{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-top:8px}
+.sim .ctl button{font:inherit;font-weight:700;font-size:15px;border:1px solid var(--accent);background:var(--card);color:var(--accent);border-radius:8px;padding:5px 14px;cursor:pointer}
+.sim .ctl button.pri{background:var(--accent);color:var(--card)}
+.sim .ctl button:disabled{opacity:.4;cursor:default}
+.sim .ctl .cnt{font-family:var(--f-mono);font-size:13px;color:var(--muted);direction:ltr;unicode-bidi:isolate}
+.sim .steps{display:none}
+/* quiz */
+.quiz{margin:16px 0 10px;border-top:1px dashed var(--line);padding-top:10px}
+.quiz > .qt{font-family:var(--f-head);font-size:19px;margin:0 0 6px}
+.qq{margin:10px 0 16px}
+.qq .q{font-weight:700;margin:4px 0}
+.qq ol{list-style:none;padding:0;margin:6px 0;display:grid;gap:6px}
+.qq li button{width:100%;text-align:start;font:inherit;font-size:16px;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:10px;padding:8px 12px;cursor:pointer;line-height:1.5}
+.qq li button:hover{border-color:var(--accent)}
+.qq li button.bad{border-color:var(--bad);background:var(--bad-soft)}
+.qq li button.good{border-color:var(--ok);background:var(--ok-soft)}
+.qq li button .lt{font-weight:700;color:var(--muted);margin-inline-end:8px}
+.qq .h,.qq .e{border-radius:8px;padding:6px 10px;font-size:15.5px}
+.qq .h{background:var(--bad-soft)}
+.qq .e{background:var(--ok-soft)}
+/* tools */
+.tool{border:1px solid var(--line);border-radius:12px;padding:12px;margin:12px 0;background:var(--soft)}
+.tool label{font-weight:600;font-size:15px}
+.tool input[type=range]{width:100%}
+.tool .out{font-family:var(--f-mono);direction:ltr;unicode-bidi:isolate;font-size:15px}
+.tool svg{width:100%;height:auto;display:block;background:var(--card);border-radius:8px;border:1px solid var(--line)}
+.tool .row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.tool select,.tool button{font:inherit;font-size:15px;border:1px solid var(--line);border-radius:8px;padding:4px 10px;background:var(--card);color:var(--ink)}
+.end{margin-top:18px;text-align:center;font-weight:700;font-size:18px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+mjx-container:not([display="true"]){display:inline-block;max-width:100%;overflow-x:auto;overflow-y:hidden;vertical-align:middle;padding-block:2px}
+mjx-container > svg{vertical-align:middle!important}
+mjx-assistive-mml{max-width:100%!important;left:0!important}
+[hidden]{display:none!important}
+.disp,.sim .lines{direction:ltr}
+input[type=range]{direction:ltr}
+</style>
+
+<div class="wrap" data-key="calc2-tut04-v1">
+<div class="bar"><span class="sc" id="score">ניקוד: 0</span><span class="meter" aria-hidden="true"><i id="meter"></i></span><button type="button" id="resetBtn">⟲ איפוס</button><button type="button" id="themeBtn">🌙 לילה</button></div>
+<header class="hero">
+<p class="credit">קרדיט לסיכומים של עדי מהדרייב 😊 ולעידו דוד צייג!</p>
+<div class="eyebrow">חדו״א 2 · תרגול 4 · לוזון · 17/11/25 · שני עמודים בכתב יד</div>
+<h1>תרגול 4: ערך מוחלט, פונקציות רציונליות ושני תרגילים חכמים</h1>
+<p class="sub">סיום אינטגרציה בחלקים עם $|\ln x|$, אינטגרלים של פונקציות רציונליות (השלמה לריבוע, חילוק, פירוק לשברים חלקיים), טריק השיקוף של $\sin^{100}$, והצבה ואחריה חלקים פעמיים.</p>
+<div class="legend">
+<span class="grn">גורם לינארי / ln</span>
+<span class="org">גורם חוזר / חזקה</span>
+<span class="pur">ריבועי אי-פריק / arctan / הצבה <bdi dir="ltr">t</bdi></span>
+<span class="pnk">חילוק / חלק פולינום</span>
+<span class="tea">אינטגרציה בחלקים</span>
+<span class="amb">sin / cos</span>
+<span class="red">החלק שבו <bdi dir="ltr">ln x</bdi> שלילי</span>
+<span class="nav">טריק השיקוף <bdi dir="ltr">π/2 − x</bdi> (חדש)</span>
+<span class="cyn">תשובה סופית (קו מתחת)</span>
+</div>
+<nav class="toc" aria-label="תוכן עניינים"></nav>
+</header>
+
+<!-- ============ 1 ============ -->
+<section class="sec" id="s1" data-short="אינטגרל של &lt;bdi dir=ltr&gt;|ln x|&lt;/bdi&gt;">
+<h2>המשך אינטגרציה בחלקים: $\int_{1/e}^{e}|\ln x|\,dx$</h2>
+<p>זה תרגיל 3 מהתרגול הקודם (אינטגרציה בחלקים). הקושי החדש: <b>ערך מוחלט</b> בתוך האינטגרל.</p>
+<div class="box mine"><b>מה עושה ערך מוחלט לאינטגרל? (מההתחלה, עם מספרים) — הדוגמה שלי</b>
+<ol>
+<li>שלב 1 – מה יש לנו: הפונקציה $\ln x$ בקטע $[\frac1e,\ e]$. בערך $[0.37,\ 2.72]$.</li>
+<li>שלב 2 – נציב מספרים: $\ln(0.5)\approx\class{red}{-0.69}$, $\ln(1)=0$, $\ln(2)\approx 0.69$.</li>
+<li>שלב 3 – כלומר $\ln x$ <b>שלילי</b> כש-$x<1$ וחיובי כש-$x>1$. הנקודה שבה הסימן מתחלף: $x=1$.</li>
+<li>שלב 4 – ערך מוחלט הופך שלילי לחיובי: $|\ln 0.5|=0.69$. כלומר כש-$x<1$ כותבים $|\ln x|=-\ln x$.</li>
+<li>שלב 5 – לכן חותכים את הקטע ב-1 ומורידים את הערך המוחלט בכל חלק בנפרד.</li>
+</ol></div>
+<div class="box terms"><b>מילים וסימנים</b>
+<ul>
+<li>ערך מוחלט (כמו במחברת): $|y|=y$ כש-$y\ge0$, ו-$|y|=-y$ כש-$y<0$. כאן $y=\ln x$.</li>
+<li>$e\approx2.718$, ו-$\frac1e\approx0.368$. שימו לב: $\ln e=1$ ו-$\ln\frac1e=-1$.</li>
+<li>במחברת כותבים בחלקים: $u$ ו-$u'$, $v$ ו-$v'$, והנוסחה $\int u\,v'=uv-\int u'\,v$.</li>
+</ul></div>
+<div class="disp">$$\int_{1/e}^{e}|\ln x|\,dx=\class{red}{-\int_{1/e}^{1}\ln x\,dx}+\int_{1}^{e}\ln x\,dx$$</div>
+<div class="tool" id="absTool">
+<b>המחשה: ln x מול |ln x|</b>
+<div class="row"><label for="absSel">מה להראות:</label>
+<select id="absSel"><option value="0">ln x (עם סימן)</option><option value="1">|ln x| (ערך מוחלט)</option></select></div>
+<svg id="absSvg" viewBox="0 0 400 220" role="img" aria-label="גרף של ln x או של הערך המוחלט שלו בקטע מאחד חלקי e עד e"></svg>
+<p class="out" id="absOut"></p>
+</div>
+<div class="sim"><div class="st-title">סימולציה: פתרון התרגיל, שורה אחרי שורה</div>
+<ol class="map"><li>1. חיתוך ב-1</li><li>2. קדומה בחלקים</li><li>3. הצבת גבולות</li><li>4. חיבור</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$\int_{1/e}^{e}|\ln x|\,dx$</div><div class="x">מתחילים. בתוך הערך המוחלט יש $\ln x$. צריך לדעת איפה הוא שלילי: ב-$x<1$.</div><div class="st"><span><i>שלב</i>חיתוך</span><span><i>קדומה</i>?</span></div></div>
+<div class="step" data-m="0"><div class="f">$=\class{red}{-\int_{1/e}^{1}\ln x\,dx}+\int_{1}^{e}\ln x\,dx$</div><div class="x">בחלק $[\frac1e,1]$ הלוג שלילי, אז $|\ln x|=-\ln x$. בחלק $[1,e]$ הוא חיובי, אז $|\ln x|=\ln x$. זו האדיטיביות בתחום מהרצאה 2.</div><div class="st"><span><i>שלב</i>שני אינטגרלים</span><span><i>קדומה</i>?</span></div></div>
+<div class="step" data-m="1"><div class="f">$\int\ln x\,dx=\class{tea}{\begin{bmatrix}u=\ln x & v=x\\ u'=\frac1x & v'=1\end{bmatrix}}=x\ln x-\int\frac1x\cdot x\,dx$</div><div class="x">שני האינטגרלים צריכים את אותה קדומה. בחלקים: בוחרים $u=\ln x$ (קל לגזור) ו-$v'=1$ (קל לבנות קדומה: $v=x$).</div><div class="st"><span><i>שלב</i>בחלקים</span><span><i>u</i>$\ln x$</span><span><i>v</i>$x$</span></div></div>
+<div class="step" data-m="1"><div class="f">$=x\ln x-\int 1\,dx=x\ln x-x+C$</div><div class="x">ה-$x$ מתקצר עם $\frac1x$ ונשאר $\int1\,dx=x$. זו הקדומה שכבר ראינו בהרצאה 3.</div><div class="st"><span><i>שלב</i>קדומה מוכנה</span><span><i>קדומה</i>$x\ln x-x$</span></div></div>
+<div class="step" data-m="2"><div class="f">$\int_1^e\ln x\,dx=\big[x\ln x-x\big]_1^e=(e-e)-(0-1)=1$</div><div class="x">מציבים: ב-$e$ יוצא $e\cdot1-e=0$. ב-1 יוצא $1\cdot0-1=-1$. אפס פחות מינוס אחד = 1.</div><div class="st"><span><i>קדומה</i>$x\ln x-x$</span><span><i>חלק ימני</i>$1$</span><span><i>חלק שמאלי</i>?</span></div></div>
+<div class="step" data-m="2"><div class="f">$\int_{1/e}^1\ln x\,dx=(0-1)-\left(\frac1e\cdot(-1)-\frac1e\right)=\class{red}{-1+\frac2e}$</div><div class="x">ב-1 יוצא $-1$. ב-$\frac1e$: $\ln\frac1e=-1$, אז $\frac1e\cdot(-1)-\frac1e=-\frac2e$. מחסרים. יוצא מספר שלילי (בערך $-0.26$), כצפוי, כי שם הלוג שלילי.</div><div class="st"><span><i>קדומה</i>$x\ln x-x$</span><span><i>חלק ימני</i>$1$</span><span><i>חלק שמאלי</i>$-1+\frac2e$</span></div></div>
+<div class="step" data-m="3"><div class="f"><span class="ans">$=-\left(-1+\frac2e\right)+1=2-\frac2e\approx1.264$</span></div><div class="x">החלק השמאלי נכנס עם מינוס (מהערך המוחלט), ולכן נהיה חיובי. מחברים. ההשלמה הזו שלי: במחברת החישוב נעצר אחרי הקדומה.</div><div class="st"><span><i>תשובה</i>$2-\frac2e$</span></div></div>
+</div></div>
+<div class="box rule"><b>הכלל לזכור</b>אינטגרל עם ערך מוחלט: מוצאים איפה הביטוי שבפנים מחליף סימן, חותכים שם את הקטע, ובכל חלק מורידים את הערך המוחלט (עם מינוס בחלק השלילי).</div>
+<p><b>אנלוגיה:</b> כמו לספור מרחק הליכה ולא מקום. אם הלכת 3 צעדים אחורה ו-5 קדימה, המקום הוא 2 אבל המרחק הוא 8. ערך מוחלט סופר "מרחק".</p>
+<div class="box fix"><b>הערה שלי על המחברת</b>במחברת יש את החיתוך ואת הקדומה $x\ln x-x+C$, אבל המספר הסופי לא חושב. השלמתי: $2-\frac2e$.</div>
+<div class="quiz"><div class="qt">שאלות על סעיף 1</div>
+<div class="qq" data-a="2"><p class="q">באיזו נקודה חותכים את הקטע $[\frac1e,e]$ באינטגרל של $|\ln x|$?</p><ol><li>ב-$x=0$, כי שם ערך מוחלט מחליף סימן</li><li>ב-$x=e$, כי שם $\ln x=1$</li><li>ב-$x=1$, כי שם $\ln x=0$ ומחליף סימן</li><li>ב-$x=\frac12$, כי זו האמצע של הקטע</li></ol><p class="h">רמז: חותכים איפה שהביטוי שבתוך הערך המוחלט שווה 0.</p><p class="e">נכון. $\ln 1=0$. לפני 1 הלוג שלילי, אחרי 1 חיובי.</p></div>
+<div class="qq" data-a="0"><p class="q">כש-$x$ בין $\frac1e$ ל-1, למה שווה $|\ln x|$?</p><ol><li>$-\ln x$, כי שם $\ln x$ שלילי</li><li>$\ln x$, כי ערך מוחלט לא משנה לוג</li><li>$\ln(-x)$, כי מכניסים את המינוס פנימה</li><li>$\frac1{\ln x}$, כי הופכים את השבר</li></ol><p class="h">רמז: למשל $\ln 0.5\approx-0.69$. מה צריך לעשות כדי לקבל $0.69$?</p><p class="e">נכון. מינוס של מספר שלילי הוא חיובי.</p></div>
+<div class="qq" data-a="3"><p class="q">בחישוב $\int\ln x\,dx$ בחלקים, למה בוחרים $v'=1$?</p><ol><li>כי $\ln x$ קשה לגזור, ו-1 קל לגזור</li><li>כי חייבים תמיד לבחור $v'=1$ בחלקים</li><li>כי $u'=1$ ולכן גם $v'$ חייב להיות 1</li><li>כי ל-$\ln x$ אין קדומה ידועה, ול-1 יש</li></ol><p class="h">רמז: איזה חלק אנחנו צריכים לבנות לו קדומה, ואיזה לגזור?</p><p class="e">נכון. את $\ln x$ לא יודעים לבנות לו קדומה (זה מה שמחפשים), אבל גוזרים אותו בקלות ל-$\frac1x$.</p></div>
+<div class="qq" data-a="1"><p class="q">מה ערך $\int_{1/e}^{e}\ln x\,dx$ <b>בלי</b> ערך מוחלט?</p><ol><li>$2-\frac2e\approx1.26$, כמו עם ערך מוחלט</li><li>$\frac2e\approx0.74$, כי החלק השלילי מקזז</li><li>$0$, כי שני החלקים מקזזים בדיוק</li><li>$-\frac2e\approx-0.74$, כי רוב הקטע שלילי</li></ol><p class="h">רמז: $1+(-1+\frac2e)$.</p><p class="e">נכון. $1-1+\frac2e=\frac2e$. השטח השלילי מוריד מהחיובי, ולכן יוצא פחות מ-$1.26$.</p></div>
+</div>
+</section>
+
+<!-- ============ 2 ============ -->
+<section class="sec" id="s2" data-short="מכנה בלי שורשים: השלמה לריבוע">
+<h2>פונקציה רציונלית: מכנה ממעלה 2 בלי שורשים</h2>
+<p>מכאן מתחיל הנושא החדש של התרגול. במקרה 1 במחברת: המכנה ממעלה 2 <b>ואין לו שורשים ממשיים</b>. הכלי: <b>השלמה לריבוע</b>, ואז $\class{pur}{\arctan}$.</p>
+<div class="box mine"><b>מה זו השלמה לריבוע? (מההתחלה, עם מספרים) — הדוגמה שלי</b>
+<ol>
+<li>שלב 1 – מה יש לנו: $x^2+6x+10$.</li>
+<li>שלב 2 – בודקים שאין שורשים: הדיסקרימיננטה $6^2-4\cdot10=36-40=-4<0$. אין שורשים, אי אפשר לפרק.</li>
+<li>שלב 3 – לוקחים חצי מהמקדם של $x$: חצי מ-6 זה 3. ואז $(x+3)^2=x^2+6x+9$.</li>
+<li>שלב 4 – מה חסר? יש לנו 10, ובריבוע יש רק 9. אז $x^2+6x+10=(x+3)^2+1$.</li>
+<li>שלב 5 – בדיקה עם $x=1$: בצד שמאל $1+6+10=17$. בצד ימין $(1+3)^2+1=16+1=17$. ✓</li>
+</ol></div>
+<div class="box terms"><b>למה דווקא arctan?</b>
+<ul>
+<li>מהרצאה 4: $\int\frac{dx}{x^2+1}=\arctan x+C$.</li>
+<li>אם במקום $x$ יש $(x+3)$, זה אותו דבר עם הזזה: $\int\frac{dx}{(x+3)^2+1}=\arctan(x+3)+C$ (הצבה $t=x+3$, ואז $dt=dx$).</li>
+<li>הנוסחה הכללית מהרצאה 6: $\int\frac{dx}{t^2+a^2}=\frac1a\arctan\frac ta+C$. כאן $a=1$, ולכן במחברת כתוב $\frac11\arctan(x+3)$.</li>
+</ul></div>
+<div class="sim"><div class="st-title">סימולציה: תרגיל א</div>
+<ol class="map"><li>1. בדיקת שורשים</li><li>2. השלמה לריבוע</li><li>3. arctan</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$\int\frac{dx}{x^2+6x+10}$</div><div class="x">המכנה ממעלה 2. הדיסקרימיננטה $36-40=-4$ שלילית, ולכן אין שורשים ואי אפשר לפרק לגורמים לינאריים.</div><div class="st"><span><i>מכנה</i>אי-פריק</span><span><i>צורה</i>?</span></div></div>
+<div class="step" data-m="1"><div class="f">$x^2+6x+10=\underbrace{x^2+6x+9}_{(x+3)^2}+1$</div><div class="x">מוסיפים ומחסירים 9 (ריבוע של חצי מ-6). שלושת האיברים הראשונים הם בדיוק $(x+3)^2$, ונשאר 1.</div><div class="st"><span><i>מכנה</i>$(x+3)^2+1$</span><span><i>צורה</i>?</span></div></div>
+<div class="step" data-m="2"><div class="f">$=\int\frac{dx}{(x+3)^2+1^2}$</div><div class="x">עכשיו זו בדיוק הצורה $\frac{1}{t^2+a^2}$ עם $t=x+3$ ו-$a=1$.</div><div class="st"><span><i>מכנה</i>$(x+3)^2+1$</span><span><i>צורה</i>$t=x+3,\ a=1$</span></div></div>
+<div class="step" data-m="2"><div class="f"><span class="ans">$=\frac11\class{pur}{\arctan(x+3)}+C$</span></div><div class="x">לפי הנוסחה $\frac1a\arctan\frac ta$. כאן $a=1$ ולכן פשוט $\arctan(x+3)+C$.</div><div class="st"><span><i>תשובה</i>$\arctan(x+3)+C$</span></div></div>
+</div></div>
+<div class="box fix"><b>הערה שלי על המחברת</b>ליד המכנה כתוב בכחול משהו כמו "$+1-1$". הכוונה היא להוסיף ולהחסיר <b>9</b>: $x^2+6x+9+1$, כי $9=3^2$ הוא מה שהופך את שלושת האיברים לריבוע. התוצאה במחברת נכונה.</div>
+<div class="box rule"><b>הכלל לזכור</b>מכנה ריבועי בלי שורשים ⇒ השלמה לריבוע $(x+p)^2+a^2$ ⇒ התשובה $\frac1a\arctan\frac{x+p}{a}+C$.</div>
+<p><b>אנלוגיה:</b> השלמה לריבוע היא כמו להשלים סט של קלפים: יש לך כמעט ריבוע שלם, מוסיפים את הקלף החסר (9), ומה שנשאר בצד (1) הוא "השארית".</p>
+<div class="quiz"><div class="qt">שאלות על סעיף 2</div>
+<div class="qq" data-a="1"><p class="q">איך כותבים את $x^2+4x+13$ בהשלמה לריבוע?</p><ol><li>$(x+4)^2-3$, כי מוסיפים 16</li><li>$(x+2)^2+9$, כי $13-4=9$</li><li>$(x+2)^2+13$, כי ה-13 נשאר כמו שהוא</li><li>$(x-2)^2+9$, כי מחסירים חצי מ-4</li></ol><p class="h">רמז: חצי מ-4 הוא 2, ו-$(x+2)^2=x^2+4x+4$. כמה חסר עד 13?</p><p class="e">נכון. $x^2+4x+4+9=(x+2)^2+3^2$.</p></div>
+<div class="qq" data-a="3"><p class="q">מה $\int\frac{dx}{(x+2)^2+9}$?</p><ol><li>$\arctan(x+2)+C$, כמו בתרגיל א</li><li>$\frac19\arctan\frac{x+2}{9}+C$, כי $a=9$</li><li>$3\arctan\frac{x+2}{3}+C$, כי $a=3$</li><li>$\frac13\arctan\frac{x+2}{3}+C$, כי $a=3$</li></ol><p class="h">רמז: $9=a^2$, אז $a=3$. הנוסחה $\frac1a\arctan\frac ta$.</p><p class="e">נכון. $a=3$, ולכן $\frac13\arctan\frac{x+2}{3}+C$.</p></div>
+<div class="qq" data-a="0"><p class="q">איך יודעים שלמכנה $x^2+6x+10$ אין שורשים?</p><ol><li>הדיסקרימיננטה $36-40$ שלילית</li><li>כל המקדמים שלו חיוביים</li><li>המקדם של $x^2$ שווה 1</li><li>הדיסקרימיננטה $36+40$ חיובית</li></ol><p class="h">רמז: $b^2-4ac$.</p><p class="e">נכון. $b^2-4ac=-4<0$. (מקדמים חיוביים לא מספיקים: ל-$x^2+3x+2$ יש שורשים.)</p></div>
+</div>
+</section>
+
+<!-- ============ 3 ============ -->
+<section class="sec" id="s3" data-short="מונה &lt;bdi dir=ltr&gt;x+4&lt;/bdi&gt;: נגזרת + שארית">
+<h2>מונה ממעלה 1: לפצל ל"נגזרת המכנה" + שארית</h2>
+<div class="disp">$$\int\frac{x+4}{x^2+6x+10}\,dx$$</div>
+<p>עכשיו יש $x$ במונה. הרעיון: לבנות במונה את <b>הנגזרת של המכנה</b>, כי $\int\frac{g'}{g}=\class{grn}{\ln|g|}$.</p>
+<div class="box mine"><b>מאיפה מגיע ה-$\frac12$ ו-$2(x+3)$? (עם מספרים) — הדוגמה שלי</b>
+<ol>
+<li>שלב 1 – הנגזרת של המכנה: $(x^2+6x+10)'=2x+6=2(x+3)$.</li>
+<li>שלב 2 – במונה יש $x+4$, לא $2x+6$. כדי לקבל $x$ (ולא $2x$) כופלים ב-$\frac12$: $\frac12(2x+6)=x+3$.</li>
+<li>שלב 3 – מה חסר עד $x+4$? בדיוק 1. אז $x+4=\frac12(2x+6)+1$.</li>
+<li>שלב 4 – בדיקה עם $x=2$: בצד שמאל $2+4=6$. בצד ימין $\frac12(4+6)+1=5+1=6$. ✓</li>
+<li>שלב 5 – לכן האינטגרל נשבר לשניים: חלק $\class{grn}{\ln}$ (המונה = נגזרת המכנה) וחלק $\class{pur}{\arctan}$ (מונה קבוע, כמו בסעיף 2).</li>
+</ol></div>
+<div class="sim"><div class="st-title">סימולציה: תרגיל ב</div>
+<ol class="map"><li>1. בניית הנגזרת</li><li>2. פיצול</li><li>3. חלק ln</li><li>4. חלק arctan</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$\int\frac{x+4}{x^2+6x+10}\,dx$</div><div class="x">נגזרת המכנה היא $2x+6=2(x+3)$. נרצה לראות אותה במונה.</div><div class="st"><span><i>נגזרת מכנה</i>$2(x+3)$</span><span><i>חלק ln</i>?</span><span><i>חלק arctan</i>?</span></div></div>
+<div class="step" data-m="0"><div class="f">$x+4=\frac12\cdot2(x+3)+1$</div><div class="x">$\frac12\cdot2(x+3)=x+3$, ועוד 1 נותן $x+4$. זה רק לכתוב את אותו מונה בצורה אחרת.</div><div class="st"><span><i>נגזרת מכנה</i>$2(x+3)$</span><span><i>מונה</i>$\frac12\cdot2(x+3)+1$</span></div></div>
+<div class="step" data-m="1"><div class="f">$=\frac12\int\frac{2(x+3)}{x^2+6x+10}dx+\int\frac{1}{x^2+6x+10}dx$</div><div class="x">מפצלים את השבר לשניים (לינאריות של האינטגרל). את $\frac12$ מוציאים החוצה.</div><div class="st"><span><i>חלק ln</i>$\frac12\int\frac{g'}{g}$</span><span><i>חלק arctan</i>סעיף 2</span></div></div>
+<div class="step" data-m="2"><div class="f">$\frac12\int\frac{2(x+3)}{x^2+6x+10}dx=\frac12\class{grn}{\ln(x^2+6x+10)}$</div><div class="x">המונה הוא בדיוק הנגזרת של המכנה, אז הקדומה היא $\ln$ של המכנה. אין צורך בערך מוחלט: $(x+3)^2+1$ תמיד חיובי.</div><div class="st"><span><i>חלק ln</i>$\frac12\ln(x^2+6x+10)$</span><span><i>חלק arctan</i>?</span></div></div>
+<div class="step" data-m="3"><div class="f">$\int\frac{dx}{x^2+6x+10}=\class{pur}{\arctan(x+3)}$</div><div class="x">זה בדיוק תרגיל א מסעיף 2.</div><div class="st"><span><i>חלק ln</i>$\frac12\ln(x^2+6x+10)$</span><span><i>חלק arctan</i>$\arctan(x+3)$</span></div></div>
+<div class="step" data-m="3"><div class="f"><span class="ans">$=\frac12\ln(x^2+6x+10)+\arctan(x+3)+C$</span></div><div class="x">מחברים את שני החלקים. זו התשובה במחברת.</div><div class="st"><span><i>תשובה</i>$\frac12\ln(\dots)+\arctan(x+3)+C$</span></div></div>
+</div></div>
+<div class="box rule"><b>הכלל לזכור</b>מונה לינארי מעל ריבועי אי-פריק: כותבים מונה = (מספר) · (נגזרת המכנה) + (קבוע). החלק הראשון נותן $\ln$, השני נותן $\arctan$.</div>
+<div class="quiz"><div class="qt">שאלות על סעיף 3</div>
+<div class="qq" data-a="2"><p class="q">למה כופלים ב-$\frac12$ לפני $2(x+3)$?</p><ol><li>כי $\frac12$ הוא המקדם של $\arctan$ בנוסחה</li><li>כי חצי מ-6 הוא 3, כמו בהשלמה לריבוע</li><li>כי $2(x+3)=2x+6$, ובמונה יש רק $x$ אחד</li><li>כי צריך לחלק ב-2 את המכנה כדי לפשט</li></ol><p class="h">רמז: מה המקדם של $x$ ב-$2x+6$, ומה המקדם במונה $x+4$?</p><p class="e">נכון. $\frac12\cdot(2x+6)=x+3$, ועכשיו המקדם של $x$ מתאים.</p></div>
+<div class="qq" data-a="1"><p class="q">איך כותבים את $3x+5$ בעזרת $(x^2+2x+5)'=2x+2$?</p><ol><li>$\frac32(2x+2)+5$, כי ה-5 נשאר בצד</li><li>$\frac32(2x+2)+2$, כי $\frac32\cdot2=3$</li><li>$3(2x+2)-1$, כי $3\cdot2=6$ ומחסרים</li><li>$\frac12(2x+2)+4$, כי $\frac12\cdot2=1$</li></ol><p class="h">רמז: $\frac32(2x+2)=3x+3$. כמה חסר עד $3x+5$?</p><p class="e">נכון. $3x+3+2=3x+5$.</p></div>
+<div class="qq" data-a="3"><p class="q">מה $\int\frac{2x+6}{x^2+6x+10}dx$?</p><ol><li>$\arctan(x+3)+C$, כי המכנה אי-פריק</li><li>$\frac12\ln(x^2+6x+10)+C$, כמו בתרגיל ב</li><li>$2\ln(x^2+6x+10)+C$, כי במונה יש 2</li><li>$\ln(x^2+6x+10)+C$, כי זה $\frac{g'}{g}$</li></ol><p class="h">רמז: $\int\frac{g'}{g}=\ln|g|$.</p><p class="e">נכון. המונה הוא בדיוק $g'$, ולכן בלי שום מקדם.</p></div>
+</div>
+</section>
+
+<!-- ============ 4 ============ -->
+<section class="sec" id="s4" data-short="חילוק פולינומים: &lt;bdi dir=ltr&gt;x⁴(1−x)⁴&lt;/bdi&gt;">
+<h2>מונה גדול מהמכנה: קודם חילוק</h2>
+<div class="disp">$$\int\frac{x^4(1-x)^4}{1+x^2}\,dx$$</div>
+<p>כאן המונה ממעלה 8 והמכנה ממעלה 2. כשהמונה "גדול" (מעלה גבוהה או שווה), קודם <b>מחלקים</b>, כמו שמחלקים $\frac{17}{5}=3+\frac25$.</p>
+<div class="box mine"><b>מה עושה חילוק פולינומים? (מההתחלה, עם מספרים) — הדוגמה שלי</b>
+<ol>
+<li>שלב 1 – עם מספרים: $\frac{17}{5}$. כמה פעמים 5 נכנס ב-17? 3 פעמים, ונשאר 2. אז $\frac{17}{5}=3+\frac25$.</li>
+<li>שלב 2 – עם פולינומים קטנים: $\frac{x^2}{x^2+1}$. כמה פעמים $x^2+1$ נכנס ב-$x^2$? פעם אחת, ונשאר $-1$.</li>
+<li>שלב 3 – לכן $\frac{x^2}{x^2+1}=1-\frac{1}{x^2+1}$. בדיקה עם $x=1$: $\frac12$ מול $1-\frac12=\frac12$. ✓</li>
+<li>שלב 4 – עכשיו קל: $\int\left(1-\frac{1}{x^2+1}\right)dx=x-\arctan x+C$.</li>
+</ol>
+החילוק הופך שבר "קשה" ל<span class="pnk">פולינום</span> (קל) + שבר שהמונה שלו קטן מהמכנה.</div>
+<h3>הלולאה של החילוק — מתי היא נגמרת?</h3>
+<p>החילוק הארוך הוא לולאה: בכל סיבוב מורידים את האיבר עם החזקה הגבוהה. היא נגמרת באחת משתי דרכים:</p>
+<div class="tw"><table><tr><th>איך נגמר</th><th>מה נשאר</th><th>דוגמה</th></tr>
+<tr><td>השארית היא 0</td><td>רק פולינום, אין שבר בכלל</td><td>$\frac{x^2-1}{x-1}=x+1$</td></tr>
+<tr><td>מעלת השארית קטנה ממעלת המכנה</td><td>פולינום + שבר "פשוט" (ממשיכים בשיטות של סעיפים 2, 3, 5)</td><td>כאן: שארית $-4$ (מעלה 0) מול מכנה ממעלה 2</td></tr>
+</table></div>
+<div class="sim"><div class="st-title">סימולציה: פתיחת סוגריים, חילוק ארוך ואינטגרל</div>
+<ol class="map"><li>1. פתיחת סוגריים</li><li>2. חילוק (לולאה)</li><li>3. אינטגרל</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$x^4(1-x)^4=x^4\left(1-4x+6x^2-4x^3+x^4\right)$</div><div class="x">$(1-x)^4$ לפי הבינום (מקדמים 1, 4, 6, 4, 1 עם סימנים מתחלפים).</div><div class="st"><span><i>מונה</i>?</span><span><i>מנה</i>—</span><span><i>שארית</i>—</span></div></div>
+<div class="step" data-m="0"><div class="f">$=x^8-4x^7+6x^6-4x^5+x^4$</div><div class="x">כופלים כל איבר ב-$x^4$. במחברת זה כתוב מהחזקה הקטנה לגדולה. לחילוק כותבים מהגדולה לקטנה.</div><div class="st"><span><i>מונה</i>$x^8-4x^7+6x^6-4x^5+x^4$</span><span><i>מנה</i>—</span><span><i>שארית</i>—</span></div></div>
+<div class="step" data-m="1"><div class="f">$x^8\div x^2=\class{pnk}{x^6}:\quad \text{rest}=-4x^7+5x^6-4x^5+x^4$</div><div class="x">סיבוב 1: $x^6\cdot(x^2+1)=x^8+x^6$. מחסרים מהמונה: $6x^6-x^6=5x^6$.</div><div class="st"><span><i>מנה</i>$x^6$</span><span><i>שארית</i>$-4x^7+5x^6-4x^5+x^4$</span><span><i>מעלה</i>7</span></div></div>
+<div class="step" data-m="1"><div class="f">$\class{pnk}{-4x^5}:\quad \text{rest}=5x^6+x^4$</div><div class="x">סיבוב 2: $-4x^5(x^2+1)=-4x^7-4x^5$. מחסרים: $-4x^5-(-4x^5)=0$.</div><div class="st"><span><i>מנה</i>$x^6-4x^5$</span><span><i>שארית</i>$5x^6+x^4$</span><span><i>מעלה</i>6</span></div></div>
+<div class="step" data-m="1"><div class="f">$\class{pnk}{+5x^4}:\quad \text{rest}=-4x^4$</div><div class="x">סיבוב 3: $5x^4(x^2+1)=5x^6+5x^4$. מחסרים: $x^4-5x^4=-4x^4$.</div><div class="st"><span><i>מנה</i>$x^6-4x^5+5x^4$</span><span><i>שארית</i>$-4x^4$</span><span><i>מעלה</i>4</span></div></div>
+<div class="step" data-m="1"><div class="f">$\class{pnk}{-4x^2}:\quad \text{rest}=4x^2$</div><div class="x">סיבוב 4: $-4x^2(x^2+1)=-4x^4-4x^2$. מחסרים: נשאר $+4x^2$.</div><div class="st"><span><i>מנה</i>$x^6-4x^5+5x^4-4x^2$</span><span><i>שארית</i>$4x^2$</span><span><i>מעלה</i>2</span></div></div>
+<div class="step" data-m="1"><div class="f">$\class{pnk}{+4}:\quad \text{rest}=-4$</div><div class="x">סיבוב 5: $4(x^2+1)=4x^2+4$. מחסרים: נשאר $-4$. מעלה 0, קטנה מ-2 ⇒ הלולאה נגמרת.</div><div class="st"><span><i>מנה</i>$x^6-4x^5+5x^4-4x^2+4$</span><span><i>שארית</i>$-4$</span><span><i>מעלה</i>0 ⇒ עוצרים</span></div></div>
+<div class="step" data-m="1"><div class="f">$\frac{x^4(1-x)^4}{1+x^2}=x^6-4x^5+5x^4-4x^2+4-\frac{4}{1+x^2}$</div><div class="x">מנה + שארית חלקי מכנה. זו השורה האחרונה במחברת.</div><div class="st"><span><i>מנה</i>$x^6-4x^5+5x^4-4x^2+4$</span><span><i>שבר</i>$-\frac4{1+x^2}$</span></div></div>
+<div class="step" data-m="2"><div class="f"><span class="ans">$=\frac{x^7}{7}-\frac{2x^6}{3}+x^5-\frac{4x^3}{3}+4x-4\class{pur}{\arctan x}+C$</span></div><div class="x">ההשלמה שלי: כל חזקה לפי $\int x^n=\frac{x^{n+1}}{n+1}$, ו-$\int\frac{4}{1+x^2}=4\arctan x$.</div><div class="st"><span><i>תשובה</i>פולינום $-\,4\arctan x+C$</span></div></div>
+</div></div>
+<div class="box mine"><b>עובדה יפה (הדוגמה שלי)</b>אם מציבים את הגבולות 0 ו-1 בתשובה מקבלים בדיוק $\frac17-\frac23+1-\frac43+4-\pi=\frac{22}{7}-\pi\approx0.00126$. הפונקציה בפנים חיובית, ולכן האינטגרל חיובי. מסקנה: $\pi<\frac{22}{7}$. זו הוכחה מפורסמת לכך שהקירוב $\frac{22}{7}$ גדול מעט מ-$\pi$.</div>
+<div class="box fix"><b>הערה שלי על המחברת</b>במחברת החישוב נעצר אחרי החילוק. השלמתי את האינטגרל עצמו (שורה אחרונה בסימולציה).</div>
+<div class="box rule"><b>הכלל לזכור</b>מעלת המונה ≥ מעלת המכנה ⇒ קודם חילוק. אחרי החילוק: פולינום (קל) + שבר שמעלת המונה שלו קטנה.</div>
+<div class="quiz"><div class="qt">שאלות על סעיף 4</div>
+<div class="qq" data-a="0"><p class="q">מתי חובה לחלק פולינומים לפני הפירוק?</p><ol><li>כשמעלת המונה ≥ מעלת המכנה</li><li>כשמעלת המונה קטנה ממעלת המכנה</li><li>כשלמכנה אין שורשים ממשיים</li><li>רק כשהמכנה ממעלה 1 בדיוק</li></ol><p class="h">רמז: כמו $\frac{17}{5}$ מול $\frac25$. מתי השבר "גדול"?</p><p class="e">נכון. גם במעלות שוות (כמו $\frac{x^2}{x^2+1}$) צריך לחלק.</p></div>
+<div class="qq" data-a="2"><p class="q">בחילוק של $x^8-4x^7+\dots$ ב-$x^2+1$, מה האיבר הראשון במנה?</p><ol><li>$x^8$, כי זו החזקה הגבוהה במונה</li><li>$x^4$, כי $8\div2=4$</li><li>$x^6$, כי $x^8\div x^2=x^6$</li><li>$x^{10}$, כי $x^8\cdot x^2=x^{10}$</li></ol><p class="h">רמז: מחלקים את האיבר המוביל במונה באיבר המוביל במכנה.</p><p class="e">נכון. מחסרים חזקות: $8-2=6$.</p></div>
+<div class="qq" data-a="1"><p class="q">למה החילוק בסימולציה נעצר כשהשארית היא $-4$?</p><ol><li>כי השארית שלילית, ושארית שלילית עוצרת את החילוק</li><li>כי מעלת השארית (0) קטנה ממעלת המכנה (2)</li><li>כי עשינו בדיוק 5 סיבובים, כמו מספר האיברים</li><li>כי $-4$ מתחלק ב-$x^2+1$ בלי שארית</li></ol><p class="h">רמז: מתי כבר אי אפשר להכניס את $x^2+1$ לתוך השארית?</p><p class="e">נכון. אי אפשר לחלק קבוע ב-$x^2$ ולקבל פולינום.</p></div>
+<div class="qq" data-a="3"><p class="q">מה $\int\frac{x^2}{x^2+1}dx$?</p><ol><li>$\frac{x^3}{3}\arctan x+C$, כי מחלקים את הקדומות</li><li>$\ln(x^2+1)+C$, כי המונה דומה לנגזרת</li><li>$x+\arctan x+C$, כי השארית היא $+1$</li><li>$x-\arctan x+C$, כי השארית היא $-1$</li></ol><p class="h">רמז: מהדוגמה שלי: $\frac{x^2}{x^2+1}=1-\frac{1}{x^2+1}$.</p><p class="e">נכון. $\int1=x$, ו-$\int\frac1{x^2+1}=\arctan x$.</p></div>
+</div>
+</section>
+
+<!-- ============ 5 ============ -->
+<section class="sec" id="s5" data-short="האלגוריתם הכללי">
+<h2>האלגוריתם למקרה הכללי</h2>
+<p>במחברת: המכנה מכיל גם גורמים <span class="grn">פריקים</span> (לינאריים) וגם <span class="pur">אי-פריקים</span> (ריבועיים בלי שורשים), ומעלת המכנה גדולה ממעלת המונה.</p>
+<div class="box mine"><b>מה זה "פירוק לשברים חלקיים"? (מההתחלה, עם מספרים) — הדוגמה שלי</b>
+<ol>
+<li>שלב 1 – חיבור שברים רגיל: $\frac1{x+1}-\frac1{x+2}=\frac{(x+2)-(x+1)}{(x+1)(x+2)}=\frac{1}{(x+1)(x+2)}$.</li>
+<li>שלב 2 – פירוק הוא <b>אותו חיבור, מהסוף להתחלה</b>: מקבלים $\frac{1}{(x+1)(x+2)}$ ורוצים לחזור לשני השברים הקטנים.</li>
+<li>שלב 3 – לא יודעים מראש את המונים, אז כותבים "חורים": $\frac{A}{x+1}+\frac{B}{x+2}$. $A$ ו-$B$ הם <b>מספרים קבועים</b> שעוד לא ידועים.</li>
+<li>שלב 4 – למה זה עוזר? כל שבר קטן קל לאינטגרל: $\int\frac{A}{x+1}=A\class{grn}{\ln|x+1|}$.</li>
+</ol></div>
+<h3>מפת השלבים (כמו במחברת)</h3>
+<div class="tw"><table><tr><th>שלב</th><th>מה עושים</th></tr>
+<tr><td>0</td><td>אם מעלת המונה ≥ מעלת המכנה: קודם <span class="pnk">חילוק</span> (סעיף 4).</td></tr>
+<tr><td>1</td><td>מפרקים את המכנה לגורמים: <span class="grn">לינאריים</span> $(ax+b)$ ו<span class="pur">ריבועיים אי-פריקים</span> $(ax^2+bx+c)$.</td></tr>
+<tr><td>2</td><td>לכל גורם כותבים שברים לפי הטבלה למטה.</td></tr>
+<tr><td>3</td><td>מביאים את כל השברים למכנה משותף, ומשווים את המונה למונה המקורי.</td></tr>
+<tr><td>4</td><td>מוצאים את המקדמים: <b>השוואת מקדמים</b> ו/או <b>הצבת ערכים של x</b>.</td></tr>
+<tr><td>5</td><td>מחשבים את האינטגרל של כל שבר בשיטות של סעיפים 2 ו-3 (ו-ln לגורם לינארי).</td></tr>
+</table></div>
+<h3>איזה שבר כותבים לכל גורם?</h3>
+<div class="tw"><table><tr><th>גורם במכנה</th><th>מה כותבים</th></tr>
+<tr><td><span class="grn">לינארי</span> פעם אחת: $(ax+b)$</td><td>$\frac{A}{ax+b}$</td></tr>
+<tr><td><span class="org">לינארי שחוזר</span> $k$ פעמים: $(ax+b)^k$</td><td>$\frac{A_1}{ax+b}+\frac{A_2}{(ax+b)^2}+\dots+\frac{A_k}{(ax+b)^k}$</td></tr>
+<tr><td><span class="pur">ריבועי אי-פריק</span> פעם אחת</td><td>$\frac{Ax+B}{ax^2+bx+c}$</td></tr>
+<tr><td><span class="org">ריבועי אי-פריק שחוזר</span> $k$ פעמים</td><td>$\frac{A_1x+B_1}{ax^2+bx+c}+\dots+\frac{A_kx+B_k}{(ax^2+bx+c)^k}$</td></tr>
+</table></div>
+<div class="box terms"><b>למה מעל ריבועי כותבים $Ax+B$ ולא רק $A$?</b>
+<ul>
+<li>הכלל: המונה של כל שבר קטן ממעלה <b>אחת פחות</b> מהגורם שלו. גורם ממעלה 1 ⇒ מונה ממעלה 0 (מספר). גורם ממעלה 2 ⇒ מונה ממעלה 1 ($Ax+B$).</li>
+<li>ספירה: מספר הנעלמים תמיד שווה למעלת המכנה. למשל $x^2(x^2+2x+5)$ ממעלה 4, ויש 4 נעלמים: $A,B,C,D$. לכן תמיד יש פתרון אחד בדיוק.</li>
+<li>במחברת: "וכן הלאה עבור ביטויים אי-פריקים ממעלות גבוהות יותר".</li>
+</ul></div>
+<div class="tool" id="formTool">
+<b>כלי: בחר מכנה וראה איך כותבים את הפירוק</b>
+<div class="row"><label for="formSel">מכנה:</label>
+<select id="formSel">
+<option value="0">(x+1)(x+2)</option>
+<option value="1">x²(x²+2x+5)</option>
+<option value="2">(x−1)³</option>
+<option value="3">(x+3)(x²+1)</option>
+<option value="4">(x²+1)²</option>
+<option value="5">x(x−2)(x+5)</option>
+</select></div>
+<div id="formOut" class="disp"></div>
+<p id="formNote"></p>
+</div>
+<div class="box rule"><b>הכלל לזכור</b>כל גורם מקבל שברים לפי הסוג שלו. מספר הנעלמים = מעלת המכנה. אחר כך מכנה משותף והשוואה.</div>
+<div class="quiz"><div class="qt">שאלות על סעיף 5</div>
+<div class="qq" data-a="3"><p class="q">מה הצורה הנכונה לפירוק של $\frac{1}{(x-1)^2(x+4)}$?</p><ol><li>$\frac{A}{(x-1)^2}+\frac{B}{x+4}$, שבר אחד לכל סוגריים במכנה</li><li>$\frac{Ax+B}{(x-1)^2}+\frac{C}{x+4}$, כי $(x-1)^2$ ריבועי</li><li>$\frac{A}{x-1}+\frac{B}{x+4}$, בלי לחזור על הגורם</li><li>$\frac{A}{x-1}+\frac{B}{(x-1)^2}+\frac{C}{x+4}$, חוזר פעמיים</li></ol><p class="h">רמז: $(x-1)$ לינארי שחוזר פעמיים. כמה שברים הוא מקבל?</p><p class="e">נכון. 3 נעלמים, ומעלת המכנה 3.</p></div>
+<div class="qq" data-a="0"><p class="q">כמה מקדמים לא ידועים יהיו בפירוק של $\frac{x+7}{x(x^2+4)}$?</p><ol><li>3, כי מעלת המכנה היא 3</li><li>2, כי יש שני גורמים במכנה</li><li>4, כי יש שני גורמים ושניהם ריבועיים</li><li>1, כי המונה ממעלה 1</li></ol><p class="h">רמז: $\frac{A}{x}+\frac{Bx+C}{x^2+4}$.</p><p class="e">נכון. $A$, $B$, $C$. מספר הנעלמים שווה למעלת המכנה.</p></div>
+<div class="qq" data-a="2"><p class="q">למה מעל $x^2+4$ כותבים $Bx+C$ ולא רק $B$?</p><ol><li>כי $x^2+4$ פריק, ולכן צריך שני גורמים במונה</li><li>כי ככה המונה נהיה הנגזרת של המכנה תמיד</li><li>כי מעל גורם ממעלה 2 המונה עד מעלה 1</li><li>כי צריך יותר נעלמים ממעלת המכנה, ליתר ביטחון</li></ol><p class="h">רמז: מה מעלת הגורם $x^2+4$, ומה המעלה המקסימלית של מונה "פשוט"?</p><p class="e">נכון. גורם ממעלה 2 ⇒ מונה עד מעלה 1.</p></div>
+<div class="qq" data-a="1"><p class="q">מה הדבר הראשון שבודקים לפני פירוק של $\frac{x^3+1}{x^2-1}$?</p><ol><li>אם למכנה יש שורשים, כי אז מפרקים אותו מיד</li><li>אם מעלת המונה ≥ מעלת המכנה, כי אז קודם מחלקים</li><li>אם המונה הוא נגזרת המכנה, כי אז יש ln</li><li>אם המכנה אי-פריק, כי אז משלימים לריבוע</li></ol><p class="h">רמז: מעלת המונה 3, מעלת המכנה 2.</p><p class="e">נכון. שלב 0 במפה: 3 ≥ 2, ולכן קודם חילוק.</p></div>
+</div>
+</section>
+
+<!-- ============ 6 ============ -->
+<section class="sec" id="s6" data-short="תרגיל ד: &lt;bdi dir=ltr&gt;1/(x²+3x+2)&lt;/bdi&gt;">
+<h2>תרגיל ד: שני גורמים לינאריים</h2>
+<div class="disp">$$\int\frac{dx}{x^2+3x+2}$$</div>
+<div class="box mine"><b>איך מוצאים את $A$ ו-$B$? (עם מספרים) — הדוגמה שלי לבדיקה</b>
+<ol>
+<li>שלב 1 – אחרי מכנה משותף צריך: $1=A(x+2)+B(x+1)$ <b>לכל</b> $x$.</li>
+<li>שלב 2 – "לכל $x$" אומר שמותר להציב כל מספר. נבחר $x=-1$: $1=A\cdot1+B\cdot0$, אז $A=1$.</li>
+<li>שלב 3 – נבחר $x=-2$: $1=A\cdot0+B\cdot(-1)$, אז $B=-1$.</li>
+<li>שלב 4 – בדיקה עם $x=0$: $\frac{1}{1\cdot2}=\frac12$ ו-$\frac11-\frac12=\frac12$. ✓</li>
+</ol>
+זו שיטת <b>הצבת ערכים</b>. במחברת השתמשו ב<b>השוואת מקדמים</b> וקיבלו אותו דבר (בסימולציה).</div>
+<div class="sim"><div class="st-title">סימולציה: תרגיל ד (עם פאנל "מצב")</div>
+<ol class="map"><li>1. פירוק המכנה</li><li>2. צורת הפירוק</li><li>3. השוואת מקדמים</li><li>4. אינטגרל</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$x^2+3x+2=(x+1)(x+2)$</div><div class="x">מחפשים שני מספרים שמכפלתם 2 וסכומם 3: 1 ו-2. (בדיקה: $(x+1)(x+2)=x^2+3x+2$.)</div><div class="st"><span><i>מכנה</i>$(x+1)(x+2)$</span><span><i>A</i>?</span><span><i>B</i>?</span></div></div>
+<div class="step" data-m="1"><div class="f">$\frac{1}{(x+1)(x+2)}=\frac{A}{x+1}+\frac{B}{x+2}$</div><div class="x">שני גורמים <span class="grn">לינאריים</span> שונים ⇒ שבר אחד לכל אחד.</div><div class="st"><span><i>מכנה</i>$(x+1)(x+2)$</span><span><i>A</i>?</span><span><i>B</i>?</span></div></div>
+<div class="step" data-m="1"><div class="f">$=\frac{A(x+2)+B(x+1)}{(x+1)(x+2)}$</div><div class="x">מכנה משותף: כל מונה מוכפל בגורם שחסר לו.</div><div class="st"><span><i>מונה</i>$A(x+2)+B(x+1)$</span><span><i>A</i>?</span><span><i>B</i>?</span></div></div>
+<div class="step" data-m="2"><div class="f">$1=Ax+2A+Bx+B=(A+B)x+(2A+B)$</div><div class="x">המכנים שווים, אז המונים שווים. פותחים סוגריים ומקבצים לפי חזקות של $x$.</div><div class="st"><span><i>מקדם x</i>$A+B$</span><span><i>מקדם חופשי</i>$2A+B$</span></div></div>
+<div class="step" data-m="2"><div class="f">$A+B=0,\qquad 2A+B=1$</div><div class="x">בצד שמאל $1=0\cdot x+1$. משווים: המקדם של $x$ הוא 0, המקדם החופשי הוא 1.</div><div class="st"><span><i>משוואה 1</i>$A+B=0$</span><span><i>משוואה 2</i>$2A+B=1$</span></div></div>
+<div class="step" data-m="2"><div class="f">$A=1,\quad B=-1$</div><div class="x">מחסרים: $(2A+B)-(A+B)=1-0$, אז $A=1$. ואז $B=-A=-1$.</div><div class="st"><span><i>A</i>$1$</span><span><i>B</i>$-1$</span></div></div>
+<div class="step" data-m="3"><div class="f">$\int\frac{dx}{x+1}-\int\frac{dx}{x+2}=\class{grn}{\ln|x+1|-\ln|x+2|}+C$</div><div class="x">כל שבר נותן $\ln$ של ערך מוחלט.</div><div class="st"><span><i>A</i>$1$</span><span><i>B</i>$-1$</span><span><i>קדומה</i>$\ln|x+1|-\ln|x+2|$</span></div></div>
+<div class="step" data-m="3"><div class="f"><span class="ans">$=\ln\left|\frac{x+1}{x+2}\right|+C$</span></div><div class="x">חוק הלוגים: $\ln a-\ln b=\ln\frac ab$.</div><div class="st"><span><i>תשובה</i>$\ln\left|\frac{x+1}{x+2}\right|+C$</span></div></div>
+</div></div>
+<div class="box fix"><b>הערה שלי על המחברת</b>במחברת כתוב $\ln(x+1)-\ln(x+2)$ בלי ערך מוחלט. צריך $\ln|x+1|-\ln|x+2|$, כי למשל ב-$x=-5$ הביטויים שליליים. בשורה האחרונה של המחברת הערך המוחלט כבר מופיע, ושם זה נכון.</div>
+<div class="tool" id="chkTool">
+<b>כלי: בודק פירוק בכל נקודה</b>
+<div class="row"><label for="chkSel">תרגיל:</label><select id="chkSel"><option value="0">ד: 1/((x+1)(x+2))</option><option value="1">ה: (12x+5)/(x²(x²+2x+5))</option><option value="2">ג: x⁴(1−x)⁴/(1+x²)</option></select></div>
+<label for="chkX">x = <span class="out" id="chkXv">0.5</span></label>
+<input type="range" id="chkX" min="0.1" max="3" step="0.1" value="0.5">
+<p class="out" id="chkOut"></p>
+</div>
+<div class="quiz"><div class="qt">שאלות על סעיף 6</div>
+<div class="qq" data-a="1"><p class="q">בשוויון $1=A(x+2)+B(x+1)$, איזה $x$ כדאי להציב כדי למצוא את $B$ מיד?</p><ol><li>$x=-1$, כי אז $B$ נשאר לבד</li><li>$x=-2$, כי אז $A$ נעלם</li><li>$x=0$, כי אז הכי קל לחשב</li><li>$x=1$, כי אז שני הגורמים חיוביים</li></ol><p class="h">רמז: איזה $x$ מאפס את $(x+2)$?</p><p class="e">נכון. $1=B\cdot(-1)$, ולכן $B=-1$.</p></div>
+<div class="qq" data-a="3"><p class="q">למה מותר "להשוות מקדמים" ב-$1=(A+B)x+(2A+B)$?</p><ol><li>כי $A$ ו-$B$ הם משתנים שתלויים ב-$x$</li><li>כי השוויון נכון רק בנקודה אחת, וזו הנקודה</li><li>כי המכנים שונים, ולכן המונים שונים</li><li>כי השוויון נכון לכל $x$, ולכן המקדמים שווים</li></ol><p class="h">רמז: $A$ ו-$B$ קבועים. מה ידוע על שני פולינומים שווים בכל נקודה?</p><p class="e">נכון. שני פולינומים ששווים לכל $x$ חייבים להיות עם אותם מקדמים.</p></div>
+<div class="qq" data-a="0"><p class="q">מה $\int\frac{dx}{(x-1)(x+3)}$? (הפירוק: $A=\frac14$, $B=-\frac14$)</p><ol><li>$\frac14\ln\left|\frac{x-1}{x+3}\right|+C$</li><li>$\frac14\ln\left|\frac{x+3}{x-1}\right|+C$</li><li>$\ln\left|\frac{x-1}{x+3}\right|+C$</li><li>$\frac14\ln|(x-1)(x+3)|+C$</li></ol><p class="h">רמז: $\frac14\ln|x-1|-\frac14\ln|x+3|$.</p><p class="e">נכון. מוציאים $\frac14$ ומשתמשים ב-$\ln a-\ln b=\ln\frac ab$.</p></div>
+</div>
+</section>
+
+<!-- ============ 7 ============ -->
+<section class="sec" id="s7" data-short="תרגיל ה: גורם חוזר + ריבועי">
+<h2>תרגיל ה: גורם חוזר וגורם ריבועי</h2>
+<div class="disp">$$\int\frac{12x+5}{\class{org}{x^2}\,\class{pur}{(x^2+2x+5)}}\,dx$$</div>
+<p>במכנה יש $\class{org}{x^2}$ (הגורם הלינארי $x$ חוזר פעמיים) ו-$\class{pur}{x^2+2x+5}$ (דיסקרימיננטה $4-20=-16<0$, אי-פריק). במחברת נכתבו הצורה והמשוואה, ואז "וממשיכים עם השוואת מקדמים/הצבה". השלמתי את כל השאר.</p>
+<div class="box terms"><b>מפת השלבים לתרגיל הזה</b>
+<ol>
+<li>צורת הפירוק (4 נעלמים, כי המכנה ממעלה 4).</li>
+<li>מכנה משותף ופתיחת סוגריים.</li>
+<li>השוואת מקדמים: 4 משוואות. מתחילים מהקלה (המקדם החופשי).</li>
+<li>אינטגרל של כל חלק: $\class{grn}{\ln}$, חזקה, ו-$\ln$ + $\class{pur}{\arctan}$ (כמו סעיף 3).</li>
+</ol></div>
+<div class="sim"><div class="st-title">סימולציה: תרגיל ה (עם פאנל "מצב")</div>
+<ol class="map"><li>1. צורה</li><li>2. מכנה משותף</li><li>3. מקדמים</li><li>4. אינטגרל</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$\frac{12x+5}{x^2(x^2+2x+5)}=\frac{A}{x}+\frac{B}{x^2}+\frac{Cx+D}{x^2+2x+5}$</div><div class="x">$\class{org}{x^2}$ = גורם לינארי חוזר ⇒ שני שברים: $\frac Ax$ ו-$\frac B{x^2}$. הגורם הריבועי ⇒ $\frac{Cx+D}{\dots}$.</div><div class="st"><span><i>A</i>?</span><span><i>B</i>?</span><span><i>C</i>?</span><span><i>D</i>?</span></div></div>
+<div class="step" data-m="1"><div class="f">$12x+5=Ax(x^2+2x+5)+B(x^2+2x+5)+(Cx+D)x^2$</div><div class="x">מכנה משותף $x^2(x^2+2x+5)$. ל-$\frac Ax$ חסרים $x$ ו-$(x^2+2x+5)$. ל-$\frac B{x^2}$ חסר רק $(x^2+2x+5)$. ל-$\frac{Cx+D}{\dots}$ חסר $x^2$.</div><div class="st"><span><i>A</i>?</span><span><i>B</i>?</span><span><i>C</i>?</span><span><i>D</i>?</span></div></div>
+<div class="step" data-m="1"><div class="f">$12x+5=(A+C)x^3+(2A+B+D)x^2+(5A+2B)x+5B$</div><div class="x">פותחים סוגריים ומקבצים לפי חזקות. זו השורה האחרונה במחברת.</div><div class="st"><span><i>x³</i>$A+C$</span><span><i>x²</i>$2A+B+D$</span><span><i>x</i>$5A+2B$</span><span><i>חופשי</i>$5B$</span></div></div>
+<div class="step" data-m="2"><div class="f">$5B=5\ \Rightarrow\ B=1$</div><div class="x">מתחילים מהמשוואה הכי קלה: המקדם החופשי. בצד שמאל הוא 5.</div><div class="st"><span><i>A</i>?</span><span><i>B</i>$1$</span><span><i>C</i>?</span><span><i>D</i>?</span></div></div>
+<div class="step" data-m="2"><div class="f">$5A+2B=12\ \Rightarrow\ 5A=10\ \Rightarrow\ A=2$</div><div class="x">המקדם של $x$ בצד שמאל הוא 12. מציבים $B=1$.</div><div class="st"><span><i>A</i>$2$</span><span><i>B</i>$1$</span><span><i>C</i>?</span><span><i>D</i>?</span></div></div>
+<div class="step" data-m="2"><div class="f">$A+C=0\Rightarrow C=-2,\qquad 2A+B+D=0\Rightarrow D=-5$</div><div class="x">בצד שמאל אין $x^3$ ואין $x^2$, אז המקדמים שלהם 0. $C=-A=-2$, ו-$D=-2A-B=-4-1=-5$.</div><div class="st"><span><i>A</i>$2$</span><span><i>B</i>$1$</span><span><i>C</i>$-2$</span><span><i>D</i>$-5$</span></div></div>
+<div class="step" data-m="3"><div class="f">$\int\left(\frac{2}{x}+\frac{1}{x^2}-\frac{2x+5}{x^2+2x+5}\right)dx$</div><div class="x">מציבים את המקדמים. בדיקה ב-$x=1$: שמאל $\frac{17}{8}$, ימין $2+1-\frac78=\frac{17}{8}$. ✓ (אפשר לבדוק עוד נקודות בכלי של סעיף 6.)</div><div class="st"><span><i>חלק 1</i>$\frac2x$</span><span><i>חלק 2</i>$\frac1{x^2}$</span><span><i>חלק 3</i>$-\frac{2x+5}{x^2+2x+5}$</span></div></div>
+<div class="step" data-m="3"><div class="f">$\int\frac2x=\class{grn}{2\ln|x|},\qquad \int\frac1{x^2}=\class{org}{-\frac1x}$</div><div class="x">החלק הלינארי נותן $\ln$. החלק החוזר הוא חזקה: $\int x^{-2}=\frac{x^{-1}}{-1}=-\frac1x$.</div><div class="st"><span><i>חלק 1</i>$2\ln|x|$</span><span><i>חלק 2</i>$-\frac1x$</span><span><i>חלק 3</i>?</span></div></div>
+<div class="step" data-m="3"><div class="f">$2x+5=(2x+2)+3\ \Rightarrow\ \int\frac{2x+5}{x^2+2x+5}=\class{grn}{\ln(x^2+2x+5)}+3\int\frac{dx}{(x+1)^2+2^2}$</div><div class="x">כמו בסעיף 3: נגזרת המכנה היא $2x+2$, ונשאר 3. במכנה: השלמה לריבוע $x^2+2x+1+4=(x+1)^2+4$.</div><div class="st"><span><i>חלק 1</i>$2\ln|x|$</span><span><i>חלק 2</i>$-\frac1x$</span><span><i>חלק 3</i>ln + arctan</span></div></div>
+<div class="step" data-m="3"><div class="f">$3\int\frac{dx}{(x+1)^2+2^2}=\class{pur}{\frac32\arctan\frac{x+1}{2}}$</div><div class="x">לפי $\frac1a\arctan\frac ta$ עם $a=2$ ו-$t=x+1$.</div><div class="st"><span><i>חלק 1</i>$2\ln|x|$</span><span><i>חלק 2</i>$-\frac1x$</span><span><i>חלק 3</i>$\ln(x^2+2x+5)+\frac32\arctan\frac{x+1}2$</span></div></div>
+<div class="step" data-m="3"><div class="f"><span class="ans">$=2\ln|x|-\frac1x-\ln(x^2+2x+5)-\frac32\arctan\frac{x+1}{2}+C$</span></div><div class="x">חלק 3 נכנס עם מינוס (בגלל $C=-2$, $D=-5$). זו התשובה הסופית.</div><div class="st"><span><i>תשובה</i>$2\ln|x|-\frac1x-\ln(\dots)-\frac32\arctan\frac{x+1}2+C$</span></div></div>
+</div></div>
+<div class="box fix"><b>הערה שלי על המחברת</b>במחברת התרגיל נעצר במשוואה $12x+5=(A+C)x^3+\dots+5B$ (שהיא נכונה). השלמתי: $A=2,\ B=1,\ C=-2,\ D=-5$ והאינטגרל עד הסוף. בדקתי את התשובה בגזירה.</div>
+<div class="box rule"><b>הכלל לזכור</b>בהשוואת מקדמים מתחילים מהמשוואה עם הכי מעט נעלמים (בדרך כלל המקדם החופשי או החזקה הגבוהה), ומציבים הלאה.</div>
+<div class="quiz"><div class="qt">שאלות על סעיף 7</div>
+<div class="qq" data-a="2"><p class="q">למה בפירוק יש גם $\frac Ax$ וגם $\frac B{x^2}$?</p><ol><li>כי $x^2$ הוא גורם ריבועי אי-פריק</li><li>כי צריך שבר לכל חזקה במונה $12x+5$</li><li>כי $x^2=x\cdot x$, לינארי שחוזר פעמיים</li><li>כי ככה יוצאים 3 נעלמים כמו מעלת המונה</li></ol><p class="h">רמז: ל-$x^2$ יש שורש ($x=0$). אז הוא פריק או אי-פריק?</p><p class="e">נכון. $x^2$ פריק: $x\cdot x$. גורם חוזר $k=2$ פעמים ⇒ שני שברים.</p></div>
+<div class="qq" data-a="0"><p class="q">ממשוואת המקדם החופשי $5B=5$ ומ-$5A+2B=12$, מה $A$?</p><ol><li>$A=2$, כי $5A=12-2$</li><li>$A=\frac{12}{5}$, כי $5A=12$</li><li>$A=1$, כי $A=B$</li><li>$A=\frac75$, כי $5A=12-5$</li></ol><p class="h">רמז: קודם $B=1$, ואז $5A+2=12$.</p><p class="e">נכון. $5A=10$.</p></div>
+<div class="qq" data-a="3"><p class="q">מה $\int\frac{dx}{x^2}$?</p><ol><li>$\ln(x^2)+C$, כי זה שבר עם $x$ במכנה</li><li>$\frac{x^3}{3}+C$, כמו חזקה רגילה</li><li>$\frac1x+C$, כי מעלים את החזקה</li><li>$-\frac1x+C$, לפי חזקה עם $n=-2$</li></ol><p class="h">רמז: $\frac1{x^2}=x^{-2}$, והנוסחה $\frac{x^{n+1}}{n+1}$ עם $n=-2$.</p><p class="e">נכון. ($\ln$ מופיע רק בחזקה 1 במכנה.)</p></div>
+<div class="qq" data-a="1"><p class="q">איך מפצלים את המונה $2x+5$ מעל $x^2+2x+5$?</p><ol><li>$(2x+5)+0$, כי המונה כבר נגזרת המכנה</li><li>$(2x+2)+3$, כי נגזרת המכנה היא $2x+2$</li><li>$2(x+1)+5$, כי מוציאים 2 מכל המונה</li><li>$(x+1)+(x+4)$, כי מחלקים לשני חצאים</li></ol><p class="h">רמז: מה $(x^2+2x+5)'$?</p><p class="e">נכון. החלק $2x+2$ נותן $\ln$, וה-3 נותן $\arctan$.</p></div>
+</div>
+</section>
+
+<!-- ============ 8 ============ -->
+<section class="sec" id="s8" data-short="תרגיל 1: &lt;bdi dir=ltr&gt;sin¹⁰⁰&lt;/bdi&gt; (טריק השיקוף)">
+<h2>תרגיל 1: $\int_0^{\pi/2}\frac{\sin^{100}x}{\sin^{100}x+\cos^{100}x}\,dx$</h2>
+<p>אי אפשר לבנות קדומה לפונקציה הזו. הטריק: <span class="nav k">השיקוף</span> $t=\frac\pi2-x$ הופך $\class{amb}{\sin}$ ל-$\class{amb}{\cos}$ ולהפך. אז האינטגרל "פוגש את עצמו".</p>
+<div class="box mine"><b>למה השיקוף מחליף sin ו-cos? (עם מספרים) — הדוגמה שלי</b>
+<ol>
+<li>שלב 1 – נבחר $x=\frac\pi6$ (30°). אז $\sin\frac\pi6=\frac12$ ו-$\cos\frac\pi6\approx0.866$.</li>
+<li>שלב 2 – השיקוף: $\frac\pi2-\frac\pi6=\frac\pi3$ (60°). שם $\sin\frac\pi3\approx0.866$ ו-$\cos\frac\pi3=\frac12$.</li>
+<li>שלב 3 – הערכים התחלפו! זו הזהות $\sin(\frac\pi2-t)=\cos t$ ו-$\cos(\frac\pi2-t)=\sin t$.</li>
+<li>שלב 4 – בדיקה בחזקה קטנה (2 במקום 100): $\frac{\sin^2x}{\sin^2x+\cos^2x}=\sin^2x$, ו-$\int_0^{\pi/2}\sin^2x\,dx=\frac\pi4$ (מהרצאה 4). אותה תשובה כמו בחזקה 100!</li>
+</ol></div>
+<div class="box terms"><b>מפת השלבים של הטריק</b>
+<ol>
+<li>קוראים לאינטגרל $I$.</li>
+<li>הצבה $t=\frac\pi2-x$ ⇒ מקבלים אינטגרל "דומה" עם $\cos$ במונה (עדיין שווה ל-$I$).</li>
+<li>מחברים את שתי הגרסאות: $2I$ = אינטגרל של (sin+cos)/(sin+cos) = אינטגרל של 1.</li>
+<li>מחלקים ב-2.</li>
+</ol>
+שם המשתנה לא משנה: $\int_0^{\pi/2}g(t)\,dt=\int_0^{\pi/2}g(x)\,dx$. לכן מותר לחזור מ-$t$ ל-$x$.</div>
+<div class="sim"><div class="st-title">סימולציה: תרגיל 1, שורה אחרי שורה</div>
+<ol class="map"><li>1. שיקוף</li><li>2. הגרסה השנייה</li><li>3. חיבור</li><li>4. חלוקה</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$I=\int_0^{\pi/2}\frac{\class{amb}{\sin^{100}x}}{\sin^{100}x+\cos^{100}x}\,dx$</div><div class="x">נסמן את האינטגרל $I$. רוצים למצוא את המספר $I$.</div><div class="st"><span><i>גרסה 1</i>$I$ עם $\sin$ במונה</span><span><i>גרסה 2</i>?</span></div></div>
+<div class="step" data-m="0"><div class="f">$\class{nav}{t=\frac\pi2-x},\ dt=-dx,\quad x=0\to t=\frac\pi2,\ \ x=\frac\pi2\to t=0$</div><div class="x">ההצבה מהמחברת. הגבולות מתחלפים: הקצה התחתון נהיה עליון.</div><div class="st"><span><i>הצבה</i>$t=\frac\pi2-x$</span><span><i>גבולות</i>$\frac\pi2\to0$</span></div></div>
+<div class="step" data-m="0"><div class="f">$I=-\int_0^{\pi/2}\frac{\cos^{100}t}{\sin^{100}(\frac\pi2-t)+\cos^{100}(\frac\pi2-t)}(-dt)$</div><div class="x">במונה $\sin x=\cos(\frac\pi2-x)=\cos t$. הסדר של הגבולות התהפך (מינוס אחד), ו-$dx=-dt$ (מינוס שני). שני מינוסים מבטלים זה את זה.</div><div class="st"><span><i>מינוסים</i>שניים ⇒ פלוס</span></div></div>
+<div class="step" data-m="1"><div class="f">$I=\int_0^{\pi/2}\frac{\class{amb}{\cos^{100}t}}{\cos^{100}t+\sin^{100}t}\,dt$</div><div class="x">במכנה: $\sin(\frac\pi2-t)=\cos t$ ו-$\cos(\frac\pi2-t)=\sin t$. המכנה נשאר אותו סכום, רק בסדר הפוך.</div><div class="st"><span><i>גרסה 1</i>$\sin$ במונה</span><span><i>גרסה 2</i>$\cos$ במונה</span><span><i>שתיהן</i>$=I$</span></div></div>
+<div class="step" data-m="2"><div class="f">$2I=\int_0^{\pi/2}\frac{\sin^{100}x}{\sin^{100}x+\cos^{100}x}dx+\int_0^{\pi/2}\frac{\cos^{100}x}{\cos^{100}x+\sin^{100}x}dx$</div><div class="x">$I+I=2I$. בגרסה 2 מחליפים את שם המשתנה מ-$t$ ל-$x$ (מותר).</div><div class="st"><span><i>מצב</i>$2I$ = סכום שתי הגרסאות</span></div></div>
+<div class="step" data-m="2"><div class="f">$2I=\int_0^{\pi/2}\frac{\sin^{100}x+\cos^{100}x}{\cos^{100}x+\sin^{100}x}dx=\int_0^{\pi/2}1\,dx=\frac\pi2$</div><div class="x">אותו מכנה ⇒ מחברים מונים. המונה שווה למכנה, אז השבר הוא 1.</div><div class="st"><span><i>מצב</i>$2I=\frac\pi2$</span></div></div>
+<div class="step" data-m="3"><div class="f"><span class="ans">$I=\frac\pi4$</span></div><div class="x">מחלקים ב-2. החזקה 100 לא השפיעה בכלל.</div><div class="st"><span><i>תשובה</i>$\frac\pi4$</span></div></div>
+</div></div>
+<div class="tool" id="symTool">
+<b>המחשה: לכל חזקה n יוצא π/4</b>
+<label for="symN">החזקה n: <span class="out" id="symNv">100</span></label>
+<input type="range" id="symN" min="1" max="100" value="100">
+<svg id="symSvg" viewBox="0 0 400 220" role="img" aria-label="גרף הפונקציה ושיקופה בקטע מאפס עד פאי חלקי שתיים"></svg>
+<p class="out" id="symOut"></p>
+<p>הקו הכהה הוא הפונקציה. הקו <span class="nav">הכחול-כהה</span> הוא השיקוף שלה (גרסה 2). בכל נקודה הסכום שלהם הוא 1, ולכן כל אחד מהם תופס חצי מהמלבן $\frac\pi2\times1$.</p>
+</div>
+<div class="box fix"><b>הערה שלי על המחברת</b>בשורה "נסמן $I=\int\frac{\sin^{100}t}{\dots}\,dx$" מעורבבים $t$ ו-$dx$. צריך $dt$ (או לכתוב הכול ב-$x$). זה לא משנה את התשובה, כי שם המשתנה לא משנה את ערך האינטגרל המסוים.</div>
+<div class="box rule"><b>הכלל לזכור</b>כשבקטע $[0,\frac\pi2]$ יש סימטריה בין $\sin$ ל-$\cos$, מנסים $t=\frac\pi2-x$, ומחברים את האינטגרל עם הגרסה המשוקפת שלו.</div>
+<p><b>אנלוגיה:</b> שני אחים מתחלקים בעוגה. בכל פרוסה, מה שאחד לא לוקח – השני לוקח. אם הם סימטריים, כל אחד מקבל בדיוק חצי.</p>
+<div class="quiz"><div class="qt">שאלות על סעיף 8</div>
+<div class="qq" data-a="1"><p class="q">למה שווה $\cos(\frac\pi2-t)$?</p><ol><li>$\cos t$, כי קוסינוס זוגי</li><li>$\sin t$, לפי זהות השיקוף</li><li>$-\sin t$, כי יש מינוס בפנים</li><li>$-\cos t$, כי מחסרים את $t$</li></ol><p class="h">רמז: בדוגמה שלי, $\cos\frac\pi3=\frac12=\sin\frac\pi6$.</p><p class="e">נכון. זו הזהות שכתובה במחברת בכחול.</p></div>
+<div class="qq" data-a="3"><p class="q">בהצבה $t=\frac\pi2-x$, למה אין מינוס בגרסה 2?</p><ol><li>כי $dt=dx$, ולכן אין שום מינוס</li><li>כי $\sin$ ו-$\cos$ חיוביים בקטע</li><li>כי המינוס נבלע בחזקה 100, שהיא זוגית</li><li>כי גם $dx=-dt$ וגם הגבולות מתהפכים</li></ol><p class="h">רמז: מה קורה לגבולות, ומה קורה ל-$dx$?</p><p class="e">נכון. $\int_{\pi/2}^{0}\dots(-dt)=\int_0^{\pi/2}\dots dt$.</p></div>
+<div class="qq" data-a="0"><p class="q">מה $\int_0^{\pi/2}\frac{\cos^{7}x}{\sin^{7}x+\cos^{7}x}\,dx$?</p><ol><li>$\frac\pi4$, באותו טריק בדיוק</li><li>$\frac\pi2$, כי זה כל המלבן</li><li>$\frac{7\pi}{4}$, כי החזקה היא 7</li><li>$0$, כי חזקה אי-זוגית מתבטלת</li></ol><p class="h">רמז: הטריק לא תלוי בחזקה. נסה בהמחשה.</p><p class="e">נכון. זו בדיוק "גרסה 2", והיא שווה $I=\frac\pi4$.</p></div>
+<div class="qq" data-a="2"><p class="q">מה $\int_0^{\pi/2}1\,dx$?</p><ol><li>$1$, כי הפונקציה שווה 1</li><li>$\pi$, כי זה חצי מעגל</li><li>$\frac\pi2$, אורך הקטע כפול 1</li><li>$\frac\pi4$, חצי מאורך הקטע</li></ol><p class="h">רמז: מלבן בגובה 1 וברוחב $\frac\pi2$.</p><p class="e">נכון. ומכאן $2I=\frac\pi2$.</p></div>
+</div>
+</section>
+
+<!-- ============ 9 ============ -->
+<section class="sec" id="s9" data-short="תרגיל 2: &lt;bdi dir=ltr&gt;ln²x/√x&lt;/bdi&gt;">
+<h2>תרגיל 2: $\int_1^{e}\frac{\ln^2x}{\sqrt x}\,dx$</h2>
+<p>שתי שיטות אחת אחרי השנייה: קודם <span class="pur">הצבה</span> $t=\ln x$, ואז <span class="tea">אינטגרציה בחלקים</span> פעמיים.</p>
+<div class="box mine"><b>למה $\sqrt x=e^{t/2}$? (עם מספרים) — הדוגמה שלי</b>
+<ol>
+<li>שלב 1 – אם $t=\ln x$ אז $x=e^t$ (הפעולה ההפוכה ל-$\ln$).</li>
+<li>שלב 2 – שורש = חזקה של חצי: $\sqrt x=x^{1/2}=(e^t)^{1/2}=e^{t/2}$.</li>
+<li>שלב 3 – בדיקה עם $x=4$: $t=\ln4\approx1.386$, ו-$e^{1.386/2}=e^{0.693}\approx2=\sqrt4$. ✓</li>
+<li>שלב 4 – ולכן $\frac{e^t}{\sqrt{e^t}}=\frac{e^t}{e^{t/2}}=e^{t/2}$ (חיסור חזקות).</li>
+</ol></div>
+<h3>הלולאה של אינטגרציה בחלקים — כל דרכי הסיום</h3>
+<p>אחרי ההצבה נשאר $\int t^2e^{t/2}dt$. בכל סיבוב בחלקים גוזרים את הפולינום, והחזקה שלו יורדת ב-1:</p>
+<div class="tw"><table><tr><th>סיבוב</th><th>הפולינום</th><th>מה נשאר לחשב</th></tr>
+<tr><td>לפני</td><td>$t^2$</td><td>$\int t^2e^{t/2}$</td></tr>
+<tr><td>1</td><td>$t^2\to2t$</td><td>$\int 2t\,e^{t/2}$ (מעלה 1)</td></tr>
+<tr><td>2</td><td>$2t\to2$</td><td>$\int 2\,e^{t/2}$ (מעלה 0: אינטגרל מיידי ⇒ עוצרים)</td></tr>
+</table></div>
+<div class="tw"><table><tr><th>איך לולאת "בחלקים" יכולה להיגמר</th><th>מה עושים</th></tr>
+<tr><td>הפולינום הגיע לקבוע (כמו כאן)</td><td>האינטגרל שנשאר מיידי. מספר הסיבובים = החזקה של הפולינום.</td></tr>
+<tr><td>האינטגרל המקורי חוזר (כמו $\int\sin^2$ בהרצאה 4)</td><td>מעבירים אגף: $I=\dots-I$ ⇒ $2I=\dots$</td></tr>
+<tr><td>האינטגרל נהיה מסובך יותר</td><td>בחרנו הפוך: מחליפים בין $u$ ל-$v'$.</td></tr>
+</table></div>
+<div class="sim"><div class="st-title">סימולציה: תרגיל 2 (עם פאנל "מצב")</div>
+<ol class="map"><li>1. הצבה</li><li>2. פישוט</li><li>3. חלקים סיבוב 1</li><li>4. חלקים סיבוב 2</li><li>5. חיבור</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$\int_1^e\frac{\ln^2x}{\sqrt x}\,dx$</div><div class="x">יש $\ln x$ בפנים. ננסה $t=\ln x$ כדי להיפטר ממנו.</div><div class="st"><span><i>משתנה</i>$x$</span><span><i>גבולות</i>$1\to e$</span></div></div>
+<div class="step" data-m="0"><div class="f">$\class{pur}{t=\ln x},\ x=e^t,\ dx=e^t\,dt,\quad x=1\to t=0,\ x=e\to t=1$</div><div class="x">גוזרים את $x=e^t$: $dx=e^tdt$. הגבולות: $\ln1=0$, $\ln e=1$.</div><div class="st"><span><i>משתנה</i>$t$</span><span><i>גבולות</i>$0\to1$</span></div></div>
+<div class="step" data-m="1"><div class="f">$=\int_0^1\frac{t^2e^t}{\sqrt{e^t}}\,dt=\int_0^1t^2e^{t/2}\,dt$</div><div class="x">$\ln^2x=t^2$, ו-$\frac{e^t}{\sqrt{e^t}}=e^{t/2}$ (מהדוגמה שלי).</div><div class="st"><span><i>נשאר</i>$\int_0^1t^2e^{t/2}dt$</span><span><i>מעלה</i>2</span></div></div>
+<div class="step" data-m="2"><div class="f">$\class{tea}{\begin{bmatrix}u=t^2 & v=2e^{t/2}\\ u'=2t & v'=e^{t/2}\end{bmatrix}}$</div><div class="x">כמו במחברת. $v=2e^{t/2}$ כי $(2e^{t/2})'=2\cdot\frac12e^{t/2}=e^{t/2}$.</div><div class="st"><span><i>u</i>$t^2$</span><span><i>v</i>$2e^{t/2}$</span></div></div>
+<div class="step" data-m="2"><div class="f">$=\big[2t^2e^{t/2}\big]_0^1-\int_0^1 4t\,e^{t/2}\,dt=2\sqrt e-4\int_0^1t\,e^{t/2}dt$</div><div class="x">$uv$ בגבולות: ב-1 יוצא $2e^{1/2}=2\sqrt e$, ב-0 יוצא 0. ו-$u'v=2t\cdot2e^{t/2}=4te^{t/2}$.</div><div class="st"><span><i>מצב</i>$2\sqrt e-4J$</span><span><i>J</i>$\int_0^1te^{t/2}dt$</span><span><i>מעלה</i>1</span></div></div>
+<div class="step" data-m="3"><div class="f">$J=\class{tea}{\begin{bmatrix}u=t & v=2e^{t/2}\\ u'=1 & v'=e^{t/2}\end{bmatrix}}=\big[2te^{t/2}\big]_0^1-\int_0^12e^{t/2}dt$</div><div class="x">סיבוב שני של הלולאה. עכשיו $u'=1$: המעלה ירדה ל-0.</div><div class="st"><span><i>u</i>$t$</span><span><i>v</i>$2e^{t/2}$</span><span><i>מעלה</i>0 ⇒ עוצרים</span></div></div>
+<div class="step" data-m="3"><div class="f">$J=2\sqrt e-\big[4e^{t/2}\big]_0^1=2\sqrt e-(4\sqrt e-4)=4-2\sqrt e$</div><div class="x">$\int2e^{t/2}=4e^{t/2}$. ב-1: $4\sqrt e$. ב-0: $4$.</div><div class="st"><span><i>J</i>$4-2\sqrt e$</span></div></div>
+<div class="step" data-m="4"><div class="f">$=2\sqrt e-4(4-2\sqrt e)=2\sqrt e-16+8\sqrt e$</div><div class="x">מציבים את $J$ בחזרה ופותחים סוגריים.</div><div class="st"><span><i>מצב</i>$10\sqrt e-16$</span></div></div>
+<div class="step" data-m="4"><div class="f"><span class="ans">$=10\sqrt e-16\approx0.487$</span></div><div class="x">זה בדיוק המספר במחברת. ה-"..." במחברת הם הסיבובים שבסימולציה.</div><div class="st"><span><i>תשובה</i>$10\sqrt e-16$</span></div></div>
+</div></div>
+<div class="box fix"><b>הערה שלי על המחברת</b>במחברת כתוב "שוב בחלקים = ... = $10\sqrt e-16$". השלמתי את כל הצעדים באמצע. התשובה במחברת נכונה (בדקתי גם במחשב: $0.4872$).</div>
+<div class="box rule"><b>הכלל לזכור</b>פולינום כפול אקספוננט: בחלקים עם $u$ = הפולינום. כל סיבוב מוריד מעלה אחת, ועוצרים כשהפולינום נהיה קבוע.</div>
+<div class="quiz"><div class="qt">שאלות על סעיף 9</div>
+<div class="qq" data-a="2"><p class="q">בהצבה $t=\ln x$, מה $dx$?</p><ol><li>$dx=\frac1x\,dt$, כי הנגזרת של $\ln$</li><li>$dx=\ln x\,dt$, כי $t=\ln x$</li><li>$dx=e^t\,dt$, כי $x=e^t$</li><li>$dx=dt$, כי זו הצבה לינארית</li></ol><p class="h">רמז: גוזרים את $x=e^t$ לפי $t$.</p><p class="e">נכון. ($\frac1x$ הוא $\frac{dt}{dx}$, הפוך.)</p></div>
+<div class="qq" data-a="1"><p class="q">כמה סיבובים של בחלקים צריך ל-$\int t^3e^{t}dt$?</p><ol><li>2, כמו בתרגיל 2</li><li>3, כמו החזקה של $t$</li><li>1, כי $e^t$ לא משתנה בגזירה</li><li>4, אחד יותר מהחזקה</li></ol><p class="h">רמז: כל סיבוב מוריד את המעלה ב-1. מתי מגיעים לקבוע?</p><p class="e">נכון. $t^3\to t^2\to t\to1$: שלושה סיבובים.</p></div>
+<div class="qq" data-a="0"><p class="q">אם $v'=e^{t/2}$, מה $v$?</p><ol><li>$2e^{t/2}$, כי הגזירה נותנת $\frac12$</li><li>$\frac12e^{t/2}$, כי מחלקים את החזקה ב-2</li><li>$e^{t/2}$, כי $e$ לא משתנה</li><li>$\frac t2e^{t/2}$, כי מעלים את החזקה</li></ol><p class="h">רמז: גזור את התשובה שלך. מה צריך לצאת?</p><p class="e">נכון. $(2e^{t/2})'=2\cdot\frac12e^{t/2}=e^{t/2}$.</p></div>
+<div class="qq" data-a="3"><p class="q">מה $\frac{e^t}{\sqrt{e^t}}$?</p><ol><li>$\sqrt t$, כי השורש עובר לתוך החזקה</li><li>$e^{2t}$, כי מחלקים בשורש של המספר</li><li>$e^{t-2}$, כי מחסרים 2</li><li>$e^{t/2}$, כי $t-\frac t2=\frac t2$</li></ol><p class="h">רמז: $\sqrt{e^t}=e^{t/2}$, ובחילוק מחסרים חזקות.</p><p class="e">נכון.</p></div>
+</div>
+</section>
+
+<!-- ============ 10 ============ -->
+<section class="sec" id="s10" data-short="סיכום">
+<h2>סיכום התרגול</h2>
+<div class="tw"><table><tr><th>נושא</th><th>מה לזכור</th></tr>
+<tr><td>ערך מוחלט</td><td>חותכים איפה שהביטוי מחליף סימן. $\int_{1/e}^e|\ln x|=2-\frac2e$.</td></tr>
+<tr><td>מכנה ריבועי בלי שורשים</td><td>השלמה לריבוע ⇒ $\frac1a\arctan\frac{x+p}a$.</td></tr>
+<tr><td>מונה לינארי</td><td>מונה = מספר · (נגזרת המכנה) + קבוע ⇒ $\ln$ + $\arctan$.</td></tr>
+<tr><td>מונה גדול</td><td>קודם חילוק. עוצרים כשמעלת השארית קטנה ממעלת המכנה.</td></tr>
+<tr><td>המקרה הכללי</td><td>פירוק המכנה ⇒ צורה לפי סוג הגורם ⇒ מכנה משותף ⇒ מקדמים ⇒ אינטגרל.</td></tr>
+<tr><td>תרגיל ד</td><td>$\int\frac{dx}{(x+1)(x+2)}=\ln\left|\frac{x+1}{x+2}\right|+C$</td></tr>
+<tr><td>תרגיל ה</td><td>$A=2,B=1,C=-2,D=-5$ ⇒ $2\ln|x|-\frac1x-\ln(x^2+2x+5)-\frac32\arctan\frac{x+1}2+C$</td></tr>
+<tr><td>תרגיל 1</td><td>שיקוף $t=\frac\pi2-x$ ⇒ $2I=\frac\pi2$ ⇒ $I=\frac\pi4$.</td></tr>
+<tr><td>תרגיל 2</td><td>$t=\ln x$, ואז בחלקים פעמיים ⇒ $10\sqrt e-16$.</td></tr>
+</table></div>
+<div class="quiz"><div class="qt">מבחן מסכם</div>
+<div class="qq" data-a="1"><p class="q">מה $\int\frac{dx}{x^2-1}$? (הפירוק: $\frac{1/2}{x-1}-\frac{1/2}{x+1}$)</p><ol><li>$\arctan x+C$, כי זה דומה ל-$\frac1{x^2+1}$</li><li>$\frac12\ln\left|\frac{x-1}{x+1}\right|+C$</li><li>$\ln|x^2-1|+C$, כי המכנה במכנה</li><li>$\frac12\ln\left|\frac{x+1}{x-1}\right|+C$</li></ol><p class="h">רמז: $\frac12\ln|x-1|-\frac12\ln|x+1|$.</p><p class="e">נכון. שימו לב: $x^2-1$ פריק (שורשים $\pm1$), ולכן לא $\arctan$.</p></div>
+<div class="qq" data-a="3"><p class="q">באיזה מקרה התשובה כוללת $\arctan$?</p><ol><li>$\int\frac{dx}{x^2-4}$, כי יש ריבוע במכנה</li><li>$\int\frac{dx}{(x-2)^2}$, כי זה גורם חוזר</li><li>$\int\frac{2x+2}{x^2+2x+5}dx$, כי המכנה אי-פריק</li><li>$\int\frac{dx}{x^2+2x+5}$, כי המונה קבוע</li></ol><p class="h">רמז: אחד מהם הוא בדיוק "נגזרת המכנה" ונותן רק ln.</p><p class="e">נכון. $(x+1)^2+4$ ⇒ $\frac12\arctan\frac{x+1}2$.</p></div>
+<div class="qq" data-a="0"><p class="q">מה $\int_{0}^{2}|x-1|\,dx$?</p><ol><li>$1$, שני משולשים של חצי</li><li>$0$, כי החלקים מקזזים</li><li>$2$, אורך הקטע</li><li>$\frac12$, משולש אחד</li></ol><p class="h">רמז: חותכים ב-1. כל חלק הוא משולש עם בסיס 1 וגובה 1.</p><p class="e">נכון. $\frac12+\frac12=1$.</p></div>
+<div class="qq" data-a="2"><p class="q">מה $\int_0^{\pi/2}\frac{\sin x}{\sin x+\cos x}\,dx$?</p><ol><li>$\frac\pi2$, כל המלבן</li><li>$1$, כי $\sin+\cos$ מתבטלים</li><li>$\frac\pi4$, בטריק השיקוף</li><li>$\ln2$, כי זה $\frac{g'}{g}$</li></ol><p class="h">רמז: זה תרגיל 1 עם החזקה 1.</p><p class="e">נכון. הטריק עובד לכל חזקה.</p></div>
+<div class="qq" data-a="1"><p class="q">כמה נעלמים בפירוק של $\frac{1}{x^3(x^2+1)^2}$?</p><ol><li>2, אחד לכל סוגריים</li><li>7, כמו מעלת המכנה</li><li>5, כמו מספר הגורמים בלי חזרות</li><li>4, שלושה ל-$x^3$ ואחד לריבועי</li></ol><p class="h">רמז: $x^3$ נותן 3 נעלמים, וכל שבר ריבועי נותן 2 (פעמיים).</p><p class="e">נכון. $3+2+2=7$ = מעלת המכנה $3+4$.</p></div>
+</div>
+<p class="end" id="endMsg"></p>
+</section>
+</div>
+
+<script>
+window.LESSON_INIT=function(){
+ function css(v){return getComputedStyle(document.documentElement).getPropertyValue(v).trim()}
+ function $(id){return document.getElementById(id)}
+ // 1: ln x vs |ln x|
+ var as=$('absSel'),asv=$('absSvg');
+ function drawAbs(){var abs=+as.value===1,a=1/Math.E,b=Math.E,W=400,H=220,pl=30,pr=12,pt=12,pb=26,ymin=abs?0:-1.15,ymax=1.15;
+  function X(x){return pl+(x-a)/(b-a)*(W-pl-pr)}function Y(y){return pt+(ymax-y)/(ymax-ymin)*(H-pt-pb)}
+  function f(x){var v=Math.log(x);return abs?Math.abs(v):v}
+  var s='',N=160,neg=css('--red'),pos=css('--grn');
+  var p1='M'+X(a)+' '+Y(0),p2='M'+X(1)+' '+Y(0);
+  for(var i=0;i<=N;i++){var x=a+(1-a)*i/N;p1+='L'+X(x).toFixed(1)+' '+Y(f(x)).toFixed(1)}p1+='L'+X(1)+' '+Y(0)+'Z';
+  for(var i=0;i<=N;i++){var x=1+(b-1)*i/N;p2+='L'+X(x).toFixed(1)+' '+Y(f(x)).toFixed(1)}p2+='L'+X(b)+' '+Y(0)+'Z';
+  s+='<path d="'+p1+'" fill="'+neg+'" fill-opacity=".28"/><path d="'+p2+'" fill="'+pos+'" fill-opacity=".25"/>';
+  var c='';for(var i=0;i<=2*N;i++){var x=a+(b-a)*i/(2*N);c+=(i?'L':'M')+X(x).toFixed(1)+' '+Y(f(x)).toFixed(1)}
+  s+='<path d="'+c+'" fill="none" stroke="'+css('--ink')+'" stroke-width="2"/>';
+  s+='<line x1="'+pl+'" y1="'+Y(0)+'" x2="'+(W-pr)+'" y2="'+Y(0)+'" stroke="'+css('--muted')+'"/>';
+  [[a,'1/e'],[1,'1'],[b,'e']].forEach(function(q){s+='<line x1="'+X(q[0])+'" y1="'+(Y(0)-4)+'" x2="'+X(q[0])+'" y2="'+(Y(0)+4)+'" stroke="'+css('--muted')+'"/><text x="'+X(q[0])+'" y="'+(H-8)+'" fill="'+css('--muted')+'" font-size="12" text-anchor="middle">'+q[1]+'</text>'});
+  asv.innerHTML=s;
+  var L=-1+2/Math.E,R=1;
+  $('absOut').textContent=abs?('left part = '+(-L).toFixed(4)+'  +  right part = '+R.toFixed(4)+'  =  '+(R-L).toFixed(4)+'  (2 − 2/e)'):('left part = '+L.toFixed(4)+'  +  right part = '+R.toFixed(4)+'  =  '+(R+L).toFixed(4)+'  (2/e)')}
+ as.addEventListener('change',drawAbs);drawAbs();
+ // 5: form chooser
+ var FORMS=[
+  ['$$\\frac{A}{\\class{grn}{x+1}}+\\frac{B}{\\class{grn}{x+2}}$$','שני גורמים לינאריים שונים. מעלה 2, ולכן 2 נעלמים (תרגיל ד).'],
+  ['$$\\frac{A}{\\class{org}{x}}+\\frac{B}{\\class{org}{x^2}}+\\frac{Cx+D}{\\class{pur}{x^2+2x+5}}$$','x חוזר פעמיים, ועוד ריבועי אי-פריק. מעלה 4, ולכן 4 נעלמים (תרגיל ה).'],
+  ['$$\\frac{A}{\\class{org}{x-1}}+\\frac{B}{\\class{org}{(x-1)^2}}+\\frac{C}{\\class{org}{(x-1)^3}}$$','גורם לינארי שחוזר 3 פעמים: שבר לכל חזקה מ-1 עד 3. מעלה 3, ולכן 3 נעלמים.'],
+  ['$$\\frac{A}{\\class{grn}{x+3}}+\\frac{Bx+C}{\\class{pur}{x^2+1}}$$','לינארי אחד וריבועי אחד. מעלה 3, ולכן 3 נעלמים.'],
+  ['$$\\frac{Ax+B}{\\class{pur}{x^2+1}}+\\frac{Cx+D}{\\class{org}{(x^2+1)^2}}$$','ריבועי אי-פריק שחוזר פעמיים. מעלה 4, ולכן 4 נעלמים.'],
+  ['$$\\frac{A}{\\class{grn}{x}}+\\frac{B}{\\class{grn}{x-2}}+\\frac{C}{\\class{grn}{x+5}}$$','שלושה גורמים לינאריים שונים. מעלה 3, ולכן 3 נעלמים.']];
+ var fs=$('formSel');
+ function showForm(){var f=FORMS[+fs.value];var o=$('formOut');o.innerHTML=f[0];$('formNote').textContent=f[1];if(window.typesetLater){window.typesetLater(o);window.typesetLater($('formNote'))}}
+ fs.addEventListener('change',showForm);showForm();
+ // 6: decomposition checker
+ var CK=[
+  {L:function(x){return 1/((x+1)*(x+2))},R:function(x){return 1/(x+1)-1/(x+2)}},
+  {L:function(x){return (12*x+5)/(x*x*(x*x+2*x+5))},R:function(x){return 2/x+1/(x*x)-(2*x+5)/(x*x+2*x+5)}},
+  {L:function(x){return Math.pow(x,4)*Math.pow(1-x,4)/(1+x*x)},R:function(x){return Math.pow(x,6)-4*Math.pow(x,5)+5*Math.pow(x,4)-4*x*x+4-4/(1+x*x)}}];
+ var cs=$('chkSel'),cx=$('chkX');
+ function chk(){var o=CK[+cs.value],x=+cx.value;$('chkXv').textContent=x.toFixed(1);var l=o.L(x),r=o.R(x);
+  $('chkOut').textContent='original = '+l.toPrecision(8)+'   |   decomposed = '+r.toPrecision(8)+'   |   '+(Math.abs(l-r)<1e-9*Math.max(1,Math.abs(l))?'equal ✓':'different ✗')}
+ cs.addEventListener('change',chk);cx.addEventListener('input',chk);chk();
+ // 8: symmetry
+ var sn=$('symN'),ss=$('symSvg');
+ function g(x,n){var s=Math.pow(Math.sin(x),n),c=Math.pow(Math.cos(x),n);return s/(s+c)}
+ function simpson(h,a,b){var N=400,d=(b-a)/N,s=h(a)+h(b);for(var i=1;i<N;i++)s+=h(a+i*d)*(i%2?4:2);return s*d/3}
+ function drawSym(){var n=+sn.value;$('symNv').textContent=n;var W=400,H=220,pl=30,pr=12,pt=12,pb=26,b=Math.PI/2;
+  function X(x){return pl+x/b*(W-pl-pr)}function Y(y){return pt+(1.08-y)/1.08*(H-pt-pb)}
+  var p='M'+X(0)+' '+Y(0),c1='',c2='';
+  for(var i=0;i<=200;i++){var x=b*i/200,y=g(x,n);p+='L'+X(x).toFixed(1)+' '+Y(y).toFixed(1);c1+=(i?'L':'M')+X(x).toFixed(1)+' '+Y(y).toFixed(1);c2+=(i?'L':'M')+X(x).toFixed(1)+' '+Y(1-y).toFixed(1)}
+  p+='L'+X(b)+' '+Y(0)+'Z';
+  var s='<rect x="'+X(0)+'" y="'+Y(1)+'" width="'+(X(b)-X(0))+'" height="'+(Y(0)-Y(1))+'" fill="none" stroke="'+css('--line')+'" stroke-dasharray="4 3"/>';
+  s+='<path d="'+p+'" fill="'+css('--amb')+'" fill-opacity=".25"/>';
+  s+='<path d="'+c2+'" fill="none" stroke="'+css('--nav')+'" stroke-width="2" stroke-dasharray="6 4"/>';
+  s+='<path d="'+c1+'" fill="none" stroke="'+css('--ink')+'" stroke-width="2"/>';
+  s+='<line x1="'+pl+'" y1="'+Y(0)+'" x2="'+(W-pr)+'" y2="'+Y(0)+'" stroke="'+css('--muted')+'"/>';
+  s+='<text x="'+X(0)+'" y="'+(H-8)+'" fill="'+css('--muted')+'" font-size="12" text-anchor="middle">0</text><text x="'+X(b)+'" y="'+(H-8)+'" fill="'+css('--muted')+'" font-size="12" text-anchor="middle">π/2</text><text x="'+(pl-6)+'" y="'+(Y(1)+4)+'" fill="'+css('--muted')+'" font-size="12" text-anchor="end">1</text>';
+  ss.innerHTML=s;
+  var I=simpson(function(x){return g(x,n)},0,b);
+  $('symOut').textContent='n = '+n+'   |   area = '+I.toFixed(6)+'   |   π/4 = '+(Math.PI/4).toFixed(6)}
+ sn.addEventListener('input',drawSym);drawSym();
+ var mo=new MutationObserver(function(){drawAbs();drawSym()});mo.observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+};
+</script>
+<script>(function(){
+document.documentElement.dir='rtl';document.documentElement.lang='he';
+var KEY=((document.querySelector('.wrap')||document.body).getAttribute('data-key')||'lesson')+'-quiz';
+var THEMEKEY='calc2-theme';
+function $(s,r){return (r||document).querySelector(s)}
+function $$(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))}
+function el(t,c,h){var n=document.createElement(t);if(c)n.className=c;if(h!=null)n.innerHTML=h;return n}
+function lsGet(k){try{return localStorage.getItem(k)}catch(e){return null}}
+function lsSet(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+// theme
+var tb=$('#themeBtn');
+function curDark(){var t=document.documentElement.getAttribute('data-theme');if(t)return t==='dark';return window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches}
+function paintBtn(){if(tb)tb.textContent=curDark()?'☀️ יום':'🌙 לילה'}
+var saved=lsGet(THEMEKEY);if(saved==='dark'||saved==='light')document.documentElement.setAttribute('data-theme',saved);
+paintBtn();
+if(tb)tb.addEventListener('click',function(){var d=!curDark();document.documentElement.setAttribute('data-theme',d?'dark':'light');lsSet(THEMEKEY,d?'dark':'light');paintBtn()});
+// sections + toc
+var secs=$$('section.sec'),toc=$('nav.toc');
+secs.forEach(function(s,i){var h=$('h2',s);var no=el('div','secno',(i+1)+' / '+secs.length);s.insertBefore(no,h);
+ if(toc){var a=el('a');a.href='#'+s.id;a.innerHTML='<b>'+(i+1)+'</b> '+(s.getAttribute('data-short')||h.textContent);toc.appendChild(a)}});
+// sims
+var sims=[];
+$$('.sim').forEach(function(sim){
+ var steps=$$('.steps > .step',sim);var mapItems=$$('.map > li',sim);
+ var lines=el('div','lines'),xp=el('div','x'),sp=el('div','stp-wrap');
+ var ctl=el('div','ctl');var bP=el('button','','→ הקודם'),bN=el('button','pri','הבא ←'),bR=el('button','','⟲ מההתחלה'),cnt=el('span','cnt');
+ bP.type=bN.type=bR.type='button';ctl.appendChild(bR);ctl.appendChild(bP);ctl.appendChild(bN);ctl.appendChild(cnt);
+ var stepLine=[],lineEls=[],xs=[],sts=[];
+ steps.forEach(function(st,i){var f=$('.f',st);
+  if(f){var ln=el('div','ln');ln.appendChild(el('span','no',String(lineEls.length+1)));ln.appendChild(f);lines.appendChild(ln);lineEls.push(ln)}
+  stepLine.push(lineEls.length-1);
+  var x=$('.x',st)||el('div','','');var xd=el('div','');while(x.firstChild)xd.appendChild(x.firstChild);xp.appendChild(xd);xs.push(xd);
+  var s=$('.st',st);var sd=el('div','stp');if(s){while(s.firstChild)sd.appendChild(s.firstChild)}sp.appendChild(sd);sts.push(sd)});
+ var stepsBox=$('.steps',sim);sim.insertBefore(lines,stepsBox);sim.insertBefore(xp,stepsBox);sim.insertBefore(sp,stepsBox);sim.insertBefore(ctl,stepsBox);stepsBox.remove();
+ var cur=0;
+ function render(){var L=stepLine[cur];
+  lineEls.forEach(function(ln,j){ln.classList.toggle('cur',j===L);ln.classList.toggle('fut',j>L)});
+  xs.forEach(function(x,j){x.hidden=j!==cur});
+  sts.forEach(function(s,j){s.hidden=j!==cur;
+   if(j===cur&&j>0){var prev={};$$('span',sts[j-1]).forEach(function(p){var k=$('i',p);if(k)prev[k.textContent]=p.textContent});
+    $$(':scope > span',s).forEach(function(p){var k=$('i',p);p.classList.toggle('new',!!k&&prev[k.textContent]!==p.textContent)})}});
+  var m=+(steps[cur].getAttribute('data-m')||-1);
+  mapItems.forEach(function(li,j){li.classList.toggle('on',j===m);li.classList.toggle('done',m>=0&&j<m)});
+  bP.disabled=cur===0;bN.disabled=cur===steps.length-1;cnt.textContent=(cur+1)+' / '+steps.length}
+ bP.onclick=function(){if(cur>0){cur--;render()}};bN.onclick=function(){if(cur<steps.length-1){cur++;render()}};bR.onclick=function(){cur=0;render()};
+ sims.push(render)});
+// quiz
+var st={};try{st=JSON.parse(lsGet(KEY)||'{}')||{}}catch(e){st={}}
+var qs=$$('.qq'),LET=['א','ב','ג','ד','ה'];
+function score(){var c=0,d=0;qs.forEach(function(q,i){var s=st[i];if(s&&s.done){d++;if(s.first)c++}});
+ var sc=$('#score');if(sc)sc.innerHTML='ניקוד: <bdi dir="ltr">'+c+' / '+qs.length+'</bdi>';var m=$('#meter');if(m)m.style.width=(qs.length?100*d/qs.length:0)+'%';
+ var end=$('#endMsg');if(end)end.textContent=d===qs.length?('סיימת את כל '+qs.length+' השאלות! ענית נכון בניסיון הראשון על '+c+'. '+(c>=qs.length*0.8?'מצוין, ביג בוס 💪':'כדאי לחזור על הסעיפים שבהם טעית.')):'ענית על '+d+' מתוך '+qs.length+' שאלות.'}
+var qhide=[];
+qs.forEach(function(q,i){var a=+q.getAttribute('data-a');var h=$('.h',q),e=$('.e',q);
+ $$('ol > li',q).forEach(function(li,j){var b=el('button','');b.type='button';b.appendChild(el('span','lt',LET[j]+'.'));while(li.firstChild)b.appendChild(li.firstChild);li.appendChild(b);
+  b.addEventListener('click',function(){var s=st[i]||{tried:[]};if(s.done)return;s.tried.push(j);
+   if(j===a){s.done=true;s.first=s.tried.length===1}st[i]=s;lsSet(KEY,JSON.stringify(st));paintQ();score()})});
+ function paintQ(){var s=st[i]||{tried:[]};var bs=$$('ol > li > button',q);
+  bs.forEach(function(b,j){b.classList.toggle('good',!!s.done&&j===a);b.classList.toggle('bad',s.tried.indexOf(j)>=0&&j!==a)});
+  var lastBad=s.tried.length&&s.tried[s.tried.length-1]!==a;if(h)h.hidden=!(lastBad&&!s.done);if(e)e.hidden=!s.done}
+ q._paint=paintQ;qhide.push(paintQ)});
+var rb=$('#resetBtn');if(rb)rb.addEventListener('click',function(){st={};lsSet(KEY,'{}');qhide.forEach(function(f){f()});score()});
+// bidi fix
+var HEB=/[֐-׿]/,RUN=/[A-Za-z0-9∞√π][A-Za-z0-9∞√π²³⁻¹\s+\-−*\/=^().,'·:≤≥<>|_]*/g;
+var SKIP={'MJX-CONTAINER':1,'CODE':1,'PRE':1,'SVG':1,'BDI':1,'SCRIPT':1,'STYLE':1,'TEXTAREA':1,'INPUT':1};
+function bidi(root){var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode:function(n){for(var p=n.parentNode;p&&p!==root.parentNode;p=p.parentNode){if(SKIP[p.nodeName.toUpperCase()]||(p.classList&&(p.classList.contains('m')||p.classList.contains('ltr'))))return NodeFilter.FILTER_REJECT}return NodeFilter.FILTER_ACCEPT}});
+ var nodes=[],n;while(n=w.nextNode())nodes.push(n);
+ nodes.forEach(function(t){var s=t.nodeValue;if(HEB.test(s)&&s.indexOf('→')>=0)s=t.nodeValue=s.replace(/→/g,'←');
+  if(!/[A-Za-z0-9∞√π]/.test(s)||!HEB.test(s+((t.parentNode&&t.parentNode.textContent)||'')))return;
+  var frag=document.createDocumentFragment(),last=0,m;RUN.lastIndex=0;
+  while(m=RUN.exec(s)){var r=m[0].replace(/[\s.,:]+$/,'');var open=(r.match(/\(/g)||[]).length,close=(r.match(/\)/g)||[]).length;
+   while(close>open&&r.slice(-1)===')'){r=r.slice(0,-1);close--}
+   if(open>close&&r.slice(-1)==='('){r=r.slice(0,-1)}
+   if(!r)continue;frag.appendChild(document.createTextNode(s.slice(last,m.index)));var b=document.createElement('bdi');b.dir='ltr';b.textContent=r;frag.appendChild(b);last=m.index+r.length;RUN.lastIndex=last}
+  frag.appendChild(document.createTextNode(s.slice(last)));t.parentNode.replaceChild(frag,t)})}
+var finished=false;
+function finish(){if(finished)return;finished=true;bidi($('.wrap'));sims.forEach(function(r){r()});qhide.forEach(function(f){f()});score();
+ if(window.LESSON_INIT)try{window.LESSON_INIT()}catch(e){console.error(e)}}
+window.__lessonFinish=finish;
+window.typesetLater=function(node){if(window.MathJax&&MathJax.typesetPromise){return MathJax.typesetPromise([node]).then(function(){bidi(node)}).catch(function(){})}bidi(node);return Promise.resolve()};
+setTimeout(finish,9000);
+})();
+</script>
+<script>window.MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']],packages:{'[+]':['html']}},loader:{load:['[tex]/html']},svg:{fontCache:'global'},options:{ignoreHtmlClass:'nomj'},startup:{ready:function(){MathJax.startup.defaultReady();MathJax.startup.promise.then(function(){window.__lessonFinish&&window.__lessonFinish()})}}};</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.min.js"></script>
+
+</body></html>

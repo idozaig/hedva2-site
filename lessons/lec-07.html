@@ -1,0 +1,584 @@
+<!doctype html><html><head><script>(function(){try{var m=localStorage.getItem("hedva2-theme");if(m==="dark"||m==="light")document.documentElement.setAttribute("data-theme",m);}catch(e){}})();</script><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>חדו״א 2 — הרצאה 7</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=Assistant:wght@400;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>/* Layout: a calm math notebook — one reading column (max 860px), sticky score bar, section cards on a faint grid. */
+:root{
+  --bg:#f6f8fb; --card:#ffffff; --ink:#1d2533; --muted:#5b6678; --line:#dfe5ee; --soft:#eef2f8; --grid:rgba(40,80,140,.05);
+  --accent:#6d4bd8; --accent-soft:#efeafd; --ok:#1f8a52; --ok-soft:#ddf4e7; --bad:#c53030; --bad-soft:#fde7e7; --note:#fff7dc; --note-line:#e9c46a; --mine:#e8f3ff; --mine-line:#7fb2ea;
+  --amb:#b7791f; --tea:#1386a6; --pur:#7a3fd1; --blu:#2563eb; --pnk:#c2417a; --grn:#2f855a; --org:#c05621; --red:#c53030; --olv:#6b7f1a;
+  --ind:#4c51bf; --brn:#8b5a2b; --mag:#b83280; --sea:#2c7a7b; --plm:#7b3fb0; --rub:#c0265b; --cyn:#0891b2; --sky:#0369a1; --lim:#4d7c0f; --jade:#0f766e; --steel:#475569;
+  --f-head:"Secular One","Assistant",system-ui,sans-serif; --f-body:"Assistant",system-ui,-apple-system,"Segoe UI",sans-serif; --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#11161f; --card:#18202c; --ink:#e6ebf3; --muted:#9aa7ba; --line:#2a3546; --soft:#1f2937; --grid:rgba(160,190,255,.04);
+  --accent:#a48bff; --accent-soft:#2a2346; --ok:#6fd49b; --ok-soft:#163626; --bad:#ff8a80; --bad-soft:#3d1c1c; --note:#2f2a14; --note-line:#a58a2c; --mine:#15283d; --mine-line:#3f6f9f;
+  --amb:#f0b75a; --tea:#4cc3e0; --pur:#b48cff; --blu:#7aa7ff; --pnk:#f58bbb; --grn:#6fd49b; --org:#f6a26b; --red:#ff8a80; --olv:#b5c95a;
+  --ind:#a3a8ff; --brn:#d6a77a; --mag:#f08ad0; --sea:#6fd1cf; --plm:#c99af0; --rub:#ff7aa3; --cyn:#5fd8f0; --sky:#7cc4f5; --lim:#a3d65c; --jade:#5eead4; --steel:#cbd5e1; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#11161f; --card:#18202c; --ink:#e6ebf3; --muted:#9aa7ba; --line:#2a3546; --soft:#1f2937; --grid:rgba(160,190,255,.04);
+  --accent:#a48bff; --accent-soft:#2a2346; --ok:#6fd49b; --ok-soft:#163626; --bad:#ff8a80; --bad-soft:#3d1c1c; --note:#2f2a14; --note-line:#a58a2c; --mine:#15283d; --mine-line:#3f6f9f;
+  --amb:#f0b75a; --tea:#4cc3e0; --pur:#b48cff; --blu:#7aa7ff; --pnk:#f58bbb; --grn:#6fd49b; --org:#f6a26b; --red:#ff8a80; --olv:#b5c95a;
+  --ind:#a3a8ff; --brn:#d6a77a; --mag:#f08ad0; --sea:#6fd1cf; --plm:#c99af0; --rub:#ff7aa3; --cyn:#5fd8f0; --sky:#7cc4f5; --lim:#a3d65c; --jade:#5eead4; --steel:#cbd5e1; color-scheme:dark}
+html{direction:rtl}
+body{background-color:var(--bg);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:22px 22px;color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.65}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--card)}
+.wrap{max-width:860px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:8px 64px}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:6;background:var(--card);border-bottom:1px solid var(--line);margin-inline:calc(-1*max(16px,env(safe-area-inset-left,0px)));padding:8px max(16px,env(safe-area-inset-left,0px));display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.bar .sc{font-weight:700;font-size:15px}
+.bar .sc bdi{font-family:var(--f-mono)}
+.bar .meter{flex:1 1 120px;height:8px;background:var(--soft);border-radius:99px;overflow:hidden;min-width:80px}
+.bar .meter i{display:block;height:100%;width:0;background:var(--accent);transition:width .3s}
+.bar button{font:inherit;font-size:14px;font-weight:600;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:99px;padding:4px 12px;cursor:pointer}
+header.hero{padding-block:22px 6px}
+.credit{font-size:15px;background:var(--accent-soft);color:var(--ink);border-radius:10px;padding:6px 12px;display:inline-block;margin:0 0 12px}
+.eyebrow{font-size:13px;color:var(--muted);letter-spacing:.04em}
+h1{font-family:var(--f-head);font-weight:400;font-size:clamp(30px,6vw,42px);line-height:1.15;margin:4px 0 6px;text-wrap:balance}
+.sub{color:var(--muted);margin:0 0 12px}
+.legend{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.legend span{font-size:14px;border:1px solid var(--line);border-radius:99px;padding:2px 10px;background:var(--card)}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;background:currentColor;margin-inline-end:6px;vertical-align:middle}
+nav.toc{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;margin:12px 0 4px}
+nav.toc a{display:block;text-decoration:none;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:10px;padding:7px 11px;font-size:15px;font-weight:600}
+nav.toc a:hover{border-color:var(--accent)}
+nav.toc a b{color:var(--accent);font-family:var(--f-mono);margin-inline-end:4px}
+section.sec{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 18px 8px;margin-top:18px;scroll-margin-top:64px}
+@media (max-width:520px){section.sec{padding:14px 12px 6px;border-radius:12px}}
+.secno{font-family:var(--f-mono);font-size:13px;color:var(--muted);direction:ltr;unicode-bidi:isolate}
+h2{font-family:var(--f-head);font-weight:400;font-size:26px;margin:2px 0 10px;line-height:1.25;text-wrap:balance}
+h3{font-size:19px;margin:18px 0 6px}
+p{margin:8px 0}
+.box{border-radius:12px;padding:10px 14px;margin:12px 0;border:1px solid var(--line);background:var(--soft)}
+.box > b:first-child{display:block;margin-bottom:4px}
+.box.rule{background:var(--accent-soft);border-color:var(--accent)}
+.box.mine{background:var(--mine);border-color:var(--mine-line)}
+.box.fix{background:var(--note);border-color:var(--note-line)}
+.box.terms{background:var(--soft)}
+.box ol,.box ul{margin:4px 0;padding-inline-start:22px}
+.tw{overflow-x:auto;margin:10px 0}
+table{border-collapse:collapse;width:100%;font-size:15.5px}
+th,td{border:1px solid var(--line);padding:6px 9px;text-align:start;vertical-align:top}
+th{background:var(--soft)}
+.disp{overflow-x:auto;overflow-y:hidden;text-align:center;margin:10px 0;padding:4px 0}
+mjx-container{direction:ltr;unicode-bidi:isolate}
+mjx-container[display="true"]{margin:.4em 0!important}
+.disp mjx-container{display:inline-block!important}
+.ans{border-bottom:3px solid var(--cyn);padding-bottom:2px}
+.amb{color:var(--amb)}.tea{color:var(--tea)}.pur{color:var(--pur)}.blu{color:var(--blu)}.pnk{color:var(--pnk)}.grn{color:var(--grn)}.org{color:var(--org)}.red{color:var(--red)}.olv{color:var(--olv)}.ind{color:var(--ind)}.brn{color:var(--brn)}.mag{color:var(--mag)}.sea{color:var(--sea)}.plm{color:var(--plm)}.rub{color:var(--rub)}.cyn{color:var(--cyn)}.sky{color:var(--sky)}.lim{color:var(--lim)}.jade{color:var(--jade)}.steel{color:var(--steel)}
+.k{font-weight:700}
+bdi,.m{unicode-bidi:isolate}
+.m{direction:ltr;display:inline-block;max-width:100%}
+code,pre{font-family:var(--f-mono);direction:ltr;unicode-bidi:isolate}
+/* simulation */
+.sim{border:2px solid var(--accent);border-radius:14px;padding:12px;margin:14px 0;background:var(--card)}
+.sim .st-title{font-weight:700;margin-bottom:6px}
+.sim .map{display:flex;flex-wrap:wrap;gap:5px;margin:0 0 8px;padding:0;list-style:none}
+.sim .map li{font-size:13.5px;border:1px solid var(--line);border-radius:99px;padding:2px 10px;color:var(--muted)}
+.sim .map li.on{background:var(--accent);border-color:var(--accent);color:var(--card);font-weight:700}
+.sim .map li.done{color:var(--ink);background:var(--soft)}
+.sim .lines{border:1px solid var(--line);border-radius:10px;padding:6px 8px;background:var(--soft);overflow-x:auto}
+.sim .ln{display:flex;gap:8px;align-items:center;padding:2px 4px;border-radius:6px;direction:ltr;min-height:30px}
+.sim .ln .no{font-family:var(--f-mono);font-size:12px;color:var(--muted);min-width:18px}
+.sim .ln.cur{background:var(--accent-soft);outline:2px solid var(--accent)}
+.sim .ln.fut{display:none}
+.sim .ln .f{min-width:0}
+.sim .x{margin:8px 0;padding:8px 12px;border-inline-start:4px solid var(--accent);background:var(--accent-soft);border-radius:8px}
+.sim .stp{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+.sim .stp > span{border:1px solid var(--line);border-radius:8px;padding:3px 9px;font-size:14.5px;background:var(--card)}
+.sim .stp > span > i{font-style:normal;color:var(--muted);margin-inline-end:6px;font-size:13px}
+.sim .stp .new{outline:2px solid var(--accent)}
+.sim .ctl{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-top:8px}
+.sim .ctl button{font:inherit;font-weight:700;font-size:15px;border:1px solid var(--accent);background:var(--card);color:var(--accent);border-radius:8px;padding:5px 14px;cursor:pointer}
+.sim .ctl button.pri{background:var(--accent);color:var(--card)}
+.sim .ctl button:disabled{opacity:.4;cursor:default}
+.sim .ctl .cnt{font-family:var(--f-mono);font-size:13px;color:var(--muted);direction:ltr;unicode-bidi:isolate}
+.sim .steps{display:none}
+/* quiz */
+.quiz{margin:16px 0 10px;border-top:1px dashed var(--line);padding-top:10px}
+.quiz > .qt{font-family:var(--f-head);font-size:19px;margin:0 0 6px}
+.qq{margin:10px 0 16px}
+.qq .q{font-weight:700;margin:4px 0}
+.qq ol{list-style:none;padding:0;margin:6px 0;display:grid;gap:6px}
+.qq li button{width:100%;text-align:start;font:inherit;font-size:16px;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:10px;padding:8px 12px;cursor:pointer;line-height:1.5}
+.qq li button:hover{border-color:var(--accent)}
+.qq li button.bad{border-color:var(--bad);background:var(--bad-soft)}
+.qq li button.good{border-color:var(--ok);background:var(--ok-soft)}
+.qq li button .lt{font-weight:700;color:var(--muted);margin-inline-end:8px}
+.qq .h,.qq .e{border-radius:8px;padding:6px 10px;font-size:15.5px}
+.qq .h{background:var(--bad-soft)}
+.qq .e{background:var(--ok-soft)}
+/* tools */
+.tool{border:1px solid var(--line);border-radius:12px;padding:12px;margin:12px 0;background:var(--soft)}
+.tool label{font-weight:600;font-size:15px}
+.tool input[type=range]{width:100%}
+.tool .out{font-family:var(--f-mono);direction:ltr;unicode-bidi:isolate;font-size:15px}
+.tool svg{width:100%;height:auto;display:block;background:var(--card);border-radius:8px;border:1px solid var(--line)}
+.tool .row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.tool select,.tool button{font:inherit;font-size:15px;border:1px solid var(--line);border-radius:8px;padding:4px 10px;background:var(--card);color:var(--ink)}
+.end{margin-top:18px;text-align:center;font-weight:700;font-size:18px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+mjx-container:not([display="true"]){display:inline-block;max-width:100%;overflow-x:auto;overflow-y:hidden;vertical-align:middle;padding-block:2px}
+mjx-container > svg{vertical-align:middle!important}
+mjx-assistive-mml{max-width:100%!important;left:0!important}
+[hidden]{display:none!important}
+.disp,.sim .lines{direction:ltr}
+input[type=range]{direction:ltr}
+@media (max-width:520px){.sim .ln mjx-container{font-size:86%}}
+</style>
+
+<div class="wrap" data-key="calc2-lec07-v1">
+<div class="bar"><span class="sc" id="score">ניקוד: 0</span><span class="meter" aria-hidden="true"><i id="meter"></i></span><button type="button" id="resetBtn">⟲ איפוס</button><button type="button" id="themeBtn">🌙 לילה</button></div>
+<header class="hero">
+<p class="credit">קרדיט לסיכומים של עדי מהדרייב 😊 ולעידו דוד צייג!</p>
+<div class="eyebrow">חדו״א 2 · הרצאה 7 · לנדסמן · 17/11/25 · ארבעה עמודים בכתב יד</div>
+<h1>הרצאה 7: שימושים לאינטגרל המסוים</h1>
+<p class="sub">שטח בין שתי פונקציות, אורך של עקומה, נפח לפי חתכים וגוף סיבוב. בסוף הצצה לאינטגרלים לא אמיתיים.</p>
+<div class="legend">
+<span class="olv">פונקציה עליונה <bdi>f</bdi> / רדיוס</span>
+<span class="red">פונקציה תחתונה <bdi>g</bdi></span>
+<span class="brn">חלוקה / <bdi>Δx, Δy</bdi></span>
+<span class="ind">נקודות <bdi>c<sub>i</sub></bdi> / סכום רימן</span>
+<span class="jade">אורך עקומה <bdi>L</bdi> (חדש)</span>
+<span class="steel">שטח חתך <bdi>S(x)</bdi> / נפח <bdi>V</bdi> (חדש)</span>
+<span class="amb">sin / cos</span>
+<span class="pur">הצבה <bdi>u</bdi></span>
+<span class="blu">הצבה טריגו׳ <bdi>θ</bdi></span>
+<span class="cyn">תשובה סופית (קו מתחת)</span>
+</div>
+<nav class="toc" aria-label="תוכן עניינים"></nav>
+</header>
+
+<!-- 1 -->
+<section class="sec" id="s1" data-short="שטח בין שתי פונקציות">
+<h2>שימוש 1: שטח בין שתי פונקציות</h2>
+<p><b>השאלה במחברת:</b> רוצים לחשב את השטח $S$ החסום בין שתי פונקציות $\class{olv}{f(x)}\ge\class{red}{g(x)}$ בקטע $[a,b]$.</p>
+<div class="box mine"><b>שטח בין שתי פונקציות — הדוגמה שלי עם מספרים</b>
+<ol>
+<li>שלב 1 – מה יש לנו: $\class{olv}{f(x)=x}$ ו-$\class{red}{g(x)=x^2}$ בקטע $[0,1]$. בקטע הזה $x\ge x^2$ (למשל ב-$0.5$: $0.5\ge0.25$).</li>
+<li>שלב 2 – פרוסה דקה אחת ב-$x=0.5$: הגובה שלה הוא ההפרש $0.5-0.25=0.25$.</li>
+<li>שלב 3 – כל פרוסה היא מלבן: גובה $\class{olv}{f}-\class{red}{g}$, רוחב $\class{brn}{\Delta x}$.</li>
+<li>שלב 4 – מחברים את כל הפרוסות ⇒ אינטגרל: $\int_0^1(x-x^2)\,dx=\frac12-\frac13=\frac16$.</li>
+<li>שלב 5 – בדיקה: השטח מתחת ל-$x$ הוא $\frac12$, מתחת ל-$x^2$ הוא $\frac13$. ההפרש $\frac16$. אותו דבר!</li>
+</ol></div>
+<p><b>מה כתוב במחברת:</b> מסתכלים על סכומי רימן של ההפרש $f-g$:</p>
+<div class="disp">$$I_{app}(f-g,\Delta)=\sum_{i=1}^n\big(\class{olv}{f(\class{ind}{c_i})}-\class{red}{g(\class{ind}{c_i})}\big)\class{brn}{(x_i-x_{i-1})}=\sum_{i=1}^n \class{olv}{f(c_i)}\class{brn}{\Delta x_i}-\sum_{i=1}^n\class{red}{g(c_i)}\class{brn}{\Delta x_i}\ \xrightarrow{\lambda(\Delta)\to0}\ \int_a^b \class{olv}{f}-\int_a^b\class{red}{g}$$</div>
+<div class="disp">$$S=\int_a^b\big(\class{olv}{f(x)}-\class{red}{g(x)}\big)\,dx$$</div>
+<div class="box terms"><b>מילים וסימנים</b>
+<ul>
+<li>$I_{app}$ = סכום רימן (approximation = קירוב). כמו בהרצאות 1-2.</li>
+<li>במחברת כתוב $\delta(\Delta)\to0$. זה פרמטר החלוקה, אורך החתיכה הארוכה (בהרצאה 1 סימנו $\lambda(\Delta)$).</li>
+<li>הסכום מתפרק לשני סכומים בגלל לינאריות: $\sum(a_i-b_i)=\sum a_i-\sum b_i$.</li>
+</ul></div>
+<div class="box rule"><b>הכלל לזכור</b>אם $f$ ו-$g$ כלליות (לא ידוע מי למעלה), השטח ביניהן הוא $S=\int_a^b|f(x)-g(x)|\,dx$. בפועל: מוצאים איפה הן נחתכות, ובכל חתיכה מחסרים "עליונה פחות תחתונה".</div>
+<p><b>אנלוגיה:</b> כמו למדוד שטח של נהר במפה. בכל נקודה מודדים את הרוחב (גדה עליונה פחות גדה תחתונה), ומחברים פרוסות דקות.</p>
+<h3>דוגמה מההרצאה: בין sin ל-cos</h3>
+<p>מצאו את השטח בין $y=\class{amb}{\sin x}$ ל-$y=\class{amb}{\cos x}$ בקטע $[0,\frac\pi3]$.</p>
+<div class="tool" id="areaTool"><b>המחשה: השטח בין sin ל-cos</b>
+<label for="arB">קצה ימני b = <span class="out" id="arBv"></span></label>
+<input type="range" id="arB" min="5" max="157" value="105">
+<svg id="arSvg" viewBox="0 0 400 220" role="img" aria-label="sin ו-cos והשטח ביניהם"></svg>
+<p class="out" id="arOut"></p>
+<p style="font-size:15px">ירוק-זית = איפה שהעליונה היא cos, אדום-ורדרד = איפה שהעליונה היא sin. הקו המקווקו: נקודת החיתוך <bdi>π/4</bdi>.</p></div>
+<div class="sim"><div class="st-title">סימולציה: השטח בין sin ל-cos ב-[0, π/3]</div>
+<ol class="map"><li>1. נקודת חיתוך</li><li>2. פיצול לחתיכות</li><li>3. קדומות</li><li>4. הצבה</li><li>5. פישוט</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$\sin x=\cos x\ \Rightarrow\ \tan x=1\ \Rightarrow\ x=\frac\pi4$</div><div class="x">קודם מוצאים איפה הגרפים נחתכים. מחלקים ב-$\cos x$ (שונה מאפס בקטע). בקטע $[0,\frac\pi3]$ יש רק פתרון אחד: $\frac\pi4$.</div><div class="st"><span><i>חיתוך</i>$\frac\pi4$</span><span><i>עליונה ב-[0,π/4]</i>?</span><span><i>עליונה ב-[π/4,π/3]</i>?</span></div></div>
+<div class="step" data-m="1"><div class="f">$S=\int_0^{\pi/3}|\sin x-\cos x|\,dx=\int_0^{\pi/4}(\class{olv}{\cos x}-\class{red}{\sin x})\,dx+\int_{\pi/4}^{\pi/3}(\class{olv}{\sin x}-\class{red}{\cos x})\,dx$</div><div class="x">בודקים נקודה בכל חתיכה. ב-$x=0$: $\cos0=1>\sin0=0$, אז cos למעלה. ב-$x=\frac\pi3$: $\sin=0.87>\cos=0.5$, אז sin למעלה.</div><div class="st"><span><i>חיתוך</i>$\frac\pi4$</span><span><i>עליונה ב-[0,π/4]</i>cos</span><span><i>עליונה ב-[π/4,π/3]</i>sin</span></div></div>
+<div class="step" data-m="2"><div class="f">$=\big[\sin x+\cos x\big]_0^{\pi/4}+\big[-\cos x-\sin x\big]_{\pi/4}^{\pi/3}$</div><div class="x">קדומה של $\cos$ היא $\sin$. קדומה של $-\sin$ היא $+\cos$. ובחתיכה השנייה ההפך.</div><div class="st"><span><i>מצב</i>קדומות מוכנות</span></div></div>
+<div class="step" data-m="3"><div class="f">$=\left(\tfrac{\sqrt2}2+\tfrac{\sqrt2}2\right)-(0+1)+\left(-\tfrac12-\tfrac{\sqrt3}2\right)-\left(-\tfrac{\sqrt2}2-\tfrac{\sqrt2}2\right)$</div><div class="x">מציבים. $\sin\frac\pi4=\cos\frac\pi4=\frac{\sqrt2}2$, $\cos\frac\pi3=\frac12$, $\sin\frac\pi3=\frac{\sqrt3}2$. במחברת השלב הזה מופיע כ-"...".</div><div class="st"><span><i>חתיכה 1</i>$\sqrt2-1\approx0.414$</span><span><i>חתיכה 2</i>$\sqrt2-\frac{1+\sqrt3}2\approx0.048$</span></div></div>
+<div class="step" data-m="4"><div class="f"><span class="ans">$=2\sqrt2-\frac{\sqrt3+3}{2}\approx0.462$</span></div><div class="x">מחברים: $\sqrt2+\sqrt2=2\sqrt2$, ו-$-1-\frac12-\frac{\sqrt3}2=-\frac{3+\sqrt3}2$. בדיוק כמו במחברת.</div><div class="st"><span><i>תשובה</i>$\approx0.462$</span></div></div>
+</div></div>
+<div class="box fix"><b>זהירות: למה לא פשוט $\int_0^{\pi/3}(\sin x-\cos x)dx$?</b>בלי ערך מוחלט, החתיכה שבה sin נמוך נכנסת עם מינוס ומקזזת. יוצא $\big[-\cos x-\sin x\big]_0^{\pi/3}=-\frac12-\frac{\sqrt3}2+1\approx-0.366$. שלילי! שטח לא יכול להיות שלילי.</div>
+<div class="quiz"><div class="qt">שאלות על סעיף 1</div>
+<div class="qq" data-a="1"><p class="q">מה השטח בין $f(x)=2$ ל-$g(x)=x$ בקטע $[0,2]$?</p><ol><li>$4$, כי $\int_0^2 2\,dx$</li><li>$2$, כי $\int_0^2(2-x)\,dx$</li><li>$6$, כי $\int_0^2(2+x)\,dx$</li><li>$-2$, כי $\int_0^2(x-2)\,dx$</li></ol><p class="h">רמז: עליונה פחות תחתונה. בקטע הזה $2\ge x$.</p><p class="e">נכון. $[2x-\frac{x^2}2]_0^2=4-2=2$.</p></div>
+<div class="qq" data-a="3"><p class="q">למה בדוגמת sin/cos חילקו את הקטע ב-$\frac\pi4$?</p><ol><li>כי $\frac\pi4$ הוא אמצע הקטע $[0,\frac\pi3]$</li><li>כי שם הקדומה של $\sin$ מתאפסת</li><li>כי שם $\sin x=0$ ו-$\cos x=1$</li><li>כי שם הגרפים נחתכים</li></ol><p class="h">רמז: מה קורה ל"עליונה" ו"תחתונה" בנקודה הזו?</p><p class="e">נכון. ב-$\frac\pi4$: $\sin=\cos$. לפני cos למעלה, אחרי sin למעלה.</p></div>
+<div class="qq" data-a="0"><p class="q">מה יוצא אם מחשבים $\int_0^{\pi/3}(\sin x-\cos x)dx$ בלי ערך מוחלט?</p><ol><li>מספר שלילי, כי החלקים מקזזים</li><li>אותו שטח, כי האינטגרל תמיד חיובי</li><li>אפס, כי sin ו-cos מתבטלים</li><li>השטח כפול 2, כי סופרים פעמיים</li></ol><p class="h">רמז: ברוב הקטע cos למעלה, אז $\sin-\cos$ שלילי שם.</p><p class="e">נכון. יוצא $\approx-0.366$, ולכן צריך ערך מוחלט או פיצול.</p></div>
+<div class="qq" data-a="2"><p class="q">בסכום רימן של $f-g$, למה מותר לפרק לשני סכומים?</p><ol><li>כי $f$ ו-$g$ רציפות בקטע</li><li>כי $f\ge g$ בכל הקטע</li><li>כי $\sum(a_i-b_i)=\sum a_i-\sum b_i$</li><li>כי $\Delta x_i$ שווים בכל החלוקה</li></ol><p class="h">רמז: זו תכונה של חיבור רגיל, לא של הפונקציות.</p><p class="e">נכון. $\sum(a_i-b_i)=\sum a_i-\sum b_i$ (לינאריות).</p></div>
+</div>
+</section>
+
+<!-- 2 -->
+<section class="sec" id="s2" data-short="אורך עקומה">
+<h2>שימוש 2: אורך של עקומה</h2>
+<p><b>השאלה:</b> מה האורך $\class{jade}{L}$ של העקומה $y=f(x)$, כש-$f$ גזירה ברציפות בקטע $[a,b]$?</p>
+<p><b>המטרה:</b> כאילו מניחים חוט על העקומה, מיישרים אותו ומודדים.</p>
+<p><b>הבעיה:</b> אנחנו יודעים למדוד רק <b>קווים ישרים</b>. לעקומה אין "סרגל".<br><b>הרעיון:</b> מחליפים את העקומה בהרבה קווים ישרים קטנים, ומחברים את האורכים שלהם.</p>
+<h3>שלב 1: אורך של קו ישר אחד (פיתגורס)</h3>
+<div class="box mine"><b>דוגמה עם מספרים</b>קו מהנקודה $(0,0)$ לנקודה $(3,4)$: הוא הולך $\class{brn}{\Delta x=3}$ ימינה ועולה $\class{brn}{\Delta y=4}$ למעלה. הקו הוא היתר במשולש ישר זווית:
+<div class="disp">$$\text{length}=\sqrt{\class{brn}{\Delta x}^2+\class{brn}{\Delta y}^2}=\sqrt{9+16}=5$$</div>
+זה הכלי היחיד שיש לנו. כל השאר בנוי עליו.</div>
+<h3>שלב 2: מחליפים את העקומה בקו שבור</h3>
+<p>דוגמה: $y=x^2$ מ-$0$ עד $2$. עם 2 קטעים לוקחים נקודות על הגרף ב-$x=0,1,2$, כלומר $(0,0)\to(1,1)\to(2,4)$:</p>
+<div class="tw"><table><tr><th>קטע</th><th>$\Delta x$</th><th>$\Delta y$</th><th>אורך $\sqrt{\Delta x^2+\Delta y^2}$</th></tr>
+<tr><td>$(0,0)\to(1,1)$</td><td>1</td><td>1</td><td>$\sqrt2\approx1.414$</td></tr>
+<tr><td>$(1,1)\to(2,4)$</td><td>1</td><td>3</td><td>$\sqrt{10}\approx3.162$</td></tr>
+<tr><td><b>סה״כ</b></td><td></td><td></td><td><b>$\approx4.576$</b></td></tr></table></div>
+<div class="tw"><table><tr><th>מספר קטעים</th><th>אורך הקו השבור</th></tr><tr><td>2</td><td>$\approx4.576$</td></tr><tr><td>4</td><td>$\approx4.626$</td></tr><tr><td>האורך האמיתי</td><td>$\approx4.647$</td></tr></table></div>
+<p>ככל שיש יותר קטעים, הקו השבור צמוד יותר לעקומה, והאורך מתקרב לאמיתי. הקו השבור תמיד קצת <b>קצר</b> יותר, כי קו ישר הוא הדרך הקצרה ביותר בין שתי נקודות. (אפשר לנסות בהמחשה למטה, עם העקומה $x^2$.)</p>
+<h3>שלב 3: קטע אחד, בצורה כללית</h3>
+<p>נסתכל על קטע אחד קטן מ-$x_{i-1}$ עד $x_i$:</p>
+<ul><li>$\class{brn}{\Delta x_i}=x_i-x_{i-1}$ (כמה ימינה)</li><li>$\class{brn}{\Delta y_i}=f(x_i)-f(x_{i-1})$ (כמה למעלה)</li></ul>
+<div class="disp">$$\text{length of piece}=\sqrt{\class{brn}{\Delta x_i}^2+\class{brn}{\Delta y_i}^2}$$</div>
+<h3>שלב 4: הטריק – מוציאים את Δx מהשורש</h3>
+<p>רוצים ש-$\Delta x$ יופיע <b>מחוץ</b> לשורש, כי ככה נראה סכום רימן (משהו כפול $\Delta x$):</p>
+<div class="disp">$$\sqrt{\Delta x^2+\Delta y^2}=\sqrt{\Delta x^2\left(1+\frac{\Delta y^2}{\Delta x^2}\right)}=\sqrt{1+\left(\frac{\Delta y}{\Delta x}\right)^2}\cdot\Delta x$$</div>
+<p><b>ומה זה $\frac{\Delta y}{\Delta x}$?</b> "כמה עולה חלקי כמה זז ימינה" = <b>השיפוע של הקטע</b>.</p>
+<div class="box mine"><b>בדיקה עם מספרים</b>הקטע $(1,1)\to(2,4)$ מהטבלה: השיפוע הוא $\frac31=3$, ו-$\sqrt{1+3^2}\cdot1=\sqrt{10}$ ✓. אותו מספר כמו בטבלה.</div>
+<h3>שלב 5: לגרנז׳ מחליף את השיפוע בנגזרת</h3>
+<p>משפט לגרנז׳ (מחדו״א 1): בכל קטע יש נקודה $\class{ind}{c_i}$ שבה <b>שיפוע המשיק = שיפוע הקטע</b>:</p>
+<div class="disp">$$\frac{\Delta y_i}{\Delta x_i}=f'(\class{ind}{c_i})\quad\Longrightarrow\quad\text{length of piece}=\sqrt{1+f'(\class{ind}{c_i})^2}\cdot\class{brn}{\Delta x_i}$$</div>
+<h3>שלב 6: מחברים את כל הקטעים ⇒ אינטגרל</h3>
+<div class="disp">$$\text{polyline}=\sum_{i=1}^n\sqrt{1+f'(\class{ind}{c_i})^2}\,\class{brn}{\Delta x_i}$$</div>
+<p>זה בדיוק <b>סכום רימן</b> של הפונקציה $\sqrt{1+f'(x)^2}$. כשהקטעים נהיים קטנים מאוד, סכום רימן הופך לאינטגרל:</p>
+<div class="disp">$$\class{jade}{L}=\int_a^b\sqrt{1+\big(f'(x)\big)^2}\,dx$$</div>
+<p><b>אותו דבר בכתיב של המחברת:</b> מסמנים ב-$p_i$ את הנקודה על הגרף מעל $x_i$. מחברים את הנקודות בקווים ישרים (קו שבור), ולוקחים גבול. הסימולציה עוברת על השורות של המחברת אחת-אחת:</p>
+<div class="sim"><div class="st-title">סימולציה: פיתוח נוסחת אורך העקומה</div>
+<ol class="map"><li>1. קו שבור</li><li>2. פיתגורס</li><li>3. מוציאים Δx</li><li>4. לגרנז׳</li><li>5. גבול = אינטגרל</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$\class{jade}{L}=\lim\limits_{\lambda(\Delta)\to0}\sum\limits_{i=1}^n|p_{i-1}p_i|$</div><div class="x">$|p_{i-1}p_i|$ = אורך הקטע הישר בין שתי נקודות סמוכות על הגרף. ככל שהחלוקה עדינה, הקו השבור צמוד יותר לעקומה.</div><div class="st"><span><i>חתיכה</i>קטע ישר</span></div></div>
+<div class="step" data-m="1"><div class="f">$=\lim\sum\limits_{i=1}^n\sqrt{(\class{brn}{\Delta x_i})^2+(\class{brn}{\Delta y_i})^2}$</div><div class="x">פיתגורס: הקטע הוא יתר במשולש ישר זווית. צלע אופקית $\Delta x_i=x_i-x_{i-1}$, צלע אנכית $\Delta y_i=f(x_i)-f(x_{i-1})$.</div><div class="st"><span><i>חתיכה</i>$\sqrt{\Delta x^2+\Delta y^2}$</span></div></div>
+<div class="step" data-m="2"><div class="f">$=\lim\sum\limits_{i=1}^n\sqrt{1+\left(\frac{\class{brn}{\Delta y_i}}{\class{brn}{\Delta x_i}}\right)^2}\cdot\class{brn}{\Delta x_i}=\lim\sum\sqrt{1+\left(\frac{f(x_i)-f(x_{i-1})}{x_i-x_{i-1}}\right)^2}\cdot\Delta x_i$</div><div class="x">מוציאים $\Delta x_i^2$ מהשורש (כמו בשלב 3 בדוגמה שלי). בפנים נשאר השיפוע של הקטע.</div><div class="st"><span><i>חתיכה</i>$\sqrt{1+\text{slope}^2}\,\Delta x$</span></div></div>
+<div class="step" data-m="3"><div class="f">$\frac{f(x_i)-f(x_{i-1})}{x_i-x_{i-1}}=f'(\class{ind}{c_i}),\quad \class{ind}{c_i}\in[x_{i-1},x_i]$</div><div class="x">$f$ גזירה, ולכן לפי משפט לגרנז׳ בכל תת-קטע יש נקודה $c_i$ שבה השיפוע של המשיק שווה לשיפוע של הקטע.</div><div class="st"><span><i>שיפוע הקטע</i>$f'(c_i)$</span></div></div>
+<div class="step" data-m="4"><div class="f"><span class="ans">$=\lim\sum\limits_{i=1}^n\sqrt{1+\big(f'(\class{ind}{c_i})\big)^2}\,\class{brn}{\Delta x_i}=\int_a^b\sqrt{1+\big(f'(x)\big)^2}\,dx$</span></div><div class="x">עכשיו זה בדיוק סכום רימן של $\sqrt{1+(f')^2}$. הפונקציה רציפה (כי $f'$ רציפה), אז הגבול הוא האינטגרל. מש״ל.</div><div class="st"><span><i>נוסחה</i>$L=\int_a^b\sqrt{1+f'^2}$</span></div></div>
+</div></div>
+<div class="box fix"><b>הערה קטנה שלי על המחברת</b>בשורת לגרנז׳ כתוב $\frac{f(x_i-x_{i-1})}{x_i-x_{i-1}}=f'(c_i)$. צריך $\frac{f(x_i)-f(x_{i-1})}{x_i-x_{i-1}}$: הפרש של ערכי $f$, לא $f$ של הפרש. בשורה שלפני זה כתוב נכון.</div>
+<div class="box rule"><b>הכלל לזכור</b>$\class{jade}{L}=\int_a^b\sqrt{1+\big(f'(x)\big)^2}\,dx$</div>
+<div class="tw"><table><tr><th>חלק בנוסחה</th><th>מאיפה הוא בא</th></tr>
+<tr><td>השורש $\sqrt{\ }$</td><td>פיתגורס (שלב 1)</td></tr>
+<tr><td>ה-$1$ בפנים</td><td>מ-$\Delta x$ שהוצאנו החוצה (שלב 4)</td></tr>
+<tr><td>$f'(x)^2$</td><td>השיפוע של הקטע, דרך לגרנז׳ (שלבים 4-5)</td></tr>
+<tr><td>$\int\ldots dx$</td><td>חיבור כל הקטעים = סכום רימן (שלב 6)</td></tr></table></div>
+<div class="box terms"><b>למה צריך ש-$f$ תהיה "גזירה ברציפות"?</b><ul><li><b>גזירה</b>: כדי שיהיה $f'$ ושמשפט לגרנז׳ יעבוד.</li><li><b>$f'$ רציפה</b>: כדי שהפונקציה בתוך האינטגרל תהיה רציפה, ולכן אינטגרבילית.</li></ul></div>
+<div class="box mine"><b>בדיקה מהירה: קו ישר $y=2x$ מ-0 עד 1</b>$f'(x)=2$, ולכן $L=\int_0^1\sqrt{1+4}\,dx=\sqrt5$. ובפיתגורס ישירות: 1 ימינה ו-2 למעלה ⇒ $\sqrt{1+4}=\sqrt5$ ✓.</div>
+<div class="tool" id="arcTool"><b>המחשה: קו שבור מתקרב לאורך העקומה</b>
+<div class="row"><label for="acF">עקומה:</label><select id="acF"><option value="0">x^(3/2) על [1,4]</option><option value="1">חצי מעגל R=1</option><option value="2">sin x על [0,π]</option><option value="3">x² על [0,2] (הדוגמה מהטבלה)</option></select></div>
+<label for="acN">מספר קטעים n: <span class="out" id="acNv"></span></label><input type="range" id="acN" min="1" max="40" value="3">
+<svg id="acSvg" viewBox="0 0 400 220" role="img" aria-label="עקומה וקו שבור"></svg>
+<p class="out" id="acOut"></p></div>
+<div class="quiz"><div class="qt">שאלות על סעיף 2</div>
+<div class="qq" data-a="2"><p class="q">מה האורך של הקו $y=3x$ מ-$x=0$ עד $x=1$?</p><ol><li>$3$, כי זה הגובה שהקו מגיע</li><li>$4$, כי $1+3$</li><li>$\sqrt{10}$, כי $\sqrt{1+3^2}$</li><li>$\sqrt8$, כי $\sqrt{3^2-1}$</li></ol><p class="h">רמז: פיתגורס עם צלעות 1 ו-3.</p><p class="e">נכון. $\sqrt{1+9}=\sqrt{10}\approx3.16$.</p></div>
+<div class="qq" data-a="0"><p class="q">מאיפה מגיע $f'(c_i)$ בפיתוח הנוסחה?</p><ol><li>ממשפט לגרנז׳ על כל תת-קטע</li><li>מהמשפט היסודי של החדו״א</li><li>מכלל השרשרת בגזירת השורש</li><li>מהגדרת סכום דרבו עליון</li></ol><p class="h">רמז: שיפוע של מיתר = שיפוע משיק בנקודה כלשהי.</p><p class="e">נכון. לגרנז׳: $\frac{f(x_i)-f(x_{i-1})}{x_i-x_{i-1}}=f'(c_i)$.</p></div>
+<div class="qq" data-a="3"><p class="q">למה הנוסחה דורשת ש-$f$ תהיה גזירה <b>ברציפות</b>?</p><ol><li>כדי שהגרף יהיה עולה בכל הקטע</li><li>כדי ש-$L$ יצא מספר שלם</li><li>כדי שאפשר יהיה להשתמש בפיתגורס</li><li>כדי שהאינטגרנד יהיה רציף</li></ol><p class="h">רמז: בסוף צריך שסכום רימן יתכנס לאינטגרל.</p><p class="e">נכון. $f'$ רציפה ⇒ האינטגרנד רציף ⇒ אינטגרבילי.</p></div>
+<div class="qq" data-a="1"><p class="q">בהמחשה, מה קורה לאורך הקו השבור כש-$n$ גדל?</p><ol><li>הוא קטן, כי הקטעים קצרים יותר</li><li>הוא גדל ומתקרב ל-$L$ מלמטה</li><li>הוא גדל בלי סוף, כי יש יותר קטעים</li><li>הוא לא משתנה, כי הקצוות קבועים</li></ol><p class="h">רמז: קו ישר הוא הדרך הקצרה ביותר בין שתי נקודות.</p><p class="e">נכון. כל קטע ישר קצר מהקשת שמתחתיו, ולכן הקו השבור תמיד ≤ $L$ ומתקרב אליו.</p></div>
+</div>
+</section>
+
+<!-- 3 -->
+<section class="sec" id="s3" data-short="דוגמה: x^(3/2)">
+<h2>דוגמה: אורך העקומה $f(x)=x^{3/2}$ בקטע [1,4]</h2>
+<h3>מפת השלבים</h3>
+<div class="tw"><table><tr><th>שלב</th><th>מה עושים</th></tr><tr><td>1</td><td>גוזרים ומעלים בריבוע</td></tr><tr><td>2</td><td>הצבה $u$ לשורש</td></tr><tr><td>3</td><td>מחליפים גבולות</td></tr><tr><td>4</td><td>קדומה והצבה</td></tr></table></div>
+<div class="sim"><div class="st-title">סימולציה: אורך $x^{3/2}$</div>
+<ol class="map"><li>1. נגזרת</li><li>2. הצבה</li><li>3. גבולות</li><li>4. חישוב</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$f'(x)=\frac32x^{1/2}\ \Rightarrow\ \big(f'(x)\big)^2=\frac94x$</div><div class="x">$f$ גזירה ברציפות ב-$[1,4]$, אז מותר להשתמש בנוסחה. נגזרת חזקה: $\frac32x^{\frac32-1}$.</div><div class="st"><span><i>f'²</i>$\frac94x$</span></div></div>
+<div class="step" data-m="0"><div class="f">$\class{jade}{L}=\int_1^4\sqrt{1+\big(\tfrac32x^{1/2}\big)^2}\,dx=\int_1^4\sqrt{1+\tfrac94x}\,dx$</div><div class="x">מציבים בנוסחה. עכשיו יש שורש של ביטוי לינארי.</div><div class="st"><span><i>f'²</i>$\frac94x$</span><span><i>אינטגרל</i>$\sqrt{1+\frac94x}$</span></div></div>
+<div class="step" data-m="1"><div class="f">$\class{pur}{u=1+\tfrac94x},\quad \class{pur}{du=\tfrac94dx}\ \Rightarrow\ dx=\tfrac49du$</div><div class="x">מציבים את מה שבתוך השורש. הנגזרת של $u$ קבועה, אז קל להחליף את $dx$.</div><div class="st"><span><i>הצבה</i>$u=1+\frac94x$</span></div></div>
+<div class="step" data-m="2"><div class="f">$x=1\Rightarrow u=\tfrac{13}4,\qquad x=4\Rightarrow u=10$</div><div class="x">$1+\frac94=\frac{13}4$ ו-$1+9=10$.</div><div class="st"><span><i>הצבה</i>$u=1+\frac94x$</span><span><i>גבולות</i>$\frac{13}4\to10$</span></div></div>
+<div class="step" data-m="3"><div class="f">$=\frac49\int_{13/4}^{10}\sqrt u\,du=\frac49\cdot\frac{u^{3/2}}{3/2}\Big|_{13/4}^{10}=\frac{8}{27}u^{3/2}\Big|_{13/4}^{10}$</div><div class="x">קדומה של $u^{1/2}$ היא $\frac{u^{3/2}}{3/2}$. ו-$\frac49\cdot\frac23=\frac8{27}$.</div><div class="st"><span><i>קדומה</i>$\frac8{27}u^{3/2}$</span></div></div>
+<div class="step" data-m="3"><div class="f"><span class="ans">$=\frac8{27}\left(10^{3/2}-\left(\tfrac{13}4\right)^{3/2}\right)\approx7.63$</span></div><div class="x">כאן המחברת עוצרת. במספרים: $10^{1.5}\approx31.62$, $(3.25)^{1.5}\approx5.86$. יוצא בערך $7.63$. בדיקה: הקו הישר בין $(1,1)$ ל-$(4,8)$ הוא $\sqrt{9+49}\approx7.62$. קצת פחות, כמו שצריך.</div><div class="st"><span><i>תשובה</i>$\approx7.63$</span></div></div>
+</div></div>
+<div class="quiz"><div class="qt">שאלות על סעיף 3</div>
+<div class="qq" data-a="1"><p class="q">ל-$f(x)=x^{3/2}$, מה $\big(f'(x)\big)^2$?</p><ol><li>$\frac32x$, בלי להעלות בריבוע את המקדם</li><li>$\frac94x$, כי $(\frac32)^2\cdot(x^{1/2})^2$</li><li>$\frac94x^2$, כי מעלים את $x$ בריבוע</li><li>$\frac32x^{1/2}$, הנגזרת עצמה</li></ol><p class="h">רמז: $(x^{1/2})^2=x$.</p><p class="e">נכון. $\frac94\cdot x$.</p></div>
+<div class="qq" data-a="3"><p class="q">בהצבה $u=1+\frac94x$, למה $dx=\frac49du$?</p><ol><li>כי $u$ מתחיל ב-1 ולכן מחסרים</li><li>כי $\frac49$ הוא הגבול התחתון</li><li>כי $dx=du$ תמיד בהצבה לינארית</li><li>כי $du=\frac94dx$, ומחלקים ב-$\frac94$</li></ol><p class="h">רמז: גזור את $u$ לפי $x$.</p><p class="e">נכון. $\frac{du}{dx}=\frac94$.</p></div>
+<div class="qq" data-a="0"><p class="q">למה התשובה $7.63$ גדולה מ-$7.62$ (הקו הישר בין הקצוות)?</p><ol><li>כי העקומה מתעקלת, והקו הישר הוא הקצר ביותר</li><li>כי עיגלנו את המספרים כלפי מעלה</li><li>כי הנוסחה סופרת גם את השטח</li><li>כי הקו הישר עובר מתחת לציר</li></ol><p class="h">רמז: מה המסלול הקצר ביותר בין שתי נקודות?</p><p class="e">נכון. כל עקומה ארוכה לפחות כמו הקו הישר בין הקצוות שלה.</p></div>
+</div>
+</section>
+
+<!-- 4 -->
+<section class="sec" id="s4" data-short="היקף מעגל">
+<h2>דוגמה: היקף של מעגל ברדיוס R</h2>
+<p>המעגל: $x^2+y^2=R^2$. בגלל סימטריה מספיק לחשב את חצי המעגל העליון ולהכפיל ב-2.</p>
+<div class="box terms"><b>מאיפה $f(x)=\sqrt{R^2-x^2}$?</b>מבודדים את $y$: $y^2=R^2-x^2$, ולוקחים את השורש החיובי (החצי העליון). למשל ב-$R=5$, $x=3$: $y=\sqrt{25-9}=4$. הנקודה $(3,4)$ על המעגל.</div>
+<div class="sim"><div class="st-title">סימולציה: היקף המעגל</div>
+<ol class="map"><li>1. נגזרת</li><li>2. פישוט השורש</li><li>3. הצבה טריגו׳</li><li>4. חישוב</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$f'(x)=\frac{-x}{\sqrt{R^2-x^2}}$</div><div class="x">כלל השרשרת: $(\sqrt{R^2-x^2})'=\frac{1}{2\sqrt{R^2-x^2}}\cdot(-2x)$.</div><div class="st"><span><i>f'</i>$\frac{-x}{\sqrt{R^2-x^2}}$</span></div></div>
+<div class="step" data-m="1"><div class="f">$\class{jade}{L}=2\int_{-R}^R\sqrt{1+\frac{x^2}{R^2-x^2}}\,dx=2\int_{-R}^R\sqrt{\frac{R^2-x^2+x^2}{R^2-x^2}}\,dx=2\int_{-R}^R\frac{R}{\sqrt{R^2-x^2}}\,dx$</div><div class="x">מכנה משותף בתוך השורש. במונה $x^2$ מתבטל ונשאר $R^2$, ו-$\sqrt{R^2}=R$.</div><div class="st"><span><i>אינטגרנד</i>$\frac{R}{\sqrt{R^2-x^2}}$</span></div></div>
+<div class="step" data-m="2"><div class="f">$\class{blu}{x=R\sin\theta},\quad dx=R\cos\theta\,d\theta,\quad -\tfrac\pi2\le\theta\le\tfrac\pi2$</div><div class="x">הצבה טריגו׳ (כמו בהרצאה 5): יש $\sqrt{R^2-x^2}$, אז $x=R\sin\theta$. גבולות: $x=-R$ ⇒ $\sin\theta=-1$ ⇒ $\theta=-\frac\pi2$, ו-$x=R$ ⇒ $\theta=\frac\pi2$.</div><div class="st"><span><i>הצבה</i>$x=R\sin\theta$</span><span><i>גבולות</i>$-\frac\pi2\to\frac\pi2$</span></div></div>
+<div class="step" data-m="3"><div class="f">$=2\int_{-\pi/2}^{\pi/2}\frac{R}{\sqrt{R^2-R^2\sin^2\theta}}\cdot R\cos\theta\,d\theta=2\int_{-\pi/2}^{\pi/2}\frac{R}{R\cos\theta}\cdot R\cos\theta\,d\theta$</div><div class="x">$R^2-R^2\sin^2\theta=R^2\cos^2\theta$ (כי $\cos^2+\sin^2=1$). השורש: $R\cos\theta$, כי $\cos\theta\ge0$ בקטע הזה.</div><div class="st"><span><i>שורש</i>$R\cos\theta$</span></div></div>
+<div class="step" data-m="3"><div class="f"><span class="ans">$=2\int_{-\pi/2}^{\pi/2}R\,d\theta=2R\cdot\pi=2\pi R$</span></div><div class="x">$R\cos\theta$ מתבטל. נשאר אינטגרל של קבוע על קטע באורך $\pi$. קיבלנו את הנוסחה המוכרת!</div><div class="st"><span><i>תשובה</i>$2\pi R$</span></div></div>
+</div></div>
+<div class="box fix"><b>הערה שלי</b>ב-$x=\pm R$ הנגזרת $f'$ "מתפוצצת" (המכנה מתאפס), ולכן האינטגרל $\int_{-R}^R\frac{R}{\sqrt{R^2-x^2}}dx$ הוא בעצם <b>לא אמיתי</b> (סעיף 7). החישוב עובד, אבל באופן מדויק צריך גבול. נראה את זה בהרצאה הבאה.</div>
+<div class="quiz"><div class="qt">שאלות על סעיף 4</div>
+<div class="qq" data-a="2"><p class="q">למה מכפילים ב-2 בחישוב ההיקף?</p><ol><li>כי ההיקף הוא פעמיים הרדיוס</li><li>כי $f'$ מופיעה בריבוע בנוסחה</li><li>כי $f$ מתארת רק את חצי המעגל העליון</li><li>כי הקטע $[-R,R]$ באורך $2R$</li></ol><p class="h">רמז: $y=\sqrt{R^2-x^2}$ תמיד אי-שלילי.</p><p class="e">נכון. החצי התחתון זהה (סימטריה), אז מכפילים.</p></div>
+<div class="qq" data-a="0"><p class="q">אחרי ההצבה $x=R\sin\theta$, למה $\sqrt{R^2\cos^2\theta}=R\cos\theta$ בלי ערך מוחלט?</p><ol><li>כי $\cos\theta\ge0$ בקטע הזה</li><li>כי $R$ תמיד חיובי ולכן הכל חיובי</li><li>כי ריבוע ושורש תמיד מבטלים זה את זה</li><li>כי $\sin\theta\ge0$ בכל הקטע</li></ol><p class="h">רמז: $\sqrt{a^2}=|a|$. מתי $|a|=a$?</p><p class="e">נכון. ברביע הראשון והרביעי $\cos\theta\ge0$.</p></div>
+<div class="qq" data-a="3"><p class="q">אם $R=3$, מה האורך של רבע מעגל?</p><ol><li>$6\pi$, כי $2\pi R$</li><li>$3\pi$, כי $\pi R$</li><li>$\frac{9\pi}4$, כי $\frac{\pi R^2}{4}$</li><li>$\frac{3\pi}2$, כי $\frac{2\pi R}{4}$</li></ol><p class="h">רמז: רבע מההיקף.</p><p class="e">נכון. $\frac{6\pi}4=\frac{3\pi}2$. ($\frac{9\pi}4$ הוא רבע מה<b>שטח</b>.)</p></div>
+</div>
+</section>
+
+<!-- 5 -->
+<section class="sec" id="s5" data-short="נפח לפי חתכים">
+<h2>שימוש 3: נפח של גוף לפי חתכים</h2>
+<p><b>המטרה:</b> לחשב נפח של גוף שאין לו נוסחה מוכנה (לא קובייה ולא גליל).<br><b>הרעיון:</b> פורסים אותו כמו כיכר לחם לפרוסות דקות. כל פרוסה כמעט "שטוחה", ולפרוסה שטוחה אנחנו יודעים לחשב נפח. זה בדיוק כמו הפרוסות בשטח (סעיף 1), רק בממד נוסף.</p>
+<h3>שלב 1: נפח של פרוסה שטוחה</h3>
+<div class="box mine"><b>דוגמה עם מספרים</b>מטבע: שטח הפנים שלו $3$ סמ״ר והעובי $0.1$ ס״מ. הנפח: $3\cdot0.1=0.3$ סמ״ק.<br>הכלל: <b>נפח פרוסה = שטח הפנים × העובי</b>. זה מה שכתוב במחברת על גליל: $V=h\cdot S$.</div>
+<h3>שלב 2: חותכים את הגוף</h3>
+<p>מניחים את הגוף לאורך ציר $x$, מ-$a$ עד $b$. בכל נקודה $x$ חותכים אותו במישור ניצב לציר, כמו סכין שיורדת ישר למטה. בחתך רואים צורה שטוחה, והשטח שלה נקרא $\class{steel}{S(x)}$.</p>
+<div class="box terms"><b>הדבר הכי חשוב בסעיף</b>$\class{steel}{S(x)}$ הוא <b>שטח</b> של החתך, לא היקף ולא רדיוס. בדרך כלל הוא משתנה כשזזים לאורך הגוף. בכדור, למשל, הוא קטן בקצוות וגדול באמצע.</div>
+<h3>שלב 3: פרוסה אחת</h3>
+<p>פרוסה דקה בעובי $\class{brn}{\Delta x_i}$, סביב הנקודה $\class{ind}{c_i}$, היא כמעט פרוסה שטוחה. לכן:</p>
+<div class="disp">$$\text{slice volume}\approx\class{steel}{S(\class{ind}{c_i})}\cdot\class{brn}{\Delta x_i}$$</div>
+<h3>שלב 4: מחברים את כל הפרוסות</h3>
+<div class="box mine"><b>דוגמה עם מספרים: פירמידה</b>גוף על $[0,2]$ שכל חתך שלו הוא ריבוע עם צלע $x$. שטח ריבוע = צלע בריבוע, ולכן $\class{steel}{S(x)}=x^2$. פורסים ולוקחים את אמצע כל פרוסה:
+<div class="tw"><table><tr><th>מספר פרוסות</th><th>החישוב</th><th>סכום</th></tr>
+<tr><td>2</td><td>$(0.5^2+1.5^2)\cdot1$</td><td>$2.5$</td></tr>
+<tr><td>4</td><td>$(0.25^2+0.75^2+1.25^2+1.75^2)\cdot0.5$</td><td>$2.625$</td></tr>
+<tr><td>אינסוף (אינטגרל)</td><td>$\int_0^2x^2\,dx$</td><td>$\frac83\approx2.667$</td></tr></table></div>
+ככל שהפרוסות דקות יותר, הסכום מתקרב לנפח האמיתי. אפשר לנסות בהמחשה למטה.</div>
+<p><b>מה כתוב במחברת:</b> הסכום הזה הוא סכום רימן של $S$, ולכן בגבול מקבלים אינטגרל:</p>
+<div class="disp">$$\class{steel}{V}=\lim_{\lambda(\Delta)\to0}\sum_{i=1}^n\class{steel}{S(\class{ind}{c_i})}\cdot\class{brn}{\Delta x_i}=\int_a^b\class{steel}{S(x)}\,dx$$</div>
+<div class="box rule"><b>המתכון</b><ol><li>מניחים את הגוף לאורך ציר $x$ ומוצאים את $a$ ו-$b$.</li><li>מבינים איזו צורה יש בחתך: עיגול? ריבוע? משולש?</li><li>מוצאים את הגודל שלה כפונקציה של $x$ (רדיוס $r(x)$, צלע...).</li><li>כותבים את השטח $S(x)$. עיגול: $\pi r(x)^2$. ריבוע: צלע בריבוע.</li><li>מחשבים $\int_a^bS(x)\,dx$.</li></ol></div>
+<div class="tool" id="csTool"><b>המחשה: חותכים את הגוף ורואים את החתך</b>
+<div class="row"><label for="csB">גוף:</label><select id="csB"><option value="0">פירמידה: חתך ריבוע עם צלע x, על [0,2]</option><option value="1">כדור R=1: חתך עיגול</option><option value="2">חרוט: חתך עיגול ברדיוס x/2, על [0,6]</option></select></div>
+<label for="csX">איפה חותכים: x = <span class="out" id="csXv"></span></label><input type="range" id="csX" min="0" max="100" value="60">
+<label for="csN">מספר פרוסות n: <span class="out" id="csNv"></span></label><input type="range" id="csN" min="1" max="40" value="4">
+<svg id="csSvg" viewBox="0 0 400 220" role="img" aria-label="הגוף מהצד והחתך שלו"></svg>
+<p class="out" id="csOut"></p>
+<p style="font-size:15px">משמאל: הגוף מהצד, מחולק לפרוסות. הקו הכתום הוא המקום שבו חותכים. מימין: החתך עצמו, כמו שרואים אותו מלפנים. השטח שלו הוא S(x). תזיז את x ותראה איך החתך גדל וקטן, ותגדיל את n כדי לראות את הסכום מתקרב ל-V.</p></div>
+<div class="box mine"><b>בדיקה: גליל</b>גליל ברדיוס 2 ובאורך 3: כל חתך הוא עיגול ברדיוס 2, אז $S(x)=4\pi$ קבוע. $\int_0^3 4\pi\,dx=12\pi$, וזה בדיוק $\pi r^2h=\pi\cdot4\cdot3$ ✓.</div>
+<h3>דוגמה מההרצאה: נפח כדור ברדיוס R</h3>
+<div class="box terms"><b>מאיפה $r(x)=\sqrt{R^2-x^2}$?</b>חותכים את הכדור במרחק $x$ מהמרכז. החתך הוא עיגול. ברדיוס של הכדור (אורך $R$), במרחק $x$ ובגובה $r(x)$ יש משולש ישר זווית: $r(x)^2+x^2=R^2$. למשל $R=5$, $x=3$: $r=4$.</div>
+<div class="sim"><div class="st-title">סימולציה: נפח כדור</div>
+<ol class="map"><li>1. רדיוס החתך</li><li>2. שטח החתך</li><li>3. אינטגרל</li><li>4. הצבה</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$r(x)^2+x^2=R^2\ \Rightarrow\ r(x)=\sqrt{R^2-x^2},\quad -R\le x\le R$</div><div class="x">פיתגורס במשולש שבציור: יתר $R$, צלע $x$ (המרחק מהמרכז), צלע $r(x)$ (רדיוס החתך).</div><div class="st"><span><i>r(x)</i>$\sqrt{R^2-x^2}$</span></div></div>
+<div class="step" data-m="1"><div class="f">$\class{steel}{S(x)}=\pi\big(r(x)\big)^2=\pi\left(\sqrt{R^2-x^2}\right)^2=\pi(R^2-x^2)$</div><div class="x">כל חתך הוא עיגול, ושטח עיגול הוא $\pi r^2$. הריבוע מבטל את השורש.</div><div class="st"><span><i>r(x)</i>$\sqrt{R^2-x^2}$</span><span><i>S(x)</i>$\pi(R^2-x^2)$</span></div></div>
+<div class="step" data-m="2"><div class="f">$\class{steel}{V}=\int_{-R}^R\pi(R^2-x^2)\,dx=\pi\left(R^2x-\frac{x^3}3\right)\Big|_{-R}^R$</div><div class="x">$R$ קבוע (לא משתנה). קדומה של $R^2$ היא $R^2x$, וקדומה של $x^2$ היא $\frac{x^3}3$.</div><div class="st"><span><i>S(x)</i>$\pi(R^2-x^2)$</span><span><i>קדומה</i>$\pi(R^2x-\frac{x^3}3)$</span></div></div>
+<div class="step" data-m="3"><div class="f"><span class="ans">$=\pi\left(R^3-\frac{R^3}3\right)-\pi\left(-R^3+\frac{R^3}3\right)=\frac{4\pi R^3}{3}$</span></div><div class="x">כל סוגריים שווה $\frac23R^3$ (עם סימן הפוך). $\frac23+\frac23=\frac43$. הנוסחה המוכרת לנפח כדור!</div><div class="st"><span><i>תשובה</i>$\frac43\pi R^3$</span></div></div>
+</div></div>
+<div class="tool" id="volTool"><b>המחשה: כדור (R=1) מפרוסות</b>
+<label for="vlN">מספר פרוסות n: <span class="out" id="vlNv"></span></label><input type="range" id="vlN" min="2" max="60" value="6">
+<svg id="vlSvg" viewBox="0 0 400 220" role="img" aria-label="כדור מפרוסות גליליות במבט מהצד"></svg>
+<p class="out" id="vlOut"></p></div>
+<div class="box fix"><b>הערה קטנה על הציור במחברת</b>בציור הכדור, הנקודה התחתונה על ציר $y$ מסומנת $R$. צריך להיות $-R$.</div>
+<div class="quiz"><div class="qt">שאלות על סעיף 5</div>
+<div class="qq" data-a="1"><p class="q">מה $S(x)$ אם כל חתך של הגוף הוא ריבוע עם צלע $x$, ל-$x\in[0,2]$?</p><ol><li>$4x$, ההיקף של הריבוע</li><li>$x^2$, השטח של הריבוע</li><li>$\pi x^2$, כמו עיגול</li><li>$2x$, אלכסון הריבוע</li></ol><p class="h">רמז: $S$ הוא <b>שטח</b> החתך.</p><p class="e">נכון. והנפח: $\int_0^2x^2dx=\frac83$.</p></div>
+<div class="qq" data-a="2"><p class="q">בכדור עם $R=5$, מה שטח החתך במרחק $x=3$ מהמרכז?</p><ol><li>$9\pi$, כי $r=3$</li><li>$25\pi$, כי $r=R=5$</li><li>$16\pi$, כי $r=\sqrt{25-9}=4$</li><li>$8\pi$, כי $r=\sqrt{25-9}$ בלי ריבוע</li></ol><p class="h">רמז: $r(x)=\sqrt{R^2-x^2}$, ואז $\pi r^2$.</p><p class="e">נכון. $\pi(25-9)=16\pi$.</p></div>
+<div class="qq" data-a="0"><p class="q">בהמחשה, מה קורה לסכום הפרוסות כש-$n$ גדל?</p><ol><li>מתקרב ל-$\frac43\pi\approx4.19$, כי זה סכום רימן</li><li>שואף ל-0, כי כל פרוסה נהיית דקה</li><li>שואף ל-$2\pi$, כמו היקף המעגל</li><li>גדל בלי סוף, כי מוסיפים עוד פרוסות</li></ol><p class="h">רמז: $\sum S(c_i)\Delta x_i$ הוא סכום רימן של $S$.</p><p class="e">נכון. הסכום שואף ל-$\int_{-1}^1\pi(1-x^2)dx=\frac{4\pi}3$.</p></div>
+<div class="qq" data-a="3"><p class="q">למה בנפח הכדור יש $\pi(r(x))^2$ ולא $2\pi r(x)$?</p><ol><li>כי $2\pi r$ שייך רק לגליל</li><li>כי $R$ קבוע ו-$x$ משתנה</li><li>כי מעלים בריבוע כדי להיפטר משורש</li><li>כי צריך <b>שטח</b> חתך, ו-$2\pi r$ הוא היקף</li></ol><p class="h">רמז: מה המשמעות של $S(x)$ בנוסחה?</p><p class="e">נכון. הנפח הוא אינטגרל של שטחי חתכים.</p></div>
+</div>
+</section>
+
+<!-- 6 -->
+<section class="sec" id="s6" data-short="גוף סיבוב">
+<h2>נפח של גוף סיבוב</h2>
+<p>מסובבים את הגרף של $f$ סביב ציר $x$. כל חתך הוא עיגול שהרדיוס שלו הוא $\class{olv}{r(x)=f(x)}$. לכן $S(x)=\pi f(x)^2$, ומהסעיף הקודם:</p>
+<div class="box mine"><b>הדוגמה שלי עם מספרים</b>
+<ol>
+<li>שלב 1 – $f(x)=1$ על $[0,3]$: קו ישר בגובה 1.</li>
+<li>שלב 2 – מסובבים סביב ציר $x$ ⇒ גליל ברדיוס 1 ובאורך 3.</li>
+<li>שלב 3 – הנוסחה: $\pi\int_0^3 1^2dx=3\pi$. ונוסחת גליל: $\pi\cdot1^2\cdot3=3\pi$ ✓.</li>
+</ol></div>
+<div class="tw"><table><tr><th>סביב</th><th>נוסחה</th><th>מה הרדיוס</th></tr>
+<tr><td>ציר $x$</td><td>$\class{steel}{V_x}=\pi\int_a^b \class{olv}{f^2(x)}\,dx$</td><td>הגובה $f(x)$</td></tr>
+<tr><td>ציר $y$</td><td>$\class{steel}{V_y}=\pi\int_c^d g^2(y)\,dy,\ \ g(y)\ge0$</td><td>המרחק האופקי $x=g(y)$</td></tr></table></div>
+<div class="box terms"><b>מה זה $g(y)$?</b>כשמסובבים סביב ציר $y$, החתכים אופקיים (גובה $y$ קבוע). הרדיוס הוא כמה רחוק הגרף מציר $y$, כלומר $x$ כפונקציה של $y$. לכן הופכים את הפונקציה: $y=\sqrt x\iff x=y^2$, ו-$g(y)=y^2$.</div>
+<h3>דוגמה מההרצאה: $f(x)=\sqrt x$ ב-[0,4]</h3>
+<div class="sim"><div class="st-title">סימולציה: שני גופי הסיבוב</div>
+<ol class="map"><li>1. סביב ציר x</li><li>2. היפוך הפונקציה</li><li>3. גבולות ב-y</li><li>4. סביב ציר y</li></ol>
+<div class="steps">
+<div class="step" data-m="0"><div class="f">$\class{steel}{V_x}=\pi\int_0^4(\sqrt x)^2dx=\pi\int_0^4x\,dx=\pi\cdot\frac{x^2}2\Big|_0^4=$ <span class="ans">$8\pi$</span></div><div class="x">הרדיוס הוא $\sqrt x$. בריבוע יוצא $x$. $\frac{16}2=8$. הגוף נראה כמו "פעמון" שוכב.</div><div class="st"><span><i>V_x</i>$8\pi$</span><span><i>V_y</i>?</span></div></div>
+<div class="step" data-m="1"><div class="f">$y=\sqrt x\ \iff\ x=y^2\ \Rightarrow\ g(y)=y^2$</div><div class="x">כדי לסובב סביב ציר $y$, צריך את המרחק מציר $y$ כפונקציה של הגובה. מעלים בריבוע (מותר כי $y\ge0$).</div><div class="st"><span><i>V_x</i>$8\pi$</span><span><i>g(y)</i>$y^2$</span></div></div>
+<div class="step" data-m="2"><div class="f">$x\in[0,4]\ \Rightarrow\ y\in[0,2]\quad(\sqrt4=2)$</div><div class="x">הגבולות עוברים ל-$y$: בקצה $x=4$ הגובה הוא $\sqrt4=2$ (כמו בהערה הכתומה במחברת).</div><div class="st"><span><i>V_x</i>$8\pi$</span><span><i>g(y)</i>$y^2$</span><span><i>גבולות</i>$0\to2$</span></div></div>
+<div class="step" data-m="3"><div class="f">$\class{steel}{V_y}=\pi\int_0^2(y^2)^2dy=\pi\int_0^2y^4dy=\pi\cdot\frac{y^5}5\Big|_0^2=$ <span class="ans">$\frac{32\pi}5$</span></div><div class="x">$2^5=32$. זה הנפח שמקבלים כשמסובבים את האזור שבין הגרף לבין ציר $y$ (ראה הערה למטה).</div><div class="st"><span><i>V_x</i>$8\pi$</span><span><i>V_y</i>$\frac{32\pi}5$</span></div></div>
+</div></div>
+<div class="box fix"><b>הערה שלי: איזה אזור מסתובב ב-$V_y$?</b>הנוסחה $\pi\int g^2(y)dy$ מסובבת את האזור שבין ציר $y$ לגרף (משמאל לעקומה, $0\le x\le y^2$). זה מה שחישבו במחברת: $\frac{32\pi}5$. אם מסובבים דווקא את האזור <b>מתחת</b> לגרף (בין הגרף לציר $x$), זה גליל ברדיוס 4 וגובה 2 פחות החלק הזה: $32\pi-\frac{32\pi}5=\frac{128\pi}5$. במבחן לבדוק איזה אזור מבקשים.</div>
+<div class="quiz"><div class="qt">שאלות על סעיף 6</div>
+<div class="qq" data-a="1"><p class="q">מה הנפח כשמסובבים $f(x)=x$ על $[0,3]$ סביב ציר $x$ (חרוט)?</p><ol><li>$3\pi$, כי $\pi\cdot3$ בלי להעלות בריבוע</li><li>$9\pi$, כי $\pi\int_0^3x^2dx=\pi\cdot9$</li><li>$27\pi$, כי $\pi\cdot3^3$</li><li>$\frac{9\pi}2$, כי $\pi\int_0^3x\,dx$</li></ol><p class="h">רמז: מעלים את $f$ בריבוע: $\pi\int x^2$.</p><p class="e">נכון. $\pi\frac{27}3=9\pi$, וזה $\frac13\pi r^2h$ עם $r=h=3$.</p></div>
+<div class="qq" data-a="3"><p class="q">כדי לסובב את $y=\sqrt x$ סביב ציר $y$, מה $g(y)$?</p><ol><li>$\sqrt y$, אותה פונקציה</li><li>$\frac1{\sqrt y}$, ההופכי</li><li>$2y$, הנגזרת של $y^2$</li><li>$y^2$, כי $x=y^2$</li></ol><p class="h">רמז: מבודדים את $x$.</p><p class="e">נכון. הפונקציה ההפוכה: $x=y^2$.</p></div>
+<div class="qq" data-a="0"><p class="q">ב-$V_y$ של $\sqrt x$, למה הגבולות הם $0$ עד $2$?</p><ol><li>כי ב-$x=4$ הגובה הוא $\sqrt4=2$</li><li>כי $4$ חלקי $2$ שווה 2</li><li>כי מסובבים רק חצי מהגרף</li><li>כי $y^2$ מגיע עד 2 בקטע</li></ol><p class="h">רמז: הגבולות ב-$y$ הם הגבהים בקצות הקטע.</p><p class="e">נכון. $\sqrt0=0$ ו-$\sqrt4=2$.</p></div>
+<div class="qq" data-a="2"><p class="q">מה ההבדל בין $V_x$ ל-$V_y$ בנוסחאות?</p><ol><li>ב-$V_y$ לא מעלים בריבוע, כי $g$ כבר בריבוע</li><li>ב-$V_x$ מכפילים ב-2, כי יש שני צדדים</li><li>ב-$V_y$ מאנטגרלים לפי $y$, עם $g(y)$ בתור רדיוס</li><li>אין הבדל, תמיד יוצא אותו נפח</li></ol><p class="h">רמז: מה משתנה כשהציר מסתובב 90 מעלות?</p><p class="e">נכון. מחליפים את תפקידי $x$ ו-$y$.</p></div>
+</div>
+</section>
+
+<!-- 7 -->
+<section class="sec" id="s7" data-short="הצצה: לא אמיתיים">
+<h2>הצצה: אינטגרלים לא אמיתיים</h2>
+<p>עד עכשיו, באינטגרל המסוים של רימן היו שתי דרישות. בלעדיהן אי אפשר לחשב את האינטגרל, ואפילו לא להתחיל לבדוק אם הוא קיים:</p>
+<ol><li>הקטע $[a,b]$ <b>סופי</b>.</li><li>הפונקציה $f$ <b>חסומה</b>.</li></ol>
+<div class="box mine"><b>שתי דוגמאות קטנות שלי</b>
+<ol>
+<li>קטע לא סופי: $\int_1^\infty\frac{1}{x^2}dx$. אי אפשר לחלק קטע אינסופי ל-$n$ חתיכות ברוחב סופי.</li>
+<li>פונקציה לא חסומה: $\int_0^1\frac1{\sqrt x}dx$. ליד 0, $\frac1{\sqrt x}$ גדלה בלי סוף, אז $\sup$ בחתיכה הראשונה הוא אינסוף.</li>
+<li>וגם היקף המעגל מסעיף 4: האינטגרנד $\frac{R}{\sqrt{R^2-x^2}}$ לא חסום ליד $\pm R$.</li>
+</ol>
+"נראה את זה בהרצאה הבאה" 🙂</div>
+<div class="quiz"><div class="qt">שאלות על סעיף 7</div>
+<div class="qq" data-a="2"><p class="q">למה $\int_0^1\frac1{x}dx$ אינו אינטגרל רימן רגיל?</p><ol><li>כי הקטע $[0,1]$ לא סופי</li><li>כי $\frac1x$ לא רציפה באף נקודה</li><li>כי $\frac1x$ לא חסומה ליד 0</li><li>כי $\ln 0$ שווה אפס</li></ol><p class="h">רמז: איזו משתי הדרישות נשברת?</p><p class="e">נכון. הקטע סופי, אבל $\frac1x\to\infty$ ליד 0.</p></div>
+<div class="qq" data-a="1"><p class="q">באיזה מקרה שתי הדרישות מתקיימות?</p><ol><li>$\int_0^\infty e^{-x}dx$, כי $e^{-x}$ חסומה</li><li>$\int_1^2\frac{1}{x}dx$, קטע סופי ופונקציה חסומה</li><li>$\int_{-1}^1\frac1{x^2}dx$, כי הקטע סופי</li><li>$\int_0^1\frac{1}{\sqrt x}dx$, כי הקטע קטן</li></ol><p class="h">רמז: צריך גם קטע סופי וגם פונקציה חסומה.</p><p class="e">נכון. ב-$[1,2]$: $\frac12\le\frac1x\le1$.</p></div>
+</div>
+</section>
+
+<!-- 8 -->
+<section class="sec" id="s8" data-short="סיכום">
+<h2>סיכום ההרצאה</h2>
+<div class="tw"><table><tr><th>שימוש</th><th>נוסחה</th><th>דוגמה מההרצאה</th></tr>
+<tr><td>שטח בין פונקציות</td><td>$\int_a^b|f-g|\,dx$</td><td>sin/cos ב-$[0,\frac\pi3]$: $2\sqrt2-\frac{3+\sqrt3}2$</td></tr>
+<tr><td>אורך עקומה</td><td>$\int_a^b\sqrt{1+f'^2}\,dx$</td><td>$x^{3/2}$ ב-$[1,4]$: $\frac8{27}(10^{3/2}-(\frac{13}4)^{3/2})$; מעגל: $2\pi R$</td></tr>
+<tr><td>נפח לפי חתכים</td><td>$\int_a^bS(x)\,dx$</td><td>כדור: $\frac43\pi R^3$</td></tr>
+<tr><td>גוף סיבוב סביב $x$</td><td>$\pi\int_a^bf^2\,dx$</td><td>$\sqrt x$ ב-$[0,4]$: $8\pi$</td></tr>
+<tr><td>גוף סיבוב סביב $y$</td><td>$\pi\int_c^dg^2(y)\,dy$</td><td>$x=y^2$ ב-$[0,2]$: $\frac{32\pi}5$</td></tr>
+<tr><td>לא אמיתיים</td><td>קטע אינסופי או $f$ לא חסומה</td><td>בהרצאה הבאה</td></tr></table></div>
+<div class="box rule"><b>הרעיון המשותף</b>בכל השימושים: חותכים לפרוסות דקות, מקרבים כל פרוסה בצורה פשוטה (מלבן, קטע ישר, גליל), מחברים ⇒ סכום רימן ⇒ אינטגרל.</div>
+<div class="quiz"><div class="qt">מבחן מסכם</div>
+<div class="qq" data-a="3"><p class="q">מה השטח בין $y=x^2$ ל-$y=x^3$ בקטע $[0,1]$?</p><ol><li>$\frac17$, כי $\int_0^1x^6dx$</li><li>$\frac{7}{12}$, כי $\frac13+\frac14$</li><li>$-\frac1{12}$, כי $\frac14-\frac13$</li><li>$\frac1{12}$, כי $\frac13-\frac14$</li></ol><p class="h">רמז: בקטע $[0,1]$, $x^2\ge x^3$.</p><p class="e">נכון. $\int_0^1(x^2-x^3)dx=\frac13-\frac14=\frac1{12}$.</p></div>
+<div class="qq" data-a="0"><p class="q">איזה אינטגרל נותן את אורך $y=e^x$ ב-$[0,1]$?</p><ol><li>$\int_0^1\sqrt{1+e^{2x}}\,dx$</li><li>$\int_0^1\sqrt{1+e^{x}}\,dx$</li><li>$\int_0^1(1+e^{2x})\,dx$</li><li>$\pi\int_0^1e^{2x}\,dx$</li></ol><p class="h">רמז: $f'=e^x$, ו-$(e^x)^2=e^{2x}$.</p><p class="e">נכון. $\sqrt{1+(f')^2}=\sqrt{1+e^{2x}}$.</p></div>
+<div class="qq" data-a="2"><p class="q">מה הנפח כשמסובבים $f(x)=e^x$ על $[0,1]$ סביב ציר $x$?</p><ol><li>$\pi(e-1)$, כי $\pi\int e^x$</li><li>$\frac{e^2-1}{2}$, בלי $\pi$</li><li>$\frac{\pi(e^2-1)}{2}$</li><li>$\pi e^2$, הצבה של 1 בלבד</li></ol><p class="h">רמז: $\pi\int_0^1e^{2x}dx$, וקדומה של $e^{2x}$ היא $\frac{e^{2x}}2$.</p><p class="e">נכון. $\pi\cdot\frac{e^2-1}2$.</p></div>
+<div class="qq" data-a="1"><p class="q">חרוט: כל חתך במרחק $x$ מהקודקוד הוא עיגול ברדיוס $\frac x2$, ל-$x\in[0,6]$. מה הנפח?</p><ol><li>$9\pi$, כי $\pi\int_0^6\frac x2dx$</li><li>$18\pi$, כי $\pi\int_0^6\frac{x^2}4dx$</li><li>$36\pi$, כי $\pi\int_0^6x^2dx$ חלקי 2</li><li>$72\pi$, כי $\pi\int_0^6x^2dx$</li></ol><p class="h">רמז: $S(x)=\pi(\frac x2)^2=\frac{\pi x^2}{4}$.</p><p class="e">נכון. $\frac\pi4\cdot\frac{216}3=18\pi$. בדיקה: $\frac13\pi\cdot3^2\cdot6=18\pi$.</p></div>
+</div>
+<p class="end" id="endMsg"></p>
+</section>
+</div>
+
+<script>
+window.LESSON_INIT=function(){
+ function css(v){return getComputedStyle(document.documentElement).getPropertyValue(v).trim()}
+ function $(id){return document.getElementById(id)}
+ // area tool
+ function drawA(){var b=+$('arB').value/100;if(Math.abs(b-Math.PI/3)<0.01)b=Math.PI/3;$('arBv').textContent=b.toFixed(3)+' (π/3 ≈ 1.047)';
+  var W=400,H=220,pl=26,pr=10,pt=10,pb=24,xm=1.6;function X(x){return pl+x/xm*(W-pl-pr)}function Y(y){return H-pb-y/1.1*(H-pt-pb)}
+  var s='',N=160,area=0,dx=b/N;
+  for(var i=0;i<N;i++){var x0=i*dx,x1=x0+dx,xm2=x0+dx/2,up=Math.max(Math.sin(xm2),Math.cos(xm2)),lo=Math.min(Math.sin(xm2),Math.cos(xm2));area+=(up-lo)*dx;
+   var col=Math.cos(xm2)>=Math.sin(xm2)?css('--olv'):css('--red');
+   s+='<rect x="'+X(x0)+'" y="'+Y(up)+'" width="'+(X(x1)-X(x0)+0.4)+'" height="'+(Y(lo)-Y(up))+'" fill="'+col+'" fill-opacity=".28"/>'}
+  ['sin','cos'].forEach(function(n){var p='';for(var i=0;i<=100;i++){var x=xm*i/100,y=n==='sin'?Math.sin(x):Math.cos(x);p+=(i?'L':'M')+X(x).toFixed(1)+' '+Y(y).toFixed(1)}s+='<path d="'+p+'" fill="none" stroke="'+css('--amb')+'" stroke-width="2"'+(n==='cos'?' stroke-dasharray="6 3"':'')+'/>'});
+  s+='<line x1="'+X(Math.PI/4)+'" y1="'+Y(0)+'" x2="'+X(Math.PI/4)+'" y2="'+Y(1)+'" stroke="'+css('--muted')+'" stroke-dasharray="3 3"/>';
+  s+='<line x1="'+pl+'" y1="'+Y(0)+'" x2="'+(W-pr)+'" y2="'+Y(0)+'" stroke="'+css('--muted')+'"/>';
+  s+='<text x="'+X(1.45)+'" y="'+Y(1.0)+'" fill="'+css('--amb')+'" font-size="13">sin</text><text x="'+X(0.05)+'" y="'+Y(1.03)+'" fill="'+css('--amb')+'" font-size="13">cos (- -)</text>';
+  $('arSvg').innerHTML=s;
+  var exact=b<=Math.PI/4?(Math.sin(b)+Math.cos(b)-1):(2*Math.SQRT2-1-Math.cos(b)-Math.sin(b));
+  $('arOut').textContent='∫₀ᵇ |sin − cos| dx ≈ '+exact.toFixed(4)+(b===Math.PI/3?'   =  2√2 − (3+√3)/2':'')}
+ $('arB').addEventListener('input',drawA);drawA();
+ // arc tool
+ var C=[{f:function(x){return Math.pow(x,1.5)},a:1,b:4,L:8/27*(Math.pow(10,1.5)-Math.pow(3.25,1.5)),ymin:0,ymax:8.5},{f:function(x){return Math.sqrt(Math.max(0,1-x*x))},a:-1,b:1,L:Math.PI,ymin:0,ymax:1.1},{f:Math.sin,a:0,b:Math.PI,L:3.820197789,ymin:0,ymax:1.1},{f:function(x){return x*x},a:0,b:2,L:4.646783752,ymin:0,ymax:4.2}];
+ function drawC(){var o=C[+$('acF').value],n=+$('acN').value;$('acNv').textContent=n;
+  var W=400,H=220,pl=20,pr=10,pt=10,pb=20;function X(x){return pl+(x-o.a)/(o.b-o.a)*(W-pl-pr)}function Y(y){return H-pb-(y-o.ymin)/(o.ymax-o.ymin)*(H-pt-pb)}
+  var p='';for(var i=0;i<=200;i++){var x=o.a+(o.b-o.a)*i/200;p+=(i?'L':'M')+X(x).toFixed(1)+' '+Y(o.f(x)).toFixed(1)}
+  var s='<path d="'+p+'" fill="none" stroke="'+css('--olv')+'" stroke-width="2.5"/>';var q='',len=0,px,py;
+  for(var i=0;i<=n;i++){var x=o.a+(o.b-o.a)*i/n,y=o.f(x);if(i)len+=Math.hypot(x-px,y-py);px=x;py=y;q+=(i?'L':'M')+X(x).toFixed(1)+' '+Y(y).toFixed(1);s+='<circle cx="'+X(x)+'" cy="'+Y(y)+'" r="3" fill="'+css('--jade')+'"/>'}
+  s+='<path d="'+q+'" fill="none" stroke="'+css('--jade')+'" stroke-width="2"/>';
+  $('acSvg').innerHTML=s;$('acOut').textContent='polyline (n = '+n+') = '+len.toFixed(4)+'   |   L = '+o.L.toFixed(4)+'   |   diff = '+(o.L-len).toFixed(4)}
+ $('acF').addEventListener('change',drawC);$('acN').addEventListener('input',drawC);drawC();
+ // volume tool
+ function drawV(){var n=+$('vlN').value;$('vlNv').textContent=n;var W=400,H=220,c=110,sc=95;function X(x){return 200+x*sc*1.6}
+  var s='',sum=0,dx=2/n;
+  for(var i=0;i<n;i++){var x0=-1+i*dx,cm=x0+dx/2,r=Math.sqrt(1-cm*cm);sum+=Math.PI*r*r*dx;
+   s+='<rect x="'+X(x0)+'" y="'+(c-r*sc)+'" width="'+(X(x0+dx)-X(x0))+'" height="'+(2*r*sc)+'" fill="'+css('--steel')+'" fill-opacity=".25" stroke="'+css('--steel')+'"/>'}
+  var p='';for(var i=0;i<=100;i++){var t=Math.PI*2*i/100;p+=(i?'L':'M')+X(Math.cos(t)).toFixed(1)+' '+(c-Math.sin(t)*sc).toFixed(1)}
+  s+='<path d="'+p+'" fill="none" stroke="'+css('--olv')+'" stroke-width="2"/>';
+  s+='<line x1="20" y1="'+c+'" x2="380" y2="'+c+'" stroke="'+css('--muted')+'" stroke-dasharray="4 3"/>';
+  $('vlSvg').innerHTML=s;$('vlOut').textContent='Σ π r(cᵢ)² Δx = '+sum.toFixed(4)+'   |   4π/3 = '+(4*Math.PI/3).toFixed(4)}
+ $('vlN').addEventListener('input',drawV);drawV();
+ // cross-section tool
+ var B=[{a:0,b:2,h:function(x){return x/2},S:function(x){return x*x},sh:'sq',sf:'x²',V:8/3,H:1},{a:-1,b:1,h:function(x){return Math.sqrt(Math.max(0,1-x*x))},S:function(x){return Math.PI*Math.max(0,1-x*x)},sh:'ci',sf:'π(1−x²)',V:4*Math.PI/3,H:1},{a:0,b:6,h:function(x){return x/2},S:function(x){return Math.PI*x*x/4},sh:'ci',sf:'πx²/4',V:18*Math.PI,H:1.5}];
+ function drawS(){var o=B[+$('csB').value],n=+$('csN').value,x=o.a+(o.b-o.a)*(+$('csX').value)/100;
+  $('csXv').textContent=x.toFixed(2);$('csNv').textContent=n;
+  var cy=110,k=88/o.H;function X(t){return 12+(t-o.a)/(o.b-o.a)*236}
+  var s='',sum=0,dx=(o.b-o.a)/n;
+  for(var i=0;i<n;i++){var x0=o.a+i*dx,cm=x0+dx/2,hh=o.h(cm);sum+=o.S(cm)*dx;
+   s+='<rect x="'+X(x0)+'" y="'+(cy-hh*k)+'" width="'+(X(x0+dx)-X(x0))+'" height="'+(2*hh*k)+'" fill="'+css('--steel')+'" fill-opacity=".22" stroke="'+css('--steel')+'" stroke-width=".8"/>'}
+  var top='',bot='';for(var i=0;i<=120;i++){var t=o.a+(o.b-o.a)*i/120,hh=o.h(t);top+=(i?'L':'M')+X(t).toFixed(1)+' '+(cy-hh*k).toFixed(1);bot+=(i?'L':'M')+X(t).toFixed(1)+' '+(cy+hh*k).toFixed(1)}
+  s+='<path d="'+top+'" fill="none" stroke="'+css('--olv')+'" stroke-width="2"/><path d="'+bot+'" fill="none" stroke="'+css('--olv')+'" stroke-width="2"/>';
+  s+='<line x1="8" y1="'+cy+'" x2="252" y2="'+cy+'" stroke="'+css('--muted')+'" stroke-dasharray="4 3"/>';
+  var hx=o.h(x);s+='<line x1="'+X(x)+'" y1="12" x2="'+X(x)+'" y2="208" stroke="'+css('--amb')+'" stroke-width="2.5"/>';
+  s+='<line x1="264" y1="10" x2="264" y2="210" stroke="'+css('--line')+'"/>';
+  var k2=62/o.H,cx=332;
+  if(o.sh==='sq'){var hs=hx*k2;s+='<rect x="'+(cx-hs)+'" y="'+(cy-hs)+'" width="'+(2*hs)+'" height="'+(2*hs)+'" fill="'+css('--steel')+'" fill-opacity=".35" stroke="'+css('--amb')+'" stroke-width="2"/>'}
+  else s+='<circle cx="'+cx+'" cy="'+cy+'" r="'+(hx*k2)+'" fill="'+css('--steel')+'" fill-opacity=".35" stroke="'+css('--amb')+'" stroke-width="2"/>';
+  s+='<text x="'+cx+'" y="26" text-anchor="middle" fill="'+css('--muted')+'" font-size="13">החתך</text>';
+  s+='<text x="'+cx+'" y="204" text-anchor="middle" fill="'+css('--ink')+'" font-size="13" direction="ltr">S = '+o.S(x).toFixed(3)+'</text>';
+  $('csSvg').innerHTML=s;
+  $('csOut').textContent='S(x) = '+o.sf+'  →  S('+x.toFixed(2)+') = '+o.S(x).toFixed(3)+'   |   Σ S(cᵢ)Δx (n = '+n+') = '+sum.toFixed(4)+'   |   V = ∫S dx = '+o.V.toFixed(4)}
+ $('csB').addEventListener('change',drawS);$('csX').addEventListener('input',drawS);$('csN').addEventListener('input',drawS);drawS();
+ new MutationObserver(function(){drawA();drawC();drawV();drawS()}).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+};
+</script>
+<script>(function(){
+document.documentElement.dir='rtl';document.documentElement.lang='he';
+var KEY=((document.querySelector('.wrap')||document.body).getAttribute('data-key')||'lesson')+'-quiz';
+var THEMEKEY='calc2-theme';
+function $(s,r){return (r||document).querySelector(s)}
+function $$(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))}
+function el(t,c,h){var n=document.createElement(t);if(c)n.className=c;if(h!=null)n.innerHTML=h;return n}
+function lsGet(k){try{return localStorage.getItem(k)}catch(e){return null}}
+function lsSet(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+// theme
+var tb=$('#themeBtn');
+function curDark(){var t=document.documentElement.getAttribute('data-theme');if(t)return t==='dark';return window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches}
+function paintBtn(){if(tb)tb.textContent=curDark()?'☀️ יום':'🌙 לילה'}
+var saved=lsGet(THEMEKEY);if(saved==='dark'||saved==='light')document.documentElement.setAttribute('data-theme',saved);
+paintBtn();
+if(tb)tb.addEventListener('click',function(){var d=!curDark();document.documentElement.setAttribute('data-theme',d?'dark':'light');lsSet(THEMEKEY,d?'dark':'light');paintBtn()});
+// sections + toc
+var secs=$$('section.sec'),toc=$('nav.toc');
+secs.forEach(function(s,i){var h=$('h2',s);var no=el('div','secno',(i+1)+' / '+secs.length);s.insertBefore(no,h);
+ if(toc){var a=el('a');a.href='#'+s.id;a.innerHTML='<b>'+(i+1)+'</b> '+(s.getAttribute('data-short')||h.textContent);toc.appendChild(a)}});
+// sims
+var sims=[];
+$$('.sim').forEach(function(sim){
+ var steps=$$('.steps > .step',sim);var mapItems=$$('.map > li',sim);
+ var lines=el('div','lines'),xp=el('div','x'),sp=el('div','stp-wrap');
+ var ctl=el('div','ctl');var bP=el('button','','→ הקודם'),bN=el('button','pri','הבא ←'),bR=el('button','','⟲ מההתחלה'),cnt=el('span','cnt');
+ bP.type=bN.type=bR.type='button';ctl.appendChild(bR);ctl.appendChild(bP);ctl.appendChild(bN);ctl.appendChild(cnt);
+ var stepLine=[],lineEls=[],xs=[],sts=[];
+ steps.forEach(function(st,i){var f=$('.f',st);
+  if(f){var ln=el('div','ln');ln.appendChild(el('span','no',String(lineEls.length+1)));ln.appendChild(f);lines.appendChild(ln);lineEls.push(ln)}
+  stepLine.push(lineEls.length-1);
+  var x=$('.x',st)||el('div','','');var xd=el('div','');while(x.firstChild)xd.appendChild(x.firstChild);xp.appendChild(xd);xs.push(xd);
+  var s=$('.st',st);var sd=el('div','stp');if(s){while(s.firstChild)sd.appendChild(s.firstChild)}sp.appendChild(sd);sts.push(sd)});
+ var stepsBox=$('.steps',sim);sim.insertBefore(lines,stepsBox);sim.insertBefore(xp,stepsBox);sim.insertBefore(sp,stepsBox);sim.insertBefore(ctl,stepsBox);stepsBox.remove();
+ var cur=0;
+ function render(){var L=stepLine[cur];
+  lineEls.forEach(function(ln,j){ln.classList.toggle('cur',j===L);ln.classList.toggle('fut',j>L)});
+  xs.forEach(function(x,j){x.hidden=j!==cur});
+  sts.forEach(function(s,j){s.hidden=j!==cur;
+   if(j===cur&&j>0){var prev={};$$('span',sts[j-1]).forEach(function(p){var k=$('i',p);if(k)prev[k.textContent]=p.textContent});
+    $$(':scope > span',s).forEach(function(p){var k=$('i',p);p.classList.toggle('new',!!k&&prev[k.textContent]!==p.textContent)})}});
+  var m=+(steps[cur].getAttribute('data-m')||-1);
+  mapItems.forEach(function(li,j){li.classList.toggle('on',j===m);li.classList.toggle('done',m>=0&&j<m)});
+  bP.disabled=cur===0;bN.disabled=cur===steps.length-1;cnt.textContent=(cur+1)+' / '+steps.length}
+ bP.onclick=function(){if(cur>0){cur--;render()}};bN.onclick=function(){if(cur<steps.length-1){cur++;render()}};bR.onclick=function(){cur=0;render()};
+ sims.push(render)});
+// quiz
+var st={};try{st=JSON.parse(lsGet(KEY)||'{}')||{}}catch(e){st={}}
+var qs=$$('.qq'),LET=['א','ב','ג','ד','ה'];
+function score(){var c=0,d=0;qs.forEach(function(q,i){var s=st[i];if(s&&s.done){d++;if(s.first)c++}});
+ var sc=$('#score');if(sc)sc.innerHTML='ניקוד: <bdi dir="ltr">'+c+' / '+qs.length+'</bdi>';var m=$('#meter');if(m)m.style.width=(qs.length?100*d/qs.length:0)+'%';
+ var end=$('#endMsg');if(end)end.textContent=d===qs.length?('סיימת את כל '+qs.length+' השאלות! ענית נכון בניסיון הראשון על '+c+'. '+(c>=qs.length*0.8?'מצוין, ביג בוס 💪':'כדאי לחזור על הסעיפים שבהם טעית.')):'ענית על '+d+' מתוך '+qs.length+' שאלות.'}
+var qhide=[];
+qs.forEach(function(q,i){var a=+q.getAttribute('data-a');var h=$('.h',q),e=$('.e',q);
+ $$('ol > li',q).forEach(function(li,j){var b=el('button','');b.type='button';b.appendChild(el('span','lt',LET[j]+'.'));while(li.firstChild)b.appendChild(li.firstChild);li.appendChild(b);
+  b.addEventListener('click',function(){var s=st[i]||{tried:[]};if(s.done)return;s.tried.push(j);
+   if(j===a){s.done=true;s.first=s.tried.length===1}st[i]=s;lsSet(KEY,JSON.stringify(st));paintQ();score()})});
+ function paintQ(){var s=st[i]||{tried:[]};var bs=$$('ol > li > button',q);
+  bs.forEach(function(b,j){b.classList.toggle('good',!!s.done&&j===a);b.classList.toggle('bad',s.tried.indexOf(j)>=0&&j!==a)});
+  var lastBad=s.tried.length&&s.tried[s.tried.length-1]!==a;if(h)h.hidden=!(lastBad&&!s.done);if(e)e.hidden=!s.done}
+ q._paint=paintQ;qhide.push(paintQ)});
+var rb=$('#resetBtn');if(rb)rb.addEventListener('click',function(){st={};lsSet(KEY,'{}');qhide.forEach(function(f){f()});score()});
+// bidi fix
+var HEB=/[֐-׿]/,RUN=/[A-Za-z0-9∞√π][A-Za-z0-9∞√π²³⁻¹\s+\-−*\/=^().,'·:≤≥<>|_]*/g;
+var SKIP={'MJX-CONTAINER':1,'CODE':1,'PRE':1,'SVG':1,'BDI':1,'SCRIPT':1,'STYLE':1,'TEXTAREA':1,'INPUT':1};
+function bidi(root){var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode:function(n){for(var p=n.parentNode;p&&p!==root.parentNode;p=p.parentNode){if(SKIP[p.nodeName.toUpperCase()]||(p.classList&&(p.classList.contains('m')||p.classList.contains('ltr'))))return NodeFilter.FILTER_REJECT}return NodeFilter.FILTER_ACCEPT}});
+ var nodes=[],n;while(n=w.nextNode())nodes.push(n);
+ nodes.forEach(function(t){var s=t.nodeValue;if(HEB.test(s)&&s.indexOf('→')>=0)s=t.nodeValue=s.replace(/→/g,'←');
+  if(!/[A-Za-z0-9∞√π]/.test(s)||!HEB.test(s+((t.parentNode&&t.parentNode.textContent)||'')))return;
+  var frag=document.createDocumentFragment(),last=0,m;RUN.lastIndex=0;
+  while(m=RUN.exec(s)){var r=m[0].replace(/[\s.,:]+$/,'');var open=(r.match(/\(/g)||[]).length,close=(r.match(/\)/g)||[]).length;
+   while(close>open&&r.slice(-1)===')'){r=r.slice(0,-1);close--}
+   if(open>close&&r.slice(-1)==='('){r=r.slice(0,-1)}
+   if(!r)continue;frag.appendChild(document.createTextNode(s.slice(last,m.index)));var b=document.createElement('bdi');b.dir='ltr';b.textContent=r;frag.appendChild(b);last=m.index+r.length;RUN.lastIndex=last}
+  frag.appendChild(document.createTextNode(s.slice(last)));t.parentNode.replaceChild(frag,t)})}
+var finished=false;
+function finish(){if(finished)return;finished=true;bidi($('.wrap'));sims.forEach(function(r){r()});qhide.forEach(function(f){f()});score();
+ if(window.LESSON_INIT)try{window.LESSON_INIT()}catch(e){console.error(e)}}
+window.__lessonFinish=finish;
+window.typesetLater=function(node){if(window.MathJax&&MathJax.typesetPromise){return MathJax.typesetPromise([node]).then(function(){bidi(node)}).catch(function(){})}bidi(node);return Promise.resolve()};
+setTimeout(finish,9000);
+})();
+</script>
+<script>window.MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']],packages:{'[+]':['html']}},loader:{load:['[tex]/html']},svg:{fontCache:'global'},options:{ignoreHtmlClass:'nomj'},startup:{ready:function(){MathJax.startup.defaultReady();MathJax.startup.promise.then(function(){window.__lessonFinish&&window.__lessonFinish()})}}};</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.min.js"></script>
+</body></html>
