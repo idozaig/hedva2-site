@@ -1,18 +1,14 @@
-איך להעלות את האתר ל-Netlify (חינם)
+איך מעדכנים את האתר (מעכשיו, אוטומטי)
 =====================================
 
-פעם ראשונה:
-1. נכנסים ל- https://app.netlify.com/signup ונרשמים (הכי קל: "Sign up with Google" או GitHub).
-2. אחרי ההרשמה נכנסים ל- https://app.netlify.com/drop
-3. גוררים את כל התיקייה hedva2-site (התיקייה עצמה, לא הקבצים בתוכה) לתוך המלבן בדף.
-4. אחרי כמה שניות מקבלים כתובת כמו random-name-123.netlify.app — זה האתר!
-5. כדי לשנות לשם יפה: Site configuration ← Change site name ← למשל hedva2-big-boss
-   ואז הכתובת תהיה hedva2-big-boss.netlify.app
+השגרה החדשה:
+1. אומרים ל-Claude: "תעדכן את האתר" (או "תעשה commit ותדחוף").
+2. אחרי דקה בערך האתר hedva2-bigboss.netlify.app מתעדכן לבד. לא צריך לגרור תיקייה.
 
-לעדכן את האתר (כשנוספים דפים חדשים):
-1. נכנסים ל-Netlify ← בוחרים את האתר ← לשונית Deploys.
-2. גוררים שוב את התיקייה hedva2-site לאזור "Drag and drop your project folder here".
-3. אחרי כמה שניות האתר מתעדכן. הכתובת נשארת אותה כתובת.
+איך זה עובד:
+- הקבצים נמצאים במאגר פרטי ב-GitHub: github.com/idozaig/hedva2-site
+- Netlify מחובר למאגר. כל שינוי שעולה ל-GitHub (push) עולה לאתר לבד.
+- לראות שהעדכון עלה: Netlify ← האתר ← Deploys (הכי למעלה צריך להיות Published).
 
 מבנה התיקייה:
 - index.html   — הדף הראשי
@@ -21,8 +17,7 @@
 - lessons/     — דפי השיעור עצמם (lec-05.html וכו')
 
 מערכת הפניות (שאלות וטעויות מהסטודנטים):
-- אחרי ההעלאה, נכנסים לאתר ב-Netlify ← Forms ← לוחצים "Enable form detection" (פעם אחת),
-  ואז גוררים שוב את התיקייה ל-Deploys כדי ש-Netlify יזהה את הטופס.
 - כל הפניות מופיעות ב-Netlify תחת Forms ← feedback.
+- אם הטופס לא מופיע: Forms ← "Enable form detection" (פעם אחת), ואז עדכון אחד נוסף של האתר.
 - כדי לקבל מייל על כל פנייה: Site configuration ← Notifications ← Form submission notifications ← Add notification ← Email.
 - חינם עד 100 פניות בחודש.
